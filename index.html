@@ -1,12 +1,315 @@
-<html>
-<head>
-<title>Redirecting to the Fiji homepage</title>
-<meta http-equiv=refresh content="1;url=http://fiji.sc/"/>
-</head>
-<body>
-<img style='float:right;' src=https://github.com/fiji/fiji/raw/master/images/icon.png/>
-<h1>Redirecting to the Fiji homepage</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/favicon.ico">
 
-If you are not redirected automatically, please click <a href=http://fiji.sc/>here</a>.
-</body>
+    <title>Fiji is just ImageJ</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Fiji</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="http://imagej.net/Fiji">Wiki</a></li>
+            <li><a href="https://github.com/fiji">Source</a></li>
+            <li><a href="http://forum.imagej.net/tags/fiji">Forum</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <img src="logo.png" class="logo" alt="logo">
+
+        <p>
+        Fiji is an image processing package&mdash;a
+        "batteries-included" distribution of
+        <a href="http://imagej.net/">ImageJ</a>,
+        bundling a lot of plugins which facilitate scientific image analysis.
+        </p>
+
+        <p>
+        <a href="#download" class="btn btn-info btn-lg" role="button">Download &raquo;</a>
+        <a href="#cite" class="btn btn-primary btn-lg" role="button"> Cite &raquo;</a>
+        <a href="#contribute" class="btn btn-success btn-lg" role="button">Contribute &raquo;</a>
+        </p>
+      </div>
+
+      <!-- Carousel for highlighting specific plugins -->
+      <div id="pluginHighlight" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#pluginHighlight" data-slide-to="0" class="active"></li>
+          <li data-target="#pluginHighlight" data-slide-to="1"></li>
+          <li data-target="#pluginHighlight" data-slide-to="2"></li>
+          <li data-target="#pluginHighlight" data-slide-to="3"></li>
+          <li data-target="#pluginHighlight" data-slide-to="4"></li>
+          <li data-target="#pluginHighlight" data-slide-to="5"></li>
+          <li data-target="#pluginHighlight" data-slide-to="6"></li>
+          <li data-target="#pluginHighlight" data-slide-to="7"></li>
+          <li data-target="#pluginHighlight" data-slide-to="8"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="carousel/TrakEM2-snapshot.jpg" alt="TrakEM2">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/TrakEM2">TrakEM2</a></h3>
+              <p>Perform morphological data mining, three-dimensional modeling, image <a href="http://imagej.net/Stitching">stitching</a>, <a href="http://imagej.net/Registration">registration</a>, editing and annotation.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/TrakEM2-snapshot-2.jpg" alt="TrakEM2">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/TrakEM2">TrakEM2</a></h3>
+              <p>Annotate images non-destructively.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/TrakEM2-snapshot-3.jpg" alt="TrakEM2">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/TrakEM2">TrakEM2</a></h3>
+              <p><a href="http://imagej.net/Segmentation">Segment</a> images manually or semi-automatically.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/TrakEM2_neuronal_reconstruction-snapshot.png" alt="TrakEM2">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/TrakEM2">TrakEM2</a></h3>
+              <p><a href="http://www.ini.uzh.ch/~acardona/trakem2_manual.html#trees">Reconstruct neuronal arbors in 3D</a>, including <a href="http://www.ini.uzh.ch/~acardona/trakem2_manual.html#connectors">relationships between trees</a> to represent synapses.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/3D_Viewer-snapshot.jpg" alt="3D Viewer">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/3D_Viewer">3D Viewer</a></h3>
+              <p>Display 3D stacks via volume rendering, isosurfaces or as orthoslices.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/FeatureExtraction-snapshot.jpg" alt="Feature Extraction">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/Feature_Extraction">Feature Extraction</a></h3>
+              <p>Automatically <a href="http://imagej.net/Registration">register</a> images using detected SIFT or MOPS features.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/SIOX-snapshot.jpg" alt="SIOX">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/SIOX">Simple Interactive Object Extraction (SIOX)</a></h3>
+              <p><a href="http://imagej.net/Segmentation">Segment</a> color images semi-automatically.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/SPIM_Registration-snapshot.jpg" alt="SPIM Registration">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/SPIM_Registration">SPIM Registration</a></h3>
+              <p>Quickly and accurately <a href="http://imagej.net/Registration">register</a> and fuse Selective Plane Illumination Microscopy data as well as other 3D multi-angle image acquisitions.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="carousel/SimpleNeuriteTracer-snapshot.jpg" alt="Simple Neurite Tracer">
+            <div class="carousel-caption">
+              <h3><a href="http://imagej.net/Simple_Neurite_Tracer">Simple Neurite Tracer</a></h3>
+              <p><a href="http://imagej.net/Segmentation">Segment</a> linear structures in 3D images by marking both ends in 3D and letting the tracer work out the rest.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#pluginHighlight" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#pluginHighlight" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="well">
+        <p>
+        Fiji is <a href="#download">easy to install</a> and has an automatic update function, bundles a lot of plugins and offers comprehensive documentation.</li>
+        </p>
+        <p>
+        Like ImageJ itself, Fiji is an <a href="http://imagej.net/Open_Source">open source</a> project hosted in <a href="http://imagej.net/Git">Git</a> version control <a href="https://github.com/fiji">repositories</a>, with access to the source code of all internals, libraries and plugins, easing the <a href="http://imagej.net/Development">development</a> and <a href="http://imagej.net/Scripting">scripting</a> of plugins.
+        </p>
+        <p>
+        Fiji is licensed under the <a href="http://imagej.net/GPL">GNU General Public License</a>.
+        It builds on top of the <a href="http://imagej.net/ImageJ2">ImageJ2</a> core, which is licensed under the permissive <a href="http://imagej.net/BSD">BSD 2-clause license</a>.
+        Plugins and other components have <a href="https://github.com/fiji/fiji/blob/master/LICENSES">their own licenses</a>.
+        </p>
+      </div>
+
+      <div class="well">
+        <p>
+        Fiji is developed by <a href="http://imagej.net/Fiji/Contributors">contributors around the world</a>. It is maintained by <a href="http://imagej.net/User:Rueden">Curtis Rueden</a>, <a href="http://imagej.net/User:Hinerm">Mark Hiner</a> and the <a href="http://imagej.net/Contributors">ImageJ development team</a> at the <a href="http://imagej.net/LOCI">Laboratory for Optical and Computational Instrumentation</a> (LOCI) at the University of Wisconsin-Madison.
+        </p>
+        <p>
+        The Fiji project is driven by a strong desire to improve the tools available for life sciences to process and analyze data. To this end, Fiji collaborates closely with the following projects:
+        </p>
+        <table class="centered">
+          <tr>
+            <td class="small">
+              <a href="http://imagej.net/ImageJ2">
+                <img src="http://fiji.sc/_images/d/d1/Imagej2-icon.png">
+              </a>
+            </td>
+            <td class="small">
+              <a href="http://imagej.net/Bio-Formats">
+                <img src="http://fiji.sc/_images/5/58/Bio-formats-icon.png">
+              </a>
+            </td>
+            <td class="small">
+              <a href="http://imagej.net/OME">
+                <img src="http://fiji.sc/_images/8/81/Ome-icon.png">
+              </a>
+            </td>
+            <td class="small">
+              <a href="http://imagej.net/Micro-Manager">
+                <img src="http://fiji.sc/_images/0/0c/Mm-icon.jpg">
+              </a>
+            </td>
+            <td class="small">
+              <a href="http://imagej.net/KNIME">
+                <img src="http://fiji.sc/_images/5/54/Knime-icon.png">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td><a href="http://imagej.net/ImageJ2">ImageJ2</a></td>
+            <td><a href="http://imagej.net/Bio-Formats">Bio-Formats</a></td>
+            <td><a href="http://imagej.net/OME">OME</a></td>
+            <td><a href="http://imagej.net/Micro-Manager">&micro;Manager</a></td>
+            <td><a href="http://imagej.net/KNIME">KNIME</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="download" class="well">
+        <table>
+          <tr>
+            <th colspan=3>
+              <h3>
+                <img src="http://imagej.net/_images/4/41/Yada.png">
+                ~ Download Fiji for your OS ~
+                <img src="http://imagej.net/_images/4/41/Yada.png">
+              </h3>
+            </th>
+          </tr>
+          <tr>
+            <td class="big">
+              <a href="http://downloads.imagej.net/fiji/latest/fiji-win64.zip">
+                <img src="http://imagej.net/_images/2/29/Win.png"><br>64-bit
+              </a>
+            </td>
+            <td class="big">
+              <a href="http://downloads.imagej.net/fiji/latest/fiji-macosx.dmg">
+                <img src="http://imagej.net/_images/2/22/Osx.png"><br>OS X
+              </a>
+            </td>
+            <td class="big">
+              <a href="http://downloads.imagej.net/fiji/latest/fiji-linux64.zip">
+                <img src="http://imagej.net/_images/a/af/Tux.png"><br>64-bit
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th colspan=3>Other downloads</th>
+          </tr>
+          <tr>
+            <td class="small">
+              <a href="http://downloads.imagej.net/fiji/latest/fiji-win32.zip">
+                <img src="http://imagej.net/_images/2/29/Win.png"> 32-bit
+              </a>
+            </td>
+            <td class="small">
+              <a href="http://downloads.imagej.net/fiji/latest/fiji-nojre.zip">
+                <img src="http://imagej.net/_images/a/ae/Fiji-icon.png"> No JRE
+              </a>
+            </td>
+            <td class="small">
+              <a href="http://downloads.imagej.net/fiji/latest/fiji-linux32.zip">
+                <img src="http://imagej.net/_images/a/af/Tux.png"> 32-bit
+              </a>
+            </td>
+          </tr>
+        </table>
+        <a href="http://imagej.net/Fiji/Downloads" class="btn btn-default btn-lg" role="button">More downloads &raquo;</a>
+      </div>
+
+      <div class="columns">
+        <div class="well column left">
+          <div id="cite">
+            <h2>Citing Fiji</h2>
+          </div>
+          <p>
+          Like most scientific software, funding for the Fiji project is driven by <a href="https://scholar.google.com/scholar?as_sdt=0,5&hl=en&scisbd=1&sciodt=0,5&cites=17249863664147333646&scipsc=">citations</a>. If you use Fiji, please <a href="http://imagej.net/Fiji/Cite">cite it</a> in your publications!
+          </p>
+          <a href="http://imagej.net/Fiji/Cite" class="btn btn-default btn-lg" role="button">Read more &raquo;</a>
+        </div>
+
+        <div class="well column right">
+          <div id="contribute">
+            <h2>How to contribute</h2>
+          </div>
+          <p>
+          Fiji is an <a href="http://imagej.net/Open_Source">open source</a> project, so everybody is welcome to <a href="http://imagej.net/Fiji/Contribute">contribute</a> with plugins, patches, bug reports, tutorials, documentation, and artwork.
+          </p>
+          <a href="http://imagej.net/Fiji/Contribute" class="btn btn-default btn-lg" role="button">Read more &raquo;</a>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
