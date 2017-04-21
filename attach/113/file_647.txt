@@ -1,0 +1,11 @@
+setBatchMode(true);
+
+PathToFile = "/PathTo_testImage";
+FileToProcess = "testImage.tif";
+
+open(PathToFile+"/"+FileToProcess);
+
+run("Analyse Particles", "minimum=2 maximum=4 image=80 smart online stream file = [/PathToFile/AnalyzeParticles.xls] pixel=20 accumulate=0 update=100 _image=imgNNNNNNNNN.tif start=0 in=50 _minimum=0 local=20 _maximum=1000 threads=50");
+saveAs("Tiff", PathToFile+"/"+"testImage_Reconstruction.tif");
+
+close();

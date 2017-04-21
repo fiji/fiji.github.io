@@ -1,0 +1,128 @@
+2009-09-30 18:35:36
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (1.6.0_07-b06-57 mixed mode):
+
+"Quantile Based Normalization" prio=4 tid=0x0000000101984800 nid=0x18a979000 in Object.wait() [0x000000018a978000..0x000000018a978ad0]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000123830d98> (a java.awt.Component$AWTTreeLock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.awt.Dialog.show(Dialog.java:1108)
+	- locked <0x0000000123830d98> (a java.awt.Component$AWTTreeLock)
+	at java.awt.Component.show(Component.java:1422)
+	at java.awt.Component.setVisible(Component.java:1375)
+	at java.awt.Window.setVisible(Window.java:806)
+	at java.awt.Dialog.setVisible(Dialog.java:985)
+	at ij.gui.GenericDialog.showDialog(GenericDialog.java:950)
+	at util.Quantile_Based_Normalization.run(Quantile_Based_Normalization.java:625)
+	at ij.IJ.runUserPlugIn(IJ.java:183)
+	at ij.IJ.runPlugIn(IJ.java:150)
+	at ij.Executer.runCommand(Executer.java:145)
+	at ij.Executer.run(Executer.java:76)
+	at java.lang.Thread.run(Thread.java:637)
+
+"TimerQueue" daemon prio=5 tid=0x0000000101980800 nid=0x18a757000 in Object.wait() [0x000000018a756000..0x000000018a756ad0]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000001051f89d0> (a javax.swing.TimerQueue)
+	at javax.swing.TimerQueue.run(TimerQueue.java:236)
+	- locked <0x00000001051f89d0> (a javax.swing.TimerQueue)
+	at java.lang.Thread.run(Thread.java:637)
+
+"DestroyJavaVM" prio=5 tid=0x0000000101801800 nid=0x1000c8000 waiting on condition [0x0000000000000000..0x00000001000c7150]
+   java.lang.Thread.State: RUNNABLE
+
+"AWT-EventQueue-0" prio=6 tid=0x00000001018da000 nid=0x18906f000 runnable [0x000000018906d000..0x000000018906ead0]
+   java.lang.Thread.State: RUNNABLE
+	at apple.awt.CComponent._requestFocus(Native Method)
+	at apple.awt.CComponent.requestFocus(CComponent.java:56)
+	at java.awt.Component.requestFocusHelper(Component.java:7252)
+	at java.awt.Component.requestFocusInWindow(Component.java:7143)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:355)
+	at java.awt.Component.dispatchEventImpl(Component.java:4369)
+	at java.awt.Container.dispatchEventImpl(Container.java:2160)
+	at java.awt.Window.dispatchEventImpl(Window.java:2440)
+	at java.awt.Component.dispatchEvent(Component.java:4327)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+	at java.awt.SequencedEvent.dispatch(SequencedEvent.java:98)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:597)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:300)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:210)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:204)
+	at java.awt.Dialog$1.run(Dialog.java:1045)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:597)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:300)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:210)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:200)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:195)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:187)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+
+"Java2D Disposer" daemon prio=10 tid=0x00000001018d6800 nid=0x188f6c000 in Object.wait() [0x0000000188f6b000..0x0000000188f6bad0]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000001238fe5c8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:116)
+	- locked <0x00000001238fe5c8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:132)
+	at sun.java2d.Disposer.run(Disposer.java:125)
+	at java.lang.Thread.run(Thread.java:637)
+
+"AWT-Shutdown" prio=5 tid=0x0000000101872800 nid=0x186fbd000 in Object.wait() [0x0000000186fbc000..0x0000000186fbcad0]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000012382eed0> (a java.lang.Object)
+	at java.lang.Object.wait(Object.java:485)
+	at sun.awt.AWTAutoShutdown.run(AWTAutoShutdown.java:259)
+	- locked <0x000000012382eed0> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:637)
+
+"AWT-AppKit" daemon prio=5 tid=0x0000000101872000 nid=0x7fff707bb720 runnable [0x0000000000000000..0x00007fff5fbfed70]
+   java.lang.Thread.State: RUNNABLE
+
+"Low Memory Detector" daemon prio=5 tid=0x0000000101845000 nid=0x1668e5000 runnable [0x0000000000000000..0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread1" daemon prio=9 tid=0x0000000101843800 nid=0x1667e2000 waiting on condition [0x0000000000000000..0x00000001667e03e0]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread0" daemon prio=9 tid=0x0000000101842000 nid=0x1666df000 waiting on condition [0x0000000000000000..0x00000001666dd3e0]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=9 tid=0x0000000101841000 nid=0x1665dc000 waiting on condition [0x0000000000000000..0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=8 tid=0x000000010182a000 nid=0x1664d9000 in Object.wait() [0x00000001664d8000..0x00000001664d8ad0]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000012382f310> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:116)
+	- locked <0x000000012382f310> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:132)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x0000000101828800 nid=0x1663d6000 in Object.wait() [0x00000001663d5000..0x00000001663d5ad0]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000012382f3f0> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x000000012382f3f0> (a java.lang.ref.Reference$Lock)
+
+"VM Thread" prio=9 tid=0x0000000101821000 nid=0x1007e2000 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x0000000101846800 nid=0x1669e8000 waiting on condition 
+
+"Exception Catcher Thread" prio=10 tid=0x0000000101803000 nid=0x100501000 runnable 
+JNI global references: 2235
+
+Heap
+ def new generation   total 2304K, used 2155K [0x0000000105000000, 0x0000000105290000, 0x0000000123800000)
+  eden space 1984K,  92% used [0x0000000105000000, 0x00000001051cac28, 0x00000001051f0000)
+  from space 320K, 100% used [0x00000001051f0000, 0x0000000105240000, 0x0000000105240000)
+  to   space 320K,   0% used [0x0000000105240000, 0x0000000105240000, 0x0000000105290000)
+ tenured generation   total 5312K, used 2950K [0x0000000123800000, 0x0000000123d30000, 0x0000000160800000)
+   the space 5312K,  55% used [0x0000000123800000, 0x0000000123ae18e8, 0x0000000123ae1a00, 0x0000000123d30000)
+ compacting perm gen  total 21248K, used 15537K [0x0000000160800000, 0x0000000161cc0000, 0x0000000165c00000)
+   the space 21248K,  73% used [0x0000000160800000, 0x000000016172c780, 0x000000016172c800, 0x0000000161cc0000)
+No shared spaces configured.

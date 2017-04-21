@@ -1,0 +1,23 @@
+Fiji/ImageJ 1.47o; Java 1.6.0_24 [64-bit]; Windows 7 6.1; 29MB of 2945MB (<1%)
+ 
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at ij.Command.runPlugIn(Command.java:148)
+	at ij.Command.runCommand(Command.java:97)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.lang.NoSuchFieldError: core
+	at loci.formats.in.NativeND2Reader.initFile(NativeND2Reader.java:488)
+	at loci.formats.FormatReader.setId(FormatReader.java:1178)
+	at loci.formats.DelegateReader.setId(DelegateReader.java:259)
+	at loci.plugins.in.ImportProcess.initializeFile(ImportProcess.java:482)
+	at loci.plugins.in.ImportProcess.execute(ImportProcess.java:146)
+	at loci.plugins.in.Importer.showDialogs(Importer.java:141)
+	at loci.plugins.in.Importer.run(Importer.java:79)
+	at loci.plugins.LociImporter.run(LociImporter.java:81)
+	at ij.IJ.runUserPlugIn(IJ.java:194)
+	at ij.IJ.runPlugIn(IJ.java:160)
+	... 8 more

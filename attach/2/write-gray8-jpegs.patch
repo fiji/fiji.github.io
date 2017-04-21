@@ -1,0 +1,16 @@
+diff --git a/ij/plugin/JpegWriter.java b/ij/plugin/JpegWriter.java
+index 4347b5c..6c170cd 100644
+--- a/ij/plugin/JpegWriter.java
++++ b/ij/plugin/JpegWriter.java
+@@ -45,7 +45,10 @@ public class JpegWriter implements PlugIn {
+         //IJ.log("saveAsJpeg: "+path);
+         int width = imp.getWidth();
+         int height = imp.getHeight();
+-        BufferedImage   bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
++        int biType = BufferedImage.TYPE_INT_RGB;
++        if (imp.getType() == ImagePlus.GRAY8)
++            biType = BufferedImage.TYPE_BYTE_GRAY;
++        BufferedImage bi = new BufferedImage(width, height, biType);
+         try {
+             Graphics g = bi.createGraphics();
+             g.drawImage(imp.getImage(), 0, 0, null);

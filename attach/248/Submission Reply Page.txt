@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Suspicious Action</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="http://fiji.sc/bugzilla/">
+
+  
+
+
+  
+
+
+  
+    <link rel="Saved&nbsp;Searches" title="My Bugs"
+          href="buglist.cgi?resolution=---&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=milan.esner%40gmail.com">
+
+
+
+    
+    <link href="skins/standard/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="skins/standard/global.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css" rel="stylesheet"
+        type="text/css" title="Dusk"><link href="skins/contrib/Dusk/global.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js"></script><script type="text/javascript" src="js/global.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/bugzilla\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="fiji-sc-bugzilla yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Suspicious Action</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+
+
+    <li>
+      <span class="separator">| </span>
+        <a href="index.cgi?logout=1">Log&nbsp;out</a>
+        milan.esner&#64;gmail.com</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+  <div class="throw_error">
+    It looks like you didn't come from the right page (you have no valid token for
+    the <em>create_bug</em> action while processing the
+    'post_bug.cgi' script). The reason could be one of:<br>
+    <ul>
+      <li>You clicked the "Back" button of your web browser after having successfully
+      submitted changes, which is generally not a good idea (but harmless).</li>
+      <li>You entered the URL in the address bar of your web browser directly,
+      which should be safe.</li>
+      <li>You clicked on a URL which redirected you here <b>without your consent</b>,
+      in which case this action is much more critical.</li>
+    </ul>
+    Are you sure you want to commit these changes anyway? This may result in
+    unexpected and undesired results.
+  </div>
+
+  <form name="check" id="check" method="post" action="post_bug.cgi"><input type="hidden" name="priority"
+             value="P4">
+  
+      <input type="hidden" name="bug_file_loc"
+             value="http://">
+  
+      <input type="hidden" name="cc"
+             value="milan.esner&#64;gmail.com">
+  
+      <input type="hidden" name="rep_platform"
+             value="PC">
+  
+      <input type="hidden" name="blocked"
+             value="">
+  
+      <input type="hidden" name="assigned_to"
+             value="">
+  
+      <input type="hidden" name="short_desc"
+             value="Trackmate error">
+  
+      <input type="hidden" name="token"
+             value="J5vkLuxe7Z">
+  
+      <input type="hidden" name="bug_severity"
+             value="normal">
+  
+      <input type="hidden" name="bug_status"
+             value="NEW">
+  
+      <input type="hidden" name="version"
+             value="unspecified">
+  
+      <input type="hidden" name="estimated_time"
+             value="">
+  
+      <input type="hidden" name="deadline"
+             value="">
+  
+      <input type="hidden" name="comment"
+             value="Hi,&#013;&#013;I have problem with TracMate after FIJI update. When I create new spot, error message appear, see below.&#013;Thanks,&#013;Milan&#013;&#013; &#013;&#013;&#013;Exception in thread &quot;TrackMate spot feature calculating thread 1/8&quot; java.lang.ClassCastException: net.imglib2.type.numeric.ARGBType cannot be cast to net.imglib2.type.numeric.RealType&#013;	at fiji.plugin.trackmate.util.SpotNeighborhoodCursor.next(SpotNeighborhoodCursor.java:152)&#013;	at fiji.plugin.trackmate.util.SpotNeighborhoodCursor.next(SpotNeighborhoodCursor.java:7)&#013;	at fiji.plugin.trackmate.features.spot.SpotIntensityAnalyzer.process(SpotIntensityAnalyzer.java:61)&#013;	at fiji.plugin.trackmate.features.spot.IndependentSpotFeatureAnalyzer.process(IndependentSpotFeatureAnalyzer.java:40)&#013;	at fiji.plugin.trackmate.features.SpotFeatureCalculator$1.run(SpotFeatureCalculator.java:175)&#013;&#013;Information about your version of Java:&#013;&#013;  os.arch =&gt; amd64&#013;  os.name =&gt; Windows 7&#013;  os.version =&gt; 6.1&#013;  java.version =&gt; 1.6.0_24&#013;  java.vendor =&gt; Sun Microsystems Inc.&#013;  java.runtime.name =&gt; Java(TM) SE Runtime Environment&#013;  java.runtime.version =&gt; 1.6.0_24-b07&#013;  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM&#013;  java.vm.version =&gt; 19.1-b02&#013;  java.vm.vendor =&gt; Sun Microsystems Inc.&#013;  java.vm.info =&gt; mixed mode&#013;  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment&#013;  java.specification.name =&gt; Java Platform API Specification&#013;  java.specification.version =&gt; 1.6&#013;  sun.cpu.endian =&gt; little&#013;  sun.desktop =&gt; windows&#013;  file.separator =&gt; \&#013;&#013;The up-to-date check says: REMIND_LATER&#013;&#013;Information relevant to JAVA_HOME related problems:&#013;&#013;  JAVA_HOME is set to: D:\Users\8805\DOCUME~1\Fiji.app/java/win64/jdk1.6.0_24//jre&#013;  imagej.dir =&gt; D:\Users\8805\DOCUME~1\Fiji.app&#013;&#013;Information about the version of each plugin:&#013;&#013;Activated update sites:&#013;ImageJ: http://update.imagej.net/ (last check:20150328055348)&#013;Fiji: http://fiji.sc/update/ (last check:20150408161651)&#013;&#013;Files not up-to-date:&#013;  1ad3be0d (LOCAL_ONLY) 20140609163918 jars/jpedalSTD.jar&#013;">
+  
+      <input type="hidden" name="component"
+             value="Plugins">
+  
+      <input type="hidden" name="dependson"
+             value="">
+  
+      <input type="hidden" name="hidden"
+             value="enter_bug&#013;">
+  
+      <input type="hidden" name="target_milestone"
+             value="---">
+  
+      <input type="hidden" name="product"
+             value="Fiji">
+  
+      <input type="hidden" name="commentprivacy"
+             value="0">
+  
+      <input type="hidden" name="op_sys"
+             value="Windows">
+    <input type="submit" id="confirm" value="Confirm Changes">
+  </form>
+  <p>Or throw away these changes and go back to <a href="index.cgi">index.cgi</a>.</p>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+
+
+    <li>
+      <span class="separator">| </span>
+        <a href="index.cgi?logout=1">Log&nbsp;out</a>
+        milan.esner&#64;gmail.com</li>
+</ul>
+  </li>
+
+  
+    
+    <li id="links-saved">
+      <ul class="links">
+          <li><a href="buglist.cgi?resolution=---&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=milan.esner%40gmail.com">My Bugs</a></li>
+
+      </ul>
+    </li>
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

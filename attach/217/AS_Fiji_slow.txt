@@ -1,0 +1,1178 @@
+Antonios-MacBook-Pro:~ antoniosechi$ cd /Applications/Fiji.app/Contents/MacOS/
+Antonios-MacBook-Pro:MacOS antoniosechi$ cp fiji-macosx debug
+cp: fiji-macosx: No such file or directory
+Antonios-MacBook-Pro:MacOS antoniosechi$ ./debug
+sysctl says os_release is 13.4.0
+Detected ImageJ2
+Available RAM: 5759MB, using 3/4 of that: 4320MB
+JRE not found in '/Applications/Fiji.app/jre'
+Ignoring Apple Framework java executable: '/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java'
+No JRE was found in default locations
+Re-executing with correct library lookup path (/Applications/Fiji.app/lib/macosx:/Applications/Fiji.app/mm/macosx)
+sysctl says os_release is 13.4.0
+Detected ImageJ2
+Available RAM: 5759MB, using 3/4 of that: 4320MB
+JRE not found in '/Applications/Fiji.app/jre'
+Ignoring Apple Framework java executable: '/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java'
+No JRE was found in default locations
+java -Djava.ext.dirs=/Applications/Fiji.app/java/macosx-java3d/Home/lib/ext/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Frameworks/JavaVM.framework/Home/lib/ext -Dpython.cachedir.skip=true -Dplugins.dir=/Applications/Fiji.app -Xmx4320m -Xincgc -XX:PermSize=128m -Djava.class.path=/Applications/Fiji.app/jars/imagej-launcher-3.1.6.jar -Dimagej.dir=/Applications/Fiji.app -Dij.dir=/Applications/Fiji.app -Dfiji.dir=/Applications/Fiji.app -Dfiji.defaultLibPath=lib/server/libjvm.dylib -Dfiji.executable=./debug -Dij.executable=./debug -Djava.library.path=/Applications/Fiji.app/lib/macosx:/Applications/Fiji.app/mm/macosx -Dij.debug=true -Dscijava.log.level=debug net.imagej.launcher.ClassLauncher -ijjarpath jars -ijjarpath plugins net.imagej.Main
+JavaVMBundlerVersionsDirURL: /System/Library/Frameworks/JavaVM.framework/Versions
+TargetJavaVM: /System/Library/Frameworks/JavaVM.framework/Versions/1.6
+Setting JAVA_JVM_VERSION to 1.6
+
+Sep 28 13:51:46 Antonios-MacBook-Pro.local debug[391] <Error>: The function `CGContextErase' is obsolete and will be removed in an upcoming update. Unfortunately, this application, or a library it uses, is using this obsolete function, and is thereby contributing to an overall degradation of system performance.
+ij1.plugin.dirs: null
+$HOME/.plugins: /Users/antoniosechi/.plugins does not exist
+Launching main class net.imagej.Main with parameters []
+Class loader = sun.misc.Launcher$AppClassLoader@1feed786
+Checking class loader: sun.misc.Launcher$AppClassLoader@1feed786
+Checking URL: file:/Applications/Fiji.app/jars/imagej-launcher-3.1.6.jar
+Not Eclipse because first entry is: file:/Applications/Fiji.app/jars/imagej-launcher-3.1.6.jar
+[DEBUG] Creating service: org.scijava.event.DefaultEventService
+[DEBUG] Creating service: org.scijava.log.StderrLogService
+[DEBUG] Created service 'org.scijava.log.StderrLogService' in 1 ms
+[DEBUG] Creating service: org.scijava.thread.DefaultThreadService
+[DEBUG] Created service 'org.scijava.thread.DefaultThreadService' in 0 ms
+[DEBUG] Created service 'org.scijava.event.DefaultEventService' in 25 ms
+[DEBUG] Creating service: net.imagej.lut.DefaultLUTService
+[DEBUG] Creating service: org.scijava.module.DefaultModuleService
+[DEBUG] Creating service: org.scijava.plugin.DefaultPluginService
+[INFO] Found 772 plugins.
+[DEBUG] - class='org.scijava.module.process.DebugPreprocessor', priority=Infinity, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.module.process.DebugPostprocessor', priority=Infinity, enabled=true, pluginType=PostprocessorPlugin
+[DEBUG] - class='net.imagej.plugins.tools.KonamiHandler', name='Konami', priority=Infinity, enabled=true, pluginType=Tool
+[DEBUG] - class='org.scijava.event.DefaultEventService', priority=100000.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.module.process.ValidityPreprocessor', priority=10001.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='net.imagej.display.ActiveImagePreprocessor', priority=10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='net.imagej.legacy.plugin.ActiveImagePlusPreprocessor', priority=10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.ui.UIPreprocessor', priority=10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.display.ActiveDisplayPreprocessor', priority=10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.module.process.GatewayPreprocessor', priority=10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.module.process.ServicePreprocessor', priority=10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='io.scif.bf.BioFormatsFormat', name='Bio-Formats Compatibility Format', priority=10000.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.ops.slicer.SlicewiseRAI2RAI', name='slicemapper', priority=10000.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.arithmetic.add.parallel.AddConstantToArrayDoubleImageP', name='add', priority=111.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.arithmetic.add.parallel.AddConstantToArrayByteImageP', name='add', priority=110.0, enabled=true, pluginType=Op
+[DEBUG] - class='io.scif.bf.ome.BioFormatsTranslator$BioFormatsOMETranslator', priority=101.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.OMETIFFTranslator$OMEtoOMETIFFTranslator', priority=101.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.OMETIFFTranslator$OMETIFFtoOMETranslator', priority=101.0, enabled=true, pluginType=FromOMETranslator
+[DEBUG] - class='net.imagej.app.ToplevelImageJApp', name='ImageJ', priority=101.0, enabled=true, pluginType=App
+[DEBUG] - class='net.imagej.ops.arithmetic.add.AddConstantToArrayDoubleImage', name='add', priority=101.0, enabled=true, pluginType=Op
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTMessageWidget', priority=100.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingMessageWidget', priority=100.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='net.imagej.lut.DefaultLUTService', priority=100.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.legacy.display.LegacyImageDisplayViewer', priority=100.0, enabled=true, pluginType=DisplayViewer
+[DEBUG] - class='net.imagej.legacy.display.LegacyTextDisplayViewer', priority=100.0, enabled=true, pluginType=DisplayViewer
+[DEBUG] - class='org.scijava.module.process.InitPreprocessor', priority=100.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.script.DefaultScriptService', priority=100.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ui.swing.overlay.ThresholdJHotDrawAdapter', priority=100.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.ui.swing.overlay.RectangleJHotDrawAdapter', priority=100.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='io.scif.ome.translators.BMPTranslator$BMPOMETranslator', priority=100.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.MicromanagerTranslator$MicromanagerOMETranslator', priority=100.0, enabled=true, pluginType=FromOMETranslator
+[DEBUG] - class='io.scif.ome.translators.OBFTranslator$OBFOMETranslator', priority=100.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.TIFFTranslator$TIFFOMETranslator', priority=100.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.TIFFTranslator$OMETIFFTranslator', priority=100.0, enabled=true, pluginType=FromOMETranslator
+[DEBUG] - class='io.scif.ome.translators.APNGTranslator$OMEAPNGTranslator', priority=100.0, enabled=true, pluginType=FromOMETranslator
+[DEBUG] - class='io.scif.ome.translators.APNGTranslator$APNGOMETranslator', priority=100.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.ICSTranslator$OMEICSTranslator', priority=100.0, enabled=true, pluginType=FromOMETranslator
+[DEBUG] - class='io.scif.ome.translators.ICSTranslator$ICSOMETranslator', priority=100.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.DICOMTranslator$DICOMOMETranslator', priority=100.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.NRRDTranslator$NRRDOMETranslator', priority=100.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.translators.EPSTranslator$OMEEPSTranslator', priority=100.0, enabled=true, pluginType=FromOMETranslator
+[DEBUG] - class='net.imagej.operator.OpAdd', name='Add', priority=100.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.app.ImageJApp', name='ImageJ', priority=100.0, enabled=true, pluginType=App
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingRectangleTool', name='Rectangle', description='Rectangular overlays', iconPath='/icons/tools/rectangle.png', priority=100.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.ops.arithmetic.add.AddConstantToArrayByteImage', name='add', priority=100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.onthefly.ArithmeticOp$AddOp', name='add', priority=100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.onthefly.ArithmeticOp$DivideOp', name='divide', priority=100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.legacy.ui.LegacyUI', name='legacy', priority=100.0, enabled=true, pluginType=UserInterface
+[DEBUG] - class='net.imagej.ops.onthefly.ArithmeticOp$MultiplyOp', name='multiply', priority=100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.onthefly.ArithmeticOp$SubtractOp', name='subtract', priority=100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ui.swing.overlay.EllipseJHotDrawAdapter', priority=99.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingEllipseTool', name='Oval', description='Oval selections', iconPath='/icons/tools/oval.png', priority=99.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.operator.OpSubtract', name='Subtract', priority=99.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.ui.swing.overlay.GeneralPathJHotDrawAdapter', priority=98.5, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.ui.swing.overlay.PolygonJHotDrawAdapter', priority=98.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.operator.OpMultiply', name='Multiply', priority=98.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingPolygonTool', name='Polygon', description='Polygon overlays', iconPath='/icons/tools/polygon.png', priority=98.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.ui.swing.overlay.LineJHotDrawAdapter', priority=97.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.operator.OpDivide', name='Divide', priority=97.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingLineTool', name='Line', description='Straight line overlays', iconPath='/icons/tools/line.png', priority=97.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.ui.swing.overlay.PolylineJHotDrawAdapter', priority=96.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.operator.OpAnd', name='AND', priority=96.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingPolylineTool', name='Polyline', description='Polyline overlays', iconPath='/icons/tools/polyline.png', priority=96.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.ui.swing.overlay.AngleJHotDrawAdapter', priority=95.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingAngleTool', name='Angle', description='Angle overlays', iconPath='/icons/tools/angle.png', priority=95.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.operator.OpOr', name='OR', priority=95.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.ui.swing.overlay.PointJHotDrawOverlay', priority=94.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingPointTool', name='Point', description='Point overlays', iconPath='/icons/tools/point.png', priority=94.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.operator.OpXor', name='XOR', priority=94.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.operator.OpMin', name='Min', priority=93.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.operator.OpMax', name='Max', priority=92.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.operator.OpAverage', name='Average', priority=91.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.operator.OpDifference', name='Difference', priority=90.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.operator.OpCopy', name='Copy', priority=89.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='net.imagej.operator.OpTransparentZero', name='Transparent-zero', priority=88.0, enabled=true, pluginType=CalculatorOp
+[DEBUG] - class='fiji.plugin.trackmate.tracking.oldlap.FastLAPTrackerFactory', priority=10.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='fiji.plugin.trackmate.tracking.oldlap.SimpleFastLAPTrackerFactory', priority=10.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingChoiceRadioWidget', priority=1.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='net.imagej.legacy.DefaultLegacyService', priority=1.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ops.onthefly.JavassistOptimizer', priority=1.0, enabled=true, pluginType=Optimizer
+[DEBUG] - class='fiji.plugin.trackmate.visualization.threedviewer.SpotDisplayer3DFactory', priority=1.0, enabled=true, pluginType=ViewFactory
+[DEBUG] - class='fiji.plugin.trackmate.tracking.kdtree.NearestNeighborTrackerFactory', priority=1.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.spot.SpotContrastAndSNRAnalyzerFactory', priority=1.0, enabled=true, pluginType=SpotAnalyzerFactory
+[DEBUG] - class='net.imagej.ops.invert.InvertII', name='invert', priority=1.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.AddConstantToDouble', name='add', priority=0.6, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.AddConstantToLong', name='add', priority=0.5, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.AddConstantToFloat', name='add', priority=0.4, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.AddConstantToInteger', name='add', priority=0.3, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.AddConstantToShort', name='add', priority=0.2, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.AddConstantToByte', name='add', priority=0.1, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.plugins.commands.assign.AndDataValuesWith', menu='Process > Math > AND...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.app.AboutImageJ', label='About ImageJ...', menu='Help > About ImageJ...', iconPath='/icons/commands/information.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.AbsDataValues', menu='Process > Math > Abs...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionAdaptiveMedian', menu='Process > Noise > Noise Reduction > Adaptive Median', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.AddAxis', menu='Image > Axes > Add Axis...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.AddData', menu='Image > Data > Add Data...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.overlay.AddImage', menu='Image > Overlay > Add Image', iconPath='/icons/commands/bricks.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.AddNoiseToDataValues', menu='Process > Noise > Add Noise...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.AddSpecifiedNoiseToDataValues', menu='Process > Noise > Add Specified Noise...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.AddToDataValues', menu='Process > Math > Add...', iconPath='/icons/commands/sum.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionAlphaTrimmedMean', menu='Process > Noise > Noise Reduction > Alpha Trimmed Mean', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.animation.AnimationOptions', menu='Image > Animation > Animation Options...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsAppearance', menu='Edit > Options > Appearance...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.ops.commands.threshold.GlobalThresholder', menu='Image > Threshold > Apply Threshold', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsArrowTool', menu='Edit > Options > Arrow Tool...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.display.AutoContrast', menu='Image > Adjust > Auto-Contrast', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.axispos.AxisPositionBackward', menu='Image > Axes > Axis Position Backward', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.axispos.AxisPositionForward', menu='Image > Axes > Axis Position Forward', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.misc.Benchmark', menu='Plugins > Utilities > Benchmark', iconPath='/icons/commands/bricks.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.Binner', menu='Image > Transform > Bin...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.binary.Binarize', menu='Process > Binary > Binarize...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.interactive.BrightnessContrast', menu='Image > Adjust > Brightness/Contrast...', iconPath='/icons/commands/contrast.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.debug.ButtonDemo', menu='Plugins > Sandbox > Button Demo', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.CaptureImage', menu='Plugins > Utilities > Capture Image', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.CaptureScreen', menu='Plugins > Utilities > Capture Screen', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.typechange.TypeChanger', menu='Image > Type > Change...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.ChannelsTool', menu='Image > Color > Channels Tool...', iconPath='/icons/commands/color_wheel.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsChannels', menu='Edit > Options > Channels...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='org.scijava.plugins.commands.io.ClearRecent', label='Clear Recent', menu='File > Open Recent > Clear List', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.display.Close', menu='File > Close', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.binary.CloseBinaryImage', menu='Process > Binary > Close', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.display.CloseAll', menu='File > Close All', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsCompatibility', menu='Edit > Options > Compatibility...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.options.OptionsCompiler', menu='Edit > Options > Compiler...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionContraharmonicMean', menu='Process > Noise > Noise Reduction > Contraharmonic Mean', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsConversions', menu='Edit > Options > Conversions...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.ops.commands.convert.ConvertImgPlus', menu='Image > Convert', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.ops.commands.convolve.Convolve', menu='Image > Convolve', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.app.CopyToSystem', menu='Edit > Copy To System', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.binary.CreateMask', menu='Process > Binary > Create Mask...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.app.CreateShortcut', menu='Plugins > Shortcuts > Create Shortcut...', iconPath='/icons/commands/bricks.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.CropImage', menu='Image > Crop', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsDicom', menu='Edit > Options > DICOM...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.options.OptionsOverlay', label='Default Overlay Settings', menu='Image > Overlay > Overlay Options...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.restructure.DeleteAxis', menu='Image > Axes > Delete Axis...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.DeleteData', menu='Image > Data > Delete Data...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.interactive.DeleteThreshold', menu='Image > Adjust > Delete Threshold', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.DeselectOverlays', menu='Edit > Selection > Deselect Overlays', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.ui.swing.commands.DialogPromptDemo', menu='Plugins > Sandbox > Dialog Prompt Demo', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.binary.DilateBinaryImage', menu='Process > Binary > Dilate', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.DivideDataValuesBy', menu='Process > Math > Divide...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.debug.DumpStack', menu='Plugins > Debug > Dump Stack', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.DuplicateImage', menu='Image > Duplicate', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.DuplicateImageContext', menu='Duplicate...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsEast', menu='Process > Shadows > East', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.EditAxes', menu='Image > Axes > Edit Axes...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.EquationDataValues', menu='Process > Math > Equation...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.binary.ErodeBinaryImage', menu='Process > Binary > Erode', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.ExpDataValues', menu='Process > Math > Exp...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.FillDataValues', menu='Edit > Fill', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.ui.swing.commands.CommandFinder', menu='Plugins > Utilities > Find Commands...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.neigh.FindEdges', menu='Process > Find Edges', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.Flatten', menu='Image > Overlay > Flatten', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.FlipAxis', menu='Image > Transform > Flip Axis', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.rotate.FlipHorizontally', menu='Image > Transform > Flip Horizontally', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.rotate.FlipVertically', menu='Image > Transform > Flip Vertically', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.tools.FloodFillToolConfig', label='Flood Fill Tool', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsFont', menu='Edit > Options > Fonts...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.overlay.FromOverlayManager', menu='Image > Overlay > From Overlay Manager', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.GammaDataValues', menu='Process > Math > Gamma...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.GaussianBlur', menu='Process > Filters > Gaussian Blur...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionGeometricMean', menu='Process > Noise > Noise Reduction > Geometric Mean', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionHarmonicMean', menu='Process > Noise > Noise Reduction > Harmonic Mean', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.HistogramPlot', menu='Analyze > Histogram Plot', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.calculator.ImageCalculator', menu='Process > Image Calculator...', iconPath='/icons/commands/calculator.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.io.OpenDataset', menu='File > Import > Image... ', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.io.SaveDataset', menu='File > Export > Image...  ', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.app.ImageJWebsite', menu='Help > ImageJ Website...', iconPath='/icons/commands/world_link.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.legacy.ImageJ2Options', label='ImageJ2 Options', menu='Edit > Options > ImageJ2...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.options.OptionsInputOutput', menu='Edit > Options > Input/Output...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.debug.InspectImg', menu='Plugins > Debug > Inspect Image', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.ui.swing.commands.InspectObjects', menu='Plugins > Debug > Inspect Objects', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.debug.InvalidCommandDemo$InvalidCommand', menu='Plugins > Debug > Invalid Command', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.InvertDataValues', menu='Edit > Invert...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.lut.LUTSelector', label='LUT Selector', menu='Image > Lookup Tables > Select...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.overlay.OverlayLabels', menu='Image > Overlay > Labels...', iconPath='/icons/commands/bricks.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsLineWidth', menu='Edit > Options > Line Width...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.app.ListShortcuts', menu='Plugins > Shortcuts > List Shortcuts...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.LogDataValues', menu='Process > Math > Log...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.ui.swing.options.OptionsLookAndFeel', menu='Edit > Options > Look and Feel...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.binary.MakeBinary', menu='Process > Binary > Make Binary...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.overlay.ConvertToMask', menu='Process > Binary > Make Mask Overlay...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.debug.MandelbrotSetImage', menu='Plugins > Sandbox > Mandelbrot Set', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.MaxDataValues', menu='Process > Math > Max...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionMax', menu='Process > Noise > Noise Reduction > Maximum', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionMean', menu='Process > Noise > Noise Reduction > Mean', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.debug.MeasurementDemo', menu='Plugins > Sandbox > Measurement Demo', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionMedian', menu='Process > Noise > Noise Reduction > Median', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsMemoryAndThreads', menu='Edit > Options > Memory & Threads...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionMidpoint', menu='Process > Noise > Noise Reduction > Midpoint', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.MinDataValues', menu='Process > Math > Min...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionMin', menu='Process > Noise > Noise Reduction > Minimum', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsMisc', menu='Edit > Options > Misc...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.legacy.plugin.MixedWorldCommand', menu='Plugins > Sandbox > Mixed World Command', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.debug.MultidimImage', menu='Plugins > Sandbox > Multidimensional Test Image', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.MultiplyDataValuesBy', menu='Process > Math > Multiply...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.NanBackground', menu='Process > Math > NaN Background', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.io.NewImage', label='New Image...', menu='File > New > Image...', iconPath='/icons/commands/picture.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsNorth', menu='Process > Shadows > North', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsNortheast', menu='Process > Shadows > Northeast', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsNorthwest', menu='Process > Shadows > Northwest', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.OrDataValuesWith', menu='Process > Math > OR...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.binary.OpenBinaryImage', menu='Process > Binary > Open', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.io.OpenFile', menu='File > Open...', iconPath='/icons/commands/folder_picture.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.zoom.ZoomOriginalScale', menu='Image > Zoom > Original Scale', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.interactive.OrthogonalViews', menu='Image > Stacks > Orthogonal Views', iconPath='/icons/commands/bricks.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.ui.swing.commands.OverlayManager', menu='Image > Overlay > Overlay Manager', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.overlay.OverlayProperties', label='Overlay Properties...', menu='Image > Overlay > Properties...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.tools.PaintBrushToolConfig', label='Paintbrush Tool', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.debug.ParamAssignOrder', menu='Plugins > Sandbox > Parameter Assignment Order', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.tools.PencilToolConfig', label='Pencil Tool', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='fiji.DefaultFijiService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='fiji.patches.FijiAppConfiguration', priority=0.0, enabled=true, pluginType=LegacyAppConfiguration
+[DEBUG] - class='fiji.patches.OldLegacyEditor', priority=0.0, enabled=true, pluginType=LegacyEditor
+[DEBUG] - class='fiji.patches.OldAppConfiguration', priority=0.0, enabled=true, pluginType=LegacyAppConfiguration
+[DEBUG] - class='net.imglib2.meta.units.DefaultUnitService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTObjectWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTToggleWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTChoiceWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTNumberWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTTextWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTFileWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTButtonWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='net.imagej.plugins.uploaders.ssh.SSHFileUploader', priority=0.0, enabled=true, pluginType=Uploader
+[DEBUG] - class='net.imagej.plugins.uploaders.ssh.SFTPFileUploader', priority=0.0, enabled=true, pluginType=Uploader
+[DEBUG] - class='net.imagej.plugins.uploaders.webdav.WebDAVUploader', priority=0.0, enabled=true, pluginType=Uploader
+[DEBUG] - class='org.scijava.plugins.text.markdown.MarkdownTextFormat', priority=0.0, enabled=true, pluginType=TextFormat
+[DEBUG] - class='net.imagej.ui.awt.AWTRenderingService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ui.awt.AWTScreenCaptureService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ImageJ', priority=0.0, enabled=true, pluginType=Gateway
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingDateWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingFileWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingChoiceWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingNumberWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.SwingIconService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.ui.swing.viewer.text.SwingTextDisplayViewer', priority=0.0, enabled=true, pluginType=DisplayViewer
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingObjectWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingToggleWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingTextWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingColorWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingButtonWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='net.imagej.updater.FileUploader', priority=0.0, enabled=true, pluginType=Uploader
+[DEBUG] - class='net.imagej.updater.DefaultUpdateService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.updater.DefaultUploaderService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.plugins.scripting.java.CommandJavaRunner', priority=0.0, enabled=true, pluginType=JavaRunner
+[DEBUG] - class='org.scijava.plugins.scripting.java.DefaultJavaService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.minmax.DefaultMinMaxMethod', priority=0.0, enabled=true, pluginType=MinMaxMethod
+[DEBUG] - class='net.imagej.DefaultImgPlusService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ui.dnd.LUTFileDragAndDropHandler', priority=0.0, enabled=true, pluginType=DragAndDropHandler
+[DEBUG] - class='net.imagej.ui.DefaultImageJUIService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.types.DataType16BitUnsignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType8BitSignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType64BitSignedFloat', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DefaultDataTypeService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.types.DataType32BitUnsignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType32BitSignedFloat', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType1BitUnsignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType12BitUnsignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType16BitSignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType64BitSignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType8BitUnsignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.types.DataType32BitSignedInteger', priority=0.0, enabled=true, pluginType=DataType
+[DEBUG] - class='net.imagej.autoscale.DefaultAutoscaleService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.operator.DefaultCalculatorService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.display.DefaultDatasetView', priority=0.0, enabled=true, pluginType=DataView
+[DEBUG] - class='net.imagej.display.DefaultOverlayService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.display.DefaultImageDisplayService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.display.DefaultImageDisplay', priority=0.0, enabled=true, pluginType=Display
+[DEBUG] - class='net.imagej.display.DefaultZoomService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.display.DefaultOverlayView', priority=0.0, enabled=true, pluginType=DataView
+[DEBUG] - class='net.imagej.display.DefaultWindowService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.animation.DefaultAnimationService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.lut.io.LUTIOPlugin', priority=0.0, enabled=true, pluginType=IOPlugin
+[DEBUG] - class='net.imagej.threshold.DefaultThresholdService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.DefaultDatasetService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.measure.DefaultStatisticsService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.measure.DefaultMeasurementService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.sampler.DefaultSamplerService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.table.DefaultTableDisplay', priority=0.0, enabled=true, pluginType=Display
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$Batch', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$IJPath', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.legacy.plugin.LegacyAutoImporter', priority=0.0, enabled=true, pluginType=AutoImporter
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$Macro', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.legacy.LegacyJavaRunner', priority=0.0, enabled=true, pluginType=JavaRunner
+[DEBUG] - class='net.imagej.legacy.display.DefaultImagePlusDisplayViewer', priority=0.0, enabled=true, pluginType=DisplayViewer
+[DEBUG] - class='net.imagej.legacy.display.DefaultImagePlusDisplay', priority=0.0, enabled=true, pluginType=Display
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$Run', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$Filename', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$Debug', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$Eval', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.legacy.LegacyCommandline$Port', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='net.imagej.ops.DefaultOpService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ops.threshold.LocalMean', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.DefaultOpMatchingService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.object.DefaultObjectService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.convert.DefaultConverter', priority=0.0, enabled=true, pluginType=Converter
+[DEBUG] - class='org.scijava.convert.DefaultConvertService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.input.DefaultInputService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.ui.DefaultUIService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.ui.dnd.DefaultDragAndDropService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.ui.dnd.ListDragAndDropHandler', priority=0.0, enabled=true, pluginType=DragAndDropHandler
+[DEBUG] - class='org.scijava.ui.dnd.ScriptFileDragAndDropHandler', priority=0.0, enabled=true, pluginType=DragAndDropHandler
+[DEBUG] - class='org.scijava.ui.console.UIArgument', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='org.scijava.plugin.DefaultPluginService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.text.DefaultTextService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.display.DefaultDisplayService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.prefs.DefaultPrefService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.io.DefaultRecentFileService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.io.console.OpenArgument', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='org.scijava.io.DefaultIOService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.widget.DefaultWidgetService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.menu.DefaultMenuService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.tool.DefaultToolService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.app.DefaultAppService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.app.DefaultStatusService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.module.DefaultModuleService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.welcome.DefaultWelcomeService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.thread.DefaultThreadService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.script.io.ScriptIOPlugin', priority=0.0, enabled=true, pluginType=IOPlugin
+[DEBUG] - class='org.scijava.script.DefaultScriptHeaderService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.event.DefaultEventHistory', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.platform.DefaultPlatformService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.options.DefaultOptionsService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.command.DefaultCommandService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.command.console.RunArgument', priority=0.0, enabled=true, pluginType=ConsoleArgument
+[DEBUG] - class='org.scijava.console.DefaultConsoleService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.SciJava', priority=0.0, enabled=true, pluginType=Gateway
+[DEBUG] - class='net.imagej.plugins.commands.dataset.LoadDataset', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.overlay.SelectedManagerOverlayProperties', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.misc.ApplyLookupTable', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.SplitChannelsContextMonitor', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ui.swing.overlay.JHotDrawService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.ui.swing.widget.SwingDimSelectionWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='net.imagej.ui.swing.widget.SwingColorTableWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='net.imagej.ui.swing.viewer.table.SwingTableDisplayViewer', priority=0.0, enabled=true, pluginType=DisplayViewer
+[DEBUG] - class='net.imagej.ui.swing.mdi.viewer.SwingMdiImageDisplayViewer', priority=0.0, enabled=true, pluginType=DisplayViewer
+[DEBUG] - class='net.imagej.ui.swing.widget.SwingHistogramWidget', priority=0.0, enabled=true, pluginType=InputWidget
+[DEBUG] - class='net.imagej.ui.swing.sdi.viewer.SwingSdiImageDisplayViewer', priority=0.0, enabled=true, pluginType=DisplayViewer
+[DEBUG] - class='io.scif.io.URLHandle', priority=0.0, enabled=true, pluginType=IStreamAccess
+[DEBUG] - class='io.scif.codec.LZWCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.io.DefaultNIOService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.img.converters.DefaultPlaneConverterService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.img.cell.SCIFIOCellCacheCleaningProvider', priority=0.0, enabled=true, pluginType=RefProvider
+[DEBUG] - class='io.scif.codec.JPEG2000Codec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.img.DefaultImgUtilityService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.gui.DefaultGUIService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.filters.DimensionSwapper', priority=0.0, enabled=true, pluginType=Filter
+[DEBUG] - class='io.scif.xml.DefaultXMLService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.codec.HuffmanCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.refs.DefaultRefManagerService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.services.DefaultFormatService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.codec.RPZACodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.codec.MJPBCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.codec.PassthroughCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.filters.PlaneSeparatorMetadata', priority=0.0, enabled=true, pluginType=MetadataWrapper
+[DEBUG] - class='io.scif.filters.ChannelFiller', priority=0.0, enabled=true, pluginType=Filter
+[DEBUG] - class='io.scif.codec.PackbitsCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.filters.MinMaxFilter', priority=0.0, enabled=true, pluginType=Filter
+[DEBUG] - class='io.scif.io.BZip2Handle', priority=0.0, enabled=true, pluginType=IStreamAccess
+[DEBUG] - class='io.scif.services.DefaultTranslatorService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.img.cell.RefMapCleaningProvider', priority=0.0, enabled=true, pluginType=RefProvider
+[DEBUG] - class='io.scif.codec.QTRLECodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.io.GZipHandle', priority=0.0, enabled=true, pluginType=IStreamAccess
+[DEBUG] - class='io.scif.codec.LosslessJPEGCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.codec.MSVideoCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.filters.PlaneSeparator', priority=0.0, enabled=true, pluginType=Filter
+[DEBUG] - class='io.scif.codec.Base64Codec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.SCIFIO', priority=0.0, enabled=true, pluginType=Gateway
+[DEBUG] - class='io.scif.codec.DefaultCodecService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.codec.JPEGCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.img.ImgPlusCtxCleaningProvider', priority=0.0, enabled=true, pluginType=RefProvider
+[DEBUG] - class='io.scif.codec.LuraWaveCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.img.cell.SCIFIOCellCleaningProvider', priority=0.0, enabled=true, pluginType=RefProvider
+[DEBUG] - class='io.scif.codec.MSRLECodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.img.cell.cache.MapDBCache', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.DefaultMetadataService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.img.cell.SCIFIOCellImgCleaningProvider', priority=0.0, enabled=true, pluginType=RefProvider
+[DEBUG] - class='io.scif.filters.FileStitcher', priority=0.0, enabled=true, pluginType=Filter
+[DEBUG] - class='io.scif.services.DefaultFilePatternService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.io.ZipHandle', priority=0.0, enabled=true, pluginType=IStreamAccess
+[DEBUG] - class='io.scif.codec.NikonCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.formats.tiff.DefaultTiffService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.services.DefaultLocationService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.codec.ZlibCodec', priority=0.0, enabled=true, pluginType=Codec
+[DEBUG] - class='io.scif.services.JAIIIOServiceImpl', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.formats.qt.DefaultQTJavaService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.lifesci.SDTFormat', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.ome.translators.DefaultOMETranslator', priority=0.0, enabled=true, pluginType=ToOMETranslator
+[DEBUG] - class='io.scif.ome.services.DefaultOMEXMLService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.ome.services.DefaultOMEMetadataService', priority=0.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.ome.formats.OMEXMLFormat', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.ome.formats.OMEXMLFormat$OMETranslator', priority=0.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.tools.commands.Show', priority=0.0, enabled=true, pluginType=SCIFIOToolCommand
+[DEBUG] - class='io.scif.tools.commands.Help', priority=0.0, enabled=true, pluginType=SCIFIOToolCommand
+[DEBUG] - class='io.scif.tools.commands.Info', priority=0.0, enabled=true, pluginType=SCIFIOToolCommand
+[DEBUG] - class='io.scif.tools.commands.Convert', priority=0.0, enabled=true, pluginType=SCIFIOToolCommand
+[DEBUG] - class='org.scijava.plugins.scripting.jruby.JRubyScriptHeader', priority=0.0, enabled=true, pluginType=ScriptHeader
+[DEBUG] - class='fiji.plugin.trackmate.action.TrackBranchAnalysis$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.track.TrackLocationAnalyzer', priority=0.0, enabled=true, pluginType=TrackAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.visualization.hyperstack.HyperStackDisplayerFactory', priority=0.0, enabled=true, pluginType=ViewFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.edges.EdgeTimeLocationAnalyzer', priority=0.0, enabled=true, pluginType=EdgeAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.action.ResetRadiusAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.RecalculateFeatureAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.ISBIChallengeExporter$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.MergeFileAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.spot.SpotRadiusEstimatorFactory', priority=0.0, enabled=true, pluginType=SpotAnalyzerFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.track.TrackBranchingAnalyzer', priority=0.0, enabled=true, pluginType=TrackAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.action.PlotNSpotsVsTimeAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.ExportStatsToIJAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.edges.EdgeTargetAnalyzer', priority=0.0, enabled=true, pluginType=EdgeAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.features.track.TrackDurationAnalyzer', priority=0.0, enabled=true, pluginType=TrackAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.features.spot.SpotIntensityAnalyzerFactory', priority=0.0, enabled=true, pluginType=SpotAnalyzerFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.edges.EdgeVelocityAnalyzer', priority=0.0, enabled=true, pluginType=EdgeAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.detection.LogDetectorFactory', priority=0.0, enabled=true, pluginType=SpotDetectorFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.ExportTracksToXML$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.LinkNew3DViewerAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.tracking.oldlap.SimpleLAPTrackerFactory', priority=0.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.ResetSpotTimeFeatureAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.RadiusToEstimatedAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.IcyTrackExporter$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.CaptureOverlayAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.tracking.sparselap.SimpleSparseLAPTrackerFactory', priority=0.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.spot.SpotMorphologyAnalyzerFactory', priority=0.0, enabled=false, pluginType=SpotAnalyzerFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.CopyOverlayAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.tracking.sparselap.SparseLAPTrackerFactory', priority=0.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='fiji.plugin.trackmate.detection.ManualDetectorFactory', priority=0.0, enabled=true, pluginType=SpotDetectorFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.manual.ManualSpotColorAnalyzerFactory', priority=0.0, enabled=true, pluginType=SpotAnalyzerFactory
+[DEBUG] - class='fiji.plugin.trackmate.detection.DogDetectorFactory', priority=0.0, enabled=true, pluginType=SpotDetectorFactory
+[DEBUG] - class='fiji.plugin.trackmate.action.ExtractTrackStackAction$Factory', priority=0.0, enabled=true, pluginType=TrackMateActionFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.track.TrackSpotFeatureAnalyzer', priority=0.0, enabled=true, pluginType=TrackAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.tracking.oldlap.LAPTrackerFactory', priority=0.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.manual.ManualEdgeColorAnalyzer', priority=0.0, enabled=true, pluginType=EdgeAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.features.spot.SpotContrastAnalyzerFactory', priority=0.0, enabled=false, pluginType=SpotAnalyzerFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.track.TrackSpeedStatisticsAnalyzer', priority=0.0, enabled=true, pluginType=TrackAnalyzer
+[DEBUG] - class='fiji.plugin.trackmate.detection.DownsampleLogDetectorFactory', priority=0.0, enabled=true, pluginType=SpotDetectorFactory
+[DEBUG] - class='fiji.plugin.trackmate.visualization.trackscheme.TrackSchemeFactory', priority=0.0, enabled=true, pluginType=ViewFactory
+[DEBUG] - class='fiji.plugin.trackmate.features.track.TrackIndexAnalyzer', priority=0.0, enabled=true, pluginType=TrackAnalyzer
+[DEBUG] - class='net.imagej.options.OptionsPointTool', menu='Edit > Options > Point Tool...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.plugins.commands.debug.PointSetDemo', menu='Plugins > Sandbox > PointSet Demo', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.PowerDataValues', menu='Process > Math > Power...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.app.Preferences', label='Preferences', menu='File > Preferences', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsProfilePlot', menu='Edit > Options > Profile Plot Options...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.ops.commands.project.ProjectCommand', menu='Image > Threshold > Project', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsProxy', menu='Edit > Options > Proxy Settings...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='net.imagej.app.QuitProgram', label='Quit', menu='File > Quit', iconPath='/icons/commands/door_in.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.RadialNeighborhoodSpecifier', label='Radial Neighborhood Specification', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.ReciprocalDataValues', menu='Process > Math > Reciprocal...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.RectangularNeighborhoodSpecifier', label='Rectangular Neighborhood Specification', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.RemoveOverlay', menu='Image > Overlay > Remove Overlay', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.RemoveOverlayReferences', menu='Image > Overlay > Remove Overlay References', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.ReorderAxis', menu='Image > Axes > Reorder Axis', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.ReorderData', menu='Image > Data > Reorder Data...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsReset', menu='Edit > Options > Reset', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.ResizeImage', menu='Image > Adjust > Resize...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.ResliceImage', menu='Image > Stacks > Reslice...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.io.RevertImage', menu='File > Revert', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.rotate.Rotate90DegreesLeft', menu='Image > Transform > Rotate 90 Degrees Left', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.rotate.Rotate90DegreesRight', menu='Image > Transform > Rotate 90 Degrees Right', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.RotateImageXY', menu='Image > Transform > Rotate...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsRoundedRectangleTool', menu='Edit > Options > Rounded Rect Tool...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='org.scijava.plugins.commands.script.RunScript', menu='Plugins > Run Script...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.SaltAndPepper', menu='Process > Noise > Salt and Pepper', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.io.SaveImage', menu='File > Save', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.io.SaveAsImage', menu='File > Save As...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.ui.swing.script.ScriptEditor', menu='File > New > Script...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.SelectOverlays', menu='Edit > Selection > Select Overlays', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.SelectView', menu='Edit > Selection > Select View', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.display.SelectWindow', label='Select Window...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.legacy.plugin.GetPath', label='Select path', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.axispos.SetActiveAxis', menu='Image > Axes > Set Active Axis...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.axispos.SetAxisPosition', menu='Image > Axes > Set Axis Position...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.zoom.ZoomSet', label='Set Zoom...', menu='Image > Zoom > Set...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.SetDataValues', menu='Process > Math > Set...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsDemo', menu='Process > Shadows > Shadows Demo', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.SharpenDataValues', menu='Process > Sharpen', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.misc.ShowInfo', menu='Image > Show Info...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.ShowLUT', menu='Image > Color > Show LUT', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.ShowLUTAsTable', menu='Image > Color > Show LUT As Table', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.SmoothDataValues', menu='Process > Smooth', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsSouth', menu='Process > Shadows > South', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsSoutheast', menu='Process > Shadows > Southeast', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsSouthwest', menu='Process > Shadows > Southwest', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.overlay.SelectionSpecify', menu='Edit > Selection > Specify...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.SpectralComposite', menu='Image > Color > Spectral Composite...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.restructure.SplitChannelsContext', menu='Split Channels', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.tools.SprayCanToolConfig', label='Spray Can Tool', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.SquareRootDataValues', menu='Process > Math > Square Root...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.SquareDataValues', menu='Process > Math > Square...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.animation.StartAnimation', menu='Image > Animation > Start Animation', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.debug.StatisticsDemo', menu='Plugins > Sandbox > Statistics Demo', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.animation.StopAllAnimations', menu='Image > Animation > Stop All Animations', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.animation.StopAnimation', menu='Image > Animation > Stop Animation', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.debug.ShowSubscribers', menu='Plugins > Debug > Subscribers', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.SubtractFromDataValues', menu='Process > Math > Subtract...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.legacy.plugin.SwitchToLegacyMode', menu='Help > Switch to Legacy Mode', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.interactive.SynchronizeWindows', menu='Analyze > Tools > Synchronize Windows', iconPath='/icons/commands/bricks.png', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.debug.SystemInformation', menu='Plugins > Debug > System Information', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.debug.TableDemo', menu='Plugins > Sandbox > Table Demo', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.plugins.commands.debug.TextDisplayTest', menu='Plugins > Sandbox > TextDisplayTest', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.updater.PromptUserToUpdate', label='There are updates available', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.display.interactive.Threshold', menu='Image > Adjust > Threshold...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='org.scijava.ui.swing.mdi.WindowsTileVertical', menu='Window > Tile Vertical', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.zoom.ZoomToSelection', menu='Image > Zoom > To Selection', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.imglib.TranslateImage', menu='Image > Transform > Translate...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.noisereduce.NoiseReductionTrimmedMean', menu='Process > Noise > Noise Reduction > Trimmed Mean', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.updater.CheckForUpdates', label='Up-to-date check', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.ui.swing.updater.ImageJUpdater', menu='Help > Update...', priority=0.0, enabled=true, pluginType=UpdaterUI
+[DEBUG] - class='net.imagej.plugins.commands.upload.SampleImageUploader', menu='Help > Upload Sample Image', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.zoom.Zoom100Percent', menu='Image > Zoom > View 100%', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.options.OptionsWandTool', menu='Edit > Options > Wand Tool...', priority=0.0, enabled=true, pluginType=OptionsPlugin
+[DEBUG] - class='org.scijava.ui.swing.commands.WatchEvents', menu='Plugins > Debug > Watch Events', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.correlate.ShadowsWest', menu='Process > Shadows > West', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.assign.XorDataValuesWith', menu='Process > Math > XOR...', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.zoom.ZoomIn', label='Zoom In', menu='Image > Zoom > In', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.plugins.commands.zoom.ZoomOut', label='Zoom Out', menu='Image > Zoom > Out', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='net.imagej.ui.swing.script.TextEditor$BeanshellHighlighter', label='beanshell', priority=0.0, enabled=true, pluginType=SyntaxHighlighter
+[DEBUG] - class='net.imagej.ui.swing.script.TextEditor$ECMAScriptHighlighter', label='ecmascript', priority=0.0, enabled=true, pluginType=SyntaxHighlighter
+[DEBUG] - class='net.imagej.ui.swing.script.TextEditor$IJ1MacroHighlighter', label='ij1-macro', priority=0.0, enabled=true, pluginType=SyntaxHighlighter
+[DEBUG] - class='net.imagej.ui.swing.script.TextEditor$MatlabHighlighter', label='matlab', priority=0.0, enabled=true, pluginType=SyntaxHighlighter
+[DEBUG] - class='net.imagej.plugins.commands.app.EasterEgg', label='| It's a secret to everyone |', priority=0.0, enabled=true, pluginType=Command
+[DEBUG] - class='io.scif.formats.APNGFormat', name='Animated PNG', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.img.converters.ArrayDataAccessConverter', name='ArrayDataAccess', priority=0.0, enabled=true, pluginType=PlaneConverter
+[DEBUG] - class='io.scif.formats.AVIFormat', name='Audio Video Interleave', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.plugins.tools.AxisPositionHandler', name='Axis Position Shortcuts', priority=0.0, enabled=true, pluginType=Tool
+[DEBUG] - class='org.scijava.plugins.scripting.beanshell.BeanshellScriptLanguage', name='BeanShell', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='org.scijava.plugins.scripting.clojure.ClojureScriptLanguage', name='Clojure', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='net.imagej.autoscale.ConfidenceIntervalAutoscaleMethod', name='Confidence Interval', priority=0.0, enabled=true, pluginType=AutoscaleMethod
+[DEBUG] - class='net.imagej.plugins.tools.ContextMenuHandler', name='Context Menus', priority=0.0, enabled=true, pluginType=Tool
+[DEBUG] - class='io.scif.formats.DICOMFormat', name='DICOM', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.autoscale.DefaultAutoscaleMethod', name='Default', priority=0.0, enabled=true, pluginType=AutoscaleMethod
+[DEBUG] - class='net.imagej.threshold.DefaultThresholdMethod', name='Default', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.img.converters.RandomAccessConverter', name='Default', priority=0.0, enabled=true, pluginType=PlaneConverter
+[DEBUG] - class='io.scif.formats.EPSFormat', name='Encapsulated PostScript', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.formats.FITSFormat', name='Flexible Image Transport System', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.formats.GIFFormat', name='Graphics Interchange Format', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='org.scijava.plugins.scripting.groovy.GroovyScriptLanguage', name='Groovy', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='net.imagej.threshold.HuangThresholdMethod', name='Huang', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='net.imagej.legacy.plugin.IJ1MacroLanguage', name='IJ1 Macro', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='io.scif.formats.ICSFormat', name='Image Cytometry Standard', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.legacy.LegacyImageJApp', name='ImageJ1', priority=0.0, enabled=true, pluginType=App
+[DEBUG] - class='net.imagej.threshold.IntermodesThresholdMethod', name='Intermodes', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='net.imagej.threshold.IsoDataThresholdMethod', name='IsoData', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.formats.JPEGFormat', name='JPEG', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.formats.JPEG2000Format', name='JPEG-2000', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='org.scijava.plugins.scripting.java.JavaScriptLanguage', name='Java', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='io.scif.formats.JavaFormat', name='Java source code', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='org.scijava.plugins.scripting.javascript.JavaScriptScriptLanguage', name='JavaScript', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='net.imagej.threshold.LiThresholdMethod', name='Li', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='org.scijava.plugins.platforms.macosx.MacOSXPlatform', name='Mac OS X', priority=0.0, enabled=true, pluginType=Platform
+[DEBUG] - class='net.imagej.threshold.MaxEntropyThresholdMethod', name='MaxEntropy', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='net.imagej.threshold.MaxLikelihoodThresholdMethod', name='MaxLikelihood', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='net.imagej.threshold.MeanThresholdMethod', name='Mean', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.formats.MicromanagerFormat', name='Micro-Manager', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.threshold.MinErrorThresholdMethod', name='MinError(I)', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='net.imagej.threshold.MinimumThresholdMethod', name='Minimum', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='net.imagej.threshold.MomentsThresholdMethod', name='Moments', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.formats.MNGFormat', name='Multiple Network Graphics', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.formats.NRRDFormat', name='NRRD', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.formats.OBFFormat', name='OBF', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.threshold.OtsuThresholdMethod', name='Otsu', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.formats.PCXFormat', name='PCX', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.formats.qt.PICTFormat', name='PICT', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.plugins.tools.PanActivator', name='Pan Activator', priority=0.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.threshold.PercentileThresholdMethod', name='Percentile', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.img.converters.PlanarAccessConverter', name='PlanarAccess', priority=0.0, enabled=true, pluginType=PlaneConverter
+[DEBUG] - class='io.scif.formats.PGMFormat', name='Portable Gray Map', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.plugins.tools.PixelProbe', name='Probe', priority=0.0, enabled=true, pluginType=Tool
+[DEBUG] - class='org.scijava.plugins.scripting.jython.JythonScriptLanguage', name='Python', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='io.scif.formats.qt.NativeQTFormat', name='QuickTime', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.threshold.RenyiEntropyThresholdMethod', name='RenyiEntropy', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='org.scijava.plugins.scripting.jruby.JRubyScriptLanguage', name='Ruby', priority=0.0, enabled=true, pluginType=ScriptLanguage
+[DEBUG] - class='io.scif.app.SCIFIOApp', name='SCIFIO', priority=0.0, enabled=true, pluginType=App
+[DEBUG] - class='net.imagej.threshold.ShanbhagThresholdMethod', name='Shanbhag', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.formats.FakeFormat', name='Simulated data', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.formats.TextFormat', name='Text', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.threshold.TriangleThresholdMethod', name='Triangle', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='net.imagej.plugins.tools.FocusHandler', name='Window Focus', priority=0.0, enabled=true, pluginType=Tool
+[DEBUG] - class='org.scijava.plugins.platforms.windows.WindowsPlatform', name='Windows', priority=0.0, enabled=true, pluginType=Platform
+[DEBUG] - class='io.scif.formats.BMPFormat', name='Windows Bitmap', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.threshold.YenThresholdMethod', name='Yen', priority=0.0, enabled=true, pluginType=ThresholdMethod
+[DEBUG] - class='io.scif.formats.ZipFormat', name='Zip', priority=0.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.plugins.tools.ZoomHandler', name='Zoom Shortcuts', priority=0.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealAbs', name='abs', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.arithmetic.add.AddConstantToImageInPlace', name='add', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.arithmetic.add.AddRandomAccessibleIntervalToIterableInterval', name='add', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.arithmetic.add.AddConstantToPlanarDoubleImage', name='add', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealAddConstant', name='addconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealAddNoise', name='addnoise', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealAndConstant', name='andconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArccos', name='arccos', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArccosh', name='arccosh', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArccot', name='arccot', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArccoth', name='arccoth', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArccsc', name='arccsc', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArccsch', name='arccsch', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArcsec', name='arcsec', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArcsech', name='arcsech', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArcsin', name='arcsin', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArcsinh', name='arcsinh', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArctan', name='arctan', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealArctanh', name='arctanh', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.ascii.DefaultASCII', name='ascii', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCeil', name='ceil', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.chunker.DefaultChunker', name='chunker', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealConstant', name='constant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.convert.ConvertPixClip', name='convert', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.convert.ConvertII', name='convert', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.convert.ConvertPixNormalizeScale', name='convert', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.convert.ConvertPixScale', name='convert', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.convert.ConvertPixCopy', name='convert', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.convolve.ConvolveNaive', name='convolve', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.convolve.ConvolveFourier', name='convolve', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCopy', name='copy', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCos', name='cos', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCosh', name='cosh', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCot', name='cot', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCoth', name='coth', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.create.CreateArrayImg', name='create', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCsc', name='csc', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCsch', name='csch', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealCubeRoot', name='cuberoot', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealDivideConstant', name='divideconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.equation.DefaultEquation', name='equation', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealExp', name='exp', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealExpMinusOne', name='expminusone', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealFloor', name='floor', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealGammaConstant', name='gammaconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.gauss.GaussRAI2RAI', name='gauss', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealGaussianRandom', name='gaussianrandom', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.identity.DefaultIdentity', name='identity', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealInvert', name='invert', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.join.DefaultJoinInplaceAndInplace', name='join', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.join.DefaultJoinInplaceAndFunction', name='join', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.join.DefaultJoinFunctionAndFunction', name='join', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.join.DefaultJoinInplaceFunctions', name='join', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.join.DefaultJoinFunctionAndInplace', name='join', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.join.DefaultJoinFunctions', name='join', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealLog', name='log', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealLog10', name='log10', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealLog2', name='log2', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealLogOnePlusX', name='logoneplusx', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.lookup.DefaultLookup', name='lookup', aliases='op', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.loop.DefaultLoopInplace', name='loop', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.loop.DefaultLoopFunction', name='loop', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.threshold.Manual', name='manualthreshold', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.MapRA2View', name='map', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.MapRAI2View', name='map', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.MapII2View', name='map', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealMaxConstant', name='maxconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealMinConstant', name='minconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.misc.MinMaxRealType', name='minmax', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.moments.Moment2AboutMean', name='moment1aboutmean', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.moments.Moment1AboutMean', name='moment1aboutmean', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealMultiplyConstant', name='multiplyconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealNearestInt', name='nearestint', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealNegate', name='negate', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.normalize.NormalizeRealType', name='normalize', aliases='norm', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.normalize.NormalizeII', name='normalize', aliases='norm', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealOrConstant', name='orconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.threshold.Otsu', name='otsu', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealPowerConstant', name='powerconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealReciprocal', name='reciprocal', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealRound', name='round', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.scale.ScaleImg', name='scale', aliases='norm', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSec', name='sec', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSech', name='sech', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSignum', name='signum', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSin', name='sin', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSinc', name='sinc', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSincPi', name='sincpi', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSinh', name='sinh', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSqr', name='sqr', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSqrt', name='sqrt', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealStep', name='step', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealSubtractConstant', name='subtractconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='org.scijava.ui.swing.sdi.SwingSDIUI', name='swing', priority=0.0, enabled=true, pluginType=UserInterface
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealTan', name='tan', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealTanh', name='tanh', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.threshold.PixThreshold', name='threshold', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.threshold.GlobalThreshold', name='threshold', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.threshold.LocalThreshold', name='threshold', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealUlp', name='ulp', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealUniformRandom', name='uniformrandom', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealXorConstant', name='xorconstant', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.generated.arithmetic.real.RealZero', name='zero', priority=0.0, enabled=true, pluginType=Op
+[DEBUG] - class='fiji.plugin.trackmate.tracking.ManualTrackerFactory', priority=-1.0, enabled=true, pluginType=SpotTrackerFactory
+[DEBUG] - class='net.imagej.ops.map.ParallelMap', name='map', priority=-95.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.ParallelMapI2I', name='map', priority=-97.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.ParallelMapI2R', name='map', priority=-98.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.crop.CropImgPlus', name='crop', aliases='slice', priority=-99.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.crop.CropLabeling', name='crop', aliases='slice', priority=-99.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.MapII2II', name='map', priority=-99.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.project.parallel.DefaultProjectP', name='project', priority=-99.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.StdDevRealTypeDirect', name='stddev', priority=-99.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.VarianceRealTypeDirect', name='variance', priority=-99.0, enabled=true, pluginType=Op
+[DEBUG] - class='org.scijava.plugins.scripting.java.MainJavaRunner', priority=-100.0, enabled=true, pluginType=JavaRunner
+[DEBUG] - class='net.imagej.render.DummyRenderingService', priority=-100.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.display.DummyScreenCaptureService', priority=-100.0, enabled=true, pluginType=Service
+[DEBUG] - class='net.imagej.io.DatasetIOPlugin', priority=-100.0, enabled=true, pluginType=IOPlugin
+[DEBUG] - class='net.imagej.legacy.plugin.DefaultLegacyOpener', priority=-100.0, enabled=true, pluginType=LegacyOpener
+[DEBUG] - class='net.imagej.legacy.plugin.DefaultLegacyEditor', priority=-100.0, enabled=true, pluginType=LegacyEditor
+[DEBUG] - class='org.scijava.ui.dnd.FileDragAndDropHandler', priority=-100.0, enabled=true, pluginType=DragAndDropHandler
+[DEBUG] - class='org.scijava.display.DefaultTextDisplay', priority=-100.0, enabled=true, pluginType=Display
+[DEBUG] - class='org.scijava.log.StderrLogService', priority=-100.0, enabled=true, pluginType=Service
+[DEBUG] - class='org.scijava.platform.DefaultAppEventService', priority=-100.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.formats.APNGFormat$APNGTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.qt.NativeQTFormat$NativeQTTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.FakeFormat$FakeTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.MicromanagerFormat$MicromanagerTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.services.DefaultInitializeService', priority=-100.0, enabled=true, pluginType=Service
+[DEBUG] - class='io.scif.formats.AVIFormat$Translator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.ICSFormat$ICSTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.EPSFormat$EPSTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.ImageIOFormat$ImageIOTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.qt.LegacyQTFormat$LegacyQTTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.ome.formats.OMEXMLFormat$OMEXMLTranslator', priority=-100.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.qt.LegacyQTFormat', name='QuickTime', priority=-100.0, enabled=true, pluginType=Format
+[DEBUG] - class='org.scijava.app.SciJavaApp', name='SciJava', priority=-100.0, enabled=true, pluginType=App
+[DEBUG] - class='io.scif.formats.JPEGTileFormat', name='Tile JPEG', priority=-100.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.ops.arithmetic.add.AddConstantToNumericType', name='add', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='org.scijava.ui.awt.AWTUI', name='awt', priority=-100.0, enabled=true, pluginType=UserInterface
+[DEBUG] - class='net.imagej.ops.crop.CropRAI', name='crop', aliases='slice', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.MapII2RAI', name='map', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.MapRAI2III', name='map', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.map.MapI', name='map', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.neighborhood.MapNeighborhood', name='map', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.MaxRealType', name='max', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.MeanRealType', name='mean', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.MedianRealType', name='median', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.MinRealType', name='min', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.project.ProjectRAI2II', name='project', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.misc.SizeIterableInterval', name='size', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.StdDevRealType', name='stddev', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.statistics.SumRealType', name='sum', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='org.scijava.ui.swing.mdi.SwingMdiUI', name='swing-mdi', priority=-100.0, enabled=true, pluginType=UserInterface
+[DEBUG] - class='net.imagej.ops.statistics.VarianceRealType', name='variance', priority=-100.0, enabled=true, pluginType=Op
+[DEBUG] - class='org.scijava.text.io.TextIOPlugin', priority=-101.0, enabled=true, pluginType=IOPlugin
+[DEBUG] - class='net.imagej.ops.map.MapI2I', name='map', priority=-101.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.plugins.tools.WandTool', name='Wand', description='Wand (tracing) tool', iconPath='/icons/tools/wand.png', priority=-110.0, enabled=false, pluginType=Tool
+[DEBUG] - class='net.imagej.ui.swing.tools.SwingTextTool', name='Text', description='Text tool', iconPath='/icons/tools/text.png', priority=-115.0, enabled=false, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.ZoomTool', name='Zoom', description='Magnifying glass (or use "+" and "-" keys)', iconPath='/icons/tools/zoom.png', priority=-200.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.PanTool', name='Pan', description='Scrolling tool (or press space bar and drag)', iconPath='/icons/tools/pan.png', priority=-201.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.PaintBrushTool', name='Paintbrush', description='Paintbrush Tool', iconPath='/icons/tools/paintbrush.png', priority=-300.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.PencilTool', name='Pencil', description='Pencil Tool', iconPath='/icons/tools/pencil.png', priority=-301.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.SprayCanTool', name='SprayCan', label='Spray Can', description='Spray Can Tool', iconPath='/icons/tools/spray-can.png', priority=-303.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.FloodFillTool', name='FloodFill', label='Flood Fill', description='Flood Fill Tool', iconPath='/icons/tools/flood-fill.png', priority=-304.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.ArrowTool', name='Arrow', description='Arrow Tool', iconPath='/icons/tools/arrow.png', priority=-305.0, enabled=false, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.FgColorTool', name='Foreground', iconPath='/icons/tools/blank.png', priority=-500.0, enabled=true, pluginType=Tool
+[DEBUG] - class='net.imagej.plugins.tools.BgColorTool', name='Background', iconPath='/icons/tools/blankBlack.png', priority=-501.0, enabled=true, pluginType=Tool
+[DEBUG] - class='io.scif.ome.formats.OMETIFFFormat', priority=-9998.0, enabled=true, pluginType=Format
+[DEBUG] - class='io.scif.ome.formats.OMETIFFFormat$OMETIFFTranslator', priority=-9998.0, enabled=true, pluginType=Translator
+[DEBUG] - class='org.scijava.module.process.LoadInputsPreprocessor', priority=-9999.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='io.scif.formats.TIFFFormat$TIFFTranslator', priority=-9999.0, enabled=true, pluginType=Translator
+[DEBUG] - class='io.scif.formats.TIFFFormat', name='Tagged Image File Format', priority=-9999.0, enabled=true, pluginType=Format
+[DEBUG] - class='org.scijava.ui.FilePreprocessor', priority=-9999.5, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.ui.awt.widget.AWTInputHarvester', priority=-10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.plugins.text.plain.PlainTextFormat', priority=-10000.0, enabled=true, pluginType=TextFormat
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingInputHarvester', priority=-10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.ui.swing.widget.SwingMdiInputHarvester', priority=-10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='net.imagej.legacy.ui.LegacyInputHarvester', priority=-10000.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.display.DisplayPostprocessor', priority=-10000.0, enabled=true, pluginType=PostprocessorPlugin
+[DEBUG] - class='net.imagej.ui.swing.overlay.DefaultJHotDrawAdapter', priority=-10000.0, enabled=true, pluginType=JHotDrawAdapter
+[DEBUG] - class='io.scif.DefaultTranslator', priority=-10000.0, enabled=true, pluginType=Translator
+[DEBUG] - class='org.scijava.platform.DefaultPlatform', name='Default', priority=-10000.0, enabled=true, pluginType=Platform
+[DEBUG] - class='net.imagej.plugins.tools.AcceleratorHandler', name='Keyboard Shortcuts', priority=-10000.0, enabled=true, pluginType=Tool
+[DEBUG] - class='io.scif.formats.MinimalTIFFFormat', name='Minimal TIFF', priority=-10000.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.ops.arithmetic.add.AddConstantToImageFunctional', name='add', priority=-10000.0, enabled=true, pluginType=Op
+[DEBUG] - class='net.imagej.ops.chunker.InterleavedChunker', name='chunker', priority=-10000.0, enabled=true, pluginType=Op
+[DEBUG] - class='org.scijava.module.process.CheckInputsPreprocessor', priority=-10001.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='org.scijava.module.process.SaveInputsPreprocessor', priority=-10001.0, enabled=true, pluginType=PreprocessorPlugin
+[DEBUG] - class='io.scif.formats.TIFFJAIFormat', name='Tagged Image File Format', priority=-10001.0, enabled=true, pluginType=Format
+[DEBUG] - class='net.imagej.ops.misc.SizeIterable', name='size', priority=-Infinity, enabled=true, pluginType=Op
+[WARNING] 1 exceptions occurred during plugin discovery.
+[DEBUG] io.scif.ome.commands.OMEXMLToolCommand
+java.lang.ClassCastException: io.scif.ome.commands.OMEXMLToolCommand: cannot cast object of type java.lang.String to java.lang.Class
+	at org.scijava.annotations.IndexItem.cce(IndexItem.java:237)
+	at org.scijava.annotations.IndexItem.adapt(IndexItem.java:195)
+	at org.scijava.annotations.IndexItem.access$000(IndexItem.java:47)
+	at org.scijava.annotations.IndexItem$1.invoke(IndexItem.java:102)
+	at com.sun.proxy.$Proxy0.type(Unknown Source)
+	at org.scijava.plugin.DefaultPluginFinder.createInfo(DefaultPluginFinder.java:101)
+	at org.scijava.plugin.DefaultPluginFinder.findPlugins(DefaultPluginFinder.java:81)
+	at org.scijava.plugin.DefaultPluginFinder.findPlugins(DefaultPluginFinder.java:49)
+	at org.scijava.plugin.PluginIndex.discover(PluginIndex.java:107)
+	at org.scijava.Context.<init>(Context.java:240)
+	at org.scijava.Context.<init>(Context.java:203)
+	at org.scijava.Context.<init>(Context.java:142)
+	at org.scijava.Context.<init>(Context.java:98)
+	at org.scijava.Context.<init>(Context.java:86)
+	at net.imagej.ImageJ.<init>(ImageJ.java:82)
+	at net.imagej.Main.launch(Main.java:61)
+	at net.imagej.Main.main(Main.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at net.imagej.launcher.ClassLauncher.launch(ClassLauncher.java:258)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:184)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.ClassNotFoundException: io.scif.cli.SCIFIOToolCommand
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.scijava.annotations.IndexItem.adapt(IndexItem.java:192)
+	... 22 more
+[DEBUG] Created service 'org.scijava.plugin.DefaultPluginService' in 30 ms
+[DEBUG] Creating service: org.scijava.object.DefaultObjectService
+log4j:WARN No appenders could be found for logger (org.bushe.swing.event.EventService).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[DEBUG] Created service 'org.scijava.object.DefaultObjectService' in 5 ms
+[DEBUG] Creating service: org.scijava.prefs.DefaultPrefService
+[DEBUG] Created service 'org.scijava.prefs.DefaultPrefService' in 2 ms
+[DEBUG] Creating service: org.scijava.convert.DefaultConvertService
+[DEBUG] Created service 'org.scijava.convert.DefaultConvertService' in 2 ms
+[DEBUG] Created service 'org.scijava.module.DefaultModuleService' in 53 ms
+[DEBUG] Creating service: net.imagej.DefaultDatasetService
+[DEBUG] Creating service: io.scif.services.DefaultFormatService
+[DEBUG] Created service 'io.scif.services.DefaultFormatService' in 2 ms
+[DEBUG] Creating service: net.imagej.types.DefaultDataTypeService
+[INFO] Found 11 DataType plugins.
+[DEBUG] Created service 'net.imagej.types.DefaultDataTypeService' in 16 ms
+[DEBUG] Created service 'net.imagej.DefaultDatasetService' in 25 ms
+[DEBUG] Creating service: org.scijava.display.DefaultDisplayService
+[DEBUG] Created service 'org.scijava.display.DefaultDisplayService' in 3 ms
+[DEBUG] Creating service: net.imagej.display.DefaultImageDisplayService
+[DEBUG] Created service 'net.imagej.display.DefaultImageDisplayService' in 2 ms
+[DEBUG] Created service 'net.imagej.lut.DefaultLUTService' in 85 ms
+[DEBUG] Creating service: org.scijava.script.DefaultScriptService
+[DEBUG] Creating service: org.scijava.command.DefaultCommandService
+[DEBUG] Created service 'org.scijava.command.DefaultCommandService' in 17 ms
+[DEBUG] Created service 'org.scijava.script.DefaultScriptService' in 24 ms
+[DEBUG] Creating service: net.imagej.legacy.DefaultLegacyService
+[DEBUG] Creating service: net.imagej.display.DefaultOverlayService
+[DEBUG] Creating service: org.scijava.options.DefaultOptionsService
+[DEBUG] Created service 'org.scijava.options.DefaultOptionsService' in 1 ms
+[DEBUG] Creating service: net.imagej.ui.awt.AWTRenderingService
+[DEBUG] Created service 'net.imagej.ui.awt.AWTRenderingService' in 1 ms
+[DEBUG] Created service 'net.imagej.display.DefaultOverlayService' in 5 ms
+[DEBUG] Creating service: net.imagej.threshold.DefaultThresholdService
+[DEBUG] Created service 'net.imagej.threshold.DefaultThresholdService' in 3 ms
+[DEBUG] Creating service: org.scijava.menu.DefaultMenuService
+[DEBUG] Created service 'org.scijava.menu.DefaultMenuService' in 2 ms
+[DEBUG] Creating service: org.scijava.app.DefaultStatusService
+[DEBUG] Creating service: org.scijava.app.DefaultAppService
+[DEBUG] Created service 'org.scijava.app.DefaultAppService' in 2 ms
+[DEBUG] Created service 'org.scijava.app.DefaultStatusService' in 3 ms
+[INFO] Found 8 ScriptLanguage plugins.
+[INFO] Found 0 scripts
+[INFO] Overriding Upload Sample Image; identifier: command:net.imagej.plugins.commands.upload.SampleImageUploader; jar: file:/Applications/Fiji.app/jars/imagej-plugins-commands-0.2.6.jar
+[DEBUG] Created service 'net.imagej.legacy.DefaultLegacyService' in 1096 ms
+[DEBUG] Creating service: fiji.DefaultFijiService
+[DEBUG] Created service 'fiji.DefaultFijiService' in 1 ms
+[DEBUG] Creating service: net.imglib2.meta.units.DefaultUnitService
+[DEBUG] Created service 'net.imglib2.meta.units.DefaultUnitService' in 10 ms
+[DEBUG] Creating service: net.imagej.ui.awt.AWTScreenCaptureService
+[DEBUG] Created service 'net.imagej.ui.awt.AWTScreenCaptureService' in 0 ms
+[DEBUG] Creating service: org.scijava.ui.swing.SwingIconService
+[DEBUG] Created service 'org.scijava.ui.swing.SwingIconService' in 1 ms
+[DEBUG] Creating service: net.imagej.updater.DefaultUpdateService
+[DEBUG] Created service 'net.imagej.updater.DefaultUpdateService' in 6 ms
+[DEBUG] Creating service: net.imagej.updater.DefaultUploaderService
+[DEBUG] Created service 'net.imagej.updater.DefaultUploaderService' in 1 ms
+[DEBUG] Creating service: org.scijava.plugins.scripting.java.DefaultJavaService
+[DEBUG] Created service 'org.scijava.plugins.scripting.java.DefaultJavaService' in 1 ms
+[DEBUG] Creating service: net.imagej.DefaultImgPlusService
+[DEBUG] Created service 'net.imagej.DefaultImgPlusService' in 0 ms
+[DEBUG] Creating service: net.imagej.ui.DefaultImageJUIService
+[DEBUG] Created service 'net.imagej.ui.DefaultImageJUIService' in 2 ms
+[DEBUG] Creating service: net.imagej.autoscale.DefaultAutoscaleService
+[DEBUG] Created service 'net.imagej.autoscale.DefaultAutoscaleService' in 1 ms
+[DEBUG] Creating service: net.imagej.operator.DefaultCalculatorService
+[DEBUG] Created service 'net.imagej.operator.DefaultCalculatorService' in 2 ms
+[DEBUG] Creating service: net.imagej.display.DefaultZoomService
+[DEBUG] Creating service: org.scijava.input.DefaultInputService
+[DEBUG] Created service 'org.scijava.input.DefaultInputService' in 2 ms
+[DEBUG] Created service 'net.imagej.display.DefaultZoomService' in 3 ms
+[DEBUG] Creating service: net.imagej.display.DefaultWindowService
+[DEBUG] Created service 'net.imagej.display.DefaultWindowService' in 1 ms
+[DEBUG] Creating service: net.imagej.animation.DefaultAnimationService
+[DEBUG] Created service 'net.imagej.animation.DefaultAnimationService' in 2 ms
+[DEBUG] Creating service: net.imagej.measure.DefaultStatisticsService
+[DEBUG] Created service 'net.imagej.measure.DefaultStatisticsService' in 2 ms
+[DEBUG] Creating service: net.imagej.measure.DefaultMeasurementService
+[DEBUG] Created service 'net.imagej.measure.DefaultMeasurementService' in 0 ms
+[DEBUG] Creating service: net.imagej.sampler.DefaultSamplerService
+[DEBUG] Created service 'net.imagej.sampler.DefaultSamplerService' in 2 ms
+[DEBUG] Creating service: net.imagej.ops.DefaultOpService
+[DEBUG] Creating service: net.imagej.ops.DefaultOpMatchingService
+[DEBUG] Created service 'net.imagej.ops.DefaultOpMatchingService' in 2 ms
+[DEBUG] Created service 'net.imagej.ops.DefaultOpService' in 2 ms
+[DEBUG] Creating service: org.scijava.ui.DefaultUIService
+[DEBUG] Creating service: org.scijava.platform.DefaultPlatformService
+[DEBUG] Creating service: org.scijava.platform.DefaultAppEventService
+[DEBUG] Created service 'org.scijava.platform.DefaultAppEventService' in 1 ms
+[INFO] Found 2 Platform plugins.
+[DEBUG] Configuring platform: org.scijava.plugins.platforms.macosx.MacOSXPlatform
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	items[0] = label='About ImageJ...', iconPath='/icons/commands/information.png', priority=0.0, enabled=true, pluginType=Command
+	items[1] = label='Preferences', priority=0.0, enabled=true, pluginType=Command
+	items[2] = label='Quit', iconPath='/icons/commands/door_in.png', priority=0.0, enabled=true, pluginType=Command,null,null), called from non-EDT Thread:null
+[DEBUG] Configuring platform: org.scijava.platform.DefaultPlatform
+[DEBUG] Created service 'org.scijava.platform.DefaultPlatformService' in 111 ms
+[DEBUG] Creating service: org.scijava.tool.DefaultToolService
+[DEBUG] Created service 'org.scijava.tool.DefaultToolService' in 4 ms
+[DEBUG] Created service 'org.scijava.ui.DefaultUIService' in 117 ms
+[DEBUG] Creating service: org.scijava.ui.dnd.DefaultDragAndDropService
+[DEBUG] Created service 'org.scijava.ui.dnd.DefaultDragAndDropService' in 3 ms
+[DEBUG] Creating service: org.scijava.text.DefaultTextService
+[DEBUG] Created service 'org.scijava.text.DefaultTextService' in 2 ms
+[DEBUG] Creating service: org.scijava.io.DefaultRecentFileService
+[DEBUG] Created service 'org.scijava.io.DefaultRecentFileService' in 4 ms
+[DEBUG] Creating service: org.scijava.io.DefaultIOService
+[DEBUG] Created service 'org.scijava.io.DefaultIOService' in 1 ms
+[DEBUG] Creating service: org.scijava.widget.DefaultWidgetService
+[INFO] Found 22 InputWidget plugins.
+[DEBUG] Created service 'org.scijava.widget.DefaultWidgetService' in 2 ms
+[DEBUG] Creating service: org.scijava.welcome.DefaultWelcomeService
+[DEBUG] Created service 'org.scijava.welcome.DefaultWelcomeService' in 3 ms
+[DEBUG] Creating service: org.scijava.script.DefaultScriptHeaderService
+[DEBUG] Created service 'org.scijava.script.DefaultScriptHeaderService' in 1 ms
+[DEBUG] Creating service: org.scijava.event.DefaultEventHistory
+[DEBUG] Created service 'org.scijava.event.DefaultEventHistory' in 1 ms
+[DEBUG] Creating service: org.scijava.console.DefaultConsoleService
+[DEBUG] Created service 'org.scijava.console.DefaultConsoleService' in 1 ms
+[DEBUG] Creating service: net.imagej.plugins.commands.restructure.SplitChannelsContextMonitor
+[DEBUG] Created service 'net.imagej.plugins.commands.restructure.SplitChannelsContextMonitor' in 1 ms
+[DEBUG] Creating service: net.imagej.ui.swing.overlay.JHotDrawService
+[DEBUG] Created service 'net.imagej.ui.swing.overlay.JHotDrawService' in 1 ms
+[DEBUG] Creating service: io.scif.io.DefaultNIOService
+[DEBUG] Created service 'io.scif.io.DefaultNIOService' in 1 ms
+[DEBUG] Creating service: io.scif.img.converters.DefaultPlaneConverterService
+[DEBUG] Created service 'io.scif.img.converters.DefaultPlaneConverterService' in 1 ms
+[DEBUG] Creating service: io.scif.img.DefaultImgUtilityService
+[DEBUG] Created service 'io.scif.img.DefaultImgUtilityService' in 2 ms
+[DEBUG] Creating service: io.scif.gui.DefaultGUIService
+[DEBUG] Created service 'io.scif.gui.DefaultGUIService' in 2 ms
+[DEBUG] Creating service: io.scif.xml.DefaultXMLService
+[DEBUG] Created service 'io.scif.xml.DefaultXMLService' in 20 ms
+[DEBUG] Creating service: io.scif.refs.DefaultRefManagerService
+[DEBUG] Created service 'io.scif.refs.DefaultRefManagerService' in 1 ms
+[DEBUG] Creating service: io.scif.services.DefaultTranslatorService
+[DEBUG] Created service 'io.scif.services.DefaultTranslatorService' in 0 ms
+[DEBUG] Creating service: io.scif.codec.DefaultCodecService
+[DEBUG] Created service 'io.scif.codec.DefaultCodecService' in 1 ms
+[DEBUG] Creating service: io.scif.img.cell.cache.MapDBCache
+[DEBUG] Created service 'io.scif.img.cell.cache.MapDBCache' in 3 ms
+[DEBUG] Creating service: io.scif.DefaultMetadataService
+[DEBUG] Created service 'io.scif.DefaultMetadataService' in 1 ms
+[DEBUG] Creating service: io.scif.services.DefaultFilePatternService
+[DEBUG] Created service 'io.scif.services.DefaultFilePatternService' in 1 ms
+[DEBUG] Creating service: io.scif.formats.tiff.DefaultTiffService
+[DEBUG] Created service 'io.scif.formats.tiff.DefaultTiffService' in 1 ms
+[DEBUG] Creating service: io.scif.services.DefaultLocationService
+[DEBUG] Created service 'io.scif.services.DefaultLocationService' in 1 ms
+[DEBUG] Creating service: io.scif.services.JAIIIOServiceImpl
+[DEBUG] Created service 'io.scif.services.JAIIIOServiceImpl' in 3 ms
+[DEBUG] Creating service: io.scif.formats.qt.DefaultQTJavaService
+[DEBUG] Created service 'io.scif.formats.qt.DefaultQTJavaService' in 1 ms
+[DEBUG] Creating service: io.scif.ome.services.DefaultOMEXMLService
+[DEBUG] Created service 'io.scif.ome.services.DefaultOMEXMLService' in 15 ms
+[DEBUG] Creating service: io.scif.ome.services.DefaultOMEMetadataService
+[DEBUG] Created service 'io.scif.ome.services.DefaultOMEMetadataService' in 3 ms
+[DEBUG] Creating service: net.imagej.render.DummyRenderingService
+[DEBUG] Created service 'net.imagej.render.DummyRenderingService' in 1 ms
+[DEBUG] Creating service: net.imagej.display.DummyScreenCaptureService
+[DEBUG] Created service 'net.imagej.display.DummyScreenCaptureService' in 0 ms
+[DEBUG] Creating service: io.scif.services.DefaultInitializeService
+[DEBUG] Created service 'io.scif.services.DefaultInitializeService' in 2 ms
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false,null,null), called from non-EDT Thread:null
+[DEBUG] Received command line arguments:
+[INFO] Discovered user interface: net.imagej.legacy.ui.LegacyUI
+[INFO] Discovered user interface: org.scijava.ui.swing.sdi.SwingSDIUI
+[INFO] Discovered user interface: org.scijava.ui.awt.AWTUI
+[INFO] Discovered user interface: org.scijava.ui.swing.mdi.SwingMdiUI
+[INFO] Launching user interface: net.imagej.legacy.ui.LegacyUI
+[INFO] Found 20 OptionsPlugin plugins.
+[INFO] Found 1 Converter plugins.
+[INFO] Found 5 App plugins.
+[INFO] Found 17 ThresholdMethod plugins.
+[INFO] Found 3 JavaRunner plugins.
+[INFO] Found 2 AutoscaleMethod plugins.
+[INFO] Found 13 CalculatorOp plugins.
+[INFO] Found 1 Optimizer plugins.
+[INFO] Found 26 Tool plugins.
+[INFO] Found 4 DragAndDropHandler plugins.
+[INFO] Found 2 TextFormat plugins.
+[INFO] Found 4 IOPlugin plugins.
+[INFO] Found 1 ScriptHeader plugins.
+[INFO] Found 11 ConsoleArgument plugins.
+[INFO] Found 3 PlaneConverter plugins.
+[INFO] Found 30 Translator plugins.
+[INFO] Found 16 Codec plugins.
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	ui = legacy,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	progress = -1
+	maximum = -1
+	status = Running command: Up-to-date check
+	warning = false,null,null), called from non-EDT Thread:null
+file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates,null,null), called from non-EDT Thread:null
+[DEBUG] Executing module: net.imagej.updater.CheckForUpdates@e1cba87
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.DebugPreprocessor@4b48f7e0,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.ValidityPreprocessor@27013985,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = net.imagej.display.ActiveImagePreprocessor@41675ec4,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = net.imagej.legacy.plugin.ActiveImagePlusPreprocessor@697eb767,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.ui.UIPreprocessor@7e3b014c,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.display.ActiveDisplayPreprocessor@53d26552,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.GatewayPreprocessor@19fa157c,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.ServicePreprocessor@71988d36,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.InitPreprocessor@565f0e7d,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.LoadInputsPreprocessor@7ab05cd7,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.ui.FilePreprocessor@509f662e,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.ui.awt.widget.AWTInputHarvester@10ed7f5c,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.ui.swing.widget.SwingInputHarvester@2712ee9,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.ui.swing.widget.SwingMdiInputHarvester@54bec43f,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = net.imagej.legacy.ui.LegacyInputHarvester@7dcb3cd,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.CheckInputsPreprocessor@2aa05bc3,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.SaveInputsPreprocessor@5e87512,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates,null,null), called from non-EDT Thread:null
+[DEBUG] INPUTS:
+[DEBUG] OUTPUTS:
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.module.process.DebugPostprocessor@696e59da,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates
+	processor = org.scijava.display.DisplayPostprocessor@4bcd2d49,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	module = net.imagej.updater.CheckForUpdates,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	progress = -1
+	maximum = -1
+	status = Command finished: Up-to-date check
+	warning = false,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+	context = org.scijava.Context@35a271f5
+	consumed = false
+	focus = false,null,null), called from non-EDT Thread:null
+

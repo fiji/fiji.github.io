@@ -1,0 +1,44 @@
+[INFO] Found 703 plugins.
+[WARNING] 2 exceptions occurred during plugin discovery.
+log4j:WARN No appenders could be found for logger (org.bushe.swing.event.EventService).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[INFO] Found 11 DataType plugins.
+[INFO] Found 4 App plugins.
+Error while executing the main() method of class 'net.imagej.Main':
+java.lang.IllegalArgumentException: Invalid service: net.imagej.legacy.DefaultLegacyService
+	at org.scijava.service.ServiceHelper.createExactService(ServiceHelper.java:254)
+	at org.scijava.service.ServiceHelper.loadService(ServiceHelper.java:210)
+	at org.scijava.service.ServiceHelper.loadService(ServiceHelper.java:173)
+	at org.scijava.service.ServiceHelper.loadServices(ServiceHelper.java:145)
+	at org.scijava.Context.<init>(Context.java:179)
+	at org.scijava.Context.<init>(Context.java:122)
+	at org.scijava.Context.<init>(Context.java:82)
+	at org.scijava.Context.<init>(Context.java:71)
+	at net.imagej.ImageJ.<init>(ImageJ.java:82)
+	at net.imagej.Main.launch(Main.java:61)
+	at net.imagej.Main.main(Main.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at net.imagej.launcher.ClassLauncher.launch(ClassLauncher.java:258)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:184)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at fiji.Main.main(Main.java:174)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at net.imagej.launcher.ClassLauncher.launch(ClassLauncher.java:258)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:184)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.NoSuchMethodError: org.scijava.script.ScriptService.addScriptDirectory(Ljava/io/File;)V
+	at net.imagej.legacy.DefaultLegacyService.initialize(DefaultLegacyService.java:349)
+	at org.scijava.service.ServiceHelper.createServiceRecursively(ServiceHelper.java:310)
+	at org.scijava.service.ServiceHelper.createExactService(ServiceHelper.java:244)
+	... 29 more

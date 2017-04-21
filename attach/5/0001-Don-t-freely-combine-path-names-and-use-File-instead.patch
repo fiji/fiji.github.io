@@ -1,0 +1,25 @@
+From 29ec6c404bce204b2f9475568034df8566407aa1 Mon Sep 17 00:00:00 2001
+From: Duncan Mak <duncanmak@mcb.harvard.edu>
+Date: Mon, 13 Jul 2009 17:15:32 -0400
+Subject: [PATCH] Don't freely combine path names, and use File instead.
+
+---
+ ij/io/TiffDecoder.java |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/ij/io/TiffDecoder.java b/ij/io/TiffDecoder.java
+index c6d8db6..22eb4ca 100644
+--- a/ij/io/TiffDecoder.java
++++ b/ij/io/TiffDecoder.java
+@@ -676,7 +676,7 @@ public class TiffDecoder {
+ 		Vector info;
+ 				
+ 		if (in==null)
+-			in = new RandomAccessStream(new RandomAccessFile(directory + name, "r"));
++			in = new RandomAccessStream(new RandomAccessFile(new File (directory, name), "r"));
+ 		info = new Vector();
+ 		ifdOffset = OpenImageFileHeader();
+ 		if (ifdOffset<0L) {
+-- 
+1.6.3.2.1299.gee46c
+

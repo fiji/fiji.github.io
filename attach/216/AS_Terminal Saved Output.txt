@@ -1,0 +1,31 @@
+Last login: Fri Sep 26 11:02:05 on console
+You have mail.
+tee-room-p4:~ antoniosechi$ cd /Applications/Fiji.app/Contents/MacOS/
+tee-room-p4:MacOS antoniosechi$ cp fiji-macosx debug
+cp: fiji-macosx: No such file or directory
+tee-room-p4:MacOS antoniosechi$ cp ImageJ-macosx debug
+tee-room-p4:MacOS antoniosechi$ ./debug
+sysctl says os_release is 13.4.0
+Detected ImageJ2
+Available RAM: 7402MB, using 3/4 of that: 5552MB
+JRE not found in '/Applications/Fiji.app/jre'
+Ignoring Apple Framework java executable: '/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java'
+No JRE was found in default locations
+Re-executing with correct library lookup path (/Applications/Fiji.app/lib/macosx:/Applications/Fiji.app/mm/macosx)
+sysctl says os_release is 13.4.0
+Detected ImageJ2
+Available RAM: 7402MB, using 3/4 of that: 5552MB
+JRE not found in '/Applications/Fiji.app/jre'
+Ignoring Apple Framework java executable: '/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java'
+No JRE was found in default locations
+java -Djava.ext.dirs=/Applications/Fiji.app/java/macosx-java3d/Home/lib/ext/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Frameworks/JavaVM.framework/Home/lib/ext -Dpython.cachedir.skip=true -Dplugins.dir=/Applications/Fiji.app -Xmx5552m -Xincgc -XX:PermSize=128m -Djava.class.path=/Applications/Fiji.app/jars/imagej-launcher-3.1.6.jar -Dimagej.dir=/Applications/Fiji.app -Dij.dir=/Applications/Fiji.app -Dfiji.dir=/Applications/Fiji.app -Dfiji.defaultLibPath=lib/server/libjvm.dylib -Dfiji.executable=./debug -Dij.executable=./debug -Djava.library.path=/Applications/Fiji.app/lib/macosx:/Applications/Fiji.app/mm/macosx -Dij.debug=true -Dscijava.log.level=debug net.imagej.launcher.ClassLauncher -ijjarpath jars -ijjarpath plugins net.imagej.Main
+JavaVMBundlerVersionsDirURL: /System/Library/Frameworks/JavaVM.framework/Versions
+TargetJavaVM: /System/Library/Frameworks/JavaVM.framework/Versions/1.6
+Setting JAVA_JVM_VERSION to 1.6
+
+Sep 26 13:39:07 tee-room-p4.cellbio.rwth-aachen.de debug[1128] <Error>: The function `CGContextErase' is obsolete and will be removed in an upcoming update. Unfortunately, this application, or a library it uses, is using this obsolete function, and is thereby contributing to an overall degradation of system performance.
+ij1.plugin.dirs: null
+$HOME/.plugins: /Users/antoniosechi/.plugins does not exist
+Launching main class net.imagej.Main with parameters []
+Class loader = sun.misc.Launcher$AppClassLoader@1feed786
+

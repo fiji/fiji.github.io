@@ -1,0 +1,17 @@
+setBatchMode(true);
+
+dir = '/myDirectory/';
+print(dir);
+list = getFileList(dir);
+
+
+Array.print(list);
+for (i=0; i<list.length; i++) {
+open(dir+list[i]);
+run("Split Channels");
+selectWindow("C1-"+list[i]);
+saveAs("Tiff", dir+"C1-"+list[i]);
+run("Analyse Particles", "minimum=2 maximum=4 image=127 smart online stream file=[/myDirectory/Particles Table.xls] pixel=20 accumulate=0 update=100 _image=imgNNNNNNNNN.tif start=0 in=50 _minimum=0 local=20 _maximum=1000 threads=50");
+saveAs("Tiff", dir+"C1-"+(i+1)+" Reconstruction");
+close();
+}
