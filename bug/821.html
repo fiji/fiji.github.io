@@ -1,0 +1,1960 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 821 &ndash; can't get tool macro to start with Fiji</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=821&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=821">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=821">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=821">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 821 – can\'t get tool macro to start with Fiji",  
+                             "show_bug.cgi?id=821" );
+        document.title = "Bug 821 – can\'t get tool macro to start with Fiji";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 821 – can\'t get tool macro to start with Fiji", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_Other bz_bug_821 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;821</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">can't get tool macro to start with Fiji</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-07-05 23:44:00 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=821&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=821" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=821&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731805-_V_Pg5f3c18Qi5xqZR77ws2kD1U9u69Ev7X_MXO6HVo">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-07-05 23:44:00">
+  <input type="hidden" name="longdesclength" value="23">
+  <input type="hidden" name="id" value="821">
+  <input type="hidden" name="token" value="1492731805-rtplxxeyfnZHY_SCeWxAtz9ZgwK15qyjlhGakRzArWU">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=821"><b>Bug&nbsp;821</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">can't get tool macro to start with Fiji</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>can't get tool macro to start with Fiji
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('can\'t get tool macro to start with Fiji', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       enhancement
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=821&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=821">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-06-26 01:45 CDT by <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-07-05 23:44 CDT 
+      (<a href="show_activity.cgi?id=821">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="attachment.cgi?id=169"
+               title="View the content of the attachment">
+          <b>what I would like to see on start up</b></a>
+
+          <span class="bz_attach_extra_info">
+              (8.20 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_169"
+               title="Go to the comment associated with the attachment">2014-06-29 14:14 CDT</a>,
+
+            <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi?id=169&amp;action=edit">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="attachment.cgi?id=170"
+               title="View the content of the attachment">
+          <b>ignore the fact that I changed the name. It is Postage something....</b></a>
+
+          <span class="bz_attach_extra_info">
+              (94.24 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_170"
+               title="Go to the comment associated with the attachment">2014-06-29 23:45 CDT</a>,
+
+            <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi?id=170&amp;action=edit">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain">
+        <td valign="top">
+            <a href="attachment.cgi?id=172"
+               title="View the content of the attachment">
+          <b>window level code</b></a>
+
+          <span class="bz_attach_extra_info">
+              (824 bytes,
+                text/plain)
+
+            <br>
+            <a href="#attach_172"
+               title="Go to the comment associated with the attachment">2014-07-05 23:39 CDT</a>,
+
+            <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi?id=172&amp;action=edit">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <span class="bz_attach_view_hide">
+        </span>
+        <a href="attachment.cgi?bugid=821&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=821&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-26 01:45:05 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I've been look at
+ImageJ Macro Language Programmer's Reference Guide ...
+and trying to get my macro to come up installed in the Fiji buttons when Fiji starts. The macro is trivial, just for testing
+
+macro &quot;Postage Action Tool - R0063R0663R0c63Ra063Ra663Rac63&quot; {
+print(&quot;Tile&quot;);
+}
+
+I can put the macro into Fiji.app/macros/toolsets and then I can click on the &gt;&gt; button and choose them to appear on the buttons. The trouble is when I exit Fiji and then return, they are no longer on the buttons.
+
+The next thing to try is to put the macro as part of StartupMacros.ijm in Fiji.App/AutoRun. That gets it to run once and print out &quot;Tile&quot;, but doesn't get it to appear on the buttons.
+
+I also tried to add it to StartupMacros.fiji.ijm in Fiji.app/macros but that also gets me nothing.
+
+So, either I still don't understand the documentation, or there is a bug.
+
+Suggestions? Thanks,
+Ilan</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-26 09:46:46 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Adding
+
+  macro &quot;Postage Action Tool - R0063R0663R0c63Ra063Ra663Rac63&quot; {
+     print(&quot;Tile&quot;);
+  }
+
+to the end of Fiji.app/macros/StartupMacros.fiji.ijm and restarting Fiji works for me. If the tool does not appear in the toolbar, try selecting &quot;Restore Startup Tools&quot; from the &quot;&gt;&gt;&quot; menu in the toolbar.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-26 10:39:35 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks Wayne. What you suggested worked, so I guess I didn't tell the whole story - not that I knew I wasn't telling the whole story.
+First, I don't want all the startup tools. I want it simpler, with just 2 additional tools which I need. Never mind, here is what I didn't tell you.
+
+From your documentation I found a Window-Level tool which changes the window-level by dragging the mouse. This is a class file, not a macro.
+So, what I did was remove custom tools and add the Window-level tool.
+
+I was delighted to see that it remembered the tool. I had my macro tool in Fiji.App/macros/toolsets. The same macro will do nicely for testing.
+Now it nicely agrees to add the macro tool, together with the window-level class tool. But there is your catch-22. There seems to be no way that I can get it to bring up my macro tool when Fiji starts.
+I tried putting it into Fiji.app/macros/AutoRun/StartupMacros.ijm where it would execute upon start up but not get put onto the tool bar.
+
+Maybe it doesn't like the mix of class files with macro files?
+
+Ilan</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-26 14:22:48 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Using ImageJ, I can get both the macro tool and Window Level Tool plugin tool to be installed at startup by saving them in Image/plugins/tools, running Help&gt;Refresh Menus and selecting them from the &quot;&gt;&gt;&quot; menu.
+
+I got the Window Level Tool (Window_Level_Tool.class) from
+
+   <a href="http://imagej.nih.gov/ij/plugins/window-level-tool/index.html">http://imagej.nih.gov/ij/plugins/window-level-tool/index.html</a>
+
+and the macro tool is a file named Postage_Action_Tool.ijm containing
+
+
+  macro &quot;Postage Action Tool - R0063R0663R0c63Ra063Ra663Rac63&quot; {
+     print(&quot;Tile&quot;);
+  }
+
+Fiji hangs when I select &quot;Postage_Action_Tool&quot; from the &quot;&gt;&gt;&quot; menu but I was able to work around this problem by adding the &quot;Postage Action Tool&quot; to Fiji.app/macros/StartupMacros.fiji.ijm.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-28 23:54:33 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+I tried your suggestions and I get different results.
+First of all Fiji didn't hang when I added Postage Action Tool from the &quot;&gt;&gt;&quot; menu. That would be very bad if for any reason Fiji hangs, and would need to be investigated as &quot;why?&quot;.
+On the other hand I gained nothing by adding it to Fiji.app/macros/StartupMacros.fiji.ijm. Adding it there had an effect only if I requested Restore Startup Tools, which I clearly didn't want to do.
+I see a check in the menu item Postage Action Tool but the entry gets wiped from the menu bar each time I restart Fiji. On the other hand Window-Level nicely remains available on each Fiji restart - and it doesn't have that check before the menu entry. (I can certainly do without the check mark as it contributes nothing if the entry is there when Fiji starts. Clicking it again doesn't make the entry go away, which is what I might expect. In fact the only way to remove things is click on Remove Custom Tools. Still all of that is an aside.)
+
+I still need a way to have the tool remain on the bar when Fiji starts. The people at Beth Israel have zero tolerance for extra clicks.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-29 12:21:18 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Which custom tools are installed when Fiji starts? Which tools would you like to have installed? You can add more tools later, but only seven are installed at startup.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-29 13:55:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+I'm not sure how you count 7 tools. What I would like to install is the Window-Level tool together the Postage Action Tool. The Window-Level which is a plugin tool stays on the buttons on start up. The Postage Action which is a macro doesn't appear on the buttons on start up.
+My guess, and correct me if I am wrong, is the difference depends if it is a java class or a macro text. If you push me to the wall, I suppose I could convert the macro to a Java program. Seems like a waste, but if the macro won't stick around at start up, what other choice do I have?
+Could I write some sort of macro to install the Postage Action at startup? There must be some way around this problem. The people at Beth Israel are starting Fiji all the time and each time to reinstall it is just totally unacceptable.
+
+Maybe the Fiji.app/macros/StartupMacros.fiji.ijm can start some other file as well? Somehow I feel uncomfortable changing a &quot;system file&quot;. I think it is this file which determines which macros are on the custom macros. To be barbaric I could erase the file and replace it with my own creation, but that is really barbaric. I don't know how to solve the problem.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-29 14:14:51 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi?id=169" name="attach_169" title="what I would like to see on start up">attachment 169</a> <a href="attachment.cgi?id=169&amp;action=edit" title="what I would like to see on start up">[details]</a></span>
+what I would like to see on start up</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-29 19:28:41 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >A maximum of seven custom tools can be installed on startup.
+
+In ImageJ, I can install the Window-Level tool and the Postage Action Tool this way:
+
+  1. Select &quot;Remove Custom Tools&quot; from the &quot;&gt;&gt;&quot; menu.
+  2. Select &quot;Window Level Tool&quot; from the &quot;&gt;&gt;&quot; menu.
+  3. Select &quot;Postage Action Tool&quot; from the &quot;&gt;&gt;&quot; menu.
+
+I now have two custom tools, and no other custom tools. When I restart ImageJ, these two custom tools are installed in the toolbar.
+
+This assumes you have these two files in the ImageJ/plugins/Tools menu:
+
+  Window_Level_Tool.class
+  Postage_Action_Tool.ijm
+
+In Fiji, step 3 does not work. Fiji runs the Postage Action Tool (&quot;Tile&quot; is displayed in the Log window) instead of installing it.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-29 19:57:14 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >It turns out I was running the Life-Line version of Fiji. After running the Updater, Fiji hangs when I perform step 3 (&quot;Select &quot;Postage Action Tool&quot; from the &quot;&gt;&gt;&quot; menu.&quot;), with &quot;Running command: Postage Action Tool&quot; displayed in the status bar. Here is the thread dump I get from pressing control+\ after running Fiji from the command line:
+
+
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.14-b01-447 mixed mode):
+
+&quot;SciJava-1915470e-Thread-1&quot; prio=5 tid=113ff7800 nid=0x123301000 in Object.wait() [123300000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on &lt;777cbab40&gt; (a java.awt.EventQueue$1AWTInvocationLock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.awt.EventQueue.invokeAndWait(EventQueue.java:1117)
+	- locked &lt;777cbab40&gt; (a java.awt.EventQueue$1AWTInvocationLock)
+	at java.awt.EventQueue.invokeAndWait(EventQueue.java:1099)
+	at org.scijava.thread.DefaultThreadService.invoke(DefaultThreadService.java:98)
+	at org.scijava.event.DefaultEventBus.publishNow(DefaultEventBus.java:191)
+	at org.scijava.event.DefaultEventBus.publishNow(DefaultEventBus.java:82)
+	at org.scijava.event.DefaultEventService.publish(DefaultEventService.java:91)
+	at org.scijava.module.ModuleRunner.run(ModuleRunner.java:153)
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:126)
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:65)
+	at org.scijava.thread.DefaultThreadService$2.call(DefaultThreadService.java:164)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:680)
+
+&quot;DestroyJavaVM&quot; prio=5 tid=114001000 nid=0x111983000 waiting on condition [00000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;SciJava-1915470e-Thread-0&quot; prio=5 tid=114285000 nid=0x121dcf000 waiting on condition [121dce000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;778f33890&gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:955)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:917)
+	at java.lang.Thread.run(Thread.java:680)
+
+&quot;Timer-0&quot; daemon prio=5 tid=11442e800 nid=0x121ccc000 in Object.wait() [121ccb000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on &lt;778f33b10&gt; (a java.util.TaskQueue)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked &lt;778f33b10&gt; (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+&quot;Run$_AWT-EventQueue-0&quot; prio=6 tid=11460e800 nid=0x122901000 waiting on condition [1228fe000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;777c98348&gt; (a java.util.concurrent.FutureTask$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.FutureTask$Sync.innerGet(FutureTask.java:218)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:83)
+	at net.imagej.legacy.DefaultLegacyService.runLegacyCompatibleCommand(DefaultLegacyService.java:229)
+	at net.imagej.legacy.DefaultLegacyHooks.interceptRunPlugIn(DefaultLegacyHooks.java:168)
+	at ij.IJ.runPlugIn(IJ.java)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at ij.IJ.run(IJ.java:272)
+	at ij.IJ.run(IJ.java:250)
+	at ij.gui.Toolbar.itemStateChanged(Toolbar.java:1267)
+	at java.awt.CheckboxMenuItem.processItemEvent(CheckboxMenuItem.java:372)
+	at java.awt.CheckboxMenuItem.processEvent(CheckboxMenuItem.java:340)
+	at java.awt.MenuComponent.dispatchEventImpl(MenuComponent.java:343)
+	at java.awt.MenuComponent.dispatchEvent(MenuComponent.java:331)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:713)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:669)
+	at java.awt.EventQueue$2.run(EventQueue.java:667)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:683)
+	at java.awt.EventQueue$3.run(EventQueue.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:680)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+
+&quot;Java2D Disposer&quot; daemon prio=10 tid=114529800 nid=0x121757000 in Object.wait() [121756000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on &lt;77b094ed0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked &lt;77b094ed0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at sun.java2d.Disposer.run(Disposer.java:127)
+	at java.lang.Thread.run(Thread.java:680)
+
+&quot;AWT-Shutdown&quot; prio=5 tid=113c29800 nid=0x11e1e1000 in Object.wait() [11e1e0000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on &lt;77b0eb550&gt; (a java.lang.Object)
+	at java.lang.Object.wait(Object.java:485)
+	at sun.awt.AWTAutoShutdown.run(AWTAutoShutdown.java:265)
+	- locked &lt;77b0eb550&gt; (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:680)
+
+&quot;AWT-AppKit&quot; daemon prio=5 tid=113e48000 nid=0x7fff700c5cc0 runnable [00000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Low Memory Detector&quot; daemon prio=5 tid=113846000 nid=0x11d6e4000 runnable [00000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;C2 CompilerThread1&quot; daemon prio=9 tid=11407b800 nid=0x11d5e1000 waiting on condition [00000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;C2 CompilerThread0&quot; daemon prio=9 tid=113845800 nid=0x11d4de000 waiting on condition [00000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Signal Dispatcher&quot; daemon prio=9 tid=113844800 nid=0x11d3db000 waiting on condition [00000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Surrogate Locker Thread (Concurrent GC)&quot; daemon prio=5 tid=11407a800 nid=0x11d2d8000 waiting on condition [00000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Finalizer&quot; daemon prio=8 tid=113842000 nid=0x11d1d5000 in Object.wait() [11d1d4000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on &lt;77a5f6690&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked &lt;77a5f6690&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+&quot;Reference Handler&quot; daemon prio=10 tid=113841000 nid=0x11d0d2000 in Object.wait() [11d0d1000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on &lt;77a5c1700&gt; (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked &lt;77a5c1700&gt; (a java.lang.ref.Reference$Lock)
+
+&quot;VM Thread&quot; prio=9 tid=11383c800 nid=0x11cfcf000 runnable 
+
+&quot;Gang worker#0 (Parallel GC Threads)&quot; prio=9 tid=114002800 nid=0x1134c4000 runnable 
+
+&quot;Gang worker#1 (Parallel GC Threads)&quot; prio=9 tid=114003000 nid=0x1135c7000 runnable 
+
+&quot;Concurrent Mark-Sweep GC Thread&quot; prio=9 tid=11404d800 nid=0x11cc9d000 runnable 
+&quot;VM Periodic Task Thread&quot; prio=10 tid=113850000 nid=0x11d7e7000 waiting on condition 
+
+&quot;Exception Catcher Thread&quot; prio=10 tid=114001800 nid=0x113301000 runnable 
+JNI global references: 2456
+
+Heap
+ par new generation   total 19136K, used 3022K [777c00000, 7790c0000, 77a590000)
+  eden space 17024K,   5% used [777c00000, 777ce3890, 778ca0000)
+  from space 2112K, 100% used [778eb0000, 7790c0000, 7790c0000)
+  to   space 2112K,   0% used [778ca0000, 778ca0000, 778eb0000)
+ concurrent mark-sweep generation total 63872K, used 7666K [77a590000, 77e3f0000, 7f8000000)
+ concurrent-mark-sweep perm gen total 131072K, used 27773K [7f8000000, 800000000, 800000000)</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-29 23:36:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+Ignore the stupid print to the log window. That is something I do until I can get it stable. It just lets me know that something is happening.
+
+Something is really screwed up with the Fiji. I don't get any crash, all is clean for me. When I install Postage Action Tool, it gets installed and doesn't print anything. Only when I click on it do I get the stupid print into the log window. However the print shows me that it is doing what I expect, which is good.
+
+I am using a Linux 32 bit machine here. You are using something with 64 bits. The fact that the 2 act differently is definitely not good.
+
+I've got Window_Level_Tool.class in Fiji.app/plugins/Tools and
+Postage Action Tool in Fiji.app/macros/toolsets,
+i.e. the class in the plugins folder and the macro in the macros folder.
+
+I tried moving the macro to plugins/Tools, but then it no longer appears on the list of available objects to install, so I obviously can't install it. It must be in the macros folder. I'll send you a screen shot of what I see when it is in the macros folder. There it works, and works properly. The only problem is the bloody thing won't stay there when I restart Fiji.
+
+We have a much deeper problem that my 32 bit Linux operates one way and your 64 bit thing works another way. That needs to be looked into very soon.
+
+I'll prepare my screen shot. All is good EXCEPT Postage Action Tool doesn't come back upon start up. Nothing crashes or does any other nasty things.
+Ilan</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-29 23:45:18 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi?id=170" name="attach_170" title="ignore the fact that I changed the name. It is Postage something....">attachment 170</a> <a href="attachment.cgi?id=170&amp;action=edit" title="ignore the fact that I changed the name. It is Postage something....">[details]</a></span>
+ignore the fact that I changed the name. It is Postage something....</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-30 12:56:46 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Do you have a &quot;Postage_Action_Tool.ijm&quot; file in Fiji.app/plugins/tools? Do you have a &quot;Postage Action Tool&quot; command in the Plugins&gt;Tool menu?
+
+In ImageJ, when I select Plugins&gt;Tools&gt;Postage Action Tool, it install the Postage Action Tool in the toolbar, and that tool remains in the toolbar when I restart ImageJ, as long as there are seven or fewer tools. In Fiji, when I select Plugins&gt;Tools&gt;Postage Action Tool, the tool is not installed. Instead, &quot;Tile&quot; is displayed in the Log window. This is a bug.</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-01 00:37:00 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+To me it makes no sense that a macro should be in the plugins menu. The only thing which makes sense is that a macro is in the macro menu.
+I put &quot;makes sense&quot; aside and tried it. I moved Postage Action from Fiji.app/macros/toolsets to Fiji.app/plugins/Tools. Does it now appear under Plugins-&gt;Tools? The answer is &quot;no&quot;, not on Linux at least. The one and only way I can get it to appear for installation is to put it in the sensible location of Fiji.app/macros/toolsets. Look at my <span class=""><a href="attachment.cgi?id=170" name="attach_170" title="ignore the fact that I changed the name. It is Postage something....">attachment 170</a> <a href="attachment.cgi?id=170&amp;action=edit" title="ignore the fact that I changed the name. It is Postage something....">[details]</a></span> and you can see what I see when it is in the logic place. Inside plugins there is no way I can install it no matter what I do.
+
+Since for me, I can't duplicate it appearing in the plugins menu, I can't duplicate the bug. It also doesn't make sense to me that a macro is in the plugins menu.
+What is even worse is that Linux, and Mac as well which I just checked this morning, are both acting differently from what you have. In both Linux and Mac I can install Postage Action when it is in macros/toolsets, but in neither case does it stay there.
+Without staying there, it is totally useless.
+I love these Fiji buttons, which I only recently discovered and I am working on improving WL and I may have some requests for you. Still the macro button has to work as well, otherwise the whole idea is useless.
+Thanks for all your help,
+Ilan</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-01 01:08:30 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+The Mac which I checked belongs to Jerry Kolodny. I couldn't afford to take a chance at screwing up his machine. He uses it daily to look at several Pet-Cts.
+I figured I could live a bit more dangerously with one of the hospital computers. I just went into Beth Israel and checked a Windows7, 64 bit machine. It works exactly the same as my Linux and Jerry's Mac, i.e. Postage Action is not visible and/or installable from inside the plugins/Tools menu. It is visible and installable from inside macros/toolsets, but it doesn't stay there.
+Thanks,
+Ilan</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-01 05:41:03 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+Assuming these custom tools will fly, I would like to ask you a favor. I am enhancing the WL plugin tool so that it will have a menu to choose either &quot;Auto&quot; or &quot;Reset&quot;. With the WL control the user can easily loose control where his gray scale is, and I want to add functions parallel to the B&amp;C Auto and Reset buttons.
+
+I saw that you have a right click to change the meaning of Rectangle to rounded rectangle and I thought that was a great idea. I thought I could solve the problem of the user loosing control with the WL by adding a popup menu with Auto and Reset.
+
+I had to make a couple of additions to get the popup menu to fly. For built in functions I saw how you were doing it, so I wanted to extend the idea to external functions. The Toolbar takes care of internal functions, so external functions need to take care of themselves. You have something built in for options on macro functions, so I wanted to extend that to plugins as well. The code addition is
+
+    if (isMacroTool(current) &amp;&amp; isRightClick) {
+	String name = names[current].endsWith(&quot; &quot;)?names[current]:names[current]+&quot; &quot;;
+	tools[current].runMacroTool(name+&quot;Options&quot;);
+	}
+	if (isPlugInTool(current) &amp;&amp; isRightClick) {
+		tools[current].showPopupMenu(e, this);
+	}
+
+in the MousePressed routine in Toolbar.java. It comes after the existing isMacroTool and isRightClick. I need to check isPlugInTool and isRightClick
+
+Likewise I need to enter a template
+	public void showPopupMenu(MouseEvent e, Toolbar par) {}
+in PlugInTool.java
+
+If I can ask these additions, we will be ready to fly once you find what is bothering the macro from being remembered. I can say that I don't know what it is. I also don't understand the magic of how it picks up things inside Fiji.app/plugins/Tools, but it somehow works.
+In any case I really like these buttons and I want to use them.
+Thanks,
+Ilan</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-01 08:01:35 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; To me it makes no sense that a macro should be in the plugins menu.</span >
+
+Plugins can be written in many different languages.
+
+<span class="quote">&gt; I moved Postage Action from Fiji.app/macros/toolsets
+&gt; to Fiji.app/plugins/Tools. Does it now appear under
+&gt; Plugins-&gt;Tools? The answer is &quot;no&quot;, not on Linux at least.</span >
+
+Change the name of the file in Fiji.app/plugins/Tools to
+
+    Postage_Action_Tool.ijm
+
+and it should appear in both the Plugins&gt;Tools menu and in the toolbar's &quot;&gt;&gt;&quot; menu. ImageJ installs macro files with names ending in &quot;Tool.ijm&quot; in the toolbar. The contents of the file should be:
+
+  macro &quot;Postage Action Tool - R0063R0663R0c63Ra063Ra663Rac63&quot; {
+     print(&quot;Tile&quot;);
+  }
+
+
+<span class="quote">&gt; The one and only way I can get it to appear for
+&gt; installation is to put it in the sensible location
+&gt; of Fiji.app/macros/toolsets.</span >
+
+Toolsets are sets of tools, not a single tool.</pre>
+    </div><div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-03 02:10:21 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+Thanks for the pointing out of the importance of the underscore character. I knew about this for plugins but not for macros.
+I changed the name of the macro exactly as you suggested and now I do see it in the list of objects which can be installed to the tool bar.
+Installing Window_Level works properly as expected but trying to install Postage_Action_Tool.ijm causes a freeze.
+Just for an experiment I copied the file to Fiji.app/macros/toolsets. Now I had a choice of 2 places from which to install it. From the macros/toolsets it would install and operate correctly (print into a log window). It won't remember it after restart. From plugins/Tools it just freezes and I have to go to System Monitor to kill the process.
+I ran it from a terminal
+ilan&#64;ilan-main:~/Fiji.app$ ./ImageJ-linux32
+log4j:WARN No appenders could be found for logger (org.bushe.swing.event.EventService).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See <a href="http://logging.apache.org/log4j/1.2/faq.html#noconfig">http://logging.apache.org/log4j/1.2/faq.html#noconfig</a> for more info.
+[ERROR] Skipping unsupported option -port7
+
+All of the above is at startup and there are no new messages when it freezes.
+Thanks,
+Ilan</pre>
+    </div><div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-03 08:44:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This is a bug in Fiji. You can get a thread dump by pressing control+\. You should  submit a new bug report with a title something like &quot;Fiji hangs when installing macro tool&quot;, with steps to reproduce the bug and a thread dump.</pre>
+    </div><div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-04 19:51:50 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; I saw that you have a right click to change the meaning
+&gt; of Rectangle to rounded rectangle and I thought that
+&gt; was a great idea. I thought I could solve the problem
+&gt; of the user loosing control with the WL by adding a
+&gt; popup menu with Auto and Reset.</span >
+
+Can you use a dialog box with a popup menu? Plugin tools can display an options dialog box when the user double clicks on the tool icon. There is an example at
+ 
+   <a href="http://imagej.nih.gov/ij/plugins/arrow-tool/index.html">http://imagej.nih.gov/ij/plugins/arrow-tool/index.html</a>
+
+Right clicking is used to switch between tools (e.g., from rectangle tool to/from rounded rectangle too), which is currently not possible with plugin tools.</pre>
+    </div><div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-04 23:26:05 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+Since discovering these plugin tools I really want to use them. They are simply great. In fact I added 2 very small bits of code which extend the idea of the right click to external tools. I have it working on my machine and it is very nice.
+I don't want to mix the idea of options (double click) with a popup menu (right click). Both are good and both are necessary. What I added changes nothing in the way the code acts. It simply checks for an additional possibility.
+
+I changed Toolbar.jar to
+    if (isMacroTool(current) &amp;&amp; isRightClick) {
+	String name = names[current].endsWith(&quot; &quot;)?names[current]:names[current]+&quot; &quot;;
+	tools[current].runMacroTool(name+&quot;Options&quot;);
+	}
+	if (isPlugInTool(current) &amp;&amp; isRightClick) {
+		tools[current].showPopupMenu(e, this);
+	}
+
+adding the isPlugInTool and isRightClick after the equivalent check for isMacroTool and isRightClick
+
+Likewise I added to the template
+	public void showPopupMenu(MouseEvent e, Toolbar par) {}
+in PlugInTool.java.
+
+With these 2 additions the popup menu on external plugin tools works. I have 2 popup menu items on my version of Window-Level called Auto and Reset. I haven't yet filled in the code to do the required things, but I don't foresee any problems with it. The question is: will you accept the changes? If so, I don't know if it is easier if I try to make them or you make them.
+
+The difference with the internal tools is that Toolbar.java takes care of the popup menus for internal tools, whereas external tools need to take care of themselves. That is the reason for showPopupMenu(MouseEvent e, Toolbar par).
+
+Let me know what you think.
+Thanks,
+Ilan</pre>
+    </div><div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-05 23:39:28 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi?id=172" name="attach_172" title="window level code">attachment 172</a> <a href="attachment.cgi?id=172&amp;action=edit" title="window level code">[details]</a></span>
+window level code</pre>
+    </div><div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=821#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-05 23:44:00 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Wayne,
+I have yet to fill out the code portion of autoItemActionPerformed and resetItemActionPerformed. Originally I wrote to James Norman asking him to expand the code. To date I haven't received any answer so perhaps he is no longer supporting the code. Since I needed it, I decided to expand his code myself.
+I have it to the point that it works inside my ImageJ test bed. I use NetBeans to develop code and use ImageJ within NetBeans. In the end everything goes over to Fiji.
+Within ImageJ Window_Level_Tool.java works and there is a popup menu with the 2 items from Brightness &amp; Contrast which I need. When I press on the menu entry it reaches the action performed stubs, and now I just need to fill them out with real code.
+Clearly for it to work in Fiji, I need the additions in the core code.
+Thanks,
+Ilan</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=821">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=821">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=821">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=821&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=821" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=821&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731805-_V_Pg5f3c18Qi5xqZR77ws2kD1U9u69Ev7X_MXO6HVo">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

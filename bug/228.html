@@ -1,0 +1,2106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 228 &ndash; 3D Viewer can not be runnable on Windows Vista</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=228&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=228">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=228">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=228">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 228 – 3D Viewer can not be runnable on Windows Vista",  
+                             "show_bug.cgi?id=228" );
+        document.title = "Bug 228 – 3D Viewer can not be runnable on Windows Vista";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 228 – 3D Viewer can not be runnable on Windows Vista", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_3D_Viewer bz_bug_228 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;228</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">3D Viewer can not be runnable on Windows Vista</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-11-04 11:25:42 CST</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=228&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=228" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=228&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731554-Sd4DSMPynvIyJcwhpkIiAHqmNM9bAVIi7kitzwh-isk">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2015-11-04 11:25:42">
+  <input type="hidden" name="longdesclength" value="23">
+  <input type="hidden" name="id" value="228">
+  <input type="hidden" name="token" value="1492731554-Pp59bfmkHtO05662vkfwnslN6srw71zeIfRT3mo8XXk">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=228"><b>Bug&nbsp;228</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">3D Viewer can not be runnable on Windows Vista</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>3D Viewer can not be runnable on Windows Vista
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('3D Viewer can not be runnable on Windows Vista', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >3D Viewer</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">Benjamin Schmid</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'ctrueden\x40wisc.edu',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=228&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=228">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2010-08-30 10:15 CDT by <span class="vcard"><span class="fn">panovr</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-11-04 11:25 CST 
+      (<a href="show_activity.cgi?id=228">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>5 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="bene.schmid">bene.schmid</option>
+                <option value="Goosmann">Goosmann</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="netjoker.45">netjoker.45</option>
+                <option value="panovr">panovr</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=228&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=228&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">panovr</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 10:15:38 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >When start Fiji (version:20100614), and invoke 3D Viewer, the 3D Viewer window is blank.
+Alao, Volume Viewer can not be used.
+
+Information about your version of Java - this information is useful for the Fiji developers:
+  os.arch =&gt; x86
+  os.name =&gt; Windows Vista
+  os.version =&gt; 6.0
+  java.version =&gt; 1.6.0_20
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_20-b02
+  java.vm.name =&gt; Java HotSpot(TM) Client VM
+  java.vm.version =&gt; 16.3-b01
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 10:54:33 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Have you updated your Fiji yet?
+
+Could you try whether Plugins&gt;Utilities&gt;Debugging&gt;Test Java3D works?
+
+Could you post what the properties are shown by 3D Viewer's Help&gt;Java3D Properties... ?</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-08 13:10:30 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I have the same problem on Windows XP. I'm dying to be able to use the 3d viewer but it never shows anything but a background colored window. In my case though, I can work around it by exporting stacks from Trakem2 and using volume viewer.
+
+Utilities&gt;Debugging&gt;Test Java 3D produces a blank window as well.
+
+3dviewer's help&gt;java 3d properties produces:
+Java 3D properties
+ 
+j3d.pipeline	NATIVE_D3D
+j3d.specification.vendor
+j3d.specification.version	1.5
+j3d.version	1.5.2 fcs (build4)
+j3d.vendor
+j3d.renderer	DirectX
+ 
+Rendering properties
+ 
+textureEnvCombineAvailable	true
+textureImageUnitsCombinedMax	0
+textureAnisotropicFilterDegreeMax	16.0
+texture3DHeightMax	4096
+textureLodOffsetAvailable	false
+texture3DDepthMax	256
+textureLodRangeAvailable	false
+shadingLanguageCg	false
+textureHeightMax	4096
+textureFilter4Available	false
+doubleBufferAvailable	true
+compressedGeometry.majorVersionNumber	1
+stereoAvailable	false
+textureAutoMipMapGenerationAvailable	true
+sceneAntialiasingAvailable	true
+compressedGeometry.minorVersionNumber	0
+texture3DWidthMax	4096
+compressedGeometry.minorMinorVersionNumber	2
+vertexAttrsMax	0
+shadingLanguageGLSL	false
+sceneAntialiasingNumPasses	1
+native.vendor	Intel Corporation.
+textureUnitStateMax	8
+native.version	DirectX 9.0 or above
+textureImageUnitsMax	0
+textureNonPowerOfTwoAvailable	false
+textureBoundaryWidthMax	0
+native.renderer	Intel(R) 4 Series Internal Chipset
+textureCoordSetsMax	8
+texture3DAvailable	true
+textureImageUnitsVertexMax	0
+textureWidthMax	4096
+stencilSize	0
+textureCombineDot3Available	true
+textureDetailAvailable	false
+textureCubeMapAvailable	true
+textureSharpenAvailable	false
+textureCombineSubtractAvailable	true
+textureColorTableSize	0
+
+Apart from these problems, i get the message
+\\fileserver\profiles$\Desktop\.ImageJ_3D_Viewer.props (Zugriff verweigert)
+in System Log when quitting 3d viewer. The path mentioned is a non writable path 
+that is returned whenever java uses getProperty(user.home)(see <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - error saving/loading preferences"
+   href="show_bug.cgi?id=187">bug 187</a>)
+I think, this in itself has no consequences for the basic function of 3d viewer though.
+
+My guess was that the problem lies in my java3d installation but i found all the files in fiji's java folders.
+
+Can anyone else run 3dviewer on windows?
+</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-08 13:32:45 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >There is a known problem with Intel drivers, just as you (Christian) described. Could you please try to find new drivers for your graphics card? This has helped quite a few people who had that problem.
+
+As to the user.home problem, I am on it.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-14 16:21:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I tried your suggestion and now have the newest available driver for my graphics adaptor (it still is an Intel 4Series Internal Chipset, driver dated 20.07.2010). Plugin&gt;utilities&gt;debugging&gt;test java3d still returns a blank as does 3dviewer. Surprisingly though testjava3d.jar started from the desktop works and shows a rotating cube. That test would most probably use the computers own java environment though. But it shows that the graphic driver is not completely incompatible with java3d.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-28 11:58:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thank you Yili for posting on Fiji-users. Having a problem with Fiji and 3D Viewer as well, i tried installing ImageJ and presto, in IJ 1.43u, 3D Viewer runs smoothly. So I guess we might have very similar problems.
+To answer Johnnes' question about the console output, I ran Fiji from console and got the following error message as soon as I ran Plugins&gt;Utilities&gt;Debugging&gt;Test Java3D:
+
+Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
+P:\&gt;c:
+C:\&gt;cd fiji.app
+C:\Fiji.app&gt;fiji-win32 --console
+C:\Fiji.app&gt;[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNAL
+ERROR
+
+Maybe that is a hint.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-28 12:06:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thank you. Can you please further debug? Maybe by running Fiji like this:
+
+./fiji-win32 -Dj3d.debug=true --
+
+or like this:
+
+./fiji-win32 -Dj3d.rend=d3d -Dj3d.d3dVertexProcess=software -Dj3d.debug=true --
+
+(Note the trailing '--', this is necessary so that Fiji does not treat the leading options as ImageJ options, but as Java options.)</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-28 14:53:39 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt;Thank you. Can you please further debug? Maybe by running Fiji like this:
+&gt;./fiji-win32 -Dj3d.debug=true --
+&gt;or like this:
+&gt;./fiji-win32 -Dj3d.rend=d3d -Dj3d.d3dVertexProcess=software -Dj3d.debug=true --</span >
+
+When entering one of these lines (without &quot;./&quot;) Fiji opens, but I get no messages when I provoke the error. Am I missing something? Is there a log file being generated somewhere?
+
+But I noticed one other thing. The Fiji-3D Viewer apparently uses DirectX while the ImageJ version uses OpenGL see both &quot;Java3d Properties&quot; contents below:
+
+Java 3D properties //this came from Fiji's 3D Viewer
+ 
+j3d.pipeline	NATIVE_D3D
+j3d.specification.vendor
+j3d.specification.version	1.5
+j3d.version	1.5.2 fcs (build4)
+j3d.vendor
+j3d.renderer	DirectX
+ 
+Rendering properties
+ 
+textureEnvCombineAvailable	true
+textureImageUnitsCombinedMax	0
+textureAnisotropicFilterDegreeMax	16.0
+texture3DHeightMax	4096
+textureLodOffsetAvailable	false
+texture3DDepthMax	256
+textureLodRangeAvailable	false
+shadingLanguageCg	false
+textureHeightMax	4096
+textureFilter4Available	false
+doubleBufferAvailable	true
+compressedGeometry.majorVersionNumber	1
+stereoAvailable	false
+textureAutoMipMapGenerationAvailable	true
+sceneAntialiasingAvailable	true
+compressedGeometry.minorVersionNumber	0
+texture3DWidthMax	4096
+compressedGeometry.minorMinorVersionNumber	2
+vertexAttrsMax	0
+shadingLanguageGLSL	false
+sceneAntialiasingNumPasses	1
+native.vendor	Intel Corporation.
+textureUnitStateMax	8
+native.version	DirectX 9.0 or above
+textureImageUnitsMax	0
+textureNonPowerOfTwoAvailable	false
+textureBoundaryWidthMax	0
+native.renderer	Intel(R) 4 Series Internal Chipset
+textureCoordSetsMax	8
+texture3DAvailable	true
+textureImageUnitsVertexMax	0
+textureWidthMax	4096
+stencilSize	0
+textureCombineDot3Available	true
+textureDetailAvailable	false
+textureCubeMapAvailable	true
+textureSharpenAvailable	false
+textureCombineSubtractAvailable	true
+textureColorTableSize	0
+
+Java 3D properties \\this came from ImageJ's 3D Viewer
+ 
+j3d.pipeline	NATIVE_OGL
+j3d.specification.vendor
+j3d.specification.version	1.5
+j3d.version	1.5.2 fcs (build4)
+j3d.vendor
+j3d.renderer	OpenGL
+ 
+Rendering properties
+ 
+textureEnvCombineAvailable	true
+textureImageUnitsCombinedMax	16
+textureAnisotropicFilterDegreeMax	2.0
+texture3DHeightMax	256
+textureLodOffsetAvailable	false
+texture3DDepthMax	256
+textureLodRangeAvailable	true
+shadingLanguageCg	false
+textureHeightMax	4096
+textureFilter4Available	false
+doubleBufferAvailable	true
+compressedGeometry.majorVersionNumber	1
+stereoAvailable	false
+textureAutoMipMapGenerationAvailable	true
+sceneAntialiasingAvailable	true
+compressedGeometry.minorVersionNumber	0
+texture3DWidthMax	256
+compressedGeometry.minorMinorVersionNumber	2
+vertexAttrsMax	10
+shadingLanguageGLSL	true
+sceneAntialiasingNumPasses	8
+native.vendor	Intel
+textureUnitStateMax	8
+native.version	2.1.0 - Build 6.14.10.5284
+textureImageUnitsMax	16
+textureNonPowerOfTwoAvailable	true
+textureBoundaryWidthMax	1
+native.renderer	Intel(R) 4 Series Internal Chipset
+textureCoordSetsMax	8
+texture3DAvailable	true
+textureImageUnitsVertexMax	16
+textureWidthMax	4096
+stencilSize	0
+textureCombineDot3Available	true
+textureDetailAvailable	false
+textureCubeMapAvailable	true
+textureSharpenAvailable	false
+textureCombineSubtractAvailable	true
+textureColorTableSize	0
+</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Benjamin Schmid</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-28 17:52:11 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I encountered the same problem some time ago. In my case, the choice of whether OpenGL or DirectX was used was depending on the heap size (for whatever reason). Can you check the corresponding entries in Fiji and ImageJ?</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-29 01:49:17 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >In case you didn't already notice, one of the flags Johannes mentioned can be used to force Java3D to use either Direct3D or OpenGL.
+
+To force Direct3D, use: -Dj3d.rend=d3d
+And for OpenGL, use: -Dj3d.rend=ogl
+
+Maybe if you launch Fiji using &quot;-Dj3d.rend=ogl&quot; the problem will go away? Different graphics cards have different problems with Java3D in either D3D or OGL mode, so it helps to try both and use whichever works better for you.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-29 10:58:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi?id=228#c8">comment #8</a>)
+<span class="quote">&gt; I encountered the same problem some time ago. In my case, the choice of whether
+&gt; OpenGL or DirectX was used was depending on the heap size (for whatever
+&gt; reason). Can you check the corresponding entries in Fiji and ImageJ?
+&gt; </span >
+I'd like to try that. Forgive a newbie for asking, but where do I find the settings for heap size. I looked around Edit&gt;Options a bit but didn't find that category.
+
+(In reply to <a href="show_bug.cgi?id=228#c9">comment #9</a>)
+<span class="quote">&gt; In case you didn't already notice, one of the flags Johannes mentioned can be
+&gt; used to force Java3D to use either Direct3D or OpenGL.
+&gt; 
+&gt; To force Direct3D, use: -Dj3d.rend=d3d
+&gt; And for OpenGL, use: -Dj3d.rend=ogl
+&gt; 
+&gt; Maybe if you launch Fiji using &quot;-Dj3d.rend=ogl&quot; the problem will go away?
+&gt; Different graphics cards have different problems with Java3D in either D3D or
+&gt; OGL mode, so it helps to try both and use whichever works better for you.
+&gt; </span >
+I tried launching Fiji like that, both with and without trailing &quot;--&quot;  but got the same result. Test Java3D showed a blank window and 3D Viewer's Properties still contained d3d and DirectX
+</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-29 17:23:57 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi?id=228#c10">comment #10</a>)
+<span class="quote">&gt; I'd like to try that. Forgive a newbie for asking, but where do I find the
+&gt; settings for heap size. I looked around Edit&gt;Options a bit but didn't find that
+&gt; category.</span >
+
+The heap size setting is in Edit&gt;Options&gt;Memory &amp; Threads, labeled as &quot;Maximum Memory.&quot;
+
+<span class="quote">&gt; I tried launching Fiji like that, both with and without trailing &quot;--&quot;  but got
+&gt; the same result. Test Java3D showed a blank window and 3D Viewer's Properties
+&gt; still contained d3d and DirectX</span >
+
+Very strange. I tested on Windows 7 64-bit, and was able to switch between OpenGL and Direct3D modes using that command line flag. From Command Prompt:
+
+  C:\Users\curtis\Programs\Fiji&gt;fiji-win64.exe -Dj3d.rend=ogl --
+  C:\Users\curtis\Programs\Fiji&gt;fiji-win64.exe -Dj3d.rend=d3d --
+
+As Johannes said, you need the trailing &quot;--&quot; so that the option is interpreted correctly.</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-30 11:01:00 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Fantastic! Thank you Curtis and Benjamin! Setting max. memory in Edit&gt;Options from 1500 MB to 640 MB forced Fiji to go into Open GL mode and Java3d and 3D Viewer work now. I'll try to find a threshold to optimize memory without going back into the faulty DirectX mode.
+
+(In reply to <a href="show_bug.cgi?id=228#c11">comment #11</a>)
+</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-30 14:23:07 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Addendum
+OK, now lets confuse everyone some more. I tried different settings for Max Memory: Up to 872 MB Java3d works and 3d Viewer apparently uses OpenGL (as judged by the values in Java 3D Properties), then surprisingly between 874 MB and 1006 MB Java3d also works but uses DirectX. From 1008 MB upwards the error occurs and Java 3d generates blank screens. While examining this I came across a funny behaviour of Edit&gt;Options&gt;Memory&amp;Threads. After settting a new value and restarting Fiji the resulting new value is always lower by 3 or 4 MB than what was entered.</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-09-30 15:23:35 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi?id=228#c13">comment #13</a>)
+<span class="quote">&gt; While examining this I came across
+&gt; a funny behaviour of Edit&gt;Options&gt;Memory&amp;Threads. After settting a new value
+&gt; and restarting Fiji the resulting new value is always lower by 3 or 4 MB than
+&gt; what was entered.</span >
+
+This behavior is common and expected, and nothing to worry about. It's a quirk of the JVM, and the amount varies depending on platform.</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">panovr</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-10-04 15:28:36 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+ I also set the heap memory from 1523 MB to 640 MB, and the Java 3D
+viewer plugin and Test Java 3D plugin work,
+however, the &quot;Test Marching Cubes&quot; plugin shows below errors:
+
+javax.media.j3d.CapabilityNotSetException: Group: no capability to
+detach BranchGroup
+       at javax.media.j3d.Group.removeChild(Group.java:225)
+       at MC_Test.displayCase(MC_Test.java:64)
+       at MC_Test.run(MC_Test.java:42)
+       at ij.IJ.runUserPlugIn(IJ.java:193)
+       at ij.IJ.runPlugIn(IJ.java:154)
+       at ij.Executer.runCommand(Executer.java:147)
+       at ij.Executer.run(Executer.java:78)
+       at java.lang.Thread.run(Thread.java:619)</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-10-04 17:20:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Okay, so it seems we can maybe detect this error and suggest a solution to the user.</pre>
+    </div><div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-10-04 19:05:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hmpf. When I tried to find the exact wording of that OutOfMemoryError, I found that this bug report does not contain it. Maybe all the useful information is scattered out a little too wide and far for this developer to use?
+
+So: could somebody who experiences the problem (I cannot reproduce) _please_ post the exact exception here in this very bug report?</pre>
+    </div><div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">panovr</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-10-05 10:51:23 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >D:\Program Files\Fiji.app&gt;fiji-win32.exe --console
+
+D:\Program Files\Fiji.app&gt;version = 1.5
+***** polygon with only one vertex?! *****
+
+Exception in thread &quot;J3D-MasterControl-1&quot; java.lang.OutOfMemoryError: unable to
+create new native thread
+       at java.lang.Thread.start0(Native Method)
+       at java.lang.Thread.start(Thread.java:597)
+       at javax.media.j3d.J3dThread.initialize(J3dThread.java:251)
+       at
+javax.media.j3d.MasterControl.createUpdateThread(MasterControl.java:1
+883)
+       at javax.media.j3d.MasterControl.registerView(MasterControl.java:2018)
+       at javax.media.j3d.MasterControl.viewActivate(MasterControl.java:2561)
+       at
+javax.media.j3d.MasterControl.handlePendingRequest(MasterControl.java
+:3197)
+       at javax.media.j3d.MasterControl.doWork(MasterControl.java:3121)
+       at javax.media.j3d.MasterControlThread.run(MasterControlThread.java:67)</pre>
+    </div><div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-10-05 11:26:35 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Cool,
+I tried some stuff after setting memory to around 1,4 GB again. Here is the information i can retrieve when provoking the bug (without hanging fiji).
+The lines that start with &quot;&gt;&gt;&gt;&gt;&quot; were not part of the machines' output but were added by me later. Any ideas how to create more information? As mentioned before, these command lines:
+./fiji-win32 -Dj3d.debug=true --
+./fiji-win32 -Dj3d.rend=d3d -Dj3d.d3dVertexProcess=software -Dj3d.debug=true --
+ didn't work for me.
+
+<span class="quote">&gt;&gt;&gt;&gt;content of System Log (after opening a blank TrakEM2 project):</span >
+
+StdErr
+<span class="quote">&gt;&gt;&gt;&gt;the following appears after adding a content to 3D Viewer (3D Viewer remains blank)</span >
+Exception in thread &quot;Thread-15&quot; java.lang.NullPointerException
+	at ij3d.ContentCreator.getImages(ContentCreator.java:170)
+	at ij3d.gui.ContentCreatorDialog.createContent(ContentCreatorDialog.java:141)
+	at ij3d.gui.ContentCreatorDialog.showDialog(ContentCreatorDialog.java:137)
+	at ij3d.Executer.addC(Executer.java:156)
+	at ij3d.Executer.access$000(Executer.java:60)
+	at ij3d.Executer$1.run(Executer.java:149)
+
+<span class="quote">&gt;&gt;&gt;&gt;the followin line appears after quitting 3D Viewer</span >
+\\fileserver\profiles$\Desktop\.ImageJ_3D_Viewer.props (Zugriff verweigert)
+
+
+
+
+
+<span class="quote">&gt;&gt;&gt;&gt;content of console window running fiji-win32.exe --console :</span >
+
+MAX_MEMORY: 1441521664
+cache size: 576608704
+Crash detector file is D:/trakem2.1286268574813.67193.2136883488/trakem2.mipmaps
+/.open.t2
+Created crash detection system.
+
+<span class="quote">&gt;&gt;&gt;&gt;the following line appears after using plugin&gt;utilities&gt;debugging&gt;test java3d</span >
+
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+
+<span class="quote">&gt;&gt;&gt;&gt;when starting 3d viewer and adding a non TrakEM2 image stack (bat cochlea), lines are added as long as 3d viewer is open</span >
+
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+[Java3D] Warning: Fail to lock Vertex Buffer - D3DERR_DRIVERINTERNALERROR
+...
+
+<span class="quote">&gt;&gt;&gt;&gt;content of bug report information:</span >
+Information about your version of Java - this information is useful for the Fiji developers:
+
+  os.arch =&gt; x86
+  os.name =&gt; Windows XP
+  os.version =&gt; 5.1
+  java.version =&gt; 1.6.0_21
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_21-b07
+  java.vm.name =&gt; Java HotSpot(TM) Client VM
+  java.vm.version =&gt; 17.0-b17
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: You wanted to be reminded later.
+
+Information about the version of each plugin:
+
+  897e46fef5b998422f092e3116c8aa4ebb5e9f74 20101004150950 fiji-win32.exe
+  37f704dca6afcfbdeab6f27ece271ec8c15fac6a 20100923093551 jars/Fiji.jar
+  31fc72943db1de218eb827e7ea3becc16d76d851 20100608092030 jars/Jama-1.0.2.jar
+  af0db3750388106d1612ddd20a3e68a4444c4083 20100910155714 jars/VIB-lib.jar
+  20d2680eb3755392aa047a1811647f79950bec3f 20100209163309 jars/VectorString.jar
+  4199e18036ba2020bdcbc733f603564f41cf9009 20091014202912 jars/ant-launcher.jar
+  92b2335d3a97549b633dbcc3c41381a90f2b924b 20091014202914 jars/ant-nodeps.jar
+  b1492f77c5c13e4f9dc05fe0ba9f95d6ec826660 20091014202914 jars/ant.jar
+  5bab776822719667a604b8fb2eafc679161aeb0f 20091014202912 jars/autocomplete.jar
+  dbab80ab5e11fb33328c7da88a849d0a19793ff5 20091014202914 jars/batik.jar
+  d21bc3c19ebc5b3924caff5f859e6c50071590c9 20091014202912 jars/bsh-2.0b4.jar
+  efd0b4a7eaf55c0716fde3243ac45cb49fdd2606 20091014202914 jars/clibwrapper_jiio.jar
+  21c2d3f654c1c599751df995a1b183d02301c76d 20100616122917 jars/clojure.jar
+  d760adf70f63d2f07fe00dc5f36b9bc32f11fc97 20100726125956 jars/commons-math.jar
+  368901ce572a723c0ae0e68f0563b2712a69fd5d 20091014202914 jars/edu_mines_jtk.jar
+  b18d281af833cca4703804334236737f48a56e75 20101004150950 jars/fake.jar
+  b83270c64035aba717481a094b1c81559fff1cbd 20100805094856 jars/fiji-lib.jar
+  f7e963ce0bb02c9c7c7408e8605dcda5c37d1de3 20100819150812 jars/fiji-scripting.jar
+  7f786b80bc9f9af33c9f3249059b030ca19519f1 20100921125040 jars/ij.jar
+  04530e150af0702f6f963104facda5eaa6e866ae 20100921125040 jars/imagescience.jar
+  5004e215faa6bad8cb4aaa27110b2bb27e8b0156 20100701101000 jars/imglib.jar
+  a88a4b46ddcdcf0312b0fe03b1900412bdb71873 20091014202912 jars/itext-1.3.jar
+  1d98f5251cb21553b4907228cd281e6b84d3a216 20091014202912 jars/jacl.jar
+  253316728c4012a86fae361e7b7fcb0fab0f5c38 20091014202912 jars/jai_codec.jar
+  2a328b6b63ebec85d369427875739304dc1cf2cb 20091014202914 jars/jai_core.jar
+  12065f36c73057a77a5deeaf4b8beecbe738ce18 20100614101025 jars/javac.jar
+  5000664ee8b54ad75a72da627ab7665ca422f10b 20091014202912 jars/jcommon-1.0.12.jar
+  166036abb16a0b57c7f7c0a0e0e610ef72b48746 20100610101636 jars/jep.jar
+  ca45b966d92e07a3bcea6be98cbab05ea0d4e1ba 20100719131343 jars/jfreechart-1.0.13.jar
+  925d65018db8d43d79f3e1236c0178805f68c488 20100927094730 jars/jna.jar
+  63e9057128a2096b3787c4c784a5b6dab862264d 20091014202912 jars/jpedalSTD.jar
+  b904075730a195dff53e602e836e6ced7b438257 20100927094727 jars/jruby.jar
+  108412260f226609c8161f6e831119f47e6d9380 20091014202912 jars/js.jar
+  bd25e435c97440c39a1edea79332016aad7f1091 20091014202912 jars/jsch-0.1.37.jar
+  8c9fb2532904d475ee0869da3310913480b50d50 20100726125952 jars/junit-4.5.jar
+  d6edc3bbc639248e808f4cc0e372cfa249320016 20100927094729 jars/jython.jar
+  a21f73a79260a9098df7eabf10982ab9ff2d9efe 20091014202914 jars/jzlib-1.0.7.jar
+  09fcda832f52596079f0cb3d274965a2f0f50b75 20100902093052 jars/mpicbg.jar
+  e008825954f9c01c5e3b3fa0004caa7535a45423 20100604131519 jars/pal-optimization.jar
+  5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f 20091014202914 jars/postgresql-8.2-506.jdbc3.jar
+  ec0fe9713dde3e69b3b41d2219de4a9701047f16 20100823095816 jars/rsyntaxtextarea.jar
+  62509dafa2ad38e0e3c34c538f6d3da1e25971ce 20100616122918 jars/weka.jar
+  c432f64b204f9657354de2010b24535670e3073b 20091014202912 luts/16_colors.lut
+  89419f9999bc7d1dc09ad1a66e04e819396fe09f 20091014202912 luts/5_ramps.lut
+  dc3a1bdd2b34edec84c29affaded489d0a22601d 20091014202912 luts/6_shades.lut
+  0b3bbb6cf86adcb697c53c0277a12140966375dc 20091014202912 luts/Cyan Hot.lut
+  655b55e6322c870632e5ff3156f002c0f5b893fe 20091014202912 luts/Green Fire Blue.lut
+  2918f6d391ee38a4491163c30b4e75256a6633e7 20091014202912 luts/HiLo.lut
+  a3312d3ff046120cccf5adcd400c512f78d18f93 20091014202912 luts/ICA.lut
+  db5bf8a4e880d787d88f3273caf3db7ae6a5974f 20091014202912 luts/ICA2.lut
+  9f7dd167f698970549ec20aa7d26b221ae7928f8 20091014202912 luts/ICA3.lut
+  697dd3a4daf4abcd05cc4a79af3bcb3364fd0bb0 20091014202912 luts/Magenta Hot.lut
+  524604de124b812940b02541a63516c84621237b 20091014202912 luts/Orange Hot.lut
+  9c9a56c239e5d9c3262ace5124fff406cb3b831d 20091014202912 luts/Rainbow RGB.lut
+  4e686ec669057c7de78497720bf52ebe00c3f8da 20091014202912 luts/Red Hot.lut
+  2fdb7c96583f42348cd5cc789fba38dd6e349c89 20091014202912 luts/Thermal.lut
+  321574916ccee56861ca6d581f6915cff5fe80e1 20091014202912 luts/Yellow Hot.lut
+  a4cec22b96c306321ba4c7b3ff30df9fa7919616 20091014202912 luts/blue_orange_icb.lut
+  c9e396a3f83ee8cebf1ed28d3e2d53296cc908e7 20091014202912 luts/brgbcmyw.lut
+  60f85e63ba9a31fbb769ab32c75c22883df22883 20091014202912 luts/cool.lut
+  ba88e5f3db79551a10b7bed5c2517b33cea57dda 20091014202912 luts/edges.lut
+  0a4dce83c72986c06356ecbab98747c30c9366ad 20091014202912 luts/gem.lut
+  c616e76585643c232c743e16358d68e4dfe24620 20091014202912 luts/glasbey.lut
+  1f99f07ea5760dd8c044639b02da116112a2b985 20091014202912 luts/phase.lut
+  52a3c3995ef92bc35eb4e691848af5351be589e4 20100610101636 luts/physics.lut
+  49f5e48a355fe0646cd99bf7b371afb7c603def8 20091014202912 luts/royal.lut
+  898954dd1342741de1cd48e7c581b6ec0f0cbff2 20091014202912 luts/sepia.lut
+  ebd4ed6b0fd5375bd4d143134da5692253d4d44a 20091014202912 luts/smart.lut
+  36e7ca9e01240243fb69ea5da21655608d6b5ef8 20091014202912 luts/thal.lut
+  940b38f9db4fbe78ccd66222a08b28d1ae98ba04 20091014202912 luts/thallium.lut
+  172436819bfde39bcf02fc8b41735f0c20db2ad1 20091014202912 luts/unionjack.lut
+  32a5cb5786cdf6f0e04b38a63825e79c41f8626c 20091014202912 macros/StartupMacros.txt
+  ec9f9e6ef1ea9863c51a615c06dff34ca4b2156f 20100610101636 macros/grey-squares.ijm
+  a97e1da9c67b6764787b27473bbdb4a21d68292b 20091014202912 macros/listManagement.txt
+  bc1d6c6ef8f5dd2802d50dd2326f4d32025266ae 20091014202912 macros/spirals.txt
+  54200f47f8a6d5a131a7d9d65d7fcb75d53f97ae 20091014202912 macros/toolsets/Drawing Tools.txt
+  63cd8b1f75283ea031509b2726872fa2b05e8707 20100616122917 misc/headless.jar
+  fa47c405e684e4a9fa699507c2f9605c17d6fc02 20091014202912 plugins/3D_Objects_Counter.jar
+  97a5b1a3039af9ebe5d8574c8a162c0884079d81 20100819150813 plugins/3D_Viewer.jar
+  68175df528f66e558b40d41867aa3539f55518bd 20100610101636 plugins/Algorithm_Launcher.jar
+  9274f3373b27930ae5e6f3d1f88674f64110e970 20091014202912 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  7acae667f3873c3f47eb0fbf1d6b5f0718a5a1f9 20091014202912 plugins/Analyze/Measure_RGB.txt
+  59f8bbf4f5bd55eff0c558cfab79805c2e17e95f 20100928102350 plugins/AnalyzeSkeleton_.jar
+  57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9 20091014202912 plugins/Analyze_Reader_Writer.jar
+  ce0504b97f7820a918e9ff4cc62d590da32161d6 20100610101636 plugins/Anisotropic_Diffusion_2D.jar
+  dacc2f7123a1f1b8f48b432c8e8c47b6b996248a 20100614101544 plugins/Arrow_.jar
+  398b7c60ef17521ef4166108fc113b7d57848db5 20100831140304 plugins/Auto_Threshold.jar
+  a0d6ee5b353672f578c006ddae4a2d058157972d 20100802105222 plugins/BeanShell_Interpreter.jar
+  6ca5f16a2fd9474a1f00ad8b4673cb7485d6b33a 20100818110821 plugins/Bug_Submitter.jar
+  b7df950188c67ad007c9428e173afe5700064d6e 20100505153112 plugins/CLI_.jar
+  d888370a9a41fe87d542665027edc84eff31637e 20091014202912 plugins/Calculator_Plus.jar
+  90aa874ec123bde014e0cc95aca6fa6f5c7a62fb 20100616122917 plugins/Clojure_Interpreter.jar
+  9ce8242b575c620f62492c170bdbb390fe9f3958 20100819150812 plugins/Colocalisation_Analysis.jar
+  f2f8c5c376c80df66cc1ccbcbf12babd366eda85 20100608092030 plugins/Color_Histogram.jar
+  1cee26bc818eb02dafe9ad08dd437b10c412aa2b 20100608092030 plugins/Color_Inspector_3D.jar
+  1a992dbc077ef84020d44a980c7992ba6c8edf3d 20091014202912 plugins/Daltonize_.jar
+  b73a16189c15d0e5f59d0b9da7d9dafc19177379 20100917150655 plugins/Differentials_.jar
+  08d9972d2e8aa48caf61a1395ada9f9406bb7014 20100616122919 plugins/Directionality_.jar
+  f6fcfac7beaaf48901cf57d1dd5a9232d6e43570 20091014202912 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  5dcd79ab303b72dbd5540b604bd30ce0e2a5ddcb 20091014202912 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  73eff73688cbf8356485d4dac6fe2b26db598e93 20091014202912 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  95549b2f2f2c42a8bf5bb5f6d18f58d25c4c06cc 20091014202912 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  dceba709afa80f33ae5d0091f5811b32610e1fd0 20091014202912 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  e4954eacd4b1b679813c4227563996121f7e6d98 20091014202912 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  f51112123ed16a9ff9c0cf5002dea3804731a8cb 20091014202912 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  7b3300cf5770150963ffa484e3cabd5933592dbb 20091014202912 plugins/Examples/Delayed_Snapshot.py
+  5536e038a497982f3e10d924849c4ffe6c4fdd3c 20100819150813 plugins/Examples/Delayed_Snapshot_Window.bsh
+  4164c08c7ef62e27e731d45643a1cbe10098fce1 20091014202912 plugins/Examples/Edit_LUT_As_Text.py
+  b8881af27131bb518e2c8f45510811963f091e21 20100610101636 plugins/Examples/Fiji_Cube.ijm
+  3687a018e780919fc238a411c0d76607060ae47f 20091014202912 plugins/Examples/Fiji_Logo_3D.js
+  998cb71706d82992543115b6ad1b85f7d199d096 20091014202912 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  748153294412dc6fd4febc6c529e7620ba48ae1e 20091014202912 plugins/Examples/Multithreaded_Image_Processing.clj
+  720c237bd586550b63e2d423d2e85759e045869c 20091014202912 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  ad263d9ec66f7421f8817b0a9f9e2549fd5883b7 20091014202912 plugins/Examples/Plasma_Cloud.rb
+  9efb229268bb88ae20f4b2bca157e73c0c0afbdf 20091014202912 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  940f6500947184db3dfbcad055aa98c11db41c24 20091014202912 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  3f4bba61fc90eb79a8ade2a6399cad72ede26fb9 20091014202912 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  72f0094941e8aae9c451161f05a67f6516d70a55 20091014202912 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  89ef030758e89f6a6767ab5e3513ee82a8e54127 20100610101636 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  6af490cdb6e2c42e87076b85796dc824203b6e8a 20091014202912 plugins/Examples/blend_two_images.clj
+  0989cf7430916a9e0c9f004bc2d5bc6b276e2775 20091014202912 plugins/Examples/celsius_to_fahrenheit.clj
+  ff3b990238ad1f85e4a8aa8135e2e3b1221b43a8 20091014202912 plugins/Examples/chess_.py
+  4193ae7c8fbe191bff50f19367c5cfa5e0048fbe 20091014202912 plugins/Examples/downsample_.js
+  66a204d61b3076d96797ca04671180ed83ebf866 20091014202912 plugins/Examples/list_all_threads.py
+  571194b9c5e43f983a6601058d06355ad635157e 20091014202912 plugins/Examples/random_noise_example.clj
+  122804a957f1ccf6e6bc90dc44c8b23f3595b2d2 20100921125040 plugins/FeatureJ_.jar
+  b764f971569611c96410df43a424cbb0597665ab 20100910155714 plugins/Fiji_Developer.jar
+  fe2f5a651a061700007f76581adbbc803dea1af8 20100819150812 plugins/Fiji_Plugins.jar
+  5b7829279e7a1f1aea9a8671fbc6c4881f4eeba4 20100909101942 plugins/Fiji_Updater.jar
+  d53247c86445afc29f991a39cb39b79f2f3fd4c1 20091014202912 plugins/FlowJ_.jar
+  94559184bb4bf02414286cb9d20b95dd8806bd32 20100827134107 plugins/Graph_Cut.jar
+  42556198e68860b4135544fe9e4687c9fbffbfe2 20100608092030 plugins/Gray_Morphology.jar
+  e8f24a89734ea514ba6405423368a107f324fc5b 20100608092030 plugins/IJ_Robot.jar
+  72106d6178a646a997ac2344e42432b24d03643e 20100629102313 plugins/IO_.jar
+  f372670cec289607ac065298e38cd59ed9b278f7 20100921125040 plugins/Image_5D.jar
+  cd8ce4a950d74c5aa88adf357877efff8087b374 20100819150813 plugins/Image_Expression_Parser.jar
+  4be1d7bfd43b38c2b2faa6988a9cd4273f11beac 20100914102217 plugins/Install_Java3D.jar
+  43bb3a7b79d1fc23958a7775f407fa9567c6f67f 20091014202912 plugins/Interactive_3D_Surface_Plot.jar
+  3ea0d59d5878d1eeed2f7e1796b504b28ff1818a 20100610101636 plugins/IsoData_Classifier.jar
+  28582f554fdbc4905b5ca4eb192a516202b2f334 20091014202912 plugins/JRuby/imagej.rb
+  ef5dd5b47ebc0f5187f5642357c0896bebf82ed8 20091014202912 plugins/JRuby_Interpreter.jar
+  00b30a4e1985b2637a4e48ee422d0eee02dfd51a 20091014202912 plugins/Javascript_.jar
+  573cb0d88df6eb4356502c7763f91ff1f3b06fef 20100819150812 plugins/Jython_Interpreter.jar
+  9c1c9da0933f7f35ef7953f8b0aea4b3feccf6f2 20100323134615 plugins/LSM_Reader.jar
+  de0f4b6754561dc8a412f2d2c67ec10351f5d238 20100819150812 plugins/LSM_Toolbox.jar
+  bcb926fe63b7637bd53e3602feda2166951acdec 20091014202912 plugins/LocalThickness_.jar
+  1a6345a290ff4a28ac4215cbb47fc561dcc886be 20100608092031 plugins/MTrack2_.jar
+  2e7c5f2d14a85c9a073074d5540aef234cb3cea5 20100819150812 plugins/M_I_P.jar
+  306c9af04cd291be4871abc187a75c270a58eda2 20100831140304 plugins/Macro_Examples.jar
+  65a2dd7816efceb28030dc0ea7cb4ad51c42e9a0 20091014202912 plugins/Macros/About_Plugin_Macros.txt
+  dff5642dcb662c06fd8cd7dfce73f60a4b8b8244 20091014202912 plugins/Macros/Bulls_Eye.txt
+  e7ffe8ba782ce90d3b80ad882c474ab1836b58a4 20091014202912 plugins/Macros/Polygon_.txt
+  39f7ffcd9b21888b618524a811eb39c93625578d 20091014202912 plugins/Macros/RGB_Histogram.txt
+  3ee0edfae7b40189254e38a6ed8108c52859bc33 20091014202912 plugins/Macros/batch_convert_any_to_tif.txt
+  d0cd293b359b7bcdf390e560dc28f68fa8033677 20091014202912 plugins/Manual_Tracking.jar
+  de3a020be174270600534345eb47fd76267d8080 20100917150655 plugins/MosaicJ_.jar
+  a349b390595c90be2924a20a372aac99bad438e7 20100827134107 plugins/PIV_analyser.jar
+  c0e6e54ff0ec7c62350f232af75c85ca7006b51f 20100917150655 plugins/PointPicker_.jar
+  32d24a273fef021b079fc64f151c2436af700b30 20100819150813 plugins/QuickPALM_.jar
+  08f589bb5133aac039fc01f8a0ad15836b3e764d 20100921125040 plugins/RandomJ_.jar
+  0ab9e3b0886ae1aab0651865d98473295f2cc715 20091014202912 plugins/Record_Screen.jar
+  760ca039f994de99f4a141987b4dbdeeec55c4ea 20100917150655 plugins/Refresh_Javas.jar
+  5f15dca1b6623d1e9e79b9b657392c9355d7ed3e 20101004150950 plugins/SPIM_Registration.jar
+  6aea6f90431fb13efa5adc4714d7a50a96df541f 20100923093551 plugins/Script_Editor.jar
+  50ee8cf26b2e4bf1b9774a83d227fae873158ef8 20100917150655 plugins/SheppLogan_.jar
+  43c0f49bb7ca9e65f8ec0a726a7cbc82c52981c0 20100910155715 plugins/Simple_Neurite_Tracer.jar
+  1a5f4c622997d1d23f1d08c81c46b80b4da05d47 20100616122917 plugins/Skeletonize3D_.jar
+  e71b5942e5343cbc3d591f249cc9f3dfc73c7e29 20100917150655 plugins/Snakuscule_.jar
+  41d82921719c38520d5472a3608b79394db1b7b0 20091014202912 plugins/SplineDeformationGenerator_.jar
+  b5a0eabcb770437c30575d4ea6f5dbd346b8bd89 20100917150655 plugins/StackReg_.jar
+  e4561a55e0e167093e5551dddfcb93d8584c29cf 20100818110821 plugins/Stack_Manipulation.jar
+  23cae80cce99d71dc4669da51c6909c3a7ca68ca 20100608092031 plugins/Statistical_Region_Merging.jar
+  c8ca6b1805fb21baa16d2191b5aea10704c5e589 20100823095815 plugins/Stitching_.jar
+  f05089fa82aca755fea1268bff7f63793692e5c8 20100608092031 plugins/Sync_Win.jar
+  f5b2c18843647be28a96a3e7d163a7f2f970921b 20100616122917 plugins/Time_Stamper.jar
+  ebecddff37b8e47da31f3f7e8d3c081d3b5ca76e 20091014202912 plugins/ToAST_.jar
+  5e20cc0a6c833ebfdcd5fc6517eed89a44ae35dc 20100819150813 plugins/TopoJ_.jar
+  963f0b325919991a8c31ef06a1c84ad499d52232 20100624122024 plugins/Trainable_Segmentation.jar
+  388697eeea49cd689b3972077ca2d57e4e3c2eff 20100927094728 plugins/TrakEM2_.jar
+  39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2 20100921125040 plugins/TransformJ_.jar
+  09868b512410628e06c7dc25a6999c7dda8cf078 20100608092031 plugins/TurboReg_.jar
+  9558400db089262849c33428a77645c323390145 20100917150655 plugins/UnwarpJ_.jar
+  a32dfe463fa2c8814cb0caf9079478ff4e1c44bf 20091014202912 plugins/Utilities/Close_All_Without_Saving.txt
+  08258025d1141698097ccdab66cc787609cb544e 20100819150812 plugins/VIB_.jar
+  d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2 20091014202912 plugins/Video_Editing.jar
+  a43c9ad3f07dbfa56be075a9ebdcfa115f6675c8 20100616122917 plugins/View5D_.jar
+  b8c3af50365b12b0beb010f1c35134cbd310341a 20091014202912 plugins/Volume_Viewer.jar
+  e9a7358277abe3a90df974fc81d96be9c9a71a9e 20100422093610 plugins/bUnwarpJ_.jar
+  3717ff6270aaa69d62d0790970ad478dda6853ee 20100301162827 plugins/cell_counter.jar
+  659ad6a335b4947eef8758b1b0cf050779430b78 20091014202912 plugins/ij-ImageIO_.jar
+  f3989138cbab5258cd8d6d682f93454637060d10 20100811100203 plugins/level_sets.jar
+  110647853a7eef67880e36fb7b702237e66e051d 20100910155713 plugins/loci_tools.jar
+  cd112fd486bd7a0c1be2039c123c706f79cd69db 20100813102111 plugins/mpicbg_.jar
+  1469a73a2eb73d2eecb628dae0c71b14cf378586 20101004150950 plugins/register_virtual_stack_slices.jar
+  4d7eaf239c033d305a464a06c3e64c68d096c7e1 20091014202912 plugins/registration_3d.jar
+  e6e0879f5d50afa8d0dd213b4b66e396a39a47b7 20091014202910 retro/backport-util-concurrent-3.1.jar
+  e250f0c40b768e90ed7d3910d9869075f3e438cd 20091014202910 retro/retrotranslator-runtime-1.2.7.jar
+  eea1390da8fac38763ed4c03f1acb3342b942717 20091014202910 retro/retrotranslator-transformer-1.2.7.jar
+  d326018044a582f5106efc6fc90ad09f98a6a822 20091014202912 scripts/Record_Desktop.py
+  0ea7f8fc6683e74065ae7fd82c1b92676e069526 20091014202912 scripts/Record_Window.py
+</pre>
+    </div><div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-23 16:57:19 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Bene, any ideas?</pre>
+    </div><div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-08-11 10:19:58 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Bene?</pre>
+    </div><div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=228#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joshua</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-11-04 11:25:42 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><a href="http://doc.emergingthreats.net/pub/Main/WebHome/1.html">http://doc.emergingthreats.net/pub/Main/WebHome/1.html</a>
+<a href="http://doc.emergingthreats.net/pub/Main/WebHome/2.html">http://doc.emergingthreats.net/pub/Main/WebHome/2.html</a>
+<a href="http://doc.emergingthreats.net/pub/Main/WebHome/3.html">http://doc.emergingthreats.net/pub/Main/WebHome/3.html</a>
+<a href="http://doc.emergingthreats.net/pub/Main/WebHome/4.html">http://doc.emergingthreats.net/pub/Main/WebHome/4.html</a></pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=228">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=228">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=228">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=228&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=228" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=228&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731554-Sd4DSMPynvIyJcwhpkIiAHqmNM9bAVIi7kitzwh-isk">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

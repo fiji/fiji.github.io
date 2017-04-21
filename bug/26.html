@@ -1,0 +1,1735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 26 &ndash; 3D viewer crashes on Linux 64 bits</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=26&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=26">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=26">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=26">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 26 – 3D viewer crashes on Linux 64 bits",  
+                             "show_bug.cgi?id=26" );
+        document.title = "Bug 26 – 3D viewer crashes on Linux 64 bits";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 26 – 3D viewer crashes on Linux 64 bits", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_26 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;26</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">3D viewer crashes on Linux 64 bits</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2009-07-09 19:32:04 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=26&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=26" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=26&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731460-5a2yd_lLqjlBHUfXu1krB3Y-hgRL1XSOksLcjySZBqE">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-07-09 19:32:04">
+  <input type="hidden" name="longdesclength" value="10">
+  <input type="hidden" name="id" value="26">
+  <input type="hidden" name="token" value="1492731460-cWJa2bukC_is3i4Ey8rMO47nR1QcK3obJZ3h8O1AczI">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=26"><b>Bug&nbsp;26</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">3D viewer crashes on Linux 64 bits</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>3D viewer crashes on Linux 64 bits
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('3D viewer crashes on Linux 64 bits', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       major
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=26&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=26">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2009-01-07 17:59 CST by <span class="vcard"><span class="fn">Ignacio Arganda</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-07-09 19:32 CDT 
+      (<a href="show_activity.cgi?id=26">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="bene.schmid">bene.schmid</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=26&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=26&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ignacio Arganda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-07 17:59:25 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >3D provokes Fiji to crash when rendering any volume.The log file is:
+
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f76c1718ac9, pid=18353, tid=36448592
+#
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (10.0-b19 mixed mode linux-amd64)
+# Problematic frame:
+# C  [libdricore.so+0x92ac9]
+#
+# If you would like to submit a bug report, please visit:
+#   <a href="http://java.sun.com/webapps/bugreport/crash.jsp">http://java.sun.com/webapps/bugreport/crash.jsp</a>
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000027dc800):  JavaThread &quot;J3D-Renderer-1&quot; [_thread_in_native, id=18822, stack(0x00000000021c2000,0x00000000022c3000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x0000000000000238
+
+Registers:
+RAX=0x000000000000008e, RBX=0x0000000000000000, RCX=0x0000000000000000, RDX=0x0000000000000000
+RSP=0x00000000022b8660, RBP=0x00007f76c0878010, RSI=0x00000000023c3530, RDI=0x0000000000000000
+R8 =0x00007f76c0889020, R9 =0x00000000022b8690, R10=0x00007f76c0885020, R11=0x000000000000002a
+R12=0x00000000023c3530, R13=0x000000000000002a, R14=0x00007f76c0889020, R15=0x00007f76c0885020
+RIP=0x00007f76c1718ac9, EFL=0x0000000000010206, CSGSFS=0xffff000000000033, ERR=0x0000000000000006
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00000000022b8660)
+0x00000000022b8660:   00007f76c2e4f050 00007f76c178e663
+0x00000000022b8670:   0000000000000000 00007f76c178db9b
+0x00000000022b8680:   00007f76c088d020 00000000022b8690
+0x00000000022b8690:   0000000000000000 0000000000000000
+0x00000000022b86a0:   00000000022c0800 00007f76c0c2f020
+0x00000000022b86b0:   0000000000000000 0000000000000000
+0x00000000022b86c0:   0000000000000000 0000000000000000
+0x00000000022b86d0:   0000000000000000 0000000000000000
+0x00000000022b86e0:   0000000000000000 0000000000000000
+0x00000000022b86f0:   0000000000000000 0000000000000000
+0x00000000022b8700:   0000000000000000 0000000000000000
+0x00000000022b8710:   0000000000000000 0000000000000000
+0x00000000022b8720:   0000000000000000 0000000000000000
+0x00000000022b8730:   0000000000000000 0000000000000000
+0x00000000022b8740:   0000000000000000 0000000000000000
+0x00000000022b8750:   0000000000000000 0000000000000000
+0x00000000022b8760:   0000000000000000 0000000000000000
+0x00000000022b8770:   0000000000000000 0000000000000000
+0x00000000022b8780:   0000000000000000 0000000000000000
+0x00000000022b8790:   0000000000000000 0000000000000000
+0x00000000022b87a0:   0000000000000000 0000000000000000
+0x00000000022b87b0:   0000000000000000 0000000000000000
+0x00000000022b87c0:   0000000000000000 0000000000000000
+0x00000000022b87d0:   0000000000000000 0000000000000000
+0x00000000022b87e0:   0000000000000000 0000000000000000
+0x00000000022b87f0:   0000000000000000 0000000000000000
+0x00000000022b8800:   0000000000000000 0000000000000000
+0x00000000022b8810:   0000000000000000 0000000000000000
+0x00000000022b8820:   0000000000000000 0000000000000000
+0x00000000022b8830:   0000000000000000 0000000000000000
+0x00000000022b8840:   0000000000000000 0000000000000000
+0x00000000022b8850:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007f76c1718ac9)
+0x00007f76c1718ab9:   ba 0f af 46 3c 48 8b 4e 60 48 01 d0 41 8b 14 b9
+0x00007f76c1718ac9:   89 14 81 48 ff c7 49 83 c0 04 41 39 fb 77 d0 5b 
+
+Stack: [0x00000000021c2000,0x00000000022c3000],  sp=0x00000000022b8660,  free space=985k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libdricore.so+0x92ac9]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( =&gt; current thread )
+  0x00007f76c8b56400 JavaThread &quot;Thread-48&quot; [_thread_blocked, id=18832, stack(0x00007f76c0c7c000,0x00007f76c0d7d000)]
+  0x00007f76c8564c00 JavaThread &quot;J3D-InputDeviceScheduler-1&quot; [_thread_blocked, id=18831, stack(0x00007f76c0d7d000,0x00007f76c0e7e000)]
+  0x00007f76c8563c00 JavaThread &quot;J3D-SoundSchedulerUpdateThread-1&quot; [_thread_blocked, id=18830, stack(0x00007f76c0e7e000,0x00007f76c0f7f000)]
+  0x00007f76c8609400 JavaThread &quot;J3D-RenderStructureUpdateThread-1&quot; [_thread_blocked, id=18829, stack(0x00007f76c0f7f000,0x00007f76c1080000)]
+  0x00007f76c868fc00 JavaThread &quot;J3D-BehaviorScheduler-1&quot; [_thread_blocked, id=18828, stack(0x00007f76c1080000,0x00007f76c1181000)]
+  0x00007f76c8786000 JavaThread &quot;J3D-TransformStructureUpdateThread-1&quot; [_thread_blocked, id=18827, stack(0x00007f76c1181000,0x00007f76c1282000)]
+  0x00007f76c8ac4c00 JavaThread &quot;J3D-RenderingEnvironmentStructureUpdateThread-1&quot; [_thread_blocked, id=18826, stack(0x00007f76c1282000,0x00007f76c1383000)]
+  0x00007f76c9069400 JavaThread &quot;J3D-SoundStructureUpdateThread-1&quot; [_thread_blocked, id=18825, stack(0x00007f76c1383000,0x00007f76c1484000)]
+  0x00007f76c9068c00 JavaThread &quot;J3D-GeometryStructureUpdateThread-1&quot; [_thread_blocked, id=18824, stack(0x00007f76c1484000,0x00007f76c1585000)]
+  0x00007f76c84be800 JavaThread &quot;J3D-BehaviorStructureUpdateThread-1&quot; [_thread_blocked, id=18823, stack(0x00007f76c1585000,0x00007f76c1686000)]
+=&gt;0x00000000027dc800 JavaThread &quot;J3D-Renderer-1&quot; [_thread_in_native, id=18822, stack(0x00000000021c2000,0x00000000022c3000)]
+  0x0000000002490400 JavaThread &quot;J3D-MasterControl-1&quot; [_thread_blocked, id=18821, stack(0x00000000020c1000,0x00000000021c2000)]
+  0x000000000248fc00 JavaThread &quot;J3D-NotificationThread&quot; [_thread_blocked, id=18820, stack(0x000000000639b000,0x000000000649c000)]
+  0x000000000248f800 JavaThread &quot;J3D-TimerThread&quot; [_thread_blocked, id=18819, stack(0x0000000001dd2000,0x0000000001ed3000)]
+  0x00007f76c27c2c00 JavaThread &quot;J3D-RenderingAttributesStructureUpdateThread&quot; [_thread_blocked, id=18818, stack(0x000000000562b000,0x000000000572c000)]
+  0x00007f76c2fbb800 JavaThread &quot;SliceSelector&quot; [_thread_blocked, id=18816, stack(0x000000000189c000,0x000000000199d000)]
+  0x000000000241e800 JavaThread &quot;TimerQueue&quot; daemon [_thread_blocked, id=18375, stack(0x0000000005eb1000,0x0000000005fb2000)]
+  0x000000000236c000 JavaThread &quot;DestroyJavaVM&quot; [_thread_blocked, id=18353, stack(0x00007fffb871e000,0x00007fffb881e000)]
+  0x00007f76c302b400 JavaThread &quot;SocketListener&quot; [_thread_in_native, id=18372, stack(0x0000000005921000,0x0000000005a22000)]
+  0x00000000026d5000 JavaThread &quot;AWT-EventQueue-0&quot; [_thread_blocked, id=18370, stack(0x0000000001a9e000,0x0000000001b9f000)]
+  0x00007f76c3071800 JavaThread &quot;AWT-Shutdown&quot; [_thread_blocked, id=18369, stack(0x000000000199d000,0x0000000001a9e000)]
+  0x00007f76c81c9c00 JavaThread &quot;AWT-XAWT&quot; daemon [_thread_in_native, id=18367, stack(0x0000000003abe000,0x0000000003bbf000)]
+  0x00007f76c811ac00 JavaThread &quot;Java2D Disposer&quot; daemon [_thread_blocked, id=18366, stack(0x000000000510d000,0x000000000520e000)]
+  0x00007f76c8060c00 JavaThread &quot;Low Memory Detector&quot; daemon [_thread_blocked, id=18364, stack(0x0000000007456000,0x0000000007557000)]
+  0x00007f76c805e000 JavaThread &quot;CompilerThread1&quot; daemon [_thread_blocked, id=18363, stack(0x000000000169a000,0x000000000179b000)]
+  0x00007f76c805d000 JavaThread &quot;CompilerThread0&quot; daemon [_thread_blocked, id=18362, stack(0x0000000001599000,0x000000000169a000)]
+  0x00000000023a4400 JavaThread &quot;Signal Dispatcher&quot; daemon [_thread_blocked, id=18361, stack(0x0000000007d90000,0x0000000007e91000)]
+  0x00007f76c8059c00 JavaThread &quot;Finalizer&quot; daemon [_thread_blocked, id=18360, stack(0x0000000001498000,0x0000000001599000)]
+  0x00007f76c8058800 JavaThread &quot;Reference Handler&quot; daemon [_thread_blocked, id=18359, stack(0x00000000046a7000,0x00000000047a8000)]
+
+Other Threads:
+  0x00007f76c8053400 VMThread [stack: 0x0000000002d2d000,0x0000000002e2e000] [id=18358]
+  0x00007f76c8063000 WatcherThread [stack: 0x000000000179b000,0x000000000189c000] [id=18365]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 1226432K, used 136170K [0x00007f7ebcb60000, 0x00007f7f0e390000, 0x00007f82ad800000)
+  eden space 1125440K, 12% used [0x00007f7ebcb60000,0x00007f7ec505a9d8,0x00007f7f01670000)
+  from space 100992K, 0% used [0x00007f7f01670000,0x00007f7f01670000,0x00007f7f07910000)
+  to   space 105024K, 0% used [0x00007f7f07d00000,0x00007f7f07d00000,0x00007f7f0e390000)
+ PSOldGen        total 1379584K, used 149650K [0x00007f76db200000, 0x00007f772f540000, 0x00007f7ebcb60000)
+  object space 1379584K, 10% used [0x00007f76db200000,0x00007f76e4424860,0x00007f772f540000)
+ PSPermGen       total 24960K, used 24819K [0x00007f76d5e00000, 0x00007f76d7660000, 0x00007f76db200000)
+  object space 24960K, 99% used [0x00007f76d5e00000,0x00007f76d763cdb0,0x00007f76d7660000)
+
+Dynamic libraries:
+00110000-00117000 r-xp 00000000 08:04 7538758                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/native_threads/libhpi.so
+00117000-00218000 ---p 00007000 08:04 7538758                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/native_threads/libhpi.so
+00218000-0021a000 rw-p 00008000 08:04 7538758                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/native_threads/libhpi.so
+0021a000-0021b000 rw-p 0021a000 00:00 0 
+0021b000-00228000 r-xp 00000000 08:04 7514212                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libverify.so
+00228000-00327000 ---p 0000d000 08:04 7514212                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libverify.so
+00327000-0032a000 rw-p 0000c000 08:04 7514212                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libverify.so
+0032a000-00335000 rwxp 0032a000 00:00 0 
+00335000-003ea000 rwxp 00335000 00:00 0 
+00400000-0040a000 r-xp 00000000 08:04 7260233                            /home/marta/Fiji.app/fiji-linux64
+0040a000-00432000 r-xp 00000000 08:04 7514197                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjava.so
+00432000-00532000 ---p 00028000 08:04 7514197                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjava.so
+00532000-00539000 rw-p 00028000 08:04 7514197                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjava.so
+00539000-00546000 rwxp 00539000 00:00 0 
+00546000-00563000 rwxp 00546000 00:00 0 
+0060a000-0060b000 rw-p 0000a000 08:04 7260233                            /home/marta/Fiji.app/fiji-linux64
+0060b000-0060d000 rw-p 0060b000 00:00 0 
+0060d000-00d02000 r-xp 00000000 08:04 7514186                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/server/libjvm.so
+00d02000-00e01000 ---p 006f5000 08:04 7514186                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/server/libjvm.so
+00e01000-00f4b000 rw-p 006f4000 08:04 7514186                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/server/libjvm.so
+00f4b000-00f88000 rw-p 00f4b000 00:00 0 
+00f88000-00f94000 r-xp 00000000 08:04 2375707                            /lib64/libnss_files-2.9.so
+00f94000-01193000 ---p 0000c000 08:04 2375707                            /lib64/libnss_files-2.9.so
+01193000-01194000 r--p 0000b000 08:04 2375707                            /lib64/libnss_files-2.9.so
+01194000-01195000 rw-p 0000c000 08:04 2375707                            /lib64/libnss_files-2.9.so
+01195000-01196000 ---p 01195000 00:00 0 
+01196000-01296000 rwxp 01196000 00:00 0 
+01296000-01297000 ---p 01296000 00:00 0 
+01297000-01397000 rwxp 01297000 00:00 0 
+01397000-01398000 ---p 01397000 00:00 0 
+01398000-01498000 rwxp 01398000 00:00 0 
+01498000-0149b000 ---p 01498000 00:00 0 
+0149b000-01599000 rwxp 0149b000 00:00 0 
+01599000-0159c000 ---p 01599000 00:00 0 
+0159c000-0169a000 rwxp 0159c000 00:00 0 
+0169a000-0169d000 ---p 0169a000 00:00 0 
+0169d000-0179b000 rwxp 0169d000 00:00 0 
+0179b000-0179c000 ---p 0179b000 00:00 0 
+0179c000-0189c000 rwxp 0179c000 00:00 0 
+0189c000-0189f000 ---p 0189c000 00:00 0 
+0189f000-0199d000 rwxp 0189f000 00:00 0 
+0199d000-019a0000 ---p 0199d000 00:00 0 
+019a0000-01a9e000 rwxp 019a0000 00:00 0 
+01a9e000-01aa1000 ---p 01a9e000 00:00 0 
+01aa1000-01b9f000 rwxp 01aa1000 00:00 0 
+01b9f000-01bcb000 r-xp 00000000 08:04 7514208                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjpeg.so
+01bcb000-01ccb000 ---p 0002c000 08:04 7514208                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjpeg.so
+01ccb000-01cd1000 rw-p 0002c000 08:04 7514208                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjpeg.so
+01cd1000-01cd4000 rwxp 01cd1000 00:00 0 
+01cd4000-01dd2000 rwxp 01cd4000 00:00 0 
+01dd2000-01dd5000 ---p 01dd2000 00:00 0 
+01dd5000-01ed3000 rwxp 01dd5000 00:00 0 
+01f1d000-01f9b000 r-xp 00000000 08:04 7514204                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libfontmanager.so
+01f9b000-0209a000 ---p 0007e000 08:04 7514204                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libfontmanager.so
+0209a000-020b0000 rw-p 0007d000 08:04 7514204                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libfontmanager.so
+020b0000-020c1000 rw-p 020b0000 00:00 0 
+020c1000-020c4000 ---p 020c1000 00:00 0 
+020c4000-021c2000 rwxp 020c4000 00:00 0 
+021c2000-021c5000 ---p 021c2000 00:00 0 
+021c5000-022c3000 rwxp 021c5000 00:00 0 
+02355000-02808000 rw-p 02355000 00:00 0                                  [heap]
+0280d000-02897000 r-xp 00000000 08:04 7514210                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libawt.so
+02897000-02996000 ---p 0008a000 08:04 7514210                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libawt.so
+02996000-029af000 rw-p 00089000 08:04 7514210                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libawt.so
+029af000-029d3000 rw-p 029af000 00:00 0 
+02a3e000-02a51000 r-xp 00000000 08:04 7514203                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libnet.so
+02a51000-02b52000 ---p 00013000 08:04 7514203                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libnet.so
+02b52000-02b55000 rw-p 00014000 08:04 7514203                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libnet.so
+02d2d000-02d2e000 ---p 02d2d000 00:00 0 
+02d2e000-02e2e000 rwxp 02d2e000 00:00 0 
+02e71000-02e91000 r-xp 00000000 08:04 7514223                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libj3dcore-ogl.so
+02e91000-02f90000 ---p 00020000 08:04 7514223                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libj3dcore-ogl.so
+02f90000-02f91000 rw-p 0001f000 08:04 7514223                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libj3dcore-ogl.so
+02ff6000-02ff7000 ---p 02ff6000 00:00 0 
+02ff7000-030f7000 rwxp 02ff7000 00:00 0 
+03316000-03356000 r-xp 00000000 08:04 7538762                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/xawt/libmawt.so
+03356000-03456000 ---p 00040000 08:04 7538762                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/xawt/libmawt.so
+03456000-03461000 rw-p 00040000 08:04 7538762                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/xawt/libmawt.so
+03461000-03462000 rw-p 03461000 00:00 0 
+035da000-03626000 r-xp 00000000 08:04 7514191                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libcmm.so
+03626000-03726000 ---p 0004c000 08:04 7514191                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libcmm.so
+03726000-03733000 rw-p 0004c000 08:04 7514191                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libcmm.so
+03733000-03734000 rw-p 03733000 00:00 0 
+03abe000-03ac1000 ---p 03abe000 00:00 0 
+03ac1000-03bbf000 rwxp 03ac1000 00:00 0 
+041c3000-041d1000 r-xp 00000000 08:04 7514189                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libzip.so
+041d1000-042d3000 ---p 0000e000 08:04 7514189                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libzip.so
+042d3000-042d6000 rw-p 00010000 08:04 7514189                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libzip.so
+042d6000-042d7000 rw-p 042d6000 00:00 0 
+046a7000-046aa000 ---p 046a7000 00:00 0 
+046aa000-047a8000 rwxp 046aa000 00:00 0 
+04e92000-04e93000 r-xp 00000000 08:04 7514224                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjawt.so
+04e93000-04f92000 ---p 00001000 08:04 7514224                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjawt.so
+04f92000-04f93000 rw-p 00000000 08:04 7514224                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libjawt.so
+0510d000-05110000 ---p 0510d000 00:00 0 
+05110000-0520e000 rwxp 05110000 00:00 0 
+0562b000-0562e000 ---p 0562b000 00:00 0 
+0562e000-0572c000 rwxp 0562e000 00:00 0 
+05921000-05924000 ---p 05921000 00:00 0 
+05924000-05a22000 rwxp 05924000 00:00 0 
+05eb1000-05eb4000 ---p 05eb1000 00:00 0 
+05eb4000-05fb2000 rwxp 05eb4000 00:00 0 
+0639b000-0639e000 ---p 0639b000 00:00 0 
+0639e000-0649c000 rwxp 0639e000 00:00 0 
+06c0e000-06c15000 r-xp 00000000 08:04 7514190                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libnio.so
+06c15000-06d14000 ---p 00007000 08:04 7514190                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libnio.so
+06d14000-06d16000 rw-p 00006000 08:04 7514190                            /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/amd64/libnio.so
+07456000-07459000 ---p 07456000 00:00 0 
+07459000-07557000 rwxp 07459000 00:00 0 
+07d90000-07d93000 ---p 07d90000 00:00 0 
+07d93000-07e91000 rwxp 07d93000 00:00 0 
+3107000000-3107020000 r-xp 00000000 08:04 2375906                        /lib64/ld-2.9.so
+310721f000-3107220000 r--p 0001f000 08:04 2375906                        /lib64/ld-2.9.so
+3107220000-3107221000 rw-p 00020000 08:04 2375906                        /lib64/ld-2.9.so
+3108400000-3108568000 r-xp 00000000 08:04 2376010                        /lib64/libc-2.9.so
+3108568000-3108768000 ---p 00168000 08:04 2376010                        /lib64/libc-2.9.so
+3108768000-310876c000 r--p 00168000 08:04 2376010                        /lib64/libc-2.9.so
+310876c000-310876d000 rw-p 0016c000 08:04 2376010                        /lib64/libc-2.9.so
+310876d000-3108772000 rw-p 310876d000 00:00 0 
+3108800000-3108884000 r-xp 00000000 08:04 2376048                        /lib64/libm-2.9.so
+3108884000-3108a83000 ---p 00084000 08:04 2376048                        /lib64/libm-2.9.so
+3108a83000-3108a84000 r--p 00083000 08:04 2376048                        /lib64/libm-2.9.so
+3108a84000-3108a85000 rw-p 00084000 08:04 2376048                        /lib64/libm-2.9.so
+3108c00000-3108c02000 r-xp 00000000 08:04 2376043                        /lib64/libdl-2.9.so
+3108c02000-3108e02000 ---p 00002000 08:04 2376043                        /lib64/libdl-2.9.so
+3108e02000-3108e03000 r--p 00002000 08:04 2376043                        /lib64/libdl-2.9.so
+3108e03000-3108e04000 rw-p 00003000 08:04 2376043                        /lib64/libdl-2.9.so
+3109000000-3109017000 r-xp 00000000 08:04 2376038                        /lib64/libpthread-2.9.so
+3109017000-3109216000 ---p 00017000 08:04 2376038                        /lib64/libpthread-2.9.so
+3109216000-3109217000 r--p 00016000 08:04 2376038                        /lib64/libpthread-2.9.so
+3109217000-3109218000 rw-p 00017000 08:04 2376038                        /lib64/libpthread-2.9.so
+3109218000-310921c000 rw-p 3109218000 00:00 0 
+3109800000-310981a000 r-xp 00000000 08:04 2376045                        /lib64/libselinux.so.1
+310981a000-3109a19000 ---p 0001a000 08:04 2376045                        /lib64/libselinux.so.1
+3109a19000-3109a1a000 r--p 00019000 08:04 2376045                        /lib64/libselinux.so.1
+3109a1a000-3109a1b000 rw-p 0001a000 08:04 2376045                        /lib64/libselinux.so.1
+3109a1b000-3109a1c000 rw-p 3109a1b000 00:00 0 
+310a000000-310a008000 r-xp 00000000 08:04 2376039                        /lib64/librt-2.9.so
+310a008000-310a207000 ---p 00008000 08:04 2376039                        /lib64/librt-2.9.so
+310a207000-310a208000 r--p 00007000 08:04 2376039                        /lib64/librt-2.9.so
+310a208000-310a209000 rw-p 00008000 08:04 2376039                        /lib64/librt-2.9.so
+310ac00000-310ac02000 r-xp 00000000 08:04 13585372                       /usr/lib64/libXau.so.6.0.0
+310ac02000-310ae01000 ---p 00002000 08:04 13585372                       /usr/lib64/libXau.so.6.0.0
+310ae01000-310ae02000 rw-p 00001000 08:04 13585372                       /usr/lib64/libXau.so.6.0.0
+310b400000-310b401000 r-xp 00000000 08:04 13585395                       /usr/lib64/libxcb-xlib.so.0.0.0
+310b401000-310b600000 ---p 00001000 08:04 13585395                       /usr/lib64/libxcb-xlib.so.0.0.0
+310b600000-310b601000 rw-p 00000000 08:04 13585395                       /usr/lib64/libxcb-xlib.so.0.0.0
+310b800000-310b905000 r-xp 00000000 08:04 13585594                       /usr/lib64/libX11.so.6.2.0
+310b905000-310bb05000 ---p 00105000 08:04 13585594                       /usr/lib64/libX11.so.6.2.0
+310bb05000-310bb0b000 rw-p 00105000 08:04 13585594                       /usr/lib64/libX11.so.6.2.0
+310bc00000-310bc1a000 r-xp 00000000 08:04 13585376                       /usr/lib64/libxcb.so.1.0.0
+310bc1a000-310be1a000 ---p 0001a000 08:04 13585376                       /usr/lib64/libxcb.so.1.0.0
+310be1a000-310be1b000 rw-p 0001a000 08:04 13585376                       /usr/lib64/libxcb.so.1.0.0
+310c000000-310c005000 r-xp 00000000 08:04 13585374                       /usr/lib64/libXdmcp.so.6.0.0
+310c005000-310c204000 ---p 00005000 08:04 13585374                       /usr/lib64/libXdmcp.so.6.0.0
+310c204000-310c205000 rw-p 00004000 08:04 13585374                       /usr/lib64/libXdmcp.so.6.0.0
+310c800000-310c827000 r-xp 00000000 08:04 2376050                        /lib64/libexpat.so.1.5.2
+310c827000-310ca26000 ---p 00027000 08:04 2376050                        /lib64/libexpat.so.1.5.2
+310ca26000-310ca29000 rw-p 00026000 08:04 2376050                        /lib64/libexpat.so.1.5.2
+310d400000-310d410000 r-xp 00000000 08:04 13585627                       /usr/lib64/libXext.so.6.4.0
+310d410000-310d610000 ---p 00010000 08:04 13585627                       /usr/lib64/libXext.so.6.4.0
+310d610000-310d611000 rw-p 00010000 08:04 13585627                       /usr/lib64/libXext.so.6.4.0
+310dc00000-310dc08000 r-xp 00000000 08:04 13585642                       /usr/lib64/libXi.so.6.0.0
+310dc08000-310de08000 ---p 00008000 08:04 13585642                       /usr/lib64/libXi.so.6.0.0
+310de08000-310de09000 rw-p 00008000 08:04 13585642                       /usr/lib64/libXi.so.6.0.0
+310e000000-310e005000 r-xp 00000000 08:04 13585730                       /usr/lib64/libXfixes.so.3.1.0
+310e005000-310e204000 ---p 00005000 08:04 13585730                       /usr/lib64/libXfixes.so.3.1.0
+310e204000-310e205000 rw-p 00004000 08:04 13585730                       /usr/lib64/libXfixes.so.3.1.0
+310e800000-310e809000 r-xp 00000000 08:04 13585596                       /usr/lib64/libXrender.so.1.3.0
+310e809000-310ea08000 ---p 00009000 08:04 13585596                       /usr/lib64/libXrender.so.1.3.0
+310ea08000-310ea09000 rw-p 00008000 08:04 13585596                       /usr/lib64/libXrender.so.1.3.0
+3110e00000-3110e09000 r-xp 00000000 08:04 13585815                       /usr/lib64/libXcursor.so.1.0.2
+3110e09000-3111009000 ---p 00009000 08:04 13585815                       /usr/lib64/libXcursor.so.1.0.2
+3111009000-311100a000 rw-p 00009000 08:04 13585815                       /usr/lib64/libXcursor.so.1.0.2
+3111e00000-3111e02000 r-xp 00000000 08:04 13585886                       /usr/lib64/libXdamage.so.1.1.0
+3111e02000-3112001000 ---p 00002000 08:04 13585886                       /usr/lib64/libXdamage.so.1.1.0
+3112001000-3112002000 rw-p 00001000 08:04 13585886                       /usr/lib64/libXdamage.so.1.1.0
+3112a00000-3112a16000 r-xp 00000000 08:04 2376054                        /lib64/libnsl-2.9.so
+3112a16000-3112c16000 ---p 00016000 08:04 2376054                        /lib64/libnsl-2.9.so
+3112c16000-3112c17000 r--p 00016000 08:04 2376054                        /lib64/libnsl-2.9.so
+3112c17000-3112c18000 rw-p 00017000 08:04 2376054                        /lib64/libnsl-2.9.so
+3112c18000-3112c1a000 rw-p 3112c18000 00:00 0 
+3113200000-3113214000 r-xp 00000000 08:04 2376055                        /lib64/libresolv-2.9.so
+3113214000-3113414000 ---p 00014000 08:04 2376055                        /lib64/libresolv-2.9.so
+3113414000-3113415000 r--p 00014000 08:04 2376055                        /lib64/libresolv-2.9.so
+3113415000-3113416000 rw-p 00015000 08:04 2376055                        /lib64/libresolv-2.9.so
+3113416000-3113418000 rw-p 3113416000 00:00 0 
+3115a00000-3115a16000 r-xp 00000000 08:04 2376069                        /lib64/libgcc_s-4.3.2-20081105.so.1
+3115a16000-3115c16000 ---p 00016000 08:04 2376069                        /lib64/libgcc_s-4.3.2-20081105.so.1
+3115c16000-3115c17000 rw-p 00016000 08:04 2376069                        /lib64/libgcc_s-4.3.2-20081105.so.1
+3117a00000-3117aee000 r-xp 00000000 08:04 13587872                       /usr/lib64/libstdc++.so.6.0.10
+3117aee000-3117cee000 ---p 000ee000 08:04 13587872                       /usr/lib64/libstdc++.so.6.0.10
+3117cee000-3117cf5000 r--p 000ee000 08:04 13587872                       /usr/lib64/libstdc++.so.6.0.10
+3117cf5000-3117cf7000 rw-p 000f5000 08:04 13587872                       /usr/lib64/libstdc++.so.6.0.10
+3117cf7000-3117d0a000 rw-p 3117cf7000 00:00 0 
+3118600000-311866a000 r-xp 00000000 08:04 24010909                       /usr/lib64/libGL.so.1.2
+311866a000-3118869000 ---p 0006a000 08:04 24010909                       /usr/lib64/libGL.so.1.2
+3118869000-3118873000 rw-p 00069000 08:04 24010909                       /usr/lib64/libGL.so.1.2
+3118873000-3118874000 rw-p 3118873000 00:00 0 
+311b200000-311b209000 r-xp 00000000 08:04 24010908                       /usr/lib64/libdrm.so.2.3.0
+311b209000-311b409000 ---p 00009000 08:04 24010908                       /usr/lib64/libdrm.so.2.3.0
+311b409000-311b40a000 rw-p 00009000 08:04 24010908                       /usr/lib64/libdrm.so.2.3.0
+311da00000-311da05000 r-xp 00000000 08:04 13586396                       /usr/lib64/libXxf86vm.so.1.0.0
+311da05000-311dc04000 ---p 00005000 08:04 13586396                       /usr/lib64/libXxf86vm.so.1.0.0
+311dc04000-311dc05000 rw-p 00004000 08:04 13586396                       /usr/lib64/libXxf86vm.so.1.0.0
+311ee00000-311ee05000 r-xp 00000000 08:04 24010904                       /usr/lib64/libXtst.so.6.1.0
+311ee05000-311f005000 ---p 00005000 08:04 24010904                       /usr/lib64/libXtst.so.6.1.0
+311f005000-311f006000 rw-p 00005000 08:04 24010904                       /usr/lib64/libXtst.so.6.1.0
+7f76c0738000-7f76c0c7c000 rw-p 7f76c0738000 00:00 0 
+7f76c0c7c000-7f76c0c7f000 ---p 7f76c0c7c000 00:00 0 
+7f76c0c7f000-7f76c0d7d000 rwxp 7f76c0c7f000 00:00 0 
+7f76c0d7d000-7f76c0d80000 ---p 7f76c0d7d000 00:00 0 
+7f76c0d80000-7f76c0e7e000 rwxp 7f76c0d80000 00:00 0 
+7f76c0e7e000-7f76c0e81000 ---p 7f76c0e7e000 00:00 0 
+7f76c0e81000-7f76c0f7f000 rwxp 7f76c0e81000 00:00 0 
+7f76c0f7f000-7f76c0f82000 ---p 7f76c0f7f000 00:00 0 
+7f76c0f82000-7f76c1080000 rwxp 7f76c0f82000 00:00 0 
+7f76c1080000-7f76c1083000 ---p 7f76c1080000 00:00 0 
+7f76c1083000-7f76c1181000 rwxp 7f76c1083000 00:00 0 
+7f76c1181000-7f76c1184000 ---p 7f76c1181000 00:00 0 
+7f76c1184000-7f76c1282000 rwxp 7f76c1184000 00:00 0 
+7f76c1282000-7f76c1285000 ---p 7f76c1282000 00:00 0 
+7f76c1285000-7f76c1383000 rwxp 7f76c1285000 00:00 0 
+7f76c1383000-7f76c1386000 ---p 7f76c1383000 00:00 0 
+7f76c1386000-7f76c1484000 rwxp 7f76c1386000 00:00 0 
+7f76c1484000-7f76c1487000 ---p 7f76c1484000 00:00 0 
+7f76c1487000-7f76c1585000 rwxp 7f76c1487000 00:00 0 
+7f76c1585000-7f76c1588000 ---p 7f76c1585000 00:00 0 
+7f76c1588000-7f76c1686000 rwxp 7f76c1588000 00:00 0 
+7f76c1686000-7f76c1842000 r-xp 00000000 08:04 13639969                   /usr/lib64/dri/libdricore.so
+7f76c1842000-7f76c1a42000 ---p 001bc000 08:04 13639969                   /usr/lib64/dri/libdricore.so
+7f76c1a42000-7f76c1a59000 rw-p 001bc000 08:04 13639969                   /usr/lib64/dri/libdricore.so
+7f76c1a59000-7f76c1a64000 rw-p 7f76c1a59000 00:00 0 
+7f76c1a64000-7f76c1a77000 r-xp 00000000 08:04 13639977                   /usr/lib64/dri/swrast_dri.so
+7f76c1a77000-7f76c1c77000 ---p 00013000 08:04 13639977                   /usr/lib64/dri/swrast_dri.so
+7f76c1c77000-7f76c1c7a000 rw-p 00013000 08:04 13639977                   /usr/lib64/dri/swrast_dri.so
+7f76c1c7a000-7f76c1c7b000 rw-p 7f76c1c7a000 00:00 0 
+7f76c1c7b000-7f76c1c80000 r-xp 00000000 08:04 2375705                    /lib64/libnss_dns-2.9.so
+7f76c1c80000-7f76c1e7f000 ---p 00005000 08:04 2375705                    /lib64/libnss_dns-2.9.so
+7f76c1e7f000-7f76c1e80000 r--p 00004000 08:04 2375705                    /lib64/libnss_dns-2.9.so
+7f76c1e80000-7f76c1e81000 rw-p 00005000 08:04 2375705                    /lib64/libnss_dns-2.9.so
+7f76c1e8d000-7f76c1e90000 rw-s 00000000 00:08 14843921                   /SYSV00000000 (deleted)
+7f76c1e90000-7f76c1e97000 r--s 00000000 08:04 13624125                   /usr/lib64/gconv/gconv-modules.cache
+7f76c1e97000-7f76c2a0a000 rw-p 7f76c1e97000 00:00 0 
+7f76c2a0a000-7f76c2a11000 r--s 00000000 08:04 35602955                   /var/cache/fontconfig/177aa5f8e4784b879645141d1d73ae7a-x86-64.cache-2
+7f76c2a11000-7f76c2a18000 r--s 00000000 08:04 35602936                   /var/cache/fontconfig/f4023520196b2bc2c439adcafb2470ff-x86-64.cache-2
+7f76c2a18000-7f76c2a1c000 r--s 00000000 08:04 35602565                   /var/cache/fontconfig/87f5e051180a7a75f16eb6fe7dbd3749-x86-64.cache-2
+7f76c2a1c000-7f76c2a25000 r--s 00000000 08:04 35602544                   /var/cache/fontconfig/b79f3aaa7d385a141ab53ec885cc22a8-x86-64.cache-2
+7f76c2a25000-7f76c2a28000 r--s 00000000 08:04 35602519                   /var/cache/fontconfig/5c755b2f27115486aa6359c84dd3cbda-x86-64.cache-2
+7f76c2a28000-7f76c2a36000 r--s 00000000 08:04 35602518                   /var/cache/fontconfig/40c848d2bcd698028c81266d97f97863-x86-64.cache-2
+7f76c2a36000-7f76c2a38000 r--s 00000000 08:04 35602517                   /var/cache/fontconfig/830f035fa84a65ce80e050178dbb630d-x86-64.cache-2
+7f76c2a38000-7f76c2a39000 r--s 00000000 08:04 35602516                   /var/cache/fontconfig/81a173283b451552b599cfaafd6236bd-x86-64.cache-2
+7f76c2a39000-7f76c2a3a000 r--s 00000000 08:04 35602515                   /var/cache/fontconfig/6cfc7d49b27ba7d3eb71ab86e04def2c-x86-64.cache-2
+7f76c2a3a000-7f76c2a3b000 r--s 00000000 08:04 35602514                   /var/cache/fontconfig/044963cbb93fcb06c61d94a50dee394f-x86-64.cache-2
+7f76c2a3b000-7f76c2a3c000 r--s 00000000 08:04 35602513                   /var/cache/fontconfig/b887eea8f1b96e1d899b44ed6681fc27-x86-64.cache-2
+7f76c2a3c000-7f76c2a3d000 r--s 00000000 08:04 35602512                   /var/cache/fontconfig/860639f272b8b4b3094f9e399e41bccd-x86-64.cache-2
+7f76c2a3d000-7f76c2a3e000 r--s 00000000 08:04 35602511                   /var/cache/fontconfig/211368abcb0ff835c229ff05c9ec01dc-x86-64.cache-2
+7f76c2a3e000-7f76c2a3f000 r--s 00000000 08:04 35602510                   /var/cache/fontconfig/c46020d7221988a13df853d2b46304fc-x86-64.cache-2
+7f76c2a3f000-7f76c2a40000 r--s 00000000 08:04 35602509                   /var/cache/fontconfig/b63c21b9c3e5b4a4009aa5966b421593-x86-64.cache-2
+7f76c2a40000-7f76c2a41000 r--s 00000000 08:04 35602508                   /var/cache/fontconfig/df893b4576ad6107f9397134092c4059-x86-64.cache-2
+7f76c2a41000-7f76c2a42000 r--s 00000000 08:04 35602507                   /var/cache/fontconfig/ff627ea95a65192232277bf7c8a56f23-x86-64.cache-2
+7f76c2a42000-7f76c2a43000 r--s 00000000 08:04 35602506                   /var/cache/fontconfig/900402270e15d763a6e008bb2d4c7686-x86-64.cache-2
+7f76c2a43000-7f76c2a44000 r--s 00000000 08:04 35602505                   /var/cache/fontconfig/2881ed3fd21ca306ddad6f9b0dd3189f-x86-64.cache-2
+7f76c2a44000-7f76c2a45000 r--s 00000000 08:04 35602504                   /var/cache/fontconfig/e61abf8156cc476151baa07d67337cae-x86-64.cache-2
+7f76c2a45000-7f76c2a49000 r--s 00000000 08:04 35602970                   /var/cache/fontconfig/b67b32625a2bb51b023d3814a918f351-x86-64.cache-2
+7f76c2a49000-7f76c2a4b000 r--s 00000000 08:04 35602502                   /var/cache/fontconfig/d3379abda271c4acd2ad0c01f565d0b0-x86-64.cache-2
+7f76c2a4b000-7f76c2a50000 r--s 00000000 08:04 35602501                   /var/cache/fontconfig/46b47dbc682d2ca4191e148ea7bde7f2-x86-64.cache-2
+7f76c2a50000-7f76c2a51000 r--s 00000000 08:04 35602500                   /var/cache/fontconfig/b4d0b56f766d89640448751fcd18ec1e-x86-64.cache-2
+7f76c2a51000-7f76c2a5a000 r--s 00000000 08:04 35602499                   /var/cache/fontconfig/12b26b760a24f8b4feb03ad48a333a72-x86-64.cache-2
+7f76c2a5a000-7f76c2a61000 r--s 00000000 08:04 35602938                   /var/cache/fontconfig/766670f26ba71bf5eea34bac120eb600-x86-64.cache-2
+7f76c2a61000-7f76c2a6c000 r--s 00000000 08:04 35602587                   /var/cache/fontconfig/e19de935dec46bbf3ed114ee4965548a-x86-64.cache-2
+7f76c2a6c000-7f76c2a6d000 r--s 00000000 08:04 35602497                   /var/cache/fontconfig/1248881498ac025e45c3042f6afe9284-x86-64.cache-2
+7f76c2a6d000-7f76c2a6f000 r--s 00000000 08:04 35602520                   /var/cache/fontconfig/8fd5071779cacc5b88f04796ea2b3c26-x86-64.cache-2
+7f76c2a6f000-7f76c2c2a000 rw-s 00000000 00:08 14155790                   /SYSV00000000 (deleted)
+7f76c2c2a000-7f76c2c39000 r--s 0012d000 08:04 7465037                    /home/marta/Fiji.app/jars/jfreechart-1.0.9.jar
+7f76c2c39000-7f76c2d39000 rw-p 7f76c2c39000 00:00 0 
+7f76c2d39000-7f76c2d40000 r--s 0010b000 08:04 7481431                    /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/resources.jar
+7f76c2d40000-7f76c2d4b000 r--s 0015c000 08:04 7465032                    /home/marta/Fiji.app/jars/jpedalSTD.jar
+7f76c2d4b000-7f76c2d4d000 r--s 00007000 08:04 7465044                    /home/marta/Fiji.app/jars/Jama-1.0.2.jar
+7f76c2d4d000-7f76c2d5c000 r--s 00139000 08:04 7465040                    /home/marta/Fiji.app/jars/edu_mines_jtk.jar
+7f76c2d5c000-7f76c2d5d000 r--s 0000b000 08:04 7465041                    /home/marta/Fiji.app/jars/jzlib-1.0.7.jar
+7f76c2d5d000-7f76c2d60000 r--s 0002d000 08:04 7465030                    /home/marta/Fiji.app/jars/imagescience.jar
+7f76c2d60000-7f76c2d7c000 r--s 001be000 08:04 7465035                    /home/marta/Fiji.app/jars/jython2.2.1/jython.jar
+7f76c2d7c000-7f76c2d81000 r--s 00040000 08:04 7465038                    /home/marta/Fiji.app/jars/bsh-2.0b4.jar
+7f76c2d81000-7f76c2d86000 r--s 00065000 08:04 7465046                    /home/marta/Fiji.app/jars/postgresql-8.2-506.jdbc3.jar
+7f76c2d86000-7f76c2dd3000 r--s 003e1000 08:04 7465045                    /home/marta/Fiji.app/jars/jruby.jar
+7f76c2dd3000-7f76c2de6000 r--s 0016d000 08:04 7465043                    /home/marta/Fiji.app/jars/jai_core.jar
+7f76c2de6000-7f76c2de8000 r--s 0000b000 08:04 7465036                    /home/marta/Fiji.app/jars/Quick3dApplet-1.0.8.jar
+7f76c2de8000-7f76c2dea000 r--s 0000f000 08:04 7465042                    /home/marta/Fiji.app/jars/clibwrapper_jiio.jar
+7f76c2dea000-7f76c2e3f000 r--s 00662000 08:04 7260270                    /home/marta/Fiji.app/plugins/loci_tools.jar
+7f76c2e3f000-7f76c2f3f000 rw-p 7f76c2e3f000 00:00 0 
+7f76c2f3f000-7f76c2f46000 r--s 000b2000 08:04 7465033                    /home/marta/Fiji.app/jars/js.jar
+7f76c2f46000-7f76c2f49000 r--s 00031000 08:04 7465039                    /home/marta/Fiji.app/jars/jai_codec.jar
+7f76c2f49000-7f76c2f4f000 r--s 00046000 08:04 7465029                    /home/marta/Fiji.app/jars/jcommon-1.0.12.jar
+7f76c2f4f000-7f76c2f5d000 r--s 00115000 08:04 7465027                    /home/marta/Fiji.app/jars/itext-1.3.jar
+7f76c2f5d000-7f76c2f6c000 r--s 000ef000 08:04 7465028                    /home/marta/Fiji.app/jars/javac.jar
+7f76c2f6c000-7f76c2f73000 r--s 00061000 08:04 7465031                    /home/marta/Fiji.app/jars/clojure.jar
+7f76c2f73000-7f76c2f75000 r--s 00005000 08:04 7260265                    /home/marta/Fiji.app/plugins/Jython_Interpreter.jar
+7f76c2f75000-7f76c2f76000 r--s 00005000 08:04 7260258                    /home/marta/Fiji.app/plugins/BeanShell_Interpreter.jar
+7f76c2f76000-7f76c2f77000 r--s 00001000 08:04 7260264                    /home/marta/Fiji.app/plugins/Color_Histogram.jar
+7f76c2f77000-7f76c2f79000 r--s 00017000 08:04 7260249                    /home/marta/Fiji.app/plugins/Image_5D.jar
+7f76c2f79000-7f76c2f7a000 r--s 00005000 08:04 7260240                    /home/marta/Fiji.app/plugins/JRuby_Interpreter.jar
+7f76c2f7a000-7f76c2f7b000 r--s 00000000 08:04 7260241                    /home/marta/Fiji.app/plugins/IJ_Robot.jar
+7f76c2f7b000-7f76c2f7c000 r--s 00009000 08:04 7260243                    /home/marta/Fiji.app/plugins/CLI_.jar
+7f76c2f7c000-7f76c2f7d000 r--s 0000c000 08:04 7260253                    /home/marta/Fiji.app/plugins/IO_.jar
+7f76c2f7d000-7f76c2f7e000 r--s 00000000 08:04 7260250                    /home/marta/Fiji.app/plugins/3D_Distance_Transform.jar
+7f76c2f7e000-7f76c2f7f000 r--s 0000b000 08:04 7260242                    /home/marta/Fiji.app/plugins/TransformJ_.jar
+7f76c2f7f000-7f76c2f80000 r--s 00011000 08:04 7260261                    /home/marta/Fiji.app/plugins/Interactive_3D_Surface_Plot.jar
+7f76c2f80000-7f76c2f81000 r--s 00006000 08:04 7260257                    /home/marta/Fiji.app/plugins/Clojure_Interpreter.jar
+7f76c2f81000-7f76c2f82000 r--s 00004000 08:04 7260246                    /home/marta/Fiji.app/plugins/lens_correction.jar
+7f76c2f82000-7f76c2f84000 r--s 0000c000 08:04 7260248                    /home/marta/Fiji.app/plugins/level_sets.jar
+7f76c2f84000-7f76c2f85000 r--s 00001000 08:04 7260268                    /home/marta/Fiji.app/plugins/Analyze_Reader_Writer.jar
+7f76c2f85000-7f76c2f86000 r--s 0001c000 08:04 7260256                    /home/marta/Fiji.app/plugins/View5D_.jar
+7f76c2f86000-7f76c2f87000 r--s 00011000 08:04 7260272                    /home/marta/Fiji.app/plugins/Color_Inspector_3D.jar
+7f76c2f87000-7f76c2f88000 r--s 00004000 08:04 7260254                    /home/marta/Fiji.app/plugins/Multi_Thresholder.jar
+7f76c2f88000-7f76c2f96000 r--s 0010f000 08:04 7260269                    /home/marta/Fiji.app/plugins/VIB_.jar
+7f76c2f96000-7f76c2f98000 r--s 00007000 08:04 7260239                    /home/marta/Fiji.app/plugins/SplineDeformationGenerator_.jar
+7f76c2f98000-7f76c2f9a000 r--s 00014000 08:04 7260247                    /home/marta/Fiji.app/plugins/Stitching_.jar
+7f76c2f9a000-7f76c2f9b000 r--s 00000000 08:04 7260262                    /home/marta/Fiji.app/plugins/Daltonize_.jar
+7f76c2f9b000-7f76c2f9c000 r--s 0000f000 08:04 7260244                    /home/marta/Fiji.app/plugins/mpicbg_.jar
+7f76c2f9c000-7f76c2fa4000 r--s 000cc000 08:04 7260267                    /home/marta/Fiji.app/plugins/TrakEM2_.jar
+7f76c2fa4000-7f76c2fa5000 r--s 00005000 08:04 7260252                    /home/marta/Fiji.app/plugins/Javascript_.jar
+7f76c2fa5000-7f76c30a5000 rw-p 7f76c2fa5000 00:00 0 
+7f76c30a5000-7f76c30ab000 r--s 0010d000 08:04 7260237                    /home/marta/Fiji.app/ij.jar
+7f76c30ab000-7f76c30ac000 r--s 00001000 08:04 7260235                    /home/marta/Fiji.app/misc/Fiji.jar
+7f76c30ac000-7f76c30ba000 r--s 00192000 08:04 7661076                    /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/ext/j3dutils.jar
+7f76c30ba000-7f76c7d9f000 r--p 00000000 08:04 24002561                   /usr/lib/locale/locale-archive
+7f76c7d9f000-7f76c7e76000 rw-p 7f76c7d9f000 00:00 0 
+7f76c7e76000-7f76c8000000 r--s 02de1000 08:04 7481423                    /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/rt.jar
+7f76c8000000-7f76c93e9000 rw-p 7f76c8000000 00:00 0 
+7f76c93e9000-7f76cc000000 ---p 7f76c93e9000 00:00 0 
+7f76cc000000-7f76cc002000 r--s 0000e000 08:04 7260259                    /home/marta/Fiji.app/plugins/ij-ImageIO_.jar
+7f76cc002000-7f76cc006000 r--s 00049000 08:04 7260255                    /home/marta/Fiji.app/plugins/LSM_Toolbox.jar
+7f76cc006000-7f76cc008000 r--s 0003a000 08:04 7260229                    /home/marta/Fiji.app/plugins/bUnwarpJ_.jar
+7f76cc008000-7f76cc00a000 r--s 00001000 08:04 7260266                    /home/marta/Fiji.app/plugins/register_virtual_stack_slices.jar
+7f76cc00a000-7f76cc00c000 r--s 0000c000 08:04 7260245                    /home/marta/Fiji.app/plugins/Volume_Viewer.jar
+7f76cc00c000-7f76cc00d000 r--s 00002000 08:04 7260271                    /home/marta/Fiji.app/plugins/M_I_P.jar
+7f76cc00d000-7f76cc035000 rw-p 7f76cc00d000 00:00 0 
+7f76cc035000-7f76cc2d7000 rwxp 7f76cc035000 00:00 0 
+7f76cc2d7000-7f76cff42000 rwxp 7f76cc2d7000 00:00 0 
+7f76cff42000-7f76cff4f000 rwxp 7f76cff42000 00:00 0 
+7f76cff4f000-7f76cff6c000 rwxp 7f76cff4f000 00:00 0 
+7f76cff6c000-7f76d020e000 rwxp 7f76cff6c000 00:00 0 
+7f76d020e000-7f76d3e78000 rwxp 7f76d020e000 00:00 0 
+7f76d3e78000-7f76d4105000 rwxp 7f76d3e78000 00:00 0 
+7f76d4105000-7f76d5dff000 rwxp 7f76d4105000 00:00 0 
+7f76d5dff000-7f76d7660000 rwxp 7f76d5dff000 00:00 0 
+7f76d7660000-7f76db200000 rwxp 7f76d7660000 00:00 0 
+7f76db200000-7f772f540000 rwxp 7f76db200000 00:00 0 
+7f772f540000-7f7ebcb60000 rwxp 7f772f540000 00:00 0 
+7f7ebcb60000-7f7f0e390000 rwxp 7f7ebcb60000 00:00 0 
+7f7f0e390000-7f82ad800000 rwxp 7f7f0e390000 00:00 0 
+7f82ad800000-7f82ad802000 r--s 00001000 08:04 7260260                    /home/marta/Fiji.app/plugins/Fiji_Updater.jar
+7f82ad802000-7f82ad803000 r--s 0000c000 08:04 7260263                    /home/marta/Fiji.app/plugins/registration_3d.jar
+7f82ad803000-7f82ad805000 r--s 0004e000 08:04 7661072                    /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/ext/vecmath.jar
+7f82ad805000-7f82ada95000 rwxp 7f82ad805000 00:00 0 
+7f82ada95000-7f82b0805000 rwxp 7f82ada95000 00:00 0 
+7f82b0805000-7f82b0808000 rw-p 7f82b0805000 00:00 0 
+7f82b0808000-7f82b0814000 r--s 002c7000 08:04 7661073                    /home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre/lib/ext/j3dcore.jar
+7f82b0814000-7f82b081c000 rw-s 00000000 08:04 11223164                   /tmp/hsperfdata_marta/18353
+7f82b081c000-7f82b081d000 rwxp 7f82b081c000 00:00 0 
+7f82b081d000-7f82b081e000 r--p 7f82b081d000 00:00 0 
+7f82b081e000-7f82b0820000 rw-p 7f82b081e000 00:00 0 
+7fffb871e000-7fffb8721000 ---p 7fffb871e000 00:00 0 
+7fffb8721000-7fffb881e000 rwxp 7ffffff01000 00:00 0                      [stack]
+7fffb881e000-7fffb881f000 rw-p 7fffffffe000 00:00 0 
+7fffb89fe000-7fffb89ff000 r-xp 7fffb89fe000 00:00 0                      [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dpython.cachedir.skip=false -Dplugins.dir=/home/marta/Fiji.app -Xmx48422m 
+java_command: &lt;unknown&gt;
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=/home/marta/Fiji.app/java/linux-amd64/jdk1.6.0_04/jre
+PATH=/usr/lib64/qt-3.3/bin:/usr/kerberos/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/lib/:/home/marta/bin
+USERNAME=marta
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x661330], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x661330], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x504130], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x504130], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x504130], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x504130], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5063a0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x506100], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x506100], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x506100], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x506100], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Fedora release 10 (Cambridge)
+
+uname:Linux 2.6.27.5-117.fc10.x86_64 #1 SMP Tue Nov 18 11:58:53 EST 2008 x86_64
+libc:glibc 2.9 NPTL 2.9 
+rlimit: STACK 10240k, CORE 0k, NPROC 1024, NOFILE 1024, AS infinity
+load average:1.16 0.78 0.66
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 7 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 66112600k(62317276k free), swap 0k(0k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (10.0-b19) for linux-amd64 JRE (1.6.0_04-b12), built on Dec 14 2007 01:33:17 by &quot;java_re&quot; with gcc 3.2.2 (SuSE Linux)
+
+time: Wed Jan  7 17:53:28 2009
+elapsed time: 835 seconds</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-07 18:41:49 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Could you please test again, after updating the JDK with &quot;git submodule update java/linux-amd64&quot;?</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-07 20:00:18 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Ignacio came back with this report:
+
+An unexpected exception occurred. 
+Please mail me the following lines if you 
+need help.
+<a href="mailto:bene.schmid&#64;gmail.com">bene.schmid&#64;gmail.com</a>
+   
+java.lang.NullPointerException:Canvas3D: null GraphicsConfiguration
+    at javax.media.j3d.Canvas3D.checkForValidGraphicsConfig(Canvas3D.java:963)
+    at javax.media.j3d.Canvas3D.&lt;init&gt;(Canvas3D.java:1006)
+    at ij3d.ImageCanvas3D.&lt;init&gt;(ImageCanvas3D.java:57)
+    at ij3d.DefaultUniverse.&lt;init&gt;(DefaultUniverse.java:90)
+    at ij3d.DefaultAnimatableUniverse.&lt;init&gt;(DefaultAnimatableUniverse.java:47)
+    at ij3d.Image3DUniverse.&lt;init&gt;(Image3DUniverse.java:53)
+    at ij3d.ImageJ3DViewer.run(ImageJ3DViewer.java:37)
+    at ij.IJ.runUserPlugIn(IJ.java:173)
+    at ij.IJ.runPlugIn(IJ.java:139)
+    at ij.Executer.runCommand(Executer.java:127)
+    at ij.Executer.run(Executer.java:75)
+    at java.lang.Thread.run(Thread.java:619)</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-12 21:33:38 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Seems to be an OpenGL 1.2 issue (we already require 1.3, it seems...) Bene?</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-13 16:31:22 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Okay, I tried to fix the issue: <a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=VIB.git;a=commitdiff;h=9bd667c56e23bacd25787b767de6fb18b52d24b1">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=VIB.git;a=commitdiff;h=9bd667c56e23bacd25787b767de6fb18b52d24b1</a>
+
+Awaiting feedback from Bene, the original author of the IFT plugin.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-13 16:36:43 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >D'oh, ignore my last comment, it was for bug id 28.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Benjamin Schmid</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-16 12:08:17 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Wasn't this bug fixed by Ignacio, in the end?</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-16 12:16:33 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >By upgrading the driver, yes.  I wonder if we can check for the (OpenGL) version early and error out in a user friendly way?</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-04-20 17:56:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Actually, Bene has added some good stuff, so this could be fixed.  Can you please check?</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=26#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-07-09 19:32:04 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Seems this was indeed a bug in the driver.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=26">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=26">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=26">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=26&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=26" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=26&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731460-5a2yd_lLqjlBHUfXu1krB3Y-hgRL1XSOksLcjySZBqE">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,1528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 283 &ndash; Log error on startup</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=283&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=283">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=283">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=283">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 283 – Log error on startup",  
+                             "show_bug.cgi?id=283" );
+        document.title = "Bug 283 – Log error on startup";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 283 – Log error on startup", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_283 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;283</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Log error on startup</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2011-02-04 21:12:14 CST</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=283&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=283" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=283&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731577-5kTrbcY_iEkhWoAxKLrSbjVxVldY983d1UMJa2icWkw">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2011-02-04 21:12:14">
+  <input type="hidden" name="longdesclength" value="8">
+  <input type="hidden" name="id" value="283">
+  <input type="hidden" name="token" value="1492731577-MQjoLD4xDFAJl0Cdf57UE7CCHGTVqkE6nt8F_rXxj-k">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=283"><b>Bug&nbsp;283</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Log error on startup</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>Log error on startup
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Log error on startup', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=283&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=283">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2011-02-04 10:48 CST by <span class="vcard"><span class="fn">G. Landini</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-02-04 21:12 CST 
+      (<a href="show_activity.cgi?id=283">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="g.landini">g.landini</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=283&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=283&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">G. Landini</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 10:48:21 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I get this error in the log window at startup
+
+&quot;The script Temporal-Color_Code.ijm would override an existing menu entry; skipping&quot;
+
+That is all.
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 2.6.34.7-0.7-desktop
+  java.version =&gt; 1.6.0_23
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_23-b05
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.0-b09
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: Up-to-date
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /usr/lib64/jvm/java/jre
+  fiji.dir =&gt; /home/gabriel/fiji
+
+Information about the version of each plugin:
+
+  3d57bafd83bd86884976b5fdb404918300081d0c 20101102125547 fiji-linux
+  ffe8059bb0dbb965de64c17897992860bf020625 20101102125548 fiji-linux64
+  c4581a10d4cb7e43b3f3c1d977dd9e10cd6e4f6a 20110204094259 fiji-macosx
+  1950519ddf0e6ffa6f8fd09c8a9648b31cccd434 20110204094259 fiji-tiger
+  3c1ea305476bbaad4811e5c18c561aa02bbb316b 20101102125548 fiji-win32.exe
+  6bb3eafdea8d22cd90b050fdd010869aa08e7baf 20101102125548 fiji-win64.exe
+  626396672bea609fd5a8cdfbb2c0824f320cb4a8 20110204094429 jars/Fiji.jar
+  31fc72943db1de218eb827e7ea3becc16d76d851 20110204094405 jars/Jama-1.0.2.jar
+  829f8c6650581209d90ed5d770bee39cee1987aa 20110204094352 jars/VIB-lib.jar
+  bd57338068f48b9ce4c5275544633ba172b0902a 20110204094429 jars/VectorString.jar
+  68a9e41d2a7cec1ffedd5e38f4c064927b43b3c7 20100722134132 jars/ant-junit.jar
+  4199e18036ba2020bdcbc733f603564f41cf9009 20100614090832 jars/ant-launcher.jar
+  92b2335d3a97549b633dbcc3c41381a90f2b924b 20100614090832 jars/ant-nodeps.jar
+  b1492f77c5c13e4f9dc05fe0ba9f95d6ec826660 20100614090832 jars/ant.jar
+  5bab776822719667a604b8fb2eafc679161aeb0f 20110204094429 jars/autocomplete.jar
+  dbab80ab5e11fb33328c7da88a849d0a19793ff5 20110204094429 jars/batik.jar
+  d21bc3c19ebc5b3924caff5f859e6c50071590c9 20100614090832 jars/bsh-2.0b4.jar
+  efd0b4a7eaf55c0716fde3243ac45cb49fdd2606 20100614090832 jars/clibwrapper_jiio.jar
+  21c2d3f654c1c599751df995a1b183d02301c76d 20110204094429 jars/clojure.jar
+  d760adf70f63d2f07fe00dc5f36b9bc32f11fc97 20110204094429 jars/commons-math.jar
+  368901ce572a723c0ae0e68f0563b2712a69fd5d 20110204094429 jars/edu_mines_jtk.jar
+  e50a9b9aa05d4e7f2f260a570db6d6ab5f9fa211 20110204094313 jars/fake.jar
+  f5bff93a74f388f4ba6f28b25bab963418d8d49d 20110204094404 jars/fiji-lib.jar
+  88aab5cad339a39941891eb71e30cc9ac8e6b4c3 20110204094419 jars/fiji-scripting.jar
+  2c4b7257b2a8bb53f6cd5614ab317e41a9b9c984 20110204094351 jars/ij.jar
+  04530e150af0702f6f963104facda5eaa6e866ae 20110204094429 jars/imagescience.jar
+  780fae4087869e6c485796fd6df1e399e64fc44e 20110204094429 jars/imageware.jar
+  85af6645584bd2339848a2a9c95db234ba0a68ea 20110204094429 jars/imglib-algorithms.jar
+  2727a642fb63f329acd33f4b48bcc20e926c5f40 20110204094429 jars/imglib-ij.jar
+  3913aeadf2f94efc7f9bc1a732a7e4cef2714e99 20110204094429 jars/imglib-io.jar
+  4053be284a4fd91bfddc9e512ddc6366b2dc6f11 20110204094429 jars/imglib-scripting.jar
+  785fd9ee2450a11697d7b60d88165f395639562f 20110204094429 jars/imglib.jar
+  a88a4b46ddcdcf0312b0fe03b1900412bdb71873 20100614090832 jars/itext-1.3.jar
+  1d98f5251cb21553b4907228cd281e6b84d3a216 20110204094429 jars/jacl.jar
+  253316728c4012a86fae361e7b7fcb0fab0f5c38 20110204094429 jars/jai_codec.jar
+  2a328b6b63ebec85d369427875739304dc1cf2cb 20110204094429 jars/jai_core.jar
+  12065f36c73057a77a5deeaf4b8beecbe738ce18 20110204094348 jars/javac.jar
+  5000664ee8b54ad75a72da627ab7665ca422f10b 20110204094429 jars/jcommon-1.0.12.jar
+  166036abb16a0b57c7f7c0a0e0e610ef72b48746 20110204094425 jars/jep.jar
+  ca45b966d92e07a3bcea6be98cbab05ea0d4e1ba 20110204094429 jars/jfreechart-1.0.13.jar
+  925d65018db8d43d79f3e1236c0178805f68c488 20100901100552 jars/jna.jar
+  63e9057128a2096b3787c4c784a5b6dab862264d 20100614090832 jars/jpedalSTD.jar
+  b904075730a195dff53e602e836e6ced7b438257 20101008120948 jars/jruby.jar
+  108412260f226609c8161f6e831119f47e6d9380 20100614090832 jars/js.jar
+  bd25e435c97440c39a1edea79332016aad7f1091 20100614090832 jars/jsch-0.1.37.jar
+  8e9a4bd810c0d4c6cc42df2e974373c24f3b4372 20110204094429 jars/junit-4.5.jar
+  d6edc3bbc639248e808f4cc0e372cfa249320016 20110204094429 jars/jython.jar
+  a21f73a79260a9098df7eabf10982ab9ff2d9efe 20100614090832 jars/jzlib-1.0.7.jar
+  2b4610f09c5ed4164734d3238b27969d6bd14399 20110204094429 jars/mij.jar
+  acebb13ca73c6cbf9125fde34b1a5edf53ae54e7 20110204094429 jars/mpicbg.jar
+  e008825954f9c01c5e3b3fa0004caa7535a45423 20110204094410 jars/pal-optimization.jar
+  5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f 20110204094429 jars/postgresql-8.2-506.jdbc3.jar
+  ec0fe9713dde3e69b3b41d2219de4a9701047f16 20110204094429 jars/rsyntaxtextarea.jar
+  7d5ba6c535ddd4557ca46698f08262348eeb072c 20110204094429 jars/wavelets.jar
+  9751983f938963f1944aa1bbc01a0f5402becf96 20110204094429 jars/weave_jy2java.jar
+  62509dafa2ad38e0e3c34c538f6d3da1e25971ce 20110204094429 jars/weka.jar
+  c432f64b204f9657354de2010b24535670e3073b 20100614090832 luts/16_colors.lut
+  89419f9999bc7d1dc09ad1a66e04e819396fe09f 20100614090832 luts/5_ramps.lut
+  dc3a1bdd2b34edec84c29affaded489d0a22601d 20100614090832 luts/6_shades.lut
+  0b3bbb6cf86adcb697c53c0277a12140966375dc 20100614090832 luts/Cyan Hot.lut
+  655b55e6322c870632e5ff3156f002c0f5b893fe 20100614090832 luts/Green Fire Blue.lut
+  2918f6d391ee38a4491163c30b4e75256a6633e7 20100614090832 luts/HiLo.lut
+  a3312d3ff046120cccf5adcd400c512f78d18f93 20100614090832 luts/ICA.lut
+  db5bf8a4e880d787d88f3273caf3db7ae6a5974f 20100614090832 luts/ICA2.lut
+  9f7dd167f698970549ec20aa7d26b221ae7928f8 20100614090832 luts/ICA3.lut
+  697dd3a4daf4abcd05cc4a79af3bcb3364fd0bb0 20100614090832 luts/Magenta Hot.lut
+  524604de124b812940b02541a63516c84621237b 20100614090832 luts/Orange Hot.lut
+  9c9a56c239e5d9c3262ace5124fff406cb3b831d 20100614090832 luts/Rainbow RGB.lut
+  4e686ec669057c7de78497720bf52ebe00c3f8da 20100614090832 luts/Red Hot.lut
+  2fdb7c96583f42348cd5cc789fba38dd6e349c89 20100614090832 luts/Thermal.lut
+  321574916ccee56861ca6d581f6915cff5fe80e1 20100614090832 luts/Yellow Hot.lut
+  a4cec22b96c306321ba4c7b3ff30df9fa7919616 20100614090832 luts/blue_orange_icb.lut
+  c9e396a3f83ee8cebf1ed28d3e2d53296cc908e7 20100614090832 luts/brgbcmyw.lut
+  60f85e63ba9a31fbb769ab32c75c22883df22883 20100614090832 luts/cool.lut
+  ba88e5f3db79551a10b7bed5c2517b33cea57dda 20100614090832 luts/edges.lut
+  0a4dce83c72986c06356ecbab98747c30c9366ad 20100614090832 luts/gem.lut
+  c616e76585643c232c743e16358d68e4dfe24620 20100614090832 luts/glasbey.lut
+  1f99f07ea5760dd8c044639b02da116112a2b985 20100614090832 luts/phase.lut
+  52a3c3995ef92bc35eb4e691848af5351be589e4 20100614090832 luts/physics.lut
+  49f5e48a355fe0646cd99bf7b371afb7c603def8 20100614090832 luts/royal.lut
+  898954dd1342741de1cd48e7c581b6ec0f0cbff2 20100614090832 luts/sepia.lut
+  ebd4ed6b0fd5375bd4d143134da5692253d4d44a 20100614090832 luts/smart.lut
+  36e7ca9e01240243fb69ea5da21655608d6b5ef8 20100614090832 luts/thal.lut
+  940b38f9db4fbe78ccd66222a08b28d1ae98ba04 20100614090832 luts/thallium.lut
+  172436819bfde39bcf02fc8b41735f0c20db2ad1 20100614090832 luts/unionjack.lut
+  177c24e805cdc6ba70c4574e6f72a5018b1a49f1 20100707112623 macros/Particle_Classifier.txt
+  9c334dceff998b2dcc3bc17247fe479a8cabec5a 20100901100552 macros/Set_Color_By_Wavelength.ijm
+  a97e1da9c67b6764787b27473bbdb4a21d68292b 20100614090832 macros/listManagement.txt
+  1785bbbf1033afe28da411beb5c2efea6bab1186 20110106121108 macros/toolsets/Clear Custom Tools.txt
+  54200f47f8a6d5a131a7d9d65d7fcb75d53f97ae 20100614090832 macros/toolsets/Drawing Tools.txt
+  45b56e25d813acea40f3572cdf25e88e240831fe 20110204094349 misc/headless.jar
+  8dee3846e4ca1a0ad4169cf5e4859bcf52b878af 20110204094352 plugins/3D_Blob_Segmentation.jar
+  fa47c405e684e4a9fa699507c2f9605c17d6fc02 20110204094429 plugins/3D_Objects_Counter.jar
+  a32252e54c8149872b9521c0b5d54aefbf5b75fa 20110204094352 plugins/3D_Viewer.jar
+  68175df528f66e558b40d41867aa3539f55518bd 20110204094429 plugins/Algorithm_Launcher.jar
+  9274f3373b27930ae5e6f3d1f88674f64110e970 20100614090832 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  7acae667f3873c3f47eb0fbf1d6b5f0718a5a1f9 20100614090832 plugins/Analyze/Measure_RGB.txt
+  d05c68ead40a101a0f9a646f2c8fb1cb3d2630a2 20110204094429 plugins/AnalyzeSkeleton_.jar
+  57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9 20110204094429 plugins/Analyze_Reader_Writer.jar
+  ce0504b97f7820a918e9ff4cc62d590da32161d6 20110204094429 plugins/Anisotropic_Diffusion_2D.jar
+  d9d775161b371b5a74e13c3ee0c0c54b66fe80c0 20110204094429 plugins/Arrow_.jar
+  0d2f57ac196ff70c91c9f5f9cb71cf65c78e2723 20110204094429 plugins/Auto_Threshold.jar
+  269134edd05d40f1e326c8f351a969397ab261ea 20110204094349 plugins/BeanShell_Interpreter.jar
+  98e8f4b6c1e36e8899fe018388cb38e6ad0e5f93 20110204094429 plugins/Bug_Submitter.jar
+  e43ae2651743ca70a12b898b8bd7e084e2288943 20110204094429 plugins/CLI_.jar
+  919ab06bdcbf59c28aeca3f340f7cd8285e29780 20110204094429 plugins/CPU_Meter.jar
+  d888370a9a41fe87d542665027edc84eff31637e 20110204094429 plugins/Calculator_Plus.jar
+  0717acd58350dcc6de54b9a30a35ba3a32b71a2d 20110204094429 plugins/Clojure_Interpreter.jar
+  db71677ea83bdec19cb32d6c708882b4a77b791b 20110204094429 plugins/Colocalisation_Analysis.jar
+  f2f8c5c376c80df66cc1ccbcbf12babd366eda85 20110204094429 plugins/Color_Histogram.jar
+  1cee26bc818eb02dafe9ad08dd437b10c412aa2b 20110204094429 plugins/Color_Inspector_3D.jar
+  1a992dbc077ef84020d44a980c7992ba6c8edf3d 20110204094429 plugins/Daltonize_.jar
+  b73a16189c15d0e5f59d0b9da7d9dafc19177379 20110204094429 plugins/Differentials_.jar
+  08d9972d2e8aa48caf61a1395ada9f9406bb7014 20110204094429 plugins/Directionality_.jar
+  83caa3dfc56cba0ff2a4ec8a2532dd674784d356 20101102125547 plugins/Examples/Add_Popup_Split_Channels.bsh
+  f6fcfac7beaaf48901cf57d1dd5a9232d6e43570 20100614090832 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  5dcd79ab303b72dbd5540b604bd30ce0e2a5ddcb 20100614090832 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  73eff73688cbf8356485d4dac6fe2b26db598e93 20100614090832 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  95549b2f2f2c42a8bf5bb5f6d18f58d25c4c06cc 20100614090832 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  dceba709afa80f33ae5d0091f5811b32610e1fd0 20100614090832 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  e4954eacd4b1b679813c4227563996121f7e6d98 20100614090832 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  f51112123ed16a9ff9c0cf5002dea3804731a8cb 20100614090832 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  77c7bef5e629a85ae8b037caf2377cb6772f59df 20101203120025 plugins/Examples/Delayed_Snapshot.py
+  5536e038a497982f3e10d924849c4ffe6c4fdd3c 20100901100552 plugins/Examples/Delayed_Snapshot_Window.bsh
+  4164c08c7ef62e27e731d45643a1cbe10098fce1 20100614090832 plugins/Examples/Edit_LUT_As_Text.py
+  780e948e100ffc6bfcd5583146752eff86671b39 20110106121108 plugins/Examples/Extended_Profile_Plot.bsh
+  b8881af27131bb518e2c8f45510811963f091e21 20100614090832 plugins/Examples/Fiji_Cube.ijm
+  3687a018e780919fc238a411c0d76607060ae47f 20100614090832 plugins/Examples/Fiji_Logo_3D.js
+  998cb71706d82992543115b6ad1b85f7d199d096 20100614090832 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  0e5cad6495d8ee4f07a5378740f6202a24eb2988 20110106121108 plugins/Examples/Image_To_Tool_Icon.bsh
+  748153294412dc6fd4febc6c529e7620ba48ae1e 20100614090832 plugins/Examples/Multithreaded_Image_Processing.clj
+  720c237bd586550b63e2d423d2e85759e045869c 20100614090832 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  ad263d9ec66f7421f8817b0a9f9e2549fd5883b7 20100614090832 plugins/Examples/Plasma_Cloud.rb
+  9efb229268bb88ae20f4b2bca157e73c0c0afbdf 20100614090832 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  940f6500947184db3dfbcad055aa98c11db41c24 20100614090832 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  3f4bba61fc90eb79a8ade2a6399cad72ede26fb9 20100614090832 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  72f0094941e8aae9c451161f05a67f6516d70a55 20100614090832 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  89ef030758e89f6a6767ab5e3513ee82a8e54127 20100614090832 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  6af490cdb6e2c42e87076b85796dc824203b6e8a 20100614090832 plugins/Examples/blend_two_images.clj
+  0989cf7430916a9e0c9f004bc2d5bc6b276e2775 20100614090832 plugins/Examples/celsius_to_fahrenheit.clj
+  ff3b990238ad1f85e4a8aa8135e2e3b1221b43a8 20100614090832 plugins/Examples/chess_.py
+  4193ae7c8fbe191bff50f19367c5cfa5e0048fbe 20100614090832 plugins/Examples/downsample_.js
+  66a204d61b3076d96797ca04671180ed83ebf866 20100614090832 plugins/Examples/list_all_threads.py
+  6c86493c27f859bd52ad85581479e5f06655ce0d 20110106121108 plugins/Examples/random_noise_example.clj
+  d08b0ee85679350fbd6b609d33f5acc2ad70775d 20110204094429 plugins/Extended_Depth_Field.jar
+  122804a957f1ccf6e6bc90dc44c8b23f3595b2d2 20110204094429 plugins/FeatureJ_.jar
+  9248e7c9e5684badab20772f46f020ade733afc6 20110204094429 plugins/Fiji_Developer.jar
+  3f5f1faad124a996bb28c72fa10cd50e06295934 20110204094429 plugins/Fiji_Plugins.jar
+  70a45a98773e7840c9f52ec2dd4bd3ce22f9ad48 20110204094429 plugins/Fiji_Updater.jar
+  d53247c86445afc29f991a39cb39b79f2f3fd4c1 20110204094429 plugins/FlowJ_.jar
+  94559184bb4bf02414286cb9d20b95dd8806bd32 20110204094429 plugins/Graph_Cut.jar
+  42556198e68860b4135544fe9e4687c9fbffbfe2 20110204094429 plugins/Gray_Morphology.jar
+  e8f24a89734ea514ba6405423368a107f324fc5b 20110204094429 plugins/IJ_Robot.jar
+  441d49d6b49c35df6e42768a061890a5054d0c63 20110204094429 plugins/IO_.jar
+  514973cfd7110318fb0b31228379c9e1c584028f 20110204094429 plugins/Image_5D.jar
+  2500db76f284b2c729636bf2924cad33cd8ce8f9 20110204094429 plugins/Image_Expression_Parser.jar
+  43bb3a7b79d1fc23958a7775f407fa9567c6f67f 20110204094429 plugins/Interactive_3D_Surface_Plot.jar
+  3ea0d59d5878d1eeed2f7e1796b504b28ff1818a 20110204094429 plugins/IsoData_Classifier.jar
+  28582f554fdbc4905b5ca4eb192a516202b2f334 20100614090832 plugins/JRuby/imagej.rb
+  f1e7ff046afb5a2a4136449fbb16ccc78ce4e4cc 20110204094429 plugins/JRuby_Interpreter.jar
+  0384fcf1924f7e512c15ceb5c38275f822b590a6 20110204094429 plugins/Javascript_.jar
+  d34849f63085d0e6c8eabdedae7b17182c0884e2 20110204094349 plugins/Jython_Interpreter.jar
+  9cdfe434567ef8b15b6970c02805f20c99411a70 20110204094429 plugins/Jython_Scripts.jar
+  aee7e97d8a959676872ecafaaaf37724e83b55e4 20110204094429 plugins/LSM_Reader.jar
+  de0f4b6754561dc8a412f2d2c67ec10351f5d238 20110204094429 plugins/LSM_Toolbox.jar
+  7dcbc0831ee6cec3b79e90e8b292d25b34174e54 20110204094429 plugins/Lasso_and_Blow_Tool.jar
+  fe3c88710e380c7a741cbf676cf5d8144e7edb8a 20110204094429 plugins/Linear_Kuwahara.jar
+  bcb926fe63b7637bd53e3602feda2166951acdec 20110204094429 plugins/LocalThickness_.jar
+  1a6345a290ff4a28ac4215cbb47fc561dcc886be 20110204094429 plugins/MTrack2_.jar
+  2e7c5f2d14a85c9a073074d5540aef234cb3cea5 20110204094429 plugins/M_I_P.jar
+  306c9af04cd291be4871abc187a75c270a58eda2 20110201171419 plugins/Macro_Examples.jar
+  65a2dd7816efceb28030dc0ea7cb4ad51c42e9a0 20100614090832 plugins/Macros/About_Plugin_Macros.txt
+  dff5642dcb662c06fd8cd7dfce73f60a4b8b8244 20100614090832 plugins/Macros/Bulls_Eye.txt
+  e7ffe8ba782ce90d3b80ad882c474ab1836b58a4 20100614090832 plugins/Macros/Polygon_.txt
+  39f7ffcd9b21888b618524a811eb39c93625578d 20100614090832 plugins/Macros/RGB_Histogram.txt
+  3ee0edfae7b40189254e38a6ed8108c52859bc33 20100614090832 plugins/Macros/batch_convert_any_to_tif.txt
+  d0cd293b359b7bcdf390e560dc28f68fa8033677 20110204094429 plugins/Manual_Tracking.jar
+  7cefc57ff31a7af341cfd687e861bac488f38a5f 20100426091136 plugins/Morphology/Add_Borders.class
+  33414b30ead6e79452b30781acb74dbab059e809 20060525192651 plugins/Morphology/BinaryConditionalDilate_.class
+  6cfae1689116b24b54401e74c406e9765e95c62e 20060525192651 plugins/Morphology/BinaryConditionalErode_.class
+  f916538f81f4d32e37a22e4f906987a1c26ad2b2 20081201081359 plugins/Morphology/BinaryConnectivityRutovitz8.txt
+  fb3205e475f96973840381a65ca782e1d3054228 20081201081359 plugins/Morphology/BinaryConnectivityYokoi8.txt
+  877be8e6e9e2e7f736eb31410acb1fd3a7819690 20060525192957 plugins/Morphology/BinaryConnectivity_.class
+  8c63d22947d5baa768b764e44beca542899fdd4c 20060525193030 plugins/Morphology/BinaryDilateNoMerge4_.class
+  d5e74614536e94002646e11710730b41653fc3d5 20060525193045 plugins/Morphology/BinaryDilateNoMerge8_.class
+  da5dc03371c7c6825000eae59b923526d48bfb22 20081019152449 plugins/Morphology/BinaryDilateTest.txt
+  fe9208a279fcabf8b44e16844f626fa00109a65c 20060525193011 plugins/Morphology/BinaryDilate_.class
+  9f2b4ef9c82da742eda71e52871bae8bc999ee5d 20081019152917 plugins/Morphology/BinaryErodeTest.txt
+  b38e2aa0ed8f1ec9cc4c09208772a3f2aab33319 20060525193102 plugins/Morphology/BinaryErode_.class
+  3f39caafc9b12026c6af6e9adf04a3e7fc267613 20060525101716 plugins/Morphology/BinaryFilterReconstruct.txt
+  76eb6799c3d490a113a1cf61c526d7c6a53f76e9 20090525193222 plugins/Morphology/BinaryFilterReconstruct_.class
+  14c678605b59fd74e5a2a672d24a69c3179a8798 20080602091843 plugins/Morphology/BinaryHitOrMiss_.class
+  33b507c2bcf4345375c4be5968a2be1ac914ae06 20100418152848 plugins/Morphology/BinaryKillBorders_.class
+  a7ac70a2618d1181ddd9e1013c998899d9be1d35 20070709093221 plugins/Morphology/BinaryLabel8_.class
+  d3c84f8c374317c6b19f9574d2748b2cecd6c48a 20070712112239 plugins/Morphology/BinaryLabelMacro.txt
+  59e1afe9ba4be1e254f6fd37d96221c84eccd801 20100508085308 plugins/Morphology/BinaryLabel_.class
+  30384d2802753ac65b6752397b0a504844d2be22 20100601131449 plugins/Morphology/BinaryPatterns.txt
+  36e4a042020a99c6e737817dc28f714d77fa2aa2 20060525101717 plugins/Morphology/BinaryPrune.txt
+  c8c66f92b6fbc6c39f2736fe622a18bb3865bda7 20090526165400 plugins/Morphology/BinaryReconstruct_.class
+  3ff298c782b25c632bccc21d0b6a1d62325f2ff0 20060525193501 plugins/Morphology/BinaryThick2_.class
+  b73f68f4c440385936756afab2b5b83910ba6a8e 20060525193450 plugins/Morphology/BinaryThick_.class
+  2c4c813eb2cee8e7ace9650cf9f5e7e469bb645d 20060525193520 plugins/Morphology/BinaryThin2_.class
+  d8a5d6640fb123e9bc57403a673dd668e6f28e47 20060525193512 plugins/Morphology/BinaryThin_.class
+  3e83cc610fe3de4359bbecbc165167175d1dafb2 20060525101717 plugins/Morphology/Boundary4.txt
+  9d64440e1cf4fe347f96800bf464d31f436b9698 20060525101717 plugins/Morphology/Boundary8_.txt
+  e9fc745d07fc3d97cb2ebefe01766c20b3f7f20d 20090602153322 plugins/Morphology/Catalogue_Particles.txt
+  4d0095a26c730453f8572d8ea59e282455940168 20070607090847 plugins/Morphology/Classify_Particles.class
+  da37e200bc1ecdf137b95aa61b525f82d7ff7baf 20090523171002 plugins/Morphology/CloseByReconstruction.txt
+  f53a898edd71b89056e1768b404a09136e7adc0f 20090511083446 plugins/Morphology/CloseByReconstructionTopHat.txt
+  28658fcec3986bb8e87bc5bb8d52f8b841dc531f 20081208081001 plugins/Morphology/ConstrainedWatershedSeparation.txt
+  1c33105a2aa5ffcfbea7180288e87bad14e75ed9 20060525101717 plugins/Morphology/ConvexHull1.txt
+  7cb69fdfbcbea487af6e78f96d8bb89ce8cd6615 20060525101717 plugins/Morphology/ConvexHull2.txt
+  b19cb4158fdd2b162b6ababb8c9ce480ac1e8959 20060525101717 plugins/Morphology/ConvexHull3.txt
+  bd22187f3ecf8d03560ce41ce436169c914d4700 20060525101717 plugins/Morphology/Corners.txt
+  55c709bf42df97b0979761e3058485fc5e9fc99d 20061116102256 plugins/Morphology/Correlate_Results.class
+  d463ee86bef94a278d4d95dc9d88a4010a480f12 20081019163010 plugins/Morphology/Delete_ZeroArea.txt
+  8df2eb76c76921fe135761155f0c975977063b0a 20060525101717 plugins/Morphology/Diagonal8to4.txt
+  50d8340e3a0a34f3292a0534432f71b1772a0aa7 20090511083446 plugins/Morphology/Domes_.class
+  e428a0f556d54e552f7b16731ecbcee20b91f725 20060525101717 plugins/Morphology/Domes_stack.txt
+  1be944ae7f254b358c2c148edc7b7fe147524ab0 20090506082436 plugins/Morphology/DoubleWaterfall.txt
+  fb5a4d208d27d2b3bfda98d8aff951f175d64108 20081019163927 plugins/Morphology/DrawBoundingBox.txt
+  a8068e5b3cfe16c3b9231ec38883b21219a14a07 20081019163944 plugins/Morphology/DrawBoundingCircle.txt
+  841290431b72149b8061aa4e32e314b290fb8d74 20080521214310 plugins/Morphology/DrawConvexHulls.txt
+  7d0a19bb1e3e1c2e6385bd8a095f65acf32a6f35 20081019163958 plugins/Morphology/DrawFeret&amp;Breadth.txt
+  289dfb191fe2fdb3e00b9e594c5b5351e1bb0b37 20081019164006 plugins/Morphology/DrawMinR&amp;MaxR.txt
+  e6f94c76f0a0ebfeb09383d6ed52bc66c24b88e1 20080619153654 plugins/Morphology/EDM_16bits.txt
+  71d10273efb29ee980b01c097f88edac88d29cd4 20081019170232 plugins/Morphology/Euler.txt
+  6375767235153db6b570e0cd848e659836dbabdc 20090511083446 plugins/Morphology/Extended_Maxima.txt
+  285e4c16a50c6841ed1e6ead6f8af9e38d038634 20090511083446 plugins/Morphology/Extended_Minima.txt
+  2b80b381bb5d73f01f97b87d5c8d01981554af24 20100418175425 plugins/Morphology/FillHolesReconstruct.txt
+  205b6052383236653bbf8af9ecb0b85276aec33a 20060525130101 plugins/Morphology/Fill_Border_Holes.txt
+  54d7ef211f6dd52188c1bd99d2589e7e90711237 20090506082436 plugins/Morphology/Fill_Greyscale_Holes.txt
+  005f646662e801e0ae61502bdc6e9eaf603e66d4 20070306152313 plugins/Morphology/GeoDilationMacro.txt
+  204b505f0bc6220f4db3080c686ba0758c6047a4 20090504142458 plugins/Morphology/GreyscaleCenterFilter.txt
+  c4267b677a5113778b7b4db5c1c13ac1555ff9c7 20060525193602 plugins/Morphology/GreyscaleDilate_.class
+  965f297ae7b2dac92cd1e8978ac4e36393d83c95 20060525193612 plugins/Morphology/GreyscaleErode_.class
+  d304795910e16a5a8d867411fc75fda4bb1f0844 20090503182435 plugins/Morphology/GreyscaleProperAutomedian.txt
+  b4d94111f5a839715e2c1696d5aa2497135a59f0 20090504122819 plugins/Morphology/GreyscaleProperClose.txt
+  44d81a9507d9e6e184ab1d7540a6408c34308b33 20090504122959 plugins/Morphology/GreyscaleProperOpen.txt
+  35ce43ccb795b36f80b08038548708aad7d7fe81 20081214210145 plugins/Morphology/GreyscaleReconstructMacro.txt
+  9aadbae02e31eadb3898b98d3c43ac45b998a33a 20090526165731 plugins/Morphology/GreyscaleReconstruct_.class
+  e9012c275c9c795dcde7f46c54020d945cb9a72f 20060525101717 plugins/Morphology/GreyscaleTopHat.txt
+  0c5ed2742fd4bce06908476ab3700215f0fb27e4 20060525101717 plugins/Morphology/GreyscaleWell.txt
+  282495a6b84265f2cf26477e9e57746b9989a9b0 20060525101717 plugins/Morphology/H-break.txt
+  a73d2279e14b2e91e68fe7974f3893ce2c6bdabf 20090511130552 plugins/Morphology/HMaxima_Transform.txt
+  f1c1b630dc00ba0274a4dc2b68a75c0be6a00e8c 20090527092132 plugins/Morphology/HMinima_Transform.txt
+  3748f6ea396553be0e8728a1d4cd3b42294f2af6 20081019173156 plugins/Morphology/HatWellContrast.txt
+  ac0e1208ebaa3e776513ed33fe064a366f0658f2 20080619153415 plugins/Morphology/HausdorffDistance.txt
+  f774b01353bfe2f5c4e4234a408177bbb610c2cc 20080619114552 plugins/Morphology/HausdorffDistanceMorphology.txt
+  af3183b2fc45e3b45986c110e722b9761ec64dd4 20080605122624 plugins/Morphology/Hole_Counter.txt
+  930ee9e196f6a38189fe12ebc1ae4197557aef9c 20090527171615 plugins/Morphology/HomotopicMarking.txt
+  3429c4f36b1d778902f274960e219ba8be16a145 20060525101717 plugins/Morphology/Hysteresis.txt
+  2511df4ce6339b226a2acd738494f7d2f221e177 20090513103655 plugins/Morphology/Impose_Minimum.txt
+  6be727481ad2054e80872ca9922c7185bdeb10e2 20060525101717 plugins/Morphology/Influence_Zones.txt
+  5859277cee238c545923851811acde3a0e5c275d 20060525101717 plugins/Morphology/KeepLargestParticle.txt
+  559e475f737ca7125fd8ba386995a08853512c90 20080521222500 plugins/Morphology/KeepLargestParticlePixels_.txt
+  4605ad0a69c242b128f9ef73dcf9d86a5c86870b 20080605144601 plugins/Morphology/KeepParticlesInRange.txt
+  511b0e4a40ae332a89636669e8db0703ea93e718 20081201081940 plugins/Morphology/LabelAllAreas.txt
+  aa250bd5bdcf5df5d405e52840ed9eae60a31dc2 20090515151154 plugins/Morphology/Lines8_.class
+  43259a0b5adcbd879dbc6f5fc3042c2df64a6a2f 20090519121519 plugins/Morphology/LocalMaxima.txt
+  c020700140c339569aea9bbd4f09dea68f808e8d 20090519122405 plugins/Morphology/LocalMinMax.txt
+  b2139bd8fb793c6d323a74a77ba05e1698c4a4b5 20090519121443 plugins/Morphology/LocalMinima.txt
+  9f94ec229784da38b2a2e4a4af01b71d7554fc26 20080529223812 plugins/Morphology/LowerRiceField.txt
+  05f0502dbc7f440cb39a06fce9a6455b9baca31a 20060525101717 plugins/Morphology/MCentroids.txt
+  57e4bbaa3f79df2022b25d990038c7b0c0a1ac92 20060525101717 plugins/Morphology/Morphological2Derivative1.txt
+  35b51e7eba71ffdf2fc0a0798221aa3f5d7bf1a8 20060525101717 plugins/Morphology/Morphological2Derivative2.txt
+  ef8096324287d788b6fba4a9745837f19feeb270 20060525101717 plugins/Morphology/Morphological2Derivative3.txt
+  5c2f3d3a32b77aab421f41db708646f29d3edb99 20060525101717 plugins/Morphology/MorphologicalGradient1.txt
+  6d25436a2847b8a1e46570199d8340943371ef34 20060525101717 plugins/Morphology/MorphologicalGradient2.txt
+  47d897e637364965fa95266ff3c89b9ca1f0b138 20060525101717 plugins/Morphology/MorphologicalGradient3.txt
+  babf8d91d050edc476c08b89b70dc4ed47480144 20060525101717 plugins/Morphology/MorphologicalSharpGradient.txt
+  7e05ec434543b9de43e44228c24397e6810f3188 20060525101717 plugins/Morphology/MorphologicalSmoothing1.txt
+  df30c85106f9260c03ba2188729308d0b71d5d8d 20060525101717 plugins/Morphology/MorphologicalSmoothing2.txt
+  45cbc842f62644460c22a0c23fc0896d71b1f203 20091223102154 plugins/Morphology/Morphological_Clustering.txt
+  3a166444bfb23b7f3ed686980589a66699437605 20091223102154 plugins/Morphology/Morphological_PCA.txt
+  4aae9177814f0bc32c6036fe29d2c38ba6dc5f3c 20090523144454 plugins/Morphology/Morphological_contrast.txt
+  08bbfdcd73c7634af03a5d8d1b5c3a0785ae468c 20060919115717 plugins/Morphology/NumberParticles8_.txt
+  4eaa4de2f29184bb2f6e6f86ab30b995fc10594b 20090511083446 plugins/Morphology/OpenByReconstruction.txt
+  cd6cf4de7b0362c5f0fb5d55fda69aad9d6d03dc 20090511083446 plugins/Morphology/OpenByReconstructionTopHat.txt
+  8fdf1b1544701dcf7265eec4238d3f7fd10f31a6 20080521221817 plugins/Morphology/Parameter_Matrix.txt
+  65c22a1e72ebe475be9615216ad81e717e938fe4 20080529224339 plugins/Morphology/ParticleHoleArea.txt
+  9a713d79e548c30c868d215a69854512955506fc 20080529224456 plugins/Morphology/ParticleHoleNumber.txt
+  9c0a776397ac3dddf849ea2fab5af12bf04df43d 20080529224151 plugins/Morphology/Particle_Data_Map.txt
+  1e8c4cce3d9418deb89f8e83912c6a6061b1d3b2 20090515150500 plugins/Morphology/Particles4_.class
+  f06cbba0a99df91a982a22a1552b427b31195528 20090515150328 plugins/Morphology/Particles8_.class
+  ac25812c1b27aaec96c3d7b401fe59a0b48360fe 20080521215826 plugins/Morphology/Plot_BivariateGraphs.txt
+  e8ea53cb6909e2e86ff36156acaefeb1d14463b4 20080606114751 plugins/Morphology/Plot_Histograms.txt
+  ce07764490c9f5194a00de9ebf856da082326571 20060525101717 plugins/Morphology/Prune1.txt
+  c412653457b6918333e85c34995dffc928c13fc5 20060525101717 plugins/Morphology/PruneAll.txt
+  d418ab7f9646252cfbd8764cc70afbe031ea494f 20100509154324 plugins/Morphology/RCC8DMacroExample.txt
+  8075c857590bb498698b82eaf8d940366dc2e7fa 20100527113356 plugins/Morphology/RCC8D_.class
+  428b9c26695a1aad09acf88afec171fc85a26a37 20100527114552 plugins/Morphology/RCC_MutipleObjects.txt
+  0bccc45ae68dd41c177efb93fbfd7206851e2415 20100509171140 plugins/Morphology/RCC_TableQuery_CellModel.txt
+  3c5977ae7a9cb9e556b219d5158673d37afde554 20100511161748 plugins/Morphology/RCC_TableQuery_CellModel_make_images.txt
+  5ba0bd109e81bb344045bbb2c09e786e4af954a4 20061113150836 plugins/Morphology/RegionGrowing.txt
+  916ac5a46f5b17daca9f626294de059395707714 20090511083446 plugins/Morphology/RegionalMinMax.txt
+  3dcf6fa249066766d40cb2861320f1c673e33538 20090511083446 plugins/Morphology/Regional_Maxima.txt
+  28299d9f49a3f696ef5ef63a959bb2ccec3a273e 20090520120717 plugins/Morphology/Regional_Minima.txt
+  efbbb06b30f2eefdcd2782891a0746e162f76116 20060525101717 plugins/Morphology/RiceFieldsTopologicalGradient.txt
+  7092cfe335914a6d64f2adc1a3318601b4570f7b 20090103110632 plugins/Morphology/SelectLikeThese.txt
+  4c557f34de01a41120aec35da1cb26c415e6a46e 20090527165654 plugins/Morphology/Skeleton-arbolito.txt
+  64886ac982543c7c8e7f70fae63940f866f9727f 20060525101717 plugins/Morphology/Skeleton1.txt
+  64fa451e5166a4028d4bfdc331156f48c834a5e4 20060525101717 plugins/Morphology/Skeleton2.txt
+  809a677096082596e912ae6112dff3648cfb4683 20060525101717 plugins/Morphology/Skeleton3.txt
+  16447730926e265c3dca42c714b6c256cfd4b1ba 20090511121301 plugins/Morphology/Skeleton4.txt
+  5d0400a0003425b0d2fbf02e6f8be35de696075f 20080521215352 plugins/Morphology/Summarize_Results.txt
+  ab0b29c37570f9bfed60c9df5c843c5d77943d5f 20080603111017 plugins/Morphology/Thin_Results_Table.txt
+  f97a949863c4490ae1b16c1f79290bffa966834d 20060525101717 plugins/Morphology/TopologicalFlatTexture.txt
+  090f96c1092da8b271943e0878d0a96b1b3d303c 20100621090217 plugins/Morphology/UnbiasedCounting.txt
+  fecf6a4676825e8652fa4306981ed66d55a3ee30 20080605121015 plugins/Morphology/UnbiasedParticleArea.txt
+  84e402e96263d98f67c47bac85f277d0da4a15bf 20080529224912 plugins/Morphology/UpperRiceField.txt
+  19a9433c9b46d093f12ed0b344e46a58f66c976f 20090330080641 plugins/Morphology/Viscous_Geodesic_Reconstruction.txt
+  8d8580894fb58bd729865f8c285a49125426dfc1 20100418183419 plugins/Morphology/Waterfall_.txt
+  54a2c70941a3abeaa3017e03201e59e4eb884a75 20090310121307 plugins/Morphology/exact_.jar
+  de3a020be174270600534345eb47fd76267d8080 20110204094429 plugins/MosaicJ_.jar
+  a349b390595c90be2924a20a372aac99bad438e7 20110204094429 plugins/PIV_analyser.jar
+  c0e6e54ff0ec7c62350f232af75c85ca7006b51f 20110204094429 plugins/PointPicker_.jar
+  32d24a273fef021b079fc64f151c2436af700b30 20110204094429 plugins/QuickPALM_.jar
+  174a4b19524f15ff22356cb08dbef7f4e1f550c1 20110204094429 plugins/RATS_.jar
+  08f589bb5133aac039fc01f8a0ad15836b3e764d 20110204094429 plugins/RandomJ_.jar
+  0ab9e3b0886ae1aab0651865d98473295f2cc715 20110204094427 plugins/Record_Screen.jar
+  5e1a0e9dfe38bdf6193a89fa2d70416df8d8e78f 20110204094429 plugins/Refresh_Javas.jar
+  7f5ef9efbde245b190e7f23b2dc0051be715877b 20110204094429 plugins/SPIM_Registration.jar
+  6e155e63de9510ee2fb990d9cc6ddf0c5f209cb5 20110204094406 plugins/Samples_.jar
+  5e8b02ed2b11b8bd8073a524234e2bd833add775 20110204094429 plugins/Script_Editor.jar
+  c70b2e6f4dbfcd1183c3027c924069866095c940 20110204094259 plugins/Scripts/File/Open_Samples/Adelsons_Squares.ijm
+  3a1bff814b818c22e37205e7722672d27f3eb90e 20110204094259 plugins/Scripts/File/Open_Samples/Spirals_.ijm
+  a3edd6db28d98349de92ec85b28c015768f782a5 20110204094259 plugins/Scripts/Image/Adjust/Scale_to_DPI.js
+  2c3c59a75761789e2b75d839b5f21fd2350a9327 20110204094259 plugins/Scripts/Image/Hyperstacks/Temporal-Color_Code.ijm
+  eb8a84a1111ec35b85a444766fa37cd4a610a965 20110204094429 plugins/Series_Labeler.jar
+  50ee8cf26b2e4bf1b9774a83d227fae873158ef8 20110204094429 plugins/SheppLogan_.jar
+  bf0d28714aff10252a96ef652c5a08f935c12e64 20110204094352 plugins/Simple_Neurite_Tracer.jar
+  265850b38137898969ca510b0cb1e5e2536f4226 20110204094429 plugins/Siox_Segmentation.jar
+  1a5f4c622997d1d23f1d08c81c46b80b4da05d47 20110204094429 plugins/Skeletonize3D_.jar
+  e71b5942e5343cbc3d591f249cc9f3dfc73c7e29 20110204094429 plugins/Snakuscule_.jar
+  41d82921719c38520d5472a3608b79394db1b7b0 20110204094429 plugins/SplineDeformationGenerator_.jar
+  b5a0eabcb770437c30575d4ea6f5dbd346b8bd89 20110204094429 plugins/StackReg_.jar
+  c66b787e1e072bee726de72f384d9e34dbafecce 20110204094429 plugins/Stack_Manipulation.jar
+  23cae80cce99d71dc4669da51c6909c3a7ca68ca 20110204094429 plugins/Statistical_Region_Merging.jar
+  cbde57bbe066ee9478454264ea8546aaf6346965 20110204094429 plugins/Stitching_.jar
+  f05089fa82aca755fea1268bff7f63793692e5c8 20110204094429 plugins/Sync_Win.jar
+  d8b107e55a178c768452f0e95141d732689ce8e4 20110201171504 plugins/Temporal_Color_Coder.jar
+  b60eef5d020c0e881b4bb97d1579339e1cb2a60e 20110204094429 plugins/Thread_Killer.jar
+  f5b2c18843647be28a96a3e7d163a7f2f970921b 20110204094429 plugins/Time_Stamper.jar
+  22fd045b2a57d7ed84b5dcb7b6146484143e36fc 20110204094429 plugins/ToAST_.jar
+  5e20cc0a6c833ebfdcd5fc6517eed89a44ae35dc 20110204094429 plugins/TopoJ_.jar
+  963f0b325919991a8c31ef06a1c84ad499d52232 20110204094429 plugins/Trainable_Segmentation.jar
+  90eb64c70987e809bf0339196989517c36b0cea9 20110204094350 plugins/TrakEM2_.jar
+  39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2 20110204094429 plugins/TransformJ_.jar
+  09868b512410628e06c7dc25a6999c7dda8cf078 20110204094429 plugins/TurboReg_.jar
+  9558400db089262849c33428a77645c323390145 20110204094429 plugins/UnwarpJ_.jar
+  a32dfe463fa2c8814cb0caf9079478ff4e1c44bf 20100614090832 plugins/Utilities/Close_All_Without_Saving.txt
+  dd9e7806031f8b85742e0e3121b301d1e129162d 20110204094350 plugins/VIB_.jar
+  d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2 20110204094429 plugins/Video_Editing.jar
+  a43c9ad3f07dbfa56be075a9ebdcfa115f6675c8 20110204094429 plugins/View5D_.jar
+  b8c3af50365b12b0beb010f1c35134cbd310341a 20110204094429 plugins/Volume_Viewer.jar
+  e9a7358277abe3a90df974fc81d96be9c9a71a9e 20110204094429 plugins/bUnwarpJ_.jar
+  659ad6a335b4947eef8758b1b0cf050779430b78 20100614090936 plugins/ij-ImageIO_.jar
+  f96aee8f95d392798d86904be38395afa2317696 20110117131051 plugins/integral_smooth.jar
+  06097e6d24c69a9ca3e2c8a18971639419147dbf 20110204094351 plugins/level_sets.jar
+  8c6dc89bc7007c62ddeb5d615b631482fdf1a82c 20110204094429 plugins/loci_tools.jar
+  7666962cc18a0275b7198d6d64afba9033ca1604 20110204094429 plugins/mpicbg_.jar
+  5e32d936ba53c22ba6b70e5eee3992a361bc2ff8 20110204094429 plugins/panorama_.jar
+  91bf372e9c531a68d08cb158239df303c0a37fb1 20110204094429 plugins/register_virtual_stack_slices.jar
+  4d7eaf239c033d305a464a06c3e64c68d096c7e1 20110204094429 plugins/registration_3d.jar
+  e6e0879f5d50afa8d0dd213b4b66e396a39a47b7 20100614090832 retro/backport-util-concurrent-3.1.jar
+  e250f0c40b768e90ed7d3910d9869075f3e438cd 20100614090832 retro/retrotranslator-runtime-1.2.7.jar
+  eea1390da8fac38763ed4c03f1acb3342b942717 20100614090832 retro/retrotranslator-transformer-1.2.7.jar
+  21e7b7ec24eff575a502e3ac5089de5b3745af15 20110106121108 scripts/Miji.m
+  3daabf6b3c20f374cf42b672eb29035003dbc40e 20101203120025 scripts/Miji_Test.m
+  d326018044a582f5106efc6fc90ad09f98a6a822 20100614090832 scripts/Record_Desktop.py
+  0ea7f8fc6683e74065ae7fd82c1b92676e069526 20100614090832 scripts/Record_Window.py
+  af954bdff6392779e47e43fb4063f255a8a5ec6b 20101203120025 scripts/bfopen.m</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 15:29:22 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This looks like a developer version which rolled back one or two files via the updater. Possible? (I updated a clean non-developer install of Fiji, and did not encounter the problem.)</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 16:10:33 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >In addition, I now uploaded all of the files implementing the new special-handling of plugins/Scripts/, including all the fixes necessary to override/run macros and javascripts via Fiji's scripting framework.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">G. Landini</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 16:59:27 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hm... if I git pull origin master
+I get Already up-to-date, but the problem persists</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 17:59:40 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I fear that the problem is an old-couple fight between the developer version and the version the Updater thinks is current.
+
+So my guess is that either a ./Build.sh would fix things, or that Help&gt;Update Fiji would mark a few files as locally-modified which you might want to mark for update to fix things.
+
+In particular, I think that plugins/CLI_.jar, jars/Fiji.jar and jars/fiji-scripting.jar must conform to what the Fiji Updater thinks is current.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">G. Landini</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 18:26:30 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I am afraid that neither resolve it.
+Is the Temporal-Color_Code.ijm part of the current Fiji?
+There is a jar file (menu entry in the Hyperstack submenu) as well as that macro with the same name.
+Cheers
+G.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 18:43:44 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I think I understand it now. The Temporal_Color_Coder.jar was removed, since we no longer need a Java wrapper around the macro. But you still had that stale file lying around, since the Fiji Updater thinks it is current (and does not know about Temporal-Color_Code.ijm).
+
+So it _was_ an old-couple misunderstanding between developer and user version of Fiji.
+
+Take-home message: check &quot;git status&quot; from time to time to remove obsoleted .jar files.
+
+I uploaded the macro and removed the .jar file from the updater (which I wanted to do later when I tested more, but hey, this is the way things go).</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=283#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">G. Landini</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-04 21:12:14 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Yup, that seems to have resolved it.
+Thanks Dscho!
+
+Cheers
+
+G.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=283">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=283">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=283">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=283&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=283" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=283&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731577-5kTrbcY_iEkhWoAxKLrSbjVxVldY983d1UMJa2icWkw">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

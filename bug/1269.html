@@ -1,0 +1,2185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1269 &ndash; Unexpected behavior of &quot;Pixel units&quot; setting in ImageJ/Fiji Analyze particles</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=1269&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=1269">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=1269">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=1269">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 1269 – Unexpected behavior of \"Pixel units\" setting in ImageJ\/Fiji Analyze particles",  
+                             "show_bug.cgi?id=1269" );
+        document.title = "Bug 1269 – Unexpected behavior of \"Pixel units\" setting in ImageJ\/Fiji Analyze particles";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 1269 – Unexpected behavior of \"Pixel units\" setting in ImageJ\/Fiji Analyze particles", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_Plugins bz_bug_1269 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1269</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Unexpected behavior of &quot;Pixel units&quot; setting in ImageJ/Fiji Analyze particles</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2016-05-11 15:06:05 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=1269&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=1269" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=1269&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731992-HQpznMeDz5ccJyo9K9hKddivVbDLQyeAiEHjZXdrKSE">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2016-05-11 15:06:05">
+  <input type="hidden" name="longdesclength" value="1">
+  <input type="hidden" name="id" value="1269">
+  <input type="hidden" name="token" value="1492731992-Wc2BicTZm9qOcjth6tGlnslDZvedCXsJQRQvOZGD45o">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=1269"><b>Bug&nbsp;1269</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Unexpected behavior of &quot;Pixel units&quot; setting in ImageJ/Fiji Analyze particles</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>Unexpected behavior of &quot;Pixel units&quot; setting in ImageJ/Fiji Analyze particles
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Unexpected behavior of \"Pixel units\" setting in ImageJ\/Fiji Analyze particles', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=1269&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=1269">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2016-05-11 15:06 CDT by <span class="vcard"><span class="fn">Peter J. Lee</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2016-05-11 15:06 CDT 
+      (<a href="show_activity.cgi?id=1269">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="lee">lee</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=1269&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=1269&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=1269#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Peter J. Lee</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-05-11 15:06:05 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Conditions:
+1. Magnification scale is set either manually or from TIFF header.
+Procedure:
+A. Analyze particles run with &quot;Pixel units&quot; box activated.
+B. Analyze particles run with &quot;Pixel units&quot; box deactivated.
+Results:
+Results tables are the same for both A and B and are scaled using the magnification scale.
+Expectation:
+When &quot;Pixel units&quot; activated the Results table values would all be in pixels.
+
+Other attempts:
+1. Other colleague's Fiji installation (1.51a + java.version =&gt; 1.6.0_24)
+2. Non-Fiji ImageJ vanilla installation. Image J versions: 1.46, 1.50i, 1.51a (all with same Java version as below).
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.8.0_91
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.8.0_91-b14
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 25.91-b14
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.8
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: D:\Data\APPS-O~1\PORTAB~1\FIJI-P~1.APP/..\CommonFiles\Java64
+  imagej.dir =&gt; D:\Data\APPS-O~1\PORTAB~1\FIJI-P~1.APP
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20160504143521)
+Fiji: <a href="http://update.fiji.sc/">http://update.fiji.sc/</a> (last check:20160509040721)
+Java-8: <a href="http://sites.imagej.net/Java-8/">http://sites.imagej.net/Java-8/</a> (last check:20160506230031)
+2015-Conference: <a href="http://sites.imagej.net/2015-Conference/">http://sites.imagej.net/2015-Conference/</a> (last check:20150903130151)
+3D ImageJ Suite: <a href="http://sites.imagej.net/Tboudier/">http://sites.imagej.net/Tboudier/</a> (last check:20160401020854)
+BAR: <a href="http://sites.imagej.net/Tiago/">http://sites.imagej.net/Tiago/</a> (last check:20160419120820)
+Bio-Formats: <a href="http://sites.imagej.net/Bio-Formats/">http://sites.imagej.net/Bio-Formats/</a> (last check:20160510212645)
+Biomedgroup: <a href="http://sites.imagej.net/Biomedgroup/">http://sites.imagej.net/Biomedgroup/</a> (last check:20160318053608)
+BioVoxxel: <a href="http://sites.imagej.net/BioVoxxel/">http://sites.imagej.net/BioVoxxel/</a> (last check:20160407123326)
+Cookbook: <a href="http://sites.imagej.net/Cookbook/">http://sites.imagej.net/Cookbook/</a> (last check:20150302170629)
+DiameterJ: <a href="http://sites.imagej.net/DiameterJ/">http://sites.imagej.net/DiameterJ/</a> (last check:20150923140020)
+FFMPEG: <a href="http://fiji.sc/~schindelin/ffmpeg-plugins/">http://fiji.sc/~schindelin/ffmpeg-plugins/</a> (last check:20130606112449)
+Fuzzy logic and artificial neural networks image processing toolbox for ImageJ: <a href="http://sites.imagej.net/Astartes91/">http://sites.imagej.net/Astartes91/</a> (last check:20150906103706)
+GDSC: <a href="http://sites.imagej.net/GDSC/">http://sites.imagej.net/GDSC/</a> (last check:20160510085548)
+HDF5: <a href="http://sites.imagej.net/Ronneber/">http://sites.imagej.net/Ronneber/</a> (last check:20150214074119)
+IBMP-CNRS: <a href="http://www-ibmp.u-strasbg.fr/fijiupdates/">http://www-ibmp.u-strasbg.fr/fijiupdates/</a> (last check:20150318060643)
+IJPB-plugins: <a href="http://sites.imagej.net/IJPB-plugins/">http://sites.imagej.net/IJPB-plugins/</a> (last check:20160502053431)
+ImageScience: <a href="http://sites.imagej.net/ImageScience/">http://sites.imagej.net/ImageScience/</a> (last check:20160109083315)
+ImagingBook: <a href="http://sites.imagej.net/ImagingBook/">http://sites.imagej.net/ImagingBook/</a> (last check:20160429075936)
+IMCF Uni Basel: <a href="http://sites.imagej.net/UniBas-IMCF/">http://sites.imagej.net/UniBas-IMCF/</a> (last check:20160426093839)
+LinearDistance: <a href="http://sites.imagej.net/SimonKlein/">http://sites.imagej.net/SimonKlein/</a> (last check:20160323135041)
+LOCI: <a href="http://sites.imagej.net/LOCI/">http://sites.imagej.net/LOCI/</a> (last check:20160219134349)
+MiToBo: <a href="http://sites.imagej.net/MiToBo/">http://sites.imagej.net/MiToBo/</a> (last check:20150924081119)
+Morphology: <a href="http://sites.imagej.net/Landini/">http://sites.imagej.net/Landini/</a> (last check:20160416064441)
+MOSAIC ToolSuite: <a href="http://mosaic.mpi-cbg.de/Downloads/update/Fiji/MosaicToolsuite/">http://mosaic.mpi-cbg.de/Downloads/update/Fiji/MosaicToolsuite/</a> (last check:20160429073420)
+MIST: <a href="http://sites.imagej.net/NIST-ISG-MIST/">http://sites.imagej.net/NIST-ISG-MIST/</a> (last check:20160120135630)
+PTBIOP: <a href="http://biop.epfl.ch/Fiji-Update/">http://biop.epfl.ch/Fiji-Update/</a> (last check:20160321084232)
+ResultsToExcel: <a href="http://sites.imagej.net/ResultsToExcel/">http://sites.imagej.net/ResultsToExcel/</a> (last check:20151125081931)
+Sceptical Physiologist: <a href="http://sites.imagej.net/Scepticalphysiologist/">http://sites.imagej.net/Scepticalphysiologist/</a> (last check:20151216143531)
+ScientiFig: <a href="http://sites.imagej.net/Aigouy/">http://sites.imagej.net/Aigouy/</a> (last check:20160504110924)
+Stowers: <a href="http://research.stowers.org/imagejplugins/updates/">http://research.stowers.org/imagejplugins/updates/</a> (last check:20160510095639)
+Fuzzy image processing toolbox for ImageJ: <a href="http://sites.imagej.net/Astartes91/">http://sites.imagej.net/Astartes91/</a> (last check:20150906103706)
+
+Files not up-to-date:
+  5cf0711e (LOCAL_ONLY) 20130529104922 jars/akutan-1.0.jar
+  0449e3ec (LOCAL_ONLY) 20130723123815 jars/colt-1.2.0.jar
+  6cd7cd7d (LOCAL_ONLY) 20130529104925 jars/concurrent-1.3.4.jar
+  6227c67b (LOCAL_ONLY) 20130529104926 jars/curve-fitter-1.0.0-SNAPSHOT-with-libs.jar
+  63e90571 (LOCAL_ONLY) 20110307142230 jars/jpedalSTD.jar
+  c480d491 (LOCAL_ONLY) 20130529104922 jars/jxlayer.jar
+  8523861f (LOCAL_ONLY) 20130529104926 jars/lma-1.3.jar
+  04f8e59b (LOCAL_ONLY) 20130529104925 jars/native-library-util-2.0-SNAPSHOT.jar
+  8b961465 (LOCAL_ONLY) 20140821124617 jars/testng-5.12.1.jar
+  55b9e6bc (LOCAL_ONLY) 20150416160328 lib/fftw/fftPlans/1024x768MeasurePlan.dat
+  15759341 (LOCAL_ONLY) 20150427082534 lib/fftw/fftPlans/2927x2303MeasurePlan.dat
+  fccbd10b (LOCAL_ONLY) 20150423143402 lib/fftw/fftPlans/3072x2304ExhaustivePlan.dat
+  716406ad (LOCAL_ONLY) 20150423133720 lib/fftw/fftPlans/3072x2304MeasurePlan.dat
+  2673ba58 (LOCAL_ONLY) 20150423130948 lib/fftw/fftPlans/3072x2304PatientPlan.dat
+  38255274 (LOCAL_ONLY) 20120229132214 luts/000-Gray.lut
+  340ab95b 20120229132214 luts/000-gray.lut
+  88f30cbb (LOCAL_ONLY) 20150706164117 luts/001-Fire_trueI256-pjl.lut
+  34f9b394 (LOCAL_ONLY) 20120229132218 luts/002-spectrum.lut
+  1ef573e9 (LOCAL_ONLY) 20150706142248 luts/003-Ice_trueI256-pjl.lut
+  82c43412 (LOCAL_ONLY) 20120229132222 luts/004-ice.lut
+  0e4653b4 (LOCAL_ONLY) 20120229132225 luts/005-random.lut
+  959121bb (LOCAL_ONLY) 20160422083618 luts/006-Viridis.lut
+  f7662953 (LOCAL_ONLY) 20120229132410 luts/10_Percent.lut
+  ebe7ca76 20120229132411 luts/16_color-bis.lut
+  c432f64b (NOT_INSTALLED) 20151221201752 luts/16_colors.lut
+  95d292ed 20120229132226 luts/16_equal.lut
+  a5910a53 20120229132230 luts/16_ramps.lut
+  c62064c8 20120229132232 luts/20_colors.lut
+  e0bdb981 20120229132232 luts/32_colors.lut
+  89419f99 (NOT_INSTALLED) 20151221201752 luts/5_ramps.lut
+  babbcee8 20120229132412 luts/5percent.lut
+  bdcabb6b 20120229132233 luts/6_reserved_colors.lut
+  dc3a1bdd (NOT_INSTALLED) 20151221201752 luts/6_shades.lut
+  62f87951 20120229132412 luts/8color.lut
+  37499e80 20120229132233 luts/Blue Hot.lut
+  59f03146 20050906190328 luts/Blue Pale.lut
+  a6639153 20120229132416 luts/Blue-Orange-bis.lut
+  f8f2609f 20120229132420 luts/Blue_Green.lut
+  49441cbe 20120229132421 luts/Blue_Green_Red.lut
+  3e25836f 20041021181042 luts/Blue_Hot.lut
+  fc3478a3 20120229132421 luts/Blue_Red.lut
+  25ddaac8 20120229132422 luts/Blue_Red_Yellow.lut
+  2c60544d 20120229132422 luts/Brown_Body.lut
+  27cd9fd7 20120229132426 luts/Ceretec.lut
+  94ab6188 (LOCAL_ONLY) 20040211155714 luts/Cornflower.lut
+  0b3bbb6c (NOT_INSTALLED) 20151221201752 luts/Cyan Hot.lut
+  d88bad71 20040211171324 luts/Cyan Pale.lut
+  48393882 20120229132427 luts/Cyclic.lut
+  e7ceecf3 (LOCAL_ONLY) 20151221201752 luts/Development/Green Fire Blue.lut
+  742bc376 (LOCAL_ONLY) 20040304113246 luts/Development/Green Fire blue2.lut
+  b0036659 (LOCAL_ONLY) 20030317140436 luts/Development/Green Fire.lut
+  533d74e7 (LOCAL_ONLY) 20120229132234 luts/Development/Green Hot.lut
+  a70236b8 (LOCAL_ONLY) 20050906190430 luts/Development/Green Pale.lut
+  d20a17ff (LOCAL_ONLY) 20120229132234 luts/Development/GreenFire.lut
+  0678a280 (LOCAL_ONLY) 20120229132307 luts/Development/gyr_centre.lut
+  e0b2df6e (LOCAL_ONLY) 20120229132310 luts/Development/haze.lut
+  64dcdc02 (LOCAL_ONLY) 20120229132314 luts/Development/heart.lut
+  0656c0df (LOCAL_ONLY) 20150706123739 luts/Earth-Sky_trueI256-pjl.lut
+  d6cf6055 (LOCAL_ONLY) 20150706151637 luts/Fire_trueI256-pjl-5.lut
+  676b6ff0 (LOCAL_ONLY) 20070526235812 luts/GB.lut
+  9410fce1 (LOCAL_ONLY) 20070526220054 luts/GB2.lut
+  0d290a51 20150706133742 luts/GermanFlag_trueI256-pjl.lut
+  655b55e6 (NOT_INSTALLED) 20151221201752 luts/Green Fire Blue.lut
+  ff917442 20040304113246 luts/Green Fire blue2.lut
+  9b3acd7d 20030317140436 luts/Green Fire.lut
+  4d8c0f26 20120229132234 luts/Green Hot.lut
+  2ef5d4c0 20050906190430 luts/Green Pale.lut
+  dcaad7a7 20120229132234 luts/GreenFire.lut
+  79d29d2e 20120229132431 luts/Hot_Iron.lut
+  a3312d3f (NOT_INSTALLED) 20151221201752 luts/ICA.lut
+  db5bf8a4 (NOT_INSTALLED) 20151221201752 luts/ICA2.lut
+  9f7dd167 (NOT_INSTALLED) 20151221201752 luts/ICA3.lut
+  83284fd9 (LOCAL_ONLY) 20120229132434 luts/Ice.lut
+  989dff46 20030703183058 luts/Lemon Hot.lut
+  72190eab 20120229132438 luts/MMC.lut
+  697dd3a4 (NOT_INSTALLED) 20151221201752 luts/Magenta Hot.lut
+  14799069 20040211171126 luts/Magenta Pale.lut
+  a14626ee (LOCAL_ONLY) 20120229132241 luts/NIH-Image6ExtraColors.lut
+  524604de (NOT_INSTALLED) 20151221201752 luts/Orange Hot.lut
+  c3ded429 20010124140034 luts/Orange.lut
+  b000c4c5 19991005155506 luts/Pink Hot.lut
+  03835113 20040223160804 luts/Purple.lut
+  76e26325 (LOCAL_ONLY) 20031017162556 luts/Rainbow Smooth.lut
+  c52d6e8e (LOCAL_ONLY) 20120229132438 luts/Rainbow.lut
+  abc28f3a 20010726174126 luts/Ratio.lut
+  1b67628e 20030328165516 luts/Red Fire.lut
+  4e686ec6 (NOT_INSTALLED) 20151221201752 luts/Red Hot.lut
+  6706de8e 20050906190354 luts/Red Pale.lut
+  480fc54b 20120229132439 luts/S_Pet.lut
+  f6dec5db (LOCAL_ONLY) 20120229132411 luts/SeldomUsed/16_color-bis.lut
+  88df48db (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/16_colors.lut
+  f5316a99 (LOCAL_ONLY) 20120229132226 luts/SeldomUsed/16_equal.lut
+  e26175ea (LOCAL_ONLY) 20120229132230 luts/SeldomUsed/16_ramps.lut
+  71ec7128 (LOCAL_ONLY) 20120229132232 luts/SeldomUsed/20_colors.lut
+  dd04bce9 (LOCAL_ONLY) 20120229132232 luts/SeldomUsed/32_colors.lut
+  a0917929 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/5_ramps.lut
+  c5824c03 (LOCAL_ONLY) 20120229132412 luts/SeldomUsed/5percent.lut
+  892ca02b (LOCAL_ONLY) 20120229132233 luts/SeldomUsed/6_reserved_colors.lut
+  b8ff6f15 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/6_shades.lut
+  bfa28882 (LOCAL_ONLY) 20120229132412 luts/SeldomUsed/8color.lut
+  92fe7816 (LOCAL_ONLY) 20120229132233 luts/SeldomUsed/Blue Hot.lut
+  d7933bfe (LOCAL_ONLY) 20050906190328 luts/SeldomUsed/Blue Pale.lut
+  8156ca32 (LOCAL_ONLY) 20120229132416 luts/SeldomUsed/Blue-Orange-bis.lut
+  c295150a (LOCAL_ONLY) 20120229132420 luts/SeldomUsed/Blue_Green.lut
+  046619bf (LOCAL_ONLY) 20120229132421 luts/SeldomUsed/Blue_Green_Red.lut
+  46ba525f (LOCAL_ONLY) 20041021181042 luts/SeldomUsed/Blue_Hot.lut
+  3cc25999 (LOCAL_ONLY) 20120229132421 luts/SeldomUsed/Blue_Red.lut
+  1e1444d0 (LOCAL_ONLY) 20120229132422 luts/SeldomUsed/Blue_Red_Yellow.lut
+  33acee21 (LOCAL_ONLY) 20120229132422 luts/SeldomUsed/Brown_Body.lut
+  c2706e99 (LOCAL_ONLY) 20120229132426 luts/SeldomUsed/Ceretec.lut
+  719e3e70 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/Cyan Hot.lut
+  6c35f196 (LOCAL_ONLY) 20040211171324 luts/SeldomUsed/Cyan Pale.lut
+  328679af (LOCAL_ONLY) 20120229132427 luts/SeldomUsed/Cyclic.lut
+  4b8557b5 (LOCAL_ONLY) 20150706133742 luts/SeldomUsed/GermanFlag_trueI256-pjl.lut
+  d8897021 (LOCAL_ONLY) 20120229132431 luts/SeldomUsed/Hot_Iron.lut
+  3624a65d (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/ICA.lut
+  b5b76080 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/ICA2.lut
+  3a8ce829 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/ICA3.lut
+  6f89baff (LOCAL_ONLY) 20030703183058 luts/SeldomUsed/Lemon Hot.lut
+  70aa4a93 (LOCAL_ONLY) 20120229132438 luts/SeldomUsed/MMC.lut
+  0cc2ec91 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/Magenta Hot.lut
+  ca973be5 (LOCAL_ONLY) 20040211171126 luts/SeldomUsed/Magenta Pale.lut
+  811461f4 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/Orange Hot.lut
+  afff00ad (LOCAL_ONLY) 20010124140034 luts/SeldomUsed/Orange.lut
+  ede92de5 (LOCAL_ONLY) 19991005155506 luts/SeldomUsed/Pink Hot.lut
+  3f96c1f9 (LOCAL_ONLY) 20040223160804 luts/SeldomUsed/Purple.lut
+  53719491 (LOCAL_ONLY) 20010726174126 luts/SeldomUsed/Ratio.lut
+  caa05ddf (LOCAL_ONLY) 20030328165516 luts/SeldomUsed/Red Fire.lut
+  73d9e755 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/Red Hot.lut
+  3ad90ded (LOCAL_ONLY) 20050906190354 luts/SeldomUsed/Red Pale.lut
+  62bb8807 (LOCAL_ONLY) 20120229132439 luts/SeldomUsed/S_Pet.lut
+  ad2e255b (LOCAL_ONLY) 20120229132442 luts/SeldomUsed/Sopha.lut
+  c99384a8 (LOCAL_ONLY) 20120229132448 luts/SeldomUsed/White_Blue_Green_Red.lut
+  20c2c52c (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/Yellow Hot.lut
+  4cec9cd8 (LOCAL_ONLY) 20040211171010 luts/SeldomUsed/Yellow Pale.lut
+  5593478f (LOCAL_ONLY) 20120229132449 luts/SeldomUsed/Yellow_WFG.lut
+  ed82f959 (LOCAL_ONLY) 20120229132244 luts/SeldomUsed/amber.lut
+  0e5f99f8 (LOCAL_ONLY) 20120229132245 luts/SeldomUsed/auxctq.lut
+  fc95fca5 (LOCAL_ONLY) 20120229132452 luts/SeldomUsed/blue-bis.lut
+  4b8edf09 (LOCAL_ONLY) 20120229132245 luts/SeldomUsed/blue_orange.lut
+  3173fee9 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/blue_orange_icb.lut
+  e6d257e0 (LOCAL_ONLY) 20120229132246 luts/SeldomUsed/brain.lut
+  2ac900b3 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/brgbcmyw.lut
+  acffe363 (LOCAL_ONLY) 20120229132246 luts/SeldomUsed/brown.lut
+  0ac92fed (LOCAL_ONLY) 20120229132247 luts/SeldomUsed/cells.lut
+  890d50e2 (LOCAL_ONLY) 20120229132247 luts/SeldomUsed/cequal.lut
+  3f0b1823 (LOCAL_ONLY) 20120229132248 luts/SeldomUsed/cmy-cyan.lut
+  a7f4d358 (LOCAL_ONLY) 20090724172214 luts/SeldomUsed/cmy-gradient.lut
+  bd51d727 (LOCAL_ONLY) 20120229132248 luts/SeldomUsed/cmy-magneta.lut
+  7276aa5b (LOCAL_ONLY) 20090724171944 luts/SeldomUsed/cmy-only.lut
+  a76cf9d5 (LOCAL_ONLY) 20120229132252 luts/SeldomUsed/cmy-yellow.lut
+  9fe670c1 (LOCAL_ONLY) 20120229132257 luts/SeldomUsed/cmy.lut
+  f8941b58 (LOCAL_ONLY) 20120229132301 luts/SeldomUsed/cti_ras.lut
+  e8660662 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/edges.lut
+  ea68b2f6 (LOCAL_ONLY) 20120229132301 luts/SeldomUsed/ether.lut
+  d88c8157 (LOCAL_ONLY) 20120229132305 luts/SeldomUsed/fire-ncsa.lut
+  a15237a6 (LOCAL_ONLY) 20120229132218 luts/SeldomUsed/fire-old.lut
+  c9575836 (LOCAL_ONLY) 20120229132305 luts/SeldomUsed/gem-16.lut
+  9194498d (LOCAL_ONLY) 20120229132306 luts/SeldomUsed/gem-256.lut
+  ea41e11c (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/gem.lut
+  3d378be9 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/glow.lut
+  64b3d1e5 (LOCAL_ONLY) 20120229132306 luts/SeldomUsed/gold.lut
+  3abafca2 (LOCAL_ONLY) 20120229132456 luts/SeldomUsed/hotter.lut
+  cbbd42f4 (LOCAL_ONLY) 20120229132317 luts/SeldomUsed/hsatl1.lut
+  1dbb2bd4 (LOCAL_ONLY) 20120229132318 luts/SeldomUsed/hsatl2.lut
+  12f8713c (LOCAL_ONLY) 20120229132318 luts/SeldomUsed/hsatv1.lut
+  1996bd22 (LOCAL_ONLY) 20120229132319 luts/SeldomUsed/hue.lut
+  6337bb0d (LOCAL_ONLY) 20120229132319 luts/SeldomUsed/hue_ramps_08.lut
+  981a44b4 (LOCAL_ONLY) 20120229132320 luts/SeldomUsed/hue_ramps_16.lut
+  5295bec3 (LOCAL_ONLY) 20120229132320 luts/SeldomUsed/iman.lut
+  91862896 (LOCAL_ONLY) 20120229132324 luts/SeldomUsed/invert_gray.lut
+  ff63f40c (LOCAL_ONLY) 20130529104920 luts/SeldomUsed/lifetime.lut
+  7c1be155 (LOCAL_ONLY) 20120229132456 luts/SeldomUsed/linear.lut
+  956e1f16 (LOCAL_ONLY) 20120229132329 luts/SeldomUsed/mixed.lut
+  a42fbd4f (LOCAL_ONLY) 20120229132331 luts/SeldomUsed/pastel.lut
+  863a16c2 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/phase.lut
+  771dc010 (LOCAL_ONLY) 20120229132457 luts/SeldomUsed/prism.lut
+  a6905de2 (LOCAL_ONLY) 20120229132331 luts/SeldomUsed/red-blue.lut
+  d50c7904 (LOCAL_ONLY) 20120229132332 luts/SeldomUsed/rgb-blue.lut
+  b4a3b76b (LOCAL_ONLY) 20120229132333 luts/SeldomUsed/rgb-green.lut
+  b6b6119c (LOCAL_ONLY) 20120229132335 luts/SeldomUsed/rgb-red.lut
+  cd5af0bf (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/royal.lut
+  fc5817f5 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/sepia.lut
+  9dbbb366 (LOCAL_ONLY) 20120229132337 luts/SeldomUsed/siemens.lut
+  7d611661 (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/smart.lut
+  dcf567eb (LOCAL_ONLY) 20120229132358 luts/SeldomUsed/split_blackblue_redwhite.lut
+  6e93ccf7 (LOCAL_ONLY) 20120229132359 luts/SeldomUsed/split_blackwhite_ge.lut
+  99a5e53d (LOCAL_ONLY) 20120229132402 luts/SeldomUsed/split_blackwhite_warmmetal.lut
+  3b9a382e (LOCAL_ONLY) 20120229132405 luts/SeldomUsed/split_bluered_warmmetal.lut
+  f262e00a (LOCAL_ONLY) 20151221201752 luts/SeldomUsed/thal.lut
+  3e231b8b (LOCAL_ONLY) 20120229132407 luts/SeldomUsed/thal_16.lut
+  6aa22d6e (LOCAL_ONLY) 20120229132408 luts/SeldomUsed/vivid.lut
+  3e3f8941 (LOCAL_ONLY) 20120229132505 luts/SeldomUsed/warm.lut
+  2830821f 20120229132442 luts/Sopha.lut
+  5e01a763 (LOCAL_ONLY) 20120229132446 luts/StarsAndStripes.lut
+  397d062b (LOCAL_ONLY) 20120229132447 luts/Thermal-SP.lut
+  eff0700b (LOCAL_ONLY) 20160406150140 luts/Viridis.lut
+  906d9268 20120229132448 luts/White_Blue_Green_Red.lut
+  32157491 (NOT_INSTALLED) 20151221201752 luts/Yellow Hot.lut
+  81619073 20040211171010 luts/Yellow Pale.lut
+  cfae9f90 20120229132449 luts/Yellow_WFG.lut
+  ac38884b (LOCAL_ONLY) 20060606111730 luts/ZProjection of PSF.lut
+  b1d49822 20120229132244 luts/amber.lut
+  69b8f70f 20120229132245 luts/auxctq.lut
+  166a4c5e 20120229132452 luts/blue-bis.lut
+  78c26327 20120229132245 luts/blue_orange.lut
+  a4cec22b (NOT_INSTALLED) 20151221201752 luts/blue_orange_icb.lut
+  962f47e4 20120229132246 luts/brain.lut
+  c9e396a3 (NOT_INSTALLED) 20151221201752 luts/brgbcmyw.lut
+  1351ecbc 20120229132246 luts/brown.lut
+  84bb5aa0 20120229132247 luts/cells.lut
+  019e188d 20120229132247 luts/cequal.lut
+  4a3f4df0 20120229132248 luts/cmy-cyan.lut
+  51973fb8 20090724172214 luts/cmy-gradient.lut
+  db57814a 20120229132248 luts/cmy-magneta.lut
+  21cafc3c 20090724171944 luts/cmy-only.lut
+  9fc6c613 20120229132252 luts/cmy-yellow.lut
+  761a3358 20120229132257 luts/cmy.lut
+  e30c3cfc (LOCAL_ONLY) 20120229132300 luts/cold.lut
+  3899b5b4 20120229132301 luts/cti_ras.lut
+  ba88e5f3 (NOT_INSTALLED) 20151221201752 luts/edges.lut
+  2740dad8 20120229132301 luts/ether.lut
+  9dd637c0 20120229132305 luts/fire-ncsa.lut
+  e65bcd18 20120229132218 luts/fire-old.lut
+  dbb6830a 20120229132305 luts/gem-16.lut
+  1025d7c0 20120229132306 luts/gem-256.lut
+  0a4dce83 (NOT_INSTALLED) 20151221201752 luts/gem.lut
+  325c01f3 (NOT_INSTALLED) 20151221201752 luts/glow.lut
+  3954a500 20120229132306 luts/gold.lut
+  e66381dc 20120229132307 luts/gyr_centre.lut
+  89f09770 20120229132310 luts/haze.lut
+  eae34878 20120229132314 luts/heart.lut
+  077cf281 20120229132456 luts/hotter.lut
+  a18f819d 20120229132317 luts/hsatl1.lut
+  1afd8b18 20120229132318 luts/hsatl2.lut
+  2982767a 20120229132318 luts/hsatv1.lut
+  cecc481a 20120229132319 luts/hue.lut
+  70ba4de4 20120229132319 luts/hue_ramps_08.lut
+  3c3286dd 20120229132320 luts/hue_ramps_16.lut
+  90dfeb42 20120229132320 luts/iman.lut
+  1658b0f7 20120229132324 luts/invert_gray.lut
+  e943e6c7 (LOCAL_ONLY) 20120229132324 luts/isocontour.lut
+  f2b7e781 20130529104920 luts/lifetime.lut
+  899dee77 20120229132456 luts/linear.lut
+  f1ed2883 (LOCAL_ONLY) 20120229132325 luts/log_down.lut
+  939e0e50 (LOCAL_ONLY) 20120229132328 luts/log_up.lut
+  38c5c27e 20120229132329 luts/mixed.lut
+  d2d1ff1f (LOCAL_ONLY) 20120229132330 luts/nih-image-fire1.lut
+  706708e7 (LOCAL_ONLY) 20120229132330 luts/nih-image-fire2.lut
+  cc3ba0bf 20120229132331 luts/pastel.lut
+  1f99f07e (NOT_INSTALLED) 20151221201752 luts/phase.lut
+  ef990166 20120229132457 luts/prism.lut
+  d789c7cd 20120229132331 luts/red-blue.lut
+  86c25bc3 20120229132332 luts/rgb-blue.lut
+  e68062c9 20120229132333 luts/rgb-green.lut
+  5d1e1f15 20120229132335 luts/rgb-red.lut
+  49f5e48a (NOT_INSTALLED) 20151221201752 luts/royal.lut
+  898954dd (NOT_INSTALLED) 20151221201752 luts/sepia.lut
+  dd57b311 20120229132337 luts/siemens.lut
+  ebd4ed6b (NOT_INSTALLED) 20151221201752 luts/smart.lut
+  53672815 20120229132358 luts/split_blackblue_redwhite.lut
+  189359b6 20120229132359 luts/split_blackwhite_ge.lut
+  2ac1280c 20120229132402 luts/split_blackwhite_warmmetal.lut
+  031812d3 20120229132405 luts/split_bluered_warmmetal.lut
+  8e5d7053 (LOCAL_ONLY) 20120229132458 luts/step10.lut
+  55be90f4 (LOCAL_ONLY) 20120229132501 luts/step20.lut
+  6b6e71c2 (LOCAL_ONLY) 20120229132502 luts/step4.lut
+  035d8366 (LOCAL_ONLY) 20120229132503 luts/step5.lut
+  fa76fd60 (LOCAL_ONLY) 20120229132406 luts/system_lut.lut
+  36e7ca9e (NOT_INSTALLED) 20151221201752 luts/thal.lut
+  47f97971 20120229132407 luts/thal_16.lut
+  a3f72331 (LOCAL_ONLY) 20120229132407 luts/topography.lut
+  ffcd0ae9 20120229132408 luts/vivid.lut
+  6a86e384 (LOCAL_ONLY) 20120229132410 luts/warhol.lut
+  b8bd3161 20120229132505 luts/warm.lut
+  90cce723 (LOCAL_ONLY) 20100729141826 macros/3Dflight.txt
+  8b307943 (LOCAL_ONLY) 20111028190459 macros/AA_ReadMe.txt
+  d02a7ece (LOCAL_ONLY) 20100729141827 macros/AddCheckboxGroupDemo.txt
+  e3c342c1 (LOCAL_ONLY) 20160128212214 macros/AddParticles.txt
+  76dbe8bf (LOCAL_ONLY) 20100729141827 macros/AlignmentMacros.txt
+  3a1f2128 (LOCAL_ONLY) 20111028190442 macros/AnimatedGaussianBlur.txt
+  8bfdfef8 (LOCAL_ONLY) 20100729141827 macros/AnimatedText.txt
+  66e9f473 (LOCAL_ONLY) 20100729141827 macros/AnimationMacros.txt
+  1f0a233a (LOCAL_ONLY) 20100729141826 macros/ApplyDicomRescaleSlope.txt
+  a52d1ec7 (LOCAL_ONLY) 20111028190351 macros/ApplyFunctionToImage.txt
+  c8fc77b7 (LOCAL_ONLY) 20111213233404 macros/Apply_3D_Mask_to_4D_Study.txt
+  d4226e88 (LOCAL_ONLY) 20110702153035 macros/ArgumentPassingDemo.txt
+  36ff3601 (LOCAL_ONLY) 20160505124331 macros/ArrayConcatExamples.ijm
+  2c29537b (LOCAL_ONLY) 20160505133739 macros/ArraySortingDemo.ijm
+  c0d8d781 (LOCAL_ONLY) 20120912073348 macros/Array_Functions.txt
+  59aaba8e (LOCAL_ONLY) 20100729141827 macros/Arrays.txt
+  eba9a3b6 (LOCAL_ONLY) 20100729141827 macros/Artillery.txt
+  da10d289 (LOCAL_ONLY) 20120410224128 macros/AutoThresholdAndSegment.txt
+  cfa3e810 (LOCAL_ONLY) 20100729141826 macros/AzimuthalProfile.txt
+  f37a07a5 (LOCAL_ONLY) 20100729141827 macros/BackgroundCorrectedDensity.txt
+  b180cd35 (LOCAL_ONLY) 20100729141827 macros/BatchConvert.txt
+  7d3e2a9d (LOCAL_ONLY) 20100729141827 macros/BatchConvertToBinary.txt
+  f043d208 (LOCAL_ONLY) 20100729141826 macros/BatchConvertToJPEG.txt
+  8d5ba370 (LOCAL_ONLY) 20100729141827 macros/BatchMeasure.txt
+  185de5a6 (LOCAL_ONLY) 20111028191200 macros/BatchModeCalculator.txt
+  a9a55fd8 (LOCAL_ONLY) 20100729141827 macros/BatchModeCompositeSelection.txt
+  0e7afeff (LOCAL_ONLY) 20100729141826 macros/BatchModeTest.txt
+  beafeb19 (LOCAL_ONLY) 20100729141827 macros/BatchProcessFolders.txt
+  9bd8c963 (LOCAL_ONLY) 20100729141826 macros/BatchRGBMeasure.txt
+  4ca4996a (LOCAL_ONLY) 20120823125349 macros/BatchSetScale.ijm
+  b3a0724e (LOCAL_ONLY) 20100729141827 macros/BatchSetScale.txt
+  085bff79 (LOCAL_ONLY) 20100729141827 macros/Batch_GLCM_Measure.txt
+  010f5642 (LOCAL_ONLY) 20100729141826 macros/Batch_RGB_Merge.txt
+  6bea9547 (LOCAL_ONLY) 20100729141827 macros/Benchmark.txt
+  3a121895 (LOCAL_ONLY) 20100729141827 macros/BlanketTransform.txt
+  1f2a0ce6 (LOCAL_ONLY) 20100729141826 macros/BouncingBar.txt
+  539acb72 (LOCAL_ONLY) 20100729141827 macros/BuiltinFunctions.txt
+  58070be7 (LOCAL_ONLY) 20100729141827 macros/BullsEye.txt
+  6a49dbf3 (LOCAL_ONLY) 20151028140653 macros/CMS/FinalNausiteContent/FinalNausiteContent_v1(10-28-15).ijm
+  3cfb799b (LOCAL_ONLY) 20150928160021 macros/CMS/MeasuringCore+AnnulusSize/MeasuringCore+AnnulusSiz_v1.ijm
+  e12b820d (LOCAL_ONLY) 20150619153252 macros/CMS/MeasuringDisconnectedA15/DisconnectedA15_v3(6-19-15).ijm
+  96753193 (LOCAL_ONLY) 20150706135041 macros/CMS/MeasuringDisconnectedA15/DisconnectedA15_v4(7-2-15).ijm
+  cb3325ea (LOCAL_ONLY) 20150717145103 macros/CMS/MeasuringDisconnectedA15/DisconnectedA15_v5(7-16-15).ijm
+  3cc99cb2 (LOCAL_ONLY) 20150717181316 macros/CMS/MeasuringDisconnectedA15/DisconnectedA15_v5(7-17-15).ijm
+  094459e9 (LOCAL_ONLY) 20150717181751 macros/CMS/MeasuringDisconnectedA15/DisconnectedA15_v6(7-17-15).ijm
+  6c9739c3 (LOCAL_ONLY) 20150702123928 macros/CMS/MeasuringEtaContent/Measuring-eta_v4(6-30-15).ijm
+  8dd375c7 (LOCAL_ONLY) 20150721133633 macros/CMS/MeasuringEtaContent/Measuring-eta_v5(7-20-15).ijm
+  a344e288 (LOCAL_ONLY) 20150723163116 macros/CMS/MeasuringEtaContent/Measuring-eta_v5(7-21-15).ijm
+  bc034422 (LOCAL_ONLY) 20150723163708 macros/CMS/MeasuringEtaContent/Measuring-eta_v6_allAutomatic(7-23-15).ijm
+  7bc64242 (LOCAL_ONLY) 20151026134510 macros/CMS/MeasuringEtaContent/Measuring-eta_v7(10-26-15).ijm
+  eec791d7 (LOCAL_ONLY) 20150819142209 macros/CMS/MeasuringEtaContent/Measuring-eta_v7(8-19-15).ijm
+  df9115a5 (LOCAL_ONLY) 20150827171613 macros/CMS/MeasuringEtaContent/Measuring-eta_v7(8-27-15).ijm
+  04782e5b (LOCAL_ONLY) 20151110124858 macros/CMS/MeasuringEtaContent/Measuring-eta_v8(11-10-15).ijm
+  4381f9e6 (LOCAL_ONLY) 20150705152500 macros/CMS/MeasuringNausiteThickness/Measuring-NausiteThickness_v5(6-23-15).ijm
+  385a9dd4 (LOCAL_ONLY) 20150728180551 macros/CMS/MeasuringNausiteThickness/Measuring-NausiteThickness_v6(7-28-15).ijm
+  d2bc4cf0 (LOCAL_ONLY) 20150804171202 macros/CMS/MeasuringNausiteThickness/Measuring-NausiteThickness_v6(8-4-15).ijm
+  6c1cd542 (LOCAL_ONLY) 20150929124127 macros/CMS/MeasuringNausiteThickness/Measuring-NausiteThickness_v6(9-29-15).ijm
+  54fbb423 (LOCAL_ONLY) 20150928171034 macros/CMS/SubelementSize/SubelementSize_v1.ijm
+  af42e97e (LOCAL_ONLY) 20120823125447 macros/CRaQ_v1.12.ijm
+  4a476481 (LOCAL_ONLY) 20100729141827 macros/CalculateMean.txt
+  7c30a14d (LOCAL_ONLY) 20100729141826 macros/Calculate_Black_to_White_Ratio.txt
+  952471f0 (LOCAL_ONLY) 20100729141826 macros/Calculations.txt
+  f5e373cd (LOCAL_ONLY) 20100729141827 macros/CalibrationBarMacros.txt
+  bc39f3d4 (LOCAL_ONLY) 20100729141826 macros/CallJavaDemo.txt
+  2bbf73be (LOCAL_ONLY) 20160407094412 macros/CellProcessing_JanBrocher_040716.txt
+  2ea9c719 (LOCAL_ONLY) 20100729141826 macros/CellSegmentation.txt
+  8bbbd023 (LOCAL_ONLY) 20110421115908 macros/Cellcounter3D.txt
+  d6f3e95c (LOCAL_ONLY) 20111128200641 macros/ChangeColors.txt
+  f55e4fb7 (LOCAL_ONLY) 20130304115236 macros/Channels_Montage.txt
+  c546da4a (LOCAL_ONLY) 20100729141826 macros/CheckDICOMSlicePositions.txt
+  f8d9bc3c (LOCAL_ONLY) 20100729141827 macros/CircularParticles.txt
+  4e3a5986 (LOCAL_ONLY) 20110215201141 macros/Clock.txt
+  7503076f (LOCAL_ONLY) 20100729141827 macros/CloseAllWindows.txt
+  71005bbe (LOCAL_ONLY) 20100729141826 macros/Close_All_Windows.txt
+  9511365b (LOCAL_ONLY) 20100729141826 macros/Color_Transform_Stack.txt
+  0fe6f084 (LOCAL_ONLY) 20100729141827 macros/Colorize.txt
+  e7606f90 (LOCAL_ONLY) 20100729141826 macros/CommandLine.txt
+  8b6022a0 (LOCAL_ONLY) 20111028191517 macros/CompositeSelections.txt
+  bde0aed3 (LOCAL_ONLY) 20100729141826 macros/ConvertDicomDictionary.txt
+  26e7333e (LOCAL_ONLY) 20100729141826 macros/ConvertImageToStack.txt
+  4355f7ed (LOCAL_ONLY) 20100729141826 macros/ConvertMaskToCompositeROI.txt
+  cf49e807 (LOCAL_ONLY) 20100729141827 macros/ConvertSigned16BitToUnsigned.txt
+  8dc249ef (LOCAL_ONLY) 20160128212214 macros/ConvertStackToBinary.txt
+  c08ccb32 (LOCAL_ONLY) 20100729141826 macros/ConvexHull.txt
+  eb049c47 (LOCAL_ONLY) 20100729141827 macros/ConvexitySolidarity.txt
+  f576fbed (LOCAL_ONLY) 20100729141827 macros/CopyResultsToClipboard.txt
+  1fce3e00 (LOCAL_ONLY) 20100729141826 macros/CountAndMarkCells.txt
+  0d4a85b7 (LOCAL_ONLY) 20100729141826 macros/Create3DSpectrums.txt
+  9e7e2806 (LOCAL_ONLY) 20100729141827 macros/CreateImageFromFunction.txt
+  901768ba (LOCAL_ONLY) 20100729141827 macros/Cumulative_Histogram.txt
+  f6f8fdf1 (LOCAL_ONLY) 20100729141826 macros/CustomHistogram.txt
+  28da825e (LOCAL_ONLY) 20100729141827 macros/CustomPopupMenu.txt
+  24b4246b (LOCAL_ONLY) 20100729141827 macros/CustomTabStatFromResults.txt
+  a35757e3 (LOCAL_ONLY) 20100729141827 macros/Custom_Profile_Plot.txt
+  d53ad6b3 (LOCAL_ONLY) 20100729141826 macros/DXM_jpg_acquisition_Mode.txt
+  02262316 (LOCAL_ONLY) 20100729141827 macros/DeconvolutionDemo.txt
+  69148073 (LOCAL_ONLY) 20110228150024 macros/DeleteEdgeRois.txt
+  578fd568 (LOCAL_ONLY) 20130128133341 macros/DeleteResultsByLabel.txt
+  1f72c9e6 (LOCAL_ONLY) 20160128212214 macros/DeveloperMenuTool.txt
+  b91845b7 (LOCAL_ONLY) 20111028192207 macros/DialogDemo.txt
+  a2134853 (LOCAL_ONLY) 20110227235839 macros/Dicom_Sorter.txt
+  496c0086 (LOCAL_ONLY) 20100729141827 macros/DirectionalFilterWindow.txt
+  11b543b1 (LOCAL_ONLY) 20100729141826 macros/DisplayJavaProperties.txt
+  8de72b0a (LOCAL_ONLY) 20100729141827 macros/DisplayRangeMacros.txt
+  dc8853fe (LOCAL_ONLY) 20100729141827 macros/DisplayTiffInfo.txt
+  7c2fe4e8 (LOCAL_ONLY) 20100729141827 macros/DisplayWindowTitles.txt
+  2ef33a50 (LOCAL_ONLY) 20100729141826 macros/Display_Pixel_Values.txt
+  1932864d (LOCAL_ONLY) 20100729141827 macros/Dithering_.txt
+  21d6e26e (LOCAL_ONLY) 20111119213439 macros/DivideCircularRoi.txt
+  7b54bb2d (LOCAL_ONLY) 20100729141827 macros/DoWandDemo.txt
+  15ee26f4 (LOCAL_ONLY) 20100729141826 macros/DodgeBurnAndSmooth.txt
+  3a91187b (LOCAL_ONLY) 20130913152430 macros/DrawAxesOnObjectEllipses.txt
+  1dae5c1e (LOCAL_ONLY) 20100729141827 macros/DrawBestFitEllipse.txt
+  f1302ddb (LOCAL_ONLY) 20100729141826 macros/DrawEllipse.txt
+  cbf0f071 (LOCAL_ONLY) 20141105175334 macros/DrawFeretDiameter.txt
+  d4975e0f (LOCAL_ONLY) 20100729141826 macros/DrawFeretsDiameter.txt
+  046c483a (LOCAL_ONLY) 20100729141827 macros/DrawGradientLine.txt
+  6bd69c45 (LOCAL_ONLY) 20100729141827 macros/DrawRandomDots.txt
+  62808a66 (LOCAL_ONLY) 20100729141827 macros/DrawSliceLabels.txt
+  45feda2e (LOCAL_ONLY) 20101117132011 macros/Draw_Scale_Bar.txt
+  feae57cb (LOCAL_ONLY) 20130506143928 macros/EDM_16bits.txt
+  0729923f (LOCAL_ONLY) 20100729141826 macros/EXIF_Batch_Reader.txt
+  1dfa3b99 (LOCAL_ONLY) 20100729141827 macros/EllipseCalibration.txt
+  89680ace (LOCAL_ONLY) 20100729141826 macros/ErodeToSinglePixel.txt
+  36ec1f26 (LOCAL_ONLY) 20100729141827 macros/EvalDemo.txt
+  e08f993a (LOCAL_ONLY) 20111102200539 macros/ExamplePlots.txt
+  92519cec (LOCAL_ONLY) 20100729141826 macros/ExecExamples.txt
+  b950d0a8 (LOCAL_ONLY) 20100729141827 macros/ExifDateAndTime.txt
+  e9c6307a (LOCAL_ONLY) 20100729141827 macros/ExtractRGBChannels.txt
+  0ce006cd (LOCAL_ONLY) 20100729141827 macros/FFTCustomFilterDemo.txt
+  77255121 (LOCAL_ONLY) 20100729141826 macros/FFTRemoveStreaks.txt
+  d6a3b5cb (LOCAL_ONLY) 20100729141827 macros/Factorials.txt
+  d8539d49 (LOCAL_ONLY) 20100729141827 macros/FeretsDiameter.txt
+  428783fc (LOCAL_ONLY) 20130306133646 macros/FeretsDiametersDrawnInGray.txt
+  381d980e (LOCAL_ONLY) 20130319090816 macros/FeretsDiametersDrawnInGrayobjectsgtr1000pixels.txt
+  8624bb98 (LOCAL_ONLY) 20100729141826 macros/FileDemo.txt
+  f03df029 (LOCAL_ONLY) 20100729141826 macros/FileSequences.txt
+  690db285 (LOCAL_ONLY) 20100729141826 macros/Filename_Randomizer.txt
+  e7686d48 (LOCAL_ONLY) 20130128133343 macros/FilterTester.txt
+  60da0538 (LOCAL_ONLY) 20130128133343 macros/FilterTesterTasklist.txt
+  7500743a (LOCAL_ONLY) 20100729141826 macros/Find.txt
+  56359a56 (LOCAL_ONLY) 20100729141827 macros/FindMaxPixelLocation.txt
+  72e9c2ee (LOCAL_ONLY) 20100729141826 macros/FindSelectionLimits.txt
+  8f19a25e (LOCAL_ONLY) 20100729141826 macros/FindSelectionPeak.txt
+  fe92a253 (LOCAL_ONLY) 20100729141827 macros/FindStackMaxima.txt
+  7831904c (LOCAL_ONLY) 20100729141826 macros/FindTopPixel.txt
+  1c0227cf (LOCAL_ONLY) 20100729141826 macros/First10Bytes.txt
+  b1cf13db (LOCAL_ONLY) 20100729141827 macros/FixLineEndings.txt
+  22a8568c (LOCAL_ONLY) 20100729141827 macros/FixNIHImageTiffs.txt
+  46dd39bc (LOCAL_ONLY) 20100729141827 macros/Fixed16BitTo8BitConversion.txt
+  af749002 (LOCAL_ONLY) 20100729141827 macros/FlipSelection.txt
+  ef797fc7 (LOCAL_ONLY) 20140828124041 macros/Float Stack Macro for normalizing images.txt
+  bb0b6cb4 (LOCAL_ONLY) 20160128212214 macros/FloodFillTool.txt
+  f1636023 (LOCAL_ONLY) 20111028194213 macros/Fonts.txt
+  6e0a3815 (LOCAL_ONLY) 20100729141827 macros/FractalEDM.txt
+  d7a0f1db (LOCAL_ONLY) 20100729141826 macros/FullRange16BitInvert.txt
+  db4c3fef (LOCAL_ONLY) 20100729141826 macros/FullTelomerecounter.txt
+  0d6e4e4a (LOCAL_ONLY) 20100729141826 macros/Gamma.txt
+  bfee945b (LOCAL_ONLY) 20130304115236 macros/Gamma_LUT.txt
+  73aff9a6 (LOCAL_ONLY) 20100729141826 macros/GaussianConvolution.txt
+  fd4c432a (LOCAL_ONLY) 20100729141826 macros/GenerateColorMap.txt
+  2c73e2bb (LOCAL_ONLY) 20100729141827 macros/GetCurrentPasteMode.txt
+  49c26300 (LOCAL_ONLY) 20100729141827 macros/GetCursorLocDemo.txt
+  9d66737f (LOCAL_ONLY) 20100729141827 macros/GetDateAndTime.txt
+  fda65c70 (LOCAL_ONLY) 20111028194643 macros/GetDirectoryDemo.txt
+  eb419cad (LOCAL_ONLY) 20100729141827 macros/GetLineDemo.txt
+  ad668f7d (LOCAL_ONLY) 20100729141827 macros/GetProfileExample.txt
+  57a7f3ee (LOCAL_ONLY) 20100729141826 macros/GetRGBPixelCount.txt
+  7d349284 (LOCAL_ONLY) 20100729141827 macros/GetTextFromClipboard.txt
+  d64082a9 (LOCAL_ONLY) 20150128135739 macros/Grid_Overlay.txt
+  4f0b3e65 (LOCAL_ONLY) 20100729141826 macros/HSB_Histogram.txt
+  5955e59a (LOCAL_ONLY) 20100729141826 macros/HalfCircleSelections.txt
+  59bd2498 (LOCAL_ONLY) 20100729141826 macros/HanningWindow.txt
+  3068f1f8 (LOCAL_ONLY) 20100729141827 macros/HistogramLister.txt
+  f9ffec33 (LOCAL_ONLY) 20100729141827 macros/HistogramOfResultsValues.txt
+  d854f2fd (LOCAL_ONLY) 20100729141827 macros/HistogramPlotter.txt
+  ddb895c0 (LOCAL_ONLY) 20111028201451 macros/HtmlDialogDemo.txt
+  0c8f9e62 (LOCAL_ONLY) 20100729141827 macros/HueRotation.txt
+  844c0fbf (LOCAL_ONLY) 20100729141826 macros/HyperStackDemo.txt
+  dff74cda (LOCAL_ONLY) 20100729141827 macros/HyperVolume_Maker.txt
+  5b62e0c5 (LOCAL_ONLY) 20111021201706 macros/Image5dMacros.txt
+  c0f592bf (LOCAL_ONLY) 20100729141827 macros/ImageCalculatorDemo.txt
+  7628e561 (LOCAL_ONLY) 20100729141826 macros/ImageCreationTest.txt
+  70359c78 (LOCAL_ONLY) 20160504174202 macros/ImageJWikiExamples/Particle Properties to Image_likeROIcolorcoder.ijm
+  7e1071d2 (LOCAL_ONLY) 20160504173438 macros/ImageJWikiExamples/Radial Distribution Function.ijm
+  ac3e53d6 (LOCAL_ONLY) 20160504173310 macros/ImageJWikiExamples/Radially Averaged Autocorrelation.ijm
+  deb5f38a (LOCAL_ONLY) 20160504173344 macros/ImageJWikiExamples/Radially Averaged Autocorrelation_plusplot.ijm
+  97a73d6a (LOCAL_ONLY) 20160504172445 macros/ImageJWikiExamples/basic_diffusion_analysis.ijm
+  e4489521 (LOCAL_ONLY) 20160504172339 macros/ImageJWikiExamples/basic_diffusion_analysis.txt
+  a1326605 (LOCAL_ONLY) 20160504172635 macros/ImageJWikiExamples/calculating_stats_from_a_results_table.ijm
+  b216265f (LOCAL_ONLY) 20160504172901 macros/ImageJWikiExamples/import_multipointset.ijm
+  f6b7324e (LOCAL_ONLY) 20100729141826 macros/ImageRotator.txt
+  4d5134ad (LOCAL_ONLY) 20120621123018 macros/ImportTextImageSequence.txt
+  d2a4729a (LOCAL_ONLY) 20100729141827 macros/Import_Results_Table.txt
+  904a14c6 (LOCAL_ONLY) 20100729141827 macros/Init.txt
+  236b976f (LOCAL_ONLY) 20100729141827 macros/InvertImage.txt
+  bebb0f7f (LOCAL_ONLY) 20100729141827 macros/Kaleidoscope.txt
+  b092aaf3 (LOCAL_ONLY) 20111028215033 macros/KeyboardShortcuts.txt
+  b12394c2 (LOCAL_ONLY) 20100729141826 macros/LSM_Batch_With_Colors.txt
+  b86737ed (LOCAL_ONLY) 20160128212214 macros/LUTMenuTool.txt
+  96f4a6b7 (LOCAL_ONLY) 20160419092004 macros/LabelParticlesWithArea+Nabblemod-ArialBlack.txt
+  369eae5e (LOCAL_ONLY) 20160419091559 macros/LabelParticlesWithArea+Nabblemod.txt
+  f9372888 (LOCAL_ONLY) 20160419092756 macros/LabelParticlesWithArea+Nabblemod_overlay.txt
+  0ac2f679 (LOCAL_ONLY) 20100729141826 macros/LabelParticlesWithArea.txt
+  40c57d43 (LOCAL_ONLY) 20130128133341 macros/LineCounter.txt
+  f2fd2796 (LOCAL_ONLY) 20100729141826 macros/LineStatistics.txt
+  0fafe37a (LOCAL_ONLY) 20100729141827 macros/ListDemo.txt
+  7ebbf763 (LOCAL_ONLY) 20100729141826 macros/ListDicomTags.txt
+  b1a12a76 (LOCAL_ONLY) 20100729141827 macros/ListFilesRecursively.txt
+  1f69fc28 (LOCAL_ONLY) 20111222211002 macros/ListRGBHistogramCounts.txt
+  3d97a8fd (LOCAL_ONLY) 20111028190743 macros/ListSelectionCoordinates.txt
+  382e4879 (LOCAL_ONLY) 20100729141827 macros/List_Online_Macros.txt
+  d1c3f6c3 (LOCAL_ONLY) 20100729141826 macros/LogWindowTricks.txt
+  3688091d (LOCAL_ONLY) 20100907141324 macros/LookupTables.txt
+  ea924aaa (LOCAL_ONLY) 20100729141827 macros/LoopStack.txt
+  597e00eb (LOCAL_ONLY) 20100729141827 macros/MacroExtensions.txt
+  10a274de (LOCAL_ONLY) 20111028220343 macros/MacroSet.txt
+  f9d66aa7 (LOCAL_ONLY) 20160128212214 macros/Macro_Tool.txt
+  54b06f94 (LOCAL_ONLY) 20100729141826 macros/MakeImageJLogo.txt
+  5b190856 (LOCAL_ONLY) 20111028220605 macros/MakeMontage.txt
+  ba5bfc0d (LOCAL_ONLY) 20100729141826 macros/MakeSelectionDemo.txt
+  14bb537d (LOCAL_ONLY) 20100729141827 macros/MakeSliceBinary.txt
+  1f91bd33 (LOCAL_ONLY) 20100729141827 macros/Mandelbrot.txt
+  762eb69e (LOCAL_ONLY) 20100729141827 macros/MarkCentroids.txt
+  e94ea4c2 (LOCAL_ONLY) 20100729141826 macros/Max_Value_Segmentation.txt
+  aea66bef (LOCAL_ONLY) 20100729141826 macros/Measure3Lengths.txt
+  62053169 (LOCAL_ONLY) 20100729141827 macros/MeasureAndLabelXYZ.txt
+  16ffaa0e (LOCAL_ONLY) 20110726153837 macros/MeasureAndSetLabel.txt
+  649797ca (LOCAL_ONLY) 20100729141827 macros/MeasureAreaFraction.txt
+  68c51797 (LOCAL_ONLY) 20100729141826 macros/MeasureCumulativeDistances.txt
+  4d3e82bf (LOCAL_ONLY) 20100729141826 macros/MeasureEdgePixels.txt
+  799615f8 (LOCAL_ONLY) 20100729141826 macros/MeasurePointSpacing.txt
+  3db4c3bc (LOCAL_ONLY) 20100729141826 macros/MeasureRGB.txt
+  9f3e51a7 (LOCAL_ONLY) 20100729141826 macros/MeasureRedirected.txt
+  bcc6bc7e (LOCAL_ONLY) 20100729141826 macros/MeasureStack.txt
+  3285da65 (LOCAL_ONLY) 20100729141826 macros/Measure_And_Label.txt
+  19d10b12 (LOCAL_ONLY) 20160404135100 macros/Measure_And_Set_Label.txt
+  4133d7af (LOCAL_ONLY) 20100729141827 macros/Measure_Angle_And_Length.txt
+  1681f13c (LOCAL_ONLY) 20120624183414 macros/Measure_Hyperstack.txt
+  e3406aa6 (LOCAL_ONLY) 20160419093337 macros/Measurement and labelling.ijm
+  ca874859 (LOCAL_ONLY) 20120115102352 macros/Merz_grid.txt
+  64f64369 (LOCAL_ONLY) 20140701085355 macros/Morphology/0_readme.txt
+  5c23a61a (LOCAL_ONLY) 20100913045427 macros/Morphology/AnnularClosing.ijm
+  b23b3399 (LOCAL_ONLY) 20100913045434 macros/Morphology/AnnularDilation.ijm
+  86773884 (LOCAL_ONLY) 20081019102449 macros/Morphology/BinaryDilateTest.ijm
+  db79c4ca (LOCAL_ONLY) 20081019102917 macros/Morphology/BinaryErodeTest-comparescoefficients.ijm
+  cdd2fe7c (LOCAL_ONLY) 20060525051716 macros/Morphology/BinaryFilterReconstruct.ijm
+  94753ee8 (LOCAL_ONLY) 20070712062239 macros/Morphology/BinaryLabel8Macroto32bit.ijm
+  f9acb2d3 (LOCAL_ONLY) 20060525051717 macros/Morphology/BinaryPrune-leavesonlyclosedloops.ijm
+  998c6f1f (LOCAL_ONLY) 20060525051717 macros/Morphology/Boundary4.ijm
+  fccdb9e7 (LOCAL_ONLY) 20060525051717 macros/Morphology/Boundary8_.ijm
+  fde19c99 (LOCAL_ONLY) 20140218085448 macros/Morphology/Catalogue_Particles.ijm
+  65f71c93 (LOCAL_ONLY) 20090511033446 macros/Morphology/CloseByReconstructionTopHat.ijm
+  85342197 (LOCAL_ONLY) 20130625061325 macros/Morphology/CloseByReconstruction_.ijm
+  b51188bc (LOCAL_ONLY) 20060525051717 macros/Morphology/ConvexHull1.ijm
+  ef76d400 (LOCAL_ONLY) 20060525051717 macros/Morphology/ConvexHull2.ijm
+  a1819a8e (LOCAL_ONLY) 20060525051717 macros/Morphology/ConvexHull3.ijm
+  d349d10b (LOCAL_ONLY) 20060525051717 macros/Morphology/Corners.ijm
+  60f785e8 (LOCAL_ONLY) 20081019113010 macros/Morphology/Delete_ZeroArea.ijm
+  9abcf51d (LOCAL_ONLY) 20060525051717 macros/Morphology/Diagonal8to4.ijm
+  9b816756 (LOCAL_ONLY) 20060525051717 macros/Morphology/Domes_stack.ijm
+  c0bd1187 (LOCAL_ONLY) 20111208051209 macros/Morphology/DrawBoundingBox.ijm
+  32535ef0 (LOCAL_ONLY) 20111208051157 macros/Morphology/DrawBoundingCircle.ijm
+  1d3df0e0 (LOCAL_ONLY) 20111208051141 macros/Morphology/DrawConvexHulls.ijm
+  1032098e (LOCAL_ONLY) 20160418135102 macros/Morphology/DrawConvexHulls_pjl-particles4.ijm
+  9d7df557 (LOCAL_ONLY) 20111208051226 macros/Morphology/DrawFeret&amp;Breadth.ijm
+  339cc36d (LOCAL_ONLY) 20111208051235 macros/Morphology/DrawMinR&amp;MaxR.ijm
+  dc3b2eea (LOCAL_ONLY) 20111208060125 macros/Morphology/DrawROIs.ijm
+  a3ac66c0 (LOCAL_ONLY) 20160418133539 macros/Morphology/DrawROIs_modPJLParticles4.ijm
+  c665e374 (LOCAL_ONLY) 20100805074115 macros/Morphology/EDM_16bits.ijm
+  bc7ed4fa (LOCAL_ONLY) 20081019120232 macros/Morphology/Euler.ijm
+  54e72f1f (LOCAL_ONLY) 20090511033446 macros/Morphology/Extended_Maxima.ijm
+  571ec574 (LOCAL_ONLY) 20090511033446 macros/Morphology/Extended_Minima.ijm
+  591e3b01 (LOCAL_ONLY) 20130625093654 macros/Morphology/FillHolesReconstruct.ijm
+  db03688d (LOCAL_ONLY) 20130726095852 macros/Morphology/Fill_Border_Holes-4connectedholesincludingborders.ijm
+  eb8a473b (LOCAL_ONLY) 20130726095641 macros/Morphology/Fill_Greyscale_Holes.ijm
+  f93dd650 (LOCAL_ONLY) 20101001093722 macros/Morphology/GreyBlackTopHatByReconstruction_.ijm
+  76aa09a6 (LOCAL_ONLY) 20130625095617 macros/Morphology/GreyWhiteTopHatByReconstruction_.ijm
+  a699d3f2 (LOCAL_ONLY) 20090504092458 macros/Morphology/GreyscaleCentreFilter.ijm
+  1a0c5bfd (LOCAL_ONLY) 20100920082950 macros/Morphology/GreyscaleKillBorders.ijm
+  a976e9a0 (LOCAL_ONLY) 20090503132435 macros/Morphology/GreyscaleProperAutomedian.ijm
+  c037abda (LOCAL_ONLY) 20090504072819 macros/Morphology/GreyscaleProperClose.ijm
+  e23fde9c (LOCAL_ONLY) 20090504072959 macros/Morphology/GreyscaleProperOpen.ijm
+  bf0b6843 (LOCAL_ONLY) 20100908094402 macros/Morphology/GreyscaleTopHat.ijm
+  5d37a385 (LOCAL_ONLY) 20100908094825 macros/Morphology/GreyscaleWell.ijm
+  cc96d003 (LOCAL_ONLY) 20060525051717 macros/Morphology/H-break.ijm
+  88ff37be (LOCAL_ONLY) 20130625093022 macros/Morphology/HMaxima_Transform.ijm
+  8db22dec (LOCAL_ONLY) 20130625093036 macros/Morphology/HMinima_Transform.ijm
+  46446fa9 (LOCAL_ONLY) 20080605072624 macros/Morphology/Hole_Counter.ijm
+  9e995729 (LOCAL_ONLY) 20090527121615 macros/Morphology/HomotopicMarking_leaveslastpointandloopsinskel.ijm
+  6f11b191 (LOCAL_ONLY) 20060525051717 macros/Morphology/Hysteresis.ijm
+  c8491cd8 (LOCAL_ONLY) 20090513053655 macros/Morphology/Impose_Minimum.ijm
+  55d9b369 (LOCAL_ONLY) 20060525051717 macros/Morphology/Influence_Zones.ijm
+  b734063f (LOCAL_ONLY) 20060525051717 macros/Morphology/KeepLargestParticle.ijm
+  1269a224 (LOCAL_ONLY) 20080521172500 macros/Morphology/KeepLargestParticlePixels_.ijm
+  fe0db534 (LOCAL_ONLY) 20080605094601 macros/Morphology/KeepParticlesInRange.ijm
+  831775d5 (LOCAL_ONLY) 20090519071519 macros/Morphology/LocalMaxima.ijm
+  1a12e1cc (LOCAL_ONLY) 20090519072405 macros/Morphology/LocalMinMax.ijm
+  277907e5 (LOCAL_ONLY) 20090519071443 macros/Morphology/LocalMinima.ijm
+  d0862a64 (LOCAL_ONLY) 20060525051717 macros/Morphology/MCentroids.ijm
+  2b8dc069 (LOCAL_ONLY) 20101007095910 macros/Morphology/MinimaDynamic.ijm
+  7b494868 (LOCAL_ONLY) 20060525051717 macros/Morphology/Morphological2Derivative1.ijm
+  fd9209bf (LOCAL_ONLY) 20060525051717 macros/Morphology/Morphological2Derivative2.ijm
+  c7791742 (LOCAL_ONLY) 20060525051717 macros/Morphology/Morphological2Derivative3.ijm
+  8ae855d5 (LOCAL_ONLY) 20130625095129 macros/Morphology/MorphologicalContrastTopHat.ijm
+  7a119436 (LOCAL_ONLY) 20100906082436 macros/Morphology/MorphologicalExternalGradient.ijm
+  1430aff7 (LOCAL_ONLY) 20100908123708 macros/Morphology/MorphologicalGradient3.ijm
+  8f935bd8 (LOCAL_ONLY) 20100906082436 macros/Morphology/MorphologicalGradientBeucher.ijm
+  8d647ca3 (LOCAL_ONLY) 20100906082436 macros/Morphology/MorphologicalInternalGradient.ijm
+  6dec6708 (LOCAL_ONLY) 20060525051717 macros/Morphology/MorphologicalSharpGradient.ijm
+  f9eecd5c (LOCAL_ONLY) 20060525051717 macros/Morphology/MorphologicalSmoothing1.ijm
+  2af5de14 (LOCAL_ONLY) 20060525051717 macros/Morphology/MorphologicalSmoothing2.ijm
+  a4d351d1 (LOCAL_ONLY) 20140205040621 macros/Morphology/Morphological_Clustering.ijm
+  ee9630f7 (LOCAL_ONLY) 20140205040621 macros/Morphology/Morphological_PCA.ijm
+  62da054f (LOCAL_ONLY) 20101005051848 macros/Morphology/Morphological_SelfDualCentre.ijm
+  07779b86 (LOCAL_ONLY) 20130624042626 macros/Morphology/Morphological_contrast.ijm
+  40906eed (LOCAL_ONLY) 20130624052505 macros/Morphology/Morphological_contrast_thr.ijm
+  d11d5f20 (LOCAL_ONLY) 20100908094252 macros/Morphology/MultiscaleGradient.ijm
+  3849d723 (LOCAL_ONLY) 20131007035501 macros/Morphology/NumberParticles8_.ijm
+  2c59e288 (LOCAL_ONLY) 20090511033446 macros/Morphology/OpenByReconstructionTopHat.ijm
+  e69638ed (LOCAL_ONLY) 20130625094140 macros/Morphology/OpenByReconstruction_.ijm
+  0575df6e (LOCAL_ONLY) 20080521171817 macros/Morphology/Parameter_Matrix.ijm
+  32a2c762 (LOCAL_ONLY) 20080529174339 macros/Morphology/ParticleHoleArea.ijm
+  ff98ab70 (LOCAL_ONLY) 20080529174456 macros/Morphology/ParticleHoleNumber.ijm
+  c9762e50 (LOCAL_ONLY) 20080529174151 macros/Morphology/Particle_Data_Map.ijm
+  8440c7c0 (LOCAL_ONLY) 20140410045853 macros/Morphology/Particles8ToCalibratedUnits.ijm
+  53dae104 (LOCAL_ONLY) 20120123095451 macros/Morphology/Plot_BivariateGraphs.ijm
+  9cb49fa3 (LOCAL_ONLY) 20080606064751 macros/Morphology/Plot_Histograms.ijm
+  667acc71 (LOCAL_ONLY) 20060525051717 macros/Morphology/Prune1.ijm
+  66d2ba01 (LOCAL_ONLY) 20060525051717 macros/Morphology/PruneAll.ijm
+  662c5f3f (LOCAL_ONLY) 20090511033446 macros/Morphology/RegionalMinMax.ijm
+  dd3e187a (LOCAL_ONLY) 20090511033446 macros/Morphology/Regional_Maxima.ijm
+  8720d367 (LOCAL_ONLY) 20101001063926 macros/Morphology/Regional_Minima.ijm
+  28784c43 (LOCAL_ONLY) 20100922185811 macros/Morphology/SelfComplementaryTopHat.ijm
+  eab0447e (LOCAL_ONLY) 20121122052014 macros/Morphology/SelfDualReconstruction_.ijm
+  e5911713 (LOCAL_ONLY) 20060525051717 macros/Morphology/Skeleton1_8conn.ijm
+  63732dc9 (LOCAL_ONLY) 20060525051717 macros/Morphology/Skeleton2_8connlatbones.ijm
+  7a08b3ec (LOCAL_ONLY) 20060525051717 macros/Morphology/Skeleton3_4connected.ijm
+  4212f9bc (LOCAL_ONLY) 20090511071301 macros/Morphology/Skeleton4_medialaxis.ijm
+  121eac02 (LOCAL_ONLY) 20100922162400 macros/Morphology/SkeletonFiltering_trimdisconnected.ijm
+  d934a509 (LOCAL_ONLY) 20080521165352 macros/Morphology/Summarize_Results.ijm
+  80fab552 (LOCAL_ONLY) 20080603061017 macros/Morphology/Thin_Results_Table.ijm
+  ae44c9da (LOCAL_ONLY) 20100621040217 macros/Morphology/UnbiasedCounting.ijm
+  9ceac913 (LOCAL_ONLY) 20080605071015 macros/Morphology/UnbiasedParticleArea.ijm
+  6ea3ac34 (LOCAL_ONLY) 20090330030641 macros/Morphology/Viscous_Geodesic_Reconstruction.ijm
+  402a5e63 (LOCAL_ONLY) 20100729141826 macros/MotionBlurRemoval.txt
+  3144faa3 (LOCAL_ONLY) 20160128212214 macros/MoveSelection.txt
+  9699ba82 (LOCAL_ONLY) 20110922193032 macros/Mulitple_Thresholds.txt
+  a9634cf5 (LOCAL_ONLY) 20100729141827 macros/MultipleColourAnalysis.txt
+  5b211427 (LOCAL_ONLY) 20100729141826 macros/MultipleColourBackgrounds.txt
+  4fc8f94b (LOCAL_ONLY) 20120115102352 macros/Multiple_Circles_grid.txt
+  9583c166 (LOCAL_ONLY) 20110814233259 macros/Multipurpose_grid.txt
+  540902a3 (LOCAL_ONLY) 20100729141826 macros/Normalize_Stack_Means.txt
+  9c2157d9 (LOCAL_ONLY) 20110324124748 macros/Object_Color_Sorting.txt
+  f22c24ae (LOCAL_ONLY) 20110114193739 macros/Offline_Macro_Help.txt
+  6a5941eb (LOCAL_ONLY) 20100729141827 macros/OpenDialogDemo.txt
+  691e5cb4 (LOCAL_ONLY) 20100729141827 macros/OpenImagesFromList.txt
+  fc433d94 (LOCAL_ONLY) 20100729141827 macros/OpenMacIPLab.txt
+  de1ceba0 (LOCAL_ONLY) 20111109204630 macros/OpenPoints.txt
+  f6026307 (LOCAL_ONLY) 20100729141826 macros/OpenSeriesUsingFilter.txt
+  9ee1e735 (LOCAL_ONLY) 20110421232702 macros/OpenStackUsingURLs.txt
+  307dda9e (LOCAL_ONLY) 20100729141827 macros/OpenTextImagesAsStack.txt
+  869cbc11 (LOCAL_ONLY) 20160506182220 macros/PJL/AddMinandMaxReferenceDistancestoResultsTable.ijm
+  49a7ce6e (LOCAL_ONLY) 20160506182202 macros/PJL/AddMinandMaxReferenceDistancestoResultsTable_forLandiniParticles.ijm
+  6a37049d (LOCAL_ONLY) 20160511132231 macros/PJL/AddNNDistancestoResultsTable_051116.ijm
+  3751c22f (LOCAL_ONLY) 20130301123445 macros/PJL/CropLeft61PixelsofOpenImages_ReSaveinSameFolderandClose.ijm
+  93890330 (LOCAL_ONLY) 20130301123348 macros/PJL/CropLeft61PixelsofOpenImages_SetImageScale_ReSaveinSameFolderandClose.ijm
+  7ea082df (LOCAL_ONLY) 20150216191633 macros/PJL/ExportHistogramMacro.ijm
+  0e8f3ad8 (LOCAL_ONLY) 20150310095807 macros/PJL/Fail/255binHistogramsof16-bit-VirtualStack.txt
+  19117c84 (LOCAL_ONLY) 20130228124015 macros/PJL/Fail/CropLeft61PixelsofOpenImages_ReSaveCompressedinSameFolderandClose022813.txt
+  fbc8b352 (LOCAL_ONLY) 20130228081526 macros/PJL/Fail/CropLeft61pixelsof-open3072-ZeissScan-ImagesReSaveinSubFolderandClose022813.txt
+  2f21c988 (LOCAL_ONLY) 20130228080421 macros/PJL/Fail/RemoveDistortedLeft61pixelsof-3072-ZeissScan-OpenImagesReSaveinSubFolderandclose-simple.txt
+  3c076581 (LOCAL_ONLY) 20130227124355 macros/PJL/Fail/RemoveDistortedLeft61pixelsof-3072-ZeissScan-ReSaveinSubFolder-simple.txt
+  780ca45a (LOCAL_ONLY) 20130227092733 macros/PJL/Fail/RemoveDistortedLeft61pixelsof-3072-ZeissScan-ReSaveinSubFolder.txt
+  ed9e7058 (LOCAL_ONLY) 20150216193139 macros/PJL/Fail/SaveRGBHistofallopenimagestoOriginalFolder.txt
+  4ad0495a (LOCAL_ONLY) 20150204091239 macros/PJL/Fail/SmoothWhite4(fully)CnnectedSkeleton.ijm
+  67512aff (LOCAL_ONLY) 20150310104355 macros/PJL/HistogramsofAllImagesinFolder-255bin.ijm
+  98e98969 (LOCAL_ONLY) 20150310112848 macros/PJL/HistogramsofAllImagesinFolder-255bin_png.ijm
+  859c3469 (LOCAL_ONLY) 20150310120527 macros/PJL/HistogramsofPNGImagesinFolder-rangedialog.ijm
+  90cca90b (LOCAL_ONLY) 20150310132557 macros/PJL/HistogramsofSelectedFiletypeImagesinFolder-rangedialog.ijm
+  c1189544 (LOCAL_ONLY) 20160510114554 macros/PJL/ImageJMeasureExtendedColumns+ROI labelsandColors_051016.ijm
+  df83d96d (LOCAL_ONLY) 20160511140011 macros/PJL/ImageJMeasurePxlandScaledExtendedColumns+ROI labelsandColors_051116.ijm
+  44a7f001 (LOCAL_ONLY) 20160510180113 macros/PJL/In Development/AddNearestNeighborDistancestoResultsTable_051016.ijm
+  a194a193 (LOCAL_ONLY) 20130228101554 macros/PJL/In Development/CropLeft61PixelsofOpenImages_ReSaveinSameFolderandClose022813.txt
+  6ec0f9c6 (LOCAL_ONLY) 20130301123348 macros/PJL/In Development/CropLeft61PixelsofOpenImages_SetImageScale_ReSaveinSameFolderandClose022813.txt
+  4cfbfb68 (LOCAL_ONLY) 20160505183140 macros/PJL/In Development/DistanceLoopinprogress.ijm
+  aee179d7 (LOCAL_ONLY) 20160505183141 macros/PJL/In Development/arrayjunk.ijm
+  edc91140 (LOCAL_ONLY) 20160422142232 macros/PJL/In Development/junk.ijm
+  b16d89d9 (LOCAL_ONLY) 20160511133605 macros/PJL/LandiniParticles4_AddScaledExtendedColumns+ROI labelsandColors_051116.ijm
+  d37a6294 (LOCAL_ONLY) 20160510121333 macros/PJL/LandiniParticles8_AddScaledExtendedColumns+ROI labelsandColors_051016.ijm
+  b787a9ac (LOCAL_ONLY) 20151118160455 macros/PJL/MakeSelectionBWObject.ijm
+  aeecf57c (LOCAL_ONLY) 20150310100846 macros/PJL/New Text Document.ijm
+  9b590d50 (LOCAL_ONLY) 20160511130701 macros/PJL/OlderVersions/AddNearestNeighborDistancestoLandiniResultsTable_051116.ijm
+  70c9ffdd (LOCAL_ONLY) 20160510181507 macros/PJL/OlderVersions/AddNearestNeighborDistancestoResultsTable_ARCopy051016.ijm
+  fda34d91 (LOCAL_ONLY) 20160511103128 macros/PJL/OlderVersions/AddNearestNeighborDistancestoResultsTable_ARCopy051116.ijm
+  6c65fe91 (LOCAL_ONLY) 20160421190021 macros/PJL/OlderVersions/ImageJMeasureExtendedColumns+ROI labelsandColors_042116b.ijm
+  2e9e5282 (LOCAL_ONLY) 20160505180135 macros/PJL/OlderVersions/ImageJMeasurePxlandScaledExtendedColumns+ROI labelsandColors_050516.ijm
+  c1357122 (LOCAL_ONLY) 20160419113640 macros/PJL/OlderVersions/LabelParticlesWithArea+Nabblemod_variablefontoverlay.ijm
+  7526c7e0 (LOCAL_ONLY) 20160418181733 macros/PJL/OlderVersions/LandiniParticles4_AddScaledColumns+Fibers+GBD and use DAreaEquiv for ROI labels_041816b.ijm
+  0f03f624 (LOCAL_ONLY) 20160419133927 macros/PJL/OlderVersions/LandiniParticles4_AddScaledColumns+Fibers+GBD and use DAreaEquiv for ROI labels_041916variablefont.ijm
+  8323f430 (LOCAL_ONLY) 20160418163254 macros/PJL/OlderVersions/LandiniParticles4_AddScaledColumns+GBD and use DAreaEquiv for ROI labels_041816.ijm
+  1de7c44f (LOCAL_ONLY) 20160421113305 macros/PJL/OlderVersions/LandiniParticles4_AddScaledExtendedColumns+ROI labelsandColors_042116.ijm
+  0522c0c4 (LOCAL_ONLY) 20160421185545 macros/PJL/OlderVersions/LandiniParticles4_AddScaledExtendedColumns+ROI labelsandColors_042116b.ijm
+  923836f5 (LOCAL_ONLY) 20160425170317 macros/PJL/OlderVersions/LandiniParticles4_AddScaledExtendedColumns+ROI labelsandColors_042216.ijm
+  17e7202e (LOCAL_ONLY) 20160414180927 macros/PJL/OlderVersions/LandiniParticles8MeasureDequiv+GBD and use Dequiv for ROI labels_041416.txt
+  edcb7cce (LOCAL_ONLY) 20160418181529 macros/PJL/OlderVersions/LandiniParticles8_AddScaledColumns+Fibers+GBD and use DAreaEquiv for ROI labels_041816b.ijm
+  ad1ba838 (LOCAL_ONLY) 20160420102402 macros/PJL/OlderVersions/LandiniParticles8_AddScaledColumns+Fibers+GBD and use DAreaEquiv for ROI labels_041916variablefont.ijm
+  cd3a551f (LOCAL_ONLY) 20160415162455 macros/PJL/OlderVersions/LandiniParticles8_AddScaledColumns+GBD and use DAreaEquiv for ROI labels_041516.ijm
+  eb696f21 (LOCAL_ONLY) 20160415101242 macros/PJL/OlderVersions/LandiniParticles8_AddScaledColumns+GBD and use DAreaEquiv for ROI labels_041516.txt
+  34af652c (LOCAL_ONLY) 20160418122823 macros/PJL/OlderVersions/LandiniParticles8_AddScaledColumns+GBD and use DAreaEquiv for ROI labels_041816.ijm
+  2aed2e21 (LOCAL_ONLY) 20160421190201 macros/PJL/OlderVersions/LandiniParticles8_AddScaledExtendedColumns+ROI labelsandColors_042116b.ijm
+  0786de7e (LOCAL_ONLY) 20160415155755 macros/PJL/OlderVersions/MeasureDareaequivRibbonThick+GBD and use Dequiv for ROI labels_041516.ijm
+  ef3a55fe (LOCAL_ONLY) 20160418104201 macros/PJL/OlderVersions/MeasureDequiv+Fibers+GBD and use GBD for ROI labels_041816.ijm
+  9248a484 (LOCAL_ONLY) 20160413162549 macros/PJL/OlderVersions/MeasureDequiv+GBD and use Dequiv for ROI labels_041316.txt
+  b5d55996 (LOCAL_ONLY) 20160415105351 macros/PJL/OlderVersions/MeasureDequiv+GBD and use Dequiv for ROI labels_041516.ijm
+  724c011b (LOCAL_ONLY) 20160413162535 macros/PJL/OlderVersions/MeasureDequiv+GBD and use GBD for ROI labels_041316.txt
+  ed73637c (LOCAL_ONLY) 20160415155842 macros/PJL/OlderVersions/MeasureDequivRibbonthickness+GBD and use GBD for ROI labels_041516.ijm
+  ee745fc2 (LOCAL_ONLY) 20160421132004 macros/PJL/OlderVersions/MeasurewithImageJandExtendandlabels_042116.ijm
+  2114d52f (LOCAL_ONLY) 20160420174337 macros/PJL/OlderVersions/ROI_Color_Coder_and Labelerwithpjlprefs_042016.ijm
+  14206750 (LOCAL_ONLY) 20160420185755 macros/PJL/OlderVersions/ROI_Color_Coder_and Labelerwithpjlprefs_042016_legendary.ijm
+  53883182 (LOCAL_ONLY) 20160419133736 macros/PJL/OlderVersions/ROI_Color_Coder_withpjlprefs+labels-indevelopment.ijm
+  a4f15a11 (LOCAL_ONLY) 20160419184643 macros/PJL/OlderVersions/ROI_Color_Coder_withpjlprefs.ijm
+  7e410512 (LOCAL_ONLY) 20160420131329 macros/PJL/OlderVersions/ROI_Color_Coder_withpjlprefs_042016.ijm
+  d4911bad (LOCAL_ONLY) 20140218130724 macros/PJL/OlderVersions/RemTEAMbar_openimages_stretchtoGray-outputfullcoland64widegraytxt-cropsub.ijm
+  cb23405f (LOCAL_ONLY) 20140218130724 macros/PJL/OlderVersions/RemTEAMbar_openimages_stretchtoGray-outputfullcoland64widegraytxt-cropsub.txt
+  48f8cf0f (LOCAL_ONLY) 20160405101846 macros/PJL/OlderVersions/Rename ROIs based on their Feret Diameter in order to labelbyFeret.txt
+  57467fd3 (LOCAL_ONLY) 20160405171558 macros/PJL/OlderVersions/Rename ROIsetlabels based on their AspectRatios_040516.txt
+  80b09b25 (LOCAL_ONLY) 20160407142202 macros/PJL/OlderVersions/Rename ROIsetlabels based on their AspectRatios_040616.txt
+  047d6239 (LOCAL_ONLY) 20160407143659 macros/PJL/OlderVersions/Rename ROIsetlabels based on their AspectRatios_040716.txt
+  bde23746 (LOCAL_ONLY) 20160405123128 macros/PJL/OlderVersions/Rename ROIsetlabels based on their Equiv or Feret Diameter.txt
+  e51ad2da (LOCAL_ONLY) 20160406132826 macros/PJL/OlderVersions/Rename ROIsetlabels based on their EquivDiam_040516.txt
+  49d95f39 (LOCAL_ONLY) 20160407141132 macros/PJL/OlderVersions/Rename ROIsetlabels based on their EquivDiam_040616.txt
+  e3a498e2 (LOCAL_ONLY) 20160407141944 macros/PJL/OlderVersions/Rename ROIsetlabels based on their EquivDiam_040716b.txt
+  963de69b (LOCAL_ONLY) 20160408144233 macros/PJL/OlderVersions/Rename ROIsetlabels based on their EquivDiam_040816.txt
+  de805867 (LOCAL_ONLY) 20160405125235 macros/PJL/OlderVersions/Rename ROIsetlabels based on their FeretDiam_040516.txt
+  bac4a2ed (LOCAL_ONLY) 20160406134451 macros/PJL/OlderVersions/Rename ROIsetlabels based on their FeretDiam_040616.txt
+  7e7b2f86 (LOCAL_ONLY) 20160407143245 macros/PJL/OlderVersions/Rename ROIsetlabels based on their FeretDiam_040716.txt
+  b497d39e (LOCAL_ONLY) 20160413124646 macros/PJL/OlderVersions/Rename ROIsetlabels based on their GBD_041316.txt
+  13dd3014 (LOCAL_ONLY) 20160413163231 macros/PJL/OlderVersions/Rename ROIsetlabels with AspectRatios_041316.txt
+  69170700 (LOCAL_ONLY) 20160413154637 macros/PJL/OlderVersions/Rename ROIsetlabels with FeretDiams_041316.txt
+  6134b7eb (LOCAL_ONLY) 20150206154810 macros/PJL/OlderVersions/Save8bit_1in4_XYofallopenimagestoOriginalFolder-Y=0at_top.txt
+  0d39a0e6 (LOCAL_ONLY) 20150206154810 macros/PJL/OlderVersions/Save8bit_1in4_XYofallopenimagestoOriginalFolder-Y=0at_top_1.ijm
+  14784eff (LOCAL_ONLY) 20150209102958 macros/PJL/OlderVersions/SaveXYofallfilesinafolderFolder-Y=0at_top.txt
+  c9ef38a3 (LOCAL_ONLY) 20150209103013 macros/PJL/OlderVersions/SaveXYofallopenimagestoOriginalFolder-Y=0at_top.txt
+  1233d728 (LOCAL_ONLY) 20150209103013 macros/PJL/OlderVersions/SaveXYofallopenimagestoOriginalFolder-Y=0at_top_1.ijm
+  79c76e4c (LOCAL_ONLY) 20150206154754 macros/PJL/OlderVersions/Save_1in4_XYofallopenimagestoOriginalFolder-Y=0at_top.txt
+  902c0034 (LOCAL_ONLY) 20130412154100 macros/PJL/OlderVersions/Saveparticleanalysis-ofallopenimagestoOriginalFolder-041213.ijm
+  61e8941e (LOCAL_ONLY) 20130412154100 macros/PJL/OlderVersions/Saveparticleanalysis-ofallopenimagestoOriginalFolder-041213.txt
+  6d5fd452 (LOCAL_ONLY) 20140218135416 macros/PJL/RemTEAMbar_openimages_stretchtoGray-outputfullcoland64widegraytxt-cropsubs.ijm
+  582f4942 (LOCAL_ONLY) 20140218123515 macros/PJL/RemTEAMbar_openimages_stretchtoGray-outputfullcoland64widegraytxt.ijm
+  dac67d0b (LOCAL_ONLY) 20140221171711 macros/PJL/RemTEAMbarallsizes_openimages_stretchtoGray-outputfullcoland12p5pcsizegraytxt-cropsubs.ijm
+  2dfeaa01 (LOCAL_ONLY) 20140219162155 macros/PJL/RemTEAMbarallsizes_openimages_stretchtoGray-outputfullcoland25pcsizegraytxt-cropsubs.ijm
+  fe124826 (LOCAL_ONLY) 20140218140209 macros/PJL/RemTEAMbarallsizes_openimages_stretchtoGray-outputfullcoland50pcsizegraytxt-cropsubs.ijm
+  34bf1bb6 (LOCAL_ONLY) 20140218135449 macros/PJL/RemTEAMbarallsizes_openimages_stretchtoGray-outputfullcoland64widegraytxt-cropsubs.ijm
+  b47c91f3 (LOCAL_ONLY) 20140218114958 macros/PJL/RemoveTEAMbar_openimages_stretchtoGray-outputfulland64wide_txt.ijm
+  54295731 (LOCAL_ONLY) 20160505160116 macros/PJL/Save8bit_1in4_XYofallopenimagestoOriginalFolder-Y=0at_top.ijm
+  93b9ac04 (LOCAL_ONLY) 20160505163414 macros/PJL/SaveXYofallfilesinafolderFolder-Y=0at_top.ijm
+  7a87fd9a (LOCAL_ONLY) 20160505160126 macros/PJL/SaveXYofallopenimagestoOriginalFolder-Y=0at_top.ijm
+  ee83582a (LOCAL_ONLY) 20120821124921 macros/PJL/SaveXYofallopenimagestoOriginalFolder.ijm
+  a0d15c1b (LOCAL_ONLY) 20160505163300 macros/PJL/Save_1in4_XYofallopenimagestoOriginalFolder-Y=0at_top.ijm
+  c05326a9 (LOCAL_ONLY) 20130424150250 macros/PJL/Saveparticleanalysis-ofallopenimagestoOriginalFolder-042413.ijm
+  e1eb478d (LOCAL_ONLY) 20130514114527 macros/PJL/Saveparticleanalysis-ofallopenimagestoOriginalFolder.ijm
+  31aa9331 (LOCAL_ONLY) 20120823123817 macros/PJL/SetAllMeasurementsSetY0attop_andSetPixelScale.ijm
+  f5240b6e (LOCAL_ONLY) 20120823123832 macros/PJL/SetAllMeasurementsandSetPixelScale.ijm
+  14bb75c4 (LOCAL_ONLY) 20160505163024 macros/PJL/SmoothWhtSkelTo4(fully)CnnctdSkel-2iteratoinsonly.ijm
+  fb394e91 (LOCAL_ONLY) 20160505162945 macros/PJL/SmoothWhtSkelTo4(fully)CnnctdSkel.ijm
+  431a045f (LOCAL_ONLY) 20150126170446 macros/PJL/StartupMacros-012615.ijm
+  e8c9d57e (LOCAL_ONLY) 20130304122406 macros/PJL/StartupMacros-3-4-13.ijm
+  1f15c899 (LOCAL_ONLY) 20130913162442 macros/PJL/StartupMacros.ijm
+  3713809f (LOCAL_ONLY) 20120912073928 macros/PJL/StartupMacros091212.ijm
+  c009203c (LOCAL_ONLY) 20150128143746 macros/PJL/SubSample_1in4_pixels.ijm
+  1f96d4b7 (LOCAL_ONLY) 20160505162808 macros/PJL/White4(fully)ConnectedSkeleton-2iterationsonly.ijm
+  6886c4fe (LOCAL_ONLY) 20160505160330 macros/PJL/White4(fully)ConnectedSkeleton.ijm
+  0509b0b4 (LOCAL_ONLY) 20160505171636 macros/PJL/import_imageJxycoords.ijm
+  6e94f6f9 (LOCAL_ONLY) 20160421185616 macros/PJL/loadpointintoarray.ijm
+  3d33e133 (LOCAL_ONLY) 20160421131525 macros/PJL/scalebar_overlay_pjlprefs.ijm
+  05e9065e (LOCAL_ONLY) 20150310132321 macros/PJL/temp.ijm
+  61b38fd8 (LOCAL_ONLY) 20100729141826 macros/ParseFloatIntExamples.txt
+  219ddb43 (LOCAL_ONLY) 20100729141827 macros/ParticleClusterAnalysis.txt
+  41cbb94f (LOCAL_ONLY) 20100729141827 macros/ParticleLabelingExample.txt
+  19edc327 (LOCAL_ONLY) 20100729141827 macros/ParticleOutlines.txt
+  cd6ffeac (LOCAL_ONLY) 20100729141826 macros/ParticleRotator.txt
+  a5a1025e (LOCAL_ONLY) 20100729141827 macros/PasteControlDemo.txt
+  8502b566 (LOCAL_ONLY) 20100729141827 macros/PerimeterAndCircularityTest.txt
+  8b4260b6 (LOCAL_ONLY) 20130430125405 macros/PerspectiveStackView.txt
+  172e7c61 (LOCAL_ONLY) 20130430130658 macros/Perspective_Stack_View.txt
+  18631c5e (LOCAL_ONLY) 20110407004812 macros/PhAct.txt
+  a5c88c0d (LOCAL_ONLY) 20100729141826 macros/PlateMontage.txt
+  e47f9945 (LOCAL_ONLY) 20100729141826 macros/Plot3DPoints.txt
+  dc3444f1 (LOCAL_ONLY) 20100729141826 macros/PlotColumnPixelCounts.txt
+  b268e75f (LOCAL_ONLY) 20110216222752 macros/PlotOceanOpticsSpectrumFiles.txt
+  f85b157e (LOCAL_ONLY) 20100729141827 macros/PlotProfileWithSD.txt
+  c80c66e4 (LOCAL_ONLY) 20100729141826 macros/PlotRadialMeanVersusAngle.txt
+  48fbb148 (LOCAL_ONLY) 20100729141827 macros/PlotStack.txt
+  ea31f8eb (LOCAL_ONLY) 20141105180054 macros/PointToRoi.txt
+  5d02c924 (LOCAL_ONLY) 20100729141826 macros/PointsToStack.txt
+  4844c0a3 (LOCAL_ONLY) 20100729141826 macros/Polygon.txt
+  ef3681cc (LOCAL_ONLY) 20100729141826 macros/PolygonArea.txt
+  aaf22706 (LOCAL_ONLY) 20100729141827 macros/Pong.txt
+  a318ea30 (LOCAL_ONLY) 20160420135528 macros/PrintReults.txt
+  38b2f24a (LOCAL_ONLY) 20110215195744 macros/PrintToTextWindow.txt
+  8b02491d (LOCAL_ONLY) 20100729141826 macros/Process_Virtual_Stack.txt
+  39fa16c2 (LOCAL_ONLY) 20110215201007 macros/ProgressBar.txt
+  b63e5866 (LOCAL_ONLY) 20100729141827 macros/RGB_Histogram.txt
+  3ca22c60 (LOCAL_ONLY) 20100930123844 macros/RGB_Profile_Plot.txt
+  042a91a5 (LOCAL_ONLY) 20100729141826 macros/ROI_Manager_Stack_Demo.txt
+  f3601a93 (LOCAL_ONLY) 20100729141827 macros/RadialIntegratedIntensity.txt
+  660a87d9 (LOCAL_ONLY) 20100729141827 macros/RadialProfiles.txt
+  8605848f (LOCAL_ONLY) 20100729141827 macros/RadialScattergraph.txt
+  201616b8 (LOCAL_ONLY) 20100729141826 macros/RadiallyAveragedAutocorrelation.txt
+  3ac1324c (LOCAL_ONLY) 20100729141827 macros/RandomOvals.txt
+  00922027 (LOCAL_ONLY) 20100729141826 macros/RandomSampleAndMeasure.txt
+  8ac86deb (LOCAL_ONLY) 20100729141826 macros/RandomSamplePerimeterMethod.txt
+  1d9f8166 (LOCAL_ONLY) 20100729141826 macros/RatioOfDifferenceAndSum.txt
+  614feace (LOCAL_ONLY) 20100729141827 macros/RecordProfile.txt
+  d6fc687f (LOCAL_ONLY) 20100729141827 macros/RedirectedParticleAnalysis.txt
+  2743eb3c (LOCAL_ONLY) 20100729141826 macros/Reduce_HyperStack.txt
+  9deb29c1 (LOCAL_ONLY) 20100729141827 macros/RegisterStackUsingTranslation.txt
+  a5f641b2 (LOCAL_ONLY) 20100729141827 macros/RegressionTests.txt
+  4c8029fa (LOCAL_ONLY) 20160404132231 macros/Rename ROIs based on their x coordinate value in order to create a sequence.txt
+  cf6973f1 (LOCAL_ONLY) 20100729141827 macros/ReplaceRedWithMagenta.txt
+  aca5adaa (LOCAL_ONLY) 20100729141827 macros/ResizeImagesAndStack.txt
+  9a03c75f (LOCAL_ONLY) 20100729141826 macros/ReturnStatements.txt
+  0e0c2f3e (LOCAL_ONLY) 20100729141826 macros/RoiManagerAddParticles.txt
+  422a8e69 (LOCAL_ONLY) 20130128133343 macros/RoiManagerMacros.txt
+  f67ca549 (LOCAL_ONLY) 20100729141827 macros/RoiManagerMoveSelections.txt
+  20acaaa2 (LOCAL_ONLY) 20110409163651 macros/RoiManagerSpeedTest.txt
+  c5f769cd (LOCAL_ONLY) 20100729141827 macros/Rotate_Image.txt
+  69fefd0a (LOCAL_ONLY) 20141105180036 macros/RotatingCalipers.txt
+  a5d8a44d (LOCAL_ONLY) 20100729141827 macros/RotatingPolygon.txt
+  e47f3a0d (LOCAL_ONLY) 20100729141827 macros/SaveAsJPEG.txt
+  948a3639 (LOCAL_ONLY) 20100729141826 macros/SaveTextFileDemo.txt
+  9c1bde4d (LOCAL_ONLY) 20120614155042 macros/SaveXYforFolder.txt
+  9a87853c (LOCAL_ONLY) 20100729141826 macros/Save_Inverted_FITS.txt
+  79658841 (LOCAL_ONLY) 20100729141827 macros/Save_Virtual_Stack_As_8-bit_TIFFs.txt
+  29020aa5 (LOCAL_ONLY) 20100729141826 macros/ScaleSelection.txt
+  bbe61841 (LOCAL_ONLY) 20100729141827 macros/Scale_Bar_Maker.txt
+  87edc263 (LOCAL_ONLY) 20110525140100 macros/Scalebar_Overlay.txt
+  8265bec7 (LOCAL_ONLY) 20160128212214 macros/Search.txt
+  f2712e50 (LOCAL_ONLY) 20100729141826 macros/Search_Macros.txt
+  c7d1e4bb (LOCAL_ONLY) 20100729141827 macros/SelectionCoordinates.txt
+  cbe8b36f (LOCAL_ONLY) 20100729141827 macros/SelectionIntersection.txt
+  784246fc (LOCAL_ONLY) 20100729141826 macros/SetScaleFromTiffTag.txt
+  3e93b4bf (LOCAL_ONLY) 20100729141827 macros/SetToolDemo.txt
+  32954f4f (LOCAL_ONLY) 20100729141827 macros/Shift_RGB_Channel.txt
+  8b29411a (LOCAL_ONLY) 20100729141827 macros/Shortcuts.txt
+  18e61272 (LOCAL_ONLY) 20160128212214 macros/ShowAllLuts.txt
+  ee8c6e1d (LOCAL_ONLY) 20160505125225 macros/ShowArrayDemo.ijm
+  d178edb0 (LOCAL_ONLY) 20100729141826 macros/ShowImageInfo.txt
+  7f174f0b (LOCAL_ONLY) 20100729141827 macros/ShowRawStatistics.txt
+  7e937ccc (LOCAL_ONLY) 20111029113852 macros/ShowStatistics.txt
+  353d237e (LOCAL_ONLY) 20100729141827 macros/Show_All_LUTs.txt
+  f11b8ad0 (LOCAL_ONLY) 20100729141826 macros/Show_Selection_As_Text.txt
+  0398e688 (LOCAL_ONLY) 20100729141826 macros/ShrinkSelection.txt
+  1fd68b80 (LOCAL_ONLY) 20110908220412 macros/SineCosineTable.txt
+  3d4b302c (LOCAL_ONLY) 20100729141827 macros/SineCosineTable2.txt
+  9744b24b (LOCAL_ONLY) 20100729141827 macros/SinglePanelGelAnalyzer.txt
+  793beb16 (LOCAL_ONLY) 20100729141827 macros/Slice-to-Slice Difference.txt
+  9a44ee8d (LOCAL_ONLY) 20100729141827 macros/Slow_Fourier_Transform.txt
+  803b23a7 (LOCAL_ONLY) 20100729141827 macros/Smallest_Enclosing_Circle.txt
+  f82616bb (LOCAL_ONLY) 20110213215900 macros/Smooth_ROI.txt
+  3d4f4381 (LOCAL_ONLY) 20100729141826 macros/Snake.txt
+  767c5840 (LOCAL_ONLY) 20160422121036 macros/SnippetsandFunctions/Function_Calculate the distance between two points.ijm
+  48b314ac (LOCAL_ONLY) 20160422121509 macros/SnippetsandFunctions/Function_shortest distance between a straight line and a given point.ijm
+  d1a7950f (LOCAL_ONLY) 20130304115236 macros/Sort-Selections-in-Overlays.txt
+  0a6b59a0 (LOCAL_ONLY) 20100729141826 macros/SortDemo.txt
+  fb212eb9 (LOCAL_ONLY) 20100729141826 macros/SourceCodeRetriever.txt
+  cfe689d4 (LOCAL_ONLY) 20111031121346 macros/SplineFitForStraighten.txt
+  d09ac2f9 (LOCAL_ONLY) 20160128212214 macros/SprayCanTool.txt
+  82473a92 (LOCAL_ONLY) 20100729141826 macros/StackBlaster.txt
+  90fc7ffd (LOCAL_ONLY) 20100729141826 macros/StackHistogramLister.txt
+  5a918450 (LOCAL_ONLY) 20100928100115 macros/StackProfileData.txt
+  3030d0cf (LOCAL_ONLY) 20100729141827 macros/StackProfilePlot.txt
+  07df6db5 (LOCAL_ONLY) 20100729141827 macros/StackShuffler.txt
+  cd863c18 (LOCAL_ONLY) 20100729141827 macros/Stack_Moving_Average.txt
+  36c7a1b4 (LOCAL_ONLY) 20160128212214 macros/StacksMenuTool.txt
+  321b1b96 (LOCAL_ONLY) 20150209103054 macros/StartupMacros - Copy.txt
+  4a294db9 (LOCAL_ONLY) 20120912073348 macros/StartupMacros - default.txt
+  4eafe0ae (LOCAL_ONLY) 20111028190519 macros/StartupMacros-default.txt
+  f2c41c19 (LOCAL_ONLY) 20130201083328 macros/StartupMacros.fiji-bkp.ijm
+  340208ce (MODIFIED) 20160505160233 macros/StartupMacros.fiji.ijm
+  e2c222c4 (LOCAL_ONLY) 20160405141455 macros/StartupMacros.fiji_040516.ijm
+  be17203f (LOCAL_ONLY) 20160406121341 macros/StartupMacros.fiji_040716.ijm
+  20118b48 (LOCAL_ONLY) 20160405142623 macros/StartupMacros_040516.txt
+  7930486f (LOCAL_ONLY) 20100729141827 macros/Statements.txt
+  1512eef2 (LOCAL_ONLY) 20100729141827 macros/StringFunctions.txt
+  1347f9e4 (LOCAL_ONLY) 20100729141827 macros/SubractMeasuredBackground.txt
+  bc1bdbd7 (LOCAL_ONLY) 20100729141826 macros/SubtractProfile.txt
+  722809bf (LOCAL_ONLY) 20100729141827 macros/SumAreas.txt
+  ac901e80 (LOCAL_ONLY) 20100729141827 macros/TableTricks.txt
+  53660426 (LOCAL_ONLY) 20100729141827 macros/Telecran.txt
+  577a0de0 (LOCAL_ONLY) 20120625194401 macros/Temporal-Color_Code.txt
+  93a0ee3a (LOCAL_ONLY) 20100729141826 macros/Test_Wavelets.txt
+  76e09106 (LOCAL_ONLY) 20100729141827 macros/TextDemo.txt
+  b280a088 (LOCAL_ONLY) 20100729141827 macros/TiffCommentsEditor.txt
+  c74608d4 (LOCAL_ONLY) 20100729141827 macros/Time-lapse_Capture.txt
+  1d1372cc (LOCAL_ONLY) 20100729141826 macros/TimeLapseVideoMacros.txt
+  ca2329bb (LOCAL_ONLY) 20160128212214 macros/TimeStamp.ijm
+  cd514953 (LOCAL_ONLY) 20100729141827 macros/TimingTest.txt
+  ccf690dd (LOCAL_ONLY) 20100729141826 macros/Toe_Indexer.txt
+  14520fe0 (LOCAL_ONLY) 20100729141827 macros/ToggleOpenUsingPlugins.txt
+  5c1f2781 (LOCAL_ONLY) 20100729141826 macros/ToolMenusDemo.txt
+  34d65fd0 (LOCAL_ONLY) 20100729141827 macros/ToolShortcuts.txt
+  44685669 (LOCAL_ONLY) 20100729141827 macros/ToolSwitcher.txt
+  64c3eabc (LOCAL_ONLY) 20100729141826 macros/ToothRootToCrownRatio.txt
+  5ecbc604 (LOCAL_ONLY) 20100729141826 macros/Topolines.txt
+  4f8b34d1 (LOCAL_ONLY) 20130430130658 macros/Tracking_Movie.txt
+  e3535572 (LOCAL_ONLY) 20100729141826 macros/Translate.txt
+  3ec8225f (LOCAL_ONLY) 20100729141826 macros/TypeTheSky.txt
+  b8ecdd6c (LOCAL_ONLY) 20120115102352 macros/Unbiased_Frames.txt
+  11c81171 (LOCAL_ONLY) 20100729141826 macros/Unicode.txt
+  1e860a9b (LOCAL_ONLY) 20120912073349 macros/Update reports/12-9-2012 at 7.33.48.txt
+  c39c9e84 (LOCAL_ONLY) 20130128133344 macros/Update reports/28-1-2013 at 13.33.43.txt
+  b4597f7c (LOCAL_ONLY) 20120328100421 macros/Update reports/28-3-2012 at 10.4.21.txt
+  50e13f0e (LOCAL_ONLY) 20130430130658 macros/Update reports/30-4-2013 at 13.6.58.txt
+  56cda460 (LOCAL_ONLY) 20130304115236 macros/Update reports/4-3-2013 at 11.52.36.txt
+  cd9fca0c (LOCAL_ONLY) 20130506143928 macros/Update reports/6-5-2013 at 14.39.28.txt
+  e4e8bb0e (LOCAL_ONLY) 20120809114535 macros/Update reports/9-8-2012 at 11.45.35.txt
+  518939fe (LOCAL_ONLY) 20100729141826 macros/UserFunctions.txt
+  a3ef222b (LOCAL_ONLY) 20100729141826 macros/Version_Checker.txt
+  f2b5e391 (LOCAL_ONLY) 20100729141827 macros/Vessel_Distribution.txt
+  2e4224d1 (LOCAL_ONLY) 20100729141827 macros/VirtualStackFromList.txt
+  5c34a91e (LOCAL_ONLY) 20100729141827 macros/VolumeFractionOfBone.txt
+  58ec3b48 (LOCAL_ONLY) 20100729141827 macros/WaitForUserDemo.txt
+  a66042a5 (LOCAL_ONLY) 20100729141827 macros/WeatherOverFrance.txt
+  89be5d61 (LOCAL_ONLY) 20130128133341 macros/WildcardCloseDemo.txt
+  82aabfee (LOCAL_ONLY) 20100729141826 macros/WindowAndLevel.txt
+  8028c838 (LOCAL_ONLY) 20130128133341 macros/WindowsLocater.txt
+  045e9433 (LOCAL_ONLY) 20100729141827 macros/Workspaces.txt
+  c57bc1bc (LOCAL_ONLY) 20120823125454 macros/XYGridReconstruct.ijm
+  b9fd4e11 (LOCAL_ONLY) 20120823125503 macros/ZXYReconstruction.ijm
+  3d3484ad (LOCAL_ONLY) 20100729141827 macros/ZapGremlins.txt
+  30ada6ca (LOCAL_ONLY) 20120328100412 macros/examples/AdvancedPlots.txt
+  89a2a467 (LOCAL_ONLY) 20120328100412 macros/examples/AnnularSelection.txt
+  3e8658fd (LOCAL_ONLY) 20120328100412 macros/examples/ArrayConcatExamples.txt
+  57f37e65 (LOCAL_ONLY) 20120328100412 macros/examples/ArrayFunctions.txt
+  3265131c (LOCAL_ONLY) 20120328100412 macros/examples/ArraySliceExamples.txt
+  20e327a6 (LOCAL_ONLY) 20120328100412 macros/examples/ArraySortingDemo.txt
+  72d2df6a (LOCAL_ONLY) 20120328100413 macros/examples/AutoThresholdingDemo.txt
+  50284f45 (LOCAL_ONLY) 20120328100413 macros/examples/BatchMeasureWithRedirectedErrors.txt
+  e29b7cac (LOCAL_ONLY) 20120328100413 macros/examples/BlinkingText.txt
+  48d59581 (LOCAL_ONLY) 20120328100413 macros/examples/CellCounting.txt
+  0f53de85 (LOCAL_ONLY) 20120328100413 macros/examples/ConvolutionDemo.txt
+  9f1b4e24 (LOCAL_ONLY) 20120328100414 macros/examples/CorrectStackDrift.txt
+  d94da876 (LOCAL_ONLY) 20120328100414 macros/examples/CreateBinaryFile.txt
+  1aa1b85d (LOCAL_ONLY) 20120328100414 macros/examples/CreateOverlay.txt
+  157dc692 (LOCAL_ONLY) 20120328100414 macros/examples/Create_Synthetic_Image.txt
+  cc59178c (LOCAL_ONLY) 20120328100414 macros/examples/CumulativeHistogram.txt
+  bd684867 (LOCAL_ONLY) 20120328100414 macros/examples/CurveFittingDemo.txt
+  bfd9431f (LOCAL_ONLY) 20120328100415 macros/examples/DialogTest.txt
+  ba0237c6 (LOCAL_ONLY) 20120328100415 macros/examples/DialogWithHelp.txt
+  8ab42a89 (LOCAL_ONLY) 20120328100415 macros/examples/DisplayOverlayList.txt
+  14393ed4 (LOCAL_ONLY) 20120328100415 macros/examples/DrawParticleEllipseAxis.txt
+  cad5dbdc (LOCAL_ONLY) 20120328100415 macros/examples/DrawTextWithBackground.txt
+  18d595e8 (LOCAL_ONLY) 20120328100416 macros/examples/ExpandableArrays.txt
+  d8f02aad (LOCAL_ONLY) 20130306120353 macros/examples/FindMaximaRoiManager-noDemo.txt
+  e7a021a2 (LOCAL_ONLY) 20120328100416 macros/examples/FindMaximaRoiManager.txt
+  9f39399f (LOCAL_ONLY) 20130128133343 macros/examples/ForegroundBackgroundColors.txt
+  cceda643 (LOCAL_ONLY) 20130128133342 macros/examples/GetCommandNameDemo.txt
+  5e1d8706 (LOCAL_ONLY) 20120328100416 macros/examples/Grid_Overlay.txt
+  d03d7ee3 (LOCAL_ONLY) 20120328100416 macros/examples/MakeOverlay.txt
+  8e28eb71 (LOCAL_ONLY) 20120328100416 macros/examples/MakePointDemo.txt
+  bd97d340 (LOCAL_ONLY) 20120328100417 macros/examples/MathMacroDemo.txt
+  10f54c03 (LOCAL_ONLY) 20120328100417 macros/examples/Measure_Relative_Length.txt
+  689babf2 (LOCAL_ONLY) 20120328100417 macros/examples/NaNs.txt
+  4d34a1db (LOCAL_ONLY) 20130430130658 macros/examples/NonNumericResultsTable.txt
+  c4f2aec0 (LOCAL_ONLY) 20130128133342 macros/examples/OthoganalProjections.txt
+  5b93c505 (LOCAL_ONLY) 20120328100417 macros/examples/OverlayDrawStringDemo.txt
+  ef18c8d5 (LOCAL_ONLY) 20120328100417 macros/examples/OverlayPolygons.txt
+  c36bf2dd (LOCAL_ONLY) 20120328100417 macros/examples/Overlay_Polygons.txt
+  750f2b5d (LOCAL_ONLY) 20120328100418 macros/examples/PlotGetValuesDemo.txt
+  c0434754 (LOCAL_ONLY) 20120328100418 macros/examples/PlotSigmoidDerivatives.txt
+  209a4780 (LOCAL_ONLY) 20120328100418 macros/examples/PlotSplineFitLine.txt
+  cc84cec8 (LOCAL_ONLY) 20120328100418 macros/examples/PolynomialFit.txt
+  1fa750cd (LOCAL_ONLY) 20120328100418 macros/examples/PrintResults.txt
+  b3ed207f (LOCAL_ONLY) 20120328100419 macros/examples/RandomizeArray.txt
+  f9bc6bd4 (LOCAL_ONLY) 20120328100419 macros/examples/ResultsTableAs2DArray.txt
+  49f07ae4 (LOCAL_ONLY) 20120328100419 macros/examples/RodbardSigmoidFit.txt
+  e23787a8 (LOCAL_ONLY) 20120328100419 macros/examples/RotationalAnimation.txt
+  3c434ce1 (LOCAL_ONLY) 20120328100419 macros/examples/RunOrDebugFirstMacro.txt
+  503e2773 (LOCAL_ONLY) 20120328100419 macros/examples/SetOverUnderThresholdColors.txt
+  afbc9b23 (LOCAL_ONLY) 20120328100420 macros/examples/SliderDemo.txt
+  890b0a00 (LOCAL_ONLY) 20120328100420 macros/examples/SortPixelValues.txt
+  a8c67754 (LOCAL_ONLY) 20120809114535 macros/examples/StackLabelsFontAndStyle.txt
+  92cf15c7 (LOCAL_ONLY) 20120328100420 macros/examples/StackOverlay.txt
+  149b8f46 (LOCAL_ONLY) 20120328100420 macros/examples/SummaryToResults.txt
+  b9d884a3 (LOCAL_ONLY) 20120328100420 macros/examples/TextOverlay.txt
+  47bdaaad (LOCAL_ONLY) 20120328100420 macros/examples/ThreeColorPlot.txt
+  e82c377f (LOCAL_ONLY) 20120328100421 macros/examples/UserDefinedCurveFits.txt
+  cd42de7d (LOCAL_ONLY) 20160420165832 macros/examples/javascriptchoicebox.txt
+  02de9c39 (LOCAL_ONLY) 20150224120943 macros/histogram_list.ijm
+  cb5ce1c5 (LOCAL_ONLY) 20130228111511 macros/info/loci-bioformats-macro-extensionsinfo.txt
+  b86dce00 (LOCAL_ONLY) 20130510150106 macros/plot_multicolour4.ijm
+  4517ebf4 (LOCAL_ONLY) 20160421130736 macros/scalebar_overlay.ijm
+  2e839670 (LOCAL_ONLY) 20160425135116 macros/scripts/AA_README.txt
+  5967ca00 (LOCAL_ONLY) 20120328100359 macros/tools/3D-Distance-Tool.txt
+  a63dbeab (LOCAL_ONLY) 20120328100359 macros/tools/3DAngleTool.txt
+  af99dd6d (LOCAL_ONLY) 20120328100400 macros/tools/3FluoLablelingExploringTools.txt
+  00d309ab (LOCAL_ONLY) 20120328100400 macros/tools/AbortMacroActionTool.txt
+  6716ecb5 (LOCAL_ONLY) 20120328100400 macros/tools/AboutTool.txt
+  0b69f6f9 (LOCAL_ONLY) 20120328100400 macros/tools/AnnularSelectionTool.txt
+  5e0910a7 (LOCAL_ONLY) 20120328100400 macros/tools/ArrowMakerTool.txt
+  6c6e0068 (LOCAL_ONLY) 20120328100401 macros/tools/ArrowTool.txt
+  b4f00bb1 (LOCAL_ONLY) 20120328100401 macros/tools/BigCursorTool.txt
+  acf57f82 (LOCAL_ONLY) 20120328100401 macros/tools/ButtonBar.txt
+  c63fbdaf (LOCAL_ONLY) 20120328100401 macros/tools/CalculatorTool.txt
+  931ebaeb (LOCAL_ONLY) 20120328100401 macros/tools/ChangeColorTool.txt
+  b5c6a98c (LOCAL_ONLY) 20120328100402 macros/tools/CircleTool.txt
+  d143e664 (LOCAL_ONLY) 20120328100402 macros/tools/CircularQuadrantMeasureTool.txt
+  b8dffc7f (LOCAL_ONLY) 20120328100402 macros/tools/CircularSelectionTool.txt
+  5ceec484 (LOCAL_ONLY) 20120328100402 macros/tools/ClickCoordinatesTool.txt
+  29363a87 (LOCAL_ONLY) 20120328100402 macros/tools/ClickToTrackTool.txt
+  140d2648 (LOCAL_ONLY) 20120328100402 macros/tools/ColorPickerTool.txt
+  69ef82d9 (LOCAL_ONLY) 20120328100403 macros/tools/Common_Commands_Menu.txt
+  aff25c6e (LOCAL_ONLY) 20120328100403 macros/tools/ConcentricRingsTool.txt
+  99bab0cb (LOCAL_ONLY) 20130128133342 macros/tools/CoordinatePickerTool.txt
+  38285a00 (LOCAL_ONLY) 20120328100403 macros/tools/DrawingTools.txt
+  46612125 (LOCAL_ONLY) 20120328100403 macros/tools/EditingTools.txt
+  a97e6429 (LOCAL_ONLY) 20120328100403 macros/tools/ExampleTool.txt
+  16ef016e (LOCAL_ONLY) 20120328100404 macros/tools/FixedAngleLineTool.txt
+  6bca68ed (LOCAL_ONLY) 20120328100404 macros/tools/FloodFillTool.txt
+  3df71f03 (LOCAL_ONLY) 20120328100404 macros/tools/GammaCorrectionTool.txt
+  9dacd6dc (LOCAL_ONLY) 20120328100404 macros/tools/GelMenu.txt
+  c20db9c4 (LOCAL_ONLY) 20120328100404 macros/tools/GetCursorLocDemoTool.txt
+  6fe48a81 (LOCAL_ONLY) 20120328100404 macros/tools/HDRexplorerTool.txt
+  42a50dd2 (LOCAL_ONLY) 20120328100405 macros/tools/Image_To_Tool_Icon.txt
+  184b760f (LOCAL_ONLY) 20120328100405 macros/tools/L-ShapeTool.txt
+  7bb7fb81 (LOCAL_ONLY) 20120328100405 macros/tools/LUTFileTool.txt
+  93dc790e (LOCAL_ONLY) 20120328100405 macros/tools/LabelLineTool.txt
+  b2b855d8 (LOCAL_ONLY) 20120328100405 macros/tools/LineAngleTool.txt
+  c9627490 (LOCAL_ONLY) 20120328100406 macros/tools/LineMeasureTool.txt
+  0d08a145 (LOCAL_ONLY) 20120328100406 macros/tools/LineTool.txt
+  e3bcd38c (LOCAL_ONLY) 20120328100406 macros/tools/Macro Developer Toolset.txt
+  b771a2c8 (LOCAL_ONLY) 20120328100406 macros/tools/MacroPluginShortcutsTool.txt
+  c83d1bab (LOCAL_ONLY) 20120328100406 macros/tools/Macro_Sliders_Demo.txt
+  3f84e683 (LOCAL_ONLY) 20120328100406 macros/tools/MacrosAndToolsUpdater.txt
+  1e231c7d (LOCAL_ONLY) 20120328100407 macros/tools/MagnifyingGlassTool.txt
+  7985cdc9 (LOCAL_ONLY) 20120328100407 macros/tools/MeasurePieSegmentsTool.txt
+  f0718e1c (LOCAL_ONLY) 20120328100407 macros/tools/MeasurerAndLabelTool.txt
+  a1fc0dd4 (LOCAL_ONLY) 20120328100407 macros/tools/MirrorSelectionTool.txt
+  a8d32512 (LOCAL_ONLY) 20120328100407 macros/tools/MontageShufflerTool.txt
+  a34ce8fd (LOCAL_ONLY) 20120328100408 macros/tools/MultiCursorTool.txt
+  4d3b1f41 (LOCAL_ONLY) 20120328100408 macros/tools/PixelPickerTool.txt
+  6e305b6a (LOCAL_ONLY) 20120328100408 macros/tools/Pixel_Sampler_Tool.txt
+  e6f2773f (LOCAL_ONLY) 20120328100408 macros/tools/PointTool.txt
+  c6b5f4a1 (LOCAL_ONLY) 20120328100408 macros/tools/PolygonTool.txt
+  e7013cb6 (LOCAL_ONLY) 20120328100408 macros/tools/QuickSetScale.txt
+  49f7f262 (LOCAL_ONLY) 20120328100409 macros/tools/RGBProfilesTool.txt
+  5e99ea2a (LOCAL_ONLY) 20120328100409 macros/tools/RGB_Color_Picker.txt
+  e768c402 (LOCAL_ONLY) 20120328100409 macros/tools/RandomEllipseTool.txt
+  c7f4d519 (LOCAL_ONLY) 20120328100409 macros/tools/SampleImagesMenu.txt
+  7e66df81 (LOCAL_ONLY) 20120328100409 macros/tools/SelectionColorMenuTool.txt
+  44fcb9b0 (LOCAL_ONLY) 20120328100410 macros/tools/SomaRoiTool.txt
+  52fd7f41 (LOCAL_ONLY) 20120328100410 macros/tools/SpecifiedLengthLineTool.txt
+  5dc984a3 (LOCAL_ONLY) 20120328100410 macros/tools/SpotMeasurementTool.txt
+  2f393627 (LOCAL_ONLY) 20120328100410 macros/tools/SprayCanTool.txt
+  bdf861eb (LOCAL_ONLY) 20120328100410 macros/tools/TiltedRectangleTool.txt
+  b5f777d4 (LOCAL_ONLY) 20120328100411 macros/tools/Tools.txt
+  38d5440a (LOCAL_ONLY) 20120328100411 macros/tools/URLtools.txt
+  216d2bde (LOCAL_ONLY) 20120328100411 macros/tools/VideoCaptureTool.txt
+  9c410e80 (LOCAL_ONLY) 20120328100411 macros/tools/WandAutoMeasureTool.txt
+  3f0636f7 (LOCAL_ONLY) 20120328100411 macros/tools/ZProfileTool.txt
+  b7136431 (LOCAL_ONLY) 20120328100411 macros/tools/Zoom_in_Images_and_Stacks.txt
+  003fcfe0 (LOCAL_ONLY) 20130128133342 macros/toolsets/Angiogenesis Analyzer.txt
+  6e261bef (LOCAL_ONLY) 20100423214624 macros/toolsets/Arrow Labelling Tools.txt
+  ceafcb43 (LOCAL_ONLY) 20120809114534 macros/toolsets/Built-in Tools.txt
+  8e526c20 (LOCAL_ONLY) 20160128212214 macros/toolsets/CSI.txt
+  ed71cb25 (LOCAL_ONLY) 20061011152328 macros/toolsets/Developer Tools.txt
+  0e2ba7d0 (LOCAL_ONLY) 20090716104910 macros/toolsets/Dot Blot Analyzer.txt
+  c31c4e97 (LOCAL_ONLY) 20070408132532 macros/toolsets/Draw Tools.txt
+  b3e9cedf (MODIFIED) 20130128133343 macros/toolsets/Drawing Tools.txt
+  f1f36731 (LOCAL_ONLY) 20080225080942 macros/toolsets/Dynamic_Stats_and_Histo.txt
+  08d68cf2 (LOCAL_ONLY) 20100423214624 macros/toolsets/Example Icons.txt
+  328e26dd (LOCAL_ONLY) 20070517131934 macros/toolsets/Image, Stack and Timelapse Arrow Labelling.txt
+  305341dd (LOCAL_ONLY) 20080617155214 macros/toolsets/LSM Transmission Deblurring.txt
+  dfa27344 (LOCAL_ONLY) 20091209090510 macros/toolsets/Luts Macros and Tools Updater.txt
+  3cc1ef74 (LOCAL_ONLY) 20071216220154 macros/toolsets/MBF Tools.txt
+  14b724be (LOCAL_ONLY) 20100423214624 macros/toolsets/Magic Montage.txt
+  a6756ec7 (LOCAL_ONLY) 20120809114535 macros/toolsets/Multi-Channel Image and Stack Helper.txt
+  ec315fb2 (LOCAL_ONLY) 20120809114535 macros/toolsets/Original Drawing Tools.txt
+  03af2aa2 (LOCAL_ONLY) 20100423214624 macros/toolsets/Plugins.txt
+  20034b8b (LOCAL_ONLY) 20101101121017 macros/toolsets/Protein Array Analyzer.txt
+  cc5545a3 (LOCAL_ONLY) 20120809114535 macros/toolsets/ROI Manager Tools.txt
+  82d2050b (LOCAL_ONLY) 20080127204812 macros/toolsets/Rename and Save ROI Sets.txt
+  666d4eee (LOCAL_ONLY) 20101101095928 macros/toolsets/Scale Bar Tools for Microscopes.txt
+  000784a8 (LOCAL_ONLY) 20130509084450 macros/toolsets/Spot Distance Tools GDSC.txt
+  7f3e7edc (LOCAL_ONLY) 20140529142106 macros/toolsets/Spot Distance Tools.txt
+  3ca55519 (LOCAL_ONLY) 20100726144305 macros/toolsets/Stack Tools.txt
+  a21f122a (LOCAL_ONLY) 20091209090810 macros/toolsets/Toolbar Menus.txt
+  249a0779 (LOCAL_ONLY) 20130128133343 macros/toolsets/Toolset Creator.txt
+  5bd6a8e5 (LOCAL_ONLY) 20160406145604 plugins/2015 Conference/11_Grab_Viridis_Colormap_0nGrayteststrip.ijm
+  7062f6d9 (LOCAL_ONLY) 20160406150423 plugins/2015 Conference/11_Grab_Viridis_Colormap_onOpenImage.ijm
+  42d1a127 (LOCAL_ONLY) 20130529104947 plugins/ActionBar/Shared Bars/BIOP_HRM_Manager.ijm
+  15aad51a (LOCAL_ONLY) 20130620145655 plugins/ActionBar/Shared Bars/BIOP_MultiManualSelect.ijm
+  547dbaf3 (LOCAL_ONLY) 20130620145655 plugins/ActionBar/Shared Bars/BIOP_PSF_Quality.ijm
+  e9bf0b0f (LOCAL_ONLY) 20130723123816 plugins/ActionBar/Shared Bars/BIOP_SIMAssess.ijm
+  139d17af (LOCAL_ONLY) 20130620145654 plugins/ActionBar/Shared Bars/BIOP_VSI_Reader.ijm
+  7a0616f0 (LOCAL_ONLY) 20130612091102 plugins/ActionBar/Shared Bars/Common_Tools.ijm
+  db280c9c (LOCAL_ONLY) 20140312173919 plugins/ActionBar/Shared Bars/JaCoP_Tools.ijm
+  03288aea (LOCAL_ONLY) 20131017081452 plugins/ActionBar/Shared Bars/actionbar_modifier_v05.ijm
+  9b55b5dc (LOCAL_ONLY) 20121114082256 plugins/ActionBar/Shared Bars/actionbar_updater_v03.ijm
+  ee9caa2e (LOCAL_ONLY) 20131017081239 plugins/ActionBar/test_bar.jar
+  3814d5a6 (LOCAL_ONLY) 20050928181902 plugins/BIJ/bij.jar
+  81f3770f (LOCAL_ONLY) 20121109184228 plugins/BeanShell.jar
+  9ce49f7d (LOCAL_ONLY) 20130523125526 plugins/Blob_Labeler.class
+  873fc734 (LOCAL_ONLY) 20140909113605 plugins/CMP_BIA-0.3-SNAPSHOT.jar
+  e1323f89 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_DM3_Reader.class
+  3d9eb9d8 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Darkref_Subtractor.class
+  cd2937af (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Map_to_Line.class
+  82f56e0d (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$1.class
+  587f0b9e (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$ConstantFit.class
+  07020557 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$ExponentialFit.class
+  d414add1 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$Fit.class
+  9d6134e6 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$LCPLFit.class
+  de7e3590 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$LinearFit.class
+  923ce7fa (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$ModelFit.class
+  c8474380 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$NoFit.class
+  4031d4b4 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$PCAwindows$EasterEggListener.class
+  73423433 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$PCAwindows$PCAlistener.class
+  1e9189f0 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$PCAwindows.class
+  5b7e372c (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$PowerFit.class
+  609bff87 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$ScrollListener.class
+  d3c4e323 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$SpectrumData$ResizeListener.class
+  244596ef (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$SpectrumData.class
+  67b2c0c8 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$SpectrumData0D.class
+  5e490cb9 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$SpectrumData1D.class
+  6684a8a3 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$SpectrumData2D.class
+  22c45c24 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer$TestListener.class
+  348d20e8 (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_Spectrum_Analyzer.class
+  f5a86b7f (LOCAL_ONLY) 20160128212214 plugins/CSI/CSI_TIA_Reader.class
+  e143d58d (LOCAL_ONLY) 20160128212214 plugins/CSI/Dynamic_Profiler.class
+  55ccf203 (LOCAL_ONLY) 20160128212214 plugins/CSI/HandleExtraFileTypes.class
+  944347c5 (LOCAL_ONLY) 20121221143938 plugins/CSI/Macros/CSIStartupMacros.txt
+  b1f6e80f (LOCAL_ONLY) 20160128212214 plugins/CSI/Macros/toolsets/CSI.txt
+  21336906 (LOCAL_ONLY) 20160128212214 plugins/CSI/Open_Documentation.class
+  366bab27 (LOCAL_ONLY) 20140529145739 plugins/Canny_Edge_Detector.class
+  04f9455b (LOCAL_ONLY) 20150212094625 plugins/Cell_Magic_Wand_Tool.jar
+  3197cf51 (LOCAL_ONLY) 20110720155952 plugins/Crofton_Perimeter.class
+  e28d893b (LOCAL_ONLY) 20150630153250 plugins/Doube/Rotating_Calipers.class
+  56574752 (LOCAL_ONLY) 20120514150338 plugins/EPFL/BEEPS_.jar
+  37a46301 (LOCAL_ONLY) 20050705225716 plugins/EPFL/Convolver.class
+  94b18c3e (LOCAL_ONLY) 20081120133258 plugins/EPFL/FeatureDetector_.class
+  835964c7 (LOCAL_ONLY) 20050705225716 plugins/EPFL/ImageAccess.class
+  12b7d6a7 (LOCAL_ONLY) 20130430101851 plugins/EPFL/MonogenicJ_.jar
+  4fe1cfd7 (LOCAL_ONLY) 20130430102440 plugins/EPFL/SNR_.jar
+  e9aec303 (LOCAL_ONLY) 20050705225716 plugins/EPFL/Smoothing_.class
+  765bf299 (LOCAL_ONLY) 20081120124022 plugins/EPFL/SteerableJ_.class
+  a5908c2b (LOCAL_ONLY) 20130430103733 plugins/EPFL/edf_3D.jar
+  a66e53c8 (LOCAL_ONLY) 20130430103749 plugins/EPFL/ijtools.jar
+  3bf48d74 (LOCAL_ONLY) 20081120133258 plugins/EPFL/steerablej.jar
+  84cf4733 (LOCAL_ONLY) 20140915110709 plugins/Graph_.jar
+  f933f17a (LOCAL_ONLY) 20150128132609 plugins/Grid_.class
+  632febf7 (LOCAL_ONLY) 20150128134807 plugins/Grid_Overlay.class
+  f251aad9 (LOCAL_ONLY) 20130529104948 plugins/HRM Manager/HRM Manager.jar
+  b4a71322 (LOCAL_ONLY) 20130529104947 plugins/HRM_Manager.jar
+  c2fe1fc8 (MODIFIED) 20160504175259 plugins/IJ_Ed2.jar
+  81fa3274 (LOCAL_ONLY) 20120914102010 plugins/IO/AnimatedPNGWriter_.jar
+  64e850ca (LOCAL_ONLY) 20120914102223 plugins/IO/DM3_Reader.class
+  32f10e1a (LOCAL_ONLY) 20130430130111 plugins/IO/Exif_Reader.jar
+  59a9f0d7 (LOCAL_ONLY) 20090708131550 plugins/IO/TIA_Reader.jar
+  0f63b36e (LOCAL_ONLY) 20120914102310 plugins/IO/TIFF_Dumper.class
+  3d6d1e3e (LOCAL_ONLY) 20130127152500 plugins/IO/Video_Util64.jar
+  91cd6322 (LOCAL_ONLY) 20120914102432 plugins/IO/XYZ2DEM_Importer.class
+  ff703cc6 (LOCAL_ONLY) 20140303223546 plugins/IO/ij-dcraw_.jar
+  3da48f0b (LOCAL_ONLY) 20130829122819 plugins/Low_Light_Tracking_Tool-0.1.jar
+  e1105744 (LOCAL_ONLY) 20120912073240 plugins/Macros/Luts Macros and Tools Updater_ .ijm
+  44c08ad5 (LOCAL_ONLY) 20130509083437 plugins/Macros/Scale Bar Tools for Microscopes_ .ijm
+  2664c140 (LOCAL_ONLY) 20121120094323 plugins/Mexican_Hat_Filter.class
+  d191e9d9 (LOCAL_ONLY) 20150817131536 plugins/Michael Schmid/Fast_Filters$1.class
+  5db89770 (LOCAL_ONLY) 20150817131516 plugins/Michael Schmid/Fast_Filters.class
+  59e1afe9 (LOCAL_ONLY) 20100508035308 plugins/Morphology/BinaryLabel_.class
+  1069d4dd (LOCAL_ONLY) 20140721130124 plugins/ND/ND_.class
+  880bf894 (LOCAL_ONLY) 20160503175730 plugins/ND/NDmodFeret_.class
+  482eee8a (LOCAL_ONLY) 20160503171454 plugins/ND/NDmod_.class
+  9ca71837 (LOCAL_ONLY) 20160422180850 plugins/ND/Nnd_.class
+  b426fe9c (LOCAL_ONLY) 20141106123104 plugins/OptiNav/Find_Ridges.class
+  7c753284 (LOCAL_ONLY) 20141106123948 plugins/OptiNav/Live_Histogram.jar
+  2ba2546b (LOCAL_ONLY) 20141106124141 plugins/OptiNav/Measure_Roi.class
+  8a0e73cf (LOCAL_ONLY) 20141106124210 plugins/OptiNav/Polynomial_Fit.class
+  2313062a (LOCAL_ONLY) 20141106124235 plugins/OptiNav/Polynomial_Shading_Corrector.class
+  57317a41 (LOCAL_ONLY) 20140529145622 plugins/Polynomial_Surface_Fit.class
+  68fa4608 (LOCAL_ONLY) 20160504173534 plugins/Radial_Profile.class
+  f1342766 (LOCAL_ONLY) 20160504173713 plugins/Radial_Profile_Angle_Ext.jar
+  582cc13d (LOCAL_ONLY) 20160405131520 plugins/Results_Importer.class
+  157f6427 (LOCAL_ONLY) 20140529145430 plugins/Sampling_Window.class
+  8f2f3e26 (LOCAL_ONLY) 20160408093435 plugins/ScepticalPhysiologist/Code_files/code.js
+  eb0e9dcc (LOCAL_ONLY) 20160408093435 plugins/ScepticalPhysiologist/Code_files/jquery.js
+  834d962b (LOCAL_ONLY) 20160408093457 plugins/ScepticalPhysiologist/FFT_box.jar
+  73934e93 (LOCAL_ONLY) 20160408093549 plugins/ScepticalPhysiologist/ROI_Group_Manager.jar
+  dd1605e7 (LOCAL_ONLY) 20160408093647 plugins/ScepticalPhysiologist/Tight_Montage.jar
+  0d89e383 (LOCAL_ONLY) 20160510120513 plugins/Scripts/BAR/Annotation/ROI_Color_Coder_and Labelerwithpjlprefs_051016.ijm
+  e05e87fd (LOCAL_ONLY) 20160510113054 plugins/Scripts/BAR/Annotation/ROI_Color_Coder_v.5.2 2015.08.13_fixPJL_051016.ijm
+  3b1b0b1f (LOCAL_ONLY) 20150224093438 plugins/SixteenBit_Histogram.class
+  f3523afa (LOCAL_ONLY) 20130430121917 plugins/Smoothing.class
+  31372718 (LOCAL_ONLY) 20150724095228 plugins/Tools/Calibration_Menu.ijm
+  57fc6c79 (LOCAL_ONLY) 20150724095229 plugins/Tools/List_Folder_Menu.ijm
+  0b9c3a1a (LOCAL_ONLY) 20150724095229 plugins/Tools/Segment_Profile.ijm
+  5a078991 (LOCAL_ONLY) 20141105160723 plugins/Tools/Shortcuts_Menu.ijm
+  288d218c (LOCAL_ONLY) 20160408091200 plugins/UlfDittmer/ImageJ Plugins_files/ga.js
+  e6ce70b5 (LOCAL_ONLY) 20160408091438 plugins/UlfDittmer/Pixellate_.class
+  77a01c1f (LOCAL_ONLY) 20160408091543 plugins/UlfDittmer/SeamCarving_.jar
+  7c9279e7 (LOCAL_ONLY) 20160408091638 plugins/UlfDittmer/Warp_$ImageWarper.class
+  97e24758 (LOCAL_ONLY) 20160408091643 plugins/UlfDittmer/Warp_$MyColor.class
+  4ea9eb87 (LOCAL_ONLY) 20160408091633 plugins/UlfDittmer/Warp_.class
+  ed67c174 (LOCAL_ONLY) 20151117123247 plugins/Versatile_Wand.class
+  f607e095 (LOCAL_ONLY) 20061124004837 plugins/VischeckJ1/ReadMe.txt
+  dc643d7d (LOCAL_ONLY) 20061124005610 plugins/VischeckJ1/Vischeck.class
+  d542e69f (LOCAL_ONLY) 20061124005610 plugins/VischeckJ1/Vischeck_Panel.class
+  5f60d96e (LOCAL_ONLY) 20120328120735 plugins/Watershed_.jar
+  982ac976 (LOCAL_ONLY) 20140529141437 plugins/beansbinding-1.2.1.jar
+  b353f4d0 (LOCAL_ONLY) 20140505094326 plugins/bigdataviewer-core-1.0.0-SNAPSHOT.jar
+  6d81f376 (LOCAL_ONLY) 20140529141420 plugins/commons-math3-3.1.1.jar
+  233356f2 (LOCAL_ONLY) 20141127125630 plugins/ij-plugins_toolkit.jar
+  0dfa5070 (LOCAL_ONLY) 20140529141449 plugins/imagescience.jar
+  ac77c0f5 (LOCAL_ONLY) 20140529145654 plugins/jama-1.0.3.jar
+  fc868626 (LOCAL_ONLY) 20160425092504 plugins/jars/Jython.jar
+  738528b4 (LOCAL_ONLY) 20150130091843 plugins/objectj_.jar
+  5895c4b4 (LOCAL_ONLY) 20160504160338 plugins/radial_thickness_measurement.class
+  41cae167 (LOCAL_ONLY) 20130529104927 plugins/slim_plugin-1.0.0-SNAPSHOT.jar
+  4bb7dfbf (LOCAL_ONLY) 20130228105032 plugins/tiff_tags.jar</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=1269">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=1269">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=1269">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=1269&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=1269" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=1269&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731993-twtMb1I6goia_j6nlHTGDH12hcdPMWydeIYw7LflEYc">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

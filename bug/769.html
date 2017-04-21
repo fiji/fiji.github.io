@@ -1,0 +1,1707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 769 &ndash; Fiji window no longer closes child windows and it doesn't remember its position</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=769&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=769">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=769">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=769">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 769 – Fiji window no longer closes child windows and it doesn\'t remember its position",  
+                             "show_bug.cgi?id=769" );
+        document.title = "Bug 769 – Fiji window no longer closes child windows and it doesn\'t remember its position";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 769 – Fiji window no longer closes child windows and it doesn\'t remember its position", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Other bz_bug_769 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;769</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Fiji window no longer closes child windows and it doesn't remember its position</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-06-15 09:17:09 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=769&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=769" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=769&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731782-K4bNmQ-0hvBP0L-qtcDyQZqAFhPtILgW3O4Y3ORtxZY">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-06-15 09:17:09">
+  <input type="hidden" name="longdesclength" value="22">
+  <input type="hidden" name="id" value="769">
+  <input type="hidden" name="token" value="1492731782-7qe06mO54ppGgkth0eCNGqBlZJ9ctLOJEpOvtNI-YJs">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=769"><b>Bug&nbsp;769</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Fiji window no longer closes child windows and it doesn't remember its position</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>Fiji window no longer closes child windows and it doesn't remember its position
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Fiji window no longer closes child windows and it doesn\'t remember its position', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       enhancement
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=769&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=769">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-06-11 02:16 CDT by <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-06-15 09:17 CDT 
+      (<a href="show_activity.cgi?id=769">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="hinerm">hinerm</option>
+                <option value="jan.eglinger">jan.eglinger</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="attachment.cgi?id=158"
+               title="View the content of the attachment">
+          <b>add</b></a>
+
+          <span class="bz_attach_extra_info">
+              (18.29 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_158"
+               title="Go to the comment associated with the attachment">2014-06-11 10:37 CDT</a>,
+
+            <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi?id=158&amp;action=edit">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <span class="bz_attach_view_hide">
+        </span>
+        <a href="attachment.cgi?bugid=769&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=769&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 02:16:43 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The latest Fiji update will get me shot by my Pet-Ct users.
+<a href="http://sourceforge.net/p/bifijiplugins/wiki/Pet-Ct%20Viewer/">http://sourceforge.net/p/bifijiplugins/wiki/Pet-Ct%20Viewer/</a>
+
+I have a startup macro which opens B&amp;C among other things. It used to be that closing the Fiji window killed all the child windows and now the poor user needs to kill all the children manually. Please fix this ASAP.
+
+It now also fails to remember the position of the Fiji window, which was also a very nice feature. For that one they won't kill me, but they won't be happy.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 08:41:25 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+ Side question - is your plugin on an update site? I saw update sites referenced in your readme, but don't see your plugin on <a href="http://fiji.sc/List_of_update_sites">http://fiji.sc/List_of_update_sites</a>. It would be cool if you added it!
+
+Anyway just wanted you to know that I was able to reproduce this, partially, and am looking into it now... on my end, when your startup macro ran, the B/C window closed but the postage stamp window did not. Moot point because even with vanilla Fiji, running B/C and closing caused Fiji to remain open even with the windows closed. So something definitely isn't being disposed properly.
+
+<span class="quote">&gt;It now also fails to remember the position of the Fiji window, which was also a &gt;very nice feature</span >
+
+Indeed, this is a bug with our wrapping of the ImageJ 1.x UI. Also looking into that now.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 09:14:49 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+I decided to try and see if I can add my software. I need a Fiji Wiki account.
+I assume that isn't the same as the source forge wiki account for the help.
+<a href="http://sourceforge.net/p/bifijiplugins/wiki/Main_Page/">http://sourceforge.net/p/bifijiplugins/wiki/Main_Page/</a>
+
+If I can post debug messages, perhaps I already have a Fiji Wiki account?
+What should I fill in the text box under Add Personal Site for Fiji Wiki account?
+Presumably somebody has to authorize it as well?
+Likewise, I'm not sure what URL to use - source forge, but what exactly?
+
+Thanks,
+Ilan</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 09:21:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+you should be able to create a wiki account right from the Updater. See here:
+<a href="http://fiji.sc/How_to_set_up_and_populate_an_update_site">http://fiji.sc/How_to_set_up_and_populate_an_update_site</a>
+
+Jan</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 10:37:19 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi?id=158" name="attach_158" title="add">attachment 158</a> <a href="attachment.cgi?id=158&amp;action=edit" title="add">[details]</a></span>
+add</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 10:38:56 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Jan,
+I got to the Add Personal Site and only 1 text box isn't grayed out.
+I'll include a screen shot.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 10:39:53 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+I just wanted you to know that the first part of this bug is resolved in our source code (not uploaded to Fiji yet). You can see the fix here: <a href="https://github.com/imagej/imagej-legacy/commit/b58a519ef48fba8c489e00d322938c5b0514730b">https://github.com/imagej/imagej-legacy/commit/b58a519ef48fba8c489e00d322938c5b0514730b</a> and if you would like to test the new code before it's uploaded, it can be downloaded from: <a href="http://jenkins.imagej.net/job/ImageJ-legacy/lastSuccessfulBuild/artifact/target/imagej-legacy-0.5.10-SNAPSHOT.jar">http://jenkins.imagej.net/job/ImageJ-legacy/lastSuccessfulBuild/artifact/target/imagej-legacy-0.5.10-SNAPSHOT.jar</a>
+
+However, I wanted to point out that this does not quite fix the problem for your plugin in particular. I was looking at your Read_CD plugin, for example, that's invoked by your startup macro. It pops a java.awt.Frame, but does not register itself with the ImageJ 1.x Window framework.
+
+If a Window is not registered with the framework we simply can't close it via ImageJ2. It's not a problem in typical ImageJ 1.x use because it calls System.exit() when shutting down.. so it doesn't matter that the windows aren't actually closed.
+
+I would suggest updating any of your windows that display to call ij.WindowManager.addWindow on themselves. This will ensure IJ1 knows about your windows, and then they will be properly closed by ImageJ2 on shutdown.
+
+Also, I have had some issues registering for Wiki accounts via the updater before. So if that doesn't work for you, you can also sign up on the wiki: <a href="http://fiji.sc/index.php?title=Special:UserLogin&amp;type=signup">http://fiji.sc/index.php?title=Special:UserLogin&amp;type=signup</a>
+
+
+On to Window locations!</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 10:41:04 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; I got to the Add Personal Site and only 1 text box isn't grayed out.</span >
+
+Note the bug listed here: <a href="http://fiji.sc/How_to_set_up_and_populate_an_update_site#Specifying_an_existing_Fiji_Wiki_account">http://fiji.sc/How_to_set_up_and_populate_an_update_site#Specifying_an_existing_Fiji_Wiki_account</a></pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 10:45:21 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+Thanks for your very speedy service. Read CD is under my control so I can implement whatever is needed - as with anything else under my control. However B&amp;C (brightness - contrast) isn't mine and I have no control over it.
+
+Thanks for telling me what I need to do to make my own programs close. I will certainly do what needs to be done.
+
+Ilan</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 11:07:46 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >No worries Ilan! Brightness/Contrast is part of the core ImageJ 1.x and it is registered in the WindowManager. So I did confirm that it is closed by my fix :) 
+
+Thanks again for pointing out these issues, as they are really both critical problems.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 12:39:52 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >OK, as of <a href="https://github.com/imagej/imagej-legacy/commit/8bf1b175ffaa6fd512575fed6448c249c21c3cb3">https://github.com/imagej/imagej-legacy/commit/8bf1b175ffaa6fd512575fed6448c249c21c3cb3</a> the Fiji window should now restore its location properly.
+
+These changes were uploaded to Fiji, so both of these issues should be fixed when you update.</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 12:54:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Many thanks Mark.
+To save a bit of time, do you have an example of the code I need to add to make the modules known to ImageJ?
+
+Ilan</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-11 13:53:05 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Ilan,
+
+So there's a Read_CD.java that is a plugin, and in its run() method it displays itself right? (sorry, I just glanced at the .class files)
+
+In that same run method, you should just have to call:
+
+WindowManager.addWindow(this);
+
+and that should register your window with ImageJ 1.x.
+
+Then repeat with your other Window-based plugins (or extend a common abstract class, etc... as desired).
+
+See the ContrastAdjuster for a concrete example:
+<a href="https://github.com/imagej/ImageJA/blob/master/src/main/java/ij/plugin/frame/ContrastAdjuster.java#L85">https://github.com/imagej/ImageJA/blob/master/src/main/java/ij/plugin/frame/ContrastAdjuster.java#L85</a>
+
+Let me know if any of that is unclear!</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 01:34:12 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+I want to thank you again for all your help. I downloaded the new software and it does indeed kill B&amp;C and remember its last postion. Very nice...
+However I'm still not quite there. I didn't want to bother you with my code since I thought it was my problem to get it to work and I shouldn't be taking your time and energy.
+I added the WindowsManager.addWindow but that isn't enough. I got a bit of a laugh that it isn't just my problem. I tried to add my site, which I also can't get to fly, and that too stays around once Fiji has been killed. (Maybe this should be the case, but my gut feeling is that it should go away.)
+
+I thought the key might be IJ.register(class) but that too isn't enough. I updated source forge so at least WindowManager.addWindow is there. IJ.register isn't on source forge. I thought it might be PlugInDialog so I tried that but the Fix Imports didn't know what to do with it - and neither do I.
+
+I use NetBeans which is very nice at doing all the dialogs. I make a tiny part for the interface and do the rest with NetBeans.
+
+public class Read_CD implements PlugIn {
+
+	&#64;Override
+	public void run(String arg) {
+		ReadCdStudies dlg = new ReadCdStudies(null, false);
+		dlg.setVisible(true);
+	}
+}
+
+The main part is
+
+public class ReadCdStudies extends javax.swing.JDialog implements MouseListener {
+	static final long serialVersionUID = ChoosePetCt.serialVersionUID;
+	static final int TblPatName = 0;
+	static final int TblStudy = 1;
+	static final int TblDate = 2;
+	static final int TblSeries = 3;
+	static final int TblPatID = 4;
+	static final int numFails = 5;	// 3 is boarderline, try 5
+
+	/**
+	 * Creates new form ReadCdStudies
+	 * &#64;param parent
+	 * &#64;param modal
+	 */
+	public ReadCdStudies(java.awt.Frame parent, boolean modal) {
+		super(parent, modal);
+		initComponents();
+		WindowManager.addWindow(parent);
+		init();
+	}
+	
+	&#64;SuppressWarnings(&quot;unchecked&quot;)
+	private void init() {
+		IJ.register(Read_CD.class);
+		jPrefer = Preferences.userNodeForPackage(ReadCdStudies.class);
+		jPrefer = jPrefer.node(&quot;biplugins&quot;);
+		jCurrCD = jPrefer.getInt(&quot;current CD&quot;, 0);
+......
+
+For the IJ.register I tried both ReadCdStudies.class as well as the parent Read_CD.class. Neither is enough to make it die.
+
+I now have an account on Fiji called ilan but I still can't add my site as only 1 text box is active, and the password is grayed out.
+
+Thanks again,
+Ilan</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 01:41:47 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I see the parent is null. I've got to find an object here...</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 03:28:22 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+This seems to be non trivial. The constructor comes from the way I used NetBeans to create a new project. The Read_CD is certainly not a frame and ReadCdStudies is a JDialog and not a JFrame.
+I still can't figure a way to get anything like a frame from a dialog so that addWindow will be happy.
+What was magic about the old version that it had no problems killing all the children?
+
+Ilan</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 04:21:01 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+I found addWindow could take a window and not just a frame. I am using a very old version of ImageJ for debugging purposes and it didn't have the addWindow(Window win), so I fixed it.
+In short now it is killing my dialog and the problem is solved.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 07:05:56 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+ That's great that you got it working! It's good to hear everything's working as intended now.
+
+ As for the update site, yes there is an unfortunate bug with creating wiki sites through the updater, or logging in when your update site password (different from your Wiki account password) is not initialized.
+
+ Log in to the fiji.sc wiki and go to this page: <a href="http://fiji.sc/Special:ChangeUploadPassword">http://fiji.sc/Special:ChangeUploadPassword</a> and set the password for &quot;Your personal upload site&quot;.
+
+ After you do this, go back to Fiji and go through <a href="http://fiji.sc/How_to_set_up_and_populate_an_update_site">http://fiji.sc/How_to_set_up_and_populate_an_update_site</a> again, using your existing Fiji wiki account to log in.
+
+ You should be able to upload files to your update site at that point, and then to publicize it you just need to edit <a href="http://fiji.sc/List_of_update_sites">http://fiji.sc/List_of_update_sites</a> and add an entry for your site (alphabetically sorted).
+
+Let me know if you run into any problems with these steps!
+
+- Mark</pre>
+    </div><div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 07:46:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+Apparently I don't understand something. I see most people use various sites and my users know my source forge site. It would be most convenient to just continue with the same site.
+I get the impression that I'm supposed to upload to some new place? Huh?
+
+I made a small page on Fiji just so something would be &quot;initialized&quot;. Now I can add &quot;My site&quot;, but that is a dumb name and I can't figure out how to change it to Pet-Ct or Beth Israel plugins or something else.
+
+If my stuff remains on source forge can the user somehow specify which plugins he wants to download? Up until now I have been using a PluginsUpdater which Johannes wrote for me way back when. It takes a list of plugins to update. Each user can choose what he wishes.
+
+So I need a more intelligent name for the site and the ability to point it to source forge.
+
+Thanks again,
+Ilan</pre>
+    </div><div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 08:04:11 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+having used update sites myself, maybe I can clarify a bit:
+
+- an ImageJ update site contains the up-to-date files for the plugins served via the site, and a file (db.xml.gz) storing information about all files served by the site, including previous versions.
+
+- an update site can be any folder accessible via internet, where *you* can upload files via ssh, webdav or ftp, and where *any user* can download files via http(s)
+
+- the Fiji wiki provides a comfortable, but not the only place to store update sites, have a look at <a href="http://fiji.sc/List_of_update_sites">http://fiji.sc/List_of_update_sites</a> for examples using different URLs.
+
+- an update site has nothing to do with a wiki page, it's just for convenience that the Fiji wiki account creation can also be used to create and populate an update site on sites.imagej.net
+
+- if you want to host the update site (i.e. the folder containing db.xml.gz and the files) on your own server, you just need to provide the updater with appropriate shh/webdav logon credentials, and it will create an update site on that server.
+
+If you feel that the description on the Fiji wiki does not sufficiently explain this, please feel free to edit the instructions,
+<a href="http://fiji.sc/How_to_set_up_and_populate_an_update_site">http://fiji.sc/How_to_set_up_and_populate_an_update_site</a>
+using your newly created Fiji wiki account :)
+
+Hth,
+Jan</pre>
+    </div><div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-15 01:15:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Jan and Mark,
+I may not be able to publish my site on the Fiji list. I tried to use the Add button on the Manage update sites. I could edit the fields but it didn't like my URL. Source forge is very nice for open source programs but it may or may not have db.xml.gz. In any case the PluginUpdater which Johannes wrote for me way back when does a very nice job.
+I tried to make the URL point to a help page and/or to the Files page but it wasn't happy with it.
+Likewise the documentation requests to keep alphabetical ordering and there was no way I could control that. My attempt was at the bottom of the list. It wasn't clear to me if I was writing to only my local machine, or to a server. In any case I deleted my attempt as a failure. For the moment I don't know how to include my plugins in the list of known sites.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=769#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-15 09:17:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; I may not be able to publish my site on the Fiji list.</span >
+
+Ilan, would you mind creating a new ticket for that? It makes it much, much easier on this side to keep track of open issues and to find the correct one quickly when one has news to share.
+
+It also correctly reflects how quickly we fix bugs (which you cannot see when people start adding new problems in the comment section of an already-addressed bug).</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=769">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=769">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=769">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=769&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=769" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=769&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731782-K4bNmQ-0hvBP0L-qtcDyQZqAFhPtILgW3O4Y3ORtxZY">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

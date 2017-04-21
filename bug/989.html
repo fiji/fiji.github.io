@@ -1,0 +1,1630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 989 &ndash; HDF5 plugin doesnt load</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=989&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=989">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=989">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=989">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 989 – HDF5 plugin doesnt load",  
+                             "show_bug.cgi?id=989" );
+        document.title = "Bug 989 – HDF5 plugin doesnt load";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 989 – HDF5 plugin doesnt load", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_989 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;989</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">HDF5 plugin doesnt load</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-02-05 08:04:38 CST</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=989&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=989" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=989&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731875-a3FNuCRD_bNciWA53u8ogDiy-mgzgXTlEfE-nvIGwEk">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2015-02-05 08:04:38">
+  <input type="hidden" name="longdesclength" value="19">
+  <input type="hidden" name="id" value="989">
+  <input type="hidden" name="token" value="1492731875-lfmsWBlGr_DvASn2KSyuNlFYmqkIv1OeZIDQxEEEQg0">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=989"><b>Bug&nbsp;989</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">HDF5 plugin doesnt load</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>HDF5 plugin doesnt load
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('HDF5 plugin doesnt load', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          <tr>
+    <th class="field_label">
+      <label for="duplicates">Duplicates</label>:
+    </th>
+    <td class="field_value" colspan="2">
+      <span id="duplicates"><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - HDF5 import no longer working"
+   href="show_bug.cgi?id=995">995</a> 
+      </span>
+      (<a href="buglist.cgi?bug_id=995">view as bug list</a>)
+    </td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=989&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=989">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2015-01-21 09:58 CST by <span class="vcard"><span class="fn">Tommy</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-02-05 08:04 CST 
+      (<a href="show_activity.cgi?id=989">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>7 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="aaronj">aaronj</option>
+                <option value="ctrueden">ctrueden</option>
+                <option value="hinerm">hinerm</option>
+                <option value="nikolaus.ehrenfeuchter">nikolaus.ehrenfeuchter</option>
+                <option value="pietzsch">pietzsch</option>
+                <option value="ronneber">ronneber</option>
+                <option value="tll2120">tll2120</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=989&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=989&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tommy</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-01-21 09:58:14 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I installed Fiji and ran the updater.  Then I added the HDF5 plugin from the manage sites window.  After I restarted Fiji, I tried to import a H5 file.  It opens up to the log and shows /imaging:DATASET but then it never brings up the java window to let me select the datasets I want to open.  I thought maybe it was this computer but it also happens on the updated version of Fiji on my MacBook Pro as well.  Any thought?  Thanks
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\Users\Polleux\DOCUME~1\FIJI-W~1\Fiji.app/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; C:\Users\Polleux\DOCUME~1\FIJI-W~1\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20150116111452)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20150116114028)
+HDF5: <a href="http://sites.imagej.net/Ronneber/">http://sites.imagej.net/Ronneber/</a> (last check:20140827124014)
+
+Files not up-to-date:
+  1ad3be0d (LOCAL_ONLY) 20140115091640 jars/jpedalSTD.jar
+  e58ee14c (LOCAL_ONLY) 20141203154844 macros/Red and Green Puncta Colocalization Macro .txt
+  ed38cb75 (LOCAL_ONLY) 20141203155528 macros/Red and Green Puncta.txt
+  3e320440 (LOCAL_ONLY) 20141203155653 macros/Red and Green.txt
+  58fcc762 (LOCAL_ONLY) 20141203154402 plugins/Analyze/Colocalization_.class
+  347fe260 (LOCAL_ONLY) 20120320144156 plugins/Analyze/vamp/Readme.txt
+  ff4fbcde (LOCAL_ONLY) 20120320143128 plugins/Analyze/vamp/vamp2d_v2$pixel.class
+  ee7434b3 (LOCAL_ONLY) 20120320143128 plugins/Analyze/vamp/vamp2d_v2.class
+  56986440 (LOCAL_ONLY) 20120320143144 plugins/Analyze/vamp/vamp3d_v1$pixel.class
+  25b3018b (LOCAL_ONLY) 20120320143144 plugins/Analyze/vamp/vamp3d_v1.class
+  3589dfdf (LOCAL_ONLY) 20140117163049 plugins/MultiStackReg1.45_.jar
+  946ffba8 (LOCAL_ONLY) 20140219144622 plugins/MultipleKymograph_.class
+  54d2cdf2 (LOCAL_ONLY) 20140219144626 plugins/MultipleOverlay_.class
+  ed16bdfe (LOCAL_ONLY) 20141203155059 plugins/Red and Green Puncta Colocalization Macro .txt
+  bf8660d2 (LOCAL_ONLY) 20140219144630 plugins/StackDifference_.class
+  d3721d57 (LOCAL_ONLY) 20140219144634 plugins/WalkingAverage_.class
+  b2afde18 (LOCAL_ONLY) 20140121162540 plugins/cell_counter.jar
+  774a1cc0 (LOCAL_ONLY) 20140219144638 plugins/tsp050706.txt</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-01-21 11:28:22 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >You could try launching ImageJ from the console [1] to get more information. Or turn on Debug mode in Edit &gt; Options &gt; Misc, which will redirect the console to the ImageJ log. I'm guessing there is an exception happening, which is normally silently discarded [2].
+
+Anyway, since this is a problem with an external update site, you will need to contact the maintainer of that site [3].
+
+[1] <a href="http://imagej.net/Debugging#Launching_ImageJ_in_debug_mode">http://imagej.net/Debugging#Launching_ImageJ_in_debug_mode</a>
+[2] <a href="https://github.com/imagej/imagej-legacy/issues/97">https://github.com/imagej/imagej-legacy/issues/97</a>
+[3] <a href="mailto:ronneber&#64;informatik.uni-freiburg.de">ronneber&#64;informatik.uni-freiburg.de</a></pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-01-27 17:22:43 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >*** <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - HDF5 import no longer working"
+   href="show_bug.cgi?id=995">Bug 995</a> has been marked as a duplicate of this bug. ***</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olaf Ronneberger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-01-29 09:24:23 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+It is not a problem of my plugin, but someone has put an old version of the jhdf5 library into the fiji-update site (into jars/jhdf5.jar). Now my plugin can not find the new library any more and crashes.
+&#64;Curtis: How can I find the responsible person to remove or update that old library?
+Best regards,
+
+Olaf
+P.S.: A quick and dirty fix for HDF5 plugin users is to remove or rename that jhdf5-13.06.2.jar in the directory Fiji.app/jars</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-04 11:23:26 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi all,
+
+here is the corresponding stack trace from running Fiji with &quot;--debug&quot;:
+
+---------------------------------------
+There was a problem with the class ch.systemsx.cisd.hdf5.HDF5DataTypeInformation which can be found here:
+/opt/packages/Fiji.app/jars/jhdf5-13.06.2.jar
+/opt/packages/Fiji.app/plugins/cisd-jhdf5-batteries_included_lin_win_mac.jar
+
+WARNING: multiple locations found!
+java.lang.NoSuchMethodError: ch.systemsx.cisd.hdf5.HDF5DataTypeInformation.isSigned()Z
+	at HDF5ImageJ.dsInfoToTypeString(HDF5ImageJ.java:799)
+	at HDF5_Reader_Vibez.recursiveGetInfo(HDF5_Reader_Vibez.java:423)
+	at HDF5_Reader_Vibez.recursiveGetInfo(HDF5_Reader_Vibez.java:451)
+	at HDF5_Reader_Vibez.run(HDF5_Reader_Vibez.java:167)
+	at ij.IJ.runUserPlugIn(IJ.java:202)
+	at ij.IJ.runPlugIn(IJ.java:166)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:662)
+
+java.lang.NoSuchMethodException: Could not find method ch.systemsx.cisd.hdf5.HDF5DataTypeInformation.isSigned()Z
+There was a problem with the class ch.systemsx.cisd.hdf5.HDF5DataTypeInformation which can be found here:
+/opt/packages/Fiji.app/jars/jhdf5-13.06.2.jar
+/opt/packages/Fiji.app/plugins/cisd-jhdf5-batteries_included_lin_win_mac.jar
+
+WARNING: multiple locations found!
+java.lang.NoSuchMethodError: ch.systemsx.cisd.hdf5.HDF5DataTypeInformation.isSigned()Z
+	at HDF5ImageJ.dsInfoToTypeString(HDF5ImageJ.java:799)
+	at HDF5_Reader_Vibez.recursiveGetInfo(HDF5_Reader_Vibez.java:423)
+	at HDF5_Reader_Vibez.recursiveGetInfo(HDF5_Reader_Vibez.java:451)
+	at HDF5_Reader_Vibez.run(HDF5_Reader_Vibez.java:167)
+	at ij.IJ.runUserPlugIn(IJ.java:202)
+	at ij.IJ.runPlugIn(IJ.java:166)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:662)
+
+	at HDF5ImageJ.dsInfoToTypeString(HDF5ImageJ.java:799)
+	at HDF5_Reader_Vibez.recursiveGetInfo(HDF5_Reader_Vibez.java:423)
+	at HDF5_Reader_Vibez.recursiveGetInfo(HDF5_Reader_Vibez.java:451)
+	at HDF5_Reader_Vibez.run(HDF5_Reader_Vibez.java:167)
+	at ij.IJ.runUserPlugIn(IJ.java:202)
+	at ij.IJ.runPlugIn(IJ.java:166)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:662)
+---------------------------------------
+
+Cheers
+Niko</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-04 11:44:13 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The version of jhdf5 shipped on the Fiji update site is 13.06.2. This is a dependency brought in by the BigDataViewer:
+* <a href="https://github.com/bigdataviewer/bigdataviewer-core/blob/bigdataviewer-core-1.0.2/pom.xml#L38-L41">https://github.com/bigdataviewer/bigdataviewer-core/blob/bigdataviewer-core-1.0.2/pom.xml#L38-L41</a>
+* <a href="https://github.com/bigdataviewer/pom-bigdataviewer/blob/bigdataviewer-1.0.5/pom.xml#L52">https://github.com/bigdataviewer/pom-bigdataviewer/blob/bigdataviewer-1.0.5/pom.xml#L52</a>
+
+I tried downloading the 14.12.0 release from <a href="https://wiki-bsse.ethz.ch/display/JHDF5/Download+Page">https://wiki-bsse.ethz.ch/display/JHDF5/Download+Page</a>, but after unpacking I see several JAR files in the lib folder, as well as a &quot;batteries_included&quot; uber-jar (which we definitely do not want to ship with Fiji because it embeds several unshaded dependencies including Apache Commons IO).
+
+It would be ideal if the JHDF5 project could provide consumable Maven artifact(s) so that the BigDataViewer could be easily and cleanly upgraded to use newer versions as they are released.
+
+&#64;Olaf: Is such a Mavenization something you could make happen on your end? If not, what is the best way to proceed here? I can do a one-time deployment of 14.12.0 to the ImageJ Maven repository, and upgrade the core Fiji update site to use it, but I don't want to have to do that every time a new JHDF5 is released.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-04 12:01:08 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Also, there is now SCIFIO-HDF5 - <a href="https://github.com/scifio/scifio-hdf5">https://github.com/scifio/scifio-hdf5</a> - which is using 13.06.2 (because that's what was on our Maven repo).
+
+However, it looks like that jar is the unshaded uber-jar which must be fixed. Otherwise there is a clash between jhdf5 and apache-commons-io (and potentially other third-party dependencies). See also 
+<a href="http://imagej.net/Frequently_Asked_Questions#How_can_I_call_ImageJ_from_my_software.3F">http://imagej.net/Frequently_Asked_Questions#How_can_I_call_ImageJ_from_my_software.3F</a>
+
+Two ways to fix this are:
+1) Shaded uber-jar (e.g. <a href="https://github.com/scijava/jython-shaded">https://github.com/scijava/jython-shaded</a>)
+2) Individual mavenized components
+
+Once a maven artifact for 14.12.0 exists we can update SCIFIO-HDF5 and BDV to use it and update the core Fiji update site accordingly. As a bonus, the HDF5 update site wouldn't have to ship its own jhdf5 library.
+
+Let Curtis and me know if you need further guidance/advice on resolving this issue.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olaf Ronneberger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-04 14:30:44 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Chris,
+
+The jhdf5 library is developed by Bernd Rinn from ETH SIS (ETH Scientific IT Services). My HDF5 plugin just uses that library and Bernd was so kind to add some functionality needed for images (e.g. unsigned data types) to his library.
+I don't know, wether he has time and capacity to mavenize his library, but I guess there will be not frequent updates -- So a one-time one-time deployment would be possibly the best way.
+I will ask him, what he thinks,
+Best regards,
+
+Olaf</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-04 15:31:26 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; a one-time one-time deployment would be possibly the best way.</span >
+
+OK, I uploaded the 14.12.0 JHDF5 uber-jar [1] to the Fiji update site.
+
+I also added management of the JHDF5 version to pom-scijava, so that all downstream components can be sure to use the same version in the future:
+* <a href="https://github.com/scijava/pom-scijava/commit/1adde967eccff1c4f7631bd7113ab770d822535d">https://github.com/scijava/pom-scijava/commit/1adde967eccff1c4f7631bd7113ab770d822535d</a>
+
+We are planning to cut some component releases on Friday, and will take care of updating scifio-hdf5 and bigdataviewer-core to both depend on jhdf5 14.12.0 henceforth.
+
+So this issue should now be resolved. And Olaf, you should be able to remove your shadowed version of jhdf5 from your HDF5 update site, if you wish.
+
+[1] Regarding possible dependency conflicts surrounding the uber-jar: everything &quot;accidentally&quot; works at the moment because the only third party dependencies included in the JHDF5 uber-jar are Apache Commons I/O and Apache Commons Lang. Fiji does not ship Commons I/O otherwise, so that is not a clash (yet), and the version of Commons Lang shipped by Fiji is Commons Lang 3 which changed its package prefix precisely to avoid such version clashes in some cases. So for the time being, we'll tolerate the dependency bundling inside jhdf5. Would be nice to make it proper someday, though.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tobias Pietzsch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 05:45:40 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+thanks for the quick resolution Curtis!
+
+I will try to make a non-uber-jar mavenized jhdf5 version when I find the time. I'll remove the apache-commons stuff and include that as a pom dependency. It would be nice to still have &quot;batteries-included&quot;, i.e. all the native stuff. I don't think it is required to split that up further; what do you think?
+
+Olaf, interesting to here about added support for unsigned data types! So far I have worked around this in BigDataViewer by pretending my ushorts would be shorts... Could you quickly point me to the relevant additions in the API doc?
+
+all the best,
+Tobias</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olaf Ronneberger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 06:21:13 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Here is some code snipplet from my HDF5ImageJ class. I translate the data type into strings (e.g. &quot;uint8&quot;) to make the comparison easier:
+
+IHDF5ReaderConfigurator conf = HDF5Factory.configureForReading(filename);
+conf.performNumericConversions();
+IHDF5Reader reader = conf.reader();
+HDF5DataSetInformation dsInfo = reader.object().getDataSetInformation(dsetName);
+HDF5DataTypeInformation dsType = dsInfo.getTypeInformation();
+String typeText = &quot;&quot;;
+    
+if (dsType.isSigned() == false) {
+   typeText += &quot;u&quot;;
+}
+    
+switch( dsType.getDataClass())
+{
+  case INTEGER:
+    typeText += &quot;int&quot; + 8*dsType.getElementSize();
+    break;
+  case FLOAT:
+    typeText += &quot;float&quot; + 8*dsType.getElementSize();
+    break;
+  default:
+    typeText += dsInfo.toString();
+}</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olaf Ronneberger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 06:24:15 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >oh and the rest is straight forward, e.g. use:
+
+byte[] rawdata = reader.uint8().readMDArray(dsetName).getAsFlatArray();
+
+best regards,
+Olaf</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tobias Pietzsch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 06:25:22 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Cool. Thanks, Olaf!</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 07:38:47 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for the quick solution everyone! Tested it with various HDF5 files on Linux and Windows, works fine :)
+
+I'll try to help Olaf in convincing Bernd Rinn to mavenize the JHDF5 library.</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 07:45:22 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks everyone. A couple of quick comments:
+
+1) What would be most helpful relating to JHDF5 and Maven would be for JHDF5 to be available somehow as Maven artifacts. That does _not_ necessarily mean it needs to switch to using Maven as a build system. There are various other ways of accomplishing this: e.g., hook up Ivy to Ant, or use Gradle to build. Personally I like using Maven to build, but for those who don't, all that is necessary is to somehow make available the JAR files which already exist.
+
+2) The only packaging change I would make is, as I said earlier, to shade or eliminate the embedded Commons I/O and Commons Lang dependencies within the &quot;batteries included&quot; uber-jar. (I agree with Tobi that we don't have to split up the first party functionality.)
+
+3) I did not actually test that BDV still works with the 14.12.0 JAR. Sorry for not doing that, Tobi. Hopefully all is well -- I got the impression that 14.12.0 is only new functionality, and still backwards compatible with 13.06.2. But it would be good to be certain.</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 07:47:08 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Oh, one more thing I forgot! Olaf: as Mark said, we now have a SCIFIO HDF5 format, written by Henry Pinkard, at: <a href="https://github.com/scifio/scifio-hdf5">https://github.com/scifio/scifio-hdf5</a>. But right now it only has a writer, not a reader, and only to (IIUC) an Imaris-specific flavor of HDF5.
+
+It would super awesome if your HDF5 reader plugin could become part of the scifio-hdf5 project, so that all tools that use SCIFIO (including ImageJ2) would gain automatic support for reading HDF5. Then we wouldn't need a separate update site for this anymore.</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tobias Pietzsch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 07:52:52 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >&#64;Curtis: I verified that BDV works with the new jhdf5 version. Let me know when you add a managed version to pom-imagej. Then I'll remove the explicit version from pom-bigdataviewer.
+
+I'm also currently adding support for imaris files to BDV. Nice to see that everything seems to be converging!</pre>
+    </div><div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 07:57:45 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >On a side-note, there is quite some demand for reading HDF5 based images with the Bio-Formats library, e.g. the SVI (Huygens) flavour:
+
+<a href="https://trac.openmicroscopy.org.uk/ome/ticket/4104">https://trac.openmicroscopy.org.uk/ome/ticket/4104</a>
+
+Right now, we're using Olaf's Fiji plugin to read the SVI .h5 files, which seem to store the pixel data in one single 5-dimensional array with CTZYX layout.
+
+I have to say that I'd absolutely love to see the JHDF5 plugin merge with scifio-hdf5, that would be amazing!</pre>
+    </div><div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=989#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-05 08:04:38 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >&#64;Niko: If scifio-hdf5 gains HDF5 reading abilities, then all we'll need in order to also have Bio-Fomrats support is to resurrect our SCIFIO -&gt; Bio-Formats bridge in the scifio-bf-compat component. Right now it enables SCIFIO to read/write all BF formats, but we also want vice versa. We had a working prototype a while back -- it just needs a little  spit and polish. We will prioritize it as soon as anybody needs it.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=989">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=989">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=989">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=989&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=989" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=989&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731875-a3FNuCRD_bNciWA53u8ogDiy-mgzgXTlEfE-nvIGwEk">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,1216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1041 &ndash; ClassCastException on using the Window menu</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=1041&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=1041">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=1041">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=1041">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 1041 – ClassCastException on using the Window menu",  
+                             "show_bug.cgi?id=1041" );
+        document.title = "Bug 1041 – ClassCastException on using the Window menu";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 1041 – ClassCastException on using the Window menu", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_1041 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1041</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">ClassCastException on using the Window menu</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-04-08 08:51:47 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=1041&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=1041" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=1041&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731897-PAsbPnuTIq_yRAlh61s_ru6GJ1ZEw3F9BtbBGGVlF7A">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2015-04-08 08:51:47">
+  <input type="hidden" name="longdesclength" value="4">
+  <input type="hidden" name="id" value="1041">
+  <input type="hidden" name="token" value="1492731897-VU-NGYgUgo7iMtRPAhURAVPXJptbA-w8JUx0-Sm0Ixk">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=1041"><b>Bug&nbsp;1041</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">ClassCastException on using the Window menu</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>ClassCastException on using the Window menu
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('ClassCastException on using the Window menu', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=1041&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=1041">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2015-03-31 04:25 CDT by <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-04-08 08:51 CDT 
+      (<a href="show_activity.cgi?id=1041">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="jan.eglinger">jan.eglinger</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=1041&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=1041&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=1041#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-31 04:25:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >A ClassCastException now appears in the new Console window upon clicking on any entry in the window list. To reproduce, open the blobs.gif sample image ('File &gt; Open Samples &gt; Blobs (25K)') and then click on 'Window &gt; blobs.gif'. (When using macro code, no exception is thrown.)
+
+The stack trace is pasted below. To improve the usability of the Console window, it would be nice if it automatically scrolled to the bottom when new output appears.
+
+Exception in thread &quot;AWT-EventQueue-0&quot; java.lang.ClassCastException: java.awt.MenuItem cannot be cast to java.awt.CheckboxMenuItem
+	ij.WindowManager.activateWindow(WindowManager.java:524)
+	ij.ImageJ.itemStateChanged(ImageJ.java:354)
+	java.awt.CheckboxMenuItem.processItemEvent(CheckboxMenuItem.java:364)
+	java.awt.CheckboxMenuItem.processEvent(CheckboxMenuItem.java:332)
+	java.awt.MenuComponent.dispatchEventImpl(MenuComponent.java:317)
+	java.awt.MenuComponent.dispatchEvent(MenuComponent.java:305)
+	java.awt.EventQueue.dispatchEvent(EventQueue.java:602)
+	java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+
+	at ij.WindowManager.activateWindow(WindowManager.java:524)
+	at ij.ImageJ.itemStateChanged(ImageJ.java:354)
+	at java.awt.CheckboxMenuItem.processItemEvent(CheckboxMenuItem.java:364)
+	at java.awt.CheckboxMenuItem.processEvent(CheckboxMenuItem.java:332)
+	at java.awt.MenuComponent.dispatchEventImpl(MenuComponent.java:317)
+	at java.awt.MenuComponent.dispatchEvent(MenuComponent.java:305)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:602)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_20
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_20-b02
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 16.3-b01
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\UTILIT~1\FIJI_1~1.APP/java/win64/jdk1.6.0_20//jre
+  imagej.dir =&gt; C:\UTILIT~1\FIJI_1~1.APP
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20150328055348)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20150325042333)
+3D ImageJ Suite: <a href="http://sites.imagej.net/Tboudier/">http://sites.imagej.net/Tboudier/</a> (last check:20150331042210)
+IBMP-CNRS: <a href="http://www-ibmp.u-strasbg.fr/fijiupdates/">http://www-ibmp.u-strasbg.fr/fijiupdates/</a> (last check:20150318110643)
+IJPB-plugins: <a href="http://sites.imagej.net/IJPB-plugins/">http://sites.imagej.net/IJPB-plugins/</a> (last check:20150323104329)
+FMI-FAIM: <a href="http://imagej.fmi.ch/update/">http://imagej.fmi.ch/update/</a> (last check:20150316085545)
+
+Files not up-to-date:
+  c3f8675e (OBSOLETE_UNINSTALLED) 20120514091631 jars/Jama.jar
+  6d4e5b75 (OBSOLETE_UNINSTALLED) 20121015100059 jars/bio-formats-4.4.4.jar
+  633579fc (OBSOLETE_UNINSTALLED) 20110912093828 jars/commons-math.jar
+  368901ce (OBSOLETE_UNINSTALLED) 20110113132723 jars/edu_mines_jtk.jar
+  a9628561 (OBSOLETE_UNINSTALLED) 20120924094524 jars/forms-1.2.1.jar
+  e7f4bb63 (OBSOLETE_UNINSTALLED) 20120924094528 jars/ij-commands-app-2.0.0-beta4.jar
+  1426358a (OBSOLETE_UNINSTALLED) 20120924094529 jars/ij-commands-data-2.0.0-beta4.jar
+  4501c6a4 (OBSOLETE_UNINSTALLED) 20120924094529 jars/ij-commands-debug-2.0.0-beta4.jar
+  a8ebf0fe (OBSOLETE_UNINSTALLED) 20120924094529 jars/ij-commands-display-2.0.0-beta4.jar
+  0d29ff26 (OBSOLETE_UNINSTALLED) 20120924094529 jars/ij-commands-misc-2.0.0-beta4.jar
+  b46e5c1a (OBSOLETE_UNINSTALLED) 20121029100040 jars/ij-core-2.0.0-SNAPSHOT.jar
+  3f78a191 (OBSOLETE_UNINSTALLED) 20120924094519 jars/ij-data-2.0.0-beta4.jar
+  d1eab723 (OBSOLETE_UNINSTALLED) 20120924094516 jars/ij-io-2.0.0-beta4.jar
+  99ffac9d (OBSOLETE_UNINSTALLED) 20120924094528 jars/ij-launcher-2.0.0-beta4.jar
+  2d43f8ed (OBSOLETE_UNINSTALLED) 20120924094523 jars/ij-options-2.0.0-beta4.jar
+  d8048363 (OBSOLETE_UNINSTALLED) 20120924094528 jars/ij-platforms-2.0.0-beta4.jar
+  ae2d45a8 (OBSOLETE_UNINSTALLED) 20120924094517 jars/ij-ui-2.0.0-beta4.jar
+  e0c91011 (OBSOLETE_UNINSTALLED) 20120924094516 jars/ij-ui-common-awt-2.0.0-beta4.jar
+  0939b35f (OBSOLETE_UNINSTALLED) 20120924094529 jars/ij-ui-swing-2.0.0-beta4.jar
+  dc68f25e (OBSOLETE_UNINSTALLED) 20121029100038 jars/ij-ui-swing-updater-2.0.0-beta5.jar
+  46ee0e02 (OBSOLETE_UNINSTALLED) 20121029100038 jars/ij-updater-core-2.0.0-beta5.jar
+  5f97d356 (OBSOLETE_UNINSTALLED) 20120924094517 jars/ij-util-awt-2.0.0-beta4.jar
+  8864ee56 (OBSOLETE_UNINSTALLED) 20120924094524 jars/ij-util-swing-2.0.0-beta4.jar
+  fde9a8db (OBSOLETE_UNINSTALLED) 20120430091318 jars/imglib-algorithms.jar
+  fc48b04a (OBSOLETE_UNINSTALLED) 20120416093327 jars/imglib-ij.jar
+  08453207 (OBSOLETE_UNINSTALLED) 20120416093327 jars/imglib-io.jar
+  cacbad88 (OBSOLETE_UNINSTALLED) 20120416093328 jars/imglib-scripting.jar
+  d0560c65 (OBSOLETE_UNINSTALLED) 20120430091318 jars/imglib.jar
+  33a0ff87 (OBSOLETE_UNINSTALLED) 20120924094525 jars/imglib2-algorithms-2.0.0-beta4.jar
+  e299d045 (OBSOLETE_UNINSTALLED) 20120924094530 jars/imglib2-algorithms-gpl-2.0.0-beta4.jar
+  65a044d1 (OBSOLETE_UNINSTALLED) 20120924094525 jars/imglib2-io-2.0.0-beta4.jar
+  4297bc3a (OBSOLETE_UNINSTALLED) 20120924094518 jars/imglib2-ops-2.0.0-beta4.jar
+  25331672 (OBSOLETE_UNINSTALLED) 20110113132722 jars/jai_codec.jar
+  2a328b6b (OBSOLETE_UNINSTALLED) 20110113132733 jars/jai_core.jar
+  3ca141dd (OBSOLETE_UNINSTALLED) 20121015100053 jars/jai_imageio-4.4.4.jar
+  a100c1cf (OBSOLETE_UNINSTALLED) 20120514091632 jars/jgrapht-jdk1.6.jar
+  63e90571 20110113132716 jars/jpedalSTD.jar
+  b9040757 (OBSOLETE_UNINSTALLED) 20110131094005 jars/jruby.jar
+  24d47d70 (OBSOLETE_UNINSTALLED) 20120806093949 jars/junit-4.8.1.jar
+  d6edc3bb (OBSOLETE_UNINSTALLED) 20110131093929 jars/jython.jar
+  0affc888 (OBSOLETE_UNINSTALLED) 20121015100058 jars/loci-common-4.4.4.jar
+  8dd17a33 (OBSOLETE_UNINSTALLED) 20121015100053 jars/lwf-stubs-4.4.4.jar
+  17ee3ebc (OBSOLETE_UNINSTALLED) 20121015100059 jars/mdbtools-java-4.4.4.jar
+  2d334013 (OBSOLETE_UNINSTALLED) 20121015100059 jars/metakit-4.4.4.jar
+  45634065 (OBSOLETE_UNINSTALLED) 20120806093951 jars/netcdf-java-4.0.41.jar
+  77f6bc80 (OBSOLETE_UNINSTALLED) 20121015100054 jars/ome-xml-4.4.4.jar
+  abe4c1f0 (OBSOLETE_UNINSTALLED) 20121015100100 jars/poi-loci-4.4.4.jar
+  4778f122 (OBSOLETE_UNINSTALLED) 20120730093921 jars/sezpoz-1.9.jar
+  1b71cda4 (OBSOLETE_UNINSTALLED) 20120730093921 jars/slf4j-log4j12-1.5.10.jar
+  62509daf (OBSOLETE_UNINSTALLED) 20110113132738 jars/weka.jar
+  1fede087 (LOCAL_ONLY) 20150316143640 luts/parula.lut
+  0ed9a2fe 20110209134017 macros/BatchMacro.ijm
+  313a7586 20110523092013 plugins/FMI/Disclaimer_.jar
+  c91a4910 20110214092644 plugins/FMI/FMI_update.jar
+  9b312c90 20110214092644 plugins/FMI/Grouped_ZProjector.jar
+  931423b9 20121010133023 plugins/FMI/HighpassFilters_.class
+  9ed6382f 20121010133023 plugins/FMI/HighpassStack_.class
+  2eae14c0 20110328092939 plugins/FMI/PureDenoise_.jar
+  5e7fc495 20110214092644 plugins/FMI/Scratch_Assay.jar
+  1bee2ba6 20110523092013 plugins/FMI/Spectral_Unmixing.jar
+  06b6819a 20110214092644 plugins/FMI/SpotTracker2D_.jar
+  4a693a23 20110214092644 plugins/FMI/Spot_Detector.jar
+  1afe11d1 20110214092718 plugins/FMI/URL.txt
+  9fff1e2d 20111017090718 plugins/FMI/cell_counter.jar
+  a766cf0a 20110328092939 plugins/FMI/macros/Conv_Time-Z_and_PureDenoise.ijm
+  91b1775c 20110214092644 plugins/FMI/macros/MIPs for PSFs FMI_.ijm
+  9e2a3c18 20120831091041 plugins/FMI/macros/MIPs for PSFs all microscopes_V2_.ijm
+  04401060 20120523120819 plugins/FMI/macros/Pielage_01_.ijm
+  cd30a86e 20120730093837 plugins/FMI/macros/ROI_Free_Rotation_.ijm
+  af78fcce 20120529093304 plugins/FMI/macros/Shading_Correction_Tiles_.ijm
+  58f30b14 20121010133023 plugins/FMI/macros/corr_bleach050405_.ijm
+  dd183c92 20110701160315 plugins/FMI/macros/selectiveMerge_.ijm
+  969da055 20101129224326 plugins/Imaris/Ice.jar
+  cc408f48 20101129224326 plugins/Imaris/Imaris_Bridge72.jar
+  4b5e3040 20110926140233 plugins/MIPs_for_PSFs_all_microscopes_.ijm
+  1444c9fa 20110909095918 plugins/PointPicker_.class
+  c729958a (OBSOLETE_UNINSTALLED) 20120709092046 plugins/Script_Editor.jar
+  be6fb476 20050119143100 plugins/SpotTracker2D/AlignNucleus_.class
+  cc1efeea 20050119143100 plugins/SpotTracker2D/EnhanceSpot_.class
+  02ef2271 20050119143100 plugins/SpotTracker2D/GeneratePath_.class
+  e997aa60 20050119143100 plugins/SpotTracker2D/RescaleSlice_.class
+  0beb33e9 20050119143100 plugins/SpotTracker2D/SpotTracker2D_.class
+  3ef47e66 20050119143100 plugins/SpotTracker2D/imageware/Access.class
+  5e5d2a89 20050119143100 plugins/SpotTracker2D/imageware/Buffer.class
+  d498b0ae 20050119143100 plugins/SpotTracker2D/imageware/Builder.class
+  dd555e7d 20050119143100 plugins/SpotTracker2D/imageware/ByteAccess.class
+  4093400c 20050119143100 plugins/SpotTracker2D/imageware/ByteBuffer.class
+  9b05a77d 20050119143100 plugins/SpotTracker2D/imageware/BytePointwise.class
+  0edd144b 20050119143100 plugins/SpotTracker2D/imageware/ByteProcess.class
+  493c9722 20050119143100 plugins/SpotTracker2D/imageware/ByteSet.class
+  5ee8fa13 20050119143100 plugins/SpotTracker2D/imageware/Convolver.class
+  a2025539 20050119143100 plugins/SpotTracker2D/imageware/Display.class
+  e1f1702d 20050119143100 plugins/SpotTracker2D/imageware/DoubleAccess.class
+  16dbfbbe 20050119143100 plugins/SpotTracker2D/imageware/DoubleBuffer.class
+  12dbc02d 20050119143100 plugins/SpotTracker2D/imageware/DoublePointwise.class
+  4f9ba5f3 20050119143100 plugins/SpotTracker2D/imageware/DoubleProcess.class
+  47f73af4 20050119143100 plugins/SpotTracker2D/imageware/DoubleSet.class
+  9caad575 20050119143100 plugins/SpotTracker2D/imageware/FMath.class
+  cac7b64d 20050119143100 plugins/SpotTracker2D/imageware/FloatAccess.class
+  c79bc092 20050119143100 plugins/SpotTracker2D/imageware/FloatBuffer.class
+  da16d563 20050119143100 plugins/SpotTracker2D/imageware/FloatPointwise.class
+  bd00665f 20050119143100 plugins/SpotTracker2D/imageware/FloatProcess.class
+  30de9a8b 20050119143100 plugins/SpotTracker2D/imageware/FloatSet.class
+  f03d9ea6 20050119143100 plugins/SpotTracker2D/imageware/ImageAccess.class
+  b7aaba79 20050119143100 plugins/SpotTracker2D/imageware/ImageWare.class
+  784147e5 20050119143100 plugins/SpotTracker2D/imageware/Pointwise.class
+  41343d55 20050119143100 plugins/SpotTracker2D/imageware/Process.class
+  729e1e7d 20050119143100 plugins/SpotTracker2D/imageware/ShortAccess.class
+  d829cb03 20050119143100 plugins/SpotTracker2D/imageware/ShortBuffer.class
+  72fffff7 20050119143100 plugins/SpotTracker2D/imageware/ShortPointwise.class
+  56209816 20050119143100 plugins/SpotTracker2D/imageware/ShortProcess.class
+  c2f3899f 20050119143100 plugins/SpotTracker2D/imageware/ShortSet.class
+  d07ae292 20050119143100 plugins/SpotTracker2D/spottracker2d/AlignNucleusFrame.class
+  08086489 20050119143100 plugins/SpotTracker2D/spottracker2d/CProgressBar.class
+  ac01c13f 20050119143100 plugins/SpotTracker2D/spottracker2d/ControlPoint.class
+  bb006f38 20050119143100 plugins/SpotTracker2D/spottracker2d/EnhanceSpotFrame.class
+  fd0cb171 20050119143100 plugins/SpotTracker2D/spottracker2d/FEMatrix.class
+  ade4a500 20050119143100 plugins/SpotTracker2D/spottracker2d/FitEllipse.class
+  97aca30e 20050119143100 plugins/SpotTracker2D/spottracker2d/Handler.class
+  fec7ce89 20050119143100 plugins/SpotTracker2D/spottracker2d/MessageBox.class
+  a42fc109 20050119143100 plugins/SpotTracker2D/spottracker2d/PointTrack.class
+  0dc64a3f 20050119143100 plugins/SpotTracker2D/spottracker2d/Processor.class
+  35fa9c9d 20050119143100 plugins/SpotTracker2D/spottracker2d/ProjectionCurve.class
+  e7646526 20050119143100 plugins/SpotTracker2D/spottracker2d/RescaleSliceFrame.class
+  b63af82e 20050119143100 plugins/SpotTracker2D/spottracker2d/ScrollPanel.class
+  8144eb12 20050119143100 plugins/SpotTracker2D/spottracker2d/SetViewing.class
+  65ae8861 20050119143100 plugins/SpotTracker2D/spottracker2d/SliderPanel.class
+  0fa1382d 20050119143100 plugins/SpotTracker2D/spottracker2d/SpotTrackerPopup.class
+  6cf0f4d9 20050119143100 plugins/SpotTracker2D/spottracker2d/TableResults.class
+  8ea206b0 20050119143100 plugins/SpotTracker2D/spottracker2d/ThresholdPanel.class
+  8ec04fdc 20050119143100 plugins/SpotTracker2D/spottracker2d/TrackDialog.class
+  cf2725cf 20050119143100 plugins/SpotTracker2D/spottracker2d/Tracker.class
+  c4c8231b 20050119143100 plugins/SpotTracker2D/spottracker2d/ViewerCanvas.class
+  f8cae16b 20050119143100 plugins/SpotTracker2D/spottracker2d/ViewerFrame.class
+  49ccb2a7 (OBSOLETE_UNINSTALLED) 20121015100100 plugins/loci_plugins-4.4.4.jar
+  3ec3ca2b 20110909095918 plugins/pointAction.class
+  7f829229 20110909095918 plugins/pointHandler.class
+  a65fc0a1 20110909095918 plugins/pointPickerClearAll.class
+  b28386bf 20110909095918 plugins/pointPickerColorSettings.class
+  187f9cd6 20110909095918 plugins/pointPickerFile.class
+  d8267171 20110909095918 plugins/pointPickerTerminate.class
+  b55663f1 20110909095918 plugins/pointToolbar.class
+  d3260180 20110113132702 scripts/Record_Desktop.py
+  0ea7f8fc 20110113132702 scripts/Record_Window.py</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=1041#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-31 10:44:57 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This bug is fixed in the ImageJ 1.49r2 daily build.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=1041#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-04-07 08:40:07 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; To improve the usability of the Console window, it would be nice if
+&gt; it automatically scrolled to the bottom when new output appears.</span >
+
+Indeed. Mark filed an issue:
+  <a href="https://github.com/scijava/scijava-ui-swing/issues/7">https://github.com/scijava/scijava-ui-swing/issues/7</a></pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=1041#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-04-08 08:51:47 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >&#64;Curtis: thanks for pointing to the relevant code. I filed a pull request with my suggested enhancement:
+  <a href="https://github.com/scijava/scijava-ui-swing/pull/8">https://github.com/scijava/scijava-ui-swing/pull/8</a></pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=1041">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=1041">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=1041">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=1041&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=1041" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=1041&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731897-PAsbPnuTIq_yRAlh61s_ru6GJ1ZEw3F9BtbBGGVlF7A">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

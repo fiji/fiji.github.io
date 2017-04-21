@@ -1,0 +1,2591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 784 &ndash; Closing the ImageJ toolbar stopped closing TrakEM2</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=784&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=784">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=784">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=784">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 784 – Closing the ImageJ toolbar stopped closing TrakEM2",  
+                             "show_bug.cgi?id=784" );
+        document.title = "Bug 784 – Closing the ImageJ toolbar stopped closing TrakEM2";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 784 – Closing the ImageJ toolbar stopped closing TrakEM2", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_784 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;784</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Closing the ImageJ toolbar stopped closing TrakEM2</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-07-14 12:05:08 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=784&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=784" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=784&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731789-ElhkLxSCLtTah1F0FNMb6t9xOBvLci6xATbidyuGrRc">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-07-14 12:05:08">
+  <input type="hidden" name="longdesclength" value="12">
+  <input type="hidden" name="id" value="784">
+  <input type="hidden" name="token" value="1492731789--YCA7qUsU7tqYgjy_tOazbDQxzbFV2GRfnFkyYDvM5Y">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=784"><b>Bug&nbsp;784</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Closing the ImageJ toolbar stopped closing TrakEM2</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>Closing the ImageJ toolbar stopped closing TrakEM2
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Closing the ImageJ toolbar stopped closing TrakEM2', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=784&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=784">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-06-12 14:29 CDT by <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-07-14 12:05 CDT 
+      (<a href="show_activity.cgi?id=784">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="imagej-bugs">imagej-bugs</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="saalfeld">saalfeld</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=784&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=784&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 14:29:22 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Freshly updated Fiji stopped closing TrakEM2.  Closing the then standalone TrakEM2 does not close Fiji which remains running without UI.  No output in the terminal.
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.2.0-64-generic
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; gnome
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /groups/saalfeld/home/saalfelds/packages/Fiji.app/java/linux-amd64/jdk1.6.0_24//jre
+  imagej.dir =&gt; /groups/saalfeld/home/saalfelds/packages/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140611133802)
+
+Files not up-to-date:
+  7c30c48a (MODIFIED) 20131109081822 Contents/Info.plist
+  92d974dd 20131109085215 fiji-linux64
+  a02d5340 (MODIFIED) 20131109081823 images/icon.png
+  0543a785 (LOCAL_ONLY) 20131109081825 jars/Fiji.jar
+  91ece67d (LOCAL_ONLY) 20140610185424 jars/JWlz-1.4.0.jar
+  c3f8675e (LOCAL_ONLY) 20131109081825 jars/Jama.jar
+  2665fff0 (LOCAL_ONLY) 20140418143956 jars/T2-NIT-1.0-SNAPSHOT.jar
+  97e95d02 (LOCAL_ONLY) 20140418144000 jars/T2-TreelineGraph-0.1-SNAPSHOT.jar
+  ad44ab73 (LOCAL_ONLY) 20140610185426 jars/VIB-lib-2.0.0-SNAPSHOT.jar
+  bd573380 (LOCAL_ONLY) 20131109081826 jars/VectorString.jar
+  8e160955 (LOCAL_ONLY) 20131109081828 jars/ant-junit.jar
+  4124ed0d (LOCAL_ONLY) 20131109081828 jars/ant-launcher.jar
+  b18659ff (LOCAL_ONLY) 20131109081832 jars/ant-nodeps.jar
+  70c12cd3 (LOCAL_ONLY) 20131109081839 jars/ant.jar
+  a70a2d61 (LOCAL_ONLY) 20140610185428 jars/args4j-2.0.25.jar
+  ff131d48 (LOCAL_ONLY) 20131109081840 jars/autocomplete.jar
+  5a0c7964 (LOCAL_ONLY) 20140418143946 jars/batik-1.8.jar
+  060376e4 (LOCAL_ONLY) 20140610185420 jars/bio-formats/formats-api-5.0.2.jar
+  95823b1e (LOCAL_ONLY) 20140610185421 jars/bio-formats/formats-bsd-5.0.2.jar
+  06e364df (LOCAL_ONLY) 20140610185422 jars/bio-formats/formats-common-5.0.2.jar
+  8f8c6819 (LOCAL_ONLY) 20140610185422 jars/bio-formats/formats-gpl-5.0.2.jar
+  3d2962d3 (LOCAL_ONLY) 20140610185423 jars/bio-formats/jai_imageio-5.0.2.jar
+  e8d453ec (LOCAL_ONLY) 20140610185423 jars/bio-formats/mdbtools-java-5.0.2.jar
+  70e68706 (LOCAL_ONLY) 20140610185423 jars/bio-formats/metakit-5.0.2.jar
+  096abf51 (LOCAL_ONLY) 20140610185423 jars/bio-formats/ome-poi-5.0.2.jar
+  429311fd (LOCAL_ONLY) 20140610185423 jars/bio-formats/ome-xml-5.0.2.jar
+  1deeabc9 (LOCAL_ONLY) 20140610185424 jars/bio-formats/specification-5.0.2.jar
+  d879d232 (LOCAL_ONLY) 20140610185424 jars/bio-formats/turbojpeg-5.0.2.jar
+  8eb3709e (LOCAL_ONLY) 20131109081952 jars/commons-logging-1.1.1.jar
+  f9509b47 (LOCAL_ONLY) 20140418143946 jars/commons-math3-3.2.jar
+  b6bf3817 (LOCAL_ONLY) 20131109082006 jars/edu_mines_jtk.jar
+  efcc8eb3 (LOCAL_ONLY) 20131109082744 jars/fake-2.0.0-SNAPSHOT.jar
+  5f4f0bcc (LOCAL_ONLY) 20140610185424 jars/fiji-compat-2.0.0-SNAPSHOT.jar
+  5d038ddb (LOCAL_ONLY) 20140610185424 jars/fiji-lib-2.0.0-SNAPSHOT.jar
+  7c5dc207 (LOCAL_ONLY) 20131109082447 jars/fiji-scripting-2.0.0-SNAPSHOT.jar
+  c4caa696 (LOCAL_ONLY) 20140418143946 jars/formats-api-5.0.0.jar
+  8406c407 (LOCAL_ONLY) 20140418143946 jars/formats-bsd-5.0.0.jar
+  be9b3c4c (LOCAL_ONLY) 20140418143946 jars/formats-common-5.0.0.jar
+  be2287e8 (LOCAL_ONLY) 20131109082012 jars/imagescience-2.4.1.jar
+  780fae40 (LOCAL_ONLY) 20131109082014 jars/imageware.jar
+  12c313a8 (MODIFIED) 20140612132330 jars/imglib2-2.0.0-SNAPSHOT.jar
+  6e22d9dd (MODIFIED) 20140610185416 jars/imglib2-2.0.0-beta-26.jar
+  ce6460d3 (LOCAL_ONLY) 20140610185424 jars/imglib2-algorithms-gpl-2.0.0-beta-26.jar
+  673fae25 (LOCAL_ONLY) 20140610185424 jars/imglib2-algorithms-legacy-2.0.0-beta-26.jar
+  bb62b52f (MODIFIED) 20140610185418 jars/imglib2-ij-2.0.0-beta-26.jar
+  9abf1894 (MODIFIED) 20140605115606 jars/imglib2-ij-2.0.0-beta-27-SNAPSHOT.jar
+  93b97ced (MODIFIED) 20140605115611 jars/imglib2-realtransform-2.0.0-SNAPSHOT.jar
+  ba955d64 (MODIFIED) 20140610185419 jars/imglib2-realtransform-2.0.0-beta-26.jar
+  9a8590f0 (LOCAL_ONLY) 20140612121031 jars/intensity-transform-0.0.1-SNAPSHOT.jar
+  c4258671 (LOCAL_ONLY) 20131109082028 jars/itextpdf.jar
+  a6c1d188 (LOCAL_ONLY) 20140418143945 jars/j3d-core-1.5.2.jar
+  0dccf163 (LOCAL_ONLY) 20131109082031 jars/jacl.jar
+  3d81473f (LOCAL_ONLY) 20140418143945 jars/jai-codec-1.1.3.jar
+  5f7f32e2 (LOCAL_ONLY) 20140418143945 jars/jai-core-1.1.3.jar
+  8c636e50 (LOCAL_ONLY) 20131109082034 jars/jai_codec.jar
+  717dd8e0 (LOCAL_ONLY) 20131109082043 jars/jai_core.jar
+  e4ac596e (LOCAL_ONLY) 20131109082449 jars/java-cup-0.11a.jar
+  15f34947 (LOCAL_ONLY) 20131109082051 jars/javac.jar
+  c295a4c5 (LOCAL_ONLY) 20131109082420 jars/jdom-2.0.2.jar
+  64241209 (LOCAL_ONLY) 20131109082059 jars/jdom-contrib.jar
+  166036ab (LOCAL_ONLY) 20131109082102 jars/jep.jar
+  b5efe893 (LOCAL_ONLY) 20140610185428 jars/jgoodies-common-1.7.0.jar
+  5198aba1 (LOCAL_ONLY) 20140610185428 jars/jgoodies-forms-1.7.2.jar
+  0e15c072 (LOCAL_ONLY) 20131109082422 jars/jgrapht-0.8.3.jar
+  0b768690 (LOCAL_ONLY) 20131109082418 jars/jgraphx-1.10.4.1.jar
+  90915f54 (LOCAL_ONLY) 20131109082128 jars/jna.jar
+  4c09d41c (LOCAL_ONLY) 20140418143946 jars/joda-time-2.2.jar
+  1ad3be0d (LOCAL_ONLY) 20131109082136 jars/jpedalSTD.jar
+  65f86378 (LOCAL_ONLY) 20131109082203 jars/js.jar
+  24d47d70 (LOCAL_ONLY) 20131109082205 jars/junit-4.8.1.jar
+  5ce5840c (LOCAL_ONLY) 20131109082252 jars/jzlib-1.0.7.jar
+  5a6f6f25 (LOCAL_ONLY) 20140610185424 jars/legacy-imglib1-2.0.0-SNAPSHOT.jar
+  7a02f3e7 (LOCAL_ONLY) 20140610185425 jars/logback-classic-1.0.9.jar
+  d9d80652 (LOCAL_ONLY) 20140418143946 jars/logback-core-1.0.9.jar
+  e9d48f1d (LOCAL_ONLY) 20140418143945 jars/mpicbg-0.6.1.jar
+  9c8395f1 (LOCAL_ONLY) 20140612121037 jars/mpicbg-0.6.2-SNAPSHOT.jar
+  a51a31db (LOCAL_ONLY) 20140610185426 jars/netcdf-4.3.19.jar
+  e0088259 (LOCAL_ONLY) 20131109082257 jars/pal-optimization.jar
+  82577709 (LOCAL_ONLY) 20131109082450 jars/pentaho-package-manager-1.0.0.jar
+  c586a356 (LOCAL_ONLY) 20140610185426 jars/postgresql.jar
+  e6380596 (LOCAL_ONLY) 20140610185426 jars/scifio-bf-compat-1.7.3.jar
+  c544d657 (LOCAL_ONLY) 20140610185426 jars/scifio-lifesci-0.5.0.jar
+  e5e6a28d (LOCAL_ONLY) 20140610185426 jars/scifio-ome-xml-0.9.0.jar
+  a8fe5231 (LOCAL_ONLY) 20140610185429 jars/scifio-tools-0.14.0.jar
+  16686f95 (LOCAL_ONLY) 20140418143946 jars/specification-5.0.0.jar
+  40da943b (LOCAL_ONLY) 20131109082011 jars/volume_renderer.jar
+  7d5ba6c5 (LOCAL_ONLY) 20131109082412 jars/wavelets.jar
+  b94bc93f (LOCAL_ONLY) 20140610185427 jars/weave_jy2java-2.0.0-SNAPSHOT.jar
+  9a71e194 (LOCAL_ONLY) 20131109082523 jars/weka-dev-3.7.6.jar
+  c432f64b (LOCAL_ONLY) 20131109084650 luts/16_colors.lut
+  89419f99 (LOCAL_ONLY) 20131109084651 luts/5_ramps.lut
+  dc3a1bdd (LOCAL_ONLY) 20131109084652 luts/6_shades.lut
+  0b3bbb6c (LOCAL_ONLY) 20131109084652 luts/Cyan Hot.lut
+  7a26c39a (LOCAL_ONLY) 20131109084647 luts/GoldenAngle.lut
+  655b55e6 (LOCAL_ONLY) 20131109084653 luts/Green Fire Blue.lut
+  2918f6d3 (LOCAL_ONLY) 20131109084654 luts/HiLo.lut
+  a3312d3f (LOCAL_ONLY) 20131109084655 luts/ICA.lut
+  db5bf8a4 (LOCAL_ONLY) 20131109084655 luts/ICA2.lut
+  9f7dd167 (LOCAL_ONLY) 20131109084656 luts/ICA3.lut
+  697dd3a4 (LOCAL_ONLY) 20131109084657 luts/Magenta Hot.lut
+  524604de (LOCAL_ONLY) 20131109084657 luts/Orange Hot.lut
+  9c9a56c2 (LOCAL_ONLY) 20131109084659 luts/Rainbow RGB.lut
+  4e686ec6 (LOCAL_ONLY) 20131109084700 luts/Red Hot.lut
+  2fdb7c96 (LOCAL_ONLY) 20131109084702 luts/Thermal.lut
+  32157491 (LOCAL_ONLY) 20131109084703 luts/Yellow Hot.lut
+  a4cec22b (LOCAL_ONLY) 20131109084704 luts/blue_orange_icb.lut
+  c9e396a3 (LOCAL_ONLY) 20131109084706 luts/brgbcmyw.lut
+  60f85e63 (LOCAL_ONLY) 20131109084707 luts/cool.lut
+  ba88e5f3 (LOCAL_ONLY) 20131109084708 luts/edges.lut
+  0a4dce83 (LOCAL_ONLY) 20131109084710 luts/gem.lut
+  c616e765 (LOCAL_ONLY) 20131109084711 luts/glasbey.lut
+  325c01f3 (LOCAL_ONLY) 20131109084718 luts/glow.lut
+  1f99f07e (LOCAL_ONLY) 20131109084712 luts/phase.lut
+  52a3c399 (LOCAL_ONLY) 20131109084713 luts/physics.lut
+  49f5e48a (LOCAL_ONLY) 20131109084714 luts/royal.lut
+  898954dd (LOCAL_ONLY) 20131109084715 luts/sepia.lut
+  ebd4ed6b (LOCAL_ONLY) 20131109084715 luts/smart.lut
+  36e7ca9e (LOCAL_ONLY) 20131109084716 luts/thal.lut
+  940b38f9 (LOCAL_ONLY) 20131109084717 luts/thallium.lut
+  17243681 (LOCAL_ONLY) 20131109084717 luts/unionjack.lut
+  25abcd0c (LOCAL_ONLY) 20131109084723 macros/StartupMacros.fiji.ijm
+  a97e1da9 (LOCAL_ONLY) 20131109084722 macros/listManagement.txt
+  1785bbbf (LOCAL_ONLY) 20131109084720 macros/toolsets/Clear Custom Tools.txt
+  54200f47 (LOCAL_ONLY) 20131109084720 macros/toolsets/Drawing Tools.txt
+  9bd39ac4 (LOCAL_ONLY) 20131109084721 macros/toolsets/Lookup Tables.txt
+  f7efa1b3 (LOCAL_ONLY) 20131109084724 misc/headless.jar
+  8fbab9f6 (LOCAL_ONLY) 20131109084945 plugins/3D_Blob_Segmentation-2.0.0-SNAPSHOT.jar
+  d5c84beb (LOCAL_ONLY) 20131109085019 plugins/3D_Objects_Counter-2.0.0-SNAPSHOT.jar
+  f42bdae5 (LOCAL_ONLY) 20131109084840 plugins/3D_Viewer.jar
+  68175df5 (LOCAL_ONLY) 20131109084841 plugins/Algorithm_Launcher.jar
+  9274f337 (LOCAL_ONLY) 20131109084726 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  7acae667 (LOCAL_ONLY) 20131109084726 plugins/Analyze/Measure_RGB.txt
+  8e49d0ca (LOCAL_ONLY) 20140610185427 plugins/AnalyzeSkeleton_-2.0.0-SNAPSHOT.jar
+  263158a7 (LOCAL_ONLY) 20131109084907 plugins/Analyze_Reader_Writer-2.0.0-SNAPSHOT.jar
+  645ccb4c (LOCAL_ONLY) 20131109085000 plugins/Anisotropic_Diffusion_2D-2.0.0-SNAPSHOT.jar
+  295ba57e (LOCAL_ONLY) 20131109085031 plugins/Arrow_-2.0.0-SNAPSHOT.jar
+  04478f7a (LOCAL_ONLY) 20140203133609 plugins/Auto_Threshold-1.16-SNAPSHOT.jar
+  fd9b13d9 (LOCAL_ONLY) 20131109085028 plugins/BalloonSegmentation_-2.0.0-SNAPSHOT.jar
+  75529242 (LOCAL_ONLY) 20131109085024 plugins/BeanShell_Interpreter-2.0.0-SNAPSHOT.jar
+  5ac8c6e3 (LOCAL_ONLY) 20140610185427 plugins/Bug_Submitter-2.0.0-SNAPSHOT.jar
+  69972944 (LOCAL_ONLY) 20131109085047 plugins/CLI_-2.0.0-SNAPSHOT.jar
+  3e4163b4 (LOCAL_ONLY) 20131109084947 plugins/CPU_Meter-2.0.0-SNAPSHOT.jar
+  8c102cb9 (LOCAL_ONLY) 20131109084949 plugins/Calculator_Plus-2.0.0-SNAPSHOT.jar
+  e2235578 (LOCAL_ONLY) 20131109084942 plugins/Clojure_Interpreter-2.0.0-SNAPSHOT.jar
+  8a9baa41 (LOCAL_ONLY) 20140610185427 plugins/Colocalisation_Analysis-2.0.0-SNAPSHOT.jar
+  a99306b3 (LOCAL_ONLY) 20131109085003 plugins/Color_Histogram-2.0.6-SNAPSHOT.jar
+  3bac3fbe (LOCAL_ONLY) 20131109085046 plugins/Color_Inspector_3D-2.3-SNAPSHOT.jar
+  1902ce83 (LOCAL_ONLY) 20131109084950 plugins/Colour_Deconvolution-2.0.0-SNAPSHOT.jar
+  fa6063d9 (LOCAL_ONLY) 20131109085002 plugins/CorrectBleach_-2.0.0-SNAPSHOT.jar
+  2a722593 (LOCAL_ONLY) 20131109084857 plugins/Descriptor_based_registration-2.0.0-SNAPSHOT.jar
+  4d6319b8 (LOCAL_ONLY) 20131109085051 plugins/Dichromacy_-2.0.0-SNAPSHOT.jar
+  96b64b9e (LOCAL_ONLY) 20131109085014 plugins/Differentials_-2.0.0-SNAPSHOT.jar
+  eb283f44 (LOCAL_ONLY) 20131109084958 plugins/Directionality_-2.0.1-SNAPSHOT.jar
+  83caa3df (LOCAL_ONLY) 20131109084740 plugins/Examples/Add_Popup_Split_Channels.bsh
+  f6fcfac7 (LOCAL_ONLY) 20131109084741 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  5dcd79ab (LOCAL_ONLY) 20131109084741 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  73eff736 (LOCAL_ONLY) 20131109084729 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  95549b2f (LOCAL_ONLY) 20131109084730 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  dceba709 (LOCAL_ONLY) 20131109084731 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  e4954eac (LOCAL_ONLY) 20131109084732 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  f5111212 (LOCAL_ONLY) 20131109084733 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  6076ad74 (LOCAL_ONLY) 20131109084735 plugins/Examples/CoverMaker/Cover_Maker.py
+  eabbed47 (LOCAL_ONLY) 20131109084734 plugins/Examples/CoverMaker/Prepare_Cover_Maker_Database.py
+  77c7bef5 (LOCAL_ONLY) 20131109084742 plugins/Examples/Delayed_Snapshot.py
+  5536e038 (LOCAL_ONLY) 20131109084743 plugins/Examples/Delayed_Snapshot_Window.bsh
+  4164c08c (LOCAL_ONLY) 20131109084743 plugins/Examples/Edit_LUT_As_Text.py
+  398744e6 (LOCAL_ONLY) 20131109084728 plugins/Examples/Example6c.class
+  780e948e (LOCAL_ONLY) 20131109084744 plugins/Examples/Extended_Profile_Plot.bsh
+  b8881af2 (LOCAL_ONLY) 20131109084745 plugins/Examples/Fiji_Cube.ijm
+  3687a018 (LOCAL_ONLY) 20131109084745 plugins/Examples/Fiji_Logo_3D.js
+  998cb717 (LOCAL_ONLY) 20131109084747 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  66cf50fd (LOCAL_ONLY) 20131109084747 plugins/Examples/Image_To_Tool_Icon.bsh
+  ccccc81e (LOCAL_ONLY) 20131109084748 plugins/Examples/Multithreaded_Image_Processing.clj
+  720c237b (LOCAL_ONLY) 20131109084749 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  92ce736d (LOCAL_ONLY) 20131109084750 plugins/Examples/Plasma_Cloud.rb
+  9efb2292 (LOCAL_ONLY) 20131109084750 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  206a0bbd (LOCAL_ONLY) 20131109084751 plugins/Examples/The_Hue_Game.bsh
+  1b6eee3a (LOCAL_ONLY) 20131109084736 plugins/Examples/TrakEM2_Example_Scripts/Homogenize_Ball_Radius.py
+  940f6500 (LOCAL_ONLY) 20131109084737 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  3f4bba61 (LOCAL_ONLY) 20131109084737 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  72f00949 (LOCAL_ONLY) 20131109084738 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  89ef0307 (LOCAL_ONLY) 20131109084739 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  f8479f84 (LOCAL_ONLY) 20131109084753 plugins/Examples/blend_two_images.clj
+  0989cf74 (LOCAL_ONLY) 20131109084754 plugins/Examples/celsius_to_fahrenheit.clj
+  ff3b9902 (LOCAL_ONLY) 20131109084755 plugins/Examples/chess_.py
+  69838e21 (LOCAL_ONLY) 20131109084756 plugins/Examples/compose_rgb-stacks.bsh
+  4193ae7c (LOCAL_ONLY) 20131109084756 plugins/Examples/downsample_.js
+  66a204d6 (LOCAL_ONLY) 20131109084757 plugins/Examples/list_all_threads.py
+  ff4099b9 (LOCAL_ONLY) 20131109084758 plugins/Examples/random_noise_example.clj
+  56600961 (LOCAL_ONLY) 20131109085005 plugins/Extended_Depth_Field-2.0.0-SNAPSHOT.jar
+  ff0e4481 (LOCAL_ONLY) 20131109084943 plugins/FeatureJ_-1.6.1-SNAPSHOT.jar
+  4ea625bc (LOCAL_ONLY) 20131109085027 plugins/Feature_Detection-2.0.0-SNAPSHOT.jar
+  c02a1e2c (LOCAL_ONLY) 20140610185427 plugins/Fiji_Developer-2.0.0-SNAPSHOT.jar
+  82601384 (LOCAL_ONLY) 20140610185427 plugins/Fiji_Package_Maker-2.0.0-SNAPSHOT.jar
+  e19c9416 (LOCAL_ONLY) 20140610185427 plugins/Fiji_Plugins-2.0.0-SNAPSHOT.jar
+  6189de52 (LOCAL_ONLY) 20140610185427 plugins/Fiji_Updater.jar
+  ce69e79a (LOCAL_ONLY) 20131109085049 plugins/FlowJ_-1.29.1-SNAPSHOT.jar
+  f942a886 (LOCAL_ONLY) 20131109085010 plugins/Graph_Cut-0.1.1-SNAPSHOT.jar
+  bf032087 (LOCAL_ONLY) 20131109084952 plugins/Gray_Morphology-2.3.2-SNAPSHOT.jar
+  f48de7ae (LOCAL_ONLY) 20131109084954 plugins/Helmholtz_Analysis-2.0.1-SNAPSHOT.jar
+  dc5df090 (LOCAL_ONLY) 20131109084954 plugins/IJ_Robot-2.0.0-SNAPSHOT.jar
+  eb581ab4 (LOCAL_ONLY) 20131109084911 plugins/IO_-2.0.0-SNAPSHOT.jar
+  8b85c6b0 (LOCAL_ONLY) 20131109084849 plugins/Image_5D.jar
+  dc5e4695 (LOCAL_ONLY) 20131109085001 plugins/Image_Expression_Parser-2.0.0-SNAPSHOT.jar
+  65b42030 (LOCAL_ONLY) 20131109084941 plugins/Interactive_3D_Surface_Plot-2.31.1-SNAPSHOT.jar
+  b483961e (LOCAL_ONLY) 20131109085023 plugins/IsoData_Classifier-2.0.0-SNAPSHOT.jar
+  28582f55 (LOCAL_ONLY) 20131109084759 plugins/JRuby/imagej.rb
+  9a5d6894 (LOCAL_ONLY) 20131109085021 plugins/JRuby_Interpreter-2.0.0-SNAPSHOT.jar
+  7d22f08d (LOCAL_ONLY) 20131109084959 plugins/Javascript_-2.0.0-SNAPSHOT.jar
+  a7edca68 (LOCAL_ONLY) 20131109084857 plugins/Jython_Interpreter-2.0.0-SNAPSHOT.jar
+  542ef100 (LOCAL_ONLY) 20131109084849 plugins/LSM_Reader.jar
+  6566ced8 (LOCAL_ONLY) 20131109084852 plugins/LSM_Toolbox.jar
+  5830f8ee (LOCAL_ONLY) 20140610185427 plugins/Lasso_and_Blow_Tool-2.0.0-SNAPSHOT.jar
+  c10ee505 (LOCAL_ONLY) 20131109084956 plugins/Linear_Kuwahara-2.0.0-SNAPSHOT.jar
+  cf4ad6ab (LOCAL_ONLY) 20131109085033 plugins/LocalThickness_-3.1.1-SNAPSHOT.jar
+  587c9f4b (LOCAL_ONLY) 20131109085012 plugins/MTrack2_-2.0.0-SNAPSHOT.jar
+  f6a6a497 (LOCAL_ONLY) 20131109085006 plugins/MTrackJ_-1.5.1-SNAPSHOT.jar
+  64ccfd05 (LOCAL_ONLY) 20131109085018 plugins/M_I_P-2.0.0-SNAPSHOT.jar
+  65a2dd78 (LOCAL_ONLY) 20131109084802 plugins/Macros/About_Plugin_Macros.txt
+  dff5642d (LOCAL_ONLY) 20131109084803 plugins/Macros/Bulls_Eye.txt
+  e7ffe8ba (LOCAL_ONLY) 20131109084804 plugins/Macros/Polygon_.txt
+  39f7ffcd (LOCAL_ONLY) 20131109084804 plugins/Macros/RGB_Histogram.txt
+  3ee0edfa (LOCAL_ONLY) 20131109084805 plugins/Macros/batch_convert_any_to_tif.txt
+  55f5b6a0 (LOCAL_ONLY) 20131109085007 plugins/Manual_Tracking-2.0.0-SNAPSHOT.jar
+  9c541ad9 (LOCAL_ONLY) 20131109084957 plugins/MosaicJ_-2.0.0-SNAPSHOT.jar
+  04a4a5c1 (LOCAL_ONLY) 20131109085004 plugins/PIV_analyser-1.1.1-SNAPSHOT.jar
+  19181db3 (LOCAL_ONLY) 20131109085009 plugins/PointPicker_-2.0.0-SNAPSHOT.jar
+  964d054a (LOCAL_ONLY) 20131109085016 plugins/QuickPALM_-1.1.1-SNAPSHOT.jar
+  9fb03125 (LOCAL_ONLY) 20131109084946 plugins/RATS_-2.0.0-SNAPSHOT.jar
+  5c7f3968 (LOCAL_ONLY) 20131109084949 plugins/RandomJ_-1.5.1-SNAPSHOT.jar
+  7d1ad162 (LOCAL_ONLY) 20131109084852 plugins/Reconstruct_Reader.jar
+  8bc6c355 (LOCAL_ONLY) 20140610185427 plugins/Refresh_Javas-2.0.0-SNAPSHOT.jar
+  4ddf620c (LOCAL_ONLY) 20131109084854 plugins/SPIM_Opener.jar
+  5b5857d2 (LOCAL_ONLY) 20140203133609 plugins/SPIM_Registration-2.0.0-SNAPSHOT.jar
+  b9076c0a (LOCAL_ONLY) 20131109084951 plugins/Samples_-2.0.0-SNAPSHOT.jar
+  b307010c (LOCAL_ONLY) 20140610185427 plugins/Scripts/File/Make_Screencast.bsh
+  c70b2e6f (LOCAL_ONLY) 20131109084807 plugins/Scripts/File/Open_Samples/Adelsons_Squares.ijm
+  60df5674 (LOCAL_ONLY) 20131109084808 plugins/Scripts/File/Open_Samples/Spirals_.ijm
+  a3edd6db (LOCAL_ONLY) 20131109084810 plugins/Scripts/Image/Adjust/Scale_to_DPI.js
+  209aed52 (LOCAL_ONLY) 20131109084811 plugins/Scripts/Image/Color/Set_Color_By_Wavelength.ijm
+  1de6c712 (LOCAL_ONLY) 20131109084812 plugins/Scripts/Image/Hyperstacks/Temporal-Color_Code.ijm
+  af064f17 (LOCAL_ONLY) 20131109084814 plugins/Scripts/Plugins/Registration/Correct_3D_drift.py
+  a6e496fc (LOCAL_ONLY) 20131109084818 plugins/Scripts/Plugins/Utilities/Create_Desktop_Icon.bsh
+  b5ee58a2 (LOCAL_ONLY) 20131109084817 plugins/Scripts/Plugins/Utilities/Find_Jar_For_Class.bsh
+  fc46bd40 (LOCAL_ONLY) 20131109084815 plugins/Scripts/Plugins/Utilities/Record_Desktop.py
+  9d4d012a (LOCAL_ONLY) 20131109084816 plugins/Scripts/Plugins/Utilities/Record_Window.py
+  8cb22fe2 (LOCAL_ONLY) 20140610185427 plugins/Series_Labeler-2.0.0-SNAPSHOT.jar
+  7c62b5c5 (LOCAL_ONLY) 20131109085052 plugins/SheppLogan_-2.0.0-SNAPSHOT.jar
+  332f6608 (LOCAL_ONLY) 20140610185427 plugins/Sholl_Analysis-3.4.1.jar
+  95dc5b19 (LOCAL_ONLY) 20140610185427 plugins/Simple_Neurite_Tracer-2.0.2-SNAPSHOT.jar
+  0bd5f179 (LOCAL_ONLY) 20131109085022 plugins/Siox_Segmentation-1.0.1-SNAPSHOT.jar
+  52fecf09 (LOCAL_ONLY) 20140610185427 plugins/Skeletonize3D_-1.0.1-SNAPSHOT.jar
+  b0820703 (LOCAL_ONLY) 20131109085040 plugins/Snakuscule_-2.0.0-SNAPSHOT.jar
+  33b6af85 (LOCAL_ONLY) 20140203133610 plugins/SplineDeformationGenerator_-2.0.0-SNAPSHOT.jar
+  27de591e (LOCAL_ONLY) 20131109084953 plugins/StackReg_-2.0.0-SNAPSHOT.jar
+  736bb192 (LOCAL_ONLY) 20131109085011 plugins/Stack_Manipulation-2.0.0-SNAPSHOT.jar
+  59f36299 (LOCAL_ONLY) 20131109085032 plugins/Statistical_Region_Merging-2.0.0-SNAPSHOT.jar
+  6880141e (LOCAL_ONLY) 20140610185427 plugins/Stitching_-2.0.0-SNAPSHOT.jar
+  30100de7 (LOCAL_ONLY) 20131109084944 plugins/Sync_Win-1.7-fiji2-SNAPSHOT.jar
+  685ca9dc (LOCAL_ONLY) 20131109085025 plugins/Thread_Killer-2.0.0-SNAPSHOT.jar
+  2cee6c37 (LOCAL_ONLY) 20131109084944 plugins/Threshold_Colour-2.0.1-SNAPSHOT.jar
+  d822b123 (LOCAL_ONLY) 20131109084908 plugins/Time_Stamper-2.0.0-SNAPSHOT.jar
+  584cb5b9 (LOCAL_ONLY) 20131109085055 plugins/ToAST_-25.0.1-SNAPSHOT.jar
+  4cf59217 (LOCAL_ONLY) 20131109085033 plugins/TopoJ_-2.0.0-SNAPSHOT.jar
+  6008b366 (LOCAL_ONLY) 20140610185428 plugins/TrackMate_-2.3.0.jar
+  e3cd0654 (LOCAL_ONLY) 20140610185428 plugins/Trainable_Segmentation-2.1.0-SNAPSHOT.jar
+  fcd67c78 (LOCAL_ONLY) 20140606164517 plugins/TrakEM2_-1.0b-SNAPSHOT.jar
+  8e7f3b79 (LOCAL_ONLY) 20131109084948 plugins/TransformJ_-2.8.1-SNAPSHOT.jar
+  c4e87a76 (LOCAL_ONLY) 20131109085027 plugins/TurboReg_-2.0.0-SNAPSHOT.jar
+  9558400d (LOCAL_ONLY) 20131109084902 plugins/UnwarpJ_.jar
+  a32dfe46 (LOCAL_ONLY) 20131109084820 plugins/Utilities/Close_All_Without_Saving.txt
+  253c6df4 (LOCAL_ONLY) 20140610185428 plugins/VIB_-2.0.0-SNAPSHOT.jar
+  baa78901 (LOCAL_ONLY) 20131109084853 plugins/Vaa3d_Reader-2.0.0-SNAPSHOT.jar
+  81279d21 (LOCAL_ONLY) 20131109084955 plugins/Video_Editing-2.0.0-SNAPSHOT.jar
+  73396eef (LOCAL_ONLY) 20131109085020 plugins/View5D_-1.3.1-SNAPSHOT.jar
+  980c0ed9 (LOCAL_ONLY) 20131109085056 plugins/Volume_Calculator-1.0.1-SNAPSHOT.jar
+  2ef6f1eb (LOCAL_ONLY) 20140610185428 plugins/Volume_Viewer-2.01.1-SNAPSHOT.jar
+  2079ca32 (LOCAL_ONLY) 20131109085030 plugins/bUnwarpJ_-2.6.1-SNAPSHOT.jar
+  1d01fcfb (LOCAL_ONLY) 20140610185427 plugins/bio-formats_plugins-5.0.2.jar
+  0307564a (LOCAL_ONLY) 20131109084900 plugins/blockmatching_-2.0.0-SNAPSHOT.jar
+  95ff2656 (LOCAL_ONLY) 20131109084835 plugins/contrast_adjustment.jar
+  659ad6a3 (LOCAL_ONLY) 20131109084903 plugins/ij-ImageIO_.jar
+  fc868626 (LOCAL_ONLY) 20140610185118 plugins/jars/Jython.jar
+  82f900ac (LOCAL_ONLY) 20131109085038 plugins/level_sets-1.0.1-SNAPSHOT.jar
+  df2af815 (LOCAL_ONLY) 20140610185427 plugins/mpicbg_-0.6.1-SNAPSHOT.jar
+  a9db180f (LOCAL_ONLY) 20140605115613 plugins/mpicbg_-0.6.2-SNAPSHOT.jar
+  5e32d936 (LOCAL_ONLY) 20131109084905 plugins/panorama_.jar
+  4bd07822 (LOCAL_ONLY) 20140610185427 plugins/register_virtual_stack_slices-2.0.0-SNAPSHOT.jar
+  16012d5a (LOCAL_ONLY) 20131109085053 plugins/registration_3d-2.0.0-SNAPSHOT.jar
+  4889514d (LOCAL_ONLY) 20131109084906 plugins/saalfeld_experiments-2.0.0-SNAPSHOT.jar
+  34b7341d (LOCAL_ONLY) 20131109085144 retro/backport-util-concurrent-3.1.jar
+  8759ba20 (LOCAL_ONLY) 20131109085148 retro/retrotranslator-runtime-1.2.9.jar
+  a6d5a3b2 (LOCAL_ONLY) 20131109085149 retro/retrotranslator-transformer-1.2.9.jar
+  d7160d38 (LOCAL_ONLY) 20131109085151 scripts/InstallJava3D.m
+  05a92a3c (LOCAL_ONLY) 20131109085152 scripts/IsJava3DInstalled.m
+  ff34d026 (LOCAL_ONLY) 20131109085152 scripts/Matlab3DViewerDemo_1.m
+  25be149f (LOCAL_ONLY) 20131109085153 scripts/Matlab3DViewerDemo_2.m
+  cb529b6c (LOCAL_ONLY) 20131109085154 scripts/Matlab3DViewerDemo_3.m
+  53d2da73 (LOCAL_ONLY) 20131109085155 scripts/Matlab3DViewerIntroduction.m
+  4bb342fa (LOCAL_ONLY) 20131109085156 scripts/Miji.m
+  868cd434 (LOCAL_ONLY) 20131109085157 scripts/Miji_Test.m
+  d3260180 (LOCAL_ONLY) 20131109085158 scripts/Record_Desktop.py
+  0ea7f8fc (LOCAL_ONLY) 20131109085158 scripts/Record_Window.py
+  dc94c3a3 (LOCAL_ONLY) 20131109085159 scripts/bfopen.m
+  a77cab39 (LOCAL_ONLY) 20131109085200 scripts/importTrackMateTracks.m</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-12 16:31:12 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hmm, at this point I think we're fighting a losing battle by trying to avoid calling System.exit(0); from the legacy ImageJ UI. We should just bite the bullet and make that call, since so many plugins, including flagship core Fiji plugins like TrakEM2, do not bother to clean up after themselves as would be needed to avoid an explicit shutdown.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-13 10:19:17 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; 0543a785 (LOCAL_ONLY) 20131109081825 jars/Fiji.jar</span >
+
+Wow, blast from the past.
+
+It also means that your Fiji update site is not checked.
+
+<span class="quote">&gt; Hmm, at this point I think we're fighting a losing battle by trying to avoid calling System.exit(0); from the legacy ImageJ UI.</span >
+
+What with TrakEM2 being an official part of Fiji, I think we can expect it to do better. I would agree for other plugins, but not for TrakEM2.
+
+<span class="quote">&gt; We should just bite the bullet and make that call, since so many plugins, including flagship core Fiji plugins like TrakEM2, do not bother to clean up after themselves as would be needed to avoid an explicit shutdown.</span >
+
+Well, if flagship core Fiji plugins do not bother to register themselves properly, how can we *hope* to ask others to register properly?
+
+I guess you're right... :-(</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-13 15:48:48 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I just noticed that a running Beanshell script (in the Beanshell Interpreter) does not quit either.  The Beanshell Interpreter window remains open while the rest of ImageJ is gone.  After the script finished, I could close the Beanshell window but the JVM kept running.  While the movement is new to me (has it been communicated to anybody before?), I understand the motivation to not kill the JVM on exit but nicely depend on everybody shutting down properly.  However, this takes away the opportunity to kill things in the middle that got trapped.  ImageJ is, beyond being a fantastic drawing tool ;), a platform for developing macros, scripts and pipelines.  Doing so will lead to the oocasional deadlock or infinite loop that one wishes to escape by killing the platform.  Earlier, I could always do so by shutting donw ImageJ.  Now, I have to be more experienced and know about processes or shut down the operating system.  That's bad in my opinion.  Ideas?</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-16 09:58:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Adding more observations: I just ran the updater, it updated and asked me to close and restart ImageJ.  I closed it and guess what: Fiji keeps running.  Seems like some core in-house components are affected too ;).</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-16 10:11:51 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Stephan, it would be very helpful if you could generate a thread dump whenever that happens. Otherwise, as you know, it is very difficult to diagnose what caused the issue after the fact.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-16 12:08:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Stephan Saalfeld wrote:
+<span class="quote">&gt; Curtis, help me out how.  JVisualVM?  Will try next time.  I thought you
+&gt; already had an idea.</span >
+
+See this page:
+<a href="http://fiji.sc/Debugging#Debugging_JVM_hangs">http://fiji.sc/Debugging#Debugging_JVM_hangs</a>
+
+Fiji also now ships with a &quot;Dump Stack&quot; plugin that can be run via Ctrl+\ to dump the stack to a new UI window -- but this may or may not work after ImageJ gets stuck trying to shut down. So doing it from the console (also Ctrl+\) is still your best bet.
+
+<span class="quote">&gt; Sorry that I cannot quickly reproduce the updater
+&gt; issue as Fiji is updated now.  Next time.</span >
+
+If you think it is a problem with the Updater UI having run at all, you can just delete a small non-critical JAR file and run the Updater to redownload it.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-17 10:40:37 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Here is an incomplete Thread dump (exceeds the size of my terminal) with Ctrl+\ from the terminal in which I had Fiji started.  The remaining open window that does not close with Fiji this time is the 3DViewer:
+
+[...]
+
+&quot;repainter-21&quot; daemon prio=10 tid=0x00007f585c11f800 nid=0x1da5 waiting on condition [0x00007f57997d6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-4&quot; daemon prio=10 tid=0x00007f5834008800 nid=0x1da4 waiting on condition [0x00007f5877049000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-4&quot; daemon prio=10 tid=0x00007f5834007800 nid=0x1da3 waiting on condition [0x00007f579bffe000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-20&quot; daemon prio=10 tid=0x00007f585c11e800 nid=0x1da2 waiting on condition [0x00007f5874e87000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-3&quot; daemon prio=10 tid=0x00007f5834006800 nid=0x1da1 waiting on condition [0x00007f5799bda000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-3&quot; daemon prio=10 tid=0x00007f5834005800 nid=0x1da0 waiting on condition [0x00007f5875891000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-19&quot; daemon prio=10 tid=0x00007f585c11e000 nid=0x1d9f waiting on condition [0x00007f5875a93000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-2&quot; daemon prio=10 tid=0x00007f5834004800 nid=0x1d9e waiting on condition [0x00007f579a5e4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-18&quot; daemon prio=10 tid=0x00007f585c11d000 nid=0x1d9d waiting on condition [0x00007f57993d2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-2&quot; daemon prio=10 tid=0x00007f5834003800 nid=0x1d9c waiting on condition [0x00007f5798dcc000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-1&quot; daemon prio=10 tid=0x00007f5834002800 nid=0x1d9b waiting on condition [0x00007f587619a000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-17&quot; daemon prio=10 tid=0x00007f585c11c000 nid=0x1d9a waiting on condition [0x00007f579a7e6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-16&quot; daemon prio=10 tid=0x00007f585c11b000 nid=0x1d99 waiting on condition [0x00007f5874f88000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-1&quot; daemon prio=10 tid=0x00007f5834001800 nid=0x1d98 waiting on condition [0x00007f579a3e2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-15&quot; daemon prio=10 tid=0x00007f585c11a800 nid=0x1d97 waiting on condition [0x00007f5798ccb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-14&quot; daemon prio=10 tid=0x00007f585c114000 nid=0x1d94 waiting on condition [0x00007f579b8f7000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-13&quot; daemon prio=10 tid=0x00007f585c113000 nid=0x1d93 waiting on condition [0x00007f587568f000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-12&quot; daemon prio=10 tid=0x00007f585c112000 nid=0x1d92 waiting on condition [0x00007f587518a000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-11&quot; daemon prio=10 tid=0x00007f585c111000 nid=0x1d91 waiting on condition [0x00007f579a9e8000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-10&quot; daemon prio=10 tid=0x00007f585c110000 nid=0x1d90 waiting on condition [0x00007f5793ffe000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-9&quot; daemon prio=10 tid=0x00007f585c10f000 nid=0x1d8f waiting on condition [0x00007f579abea000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-8&quot; daemon prio=10 tid=0x00007f585c10e800 nid=0x1d8e waiting on condition [0x00007f57995d4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-7&quot; daemon prio=10 tid=0x00007f585c10c800 nid=0x1d8d waiting on condition [0x00007f5798bca000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-6&quot; daemon prio=10 tid=0x00007f585c10b800 nid=0x1d8c waiting on condition [0x00007f5799ddc000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-5&quot; daemon prio=10 tid=0x00007f585c10a800 nid=0x1d8b waiting on condition [0x00007f587548d000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-4&quot; daemon prio=10 tid=0x00007f585c10a000 nid=0x1d8a waiting on condition [0x00007f5798fce000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-3&quot; daemon prio=10 tid=0x00007f585c109000 nid=0x1d89 waiting on condition [0x00007f587427b000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-2&quot; daemon prio=10 tid=0x00007f585c108800 nid=0x1d88 waiting on condition [0x00007f579a1e0000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-1&quot; daemon prio=10 tid=0x00007f585c106000 nid=0x1d87 waiting on condition [0x00007f5799fde000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;TimerQueue&quot; daemon prio=10 tid=0x00007f585c01f000 nid=0x1d05 in Object.wait() [0x00007f587714a000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at javax.swing.TimerQueue.run(TimerQueue.java:232)
+	- locked &lt;0x00007f596aa7c690&gt; (a javax.swing.TimerQueue)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;DestroyJavaVM&quot; prio=10 tid=0x0000000001a8e800 nid=0x1cbd waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Timer-0&quot; daemon prio=10 tid=0x0000000002df8000 nid=0x1cfc in Object.wait() [0x00007f58779ea000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked &lt;0x00007f5969f15540&gt; (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+&quot;AWT-EventQueue-0&quot; prio=10 tid=0x0000000002ded800 nid=0x1cfb in Object.wait() [0x00007f5877aeb000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:485)
+	at java.awt.EventQueue.getNextEvent(EventQueue.java:485)
+	- locked &lt;0x00007f596a28e428&gt; (a java.awt.EventQueue)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:236)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+
+&quot;AWT-Shutdown&quot; prio=10 tid=0x0000000002dd2000 nid=0x1cfa in Object.wait() [0x00007f5877bec000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:485)
+	at sun.awt.AWTAutoShutdown.run(AWTAutoShutdown.java:265)
+	- locked &lt;0x00007f5969e09778&gt; (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;AWT-XAWT&quot; daemon prio=10 tid=0x0000000002da2800 nid=0x1cf8 runnable [0x00007f5877ced000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.awt.X11.XToolkit.waitForEvents(Native Method)
+	at sun.awt.X11.XToolkit.run(XToolkit.java:579)
+	at sun.awt.X11.XToolkit.run(XToolkit.java:543)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;Java2D Disposer&quot; daemon prio=10 tid=0x0000000002d41800 nid=0x1cf7 in Object.wait() [0x00007f5877dee000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked &lt;0x00007f596a143cc0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at sun.java2d.Disposer.run(Disposer.java:127)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;Low Memory Detector&quot; daemon prio=10 tid=0x0000000001f09800 nid=0x1cf1 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;CompilerThread1&quot; daemon prio=10 tid=0x0000000001f07000 nid=0x1cf0 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;CompilerThread0&quot; daemon prio=10 tid=0x0000000001f04800 nid=0x1cef waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Signal Dispatcher&quot; daemon prio=10 tid=0x0000000001f02800 nid=0x1cee waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Surrogate Locker Thread (CMS)&quot; daemon prio=10 tid=0x0000000001f00800 nid=0x1ced waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Finalizer&quot; daemon prio=10 tid=0x0000000001ee5000 nid=0x1cec in Object.wait() [0x00007f589d4b8000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked &lt;0x00007f5968ea52b0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+&quot;Reference Handler&quot; daemon prio=10 tid=0x0000000001ee3000 nid=0x1ceb in Object.wait() [0x00007f589d5b9000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked &lt;0x00007f5968ebde20&gt; (a java.lang.ref.Reference$Lock)
+
+&quot;VM Thread&quot; prio=10 tid=0x0000000001edc000 nid=0x1cea runnable 
+
+&quot;Gang worker#0 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa3000 nid=0x1cbf runnable 
+
+&quot;Gang worker#1 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa4800 nid=0x1cc0 runnable 
+
+&quot;Gang worker#2 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa6800 nid=0x1cc1 runnable 
+
+&quot;Gang worker#3 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa8800 nid=0x1cc2 runnable 
+
+&quot;Gang worker#4 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aaa000 nid=0x1cc3 runnable 
+
+&quot;Gang worker#5 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aac000 nid=0x1cc4 runnable 
+
+&quot;Gang worker#6 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aad800 nid=0x1cc5 runnable 
+
+&quot;Gang worker#7 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aaf800 nid=0x1cc6 runnable 
+
+&quot;Gang worker#8 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab1800 nid=0x1cc7 runnable 
+
+&quot;Gang worker#9 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab3000 nid=0x1cc8 runnable 
+
+&quot;Gang worker#10 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab5000 nid=0x1cc9 runnable 
+
+&quot;Gang worker#11 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab7000 nid=0x1cca runnable 
+
+&quot;Gang worker#12 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab8800 nid=0x1ccb runnable 
+
+&quot;Gang worker#13 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aba800 nid=0x1ccc runnable 
+
+&quot;Gang worker#14 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001abc800 nid=0x1ccd runnable 
+
+&quot;Gang worker#15 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001abe000 nid=0x1cce runnable 
+
+&quot;Gang worker#16 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac0000 nid=0x1ccf runnable 
+
+&quot;Gang worker#17 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac1800 nid=0x1cd0 runnable 
+
+&quot;Gang worker#18 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac3800 nid=0x1cd1 runnable 
+
+&quot;Gang worker#19 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac5800 nid=0x1cd2 runnable 
+
+&quot;Gang worker#20 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac7000 nid=0x1cd3 runnable 
+
+&quot;Gang worker#21 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac9000 nid=0x1cd4 runnable 
+
+&quot;Gang worker#22 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001acb000 nid=0x1cd5 runnable 
+
+&quot;Gang worker#23 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001acc800 nid=0x1cd6 runnable 
+
+&quot;Gang worker#24 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ace800 nid=0x1cd7 runnable 
+
+&quot;Gang worker#25 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad0000 nid=0x1cd8 runnable 
+
+&quot;Gang worker#26 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad2000 nid=0x1cd9 runnable 
+
+&quot;Gang worker#27 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad4000 nid=0x1cda runnable 
+
+&quot;Gang worker#28 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad5800 nid=0x1cdb runnable 
+
+&quot;Gang worker#29 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad7800 nid=0x1cdc runnable 
+
+&quot;Gang worker#30 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad9800 nid=0x1cdd runnable 
+
+&quot;Gang worker#31 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001adb000 nid=0x1cde runnable 
+
+&quot;Gang worker#32 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001add000 nid=0x1cdf runnable 
+
+&quot;Concurrent Mark-Sweep GC Thread&quot; prio=10 tid=0x0000000001e3b000 nid=0x1ce9 runnable 
+&quot;Gang worker#0 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e29800 nid=0x1ce0 runnable 
+
+&quot;Gang worker#1 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e2b800 nid=0x1ce1 runnable 
+
+&quot;Gang worker#2 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e2d000 nid=0x1ce2 runnable 
+
+&quot;Gang worker#3 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e2f000 nid=0x1ce3 runnable 
+
+&quot;Gang worker#4 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e30800 nid=0x1ce4 runnable 
+
+&quot;Gang worker#5 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e32800 nid=0x1ce5 runnable 
+
+&quot;Gang worker#6 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e34800 nid=0x1ce6 runnable 
+
+&quot;Gang worker#7 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e36000 nid=0x1ce7 runnable 
+
+&quot;Gang worker#8 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e38000 nid=0x1ce8 runnable 
+
+&quot;VM Periodic Task Thread&quot; prio=10 tid=0x0000000001f14800 nid=0x1cf2 waiting on condition 
+
+JNI global references: 3590
+
+Heap
+ par new generation   total 383488K, used 337431K [0x00007f593e000000, 0x00007f5958010000, 0x00007f5968e60000)
+  eden space 340928K,  93% used [0x00007f593e000000, 0x00007f59518c7ad8, 0x00007f5952cf0000)
+  from space 42560K,  40% used [0x00007f5955680000, 0x00007f595673e460, 0x00007f5958010000)
+  to   space 42560K,   0% used [0x00007f5952cf0000, 0x00007f5952cf0000, 0x00007f5955680000)
+ concurrent mark-sweep generation total 9490680K, used 5931204K [0x00007f5968e60000, 0x00007f5bac29e000, 0x00007f71a8000000)
+ concurrent-mark-sweep perm gen total 131072K, used 55204K [0x00007f71a8000000, 0x00007f71b0000000, 0x00007f71b0000000)</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-17 10:43:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >And here another incomplete dump after I have closed the 3DViewer window and Fiji kept running in the terminal:
+
+[...]
+
+&quot;repainter-21&quot; daemon prio=10 tid=0x00007f585c11f800 nid=0x1da5 waiting on condition [0x00007f57997d6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-4&quot; daemon prio=10 tid=0x00007f5834008800 nid=0x1da4 waiting on condition [0x00007f5877049000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-4&quot; daemon prio=10 tid=0x00007f5834007800 nid=0x1da3 waiting on condition [0x00007f579bffe000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-20&quot; daemon prio=10 tid=0x00007f585c11e800 nid=0x1da2 waiting on condition [0x00007f5874e87000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-3&quot; daemon prio=10 tid=0x00007f5834006800 nid=0x1da1 waiting on condition [0x00007f5799bda000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-3&quot; daemon prio=10 tid=0x00007f5834005800 nid=0x1da0 waiting on condition [0x00007f5875891000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-19&quot; daemon prio=10 tid=0x00007f585c11e000 nid=0x1d9f waiting on condition [0x00007f5875a93000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-2&quot; daemon prio=10 tid=0x00007f5834004800 nid=0x1d9e waiting on condition [0x00007f579a5e4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-18&quot; daemon prio=10 tid=0x00007f585c11d000 nid=0x1d9d waiting on condition [0x00007f57993d2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-2&quot; daemon prio=10 tid=0x00007f5834003800 nid=0x1d9c waiting on condition [0x00007f5798dcc000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;regenerator-1&quot; daemon prio=10 tid=0x00007f5834002800 nid=0x1d9b waiting on condition [0x00007f587619a000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596aa8fe80&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-17&quot; daemon prio=10 tid=0x00007f585c11c000 nid=0x1d9a waiting on condition [0x00007f579a7e6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-16&quot; daemon prio=10 tid=0x00007f585c11b000 nid=0x1d99 waiting on condition [0x00007f5874f88000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;mipmap remover-1&quot; daemon prio=10 tid=0x00007f5834001800 nid=0x1d98 waiting on condition [0x00007f579a3e2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f596a819d08&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-15&quot; daemon prio=10 tid=0x00007f585c11a800 nid=0x1d97 waiting on condition [0x00007f5798ccb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-14&quot; daemon prio=10 tid=0x00007f585c114000 nid=0x1d94 waiting on condition [0x00007f579b8f7000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-13&quot; daemon prio=10 tid=0x00007f585c113000 nid=0x1d93 waiting on condition [0x00007f587568f000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-12&quot; daemon prio=10 tid=0x00007f585c112000 nid=0x1d92 waiting on condition [0x00007f587518a000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-11&quot; daemon prio=10 tid=0x00007f585c111000 nid=0x1d91 waiting on condition [0x00007f579a9e8000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-10&quot; daemon prio=10 tid=0x00007f585c110000 nid=0x1d90 waiting on condition [0x00007f5793ffe000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-9&quot; daemon prio=10 tid=0x00007f585c10f000 nid=0x1d8f waiting on condition [0x00007f579abea000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-8&quot; daemon prio=10 tid=0x00007f585c10e800 nid=0x1d8e waiting on condition [0x00007f57995d4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-7&quot; daemon prio=10 tid=0x00007f585c10c800 nid=0x1d8d waiting on condition [0x00007f5798bca000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-6&quot; daemon prio=10 tid=0x00007f585c10b800 nid=0x1d8c waiting on condition [0x00007f5799ddc000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-5&quot; daemon prio=10 tid=0x00007f585c10a800 nid=0x1d8b waiting on condition [0x00007f587548d000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-4&quot; daemon prio=10 tid=0x00007f585c10a000 nid=0x1d8a waiting on condition [0x00007f5798fce000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-3&quot; daemon prio=10 tid=0x00007f585c109000 nid=0x1d89 waiting on condition [0x00007f587427b000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-2&quot; daemon prio=10 tid=0x00007f585c108800 nid=0x1d88 waiting on condition [0x00007f579a1e0000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;repainter-1&quot; daemon prio=10 tid=0x00007f585c106000 nid=0x1d87 waiting on condition [0x00007f5799fde000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  &lt;0x00007f5969eb8e88&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;TimerQueue&quot; daemon prio=10 tid=0x00007f585c01f000 nid=0x1d05 in Object.wait() [0x00007f587714a000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at javax.swing.TimerQueue.run(TimerQueue.java:232)
+	- locked &lt;0x00007f596aa7c690&gt; (a javax.swing.TimerQueue)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;DestroyJavaVM&quot; prio=10 tid=0x0000000001a8e800 nid=0x1cbd waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Timer-0&quot; daemon prio=10 tid=0x0000000002df8000 nid=0x1cfc in Object.wait() [0x00007f58779ea000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked &lt;0x00007f5969f15540&gt; (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+&quot;AWT-EventQueue-0&quot; prio=10 tid=0x0000000002ded800 nid=0x1cfb in Object.wait() [0x00007f5877aeb000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:485)
+	at java.awt.EventQueue.getNextEvent(EventQueue.java:485)
+	- locked &lt;0x00007f596a28e428&gt; (a java.awt.EventQueue)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:236)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+
+&quot;AWT-Shutdown&quot; prio=10 tid=0x0000000002dd2000 nid=0x1cfa in Object.wait() [0x00007f5877bec000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:485)
+	at sun.awt.AWTAutoShutdown.run(AWTAutoShutdown.java:265)
+	- locked &lt;0x00007f5969e09778&gt; (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;AWT-XAWT&quot; daemon prio=10 tid=0x0000000002da2800 nid=0x1cf8 runnable [0x00007f5877ced000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.awt.X11.XToolkit.waitForEvents(Native Method)
+	at sun.awt.X11.XToolkit.run(XToolkit.java:579)
+	at sun.awt.X11.XToolkit.run(XToolkit.java:543)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;Java2D Disposer&quot; daemon prio=10 tid=0x0000000002d41800 nid=0x1cf7 in Object.wait() [0x00007f5877dee000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked &lt;0x00007f596a143cc0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at sun.java2d.Disposer.run(Disposer.java:127)
+	at java.lang.Thread.run(Thread.java:662)
+
+&quot;Low Memory Detector&quot; daemon prio=10 tid=0x0000000001f09800 nid=0x1cf1 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;CompilerThread1&quot; daemon prio=10 tid=0x0000000001f07000 nid=0x1cf0 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;CompilerThread0&quot; daemon prio=10 tid=0x0000000001f04800 nid=0x1cef waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Signal Dispatcher&quot; daemon prio=10 tid=0x0000000001f02800 nid=0x1cee waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Surrogate Locker Thread (CMS)&quot; daemon prio=10 tid=0x0000000001f00800 nid=0x1ced waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+&quot;Finalizer&quot; daemon prio=10 tid=0x0000000001ee5000 nid=0x1cec in Object.wait() [0x00007f589d4b8000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked &lt;0x00007f5968ea52b0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+&quot;Reference Handler&quot; daemon prio=10 tid=0x0000000001ee3000 nid=0x1ceb in Object.wait() [0x00007f589d5b9000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked &lt;0x00007f5968ebde20&gt; (a java.lang.ref.Reference$Lock)
+
+&quot;VM Thread&quot; prio=10 tid=0x0000000001edc000 nid=0x1cea runnable 
+
+&quot;Gang worker#0 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa3000 nid=0x1cbf runnable 
+
+&quot;Gang worker#1 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa4800 nid=0x1cc0 runnable 
+
+&quot;Gang worker#2 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa6800 nid=0x1cc1 runnable 
+
+&quot;Gang worker#3 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aa8800 nid=0x1cc2 runnable 
+
+&quot;Gang worker#4 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aaa000 nid=0x1cc3 runnable 
+
+&quot;Gang worker#5 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aac000 nid=0x1cc4 runnable 
+
+&quot;Gang worker#6 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aad800 nid=0x1cc5 runnable 
+
+&quot;Gang worker#7 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aaf800 nid=0x1cc6 runnable 
+
+&quot;Gang worker#8 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab1800 nid=0x1cc7 runnable 
+
+&quot;Gang worker#9 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab3000 nid=0x1cc8 runnable 
+
+&quot;Gang worker#10 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab5000 nid=0x1cc9 runnable 
+
+&quot;Gang worker#11 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab7000 nid=0x1cca runnable 
+
+&quot;Gang worker#12 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ab8800 nid=0x1ccb runnable 
+
+&quot;Gang worker#13 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001aba800 nid=0x1ccc runnable 
+
+&quot;Gang worker#14 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001abc800 nid=0x1ccd runnable 
+
+&quot;Gang worker#15 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001abe000 nid=0x1cce runnable 
+
+&quot;Gang worker#16 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac0000 nid=0x1ccf runnable 
+
+&quot;Gang worker#17 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac1800 nid=0x1cd0 runnable 
+
+&quot;Gang worker#18 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac3800 nid=0x1cd1 runnable 
+
+&quot;Gang worker#19 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac5800 nid=0x1cd2 runnable 
+
+&quot;Gang worker#20 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac7000 nid=0x1cd3 runnable 
+
+&quot;Gang worker#21 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ac9000 nid=0x1cd4 runnable 
+
+&quot;Gang worker#22 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001acb000 nid=0x1cd5 runnable 
+
+&quot;Gang worker#23 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001acc800 nid=0x1cd6 runnable 
+
+&quot;Gang worker#24 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ace800 nid=0x1cd7 runnable 
+
+&quot;Gang worker#25 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad0000 nid=0x1cd8 runnable 
+
+&quot;Gang worker#26 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad2000 nid=0x1cd9 runnable 
+
+&quot;Gang worker#27 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad4000 nid=0x1cda runnable 
+
+&quot;Gang worker#28 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad5800 nid=0x1cdb runnable 
+
+&quot;Gang worker#29 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad7800 nid=0x1cdc runnable 
+
+&quot;Gang worker#30 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001ad9800 nid=0x1cdd runnable 
+
+&quot;Gang worker#31 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001adb000 nid=0x1cde runnable 
+
+&quot;Gang worker#32 (Parallel GC Threads)&quot; prio=10 tid=0x0000000001add000 nid=0x1cdf runnable 
+
+&quot;Concurrent Mark-Sweep GC Thread&quot; prio=10 tid=0x0000000001e3b000 nid=0x1ce9 runnable 
+&quot;Gang worker#0 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e29800 nid=0x1ce0 runnable 
+
+&quot;Gang worker#1 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e2b800 nid=0x1ce1 runnable 
+
+&quot;Gang worker#2 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e2d000 nid=0x1ce2 runnable 
+
+&quot;Gang worker#3 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e2f000 nid=0x1ce3 runnable 
+
+&quot;Gang worker#4 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e30800 nid=0x1ce4 runnable 
+
+&quot;Gang worker#5 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e32800 nid=0x1ce5 runnable 
+
+&quot;Gang worker#6 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e34800 nid=0x1ce6 runnable 
+
+&quot;Gang worker#7 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e36000 nid=0x1ce7 runnable 
+
+&quot;Gang worker#8 (Parallel CMS Threads)&quot; prio=10 tid=0x0000000001e38000 nid=0x1ce8 runnable 
+
+&quot;VM Periodic Task Thread&quot; prio=10 tid=0x0000000001f14800 nid=0x1cf2 waiting on condition 
+
+JNI global references: 3612
+
+Heap
+ par new generation   total 383488K, used 30574K [0x00007f593e000000, 0x00007f5958010000, 0x00007f5968e60000)
+  eden space 340928K,   4% used [0x00007f593e000000, 0x00007f593ed96c48, 0x00007f5952cf0000)
+  from space 42560K,  39% used [0x00007f5952cf0000, 0x00007f5953d34d98, 0x00007f5955680000)
+  to   space 42560K,   0% used [0x00007f5955680000, 0x00007f5955680000, 0x00007f5958010000)
+ concurrent mark-sweep generation total 9490680K, used 5931204K [0x00007f5968e60000, 0x00007f5bac29e000, 0x00007f71a8000000)
+ concurrent-mark-sweep perm gen total 131072K, used 55227K [0x00007f71a8000000, 0x00007f71b0000000, 0x00007f71b0000000)</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-23 16:41:18 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks, Stephan. I am going to work on a general solution to the &quot;Fiji won't quit&quot; problem over the next couple of days. See also <a href="http://fiji.sc/bugzilla/﷒0">http://fiji.sc/bugzilla/﷒0</a>﷓</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 13:07:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I believe the quitting problems have been resolved. Can you please retest TrakEM2 and see if this problem is also fixed?</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=784#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-14 12:05:08 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I attempted to reproduce on my OS X 10.9 system with a fully updated Fiji. Clicking the X on the ImageJ main window closes down TrakEM2 (with prompts to save). So I think this bug is resolved.
+
+Strangely, after TrakEM2 is gone, the ImageJ main window does _not_ close. You have to close it again to quit the program. But I think this is OK for now -- not a critical/blocking issue.
+
+Please reopen if you can reproduce some behavior worse than that.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=784">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=784">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=784">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=784&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=784" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=784&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731789-ElhkLxSCLtTah1F0FNMb6t9xOBvLci6xATbidyuGrRc">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

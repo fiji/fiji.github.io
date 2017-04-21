@@ -1,0 +1,1177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 930 &ndash; variable result containing an array gives an error</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=930&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=930">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=930">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=930">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 930 – variable result containing an array gives an error",  
+                             "show_bug.cgi?id=930" );
+        document.title = "Bug 930 – variable result containing an array gives an error";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 930 – variable result containing an array gives an error", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_CONFIRMED bz_product_Fiji bz_component_Plugins bz_bug_930 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;930</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">variable result containing an array gives an error</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-09-13 04:16:10 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=930&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=930" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=930&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731851-BROavO8EyYdHveEXKe3EB0afy0ec7iSNA9E7F44Qo74">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-09-13 04:16:10">
+  <input type="hidden" name="longdesclength" value="5">
+  <input type="hidden" name="id" value="930">
+  <input type="hidden" name="token" value="1492731851-34ARwc2PIzUa0c9bJAVk-CG2MvlXbvonNT_kbZJg-CQ">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=930"><b>Bug&nbsp;930</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">variable result containing an array gives an error</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>variable result containing an array gives an error
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('variable result containing an array gives an error', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">CONFIRMED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=930&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=930">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-09-12 08:48 CDT by <span class="vcard"><span class="fn">Volker</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-09-13 04:16 CDT 
+      (<a href="show_activity.cgi?id=930">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="hinerm">hinerm</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="volker.baecker">volker.baecker</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=930&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=930&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=930#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Volker</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-09-12 08:48:33 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Running the ImageJ1 macro 
+
+result = newArray(3);
+
+in FIJI, gives an error. It works fine in ImageJ.
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.13.0-35-generic
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; gnome
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /home/baecker/programs/Fiji.app/java/linux-amd64/jdk1.6.0_24//jre
+  imagej.dir =&gt; /home/baecker/programs/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140911002552)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140911164641)
+GDSC-SMLM: <a href="http://sites.imagej.net/GDSC-SMLM/">http://sites.imagej.net/GDSC-SMLM/</a> (last check:20140901184458)
+
+Files not up-to-date:
+  ca9bc7b4 (LOCAL_ONLY) 20110307150953 jars/Fiji.jar
+  654950d5 (LOCAL_ONLY) 20140731133439 macros/FilterTester.txt
+  169c22e6 (LOCAL_ONLY) 20140731133429 macros/RegressionTests.txt
+  9c0ae1d2 (LOCAL_ONLY) 20120910154140 macros/toolsets/MRI_Microtubules_Tools.ijm
+  9304e645 (LOCAL_ONLY) 20140619135051 macros/toolsets/SMLM Tools.txt
+  f7efa1b3 (LOCAL_ONLY) 20110307151005 misc/headless.jar
+  c38a9468 (LOCAL_ONLY) 20121025094748 plugins/Example02_CallCommand.class
+  264252a5 (MODIFIED) 20120831160624 plugins/Macros/Bulls_Eye.txt
+  985c24c7 (LOCAL_ONLY) 20140514132013 plugins/Macros/MRI_Microtubules_Tools.ijm
+  4fe1cfd7 (LOCAL_ONLY) 20140619151041 plugins/SNR_.jar
+  57093f4e (LOCAL_ONLY) 20090227205050 plugins/Tools/LiveWire.txt
+  8417d1c5 (LOCAL_ONLY) 20090227204954 plugins/Tools/LiveWire1DTool_.class
+  467c93ff (LOCAL_ONLY) 20090227201012 plugins/Tools/LiveWire2DTool_.class
+  4cbd6295 (LOCAL_ONLY) 20090227204948 plugins/Tools/LiveWireTool.class
+  08e62257 (LOCAL_ONLY) 20090227215826 plugins/Tools/README-LiveWire.txt
+  fef778a5 (LOCAL_ONLY) 20090227201012 plugins/Tools/ij/gui/ERoi.class
+  4f642379 (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/Dijkstraheap.class
+  6c92da1c (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/LiveWire$1.class
+  06ec1e9a (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/LiveWire$2.class
+  ef10fc8c (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/LiveWire$3.class
+  42f3af5e (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/LiveWire$4.class
+  fd4e5f76 (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/LiveWire$5.class
+  20586688 (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/LiveWire.class
+  c2ef8a36 (LOCAL_ONLY) 20090227201012 plugins/Tools/livewire/PixelNode.class
+  a5296dfa (LOCAL_ONLY) 20090227201010 plugins/Tools/livewire/Vector2d.class
+  ec17890b (LOCAL_ONLY) 20131104155444 plugins/omero/libs/JHotDraw.jar
+  91ece67d (LOCAL_ONLY) 20131128104658 plugins/omero/libs/JWlz.jar
+  36cb5c0a (LOCAL_ONLY) 20131104155444 plugins/omero/libs/TableLayout.jar
+  ff61a1b4 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/ai_path.jar
+  c3a86bd0 (LOCAL_ONLY) 20131104155522 plugins/omero/libs/assumeng.jar
+  364315a9 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/axis.jar
+  0af1624e (LOCAL_ONLY) 20131104155444 plugins/omero/libs/backport-util-concurrent.jar
+  6912f440 (LOCAL_ONLY) 20140403210120 plugins/omero/libs/blitz.jar
+  189f61fa (LOCAL_ONLY) 20131104155444 plugins/omero/libs/bufr.jar
+  031cc2a6 (LOCAL_ONLY) 20140403205940 plugins/omero/libs/common.jar
+  940245e0 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-codec.jar
+  64d8a654 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-collections.jar
+  86ab9004 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-digester.jar
+  9e9eb622 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-discovery.jar
+  c62bea1b (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-httpclient.jar
+  d59d3e4c (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-io.jar
+  f6139801 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-lang.jar
+  7018824c (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-logging.jar
+  60a83b54 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/commons-validator.jar
+  abf211c5 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/ehcache-core.jar
+  991b5e8a (LOCAL_ONLY) 20131104155444 plugins/omero/libs/gicentreUtils.jar
+  dbcde867 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/gluegen-rt.jar
+  e33cecc2 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/grib.jar
+  ac0dfbec (LOCAL_ONLY) 20131104155444 plugins/omero/libs/guava-jdk5.jar
+  85c28658 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/hibernate-jpa-2.0-api.jar
+  1911c9e1 (LOCAL_ONLY) 20131120130114 plugins/omero/libs/ice-glacier2.jar
+  b1d709fb (LOCAL_ONLY) 20131120130114 plugins/omero/libs/ice-grid.jar
+  c49b8fa2 (LOCAL_ONLY) 20131120130114 plugins/omero/libs/ice-storm.jar
+  53aa5393 (LOCAL_ONLY) 20131120130114 plugins/omero/libs/ice.jar
+  6e7614ee (LOCAL_ONLY) 20131104155444 plugins/omero/libs/ij.jar
+  6ce638fb (LOCAL_ONLY) 20131104155444 plugins/omero/libs/ini4j.jar
+  f1b65457 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/java-getopt.jar
+  c827227f (LOCAL_ONLY) 20131104155444 plugins/omero/libs/java-image-scaling.jar
+  e72f9b2b (LOCAL_ONLY) 20131104155444 plugins/omero/libs/jaxrpc.jar
+  4156c7b5 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/jcommon.jar
+  c57f20b0 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/jfreechart.jar
+  df7a0b63 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/jna.jar
+  4c09d41c (LOCAL_ONLY) 20131104155522 plugins/omero/libs/joda-time.jar
+  9a9b947a (LOCAL_ONLY) 20131104155444 plugins/omero/libs/jogl.jar
+  d2af3ac9 (LOCAL_ONLY) 20131104155522 plugins/omero/libs/kryo.jar
+  b2911375 (LOCAL_ONLY) 20140403205856 plugins/omero/libs/lwf-stubs.jar
+  0f7b1b81 (LOCAL_ONLY) 20140403205936 plugins/omero/libs/model-psql.jar
+  a127d67c (LOCAL_ONLY) 20131104155444 plugins/omero/libs/nanoxml.jar
+  e1a35a80 (LOCAL_ONLY) 20131104155522 plugins/omero/libs/native-lib-loader.jar
+  a51a31db (LOCAL_ONLY) 20131128104658 plugins/omero/libs/netcdf.jar
+  e665d66a (LOCAL_ONLY) 20131104155444 plugins/omero/libs/ols-client.jar
+  18382f06 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/ome-java.jar
+  7af6ddeb (LOCAL_ONLY) 20131104155522 plugins/omero/libs/perf4j.jar
+  6340be70 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/physics.jar
+  b3056152 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/platform.jar
+  4ef2cfd3 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/poi.jar
+  af4b3176 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/processing-controlP5.jar
+  1cb045e1 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/processing-core.jar
+  2e6cf711 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/saaj.jar
+  eedc0cd9 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/serializer.jar
+  5085d943 (LOCAL_ONLY) 20140401124614 plugins/omero/libs/slf4j-api.jar
+  1deeabc9 (LOCAL_ONLY) 20140403205852 plugins/omero/libs/specification.jar
+  ba32bfdf (LOCAL_ONLY) 20131104155444 plugins/omero/libs/swingx.jar
+  7c4005e7 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/wsdl4j.jar
+  c8694e76 (LOCAL_ONLY) 20131104155444 plugins/omero/libs/xalan.jar
+  56926bee (LOCAL_ONLY) 20140403210440 plugins/omero/omero_ij.jar
+  926b71b3 (LOCAL_ONLY) 20140326180812 plugins/spiral/Batch_Process_Cellomics_Mosaics.bsh
+  3b2c92dd (LOCAL_ONLY) 20140704153331 plugins/spiral/Batch_Process_Cellomics_Timeseries_Mosaics.bsh
+  bade15d7 (LOCAL_ONLY) 20140326145451 plugins/spiral/Create_Spiral_Image.bsh
+  d3260180 (LOCAL_ONLY) 20110303204101 scripts/Record_Desktop.py
+  0ea7f8fc (LOCAL_ONLY) 20110303204101 scripts/Record_Window.py</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=930#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-09-12 10:24:30 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Confirmed. The error message is:
+
+'[' or '.' expected
+
+
+This comes from IJ1 helper passing the macro:
+
+result = -17974594
+result = newArray(3);call(&quot;net.imagej.legacy.plugin.IJ1MacroEngine.setOutput&quot;, &quot;result&quot;, result);
+
+to IJ.runMacro, which errors out when attempting to look up the value of the result variable here:
+
+<a href="https://github.com/imagej/ImageJA/blob/master/src/main/java/ij/macro/Interpreter.java#L1629-1648">https://github.com/imagej/ImageJA/blob/master/src/main/java/ij/macro/Interpreter.java#L1629-1648</a>
+
+Looks like it's wants to evaluate an index of the array instead of just returning the array itself.
+
+Note that storing the array into a different variable name seems to be fine (no exception at least). e.g.:
+
+test = newArray(3);</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=930#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-09-12 10:41:15 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Volker, I just wasted 10 minutes studying <a href="http://imagej.net/developer/macro/functions.html">http://imagej.net/developer/macro/functions.html</a> for any way to determine the type of a variable; there seems not to be any.
+
+Feel free to dig deeper and come up with a way to determine -- in ImageJ 1.x' macro language -- whether a given variable is a string or a number (which we would need to support your use case).
+
+Until we have such a method, I am afraid I have to mark this with a WONTFIX.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=930#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-09-12 11:39:14 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I think we _have_ to fix this. Otherwise, any existing macros that use newArray will no longer work in Fiji.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=930#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-09-13 04:16:10 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Fiji is a *community* effort, and Volker is a quite capable developer. Let's include him in the process of fixing this bug instead of excluding him.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=930">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=930">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=930">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=930&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=930" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=930&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731851-BROavO8EyYdHveEXKe3EB0afy0ec7iSNA9E7F44Qo74">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,1454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 966 &ndash; threshold &quot;red&quot; display wrong /treshold upper/lower values not updated</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=966&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=966">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=966">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=966">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 966 – threshold \"red\" display wrong \/treshold upper\/lower values not updated",  
+                             "show_bug.cgi?id=966" );
+        document.title = "Bug 966 – threshold \"red\" display wrong \/treshold upper\/lower values not updated";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 966 – threshold \"red\" display wrong \/treshold upper\/lower values not updated", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_966 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;966</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">threshold &quot;red&quot; display wrong /treshold upper/lower values not updated</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-04-21 11:40:41 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=966&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=966" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=966&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731865-TzgK-qPfNZlkZGrSKqpdyU5pI4SeYuKShQ_kJ9NY8fE">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2015-04-21 11:40:41">
+  <input type="hidden" name="longdesclength" value="5">
+  <input type="hidden" name="id" value="966">
+  <input type="hidden" name="token" value="1492731865-4t5Rc_oPqiXtrfiBWw0amgo3z5fdljRWseqL0oBEhFk">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=966"><b>Bug&nbsp;966</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">threshold &quot;red&quot; display wrong /treshold upper/lower values not updated</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>threshold &quot;red&quot; display wrong /treshold upper/lower values not updated
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('threshold \"red\" display wrong \/treshold upper\/lower values not updated', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=966&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=966">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-12-01 08:08 CST by <span class="vcard">felix.keber
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-04-21 11:40 CDT 
+      (<a href="show_activity.cgi?id=966">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="felix.keber">felix.keber</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_tiff">
+        <td valign="top">
+            <a href="attachment.cgi?id=222"
+               title="View the content of the attachment">
+          <b>two stacks concateneted and resized</b></a>
+
+          <span class="bz_attach_extra_info">
+              (681.33 KB,
+                image/tiff)
+
+            <br>
+            <a href="#attach_222"
+               title="Go to the comment associated with the attachment">2014-12-03 03:27 CST</a>,
+
+            <span class="vcard">felix.keber
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi?id=222&amp;action=edit">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <span class="bz_attach_view_hide">
+        </span>
+        <a href="attachment.cgi?bugid=966&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=966&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=966#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">felix.keber
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-01 08:08:01 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hello,
+
+I was measuring areas limited to threshold on 16bit image stacks (to imagine the data: circular gradients, white on black), updated version today.  I realized that the measured area was far smaller than the one highlighted red in the image. 
+I found out that the highest possible value of the min-max-sliders of the threshold-dialogue-box does not belong to the actual image (and also not to the actual stack). It changes to proper values only when i use &quot;stack histogram&quot; (or after that un-select &quot;stack histogram&quot; to get the values for the actual slice). Closing and re-opening the threshold-dialogue-box also does not help.
+The values also are not actualized when setting a new minimum/maximum value via the sliders (using &quot;set&quot; updates them). However, changing the maximum slider (just by one step) updates the look-up table, so not the entire area is highlighted red.
+The problem may  occur because of changing between different image stacks. (I was clicking around now a bit and it happens quite sometimes, but i couldn't find out when exactly.)
+I don't mind the values stay the same, this is just inconvenient -updating the stack histogram fixes it. But i think it is a big problem that the red highlighted region is not the thresholded region. If the the wrong value is not too far from the true one, it is hard for the user to realize that not the dispayed region is evaluated.
+
+Best regards &amp; big thanks for developing this software,
+Felix
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: D:\Fiji\Fiji.app/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; D:\Fiji\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20141126221327)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20141125171145)
+
+Files not up-to-date:
+  c83c26ea (OBSOLETE_UNINSTALLED) 20140324102223 jars/forms-1.3.0.jar
+  9f31a952 (OBSOLETE_UNINSTALLED) 20140324102246 jars/ij-commands-2.0.0-beta-7.7.jar
+  f7d0e2eb (OBSOLETE_UNINSTALLED) 20140227103040 jars/ij-core-2.0.0-beta-7.7.jar
+  24e0bde0 (OBSOLETE_UNINSTALLED) 20140324102217 jars/ij-data-2.0.0-beta-7.7.jar
+  00efaa63 (OBSOLETE) 20140324102238 jars/ij-launcher-2.0.2.jar
+  2aaf4824 (OBSOLETE) 20120614122208 jars/ij-launcher.jar
+  56855167 (OBSOLETE_UNINSTALLED) 20140324102215 jars/ij-legacy-2.0.0-SNAPSHOT.jar
+  6e95217d (OBSOLETE_UNINSTALLED) 20140324102242 jars/ij-minimaven-2.0.0-beta-7.7.jar
+  7600e777 (OBSOLETE_UNINSTALLED) 20140324102222 jars/ij-options-2.0.0-beta-7.7.jar
+  7e2766e2 (OBSOLETE_UNINSTALLED) 20140324102238 jars/ij-platforms-2.0.0-beta-7.7.jar
+  7a824b7e (OBSOLETE_UNINSTALLED) 20140324102243 jars/ij-scripting-beanshell-2.0.0-beta-7.7.jar
+  433f2bc8 (OBSOLETE_UNINSTALLED) 20140324102257 jars/ij-scripting-clojure-2.0.0-beta-7.7.jar
+  0a5d89fe (OBSOLETE_UNINSTALLED) 20140324102244 jars/ij-scripting-java-2.0.0-beta-7.7.jar
+  de00b500 (OBSOLETE_UNINSTALLED) 20140324102311 jars/ij-scripting-javascript-2.0.0-beta-7.7.jar
+  8345a4fd (OBSOLETE_UNINSTALLED) 20140324102257 jars/ij-scripting-jruby-2.0.0-beta-7.7.jar
+  598d0fdf (OBSOLETE_UNINSTALLED) 20140324102257 jars/ij-scripting-jython-2.0.0-beta-7.7.jar
+  351a73ce (OBSOLETE_UNINSTALLED) 20140324102251 jars/ij-text-2.0.0-beta-7.7.jar
+  3cd39ba0 (OBSOLETE_UNINSTALLED) 20140324102210 jars/ij-tools-2.0.0-beta-7.7.jar
+  d514e8f0 (OBSOLETE_UNINSTALLED) 20140324102212 jars/ij-ui-2.0.0-beta-7.7.jar
+  b6ce787a (OBSOLETE_UNINSTALLED) 20140324102209 jars/ij-ui-common-awt-2.0.0-beta-7.7.jar
+  05b1de42 (OBSOLETE_UNINSTALLED) 20140324102238 jars/ij-ui-swing-2.0.0-beta-7.7.jar
+  c1ce4424 (OBSOLETE_UNINSTALLED) 20140324102243 jars/ij-ui-swing-commands-2.0.0-beta-7.7.jar
+  31d20704 (OBSOLETE_UNINSTALLED) 20140324102242 jars/ij-ui-swing-script-editor-2.0.0-beta-7.7.jar
+  59100d0b (OBSOLETE_UNINSTALLED) 20140227103039 jars/ij-ui-swing-updater-2.0.0-beta-7.7.jar
+  4bcfadc6 (OBSOLETE_UNINSTALLED) 20140227103037 jars/ij-updater-core-2.0.0-beta-7.7.jar
+  6f60a5ac (OBSOLETE_UNINSTALLED) 20140324102246 jars/ij-updater-webdav-2.0.0-beta-7.7.jar
+  27161205 (OBSOLETE_UNINSTALLED) 20140324102209 jars/ij-util-awt-2.0.0-beta-7.7.jar
+  11b4297f (OBSOLETE_UNINSTALLED) 20140324102224 jars/ij-util-swing-2.0.0-beta-7.7.jar
+  e5852db5 (OBSOLETE_UNINSTALLED) 20140324102156 jars/jai_imageio-1.0.1.jar
+  7ecaf631 (OBSOLETE_UNINSTALLED) 20140324102331 jars/jruby-complete-1.7.11.jar
+  24d47d70 (OBSOLETE_UNINSTALLED) 20120806132711 jars/junit-4.8.1.jar
+  9f4f8151 (OBSOLETE_UNINSTALLED) 20140324102306 jars/jython-2.5.2.jar
+  eedc0cd9 (OBSOLETE_UNINSTALLED) 20140324102211 jars/serializer-2.7.1.jar
+  9ae3dd1b (OBSOLETE_UNINSTALLED) 20140324102221 jars/slf4j-log4j12-1.7.2.jar
+  36cdef55 (OBSOLETE_UNINSTALLED) 20140324102205 jars/xalan-2.7.1.jar
+  b70b226a (LOCAL_ONLY) 20130305164426 macros/3D_Movie.ijm
+  496a53d9 (LOCAL_ONLY) 20130307152712 macros/3D_Projection_Movie.ijm
+  f21ae7a0 (LOCAL_ONLY) 20111206135036 macros/Kymograph Macros/tsp050706.txt
+  1c610875 (LOCAL_ONLY) 20120604184323 macros/macros gliding/Macrogliding - Kopie.txt
+  69830a34 (LOCAL_ONLY) 20120604184352 macros/macros gliding/Macrogliding ohne blau - Kopie.txt
+  21bedbdb (LOCAL_ONLY) 20140905182300 macros/ownmacros/3Dvisualisation.ijm
+  5ba6e0d3 (LOCAL_ONLY) 20111010112205 macros/ownmacros/BP_Maximastack.ijm
+  a53952be (LOCAL_ONLY) 20110519181806 macros/ownmacros/Carina - Image MAX mit BRIGHTFIEDL.ijm
+  5c7ebac2 (LOCAL_ONLY) 20110519181837 macros/ownmacros/Carina - Image MAX.ijm
+  94b294cb (LOCAL_ONLY) 20110520184959 macros/ownmacros/Carina - MAX-Mov - 2Channels.ijm
+  fa710311 (LOCAL_ONLY) 20110519181823 macros/ownmacros/Carina - Movie MAX.ijm
+  d66cb8db (LOCAL_ONLY) 20110520152129 macros/ownmacros/Carina - SNAPSHOT in GREEN.ijm
+  326f5eb2 (LOCAL_ONLY) 20110513133029 macros/ownmacros/Carina - SplitChannels.ijm
+  54f86128 (LOCAL_ONLY) 20101117133957 macros/ownmacros/Carina_process-lifs.ijm
+  9e47439b (LOCAL_ONLY) 20111006184752 macros/ownmacros/Macro.ijm
+  5c455621 (LOCAL_ONLY) 20120822181849 macros/ownmacros/MacroMakeSammel.ijm
+  f4d85aee (LOCAL_ONLY) 20120824183412 macros/ownmacros/Macro_maximatrack.ijm
+  f3d96e26 (LOCAL_ONLY) 20130228133943 macros/ownmacros/MaskStack.ijm
+  155b55de (LOCAL_ONLY) 20111010104710 macros/ownmacros/Maximastack.ijm
+  c83130b9 (LOCAL_ONLY) 20130521100229 macros/ownmacros/Tims Vesicle Analysis/6Projections_CentProjs.ijm
+  cac3e4d6 (LOCAL_ONLY) 20130521100229 macros/ownmacros/Tims Vesicle Analysis/6Projections_Montage.ijm
+  37d85815 (LOCAL_ONLY) 20130521100229 macros/ownmacros/Tims Vesicle Analysis/RemoveCenter_track.ijm
+  c6b04084 (LOCAL_ONLY) 20131018124308 macros/ownmacros/Tims Vesicle Analysis/RemoveCenter_track_131018.ijm
+  21a85413 (LOCAL_ONLY) 20130521100229 macros/ownmacros/Tims Vesicle Analysis/Vesicles Matlab Files/license.txt
+  50d2777f (LOCAL_ONLY) 20130610162317 macros/ownmacros/Vesicle Extraction/clearbyhand.ijm
+  0e91698d (LOCAL_ONLY) 20130322164526 macros/ownmacros/Vesicle Extraction/vesicle remove membrane/ShrinkingConvexHull_stack_cutactinchannel.ijm
+  e42daa78 (LOCAL_ONLY) 20130322160949 macros/ownmacros/Vesicle Extraction/vesicle remove membrane/iso/preprocess.ijm
+  96e77502 (LOCAL_ONLY) 20130322164154 macros/ownmacros/Vesicle Extraction/vesicle remove membrane/preprocess1.ijm
+  d1b196e5 (LOCAL_ONLY) 20130322164325 macros/ownmacros/Vesicle Extraction/vesicle remove membrane/preprocess2.ijm
+  e84f5926 (LOCAL_ONLY) 20130322183703 macros/ownmacros/Vesicle Extraction/vesicle remove membrane/wand_remove_outside.ijm
+  baab0902 (LOCAL_ONLY) 20140130133037 macros/ownmacros/Wand_clear_outside_stack.ijm
+  6e3598f7 (LOCAL_ONLY) 20121220172436 macros/ownmacros/anillin stubs/threshold Area wand remove edge.ijm
+  ba489dfb (LOCAL_ONLY) 20121220161546 macros/ownmacros/anillin stubs/threshold Area wand.ijm
+  99621623 (LOCAL_ONLY) 20121218173036 macros/ownmacros/anillin stubs/threshold Area.ijm
+  52ca1ea1 (LOCAL_ONLY) 20121220172443 macros/ownmacros/anillin stubs/threshold Area1.ijm
+  107f3ff8 (LOCAL_ONLY) 20140117194258 macros/ownmacros/contraction/MeasureArea.ijm
+  96e98ce6 (LOCAL_ONLY) 20120827103916 macros/ownmacros/crosscorr.ijm
+  1d5cec32 (LOCAL_ONLY) 20120814170143 macros/ownmacros/plot360/Wand_extract roi.ijm
+  d616a5a9 (LOCAL_ONLY) 20130319192320 macros/ownmacros/plot360/carpet_cones.ijm
+  af8f2113 (LOCAL_ONLY) 20130320132643 macros/ownmacros/plot360/carpet_cones1.ijm
+  260f0636 (LOCAL_ONLY) 20130321174900 macros/ownmacros/plot360/carpet_cones5.ijm
+  42eb25cc (LOCAL_ONLY) 20130423165056 macros/ownmacros/plot360/plot360.ijm
+  ae599894 (LOCAL_ONLY) 20130320185509 macros/ownmacros/plot360/slicenumbervalue.ijm
+  2300b37c (LOCAL_ONLY) 20140212194607 macros/ownmacros/sandbox/GroupedProjectContinuous.ijm
+  d5e25bc7 (LOCAL_ONLY) 20130426104441 macros/ownmacros/sandbox/MaximaListStack.ijm
+  abe90829 (LOCAL_ONLY) 20131018114833 macros/ownmacros/sandbox/ReplaceFrame.ijm
+  64a11870 (LOCAL_ONLY) 20130404162058 macros/ownmacros/sandbox/ThresholdedMeasurement.ijm
+  f6748d71 (LOCAL_ONLY) 20131018112248 macros/ownmacros/sandbox/getMetadata.ijm
+  6083e10d (LOCAL_ONLY) 20130404161041 macros/ownmacros/sandbox/opendir_grundgerüst.txt
+  5aaea2c4 (LOCAL_ONLY) 20130404161259 macros/ownmacros/sandbox/opendir_grundgerüst.txt.ijm
+  4bc5b755 (LOCAL_ONLY) 20130321181905 macros/ownmacros/trackedboxcopy.ijm
+  bc99cee1 (LOCAL_ONLY) 20120827170304 macros/ownmacros/vesicle/BP_Maximatrack_List.ijm
+  5428ea98 (LOCAL_ONLY) 20120827182640 macros/ownmacros/vesicle/BP_Maximatrack_List_multiplydata.ijm
+  8e729b10 (LOCAL_ONLY) 20120824171845 macros/ownmacros/vesicle/BP_Maximatrack_Pointoutput.ijm
+  63938353 (LOCAL_ONLY) 20120806105608 macros/ownmacros/vesicle/MAX_fullimage_varslices.ijm
+  302afde4 (LOCAL_ONLY) 20120814125209 macros/ownmacros/vesicle/Macro.ijm
+  4451a026 (LOCAL_ONLY) 20120822181923 macros/ownmacros/vesicle/MacroMakeSammel.ijm
+  f550ed9a (LOCAL_ONLY) 20120809192530 macros/ownmacros/vesicle/New_deleteslices.ijm
+  4d137ddf (LOCAL_ONLY) 20120820102937 macros/ownmacros/vesicle/RemoveCenter.ijm
+  38aabce2 (LOCAL_ONLY) 20130422181827 macros/ownmacros/vesicle/RemoveCenterCircle_track.ijm
+  998d3c72 (LOCAL_ONLY) 20120821121830 macros/ownmacros/vesicle/RemoveCenter_track.ijm
+  765ff81e (LOCAL_ONLY) 20120824183415 macros/ownmacros/vesicle/RemoveCenter_track_12-08-21.ijm
+  564c5dad (LOCAL_ONLY) 20120821121832 macros/ownmacros/vesicle/RemoveMembrane_track.ijm
+  8d35b187 (LOCAL_ONLY) 20120824180205 macros/ownmacros/vesicle/SCANMETHODS.ijm
+  928070db (LOCAL_ONLY) 20120829164924 macros/ownmacros/vesicle/ShrinkingConvexHull.ijm
+  27e28198 (LOCAL_ONLY) 20130322162445 macros/ownmacros/vesicle/ShrinkingConvexHull_stack.ijm
+  efd65c67 (LOCAL_ONLY) 20121106183621 macros/ownmacros/vesicle/ShrinkingConvexHull_stack_adaptiterations.ijm
+  18e0c329 (LOCAL_ONLY) 20120830175119 macros/ownmacros/vesicle/ShrinkingConvexHull_stack_adaptiterations2.ijm
+  61424d76 (LOCAL_ONLY) 20120831170722 macros/ownmacros/vesicle/ShrinkingConvexHull_stack_adaptiterations4.ijm
+  2f2e05a3 (LOCAL_ONLY) 20120903161957 macros/ownmacros/vesicle/ShrinkingConvexHull_stack_adaptiterations6.ijm
+  0dbf991f (LOCAL_ONLY) 20120814170143 macros/ownmacros/vesicle/Wand_extract roi.ijm
+  68a69bf4 (LOCAL_ONLY) 20120918182537 macros/ownmacros/vesicle/XY_AVGproject.ijm
+  ba816cf7 (LOCAL_ONLY) 20130318170424 macros/ownmacros/vesicle/XYhemispheres.ijm
+  ae5e0855 (LOCAL_ONLY) 20120827174746 macros/ownmacros/vesicle/XYhemispheres_track.ijm
+  39f9417f (LOCAL_ONLY) 20130705172000 macros/ownmacros/vesicle/XYrotprojection_1roi_1frame.ijm
+  79b811ae (LOCAL_ONLY) 20120726121918 macros/ownmacros/vesicle/XYrotprojection_2roi_1frame.ijm
+  10e8a25c (LOCAL_ONLY) 20120726144522 macros/ownmacros/vesicle/XYrotprojection_4roi_1frame.ijm
+  fb0bcee7 (LOCAL_ONLY) 20120726112703 macros/ownmacros/vesicle/XYrotprojection_roi_1frame.ijm
+  73bfa701 (LOCAL_ONLY) 20120806143919 macros/ownmacros/vesicle/Yhemisphere.ijm
+  b31050cf (LOCAL_ONLY) 20120821170102 macros/ownmacros/vesicle/Yhemispheres_track.ijm
+  0bc69aed (LOCAL_ONLY) 20120814104353 macros/ownmacros/vesicle/ZProjectHemispheres-2_TIM.txt
+  578f3ef3 (LOCAL_ONLY) 20121121175517 macros/ownmacros/vesicle/analysis/Convexhull.ijm
+  6259e20c (LOCAL_ONLY) 20121121175538 macros/ownmacros/vesicle/analysis/Measurements.ijm
+  f28ab82b (LOCAL_ONLY) 20140130132521 macros/ownmacros/vesicle/analysis/Thresholding.ijm
+  dd5e8d49 (LOCAL_ONLY) 20120824183419 macros/ownmacros/vesicle/grouped_projection_merge.ijm
+  04dad030 (LOCAL_ONLY) 20120727104042 macros/ownmacros/vesicle/hemispheres_1roi.ijm
+  ff0c9b22 (LOCAL_ONLY) 20120726121921 macros/ownmacros/vesicle/hemispheres_2roi.ijm
+  353f38ec (LOCAL_ONLY) 20120726181059 macros/ownmacros/vesicle/hemispheres_4roi.ijm
+  b42d76be (LOCAL_ONLY) 20120822181800 macros/ownmacros/vesicle/hemispheres_combined_fur_kathi.ijm
+  3e8f1b28 (LOCAL_ONLY) 20120726112700 macros/ownmacros/vesicle/hemispheres_roi.ijm
+  ce49d35e (LOCAL_ONLY) 20120904162927 macros/ownmacros/vesicle/spindle/SpindleFitEllipse.ijm
+  58f669dc (LOCAL_ONLY) 20120820114652 macros/ownmacros/vesicle/test_getmid.ijm
+  ab412f0f (LOCAL_ONLY) 20111005143016 macros/ownmacros/windowAVG.ijm
+  f4709b01 (LOCAL_ONLY) 20120723181215 plugins/3D_Convex_Hull.jar
+  03192148 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/AccessibleFFT.class
+  f9c304ff (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/HistogramCreator.class
+  26c0b824 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/background/BackgroundCorrector.class
+  077a41a9 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/background/BgImageBackgroundCorrector.class
+  de74a7f9 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/background/FlatBackgroundCorrector.class
+  5a1d8895 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/background/MeanBackgroundCreator.class
+  0c0e023b (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/background/MedianBackgroundCreator.class
+  2ccc4406 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/BackgroundCorrectionAndClusteringThread.class
+  6d2129e6 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/BinaryClusterer.class
+  a5044226 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/Clusterer.class
+  a5b5fbd5 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/GainLossAnalyzer.class
+  17c02fbc (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/ImageAnalysator.class
+  fa5a46b6 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/KDistanceSerialClusterer$Internal2DIntArray.class
+  89f622dd (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/KDistanceSerialClusterer.class
+  31e8d95a (LOCAL_ONLY) 20110221212430 plugins/CellEvaluator(RC)_110408/algorithm/clustering/PointBrightnessComparator.class
+  1d6340a3 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/SeedClusterer$RegionOfInterestCluster.class
+  6c301ff8 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/SeedClusterer.class
+  ad65f5be (LOCAL_ONLY) 20110221212430 plugins/CellEvaluator(RC)_110408/algorithm/clustering/SeparatingClusterer.class
+  2abe83d7 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/ThresholdingClusterer.class
+  96acd7d6 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/clustering/VarianceAndMinimalErrorClustering.class
+  49374cbb (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/eventmanagement/Event.class
+  64bd9ef4 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/eventmanagement/EventManager.class
+  df854719 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/eventmanagement/EventModule$1.class
+  506d2478 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/eventmanagement/EventModule$2.class
+  98fc4594 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/eventmanagement/EventModule$3.class
+  0e1c9fe7 (LOCAL_ONLY) 20110221210920 plugins/CellEvaluator(RC)_110408/algorithm/eventmanagement/EventModule$SanityCheckTableModel.class
+  a7e9afee (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/eventmanagement/EventModule.class
+  38e51d94 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/BayesTracker.class
+  3cb8b09c (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/ConcurrentOverlapTracker.class
+  512c5851 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/Tracker.class
+  be8dd7af (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/CostMatrix.class
+  d05bb242 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/Hungarian.class
+  35658ba0 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/MixCostMatricesFactory.class
+  87753657 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/ParameterConstants.class
+  c6fe72aa (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/ParameterMatrixCalculator.class
+  25576019 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/ParameterMatrixFactory.class
+  4ea233c5 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/ShiftAndNormalizeFactory.class
+  9a6261db (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/cost_recalculation/CostRecalculationThread.class
+  71927c41 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/cost_recalculation/CostReconstructor.class
+  6f6dd401 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/parallel_lap_tracking/LAPTrackingThread.class
+  46b296ca (LOCAL_ONLY) 20110403233414 plugins/CellEvaluator(RC)_110408/algorithm/tracking/lap/multi_parameter/parallel_lap_tracking/ParallelLAPTracking.class
+  521209e5 (LOCAL_ONLY) 20110403225516 plugins/CellEvaluator(RC)_110408/cellevaluator/AnalysisPropertiesFactory.class
+  53328833 (LOCAL_ONLY) 20110403225516 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorAnalysisFactory.class
+  14c33c68 (LOCAL_ONLY) 20110403225350 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorControl.class
+  e92b1060 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$1.class
+  2b93f6db (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$10.class
+  d7a9f300 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$11.class
+  c9a15999 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$12.class
+  be38ada3 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$13.class
+  f5c3e4c1 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$14.class
+  baea1332 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$15.class
+  68bdd486 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$16.class
+  d22d4a26 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$17.class
+  e4cbeab1 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$18.class
+  96cadbdf (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$19.class
+  81246a4b (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$2.class
+  735d9d99 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$20.class
+  afc6c21f (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$21.class
+  4edb366a (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$22.class
+  34bdbada (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$23.class
+  e787c796 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$24.class
+  041638e0 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$25.class
+  2182f2b9 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$26.class
+  959360a8 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$27.class
+  a67b575e (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$28.class
+  9ba27091 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$29.class
+  242ae805 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$3.class
+  1111a748 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$30.class
+  89551c1c (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$31.class
+  d1c19508 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$32.class
+  35a33ea8 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$33.class
+  42feb568 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$34.class
+  b9a8fd7e (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$4.class
+  38fd2007 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$5.class
+  d84773fc (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$6.class
+  1d16d944 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$7.class
+  b4e9d626 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$8.class
+  610998fe (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$9.class
+  57ccd75c (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_$WriteCSVFilesActionListener.class
+  9f6ae773 (LOCAL_ONLY) 20110403225148 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorMenu_.class
+  95f68f2c (LOCAL_ONLY) 20110403225516 plugins/CellEvaluator(RC)_110408/cellevaluator/CellEvaluatorModel.class
+  bf3b6723 (LOCAL_ONLY) 20110403225516 plugins/CellEvaluator(RC)_110408/cellevaluator/DensityClusteringConfig.class
+  61bf547a (LOCAL_ONLY) 20110403225516 plugins/CellEvaluator(RC)_110408/cellevaluator/TimeSeriesChangeEvent.class
+  b83730da (LOCAL_ONLY) 20110403225516 plugins/CellEvaluator(RC)_110408/cellevaluator/TimeSeriesChangeListener.class
+  a728c308 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/AbstractCluster$PointBrightnessComparator.class
+  be230ebd (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/AbstractCluster.class
+  5003be03 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/AnalysisProperties.class
+  1f2888c7 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/BitonalContour.class
+  92f8641f (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/ContourCluster.class
+  8e194148 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/ContourHelper.class
+  c52b38d2 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/DynamicSortedDoubleArray.class
+  f819a803 (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/EventHandlingProperties.class
+  54e4a4aa (LOCAL_ONLY) 20110221210918 plugins/CellEvaluator(RC)_110408/data/FatCluster.class
+  6c25f3f4 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/data/Parameter.class
+  3b688b40 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/data/PictureCorrelationAnalysisModel.class
+  179c9fee (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/data/Point.class
+  18b982f1 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/data/SegmentationProperties.class
+  f93d9015 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/data/TimeSeries.class
+  d8762761 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/data/TimeSeriesManager.class
+  a408128a (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/data/TrackingProperties.class
+  a58a58d0 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/exceptions/DimensionMismatchException.class
+  3e308c66 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/exceptions/EmptySetException.class
+  2dfc94dc (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/export/AbstractCSVCreator.class
+  802ffe54 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/export/BrightnessCSVWriter.class
+  9c9b41c0 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/export/ClusterImageCreator.class
+  23c19c7f (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/export/PngFactory.class
+  22035be7 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/export/StaticCSVCreator.class
+  5e4ae40d (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/FitManager.class
+  d9ccd2fb (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/FitObject.class
+  02d8e6a9 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/FitObjectTableFrame.class
+  e6d76f55 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/FitObjectTableModel.class
+  3b7aaa89 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/FitObjectsTablePanel$1.class
+  8eb7d145 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/FitObjectsTablePanel$PlotRenderer.class
+  6f0d9791 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/FitObjectsTablePanel.class
+  b64cacc6 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$1.class
+  6466ad4a (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$2.class
+  293d4574 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$Arrow.class
+  603ea71a (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$Directive.class
+  2a855fee (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$MouseHandler.class
+  4092090d (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$Row.class
+  f9543e0b (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$SortableHeaderRenderer.class
+  5bfe2455 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter$TableModelHandler.class
+  d8629865 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/TableSorter.class
+  eea62c72 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/BaseZeroIgorHillFunction.class
+  3790bdc4 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/FixedRateIgorHillFunction.class
+  986ecd8a (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/FixedValueHillFunction.class
+  3c32cf82 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/HillFunction.class
+  5489a32b (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/IgorHillFunction.class
+  f7e03cbd (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/LineFunction.class
+  7f7cef50 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/LogisticFunction.class
+  5e2e1bf2 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/fit/function/TanHFunction.class
+  e5378860 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/CellEvaluatorStackFrame$StackPoint.class
+  65497fef (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/CellEvaluatorStackFrame.class
+  b053f0c8 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/CellEvaluatorStackFrameInterface.class
+  60374656 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/CellsFitResultsTable.class
+  8cf9ebd2 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/ColorModelFactory.class
+  2bea4d5c (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/StartAnalysisGUI$BGCModeListener.class
+  66641ae8 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/StartAnalysisGUI$BatchModeListener.class
+  134ecd5e (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/StartAnalysisGUI$SegmentationModeListener.class
+  a79197af (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/gui/StartAnalysisGUI.class
+  c1357542 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/imports/AbstractFileReader.class
+  70fb63e8 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/imports/CSVReader.class
+  e6d563d3 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/imports/NumberedClustersImporter.class
+  ebe7bd03 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/ArrayConverter.class
+  c4a67e81 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/LM$LMGaussTest.class
+  b148a86e (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/LM$LMQuadTest.class
+  6a54981d (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/LM$LMSineTest.class
+  9af103ba (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/LM.class
+  fe293f06 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/LMA.class
+  c54a3cee (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/LMAFunction.class
+  6b78a84b (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/LMfunc.class
+  69137748 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/implementations/JAMAMatrix.class
+  0bebda92 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/lma/implementations/LMAMatrix.class
+  a41c76b1 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/Batch.class
+  ad23c85f (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/BatchThread.class
+  c2dfc679 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/FileMover.class
+  2aa517a2 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/Helper.class
+  56c4d570 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONData.class
+  2447d9b9 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONSuperUserInterfaceBGCorrectAndSegmentation$1.class
+  84e25a5b (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONSuperUserInterfaceBGCorrectAndSegmentation$2.class
+  abcbbb0c (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONSuperUserInterfaceBGCorrectAndSegmentation$3.class
+  5d2efd64 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONSuperUserInterfaceBGCorrectAndSegmentation.class
+  b88136a7 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceBGCorrectAndSegmentation$1.class
+  504fe4e6 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceBGCorrectAndSegmentation$2.class
+  8b690a1d (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceBGCorrectAndSegmentation$3.class
+  88752854 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceBGCorrectAndSegmentation.class
+  facd4e04 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceFileMover$1.class
+  574438d5 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceFileMover$2.class
+  1049d37a (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceFileMover$3.class
+  12a44831 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/ONUserInterfaceFileMover.class
+  144161ce (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/Start.class
+  7335c020 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/StartInterface$1.class
+  d32bb283 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/StartInterface$2.class
+  10c47d90 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/StartInterface$3.class
+  7aa0dfd4 (LOCAL_ONLY) 20110221210916 plugins/CellEvaluator(RC)_110408/overnightService/StartInterface.class
+  5242ebea (LOCAL_ONLY) 20110221210740 plugins/CellEvaluator(RC)_110408/perfs/DefaultValues.txt
+  320d36b5 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/AutomaticBackgroundCorrector$1.class
+  4eed166d (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/AutomaticBackgroundCorrector.class
+  26289fa8 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/AutomaticBackgroundCorrectorForTiffSets$1.class
+  e3f1f514 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/AutomaticBackgroundCorrectorForTiffSets.class
+  13be9ba3 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/AutomaticBackgroundCreationAndCorrection.class
+  69d87efa (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/AutomaticBackgroundCreatorForTiffSets$1.class
+  972638c7 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/AutomaticBackgroundCreatorForTiffSets.class
+  5adcfd1e (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/CalculateHistograms$1.class
+  6d556ba6 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/CalculateHistograms.class
+  1e1418ac (LOCAL_ONLY) 20110403233738 plugins/CellEvaluator(RC)_110408/start/DefaultParameterValues.class
+  8572255b (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/EventHandlingEfficiencyTest1.class
+  c1f28e5f (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/EventHandlingEfficiencyTest2.class
+  c1ab604b (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/EventHandlingEfficiencyTest3$1.class
+  a723cc21 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/EventHandlingEfficiencyTest3.class
+  626c7c50 (LOCAL_ONLY) 20110403225048 plugins/CellEvaluator(RC)_110408/start/EventHandlingEfficiencyTestBatch.class
+  4bbd0773 (LOCAL_ONLY) 20110403225050 plugins/CellEvaluator(RC)_110408/start/HungarianTest.class
+  83d0d249 (LOCAL_ONLY) 20110403225050 plugins/CellEvaluator(RC)_110408/start/IndependentBackgroundCorrector.class
+  6d6f6eea (LOCAL_ONLY) 20110403225050 plugins/CellEvaluator(RC)_110408/start/OnsetDistributionCalculator.class
+  7949d253 (LOCAL_ONLY) 20110403225050 plugins/CellEvaluator(RC)_110408/start/StartImageJ.class
+  9bb060b8 (LOCAL_ONLY) 20110403225050 plugins/CellEvaluator(RC)_110408/start/TestForms.class
+  9fbc7832 (LOCAL_ONLY) 20111005161434 plugins/Convolve_3D.class
+  b0398adb (LOCAL_ONLY) 20141030144727 plugins/DeconvolutionLab/DeconvolutionLab_.jar
+  18a6eed8 (LOCAL_ONLY) 20111006101339 plugins/Graphics/Dynamic_Profiler.class
+  6e2d972f (LOCAL_ONLY) 20110131152158 plugins/Graphics/Example_Plot.class
+  dc8fce0b (LOCAL_ONLY) 20110131203454 plugins/Graphics/RGB_Profile_Plot.txt
+  59693620 (LOCAL_ONLY) 20130424171347 plugins/Hough_Circles.class
+  1f12fc21 (LOCAL_ONLY) 20130605111404 plugins/IntSeg_3D.jar
+  eb307a65 (LOCAL_ONLY) 20130521145101 plugins/MakeDirectory_.class
+  f6bf2cd7 (LOCAL_ONLY) 20140107103743 plugins/PIV_.jar
+  6abd874e (MODIFIED) 20140107110340 plugins/PIV_analyser.jar
+  52d191ec (LOCAL_ONLY) 20141030151849 plugins/PSFGenerator.txt
+  f42051e2 (LOCAL_ONLY) 20111005154412 plugins/PSF_Generator.jar
+  68fa4608 (LOCAL_ONLY) 20140904180050 plugins/Radial_Profile.class
+  46cc7ddc (LOCAL_ONLY) 20140121101248 plugins/SaveAsMovie_win64.jar
+  6d88799a (OBSOLETE_UNINSTALLED) 20140324102528 plugins/Script_Editor-2.0.0-SNAPSHOT.jar
+  12d1dfff (LOCAL_ONLY) 20130128172117 plugins/fourier_.jar
+  6ceadb13 (LOCAL_ONLY) 20110403225046 plugins/iso/BackgroundCorrector_.class
+  4fbd1cbe (LOCAL_ONLY) 20110403225048 plugins/iso/BlackToWhite_.class
+  4f07f28e (LOCAL_ONLY) 20110403225048 plugins/iso/CellEvaluator_.class
+  19be4de5 (LOCAL_ONLY) 20110403225048 plugins/iso/CentroidTracker_.class
+  c5432926 (LOCAL_ONLY) 20110403225048 plugins/iso/CorrelationCounter_.class
+  e0b0400c (LOCAL_ONLY) 20110403225048 plugins/iso/DivideBy16_.class
+  8ac5dcff (LOCAL_ONLY) 20110403225048 plugins/iso/ImageDuplicator_.class
+  7b158936 (LOCAL_ONLY) 20110403225048 plugins/iso/MeanBackgroundCreator_.class
+  3ff25906 (LOCAL_ONLY) 20110403225048 plugins/iso/MedianBackgroundCreator_.class
+  2c5bfa29 (LOCAL_ONLY) 20110403225048 plugins/iso/Multi_OtsuThreshold.class
+  6facb25c (LOCAL_ONLY) 20110403225048 plugins/iso/PeriodicBackgroundRemover_.class
+  2b152128 (LOCAL_ONLY) 20110403225048 plugins/iso/SlidingWindowBackgroundCreator_.class
+  ccf304b9 (LOCAL_ONLY) 20110403225048 plugins/iso/TestSystemProperties.class
+  bd0700ae (LOCAL_ONLY) 20110403225048 plugins/iso/TouchinessIndexer_.class
+  7d5b3965 (LOCAL_ONLY) 20140107103745 plugins/javacv.jar
+  90915f54 (LOCAL_ONLY) 20140107103747 plugins/jna.jar
+  d3260180 (LOCAL_ONLY) 20110527180500 scripts/Record_Desktop.py
+  0ea7f8fc (LOCAL_ONLY) 20110527180500 scripts/Record_Window.py</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=966#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-02 20:56:40 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please use &quot;Add an attachment&quot; to upload a 16-bit image that we can use to reproduce this problem.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=966#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">felix.keber
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-03 03:27:34 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi?id=222" name="attach_222" title="two stacks concateneted and resized">attachment 222</a> <a href="attachment.cgi?id=222&amp;action=edit" title="two stacks concateneted and resized">[details]</a></span>
+two stacks concateneted and resized</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=966#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">felix.keber
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-03 03:34:24 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >It seems that if the maximum slider in the threshold window is on the max, all values &gt;=max are highlighted red. Thus if the max value is not updated (when changing between windows (?)) the highlighted area is not correct (if the max of the new window is bigger than the previous)</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=966#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-04 20:48:44 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The &quot;Threshold&quot; widget in the latest ImageJ daily build (1.49n4) should work better with 16-bit stacks. To upgrade, use the Help&gt;Update ImageJ command and select &quot;daily build&quot; from the drop down menu.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=966">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=966">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=966">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=966&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=966" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=966&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731865-TzgK-qPfNZlkZGrSKqpdyU5pI4SeYuKShQ_kJ9NY8fE">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

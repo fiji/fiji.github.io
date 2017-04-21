@@ -1,0 +1,1343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 2 &ndash; OSX fiji.app (Dresden 2008 release) fails to launch</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=2&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=2">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=2">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=2">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 2 – OSX fiji.app (Dresden 2008 release) fails to launch",  
+                             "show_bug.cgi?id=2" );
+        document.title = "Bug 2 – OSX fiji.app (Dresden 2008 release) fails to launch";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 2 – OSX fiji.app (Dresden 2008 release) fails to launch", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_ImageJ bz_component_Launcher bz_bug_2 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;2</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">OSX fiji.app (Dresden 2008 release) fails to launch</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-04-06 15:44:12 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=2&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=2" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=2&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731448-UYR7PJFxrVNekyyu4Z1NCSLMXXHxPW1Yft2ZPHd-IjU">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2015-04-06 15:44:12">
+  <input type="hidden" name="longdesclength" value="3">
+  <input type="hidden" name="id" value="2">
+  <input type="hidden" name="token" value="1492731448-3NBPzGa7B5T8AGa_pr31-YiSGJz58RDCqw8pTsfVn8A">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=2"><b>Bug&nbsp;2</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">OSX fiji.app (Dresden 2008 release) fails to launch</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>OSX fiji.app (Dresden 2008 release) fails to launch
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('OSX fiji.app (Dresden 2008 release) fails to launch', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >ImageJ</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=ImageJ"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Launcher</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">Macintosh
+       Mac OS
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       blocker
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=2&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=2">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2008-05-12 14:59 CDT by <span class="vcard"><span class="fn">Dan White</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-04-06 15:44 CDT 
+      (<a href="show_activity.cgi?id=2">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>0 
+          users
+        <div id="cc_edit_area">
+          <br>
+        </div>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=2&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=2&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=2#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Dan White</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-05-12 14:59:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >On my OSX 10.5.2 core duo (32bit) macbook pro, 2GB RAM,
+Fiji (the released Dresden2008 .app) fails to launch.
+
+it gets as far as the imagejA tool bar window popping up (with no icons)
+then pukes.
+
+crash report and console log below
+
+cheers
+
+Dan
+
+
+
+
+console log
+
+5/12/08 2:45:16 PM [0x0-0x728728].org.fiji[17222] Using debug HotSpot; running update_sharing_debug
+5/12/08 2:45:16 PM [0x0-0x728728].org.fiji[17222] update_sharing_debug command failed to execute
+5/12/08 2:45:18 PM [0x0-0x728728].org.fiji[17222] Invalid memory access of location 00000000 eip=8fe18b42
+5/12/08 2:45:20 PM com.apple.launchd[128] ([0x0-0x728728].org.fiji[17222]) Exited abnormally: Segmentation fault
+
+
+
+crash report
+
+Process:         fiji-macosx-intel [17222]
+Path:            /Applications/Fiji/Fiji.app/Contents/MacOS/fiji-macosx-intel
+Identifier:      org.fiji
+Version:         ??? (1.0)
+Code Type:       X86 (Native)
+Parent Process:  launchd [128]
+
+Date/Time:       2008-05-12 14:45:18.432 +0200
+OS Version:      Mac OS X 10.5.2 (9C7010)
+Report Version:  6
+
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: 0x000000000000000d, 0x0000000000000000
+Crashed Thread:  1
+
+Thread 0:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   com.apple.CoreFoundation      	0x957fa0de CFRunLoopRunSpecific + 1806
+3   com.apple.CoreFoundation      	0x957fad18 CFRunLoopRunInMode + 88
+4   com.apple.HIToolbox           	0x9139b6a0 RunCurrentEventLoopInMode + 283
+5   com.apple.HIToolbox           	0x9139b4b9 ReceiveNextEventCommon + 374
+6   com.apple.HIToolbox           	0x9139b32d BlockUntilNextEventMatchingListInMode + 106
+7   com.apple.AppKit              	0x924ec7d9 _DPSNextEvent + 657
+8   com.apple.AppKit              	0x924ec08e -[NSApplication nextEventMatchingMask:untilDate:inMode:dequeue:] + 128
+9   com.apple.AppKit              	0x924e50c5 -[NSApplication run] + 795
+10  libawt.jnilib                 	0x061a1b62 +[AWTStarter startAWT:] + 1941
+11  libawt.jnilib                 	0x061a137f -[CPerformer perform] + 281
+12  com.apple.Foundation          	0x905501a3 __NSThreadPerformPerform + 547
+13  com.apple.CoreFoundation      	0x957fa62e CFRunLoopRunSpecific + 3166
+14  com.apple.CoreFoundation      	0x957fad74 CFRunLoopRun + 84
+15  org.fiji                      	0x00002550 start_ij_macosx(void*) + 286 (fiji.cxx:411)
+16  org.fiji                      	0x0000259f main + 67 (fiji.cxx:421)
+17  org.fiji                      	0x000019fa _start + 216
+18  org.fiji                      	0x00001921 start + 41
+
+Thread 1 Crashed:
+0   dyld                          	0x8fe18b42 misaligned_stack_error + 0
+1   libverify.dylib               	0x0005759c 0x55000 + 9628
+2   libverify.dylib               	0x0005ac07 0x55000 + 23559
+3   libverify.dylib               	0x0005b9a3 VerifyClassForMajorVersion + 1004
+4   libjava.jnilib                	0x0007819c VerifyClassCodesForMajorVersion + 45
+5   libclient.dylib               	0x0036ee3c jio_snprintf + 363016
+6   libclient.dylib               	0x0036e7e1 jio_snprintf + 361389
+7   libclient.dylib               	0x003763c6 jio_snprintf + 393106
+8   libclient.dylib               	0x00376346 jio_snprintf + 392978
+9   libclient.dylib               	0x0037ce13 jio_snprintf + 420319
+10  ???                           	0x0358afb3 0 + 56143795
+11  ???                           	0x0357faaa 0 + 56097450
+12  ???                           	0x0357faaa 0 + 56097450
+13  ???                           	0x0357faaa 0 + 56097450
+14  ???                           	0x0357faaa 0 + 56097450
+15  ???                           	0x0357f9d3 0 + 56097235
+16  ???                           	0x0357d21f 0 + 56087071
+17  libclient.dylib               	0x00376f8a jio_snprintf + 396118
+18  libclient.dylib               	0x00376cd8 jio_snprintf + 395428
+19  libclient.dylib               	0x0039318f JVM_MaxMemory + 7283
+20  libclient.dylib               	0x005041f3 JNI_GetDefaultJavaVMInitArgs_Impl + 27747
+21  org.fiji                      	0x000039f2 JNIEnv_::CallStaticVoidMethodA(_jclass*, _jmethodID*, jvalue const*) + 46 (jni.h:1504)
+22  org.fiji                      	0x000035d8 start_ij(void*) + 2732 (fiji.cxx:368)
+23  libSystem.B.dylib             	0x959d1c55 _pthread_start + 321
+24  libSystem.B.dylib             	0x959d1b12 thread_start + 34
+
+Thread 2:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x0030e69d JNI_CreateJavaVM_Impl + 52863
+3   libclient.dylib               	0x0030e638 JNI_CreateJavaVM_Impl + 52762
+4   libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+5   libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 3:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003757f6 jio_snprintf + 390082
+3   libclient.dylib               	0x00375674 jio_snprintf + 389696
+4   libclient.dylib               	0x00375d12 jio_snprintf + 391390
+5   libclient.dylib               	0x00375368 jio_snprintf + 388916
+6   libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+7   libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 4:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003758ac jio_snprintf + 390264
+3   libclient.dylib               	0x003844c5 JVM_MonitorWait + 3669
+4   libclient.dylib               	0x00383ae6 JVM_MonitorWait + 1142
+5   libclient.dylib               	0x00383869 JVM_MonitorWait + 505
+6   ???                           	0x03585281 0 + 56119937
+7   ???                           	0x0357f9d3 0 + 56097235
+8   ???                           	0x0357f9d3 0 + 56097235
+9   ???                           	0x0357d21f 0 + 56087071
+10  libclient.dylib               	0x00376f8a jio_snprintf + 396118
+11  libclient.dylib               	0x00383667 JVM_StartThread + 2397
+12  libclient.dylib               	0x00383579 JVM_StartThread + 2159
+13  libclient.dylib               	0x003834bd JVM_StartThread + 1971
+14  libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+15  libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+16  libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 5:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003758ac jio_snprintf + 390264
+3   libclient.dylib               	0x003844c5 JVM_MonitorWait + 3669
+4   libclient.dylib               	0x00383ae6 JVM_MonitorWait + 1142
+5   libclient.dylib               	0x00383869 JVM_MonitorWait + 505
+6   ???                           	0x03585281 0 + 56119937
+7   ???                           	0x0357f9d3 0 + 56097235
+8   ???                           	0x0357faaa 0 + 56097450
+9   ???                           	0x0357faaa 0 + 56097450
+10  ???                           	0x0357d21f 0 + 56087071
+11  libclient.dylib               	0x00376f8a jio_snprintf + 396118
+12  libclient.dylib               	0x00383667 JVM_StartThread + 2397
+13  libclient.dylib               	0x00383579 JVM_StartThread + 2159
+14  libclient.dylib               	0x003834bd JVM_StartThread + 1971
+15  libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+16  libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+17  libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 6:
+0   libSystem.B.dylib             	0x959a0a22 semaphore_wait_trap + 10
+1   libclient.dylib               	0x00396b29 JVM_RegisterSignal + 9593
+2   libclient.dylib               	0x00396829 JVM_RegisterSignal + 8825
+3   libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+4   libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+5   libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 7:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003758ac jio_snprintf + 390264
+3   libclient.dylib               	0x00375531 jio_snprintf + 389373
+4   libclient.dylib               	0x00397e21 JVM_RegisterSignal + 14449
+5   libclient.dylib               	0x00397b19 JVM_RegisterSignal + 13673
+6   libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+7   libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+8   libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 8:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003758ac jio_snprintf + 390264
+3   libclient.dylib               	0x00375674 jio_snprintf + 389696
+4   libclient.dylib               	0x003984b2 JVM_RegisterSignal + 16130
+5   libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+6   libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+7   libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 9:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003757f6 jio_snprintf + 390082
+3   libclient.dylib               	0x003a9ebc JVM_RegisterSignal + 88332
+4   libclient.dylib               	0x003a9a3a JVM_RegisterSignal + 87178
+5   libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+6   libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 10:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003758ac jio_snprintf + 390264
+3   libclient.dylib               	0x003844c5 JVM_MonitorWait + 3669
+4   libclient.dylib               	0x00383ae6 JVM_MonitorWait + 1142
+5   libclient.dylib               	0x00383869 JVM_MonitorWait + 505
+6   ???                           	0x03585281 0 + 56119937
+7   ???                           	0x0357f9d3 0 + 56097235
+8   ???                           	0x0357f9d3 0 + 56097235
+9   ???                           	0x0357fcd9 0 + 56098009
+10  ???                           	0x0357d21f 0 + 56087071
+11  libclient.dylib               	0x00376f8a jio_snprintf + 396118
+12  libclient.dylib               	0x00383667 JVM_StartThread + 2397
+13  libclient.dylib               	0x00383579 JVM_StartThread + 2159
+14  libclient.dylib               	0x003834bd JVM_StartThread + 1971
+15  libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+16  libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+17  libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 11:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003758ac jio_snprintf + 390264
+3   libclient.dylib               	0x003844c5 JVM_MonitorWait + 3669
+4   libclient.dylib               	0x00383ae6 JVM_MonitorWait + 1142
+5   libclient.dylib               	0x00383869 JVM_MonitorWait + 505
+6   ???                           	0x03585281 0 + 56119937
+7   ???                           	0x0357f9d3 0 + 56097235
+8   ???                           	0x0357faaa 0 + 56097450
+9   ???                           	0x0357faaa 0 + 56097450
+10  ???                           	0x0357fcd9 0 + 56098009
+11  ???                           	0x0357d21f 0 + 56087071
+12  libclient.dylib               	0x00376f8a jio_snprintf + 396118
+13  libclient.dylib               	0x00383667 JVM_StartThread + 2397
+14  libclient.dylib               	0x00383579 JVM_StartThread + 2159
+15  libclient.dylib               	0x003834bd JVM_StartThread + 1971
+16  libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+17  libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+18  libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 12:
+0   libSystem.B.dylib             	0x959a09e6 mach_msg_trap + 10
+1   libSystem.B.dylib             	0x959a81dc mach_msg + 72
+2   libclient.dylib               	0x003757f6 jio_snprintf + 390082
+3   libclient.dylib               	0x003a9d34 JVM_RegisterSignal + 87940
+4   libclient.dylib               	0x00429ef3 JVM_Sleep + 481
+5   ???                           	0x03585281 0 + 56119937
+6   ???                           	0x0357f9d3 0 + 56097235
+7   ???                           	0x0357f9d3 0 + 56097235
+8   ???                           	0x0357fcd9 0 + 56098009
+9   ???                           	0x0357f9d3 0 + 56097235
+10  ???                           	0x0357f9d3 0 + 56097235
+11  ???                           	0x0357f9d3 0 + 56097235
+12  ???                           	0x0357f9d3 0 + 56097235
+13  ???                           	0x0357f9d3 0 + 56097235
+14  ???                           	0x0357f9d3 0 + 56097235
+15  ???                           	0x0357f9d3 0 + 56097235
+16  ???                           	0x0357fb2b 0 + 56097579
+17  ???                           	0x0357fb2b 0 + 56097579
+18  ???                           	0x0357f9d3 0 + 56097235
+19  ???                           	0x0357f9d3 0 + 56097235
+20  ???                           	0x0357f9d3 0 + 56097235
+21  ???                           	0x0357f9d3 0 + 56097235
+22  ???                           	0x0357f9d3 0 + 56097235
+23  ???                           	0x0357f9d3 0 + 56097235
+24  ???                           	0x0357f9d3 0 + 56097235
+25  ???                           	0x0357fb2b 0 + 56097579
+26  ???                           	0x0357fb2b 0 + 56097579
+27  ???                           	0x0357f9d3 0 + 56097235
+28  ???                           	0x0357f9d3 0 + 56097235
+29  ???                           	0x0357f9d3 0 + 56097235
+30  ???                           	0x0357f9d3 0 + 56097235
+31  ???                           	0x0357f9d3 0 + 56097235
+32  ???                           	0x0357fcd9 0 + 56098009
+33  ???                           	0x0357f9d3 0 + 56097235
+34  ???                           	0x0357fb2b 0 + 56097579
+35  ???                           	0x0357f9d3 0 + 56097235
+36  ???                           	0x0357f9d3 0 + 56097235
+37  ???                           	0x0357f9d3 0 + 56097235
+38  ???                           	0x0357d21f 0 + 56087071
+39  libclient.dylib               	0x00376f8a jio_snprintf + 396118
+40  libclient.dylib               	0x00383667 JVM_StartThread + 2397
+41  libclient.dylib               	0x00383579 JVM_StartThread + 2159
+42  libclient.dylib               	0x003834bd JVM_StartThread + 1971
+43  libclient.dylib               	0x003833e1 JVM_StartThread + 1751
+44  libclient.dylib               	0x0030e54b JNI_CreateJavaVM_Impl + 52525
+45  libSystem.B.dylib             	0x95a1d53b _pthread_body + 27
+
+Thread 1 crashed with X86 Thread State (32-bit):
+ eax: 0x0005e0e0  ebx: 0x00059d61  ecx: 0xb007f4c0  edx: 0x46d4a710
+ edi: 0x01001510  esi: 0x00070009  ebp: 0xb007f2f0  esp: 0xb007f288
+  ss: 0x0000001f  efl: 0x00010296  eip: 0x8fe18b42   cs: 0x00000017
+  ds: 0x0000001f   es: 0x0000001f   fs: 0x0000001f   gs: 0x00000037
+ cr2: 0xffe2ab9c
+
+Binary Images:
+   0x1000 -     0x3fff +org.fiji ??? (1.0) /Applications/Fiji/Fiji.app/Contents/MacOS/fiji-macosx-intel
+  0x55000 -    0x5cfe0  libverify.dylib ??? (???) &lt;7a69785e6278690ecba70a4ec32d732a&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libverify.dylib
+  0x62000 -    0x69ffd  com.apple.JavaVM 12.0.2 (12.0.2) &lt;44b9536fe4d7c7fcb3506adb695a180f&gt; /System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM
+  0x73000 -    0x8dfef  libjava.jnilib ??? (???) &lt;42b19094a14d6f296d7186946847ce86&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libjava.jnilib
+  0x9b000 -    0xa6ffb  libzip.jnilib ??? (???) &lt;8d58d4a6b64d83d08732a310918c7f5a&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libzip.jnilib
+ 0x300000 -   0x645fe7 +libclient.dylib ??? (???) /Applications/Fiji/Fiji.app/java/macosx-intel/Libraries/libclient.dylib
+0x619f000 -  0x633afff  libawt.jnilib ??? (???) &lt;5a124edd404b53e9840c88c4c04f86b8&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libawt.jnilib
+0x84af000 -  0x84affff  libcmm.jnilib ??? (???) &lt;222c263e477dbfd7073f4b6b70ee8764&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libcmm.jnilib
+0x84c0000 -  0x85aefef  com.apple.RawCamera.bundle 2.0.3 (2.0.3) /System/Library/CoreServices/RawCamera.bundle/Contents/MacOS/RawCamera
+0x860a000 -  0x8667fff  libfontmanager.jnilib ??? (???) &lt;e3136bd65cc46e1aff7e2117f8c061ae&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libfontmanager.jnilib
+0x86a0000 -  0x86c2fe7  libjpeg.jnilib ??? (???) &lt;90da75ec5b04f3eee93849e379ec7907&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libjpeg.jnilib
+0xe136000 -  0xe17dff3  libsuncmm.jnilib ??? (???) &lt;f0dc0781d941f4dcc025b8c68a8bc21f&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libsuncmm.jnilib
+0xe2b0000 -  0xe2bbffb  libnet.jnilib ??? (???) &lt;d6087c096127755a3769819c04fe6a19&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libnet.jnilib
+0xe2c2000 -  0xe2c5ffc  libnio.jnilib ??? (???) &lt;57a95ec155863e0a0e7b2636d7c461f2&gt; /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Libraries/libnio.jnilib
+0x8fe00000 - 0x8fe2da53  dyld 96.2 (???) &lt;7af47d3b00b2268947563c7fa8c59a07&gt; /usr/lib/dyld
+0x90003000 - 0x90003ff8  com.apple.ApplicationServices 34 (34) &lt;8f910fa65f01d401ad8d04cc933cf887&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x9003b000 - 0x9003ffff  libmathCommon.A.dylib ??? (???) /usr/lib/system/libmathCommon.A.dylib
+0x90040000 - 0x9011ffff  libobjc.A.dylib ??? (???) &lt;a53206274b6c2d42691f677863f379ae&gt; /usr/lib/libobjc.A.dylib
+0x90120000 - 0x903f9ff3  com.apple.CoreServices.CarbonCore 785.8 (785.8) &lt;827c228e7d717b397cdb4941eba69553&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x903fa000 - 0x90422fff  libcups.2.dylib ??? (???) &lt;2f0a710a9128882efb2ed92ad139b58c&gt; /usr/lib/libcups.2.dylib
+0x90442000 - 0x9044cfeb  com.apple.audio.SoundManager 3.9.2 (3.9.2) &lt;0f2ba6e891d3761212cf5a5e6134d683&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x9044d000 - 0x90454ff7  libCGATS.A.dylib ??? (???) &lt;9b29a5500efe01cc3adea67bbc42568e&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
+0x90455000 - 0x90493ff7  libGLImage.dylib ??? (???) &lt;090de775838db03ddc710f57abbf6218&gt; /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x90494000 - 0x90544fff  edu.mit.Kerberos 6.0.12 (6.0.12) &lt;3dd13466876a8fe4549cfc1354233ec3&gt; /System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+0x90545000 - 0x907bffe7  com.apple.Foundation 6.5.4 (677.15) &lt;6216196287f98a65ddb654d04d773e7b&gt; /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x907ff000 - 0x90807fff  com.apple.DiskArbitration 2.2.1 (2.2.1) &lt;75b0c8d8940a8a27816961dddcac8e0f&gt; /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x90826000 - 0x9083cfff  com.apple.DictionaryServices 1.0.0 (1.0.0) &lt;ad0aa0252e3323d182e17f50defe56fc&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+0x9083d000 - 0x90899ff7  com.apple.htmlrendering 68 (1.1.3) &lt;fe87a9dede38db00e6c8949942c6bd4f&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x908ae000 - 0x908b9ff9  com.apple.helpdata 1.0 (14) /System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData
+0x908ba000 - 0x908c8ffd  libz.1.dylib ??? (???) &lt;5ddd8539ae2ebfd8e7cc1c57525385c7&gt; /usr/lib/libz.1.dylib
+0x90a85000 - 0x90aadff7  com.apple.shortcut 1 (1.0) &lt;057783867138902b52bc0941fedb74d1&gt; /System/Library/PrivateFrameworks/Shortcut.framework/Versions/A/Shortcut
+0x90aae000 - 0x90ab2fff  libGIF.dylib ??? (???) &lt;d4234e6f5e5f530bdafb969157f1f17b&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x90ab3000 - 0x90ab3ffd  com.apple.Accelerate 1.4.2 (Accelerate 1.4.2) /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x90b72000 - 0x90becff8  com.apple.print.framework.PrintCore 5.5.2 (245.1) &lt;3c9de512e95fbd838694ee5008d56a28&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x90bed000 - 0x90bf2fff  com.apple.CommonPanels 1.2.4 (85) &lt;ea0665f57cd267609466ed8b2b20e893&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x90bf3000 - 0x90c12ffa  libJPEG.dylib ??? (???) &lt;0cfb80109d624beb9ceb3c43b6c5ec10&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x90c13000 - 0x90c6dff7  com.apple.CoreText 2.0.1 (???) &lt;07494945ad1e3f5395599f42748457cc&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+0x90c6e000 - 0x90c9bfeb  libvDSP.dylib ??? (???) &lt;b232c018ddd040ec4e2c2af632dd497f&gt; /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x90c9c000 - 0x90dd4ff7  libicucore.A.dylib ??? (???) &lt;afcea652ff2ec36885b2c81c57d06d4c&gt; /usr/lib/libicucore.A.dylib
+0x90dd5000 - 0x90de0fe7  libCSync.A.dylib ??? (???) &lt;df82fc093e498a9eb5490761cb292218&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x90f19000 - 0x90f5bfef  com.apple.NavigationServices 3.5.1 (161) &lt;cc6bd78eabf1e2e7166914e9f12f5850&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x90f5c000 - 0x90f96fff  com.apple.coreui 1.1 (61) /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+0x90fa3000 - 0x91339ff7  com.apple.QuartzCore 1.5.1 (1.5.1) &lt;665c80f6e28555b303020c8007c36b8b&gt; /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x91365000 - 0x91367ff5  libRadiance.dylib ??? (???) &lt;20eadb285da83df96c795c2c5fa20590&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x9136b000 - 0x91673fff  com.apple.HIToolbox 1.5.2 (???) &lt;7449d6f2da33ded6936243a92e307459&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x91674000 - 0x91698fff  libxslt.1.dylib ??? (???) &lt;4933ddc7f6618743197aadc85b33b5ab&gt; /usr/lib/libxslt.1.dylib
+0x91699000 - 0x91a57fea  libLAPACK.dylib ??? (???) /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x91a58000 - 0x91e68fef  libBLAS.dylib ??? (???) /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x9218a000 - 0x9218cfff  com.apple.securityhi 3.0 (30817) &lt;2b2854123fed609d1820d2779e2e0963&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x9218d000 - 0x92258fff  com.apple.ColorSync 4.5.0 (4.5.0) /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x9233f000 - 0x923c6ff7  libsqlite3.0.dylib ??? (???) &lt;6978bbcca4277d6ae9f042beff643f7d&gt; /usr/lib/libsqlite3.0.dylib
+0x923c7000 - 0x923e5fff  libresolv.9.dylib ??? (???) &lt;0629b6dcd71f4aac6a891cbe26253e85&gt; /usr/lib/libresolv.9.dylib
+0x92417000 - 0x924a3ff7  com.apple.LaunchServices 286.5 (286.5) &lt;33c3ae54abb276b61a99d4c764d883e2&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x924a4000 - 0x924aafff  com.apple.print.framework.Print 218.0.2 (220.1) &lt;8bf7ef71216376d12fcd5ec17e43742c&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x924ab000 - 0x924abff8  com.apple.Cocoa 6.5 (???) &lt;e064f94d969ce25cb7de3cfb980c3249&gt; /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x924ac000 - 0x92ca9fef  com.apple.AppKit 6.5.2 (949.26) &lt;bc4593edd8a224409fb6953a354505a0&gt; /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x92caa000 - 0x92d3dfff  com.apple.ink.framework 101.3 (86) &lt;bf3fa8927b4b8baae92381a976fd2079&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x92dbe000 - 0x92dd9ffb  libPng.dylib ??? (???) &lt;b6abcac36ec7654ff3e1cfa786b0117b&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x92dda000 - 0x93473fff  com.apple.CoreGraphics 1.351.21 (???) &lt;6c93fd21149f389129fe47fa6ef71880&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x93474000 - 0x934fffff  com.apple.framework.IOKit 1.5.1 (???) &lt;a17f9f5ea7e8016a467e67349f4d3d03&gt; /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x935a3000 - 0x935e2fef  libTIFF.dylib ??? (???) &lt;6d0f80e9d4d81f3f64c876aca005bd53&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x93e64000 - 0x93e64ffb  com.apple.installserver.framework 1.0 (8) /System/Library/PrivateFrameworks/InstallServer.framework/Versions/A/InstallServer
+0x93e65000 - 0x93ee4ff5  com.apple.SearchKit 1.2.0 (1.2.0) &lt;277b460da86bc222785159fe77e2e2ed&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x94099000 - 0x94099ffd  com.apple.Accelerate.vecLib 3.4.2 (vecLib 3.4.2) /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x940aa000 - 0x94127fef  libvMisc.dylib ??? (???) /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x94128000 - 0x94128ffd  com.apple.vecLib 3.4.2 (vecLib 3.4.2) /System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
+0x94129000 - 0x94129fff  com.apple.Carbon 136 (136) &lt;98a5e3bc0c4fa44bbb09713bb88707fe&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x941b7000 - 0x942fcff7  com.apple.ImageIO.framework 2.0.1 (2.0.1) &lt;68ba11e689a9ca30f8310935cd1e02d6&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x9434e000 - 0x9435efff  com.apple.speech.synthesis.framework 3.6.59 (3.6.59) &lt;4ffef145fad3d4d787e0c33eab26b336&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9435f000 - 0x9435fffa  com.apple.CoreServices 32 (32) &lt;2fcc8f3bd5bbfc000b476cad8e6a3dd2&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x94494000 - 0x944e4ff7  com.apple.HIServices 1.7.0 (???) &lt;f7e78891a6d08265c83dca8e378be1ea&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x944e6000 - 0x944e7ffc  libffi.dylib ??? (???) &lt;a3b573eb950ca583290f7b2b4c486d09&gt; /usr/lib/libffi.dylib
+0x944e8000 - 0x94508ff2  libGL.dylib ??? (???) /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x94517000 - 0x9452dfe7  com.apple.CoreVideo 1.5.0 (1.5.0) &lt;bad2d3a9a92fdecd02e64f0b73a76f27&gt; /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+0x9452e000 - 0x94565fff  com.apple.SystemConfiguration 1.9.1 (1.9.1) &lt;8a76e429301afe4eba1330bfeaabd9f2&gt; /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x94566000 - 0x9457aff3  com.apple.ImageCapture 4.0 (5.0.0) /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x94581000 - 0x9460afe3  com.apple.DesktopServices 1.4.5 (1.4.5) &lt;8b264cd6abbbd750928c637e1247269d&gt; /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x9460b000 - 0x947d6ff7  com.apple.security 5.0.2 (33001) &lt;0788969ffe7961153219be10786da436&gt; /System/Library/Frameworks/Security.framework/Versions/A/Security
+0x948d9000 - 0x94993fe3  com.apple.CoreServices.OSServices 224.4 (224.4) &lt;ff5007ab220908ac54b6c661e447d593&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x94994000 - 0x94a5bff2  com.apple.vImage 3.0 (3.0) /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x94a5c000 - 0x94a74fff  com.apple.openscripting 1.2.6 (???) &lt;b8e553df643f2aec68fa968b3b459b2b&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x94a75000 - 0x94b5aff3  com.apple.CoreData 100.1 (186) &lt;8e28162ef2288692615b52acc01f8b54&gt; /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x94ba0000 - 0x94ba9fff  com.apple.speech.recognition.framework 3.7.24 (3.7.24) &lt;d3180f9edbd9a5e6f283d6156aa3c602&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x94baa000 - 0x94bbaffc  com.apple.LangAnalysis 1.6.4 (1.6.4) &lt;cbeb17ab39f28351fe2ab5b82bf465bc&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x94bbb000 - 0x94c37feb  com.apple.audio.CoreAudio 3.1.0 (3.1) &lt;70bb7c657061631491029a61babe0b26&gt; /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x94c38000 - 0x94caffe3  com.apple.CFNetwork 221.5 (221.5) &lt;5474cdd7d2a8b2e8059de249c702df9e&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x94cff000 - 0x94d0bfe7  com.apple.opengl 1.5.6 (1.5.6) &lt;d599b1bb0f8a8da6fd125e2587b27776&gt; /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x94d0c000 - 0x94d13fe9  libgcc_s.1.dylib ??? (???) &lt;f53c808e87d1184c0f9df63aef53ce0b&gt; /usr/lib/libgcc_s.1.dylib
+0x94ebd000 - 0x94fe1fe3  com.apple.audio.toolbox.AudioToolbox 1.5.1 (1.5.1) /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x95055000 - 0x95084fe3  com.apple.AE 402.2 (402.2) &lt;e01596187e91af5d48653920017b8c8e&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x95085000 - 0x950deff7  libGLU.dylib ??? (???) /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x950df000 - 0x950e2fff  com.apple.help 1.1 (36) &lt;b507b08e484cb89033e9cf23062d77de&gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x950e3000 - 0x955b6fde  libGLProgrammability.dylib ??? (???) &lt;a3d68f17f37ff55a3e61aca1e3aee522&gt; /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib
+0x955b7000 - 0x955fcfef  com.apple.Metadata 10.5.2 (398.7) &lt;73a6424c06effc474e699cde6883de99&gt; /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x95788000 - 0x958bafef  com.apple.CoreFoundation 6.5.1 (476.10) &lt;d5bed2688a5eea11a6dc3a3c5c17030e&gt; /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x958bb000 - 0x9594eff3  com.apple.ApplicationServices.ATS 3.2 (???) &lt;cdf31bd0ac7de54a35ee2d27cf86b6be&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x959a0000 - 0x95affff3  libSystem.B.dylib ??? (???) &lt;4899376234e55593b22fc370935f8cdf&gt; /usr/lib/libSystem.B.dylib
+0x95b00000 - 0x95be1ff7  libxml2.2.dylib ??? (???) &lt;3cd4cccd4ca35dffa4688436aa0cd908&gt; /usr/lib/libxml2.2.dylib
+0x95be2000 - 0x95c23fe7  libRIP.A.dylib ??? (???) &lt;9d42e83d860433f9126c4871d1fe0ce8&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x95c3c000 - 0x95c99ffb  libstdc++.6.dylib ??? (???) &lt;04b812dcec670daa8b7d2852ab14be60&gt; /usr/lib/libstdc++.6.dylib
+0x95c9a000 - 0x95d41feb  com.apple.QD 3.11.52 (???) &lt;c72bd7bd2ce12694c3640a731d1ad878&gt; /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x95d42000 - 0x95df4ffb  libcrypto.0.9.7.dylib ??? (???) &lt;330b0e48e67faffc8c22dfc069ca7a47&gt; /usr/lib/libcrypto.0.9.7.dylib
+0x96ea6000 - 0x96ed1fe7  libauto.dylib ??? (???) &lt;42d8422dc23a18071869fdf7b5d8fab5&gt; /usr/lib/libauto.dylib
+0x96ee4000 - 0x96eebffe  libbsm.dylib ??? (???) &lt;d25c63378a5029648ffd4b4669be31bf&gt; /usr/lib/libbsm.dylib
+0x97155000 - 0x97155ffc  com.apple.audio.units.AudioUnit 1.5 (1.5) /System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0xba900000 - 0xba916fff  libJapaneseConverter.dylib ??? (???) &lt;7b0248c392848338f5d6ed093313eeef&gt; /System/Library/CoreServices/Encodings/libJapaneseConverter.dylib
+0xfffe8000 - 0xfffebfff  libobjc.A.dylib ??? (???) /usr/lib/libobjc.A.dylib
+0xffff0000 - 0xffff1780  libSystem.B.dylib ??? (???) /usr/lib/libSystem.B.dylib</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=2#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-09 07:01:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Fixed, at least as of commit dd461ae5b615a9f313c40ed9f9988f2f00da1109.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=2#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-09 07:02:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Oh, and you can download it from <a href="http://pacific.mpi-cbg.de/downloads/fiji-macosx-dresden2008.dmg">http://pacific.mpi-cbg.de/downloads/fiji-macosx-dresden2008.dmg</a></pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=2">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=2">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=2">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=2&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=2" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=2&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731448-UYR7PJFxrVNekyyu4Z1NCSLMXXHxPW1Yft2ZPHd-IjU">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,1721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 630 &ndash; running QuickPALM gives an error</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=630&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=630">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=630">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=630">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 630 – running QuickPALM gives an error",  
+                             "show_bug.cgi?id=630" );
+        document.title = "Bug 630 – running QuickPALM gives an error";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 630 – running QuickPALM gives an error", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_630 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;630</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">running QuickPALM gives an error</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2013-07-13 14:15:51 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=630&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=630" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=630&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731722-hemNHDeIXFxAnek05UZCURyPJNXZEgU-V9u1iinsiw0">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2013-07-13 14:15:51">
+  <input type="hidden" name="longdesclength" value="20">
+  <input type="hidden" name="id" value="630">
+  <input type="hidden" name="token" value="1492731722-Z-4hGdJOGh2TxxvHGOW2Bix8XkFgoVBUWyQAWVHNvLg">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=630"><b>Bug&nbsp;630</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">running QuickPALM gives an error</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>running QuickPALM gives an error
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('running QuickPALM gives an error', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">Other
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       enhancement
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=630&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=630">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2013-07-11 07:36 CDT by <span class="vcard"><span class="fn">Olex</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2013-07-13 14:15 CDT 
+      (<a href="show_activity.cgi?id=630">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_tiff">
+        <td valign="top">
+            <a href="attachment.cgi?id=108"
+               title="View the content of the attachment">
+          <b>A very small subset of the example image, just enough to reproduce the problem</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.01 MB,
+                image/tiff)
+
+            <br>
+            <a href="#attach_108"
+               title="Go to the comment associated with the attachment">2013-07-13 11:55 CDT</a>,
+
+            <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi?id=108&amp;action=edit">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <span class="bz_attach_view_hide">
+        </span>
+        <a href="attachment.cgi?bugid=630&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=630&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olex</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 07:36:18 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I am using ImageJ/fiji on the cluster through the command line (in a headless mode - without GUI).
+
+I installed QuickPalm plug-in manually by typing: 
+./Build.sh plugins/QuickPALM_.jar
+
+When I try to use plugin in the script (example: run(&quot;Analyse Particles&quot;, &quot;minimum=2 maximum=4 image=127..&quot;;), it gives me an error: 
+
+java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at ij.Command.runPlugIn(Command.java:148)
+        at ij.Command.runCommand(Command.java:97)
+        at ij.Executer.run(Executer.java:64)
+        at ij.IJ.run(IJ.java:260)
+        at ij.macro.Functions.doRun(Functions.java:589)
+        at ij.macro.Functions.doFunction(Functions.java:89)
+        at ij.macro.Interpreter.doStatement(Interpreter.java:219)
+        at ij.macro.Interpreter.doBlock(Interpreter.java:553)
+        at ij.macro.Interpreter.doStatement(Interpreter.java:255)
+        at ij.macro.Interpreter.doFor(Interpreter.java:499)
+        at ij.macro.Interpreter.doStatement(Interpreter.java:237)
+        at ij.macro.Interpreter.doStatements(Interpreter.java:207)
+        at ij.macro.Interpreter.run(Interpreter.java:104)
+        at ij.macro.Interpreter.run(Interpreter.java:74)
+        at ij.macro.Interpreter.run(Interpreter.java:85)
+        at ij.plugin.Macro_Runner.runMacro(Macro_Runner.java:123)
+        at ij.plugin.Macro_Runner.runMacroFile(Macro_Runner.java:107)
+        at ij.IJ.runMacroFile(IJ.java:127)
+        at ij.ImageJ.main(ImageJ.java:683)
+        at fiji.Main.main(Main.java:130)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at imagej.ClassLauncher.launch(ClassLauncher.java:224)
+        at imagej.ClassLauncher.run(ClassLauncher.java:161)
+        at imagej.ClassLauncher.main(ClassLauncher.java:72)
+Caused by: java.awt.HeadlessException
+        at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:159)
+        at java.awt.Window.&lt;init&gt;(Window.java:432)
+        at java.awt.Frame.&lt;init&gt;(Frame.java:403)
+        at java.awt.Frame.&lt;init&gt;(Frame.java:368)
+        at ij.io.SaveDialog.save(SaveDialog.java:183)
+        at ij.io.SaveDialog.&lt;init&gt;(SaveDialog.java:35)
+        at QuickPALM.ParticleSaver.setup(ParticleSaver.java:35)
+        at QuickPALM.MyDialogs.analyseParticles(MyDialogs.java:392)
+        at QuickPALM.Analyse_Particles.run(Analyse_Particles.java:29)
+        at ij.IJ.runUserPlugIn(IJ.java:194)
+        at ij.IJ.runPlugIn(IJ.java:160)
+        ... 31 more
+
+Does this mean that QuickPALM does not support headless mode or I did not install it properly?
+
+P.S.: In my script I do specify that I am running macros in headless mode with the build-in function: setBatchMode(true).</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 09:44:10 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The culprit can be seen here: <a href="http://fiji.sc/ParticleSaver.java:35">http://fiji.sc/ParticleSaver.java:35</a>
+
+The SaveDialog is an AWT dialog and cannot be instantiated in headless mode. We have a work-around for the GenericDialog (which is also an AWT dialog) that could be ported to the SaveDialog (and while at it, to the OpenDialog, too).
+
+For that to work, you would need to make sure that a &quot;file&quot; is specified in your run() call.
+
+Please note that I am just finishing up the migration of the headless support to ImageJ2. If you are up for some testing (which would be very much appreciated), I could work on the SaveDialog support even this week, otherwise it will have to wait a little, unfortunately.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olex</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 09:55:38 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I would like to help! 
+
+Just to make sure that I understood you correctly, would you like me to test ImageJ2 in a headless mode?</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olex</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 10:01:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I would like to help! 
+
+Just to make sure that I understood you correctly, would you like me to test ImageJ2 in a headless mode?</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 10:47:41 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Actually, it would still be Fiji in headless mode.
+
+Remember: Fiji Is Just ImageJ ;-) Fiji acquired many a function over time that was required by work in life sciences. Some of those functions are not exactly specific to life sciences, so we jumped on the band wagon of ImageJ2 (whose mission is to make a next-generation ImageJ that does everything ImageJ 1.x did, but with a more flexible architecture and a more scalable development process).
+
+That means that parts of Fiji, such as the Updater, moved into ImageJ2 (so the &quot;Update Fiji&quot; command actually just hands off to the ImageJ2 updater). Fiji benefits from this in two ways: the updater is now developed in a robust style (with automatic regression testing, based on well-tested core components such as scijava-common and ij-core), and Fiji can focus more on life science.
+
+So you are lucky in that I am in the middle of moving all that headless stuff into ImageJ2 (but of course, Fiji still has the headless mode, it will just simply hand off to ImageJ2 to do it in the very near future), so I am already basically working on the parts of the code you need enhanced.
+
+What will this mean for you? I will upload testing packages to a temporary place when I have anything for you to test. It also means that you can steer the development into the direction you need, for mutual benefit.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olex</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 11:13:55 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Sounds good! 
+
+On a different note, when I was trying to run executable ImageJ-linux64 (downloaded from fiji and ImageJ2 websites) from the command line it gave me an error: 
+
+-bash: ./ImageJ-linux64: Permission denied
+
+The executable with the same name (ImageJ-linux64) that was built by fiji does work.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 13:23:06 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please file new tickets for new issues (such as 'downloaded ImageJ-linux64 is not executable') because other people will have the same question but no way to find my answer.
+
+The answer is: for security, downloaded files are never executable by default on Linux/MacOSX/Unix. You have to mark them as executable before you can execute them: &quot;chmod a+x ImageJ-linux64&quot;.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 13:24:29 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Regarding the original issue: some debugging later, it appears that this is a curious issue: The SaveDialog should have found that we're running inside a macro and not instantiated any Frame.
+
+Will keep you posted.</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 13:31:40 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The funny thing is: if I run this little macro (because I have no images to test... maybe you want to make it easier for me to reproduce your problem by providing me with a small sample image and a macro that triggers the error on your side?)
+
+-- snip --
+run(&quot;Blobs (25K)&quot;, &quot;&quot;);
+run(&quot;Analyse Particles&quot;, &quot;minimum=5 maximum=4 image=106 smart oonline stream file=[/home/gene099/Particles Table.xls] pixel=30 accumulate=0 update=10 _image=imgNNNNNNNNN.tif start=0 in=50 _minimum=0 local=20 _maximum=1000 threads=50&quot;);
+-- snap --
+
+it shows a completely different error message:
+
+-- snipsnap --
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at ij.Command.runPlugIn(Command.java:148)
+	at ij.Command.runCommand(Command.java:97)
+	at ij.Executer.run(Executer.java:64)
+	at ij.IJ.run(IJ.java:265)
+	at ij.IJ.run(IJ.java:316)
+	at QuickPALM.ReconstructionViewer.&lt;init&gt;(ReconstructionViewer.java:59)
+	at QuickPALM.Analyse_Particles.run(Analyse_Particles.java:65)
+	at ij.IJ.runUserPlugIn(IJ.java:195)
+	at ij.IJ.runPlugIn(IJ.java:160)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at ij.Command.runPlugIn(Command.java:148)
+	at ij.Command.runCommand(Command.java:97)
+	at ij.Executer.run(Executer.java:64)
+	at ij.IJ.run(IJ.java:265)
+	at ij.macro.Functions.doRun(Functions.java:589)
+	at ij.macro.Functions.doFunction(Functions.java:89)
+	at ij.macro.Interpreter.doStatement(Interpreter.java:219)
+	at ij.macro.Interpreter.doStatements(Interpreter.java:207)
+	at ij.macro.Interpreter.run(Interpreter.java:104)
+	at ij.macro.Interpreter.run(Interpreter.java:74)
+	at ij.macro.Interpreter.run(Interpreter.java:85)
+	at ij.plugin.Macro_Runner.runMacro(Macro_Runner.java:123)
+	at ij.plugin.Macro_Runner.runMacroFile(Macro_Runner.java:107)
+	at ij.IJ.runMacroFile(IJ.java:127)
+	at ij.ImageJ.main(ImageJ.java:683)
+	at fiji.Main.main(Main.java:130)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at imagej.ClassLauncher.launch(ClassLauncher.java:224)
+	at imagej.ClassLauncher.run(ClassLauncher.java:161)
+	at imagej.ClassLauncher.main(ClassLauncher.java:72)
+Caused by: java.awt.HeadlessException
+	at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:173)
+	at java.awt.Button.&lt;init&gt;(Button.java:152)
+	at ij.plugin.filter.ScaleDialog.makeButtonPanel(ScaleDialog.java:116)
+	at ij.plugin.filter.ScaleDialog.run(ScaleDialog.java:63)
+	at ij.plugin.filter.PlugInFilterRunner.processOneImage(PlugInFilterRunner.java:262)
+	at ij.plugin.filter.PlugInFilterRunner.&lt;init&gt;(PlugInFilterRunner.java:111)
+	at ij.IJ.runPlugIn(IJ.java:168)
+	... 40 more
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at ij.Command.runPlugIn(Command.java:148)
+	at ij.Command.runCommand(Command.java:97)
+	at ij.Executer.run(Executer.java:64)
+	at ij.IJ.run(IJ.java:265)
+	at ij.IJ.run(IJ.java:316)
+	at QuickPALM.ReconstructionViewer.&lt;init&gt;(ReconstructionViewer.java:59)
+	at QuickPALM.Analyse_Particles.run(Analyse_Particles.java:65)
+	at ij.IJ.runUserPlugIn(IJ.java:195)
+	at ij.IJ.runPlugIn(IJ.java:160)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at ij.Command.runPlugIn(Command.java:148)
+	at ij.Command.runCommand(Command.java:97)
+	at ij.Executer.run(Executer.java:64)
+	at ij.IJ.run(IJ.java:265)
+	at ij.macro.Functions.doRun(Functions.java:589)
+	at ij.macro.Functions.doFunction(Functions.java:89)
+	at ij.macro.Interpreter.doStatement(Interpreter.java:219)
+	at ij.macro.Interpreter.doStatements(Interpreter.java:207)
+	at ij.macro.Interpreter.run(Interpreter.java:104)
+	at ij.macro.Interpreter.run(Interpreter.java:74)
+	at ij.macro.Interpreter.run(Interpreter.java:85)
+	at ij.plugin.Macro_Runner.runMacro(Macro_Runner.java:123)
+	at ij.plugin.Macro_Runner.runMacroFile(Macro_Runner.java:107)
+	at ij.IJ.runMacroFile(IJ.java:127)
+	at ij.ImageJ.main(ImageJ.java:683)
+	at fiji.Main.main(Main.java:130)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at imagej.ClassLauncher.launch(ClassLauncher.java:224)
+	at imagej.ClassLauncher.run(ClassLauncher.java:161)
+	at imagej.ClassLauncher.main(ClassLauncher.java:72)
+Caused by: java.awt.HeadlessException
+	at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:173)
+	at java.awt.Button.&lt;init&gt;(Button.java:152)
+	at ij.plugin.filter.ScaleDialog.makeButtonPanel(ScaleDialog.java:116)
+	at ij.plugin.filter.ScaleDialog.run(ScaleDialog.java:63)
+	at ij.plugin.filter.PlugInFilterRunner.processOneImage(PlugInFilterRunner.java:262)
+	at ij.plugin.filter.PlugInFilterRunner.&lt;init&gt;(PlugInFilterRunner.java:111)
+	at ij.IJ.runPlugIn(IJ.java:168)
+	... 40 more</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-11 14:33:37 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Could you please package a small example image and a macro that together trigger the error and attach it to this issue?</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olex</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-12 09:29:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" > I was not able to upload them here. I used some alternative method.</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-12 14:53:15 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >At the moment I cannot access websites requiring Javascript. Besides, it would be better to use the builtin Help&gt;Upload Sample Image to upload the sample.
+
+Also: could you provide me with the macro you try to run? Please keep in mind that you can help reduce the time I require to reproduce dramatically (I will still need to spend a couple of hours just to find the problem and to fix it after that).</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-12 14:55:06 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This is not so much a problem of Fiji, but a security measure unknown to Windows users: files that are downloaded on Linux or MacOSX are never marked as executable. You will have to do that yourself, e.g by using the command-line
+
+    chmod a+x &lt;the-downloaded-file&gt;</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-12 14:56:36 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Oops please forget <a href="show_bug.cgi?id=630#c12">comment #12</a>...</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olex</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-13 07:42:46 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >There is no Upload Images in Help. Unfortunately, the limit for the attachment here is 5 MB, and my smallest image is 546 MB. Is there any other way to send it to you? The script below is the macros that I used: 
+
+setBatchMode(true);
+
+dir = '/yourDirectoryHere/';
+list = getFileList(dir);
+
+
+Array.print(list);
+for (i=0; i&lt;list.length; i++) {
+open(dir+list[i]);
+run(&quot;Split Channels&quot;);
+close();
+selectWindow(&quot;C1-&quot;+list[i]);
+saveAs(&quot;Tiff&quot;, dir+&quot;C1-&quot;+list[i]);
+run(&quot;Analyse Particles&quot;, &quot;minimum=2 maximum=4 image=127 smart online pixel=20 accumulate=0 update=100 _image=imgNNNNNNNNN.tif start=0 in=50 _minimum=0 local=20 _maximum=1000 threads=50&quot;);
+selectWindow(&quot;C1-&quot;+(i+1)+&quot; Reconstruction&quot;);
+saveAs(&quot;Tiff&quot;, dir+&quot;C1-&quot;+(i+1)+&quot; Reconstruction&quot;);
+close();
+}
+
+I am not sure whether it will be of any use since you do not have my sample...</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-13 11:55:17 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi?id=108" name="attach_108" title="A very small subset of the example image, just enough to reproduce the problem">attachment 108</a> <a href="attachment.cgi?id=108&amp;action=edit" title="A very small subset of the example image, just enough to reproduce the problem">[details]</a></span>
+A very small subset of the example image, just enough to reproduce the problem</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-13 11:56:11 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I am a bit confused... if you open the Help menu, there is no &quot;Upload Sample Image&quot; entry just under &quot;Report a Bug&quot;?
+
+In any case, I finally have access to a browser with Javascript again (when I work on my computer via my phone, I actually only have a text browser without Javascript, and the phone itself cannot run Fiji so the phone's browser is of no use), so I am finally able to access the Google Drive link you sent me.
+
+For the record, you do not have to use original data when you send a macro to reproduce a bug. As I described in <a href="http://developer.imagej.net/2011/10/17/art-debugging">http://developer.imagej.net/2011/10/17/art-debugging</a> the most important part about debugging is to make a *small* test case first. I will have to run this procedure a *lot* of times, and the quicker it runs, the quicker I will get at the root of the problem, and the quicker I will be able to come up with a fix (also due to the fact that my time -- as everybody else's -- is limited to around twenty-four hours a day, and a large part of that is not available for work on this particular bug).
+
+So the first thing is to reduce the file size (because loading and processing that size is taking a lot of time).
+
+The first file size reduction is easy: split the channels and only use channel 1 (because that is what you use anyway, uploading any other data than the first channel for the sake of reproducing this bug is unnecessary).
+
+This reduces the file size from 534MB to 178MB.
+
+The next step is also obvious: there was no problem with splitting the channels, so let's skip that completely.
+
+Next, I could downsample the remaining image, but in this particular case it is better to just crop it: as far as QuickPALM is concerned in this case, it is more important to preserve the character of the problem by concentrating on a small section of the image, where all the action is happening.
+
+So cropping out just a small 128x128 part, I reduced the file size to 22MB.
+
+And using &quot;Make Substack...&quot; (tip: if you do not know where in the menu structure a certain command is located, just hit Ctrl+L and type a part of the label) to keep only the first 32 slices reduced the size to a handy 1MB.
+
+This is what I attached as <a href="http://fiji.sc/bugzilla/attachment.cgi?id=108">http://fiji.sc/bugzilla/attachment.cgi?id=108</a>.
+
+Further, the macro can be reduced further if all we need to do is to reproduce the problem: no directory scanning is required, no saving, no closing. This is the bare, minimal macro I came up with:
+
+-- snip --
+open(&quot;small-2.tif&quot;);
+run(&quot;Analyse Particles&quot;, &quot;minimum=2 maximum=4 image=127 smart online pixel=20 accumulate=0 update=100 _image=imgNNNNNNNNN.tif start=0 in=50 _minimum=0 local=20 _maximum=1000 threads=50&quot;);
+-- snap --
+
+Please do not understand this as a criticism, but as encouraging you to reduce the macro and data next time you are reporting a bug; that way, I will not only save time to reduce them myself, but I will be able to work on the issue sooner (because I do not need to download &gt;500MB via a Javascript-enabled browser)...</pre>
+    </div><div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-13 12:26:40 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Progress: I can now start the macro by just adding a &quot; file=[/path/to/file]&quot; that specifies where the results should be saved to. So my minimal macro now looks like this:
+
+-- snip --
+open(&quot;/tmp/small-2.tif&quot;);
+run(&quot;Analyse Particles&quot;, &quot;minimum=2 maximum=4 image=127 smart online pixel=20 accumulate=0 update=100 _image=imgNNNNNNNNN.tif start=0 in=50 _minimum=0 local=20 _maximum=1000 threads=50 file=[/tmp/olex.txt]&quot;);
+-- snap --
+
+I also fixed a bug in QuickPALM that shows only with small files (see the mail I just sent to Ricardo, you Cc:ed to keep you in the loop).
+
+Now on to figure out why the macro recorder forgot to record the &quot;file&quot; parameter.</pre>
+    </div><div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olex</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-13 13:14:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thank you for the advice. I am still learning ImageJ/fiji in order to make all those transformations. 
+
+Please, note each image contains multiple frames.</pre>
+    </div><div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=630#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-13 14:15:51 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Yes, I just kept fewer than the original 710 frames because the only thing I needed to reproduce was the error you reported, not the complete procedure. And for that, 32 slices were quite plenty (and very fast to process, I might add).
+
+So here are good and bad news. The bad news are: when I record a macro using the QuickPALM &quot;Analyse Particles&quot;, I get something like this:
+
+-- snip --
+run(&quot;Analyse Particles&quot;, &quot;minimum=5 maximum=4 image=106 smart online stream file=[/tmp/Downloads/Particles Table.xls] pixel=30 accumulate=0 update=10 _image=imgNNNNNNNNN.tif start=0 in=50 _minimum=50 local=20 _maximum=1000 threads=50&quot;);
+-- snap --
+
+Do you notice the &quot;file=[...]&quot; part? This is what was lacking from the macro as presented in <a href="show_bug.cgi?id=630#c14">comment 14</a>.
+
+The good news is that there is no bug I need to fix; I have no idea whether this was a bug in the ImageJ version you used for recording, but at least in 1.47t it works correctly.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=630">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=630">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=630">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=630&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=630" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=630&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731722-hemNHDeIXFxAnek05UZCURyPJNXZEgU-V9u1iinsiw0">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

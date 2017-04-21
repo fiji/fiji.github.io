@@ -1,0 +1,1266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1257 &ndash; Multipoint selection bug</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=1257&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=1257">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=1257">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=1257">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 1257 – Multipoint selection bug",  
+                             "show_bug.cgi?id=1257" );
+        document.title = "Bug 1257 – Multipoint selection bug";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 1257 – Multipoint selection bug", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_1257 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1257</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Multipoint selection bug</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2016-04-10 09:45:57 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=1257&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=1257" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=1257&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731987-AODDF0xXl4esNahSCTKg_QRmSHJ_XXJBLBGM2Fv5KAw">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2016-04-10 09:45:57">
+  <input type="hidden" name="longdesclength" value="2">
+  <input type="hidden" name="id" value="1257">
+  <input type="hidden" name="token" value="1492731987-zrdEcEjjVxknFeP6eEITAeqGKYTRJXwGqG3ebPJgD9E">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=1257"><b>Bug&nbsp;1257</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Multipoint selection bug</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>Multipoint selection bug
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Multipoint selection bug', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=1257&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=1257">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2016-04-10 08:57 CDT by <span class="vcard"><span class="fn">Ondřej Šebesta</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2016-04-10 09:45 CDT 
+      (<a href="show_activity.cgi?id=1257">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="sebesta">sebesta</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=1257&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=1257&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=1257#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ondřej Šebesta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-04-10 08:57:17 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hello.
+
+I found that multipoint tool create points in different Y-axis position in the image when image is zoomed 300% and more in Linux Mint 64-bit version.
+
+Sincerely Ondrej.
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.13.0-24-generic
+  java.version =&gt; 1.8.0_66
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.8.0_66-b17
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 25.66-b17
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.8
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; gnome
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /home/schebique/Fiji.app/java/linux-amd64/jdk1.8.0_66//jre
+  imagej.dir =&gt; /home/schebique/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20160217160804)
+Fiji: <a href="http://update.fiji.sc/">http://update.fiji.sc/</a> (last check:20160218145537)
+Java-8: <a href="http://sites.imagej.net/Java-8/">http://sites.imagej.net/Java-8/</a> (last check:20160324150234)
+
+Files not up-to-date:
+  3a5b35b8 (LOCAL_ONLY) 20160112100046 macros/AutoRun/Project Sabolova.ijm
+  d57e485b (LOCAL_ONLY) 20110322105834 macros/My Macros/Amparo/Define cells.txt
+  6bb80eb1 (LOCAL_ONLY) 20110318164920 macros/My Macros/Amparo/FindFocus.txt
+  5dc27687 (LOCAL_ONLY) 20110505125118 macros/My Macros/Amparo/Measure.txt
+  ac8b9c0c (LOCAL_ONLY) 20110503114040 macros/My Macros/Amparo/Smooth Selections.txt
+  ab3530be (LOCAL_ONLY) 20110323162200 macros/My Macros/Amparo/mask creation.txt
+  b0d335db (LOCAL_ONLY) 20110325125044 macros/My Macros/Amparo/mask creation2.txt
+  c5cc9a94 (LOCAL_ONLY) 20121214161050 macros/My Macros/Bendova/ColocAnalyse 121126.ijm
+  3dec047a (LOCAL_ONLY) 20121116135056 macros/My Macros/Bendova/ColocAnalyse.ijm
+  6e9f3f9b (LOCAL_ONLY) 20130128171936 macros/My Macros/Bendova/RBNCC 120926.ijm
+  42aa7925 (LOCAL_ONLY) 20130102162502 macros/My Macros/Bendova/RBNCC 121220.ijm
+  f5ef74aa (LOCAL_ONLY) 20130129093902 macros/My Macros/Bendova/RBNCC selection 120926 .ijm
+  c126c11a (LOCAL_ONLY) 20130129102712 macros/My Macros/Bendova/RBNCC selection 121126.ijm
+  f24501e9 (LOCAL_ONLY) 20121214161108 macros/My Macros/Bendova/first uprava.ijm
+  f51d4275 (LOCAL_ONLY) 20121214153254 macros/My Macros/Bendova/function translateXY.ijm
+  357fb4e3 (LOCAL_ONLY) 20131014121440 macros/My Macros/Blanka stiburkova/Orezy.ijm
+  997d809f (LOCAL_ONLY) 20131014121558 macros/My Macros/Blanka stiburkova/big scalebar.ijm
+  c36a2c49 (LOCAL_ONLY) 20120106160732 macros/My Macros/Boris/1112 measure procedure-40_i2-2.ijm
+  63d2f15e (LOCAL_ONLY) 20120105104122 macros/My Macros/Boris/1112 measure procedure-40_i2.ijm
+  b4572836 (LOCAL_ONLY) 20120516181512 macros/My Macros/Boris/1112 measure procedure-all.ijm
+  73a3953a (LOCAL_ONLY) 20111223210748 macros/My Macros/Boris/1112 measure procedure.ijm
+  548535ca (LOCAL_ONLY) 20111212113630 macros/My Macros/Boris/1112 measurement function.ijm
+  8f5c7ec4 (LOCAL_ONLY) 20111212124300 macros/My Macros/Boris/1112 prepare macro.ijm
+  8bb57467 (LOCAL_ONLY) 20111116154422 macros/My Macros/Boris/Batch Macro prepared.txt
+  3ed7f5b2 (LOCAL_ONLY) 20111115173108 macros/My Macros/Boris/PrepareImageSumForCounting.ijm
+  83e9864f (LOCAL_ONLY) 20111121114024 macros/My Macros/Boris/PrepareTabelReds.txt
+  b9aca08e (LOCAL_ONLY) 20111121124530 macros/My Macros/Boris/Red intensity measurement.txt
+  b53eb53c (LOCAL_ONLY) 20111116154320 macros/My Macros/Boris/RoiSelect particle counting RATS 24HPI.ijm
+  4c002c62 (LOCAL_ONLY) 20111121120530 macros/My Macros/Boris/RoiSelect particle counting RATS 24HPI_i-greens.ijm
+  e249d429 (LOCAL_ONLY) 20111121114034 macros/My Macros/Boris/RoiSelect particle counting RATS 24HPI_i.ijm
+  a87c3649 (LOCAL_ONLY) 20111115182456 macros/My Macros/Boris/RoiSelect particle counting RATS.ijm
+  12c4e816 (LOCAL_ONLY) 20111115173132 macros/My Macros/Boris/RoiSelect particle counting.ijm
+  96091fc4 (LOCAL_ONLY) 20130130170658 macros/My Macros/Boris/leden 2013/Create JPEG thumbs.ijm
+  0c748fc5 (LOCAL_ONLY) 20130214160732 macros/My Macros/Boris/leden 2013/Join Results.ijm
+  816805a6 (LOCAL_ONLY) 20130212165228 macros/My Macros/Boris/leden 2013/Mereni nastrel 1.ijm
+  e2f9e902 (LOCAL_ONLY) 20130212174216 macros/My Macros/Boris/leden 2013/Mereni nastrel 2.ijm
+  ae070320 (LOCAL_ONLY) 20130213104030 macros/My Macros/Boris/leden 2013/Mereni nastrel 3.ijm
+  06d8650e (LOCAL_ONLY) 20130208155316 macros/My Macros/Boris/leden 2013/join dekovolved images.ijm
+  fcbdf222 (LOCAL_ONLY) 20130208165148 macros/My Macros/Boris/leden 2013/join dekovolved images2.ijm
+  e9c527ab (LOCAL_ONLY) 20121207144504 macros/My Macros/Boris/leden 2013/nastrel na zpracovani obrazku.ijm
+  9710fd50 (LOCAL_ONLY) 20130130170038 macros/My Macros/Boris/leden 2013/nastrel na zpracovani obrazku2.ijm
+  ddcfe711 (LOCAL_ONLY) 20130208110950 macros/My Macros/Boris/leden 2013/selectFiles in Dec.ijm
+  e958ad2f (LOCAL_ONLY) 20110301160714 macros/My Macros/Cerny/Colocalization.txt
+  83866c6c (LOCAL_ONLY) 20140918153030 macros/My Macros/Cerny/Netopyr stitch.ijm
+  3f0c4dcb (LOCAL_ONLY) 20110301134758 macros/My Macros/Cerny/Translation.txt
+  f9e56994 (LOCAL_ONLY) 20110301141344 macros/My Macros/Cerny/Uprav.txt
+  20673664 (LOCAL_ONLY) 20130503150626 macros/My Macros/Csilla Pataki/Batch ImagePrepare.ijm
+  98d80a08 (LOCAL_ONLY) 20130503150620 macros/My Macros/Csilla Pataki/ImagePrepare.ijm
+  302ef598 (LOCAL_ONLY) 20130503151124 macros/My Macros/Csilla Pataki/prepare grid-pracovni01.ijm
+  caaf9be5 (LOCAL_ONLY) 20140812160500 macros/My Macros/Deconvolutin macros/Estimate SNR.ijm
+  b6876edf (LOCAL_ONLY) 20100622133708 macros/My Macros/Deconvolutin macros/Estimate SNR.txt
+  cb90ade0 (LOCAL_ONLY) 20150407143346 macros/My Macros/Deconvolutin macros/Measure3Channel SNR.ijm
+  07fffe18 (LOCAL_ONLY) 20110525165426 macros/My Macros/Doleckova/Uprav-batch-finalize.ijm
+  1724bfe0 (LOCAL_ONLY) 20110901095238 macros/My Macros/Doleckova/Uprav-batch-finalize2.ijm
+  7c3031a3 (LOCAL_ONLY) 20110916160842 macros/My Macros/Doleckova/Uprav-batch-finalize3-vachova.ijm
+  938920a3 (LOCAL_ONLY) 20110525160646 macros/My Macros/Doleckova/Uprav-batch.ijm
+  e13efa06 (LOCAL_ONLY) 20110831111008 macros/My Macros/Doleckova/Uprav-batch2.ijm
+  70714dd5 (LOCAL_ONLY) 20110525165446 macros/My Macros/Doleckova/Uprav.ijm
+  f641384c (LOCAL_ONLY) 20110525165534 macros/My Macros/Doleckova/getMaxFunction.ijm
+  2b53ee04 (LOCAL_ONLY) 20121220162308 macros/My Macros/Dostal/Intensity correction.ijm
+  83fee328 (LOCAL_ONLY) 20130529160212 macros/My Macros/Dostal/JaCoP measurement.ijm
+  b0f333f5 (LOCAL_ONLY) 20131023141202 macros/My Macros/Dostal/kolok priprava.ijm
+  2b79299e (LOCAL_ONLY) 20130529160834 macros/My Macros/Dostal/makro-schebique.ijm
+  d5440554 (LOCAL_ONLY) 20130601100448 macros/My Macros/Dvorakova/make rois.ijm
+  2e1674d6 (LOCAL_ONLY) 20130601100516 macros/My Macros/Dvorakova/save concatenated files.ijm
+  1dcfb8f1 (LOCAL_ONLY) 20120119124104 macros/My Macros/Elsnitz/111130-measure all slides minus min.ijm
+  fe14f897 (LOCAL_ONLY) 20120111143426 macros/My Macros/Elsnitz/111130-measure all slides with threshold.ijm
+  6fe2e2e7 (LOCAL_ONLY) 20120111141210 macros/My Macros/Elsnitz/111130-measure all slides.ijm
+  a1b2d8c4 (LOCAL_ONLY) 20120227132444 macros/My Macros/Elsnitz/111130-measure colocalization.ijm
+  a9a3ec36 (LOCAL_ONLY) 20120306160454 macros/My Macros/Elsnitz/120302-measure coloc batch.ijm
+  8c1d7fba (LOCAL_ONLY) 20120326152422 macros/My Macros/Elsnitz/120314-measure coloc batch.ijm
+  bbcfe8e9 (LOCAL_ONLY) 20120326155100 macros/My Macros/Elsnitz/120315 measure coloc.ijm
+  250554e9 (LOCAL_ONLY) 20120531095216 macros/My Macros/Elsnitz/120427 Macro colcolization.ijm
+  240a732b (LOCAL_ONLY) 20120606140644 macros/My Macros/Elsnitz/120427 Macro colcolization.txt.txt.ijm
+  996e5fd7 (LOCAL_ONLY) 20120523141848 macros/My Macros/Elsnitz/120427 Macro colcolization1.ijm
+  8dd12f61 (LOCAL_ONLY) 20120531100330 macros/My Macros/Elsnitz/120427 Macro colcolization2.ijm
+  40f489fc (LOCAL_ONLY) 20120531110846 macros/My Macros/Elsnitz/120427 Macro colcolization3.ijm
+  0fc26d77 (LOCAL_ONLY) 20120509161020 macros/My Macros/Elsnitz/120427 Rbncc colocaliztion.ijm
+  a9f64510 (LOCAL_ONLY) 20120523135236 macros/My Macros/Elsnitz/Batch prepare.ijm
+  6378b1de (LOCAL_ONLY) 20121008122628 macros/My Macros/Elsnitz/Final Macro Set/Dialog1.ijm
+  cedccce8 (LOCAL_ONLY) 20121009104240 macros/My Macros/Elsnitz/Final Macro Set/Dialog2.ijm
+  06505b8a (LOCAL_ONLY) 20121009122314 macros/My Macros/Elsnitz/Final Macro Set/Dialog3.ijm
+  b3d17591 (LOCAL_ONLY) 20121009165430 macros/My Macros/Elsnitz/Final Macro Set/Dialog4.ijm
+  6160a3cb (LOCAL_ONLY) 20130104113702 macros/My Macros/Elsnitz/Final Macro Set/Dialog5.ijm
+  e614981c (LOCAL_ONLY) 20130108124208 macros/My Macros/Elsnitz/Final Macro Set/Dialog6.ijm
+  057c65b2 (LOCAL_ONLY) 20121017114116 macros/My Macros/Elsnitz/Final Macro Set/Intensity measure1.ijm
+  2fb9cce8 (LOCAL_ONLY) 20121017130322 macros/My Macros/Elsnitz/Final Macro Set/Intensity measure2.ijm
+  bd0ee170 (LOCAL_ONLY) 20131120122918 macros/My Macros/Elsnitz/Kolok makro 131120.ijm
+  fa2d6706 (LOCAL_ONLY) 20140318174918 macros/My Macros/Elsnitz/Mitochondrial Volume/MitoVolumeMes_v01.ijm
+  c161209d (LOCAL_ONLY) 20121026094032 macros/My Macros/Elsnitz/function translateXY.ijm
+  d14d526c (LOCAL_ONLY) 20120619165512 macros/My Macros/Elsnitz/kolokalizace/120221 Make Jpegs.ijm
+  bf3bfdc3 (LOCAL_ONLY) 20120628101220 macros/My Macros/Elsnitz/kolokalizace/120221-99 Rbncc red green 2.ijm
+  21ac8fc2 (LOCAL_ONLY) 20120619162020 macros/My Macros/Elsnitz/kolokalizace/120314 Make Jpegs.ijm
+  cdae96b7 (LOCAL_ONLY) 20120605094302 macros/My Macros/Elsnitz/kolokalizace/120314 Rbncc green blue.ijm
+  915a07c6 (LOCAL_ONLY) 20120626143830 macros/My Macros/Elsnitz/kolokalizace/120314 Rbncc red green 2.ijm
+  2a624bc2 (LOCAL_ONLY) 20120605094330 macros/My Macros/Elsnitz/kolokalizace/120314 Rbncc red green.ijm
+  b3ce300c (LOCAL_ONLY) 20120626134354 macros/My Macros/Elsnitz/kolokalizace/120314 open files 2.ijm
+  8b595d86 (LOCAL_ONLY) 20120605100440 macros/My Macros/Elsnitz/kolokalizace/120314 open files.ijm
+  fca9b972 (LOCAL_ONLY) 20120605100138 macros/My Macros/Elsnitz/kolokalizace/120315 Rbncc green blue.ijm
+  5df1da68 (LOCAL_ONLY) 20120626143854 macros/My Macros/Elsnitz/kolokalizace/120315 Rbncc red green 2.ijm
+  f7d4fd8b (LOCAL_ONLY) 20120605100156 macros/My Macros/Elsnitz/kolokalizace/120315 Rbncc red green.ijm
+  d868eaa7 (LOCAL_ONLY) 20120626140504 macros/My Macros/Elsnitz/kolokalizace/120315 open files 2.ijm
+  8e90fb24 (LOCAL_ONLY) 20120605093632 macros/My Macros/Elsnitz/kolokalizace/120315 open files.ijm
+  b1039f35 (LOCAL_ONLY) 20120601121050 macros/My Macros/Elsnitz/kolokalizace/120320 Rbncc green blue.ijm
+  8969bd64 (LOCAL_ONLY) 20120626134736 macros/My Macros/Elsnitz/kolokalizace/120320 Rbncc red green 2.ijm
+  a0e407b1 (LOCAL_ONLY) 20120601121026 macros/My Macros/Elsnitz/kolokalizace/120320 Rbncc red green.ijm
+  74d2ed52 (LOCAL_ONLY) 20120626112516 macros/My Macros/Elsnitz/kolokalizace/120320 open files 2.ijm
+  1d01592b (LOCAL_ONLY) 20120604105808 macros/My Macros/Elsnitz/kolokalizace/120320 open files.ijm
+  466bc6de (LOCAL_ONLY) 20120605100250 macros/My Macros/Elsnitz/kolokalizace/120327 Rbncc green blue.ijm
+  b6fff61c (LOCAL_ONLY) 20120626160226 macros/My Macros/Elsnitz/kolokalizace/120327 Rbncc red green 2.ijm
+  4ba80bdb (LOCAL_ONLY) 20120605100308 macros/My Macros/Elsnitz/kolokalizace/120327 Rbncc red green.ijm
+  4e5c722d (LOCAL_ONLY) 20120626140540 macros/My Macros/Elsnitz/kolokalizace/120327 open files 2.ijm
+  c6bd60ba (LOCAL_ONLY) 20120606101146 macros/My Macros/Elsnitz/kolokalizace/120327 open files.ijm
+  66d77022 (LOCAL_ONLY) 20120626143940 macros/My Macros/Elsnitz/kolokalizace/120503 Rbncc red green 2.ijm
+  6f131fa9 (LOCAL_ONLY) 20120605100340 macros/My Macros/Elsnitz/kolokalizace/120503 Rbncc red green.ijm
+  f3d69482 (LOCAL_ONLY) 20120626140602 macros/My Macros/Elsnitz/kolokalizace/120503 open files 2.ijm
+  24bc0c8a (LOCAL_ONLY) 20120606093852 macros/My Macros/Elsnitz/kolokalizace/120503 open files.ijm
+  30987a03 (LOCAL_ONLY) 20120605100400 macros/My Macros/Elsnitz/kolokalizace/120511 Rbncc green blue.ijm
+  3eb1c2d5 (LOCAL_ONLY) 20120626143954 macros/My Macros/Elsnitz/kolokalizace/120511 Rbncc red green 2.ijm
+  24fa567a (LOCAL_ONLY) 20120605100416 macros/My Macros/Elsnitz/kolokalizace/120511 Rbncc red green.ijm
+  da9ab2d7 (LOCAL_ONLY) 20120626140704 macros/My Macros/Elsnitz/kolokalizace/120511 open files 2.ijm
+  f8aa3617 (LOCAL_ONLY) 20120607094252 macros/My Macros/Elsnitz/kolokalizace/120511 open files.ijm
+  5df28153 (LOCAL_ONLY) 20120626145550 macros/My Macros/Elsnitz/kolokalizace/Batch all 2.ijm
+  32f57a0c (LOCAL_ONLY) 20120626112302 macros/My Macros/Elsnitz/kolokalizace/Batch all.ijm
+  5627915e (LOCAL_ONLY) 20120626112000 macros/My Macros/Elsnitz/kolokalizace/Draw Rois to Jpegs.ijm
+  0c54f05b (LOCAL_ONLY) 20120619140536 macros/My Macros/Elsnitz/kolokalizace/Make Jpegs.ijm
+  44ccc322 (LOCAL_ONLY) 20120620102600 macros/My Macros/Elsnitz/kolokalizace/Make selections.ijm
+  a06c13f1 (LOCAL_ONLY) 20120626133936 macros/My Macros/Elsnitz/kolokalizace/function openRoi.ijm
+  4daf8b4f (LOCAL_ONLY) 20120605093832 macros/My Macros/Elsnitz/kolokalizace/saveResults.ijm
+  854ad3c8 (LOCAL_ONLY) 20160130123422 macros/My Macros/GRID.txt
+  a0e63a4c (LOCAL_ONLY) 20121004095248 macros/My Macros/ImageJ Conference/Circle at Cursor Pos.ijm
+  2ef09fa9 (LOCAL_ONLY) 20140324120308 macros/My Macros/Jan Holecek/Uprav tiles.ijm
+  e924e9b5 (LOCAL_ONLY) 20151127142300 macros/My Macros/Jan Vondrak/Nucleus_intesity_measurements.ijm
+  ff5aed82 (LOCAL_ONLY) 20150121102740 macros/My Macros/Janka/zpracuj a zmer.ijm
+  adcd4009 (LOCAL_ONLY) 20130103151614 macros/My Macros/Kazdova/130102 upravit.ijm
+  d790f89b (LOCAL_ONLY) 20130130111832 macros/My Macros/Kazdova/130130 2chanels upr.ijm
+  4debcfe5 (LOCAL_ONLY) 20130130112334 macros/My Macros/Kazdova/130130 3chanels upr.ijm
+  787668c5 (LOCAL_ONLY) 20130501172742 macros/My Macros/Kazdova/130501 upravit.ijm
+  9b520f74 (LOCAL_ONLY) 20130822170414 macros/My Macros/Kazdova/130822 upravit.ijm
+  d06bf544 (LOCAL_ONLY) 20131021134444 macros/My Macros/Kazdova/Make RGB profile nicer.ijm
+  0d7955b8 (LOCAL_ONLY) 20130109124032 macros/My Macros/Kazdova/Pocitani tecek1.ijm
+  75c41a40 (LOCAL_ONLY) 20121031143556 macros/My Macros/Kazdova/all widths same Translate.ijm
+  44f21970 (LOCAL_ONLY) 20120920165846 macros/My Macros/Kazdova/confoc dec coloc.ijm
+  bb2ab351 (LOCAL_ONLY) 20120924173322 macros/My Macros/Kazdova/confoc dec coloc2.ijm
+  f846fcbc (LOCAL_ONLY) 20120821154630 macros/My Macros/Kazdova/make RGB overelay figures.ijm
+  a5bc63e1 (LOCAL_ONLY) 20121031143524 macros/My Macros/Kazdova/meritka do RGB.ijm
+  d271fd3c (LOCAL_ONLY) 20121031143606 macros/My Macros/Kazdova/translate.ijm
+  6dfa5acc (LOCAL_ONLY) 20120821154342 macros/My Macros/Kazdova/upravit do figur.ijm
+  52b142f2 (LOCAL_ONLY) 20130108134826 macros/My Macros/Kazdova/upravit konf. fotky.ijm
+  a3e3a7a7 (LOCAL_ONLY) 20121031143552 macros/My Macros/Kazdova/vyska sirka porad stejne.ijm
+  a303a56f (LOCAL_ONLY) 20120424131730 macros/My Macros/Koukalova/kolokalizace.ijm
+  d01721d2 (LOCAL_ONLY) 20120424165148 macros/My Macros/Koukalova/uprava obrazku.ijm
+  3d44bb82 (LOCAL_ONLY) 20110328130832 macros/My Macros/Kozmanova/Najdi posun.ijm
+  a2fcfb85 (LOCAL_ONLY) 20110328153840 macros/My Macros/Kozmanova/posun.txt
+  60eb53cf (LOCAL_ONLY) 20110328160042 macros/My Macros/Kozmanova/set thresholds.txt
+  85ba550c (LOCAL_ONLY) 20110329115232 macros/My Macros/Kozmanova/uprava a mereni.ijm
+  8c1df916 (LOCAL_ONLY) 20120320152736 macros/My Macros/Louskacek/Debug_container.txt
+  21892595 (LOCAL_ONLY) 20120321135142 macros/My Macros/Louskacek/Makro korinky.ijm
+  0c7319d1 (LOCAL_ONLY) 20120321174030 macros/My Macros/Louskacek/Makro korinky2.ijm
+  0f750cb2 (LOCAL_ONLY) 20120323170200 macros/My Macros/Louskacek/Makro korinky3 for batch.ijm
+  2875ecca (LOCAL_ONLY) 20120323172246 macros/My Macros/Louskacek/Makro korinky3 for test.ijm
+  92136335 (LOCAL_ONLY) 20120323155136 macros/My Macros/Louskacek/Makro korinky4.ijm
+  7989fb0c (LOCAL_ONLY) 20120320163240 macros/My Macros/Louskacek/Recorded S thresholdy nastaveni.ijm
+  812747a4 (LOCAL_ONLY) 20120320161424 macros/My Macros/Louskacek/RecordedMacro fialova.ijm
+  fd5f390c (LOCAL_ONLY) 20120320111224 macros/My Macros/Louskacek/RecordedMacro.ijm
+  db3d85fc (LOCAL_ONLY) 20120322135556 macros/My Macros/Louskacek/korinky2_lousk.ijm
+  0b2c49ff (LOCAL_ONLY) 20140217165500 macros/My Macros/Lubos Voleman/140217-uprav data.ijm
+  d8d088ad (LOCAL_ONLY) 20140924111136 macros/My Macros/Lubos Voleman/140806-poskladej dec.ijm
+  ee276fb5 (LOCAL_ONLY) 20140806123116 macros/My Macros/Lubos Voleman/140806-uprav data rekurzivne.ijm
+  22fc7820 (LOCAL_ONLY) 20140806134534 macros/My Macros/Lubos Voleman/140806-uprav data.ijm
+  f7b3f280 (LOCAL_ONLY) 20140110124930 macros/My Macros/Lucie Hejnova/mereni DHE 140110.ijm
+  2052b655 (LOCAL_ONLY) 20160114102534 macros/My Macros/Lucie Hernychova/150612_nazvy.txt
+  71fc1099 (LOCAL_ONLY) 20160114102534 macros/My Macros/Lucie Hernychova/Macro.ijm
+  c41157f7 (LOCAL_ONLY) 20131112113152 macros/My Macros/Mancikova/131104 upr make tiles.ijm
+  d4d965e2 (LOCAL_ONLY) 20131112112634 macros/My Macros/Mancikova/prvni uprava.ijm
+  ce247196 (LOCAL_ONLY) 20131112113016 macros/My Macros/Mancikova/tophat.ijm
+  d3cc8f8c (LOCAL_ONLY) 20140711092124 macros/My Macros/Martin Fraiberk/uprava dec.ijm
+  82a38d41 (LOCAL_ONLY) 20140507161344 macros/My Macros/Miklusova/OpenAndSave.ijm
+  2ef36287 (LOCAL_ONLY) 20140414160204 macros/My Macros/Miklusova/Stitch more z.ijm
+  27c117a5 (LOCAL_ONLY) 20150717112022 macros/My Macros/Najdrova/CMLE registration and overlay.ijm
+  ccca231a (LOCAL_ONLY) 20120830162340 macros/My Macros/Pavla Sauerova/zakladni uprava.ijm
+  3b84f12c (LOCAL_ONLY) 20130312164408 macros/My Macros/Pesanova/uprav image.ijm
+  6a775fe5 (LOCAL_ONLY) 20150511132714 macros/My Macros/Pestova/findborder.ijm
+  74d9abf4 (LOCAL_ONLY) 20151109162026 macros/My Macros/Prevorovsky/151104 uprava.ijm
+  67152ab5 (LOCAL_ONLY) 20121203121012 macros/My Macros/Prevorovsky/Jadra-coloc.ijm
+  4690d5cf (LOCAL_ONLY) 20121019141552 macros/My Macros/Prevorovsky/Macro na rezy.ijm
+  8af3196a (LOCAL_ONLY) 20120718160900 macros/My Macros/Prevorovsky/Macro-selecet pombes.ijm
+  af35ffc4 (LOCAL_ONLY) 20120716154350 macros/My Macros/Prevorovsky/makro1.ijm
+  10b4c8ce (LOCAL_ONLY) 20130206182056 macros/My Macros/Prevorovsky/tecky v jadre.ijm
+  c3366c44 (LOCAL_ONLY) 20110308144528 macros/My Macros/Radek Secka/Mereni bilejch.txt
+  af4d17b1 (LOCAL_ONLY) 20110308194306 macros/My Macros/Radek Secka/Mereni bilejch2.ijm
+  57061817 (LOCAL_ONLY) 20110308150244 macros/My Macros/Radek Secka/Mereni cernejch.txt
+  347176f4 (LOCAL_ONLY) 20110308194204 macros/My Macros/Radek Secka/Mereni cernejch2.ijm
+  76c58ed9 (LOCAL_ONLY) 20110304154826 macros/My Macros/Radek Secka/Mereni korinku.txt
+  ec6a9917 (LOCAL_ONLY) 20110304181302 macros/My Macros/Radek Secka/Mereni korinku2.ijm
+  405de7be (LOCAL_ONLY) 20110304174454 macros/My Macros/Radek Secka/Mereni korinku2.txt
+  7a5a5e01 (LOCAL_ONLY) 20130531155126 macros/My Macros/Schwarzerova/Pruduchy.ijm
+  8e6092e9 (LOCAL_ONLY) 20130116113718 macros/My Macros/Skala/BatchAreaMeasure.ijm
+  f3f12102 (LOCAL_ONLY) 20130116140114 macros/My Macros/Skala/BatchAreaMeasure2-navrh.ijm
+  730fa889 (LOCAL_ONLY) 20130116113452 macros/My Macros/Skala/Find and crop cells.ijm
+  66028a1b (LOCAL_ONLY) 20120213151538 macros/My Macros/Skala/IntensityMeasure.ijm
+  fdbbad52 (LOCAL_ONLY) 20130515125116 macros/My Macros/Sosna/Bioformats reader priprav Max na stitiching.ijm
+  10dca9c5 (LOCAL_ONLY) 20130322144700 macros/My Macros/Sosna/Cell-R 2D line stitch.ijm
+  557b7187 (LOCAL_ONLY) 20130604101906 macros/My Macros/Sosna/GetSettingsInfo.ijm.ijm
+  8484871f (LOCAL_ONLY) 20130603135208 macros/My Macros/Sosna/GetSettingsInfo.txt
+  6c77fe3c (LOCAL_ONLY) 20130604110044 macros/My Macros/Sosna/GetSettingsInfoFromLei.ijm
+  cee5bb73 (LOCAL_ONLY) 20120824150012 macros/My Macros/Sosna/Mereni lambda.ijm
+  70d19171 (LOCAL_ONLY) 20130604134752 macros/My Macros/Sosna/SaveMetaDataOnly.ijm
+  85adece1 (LOCAL_ONLY) 20130604144556 macros/My Macros/Sosna/To 8bit - scaledown.ijm
+  ac7beeb7 (LOCAL_ONLY) 20130314170024 macros/My Macros/Sosna/after MosaicJ.ijm
+  b9f52c04 (LOCAL_ONLY) 20120822124432 macros/My Macros/Sosna/prepare to stitch.ijm
+  c9a22c4c (LOCAL_ONLY) 20130607104908 macros/My Macros/Sosna/priprav Max na stitching directPath and Stitch.ijm
+  e4817859 (LOCAL_ONLY) 20130606135832 macros/My Macros/Sosna/priprav Max na stitching directPath v2.ijm
+  b046bbf8 (LOCAL_ONLY) 20130606085452 macros/My Macros/Sosna/priprav Max na stitching directPath.ijm
+  30e8103b (LOCAL_ONLY) 20130524111926 macros/My Macros/Sosna/priprav Max na stitching.ijm
+  7d8e9b90 (LOCAL_ONLY) 20121217160336 macros/My Macros/Stahlavsky/mean of DIC.ijm
+  b346ee61 (LOCAL_ONLY) 20121217160234 macros/My Macros/Stahlavsky/register giemsa with fluorescence.ijm
+  8fd54035 (LOCAL_ONLY) 20121217160308 macros/My Macros/Stahlavsky/same brightness.ijm
+  231a4559 (LOCAL_ONLY) 20120425174758 macros/My Macros/Stiburkova Krylov/Uprava obrazku.ijm
+  71740d77 (LOCAL_ONLY) 20130602112614 macros/My Macros/Stundl/130529 priprav Max na stitching.ijm
+  5781d583 (LOCAL_ONLY) 20130320144508 macros/My Macros/Stundl/JB4 uprava.ijm
+  73221e5a (LOCAL_ONLY) 20150618164436 macros/My Macros/Stundl/Macro150618.ijm
+  d5eeee2c (LOCAL_ONLY) 20130311164354 macros/My Macros/Stundl/Uprav fotky.ijm
+  9101a2ef (LOCAL_ONLY) 20130416165104 macros/My Macros/Stundl/Uprav fotky2.ijm
+  69ded5cc (LOCAL_ONLY) 20130501165608 macros/My Macros/Stundl/priprav Max na stitching.ijm
+  dcabf16a (LOCAL_ONLY) 20131114134940 macros/My Macros/Tomas Hendrych/Prepare images crop.ijm
+  b28e1b34 (LOCAL_ONLY) 20131114141118 macros/My Macros/Tomas Hendrych/RGB measure.ijm
+  8bff9c65 (LOCAL_ONLY) 20131114134938 macros/My Macros/Tomas Hendrych/measure1.ijm
+  fa103762 (LOCAL_ONLY) 20130819115118 macros/My Macros/Tuma/8bit batch convertion.ijm
+  8edc9f31 (LOCAL_ONLY) 20131015154840 macros/My Macros/Tuma/Bioformats reader priprav Max na stitiching vz2.ijm
+  ba93cc9d (LOCAL_ONLY) 20131015135752 macros/My Macros/Tuma/Bioformats reader priprav Max na stitiching.ijm
+  29a8b384 (LOCAL_ONLY) 20130819115158 macros/My Macros/Tuma/Max projection for Batch.ijm
+  f2a95dac (LOCAL_ONLY) 20120807160008 macros/My Macros/Tuma/Mereni tloustky rezu.ijm
+  5bea6dff (LOCAL_ONLY) 20121002134530 macros/My Macros/Tuma/Stitching.ijm
+  c31c5445 (LOCAL_ONLY) 20130904123750 macros/My Macros/Tuma/probirka debilnich skenu.ijm
+  be06edbd (LOCAL_ONLY) 20140922111738 macros/My Macros/Tumova Pavla/140917 upr.ijm
+  78ddbf29 (LOCAL_ONLY) 20120601154724 macros/My Macros/Tumova Pavla/Macro.ijm
+  805c4950 (LOCAL_ONLY) 20120615135244 macros/My Macros/Tumova Pavla/Scale and 8bit.ijm
+  d48a53c5 (LOCAL_ONLY) 20140306130154 macros/My Macros/Valika Grobarova/enhance.ijm
+  bf7884ea (LOCAL_ONLY) 20160130105745 macros/My Macros/X.txt
+  b7cd7d04 (LOCAL_ONLY) 20160130112259 macros/My Macros/Y.txt
+  8554cea4 (LOCAL_ONLY) 20160124114640 macros/My Macros/extend length.ijm
+  f99c56d5 (LOCAL_ONLY) 20160130134840 macros/My Macros/gchq.ijm
+  6ea2f76c (LOCAL_ONLY) 20160130122702 macros/My Macros/orig.txt
+  1ca436fb (LOCAL_ONLY) 20160130122821 macros/My Macros/orig2.txt
+  16cb2876 (LOCAL_ONLY) 20141006155444 macros/My Macros/poradek na disku/BackupLocalResidualsControle.ijm
+  5e491ae0 (LOCAL_ONLY) 20141002160856 macros/My Macros/poradek na disku/BackupLocalResidualsControleDirOnly-2.ijm
+  60ca32eb (LOCAL_ONLY) 20141027151748 macros/My Macros/poradek na disku/BackupLocalResidualsDeletion-3.ijm
+  919e3808 (LOCAL_ONLY) 20120727104804 macros/My Macros/poradek na disku/LIF Projector.ijm
+  6bc0f384 (LOCAL_ONLY) 20120727110432 macros/My Macros/poradek na disku/MyMacroBioExtensions.ijm
+  59f76820 (LOCAL_ONLY) 20120727110410 macros/My Macros/poradek na disku/bfOpenAsHyperstack.txt
+  0b81ae8e (LOCAL_ONLY) 20120727152504 macros/My Macros/poradek na disku/isDIC.ijm
+  ab1e7bc0 (LOCAL_ONLY) 20120726140030 macros/My Macros/poradek na disku/vytrideni nulovych textaku.ijm
+  8285c220 (LOCAL_ONLY) 20120905164112 macros/My Macros/tata/horizontal stripes remover.ijm
+  81d43f8f (LOCAL_ONLY) 20151122141624 macros/StartupMacros.txt
+  365f12fe (LOCAL_ONLY) 20151106061310 macros/bones/Bones.txt
+  233f2bb9 (LOCAL_ONLY) 20151106061314 macros/bones/EstimateSize.txt
+  bbb93b4f (LOCAL_ONLY) 20151211102322 macros/bones/Function updateROI.ijm
+  17df9e33 (LOCAL_ONLY) 20160112173901 macros/bones/MRI-autoselection.ijm
+  c4ce9914 (LOCAL_ONLY) 20151106061324 macros/bones/Macro.ijm
+  c7290e19 (LOCAL_ONLY) 20151106061328 macros/bones/MomentMacroJ.txt
+  5f946ede (LOCAL_ONLY) 20151209204140 macros/bones/MomentMacroJ_15120.ijm
+  91dedd30 (LOCAL_ONLY) 20151211100644 macros/bones/MomentMacroJ_151209.ijm
+  fee5fb10 (LOCAL_ONLY) 20151220070921 macros/bones/MomentMacroJ_151211.ijm
+  fc26a018 (LOCAL_ONLY) 20160112104238 macros/bones/MomentMacroJ_151221.ijm
+  75d078c6 (LOCAL_ONLY) 20151106061328 macros/bones/MomentMacroJ_v1_4.21.txt
+  908dfe88 (LOCAL_ONLY) 20151106061326 macros/bones/Momentmacro-function.txt
+  93601f7e (LOCAL_ONLY) 20151106061330 macros/bones/Options macro.txt
+  f9795212 (LOCAL_ONLY) 20151106061330 macros/bones/Options macro.txt.ijm
+  1bafa0b5 (LOCAL_ONLY) 20151106061338 macros/bones/Selections.txt
+  7578f81b (LOCAL_ONLY) 20151106061338 macros/bones/StartupMacros.txt
+  f7748e60 (LOCAL_ONLY) 20151106061312 macros/bones/calibration.txt
+  6537a481 (LOCAL_ONLY) 20151106061316 macros/bones/examineImage.txt
+  6a112ca4 (LOCAL_ONLY) 20151106061316 macros/bones/examineImage1.txt
+  e33c4903 (LOCAL_ONLY) 20151106061318 macros/bones/examineImage2.txt
+  bdb037ba (LOCAL_ONLY) 20151106061320 macros/bones/examineImage3.txt
+  4199f276 (LOCAL_ONLY) 20151106061320 macros/bones/examineImage4.txt
+  bf74241c (LOCAL_ONLY) 20151106061322 macros/bones/imageInfo.txt
+  00a22ea4 (LOCAL_ONLY) 20151106061324 macros/bones/measureSelection.txt
+  0053d94a (LOCAL_ONLY) 20151106061332 macros/bones/prepareImage.txt
+  bdcf3234 (LOCAL_ONLY) 20151106061334 macros/bones/prepareImages111125 all.ijm
+  1b8cdabb (LOCAL_ONLY) 20160107140955 macros/bones/smazat.txt
+  db050da8 (LOCAL_ONLY) 20160107132055 macros/bones/smoothBounds.ijm
+  fc407fff (LOCAL_ONLY) 20160223193722 plugins/Microscope_Scale.class</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=1257#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-04-10 09:45:57 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This regression is fixed in the latest version of ImageJ (1.50i). You can upgrade using the Help&gt;Update ImageJ command.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=1257">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=1257">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=1257">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=1257&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=1257" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=1257&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731988-9CdgW0sFEllDt2tVnEucwuwFNW-vHtdQvR4kdLMl-9o">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

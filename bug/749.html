@@ -1,0 +1,1605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 749 &ndash; 'Help &gt; Update Fiji' throws NoSuchMethodError, fall-back to remote updater fails</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=749&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=749">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=749">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=749">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 749 – \'Help \x3e Update Fiji\' throws NoSuchMethodError, fall-back to remote updater fails",  
+                             "show_bug.cgi?id=749" );
+        document.title = "Bug 749 – \'Help \x3e Update Fiji\' throws NoSuchMethodError, fall-back to remote updater fails";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 749 – \'Help \x3e Update Fiji\' throws NoSuchMethodError, fall-back to remote updater fails", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_749 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;749</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">'Help &gt; Update Fiji' throws NoSuchMethodError, fall-back to remote updater fails</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-05-20 12:33:52 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=749&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=749" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=749&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731774-rHXkAVP-asIWfeX1bRXQfd50B6mmmVo1JI8hFenxZpU">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-05-20 12:33:52">
+  <input type="hidden" name="longdesclength" value="13">
+  <input type="hidden" name="id" value="749">
+  <input type="hidden" name="token" value="1492731774-XdSKvLTBlqssrhUdYB2C2oc20dih8dtM5NEVeXBebCI">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=749"><b>Bug&nbsp;749</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">'Help &gt; Update Fiji' throws NoSuchMethodError, fall-back to remote updater fails</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>'Help &gt; Update Fiji' throws NoSuchMethodError, fall-back to remote updater fails
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('\'Help \x3e Update Fiji\' throws NoSuchMethodError, fall-back to remote updater fails', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">Macintosh
+       Mac OS
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          <tr>
+    <th class="field_label">
+      <label for="duplicates">Duplicates</label>:
+    </th>
+    <td class="field_value" colspan="2">
+      <span id="duplicates"><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Updater broken?"
+   href="show_bug.cgi?id=750">750</a> 
+      </span>
+      (<a href="buglist.cgi?bug_id=750">view as bug list</a>)
+    </td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=749&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=749">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-05-19 09:39 CDT by <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-05-20 12:33 CDT 
+      (<a href="show_activity.cgi?id=749">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="graemeball">graemeball</option>
+                <option value="jan.eglinger">jan.eglinger</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="nikolaus.ehrenfeuchter">nikolaus.ehrenfeuchter</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_x-java-archive">
+        <td valign="top">
+            <a href="attachment.cgi?id=149"
+               title="View the content of the attachment">
+          <b>scijava-common.jar intended to fix the XML problems, once and for all</b></a>
+
+          <span class="bz_attach_extra_info">
+              (550.93 KB,
+                application/x-java-archive)
+
+            <br>
+            <a href="#attach_149"
+               title="Go to the comment associated with the attachment">2014-05-19 11:59 CDT</a>,
+
+            <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi?id=149&amp;action=edit">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <span class="bz_attach_view_hide">
+        </span>
+        <a href="attachment.cgi?bugid=749&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=749&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 09:39:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >After updating Fiji today, running Help &gt; Update Fiji results in the file bootstrap.js being opened in a text window, and no updater running.
+
+Starting Fiji from command line and then running Help &gt; Update Fiji results in the terminal output pasted below:
+
+java.lang.NoSuchMethodError: org.apache.xpath.XPathContext.&lt;init&gt;(Z)V
+	at org.apache.xpath.jaxp.XPathImpl.eval(XPathImpl.java:207)
+	at org.apache.xpath.jaxp.XPathImpl.evaluate(XPathImpl.java:281)
+	at org.scijava.util.XML.xpath(XML.java:142)
+	at org.scijava.util.XML.cdata(XML.java:133)
+	at net.imagej.util.MediaWikiClient.getPageSource(MediaWikiClient.java:83)
+	at net.imagej.updater.util.AvailableSites.getAvailableSites(AvailableSites.java:64)
+	at net.imagej.updater.util.AvailableSites.initializeSites(AvailableSites.java:136)
+	at net.imagej.updater.util.AvailableSites.initializeAndAddSites(AvailableSites.java:185)
+	at net.imagej.ui.swing.updater.ImageJUpdater.run(ImageJUpdater.java:101)
+	at fiji.updater.IJ2Updater.run(IJ2Updater.java:63)
+	at fiji.updater.Updater.run(Updater.java:30)
+	at ij.IJ.runUserPlugIn(IJ.java:201)
+	at ij.IJ.runPlugIn(IJ.java:165)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:695)
+java.lang.ClassNotFoundException: imagej.updater.gui.ImageJUpdater
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at fiji.updater.Updater.run(Updater.java:35)
+	at ij.IJ.runUserPlugIn(IJ.java:201)
+	at ij.IJ.runPlugIn(IJ.java:165)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:695)
+Falling back to remote updater at <a href="http://update.imagej.net/bootstrap.js">http://update.imagej.net/bootstrap.js</a>
+java.lang.NoSuchMethodError: org.apache.xpath.XPathContext.&lt;init&gt;(Z)V
+	at org.apache.xpath.jaxp.XPathImpl.eval(XPathImpl.java:207)
+	at org.apache.xpath.jaxp.XPathImpl.evaluate(XPathImpl.java:281)
+	at org.scijava.util.XML.xpath(XML.java:142)
+	at org.scijava.util.XML.cdata(XML.java:133)
+	at net.imagej.util.MediaWikiClient.getPageSource(MediaWikiClient.java:83)
+	at net.imagej.updater.util.AvailableSites.getAvailableSites(AvailableSites.java:64)
+	at net.imagej.updater.util.AvailableSites.initializeSites(AvailableSites.java:136)
+	at net.imagej.updater.util.AvailableSites.initializeAndAddSites(AvailableSites.java:185)
+	at net.imagej.ui.swing.updater.ImageJUpdater.run(ImageJUpdater.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:57)
+	at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at sun.org.mozilla.javascript.internal.MemberBox.invoke(MemberBox.java:130)
+	at sun.org.mozilla.javascript.internal.NativeJavaMethod.call(NativeJavaMethod.java:188)
+	at sun.org.mozilla.javascript.internal.Interpreter.interpretLoop(Interpreter.java:3068)
+	at sun.org.mozilla.javascript.internal.Interpreter.interpret(Interpreter.java:2234)
+	at sun.org.mozilla.javascript.internal.InterpretedFunction.call(InterpretedFunction.java:136)
+	at sun.org.mozilla.javascript.internal.ContextFactory.doTopCall(ContextFactory.java:323)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:92)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:85)
+	at sun.org.mozilla.javascript.internal.ScriptRuntime.doTopCall(ScriptRuntime.java:2747)
+	at sun.org.mozilla.javascript.internal.InterpretedFunction.exec(InterpretedFunction.java:147)
+	at sun.org.mozilla.javascript.internal.Context.evaluateReader(Context.java:1169)
+	at com.sun.script.javascript.RhinoScriptEngine.eval(RhinoScriptEngine.java:152)
+	at javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:232)
+	at fiji.updater.Updater.runRemote(Updater.java:83)
+	at fiji.updater.Updater.run(Updater.java:41)
+	at ij.IJ.runUserPlugIn(IJ.java:201)
+	at ij.IJ.runPlugIn(IJ.java:165)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:695)
+
+Information about your version of Java:
+
+  os.arch =&gt; x86_64
+  os.name =&gt; Mac OS X
+  os.version =&gt; 10.9.3
+  java.version =&gt; 1.6.0_65
+  java.vendor =&gt; Apple Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_65-b14-462-11M4609
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 20.65-b04-462
+  java.vm.vendor =&gt; Apple Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; apple.awt.CGraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: null
+  imagej.dir =&gt; /Applications/Fiji/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140516231031)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140518040429)
+Bio-Formats: <a href="http://sites.imagej.net/Bio-Formats/">http://sites.imagej.net/Bio-Formats/</a> (last check:20140517194832)
+BioVoxxel: <a href="http://sites.imagej.net/BioVoxxel/">http://sites.imagej.net/BioVoxxel/</a> (last check:20140404153808)
+Cookbook: <a href="http://sites.imagej.net/Cookbook/">http://sites.imagej.net/Cookbook/</a> (last check:20131221001857)
+IBMP-CNRS: <a href="http://www-ibmp.u-strasbg.fr/fijiupdates/">http://www-ibmp.u-strasbg.fr/fijiupdates/</a> (last check:20131014121029)
+ScientiFig: <a href="http://sites.imagej.net/Aigouy/">http://sites.imagej.net/Aigouy/</a> (last check:20140516135525)
+
+Files not up-to-date:
+  5cf0711e (LOCAL_ONLY) 20120807002303 jars/akutan-1.0.jar
+  01eace7e (LOCAL_ONLY) 20120508221510 jars/antlr-runtime-3.4.jar
+  0449e3ec (LOCAL_ONLY) 20120807002304 jars/colt-1.2.0.jar
+  c91e55ee (LOCAL_ONLY) 20131022134831 jars/commons-io-1.3.2.jar
+  6cd7cd7d (LOCAL_ONLY) 20120807002305 jars/concurrent-1.3.4.jar
+  6227c67b (LOCAL_ONLY) 20121120185253 jars/curve-fitter-1.0.0-SNAPSHOT-with-libs.jar
+  be9b3c4c (LOCAL_ONLY) 20140307135110 jars/formats-common-5.0.0.jar
+  49acf09d (LOCAL_ONLY) 20131021211549 jars/jsr166-1.7.0.jar
+  c480d491 (LOCAL_ONLY) 20120807002302 jars/jxlayer.jar
+  8523861f (LOCAL_ONLY) 20120807002305 jars/lma-1.3.jar
+  04f8e59b (LOCAL_ONLY) 20120807002305 jars/native-library-util-2.0-SNAPSHOT.jar
+  9b5581f0 (LOCAL_ONLY) 20130104113738 jars/sqlite-jdbc-3.7.8-20111025.014814-1.jar
+  3f82055b (LOCAL_ONLY) 20130128163053 lib/macosx/libffmpeg.dylib
+  202e3bea (LOCAL_ONLY) 20140206101241 luts/isolum_cbs.lut
+  f2b7e781 (LOCAL_ONLY) 20121123111454 luts/lifetime.lut
+  401ec8c7 (LOCAL_ONLY) 20120224160206 macros/BatchMacro.ijm
+  7ba86896 (LOCAL_ONLY) 20110906150138 macros/toolsets/AdvancedPlots.txt
+  37c78470 (LOCAL_ONLY) 20110419151136 macros/toolsets/Icons.txt
+  c74d5c56 (LOCAL_ONLY) 20110915101513 macros/toolsets/Magic Montage.txt
+  9ce4aacd (LOCAL_ONLY) 20111018114005 plugins/ActionBar/new_action_bar.txt
+  dfa49649 (LOCAL_ONLY) 20110518183240 plugins/Blend_Images.class
+  19f37464 (LOCAL_ONLY) 20131022135630 plugins/Blind_Experiment-0.1.0-SNAPSHOT.jar
+  b6fe6c30 (LOCAL_ONLY) 20121029120912 plugins/BugTest_Plugin.class
+  3082317f (LOCAL_ONLY) 20131015135732 plugins/Combine_ROIs.jar
+  e5a6054f (LOCAL_ONLY) 20131102164621 plugins/Example_.class
+  aaeffc0c (LOCAL_ONLY) 20130128163044 plugins/FFMPEG_IO.jar
+  51fc63d2 (LOCAL_ONLY) 20130529182520 plugins/Fiber_Segmentation.class
+  41170d42 (LOCAL_ONLY) 20101208151551 plugins/Frac_Lac.jar
+  a7414736 (LOCAL_ONLY) 20101208151731 plugins/Fractal_Generator.class
+  4c9d1443 (LOCAL_ONLY) 20101208132146 plugins/Grid_.class
+  47e11681 (LOCAL_ONLY) 20140307135109 plugins/HGOME_plugins-1.0.2-SNAPSHOT.jar
+  0a96c958 (LOCAL_ONLY) 20040618103702 plugins/Hough_Center/Accumulator.class
+  c852d1a0 (LOCAL_ONLY) 20040617122714 plugins/Hough_Center/Analyser.class
+  240c49ad (LOCAL_ONLY) 20040618103640 plugins/Hough_Center/BinaryAccumulator.class
+  06624be7 (LOCAL_ONLY) 20040618103518 plugins/Hough_Center/BooleanMatrix.class
+  87b4a5e9 (LOCAL_ONLY) 20040618103514 plugins/Hough_Center/Canny.class
+  ae179215 (LOCAL_ONLY) 20040619100852 plugins/Hough_Center/Hough$DoublePoint.class
+  eccb02c0 (LOCAL_ONLY) 20040619100852 plugins/Hough_Center/Hough$PtOut.class
+  3ad8ce15 (LOCAL_ONLY) 20040619100852 plugins/Hough_Center/Hough.class
+  44a76d03 (LOCAL_ONLY) 20120525133622 plugins/Hough_Center/Hough_.class
+  2936b9b9 (LOCAL_ONLY) 20040617115652 plugins/Hough_Center/LinkedListMod$Entry.class
+  cdd4d004 (LOCAL_ONLY) 20040617115652 plugins/Hough_Center/LinkedListMod.class
+  58846771 (LOCAL_ONLY) 20040617115702 plugins/Hough_Center/RectDouble.class
+  9ea322de (LOCAL_ONLY) 20040617161252 plugins/Hough_Center/RectInt.class
+  9a6b7db0 (LOCAL_ONLY) 20040617135150 plugins/Hough_Center/VotingPoint.class
+  59693620 (LOCAL_ONLY) 20120524110350 plugins/Hough_Circles.class
+  20e2cec7 (LOCAL_ONLY) 20140225102153 plugins/ICTN_1_6_.jar
+  3c505c2f (LOCAL_ONLY) 20140407201310 plugins/LOCI/misc_plugins-1.0.0-SNAPSHOT.jar
+  65b35fcd (LOCAL_ONLY) 20120814144529 plugins/Morphology/BinaryDilateNoMerge8_.class
+  583118b2 (LOCAL_ONLY) 20120521173122 plugins/Morphology/Particles8_.class
+  f07dd15c (LOCAL_ONLY) 20120116113716 plugins/NeuronJ_.jar
+  ec17890b (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/JHotDraw.jar
+  91ece67d (LOCAL_ONLY) 20131128094658 plugins/OMERO.insight-ij/libs/JWlz.jar
+  36cb5c0a (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/TableLayout.jar
+  ff61a1b4 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/ai_path.jar
+  c3a86bd0 (LOCAL_ONLY) 20131104145522 plugins/OMERO.insight-ij/libs/assumeng.jar
+  364315a9 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/axis.jar
+  0af1624e (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/backport-util-concurrent.jar
+  6912f440 (LOCAL_ONLY) 20140403210120 plugins/OMERO.insight-ij/libs/blitz.jar
+  189f61fa (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/bufr.jar
+  031cc2a6 (LOCAL_ONLY) 20140403205940 plugins/OMERO.insight-ij/libs/common.jar
+  940245e0 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-codec.jar
+  64d8a654 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-collections.jar
+  86ab9004 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-digester.jar
+  9e9eb622 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-discovery.jar
+  c62bea1b (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-httpclient.jar
+  d59d3e4c (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-io.jar
+  f6139801 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-lang.jar
+  7018824c (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-logging.jar
+  60a83b54 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/commons-validator.jar
+  abf211c5 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/ehcache-core.jar
+  991b5e8a (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/gicentreUtils.jar
+  dbcde867 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/gluegen-rt.jar
+  e33cecc2 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/grib.jar
+  ac0dfbec (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/guava-jdk5.jar
+  85c28658 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/hibernate-jpa-2.0-api.jar
+  1911c9e1 (LOCAL_ONLY) 20131120120114 plugins/OMERO.insight-ij/libs/ice-glacier2.jar
+  b1d709fb (LOCAL_ONLY) 20131120120114 plugins/OMERO.insight-ij/libs/ice-grid.jar
+  c49b8fa2 (LOCAL_ONLY) 20131120120114 plugins/OMERO.insight-ij/libs/ice-storm.jar
+  53aa5393 (LOCAL_ONLY) 20131120120114 plugins/OMERO.insight-ij/libs/ice.jar
+  6e7614ee (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/ij.jar
+  6ce638fb (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/ini4j.jar
+  f1b65457 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/java-getopt.jar
+  c827227f (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/java-image-scaling.jar
+  e72f9b2b (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/jaxrpc.jar
+  4156c7b5 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/jcommon.jar
+  c57f20b0 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/jfreechart.jar
+  df7a0b63 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/jna.jar
+  4c09d41c (LOCAL_ONLY) 20131104145522 plugins/OMERO.insight-ij/libs/joda-time.jar
+  9a9b947a (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/jogl.jar
+  d2af3ac9 (LOCAL_ONLY) 20131104145522 plugins/OMERO.insight-ij/libs/kryo.jar
+  b2911375 (LOCAL_ONLY) 20140403205856 plugins/OMERO.insight-ij/libs/lwf-stubs.jar
+  0f7b1b81 (LOCAL_ONLY) 20140403205936 plugins/OMERO.insight-ij/libs/model-psql.jar
+  a127d67c (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/nanoxml.jar
+  e1a35a80 (LOCAL_ONLY) 20131104145522 plugins/OMERO.insight-ij/libs/native-lib-loader.jar
+  a51a31db (LOCAL_ONLY) 20131128094658 plugins/OMERO.insight-ij/libs/netcdf.jar
+  e665d66a (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/ols-client.jar
+  18382f06 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/ome-java.jar
+  7af6ddeb (LOCAL_ONLY) 20131104145522 plugins/OMERO.insight-ij/libs/perf4j.jar
+  6340be70 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/physics.jar
+  b3056152 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/platform.jar
+  4ef2cfd3 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/poi.jar
+  af4b3176 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/processing-controlP5.jar
+  1cb045e1 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/processing-core.jar
+  2e6cf711 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/saaj.jar
+  eedc0cd9 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/serializer.jar
+  5085d943 (LOCAL_ONLY) 20140401124614 plugins/OMERO.insight-ij/libs/slf4j-api.jar
+  1deeabc9 (LOCAL_ONLY) 20140403205852 plugins/OMERO.insight-ij/libs/specification.jar
+  ba32bfdf (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/swingx.jar
+  7c4005e7 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/wsdl4j.jar
+  c8694e76 (LOCAL_ONLY) 20131104145444 plugins/OMERO.insight-ij/libs/xalan.jar
+  56926bee (LOCAL_ONLY) 20140403210440 plugins/OMERO.insight-ij/omero_ij.jar
+  c22d9e9e (LOCAL_ONLY) 20140226105352 plugins/PHANTAST_-0.2-SNAPSHOT.jar
+  33814455 (LOCAL_ONLY) 20130605091713 plugins/PixFRETSettings.txt
+  b9701e7b (LOCAL_ONLY) 20060517103802 plugins/PixFRET_.jar
+  b87c730c (LOCAL_ONLY) 20130619180156 plugins/Plate_Explorer.jar
+  0e56fc96 (LOCAL_ONLY) 20111012174728 plugins/Polar_Transformer.class
+  ed1ea5da (LOCAL_ONLY) 20140224160228 plugins/Print_Argument.ijm
+  617c3507 (LOCAL_ONLY) 20110815172458 plugins/QuickTime_Plugins.jar
+  66e61806 (LOCAL_ONLY) 20131202125257 plugins/Radial_Profile_Angle_Ext.class
+  3995f903 (LOCAL_ONLY) 20131202104808 plugins/Radial_Profile_Angle_Ext.jar
+  005fba78 (LOCAL_ONLY) 20131202125731 plugins/Radial_Profile_Angle_Ext2.class
+  576b0a18 (LOCAL_ONLY) 20100709151138 plugins/Retinex_.class
+  9a8e5535 (LOCAL_ONLY) 20130312162050 plugins/SQL_Table_Statistics.jar
+  fb75aafd (LOCAL_ONLY) 20140410000354 plugins/ScientiFig/ScientiFigPrefs.txt
+  54eb2ba4 (LOCAL_ONLY) 20130321143838 plugins/ScientiFig_FIJI/HowToInstall.txt
+  b9057bc8 (LOCAL_ONLY) 20130710171325 plugins/ScientiFig_FIJI/ScientiFigPrefs.txt
+  7872d78f (LOCAL_ONLY) 20130321143836 plugins/ScientiFig_FIJI/lib/AbsoluteLayout.jar
+  c3cdf2d0 (LOCAL_ONLY) 20130321143836 plugins/ScientiFig_FIJI/lib/REngine.jar
+  6ba3fcd5 (LOCAL_ONLY) 20130321143836 plugins/ScientiFig_FIJI/lib/Rserve.jar
+  269cc20e (LOCAL_ONLY) 20130321143836 plugins/ScientiFig_FIJI/lib/Rsession.jar
+  9333c8a9 (LOCAL_ONLY) 20130321143838 plugins/ScientiFig_FIJI/licence.txt
+  410d6fcd (LOCAL_ONLY) 20140407201404 plugins/Sprout_Analysis-0.2.0-SNAPSHOT.jar
+  df2b3e75 (LOCAL_ONLY) 20091012120814 plugins/Sprouting/Analyze_Stack12_highres.txt
+  8d44b668 (LOCAL_ONLY) 20091107205525 plugins/Sprouting/Analyze_Stack13.txt
+  5288228f (LOCAL_ONLY) 20100224144753 plugins/Sprouting/Convert_ZVI_stack_to_2-channel_Maximum_TIF.txt
+  034e784d (LOCAL_ONLY) 20110419151242 plugins/Sprouting/Sprout_Analysis_v1.txt
+  844452cd (LOCAL_ONLY) 20100302220059 plugins/Sprouting/Sprout_Analysis_v2_triangle.txt
+  15a7eddd (LOCAL_ONLY) 20100302224308 plugins/Sprouting/Sprout_Analysis_v3_triangle.ijm
+  028b4940 (LOCAL_ONLY) 20100302225326 plugins/Sprouting/Sprout_Analysis_v3_triangle_default.txt
+  c17a1903 (LOCAL_ONLY) 20120821191822 plugins/Temp/Dupl_.js
+  979b4518 (LOCAL_ONLY) 20111011160809 plugins/Test_.jar
+  e23a2d35 (LOCAL_ONLY) 20130308120209 plugins/Tools/Bare_PlugIn.class
+  7aad5bf4 (LOCAL_ONLY) 20130314163526 plugins/Triplet_Statistics.jar
+  0dfa5070 (LOCAL_ONLY) 20120116113721 plugins/imagescience.jar
+  7f0caa5d (LOCAL_ONLY) 20120807002258 plugins/miglayout-3.7.3.1-swing.jar
+  1bc5c5f5 (LOCAL_ONLY) 20130313113612 plugins/my_test.jar
+  88fcf0b4 (LOCAL_ONLY) 20111012133253 plugins/qr_decoder_1.0.jar
+  41cae167 (LOCAL_ONLY) 20130408133640 plugins/slim_plugin-1.0.0-SNAPSHOT.jar
+  c2b03914 (LOCAL_ONLY) 20080206113100 plugins/sobel3D/Sobel_Convolution$FloatArray.class
+  71ef7c2b (LOCAL_ONLY) 20080206113100 plugins/sobel3D/Sobel_Convolution$FloatArray2D.class
+  bdf07ef4 (LOCAL_ONLY) 20080206113102 plugins/sobel3D/Sobel_Convolution$FloatArray3D.class
+  fb2a0deb (LOCAL_ONLY) 20080206113102 plugins/sobel3D/Sobel_Convolution.class
+  14eaf670 (LOCAL_ONLY) 20120807002301 plugins/visad-lite-2.0.20070828.jar
+  574cdfce (LOCAL_ONLY) 20120807002302 plugins/visbio_plugins-1.0-SNAPSHOT.jar
+  d3260180 (LOCAL_ONLY) 20100610022426 scripts/Record_Desktop.py
+  0ea7f8fc (LOCAL_ONLY) 20100610022426 scripts/Record_Window.py</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 09:51:17 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Jan, any chance you're having the update site &quot;Trackmate-dev&quot; enabled?</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 10:03:04 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Niko: thanks to the new updater, we can actually see the list of active update sites in the bug report. So no, TrackMate-dev is not enabled (but others are).
+
+My hunch is that the problem is caused by plugins/OMERO.insight-ij/libs/xalan.jar.
+
+Jan, could you call the &quot;Find Jar For Class&quot; command and figure out which .jar file contains org.apache.xpath.XPathContext (it says &quot;The class org.apache.xpath.XPathContext is contained in /.../Fiji.app/jars/batik.jar&quot; here)? The bug is most likely caused by one of those projects who ship obsolete versions of the XML libraries. If you remove the offending file, the updater should work again.
+
+This is of course only a workaround... If you let me know what caused (and what fixed) it on your side, I can try to fix it properly.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 10:28:29 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Great catch, thanks Johannes!
+
+&quot;
+The class org.apache.xpath.XPathContext is contained in /Applications/Fiji/Fiji.app/jars/batik.jar
+WARNING! org.apache.xpath.XPathContext is also contained in /Applications/Fiji/Fiji.app/plugins/OMERO.insight-ij/libs/xalan.jar!
+&quot;
+
+Deleting xalan.jar fixed things on my side.
+
+NB: I previously noticed that a bunch of redundant files in the OMERO-ij package can safely be deleted [1], but the normal user installation according to OMERO [2] will result in this bug showing up. Anyways, thanks a lot for the quick replies!
+
+[1] <a href="http://lists.openmicroscopy.org.uk/pipermail/ome-users/2014-April/004333.html">http://lists.openmicroscopy.org.uk/pipermail/ome-users/2014-April/004333.html</a>
+[2] <a href="http://help.openmicroscopy.org/imagej.html#plugins">http://help.openmicroscopy.org/imagej.html#plugins</a></pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 11:59:44 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi?id=149" name="attach_149" title="scijava-common.jar intended to fix the XML problems, once and for all">attachment 149</a> <a href="attachment.cgi?id=149&amp;action=edit" title="scijava-common.jar intended to fix the XML problems, once and for all">[details]</a></span>
+scijava-common.jar intended to fix the XML problems, once and for all</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 12:05:06 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Now the question is: what can we possibly do about the problem? There are plenty of hacky ways we could special-case Insight and work around the problem.
+
+I fear, however, that the only non-hacky way would be to shade xalan for use with scijava-common. Which is, ahem, a suboptimal solution, given that xalan is actually included into Java since version 1.6.
+
+However, I tried a different approach after debugging this further for an hour: try to work around version skews by falling back to Java's own XML libraries. The changes can be found here, for the moment: <a href="https://github.com/scijava/scijava-common/compare/6cfca44...b90dd3c">https://github.com/scijava/scijava-common/compare/6cfca44...b90dd3c</a>
+
+I also attached a compiled version to this ticket.
+
+Jan, may I ask you to put back the offending xalan.jar, verify that it breaks the updater again (filesystems are *really* funny these days, so it might not cause trouble now, which would be bad), and then replace your local jars/scijava-common-0.19.1.jar with the attached version and see whether that works around the issue?
+
+Thanks!</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 12:21:38 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >*** <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Updater broken?"
+   href="show_bug.cgi?id=750">Bug 750</a> has been marked as a duplicate of this bug. ***</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 14:45:29 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Graeme, please do not add comments to a closed bug when it has been labeled a duplicate. I almost missed your comments.
+
+Also, did you remove your original scijava-common.jar when you replaced with the attached version?</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Graeme Ball</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 15:21:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Apologies for commenting on the closed bug &lt;:-)
+
+Yes, I moved the old scijava-common out of the way (~/Desktop) before I dropped in the one in your <span class=""><a href="attachment.cgi?id=149" name="attach_149" title="scijava-common.jar intended to fix the XML problems, once and for all">attachment 149</a> <a href="attachment.cgi?id=149&amp;action=edit" title="scijava-common.jar intended to fix the XML problems, once and for all">[details]</a></span>. 
+
+If you think it ought to work I can add the OMERO plugin back and try it again more carefully?
+
+g
+
+PS. If it makes life easier, just treat Insight as a special case for now (it *is* a bit of a beast)</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 19:16:39 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Graeme, thanks for testing. It took another hour of debugging to come up with a more complete fix (actually testing myself with a fresh download of OMERO.insight). Could you please replace your local scijava-common.jar with this version: <a href="http://jenkins.imagej.net/view/SciJava/job/SciJava-common/lastSuccessfulBuild/artifact/target/scijava-common-2.19.2-SNAPSHOT.jar">http://jenkins.imagej.net/view/SciJava/job/SciJava-common/lastSuccessfulBuild/artifact/target/scijava-common-2.19.2-SNAPSHOT.jar</a>
+
+For lurkers: my original fix assumed that there is only one place where things can break and need to fall back to an ugly work-around (and I took the location of that place from the stack trace provided by Jan in the initial bug report). But it was not enough, because in my case, the breakage happened only later. So I force the breakage to occur right away now: <a href="https://github.com/scijava/scijava-common/compare/7015070...18cf9d9">https://github.com/scijava/scijava-common/compare/7015070...18cf9d9</a>
+
+I plan to release and upload this tomorrow (UTC-6).</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Graeme Ball</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-19 19:32:13 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Nice one Johannes -- all seems fine now. 
+
+I am using the new scijava-common jar, with the OMERO Insight plugin installed, and both the Insight plugin and Fiji updater seem to run no problem.
+
+Cheers,
+
+Graeme</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-20 03:24:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks a lot, Johannes.
+
+I can confirm that the latest scijava-common-2.19.2-SNAPSHOT.jar from jenkins fixes things on my side, too.
+
+Cheers,
+Jan</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=749#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-05-20 12:33:52 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The respective file has been uploaded.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=749">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=749">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=749">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=749&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=749" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=749&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731774-rHXkAVP-asIWfeX1bRXQfd50B6mmmVo1JI8hFenxZpU">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

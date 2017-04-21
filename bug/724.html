@@ -1,0 +1,3107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 724 &ndash; open and duplicate does not work</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=724&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=724">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=724">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=724">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 724 – open and duplicate does not work",  
+                             "show_bug.cgi?id=724" );
+        document.title = "Bug 724 – open and duplicate does not work";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 724 – open and duplicate does not work", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_724 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;724</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">open and duplicate does not work</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-04-29 11:11:58 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=724&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=724" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=724&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731763-YetS087JK6Dii0IXe5-5SvcYxRykAteI2IpkhwTvw7s">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-04-29 11:11:58">
+  <input type="hidden" name="longdesclength" value="4">
+  <input type="hidden" name="id" value="724">
+  <input type="hidden" name="token" value="1492731763-1NPc1Mt0ouGAi2UP4oqRcFZ6EI3eBwsHcYeq56TF5w4">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=724"><b>Bug&nbsp;724</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">open and duplicate does not work</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>open and duplicate does not work
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('open and duplicate does not work', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          INVALID
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=724&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=724">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-03-31 11:00 CDT by <span class="vcard"><span class="fn">Matthias Kirsch</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-04-29 11:11 CDT 
+      (<a href="show_activity.cgi?id=724">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="matthias.kirsch">matthias.kirsch</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=724&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=724&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=724#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Matthias Kirsch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-31 11:00:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >when running a mcro for a couple of times (number of times not reprodicuble) commands to duplicate open images or open new images does not work anymore. No error message appears.
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: CHECK_TURNED_OFF
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\111_MK\Fiji.app/java/win64/jdk1.6.0_24//jre
+  ij.dir =&gt; C:\111_MK\Fiji.app
+
+Information about the version of each plugin:
+
+  8485b3a0:04c71b53:25dffcad 20121128185909 :0083ea5
+  4ccfd999:554f1fa4:387faf3d 20130912181241 :00c8c9c
+  9b0143f0:6024546f:6024546f 20130220094152 :00d269f
+  6ab935a8:64c469b0:b64fa722 20130130102401 :00dc9a3
+  2c93d9a6:2d9d2593:be71a9c0 20130806122514 :00efaa6
+  9770ed7e:40cf929f:0606b3ee 20130510120019 :011890f
+  bdf6dc82:91b262e7:09001cd1 20130626162711 :019970f
+  13ce586a:be23db6b:315fb93c 20131108090048 :02ea642
+  426d64f4:be49972e:be49972e 20130918185717 :0307564
+  8c8f6d33:ac4c137b:ac4c137b 20130620085626 :0326851
+  dc0a9d07:01345c54:3449bd49 20140107160829 :034fe21
+  21625344:a6a8277e:a6a8277e 20121128185909 :0420821
+  501adefc:9d4471f7:34e78916 20120911171734 :0433ba9
+  6cfb774f:b8f734bb:b8f734bb 20131210131850 :04478f7
+  24590873:d3ccdd03:d3ccdd03 20121128185909 :044f3fe
+  04530e15:04530e15:04530e15 20110427184312 :04530e1
+  015d8a2e:9cbf5db5:8de91f6b 20130830115625 :04782f0
+  6738a701:d6932866:d6932866 20130620085624 :04a4a5c
+  6bd9ca65:0954132b:637e808e 20140224190403 :05b1de4
+  30420365:5a23ed73:5a23ed73 20130122175546 :069ebf3
+  84d76592:53d3f4e0:53d3f4e0 20130122175545 :06c89a7
+  06fa951e:06fa951e:06fa951e 20140129092503 :06fa951
+  3f6bdb05:ccaece46:ccaece46 20121112173251 :06fbd52
+  246dc8ac:03230c50:03230c50 20130130102401 :073056b
+  08453207:08453207:08453207 20120405163054 :0845320
+  738cf583:36e9a80a:bca93bda 20140107160825 :087a0a0
+  a058419c:e976dd2f:0194333b 20140310110122 :08a4dae
+  51283c06:7258fb33:7258fb33 20140113170530 :09086ce
+  5d15d36d:356642cf:91f0b515 20120913191141 :0939b35
+  3ea9130d:cb5e7658:cb5e7658 20131108144136 :096abf5
+  09868b51:09868b51:09868b51 20121112173251 :09868b5
+  1794e6fc:dac81f1d:dc30f81a 20130412132208 :09f1eaf
+  b0e5ec4f:f9fb1b1e:7b2063a5 20130717101935 :0a2a17f
+  fb827967:5dbb3afe:1bf26607 20140224190404 :0a5d89f
+  0a93f0be:0a93f0be:0a93f0be 20120209171408 :0a93f0b
+  0ab9e3b0:0ab9e3b0:0ab9e3b0 20110427184304 :0ab9e3b
+  1cea16c4:5674b1fc:c120c076 20140107160826 :0af0912
+  36dc63f9:4e799731:4e799731 20131108144201 :0b477c6
+  cd9eda33:239d2a49:f25c125a 20130301144932 :0b76869
+  079072d5:3f320e23:0bfab9b2 20130717101943 :0bc2f58
+  61ab84fd:2a4992aa:2a4992aa 20130620085627 :0bd5f17
+  283a7027:9263e996:9263e996 20130122175545 :0c2a5e1
+  45f9fc2e:45d2442b:45d2442b 20131115121410 :0cdef87
+  f298e644:89414eba:10975376 20120913191140 :0d29ff2
+  72ea2fc2:73af3a23:73af3a23 20130510120057 :0d4057e
+  50b86a0f:f852b84c:f852b84c 20131217114052 :0d41552
+  2335d2f7:425d0ca9:39c6a187 20140310110055 :0d70010
+  8725145c:442562b0:4c699a2e 20130717101931 :0d8d4be
+  8b5b0a68:709f4fe1:709f4fe1 20120911134346 :0da982c
+  36be42c0:7ba6da96:1d35149e 20130912181243 :0de1ed9
+  58e12d38:0756c7da:0756c7da 20130301144933 :0e15c07
+  69e33649:d2b46052:d2b46052 20130418165755 :0e17d4e
+  8b3c021b:0ecd1ed5:0ecd1ed5 20120731184508 :0ecd1ed
+  1dd37acb:dcf3e354:dcf3e354 20131108090104 :0eec001
+  4b7c50dc:c2bc4887:c2bc4887 20130418165754 :0f0b618
+  47f63f51:c603143d:deb3e1f8 20131115121408 :0f1921d
+  0f44924c:0f44924c:0f44924c 20111124134704 :0f44924
+  ddc93c80:dc170dc4:929115e3 20130301144933 :0f87f76
+  27e5cf78:26510e27:8182885a 20121112173247 :0f95140
+  1a215d3d:25bd369d:e6d5fe76 20130412132249 :0fb2aba
+  30fe4811:431e6ee1:0117adfc 20130510120040 :0ff27f6
+  6e73f072:7a97d173:e43858a8 20140310110058 :10502f4
+  97b8883a:254d00c1:10841226 20110427184314 :1084122
+  c95cbe14:4cf90d1d:fc10f5f6 20140224190357 :11b4297
+  99c18ac7:f5a4dc12:f077aa69 20121212102310 :120cc40
+  0f5e33a0:340bb9a2:fd54fa7f 20120913191135 :1211a69
+  323ed380:803f8865:803f8865 20130115124011 :1315f34
+  68c7e388:8140b70b:ae096325 20130806122515 :133cff4
+  55559b3e:605b6461:e3d6bd44 20120911171728 :13572d9
+  0b28d98f:deb4038f:682b642a 20120816102054 :1357561
+  ffa4b5e4:6d536854:6d536854 20121115190300 :1383353
+  1398b098:1398b098:1398b098 20110915112627 :1398b09
+  2bd28388:f2516a22:f2516a22 20130510120038 :139ef92
+  431a3747:4cead5ae:4cead5ae 20120911171735 :13d94c1
+  37d41e4f:a7029510:68556153 20120913191139 :1426358
+  b628ef35:c1b8aca9:f2d2691a 20121023150701 :1428e0f
+  7991c735:23955cba:401416c7 20130717101908 :1432a71
+  95e82eac:0f992270:c877ab64 20130912181243 :144906c
+  e0000961:67def4f7:5da4d7e3 20121023150700 :1492b21
+  0de19f82:a4621a87:a4621a87 20130510120053 :1506fc3
+  a480dab5:5e63ab6d:b7e6ebe8 20130626162710 :150e165
+  aa6c73c1:9a8c1007:9a8c1007 20131121184056 :151be2e
+  64d30616:13d82a9a:ecc81996 20131108090045 :15260b1
+  e9c6b155:014024f1:2e801b15 20131108090019 :152b09a
+  d9ac55a6:0eaebea8:cc369caf 20130220094147 :1553a4d
+  975368e0:213d521b:213d521b 20130620085631 :16012d5
+  4cc8571a:e63a1ac4:6b7071ed 20121023150659 :164af0f
+  166036ab:166036ab:166036ab 20110427184323 :166036a
+  b2275d1c:f7a5eb30:4918803a 20130220094150 :16bbe0c
+  f1bc4126:75077ab8:1de11c00 20120820185517 :16c0df4
+  6f58c779:11dc44ca:fd83b09e 20130912181243 :171c90f
+  68b5039b:0dc5c1a8:4a8bf900 20131108090039 :1728149
+  174a4b19:174a4b19:174a4b19 20110427184301 :174a4b1
+  be9473e6:84e8c994:1ee40fb6 20130719130433 :175a2ef
+  97576758:7caa08fd:2f3fb8f8 20130912181235 :179685f
+  cf9bf2c1:17b1f507:17b1f507 20111111130615 :17b1f50
+  89258d31:f1bb8ccf:cc515ccd 20130806122505 :17c042b
+  47147e9b:070107f3:56a25b81 20140304125804 :17ec1bd
+  863a1ef5:ce6ba591:ce6ba591 20121023150702 :17ee3eb
+  53b934a5:21896ddd:980cba3f 20130717101948 :17eeef0
+  c0edb63b:3b1f88b2:4ed7ae8c 20130603184046 :18606e8
+  1867a1e0:1867a1e0:1867a1e0 20120217180550 :1867a1e
+  97d046c8:9467908f:9467908f 20130620085629 :186e052
+  f0dde207:5b731066:5b731066 20130620085619 :1902ce8
+  2750162f:ee9e5ec5:ee9e5ec5 20130620085625 :19181db
+  95a9e32c:c395f259:925450a6 20130717101942 :1941524
+  c3d1820a:d3b3ab0d:d3b3ab0d 20130327144431 :19c0137
+  1a6345a2:1a6345a2:1a6345a2 20110427184303 :1a6345a
+  25fdd56a:2545e299:5f7905f1 20140107160813 :1ad6b45
+  5bc465b3:676ab566:e9ac277b 20120816102054 :1af5eae
+  e094b1c1:44ab48c3:5633cb6f 20120725090309 :1b71cda
+  ffeae1df:d19e4894:80673749 20121212102310 :1b8f7f5
+  d0970734:b7d19372:b7d19372 20130626162715 :1bc31e9
+  8e9a382a:6bf46a19:e77edfe4 20140304125801 :1bef7c8
+  9a4bddf7:40e38844:40e38844 20140310110131 :1c18921
+  19335ace:fc1a3d5e:28e1ad96 20130527093657 :1c88458
+  1cee26bc:1cee26bc:1cee26bc 20110427184300 :1cee26b
+  1cee99e7:1cee99e7:1cee99e7 20080204152336 :1cee99e
+  eadb2593:64b484df:281c847d 20130717101933 :1d44a0d
+  6478da40:1d98f525:1d98f525 20110427184315 :1d98f52
+  cd63c0bf:92f964a3:92f964a3 20130510120050 :1daf580
+  981f35fd:f48d5b7d:a7d5f82c 20120816102033 :1dedefe
+  61a74a7e:2c344e2f:304d96ad 20121214120731 :1dfc974
+  aa5673f2:eba4228f:e082b0d8 20121112173229 :1e2fc34
+  1eb5c9ef:1eb5c9ef:1eb5c9ef 20111115135351 :1eb5c9e
+  c2f213f2:0abfb748:95082cfe 20131108090048 :1eb9422
+  748e0dec:fac9aaf3:52b8f2ca 20130626162711 :1ee97bd
+  ee97218b:f3679f41:f3679f41 20130515123652 :1f35cae
+  106c63d5:97a86bf6:97a86bf6 20130418165755 :1f4f9e5
+  09d3a31a:34a7400a:34a7400a 20130220094149 :1f65630
+  202a7fb9:202a7fb9:202a7fb9 20120514191528 :202a7fb
+  cb408b74:ccf63f21:ccf63f21 20130606154503 :20572e5
+  3f876cb1:205f633a:205f633a 20120420125340 :205f633
+  48a4132f:ebf1fa4f:ebf1fa4f 20130603184133 :2079ca3
+  689b4c6b:854fa0fb:595bcdc8 20140124110438 :209f2fb
+  43405316:fb978da1:ed0e2581 20130806122516 :20bc295
+  20e2cec7:20e2cec7:20e2cec7 20130410141726 :20e2cec
+  2104ef52:2104ef52:2104ef52 20111023171135 :2104ef5
+  be263ea8:f5d540fe:f5d540fe 20140115095437 :2130baf
+  34578b7a:f19576cf:f19576cf 20130301144931 :2136ee1
+  9379a218:00ae7525:c9d69a61 20130912181241 :2197aa2
+  513d98b0:25b9b371:25b9b371 20140310110127 :21e64d4
+  ea5fee29:0836d42c:af8c0a3c 20121212102311 :2212c84
+  fb34c914:6eac7559:3f37d333 20121112173224 :227ceec
+  a53af77b:d9198d71:ed143caa 20130415094123 :22863fd
+  22fd045b:22fd045b:22fd045b 20110427184300 :22fd045
+  232cc1e4:232cc1e4:232cc1e4 20120420125340 :232cc1e
+  8f95a96c:b13de7d6:3a9f3a1a 20120816102054 :23808c6
+  590e0603:ae8aa869:a76de30a 20121214120732 :238f8b7
+  b1a5b585:1d14f6c6:3bbd89c8 20130610105201 :2398f66
+  d5b0a619:a2b82373:e9e6e4c0 20121023150700 :23a02b0
+  7826da23:23ae2c33:23ae2c33 20120604170623 :23ae2c3
+  23cae80c:23cae80c:23cae80c 20110427184304 :23cae80
+  a1cdb32a:26292ed1:94cf5fde 20120731184509 :2402dd0
+  cedb6d82:f7cc7817:2362f25c 20120911171720 :242749d
+  87c1a528:bb9f9bd7:6afcdf86 20120911171618 :242de65
+  aefbb990:32e91698:32e91698 20120731184507 :244c41e
+  204ad6d9:7f6eef1b:7f6eef1b 20130510120057 :248a32e
+  4798a971:ae0a492b:a69cb86b 20121128185909 :24b44c2
+  357b1056:8156e009:8156e009 20120816102052 :24d47d7
+  c946fe7e:30421f1a:582cf7c7 20140224190354 :24e0bde
+  9175bdfd:cdfb8f0a:cdfb8f0a 20121212102306 :250fb68
+  cf53c300:25331672:25331672 20110427184313 :2533167
+  d7c670b5:f555145a:f555145a 20130719130500 :253c6df
+  25446dc1:25446dc1:25446dc1 20120209171408 :25446dc
+  6f15ca4d:9a219c5c:48ce3361 20130731112708 :258c223
+  83895477:0a5b1beb:34181783 20140124110439 :259df97
+  726af6cb:5ad6878a:5ad6878a 20130318141434 :263158a
+  265850b3:265850b3:265850b3 20110427184301 :265850b
+  def4038f:787984b3:d558718f 20130510120052 :265cb26
+  05dc48b4:eea60775:eea60775 20121023150701 :2689284
+  c1327662:79025585:50b28793 20140224190350 :2716120
+  d9b823f1:3bd6b9cf:460fa79a 20120913191130 :273a299
+  84d5fc7e:669db741:b4815b39 20120731184452 :27899ec
+  bcee12e8:0be27539:0be27539 20140224190412 :279a86b
+  d6aa74dc:e721f255:a8560bbb 20121023150700 :27a018e
+  0f832edd:81589f14:1651ecce 20131108090108 :27c6f58
+  97baa7b5:de42e047:de42e047 20130620085620 :27de591
+  b2745b0d:00506dbd:e79eff14 20130412132208 :27f25e9
+  f5f5d72d:64b58031:48ecb5fe 20130912181234 :27f8eeb
+  eedac93f:52476ec4:effdb45e 20130806122515 :2837db0
+  26250ca7:c150f381:c150f381 20130922205453 :28a6b42
+  ba3a766e:5fc8525b:2a2c22a6 20121023150655 :28bc710
+  924aa035:1ae1d270:4d8ef948 20120816101946 :28de9a7
+  2478d88d:9bc5f341:1d664be8 20121212102301 :293bb67
+  eff3a295:639027a3:639027a3 20130620085628 :295ba57
+  3e3b75d2:c970805d:8e60f732 20121212102306 :29d38d7
+  a1e1676a:1399a949:2fece12c 20130806122446 :2a17560
+  c716cfad:c357e934:69c529de 20130515123650 :2a26b5e
+  a653e14c:2a328b6b:2a328b6b 20110427184320 :2a328b6
+  7caabb2a:c5a9c9bf:c5a9c9bf 20130830115655 :2a72259
+  0fc62071:2ea9a6d6:2aaf4824 20120614132309 :2aaf482
+  d9e0bf3a:1d693ab8:60903c8f 20130412132246 :2b318f7
+  c92bc1d4:2928de88:ba375fb6 20130510120018 :2bd4340
+  6cb70056:c1c6fcd4:e43dfba7 20130626162712 :2bd9a85
+  84c6ebeb:1dc1193a:1dc1193a 20130620085627 :2bda1f6
+  0e158e32:8cdb360f:8cdb360f 20131108090105 :2bde09b
+  69169742:06a66a1a:f14def4c 20120913191111 :2c79491
+  5c14a520:d1d3073e:45a3b5e7 20130412132241 :2ce2c00
+  d3dc14cc:bc3ea362:bc3ea362 20121023150702 :2d33401
+  fa151cf8:e41123db:9b0163d9 20120913191135 :2d43f8e
+  19d91ca1:5204ab69:f7835624 20131210131844 :2d85db5
+  27e145ac:05f63f9c:a1c84eee 20121214120734 :2d9491a
+  f31b9812:ca52ad89:2f40baca 20130412132249 :2daf8bd
+  9f6c0ffc:3a4feb15:3a4feb15 20131108144201 :2dbeb38
+  2dc5d027:2dc5d027:2dc5d027 20110930082836 :2dc5d02
+  27d2690c:8627f7ec:c5261e10 20130510120051 :2dcaf5b
+  55a173bf:799c302a:799c302a 20130620085620 :2dd01db
+  2fc3b4a5:d2ff26af:cf678a3c 20121112173223 :2e19bd4
+  8c7680ac:2d6e1905:314bfdd6 20121023150701 :2e63309
+  f943680c:7685f113:e18ae199 20140107160752 :2eeefe6
+  8c194ae9:d8fbc303:d8fbc303 20140320084653 :2ef6f1e
+  ec2b2b64:8d570aae:4a807720 20121112173249 :2f0a344
+  faf3590e:b3a6dfc8:b3a6dfc8 20130620085626 :2fc7f2b
+  88eb3973:cc922e16:dc4028db 20121112173251 :2fefc17
+  907bd39d:8f13b98c:8f13b98c 20130620085618 :30100de
+  5c8665b8:9198e5ae:ff77db02 20120820185543 :301c957
+  28046446:9ce1257d:fdf7a057 20121214120733 :30bafe0
+  3e1c5d89:582ff793:6c213b8e 20120816102045 :30f9880
+  839b37bc:80e1da52:653d576f 20131108090049 :310cdb6
+  dff73f4a:d672fade:d672fade 20131108144138 :3123b3b
+  98f54372:00e614ba:4d0357bf 20120816102046 :31abcd7
+  3fbb225b:0c583e31:66b82737 20140224190404 :31d2070
+  4c6e9c10:b32fe26e:2d196b9f 20130626162714 :31f9aa9
+  d075e4ea:356f0418:ad5eb5f1 20131108144134 :328418a
+  32aabe78:32aabe78:32aabe78 20110712124028 :32aabe7
+  32d24a27:32d24a27:32d24a27 20110427184300 :32d24a2
+  7f222330:4e70563e:9c3eff39 20120816102052 :33252e2
+  8bb3be63:22950e9b:22950e9b 20140115095438 :336a7e1
+  5b7ea1e1:b0be5c35:4c3c0562 20130806122504 :336ead7
+  a678bf4c:ae16674d:ad53554f 20120913191137 :33a0ff8
+  0b6a9aff:fd6990df:dbc12f34 20131121184057 :33b6af8
+  0632ed1c:33ecc4fa:33ecc4fa 20120426140446 :33ecc4f
+  4136049b:62d5cd6d:97058b48 20140107160817 :3406abc
+  184d9580:d91a130e:d91a130e 20130628102428 :34d0deb
+  34dfe8f4:34dfe8f4:34dfe8f4 20120405163052 :34dfe8f
+  ff95f3db:84790467:84790467 20140120164220 :34e8706
+  6ce54af8:747ead7e:5f124d58 20140224190405 :351a73c
+  53689491:91946bdd:91946bdd 20130327144427 :35438fc
+  c2708786:1c927295:db268567 20140224190408 :3569266
+  fc45d44e:027485e0:027485e0 20130830115656 :3582cd5
+  76c49197:84f9097a:f39defdc 20121212102309 :35a33bb
+  1910f7d0:35de4ecb:d9674003 20131108090037 :35c256a
+  39f6e451:8a8bc30f:0e309bbe 20120816102024 :35f43e5
+  7b7d78b4:854de8ea:391eb005 20121214120701 :363190d
+  62fca2f8:368901ce:368901ce 20110427184317 :368901c
+  b6a2df10:9b100a5d:9b100a5d 20130912181247 :369b635
+  55f79ce5:c3ab5cd0:c3ab5cd0 20121112173251 :36b6b0d
+  91d6774f:81ee7dda:831d5b93 20130418165748 :36cdef5
+  8cbade2f:3c54e4a7:f9f5659f 20121112173149 :36fa4b0
+  9ac94a4b:d8556537:4d13fd51 20121112173223 :372a874
+  76812dce:45409dcf:25d93bd6 20130806122446 :37da6fe
+  e808d5bf:fe7ec6d2:be931607 20120911171732 :38061d6
+  625abf99:0413ec14:d18a3e1c 20121212102311 :3813c39
+  2a9238ba:626efd1c:00db69df 20121023150701 :3857d43
+  272da056:b8955e06:fe3586fb 20140224190324 :3877215
+  b851408d:46e4714e:46e4714e 20131108090059 :38b2c2b
+  d57f5101:162ac456:3c299a45 20130412132242 :397b46c
+  d3aa0468:2dbaef27:eb94a247 20131108090040 :398ab19
+  39d4aaaf:39d4aaaf:39d4aaaf 20110427184305 :39d4aaa
+  46431a13:e9ae6d14:bc07f77f 20121023150659 :3a2db45
+  1b20a817:062754ca:9a4c3f71 20121121153706 :3ad27e7
+  02bc6560:8b5fc706:7a3e1a44 20140107160815 :3ae2fa1
+  96ab42df:8aff2407:77ccabc8 20130830115654 :3b5dda7
+  ecb0de99:de409cd8:de409cd8 20140224190414 :3b88945
+  5d58ef10:9bf2043b:3b2d1c2d 20130402104320 :3b8f440
+  f5f8ecef:54105758:9b28d112 20130912181233 :3b9cd74
+  4b051b74:2a0a96ae:2a0a96ae 20130620085630 :3bac3fb
+  fd9298bb:258c8496:258c8496 20121211105226 :3ca141d
+  4bcc3453:2c1b23d1:46d835ce 20140224190350 :3cd39ba
+  380e7401:da856b1b:adab9762 20121023150649 :3ce0662
+  1f17e80b:2fc57540:73c0885d 20121112173246 :3d2e1d8
+  7a2916d6:39f45f23:f23b1754 20131108090052 :3da60e9
+  032b5ee0:a7f44d64:897b14f6 20130626162707 :3e21f65
+  581a3b53:c57906e2:c57906e2 20130620085619 :3e4163b
+  3ea0d59d:3ea0d59d:3ea0d59d 20110427184305 :3ea0d59
+  276e8559:46172d0e:f7ccca79 20130912181237 :3ea7f59
+  4a859b01:d852debb:7f15de44 20130830115625 :3eaa025
+  af105dbd:eb2fd8b7:f94554f4 20120913191133 :3f78a19
+  a9bbb28a:b5c31589:b5c31589 20120816102053 :3fb212d
+  1df8fa3c:ae0ec97b:e8cbfe99 20140224190401 :3fbce45
+  25ee5004:56c5a359:4450a30c 20131001100502 :3fc3355
+  d23b07fd:89eeb017:5cc73b2d 20130415094139 :3fd7941
+  b976cd2c:f5835d94:989747c9 20140107160827 :3fda2de
+  404c9259:404c9259:404c9259 20060307090432 :404c925
+  4cd7e966:09dd6436:283cbd26 20130912181243 :4060273
+  19c93860:accf2661:d258c6ee 20130626162706 :407ca02
+  a704d48a:d24ef79a:193f9639 20140224190402 :40ac385
+  546ef145:a5fc0c94:baf0d89e 20130415094124 :40b40cc
+  7222de21:aaed1bde:40e5c3d0 20111015183115 :40e5c3d
+  1c41e9ff:4199e180:4199e180 20110427184312 :4199e18
+  41d82921:41d82921:41d82921 20110427184305 :41d8292
+  ab93324a:11097a44:06b1f91c 20130717101948 :4234b85
+  6ff3b71c:66eb19e0:fbcca133 20131108090057 :4250a4f
+  42556198:42556198:42556198 20110427184302 :4255619
+  2d31f034:048047fe:048047fe 20140224190411 :4288980
+  99d0ade6:c85d17e5:8b084a3f 20120913191133 :4297bc3
+  4332f84d:4332f84d:4332f84d 20111021171522 :4332f84
+  aa6dcdbb:c3683c76:4787bb4e 20140224190406 :433f2bc
+  ee5ed229:a89451d3:f8f3cddc 20140107160833 :435878b
+  67507798:3ced777f:262afe0f 20130719130432 :4382808
+  149624c4:43bb3a7b:43bb3a7b 20110427184305 :43bb3a7
+  fc615298:505a9692:70a63a6e 20130510120050 :44f1985
+  682d573b:739c7a38:76cda80d 20120913191140 :4501c6a
+  16e0b6ec:353b6e0c:bb1da57b 20131108144205 :450bbef
+  ccfe8d43:5b1349d6:5b1349d6 20120816102056 :4563406
+  18dcae78:18227927:18227927 20131112190807 :4564eb2
+  98a674fc:75c078e3:3e89db63 20121214120732 :45bce17
+  5a9c725e:20c1fca1:20c1fca1 20130620085625 :460995d
+  8c33e42d:d4b801ab:d81d2e53 20130806122518 :4630427
+  c5094cbe:368c5b8b:67bf82d0 20121023150656 :46432ea
+  4e5f9362:27fae44c:1b412fbf 20130626162703 :465d5f7
+  665e87f1:70d3a12d:2e95f8bf 20130717101932 :46a37da
+  72879ca4:1022e9ea:79160dfc 20130415094141 :46b2ddd
+  ed1d53ab:b9bd6f19:b9bd6f19 20131108090100 :46ea6dc
+  4b1c5a8e:f22c32fc:2a335ae4 20121023150634 :46ee0e0
+  92106cf3:ba592ef9:c748574a 20121023150650 :471efb7
+  eb55dffc:dd4d209c:c9d8974a 20130717101950 :472c08c
+  ca77a12e:b587c49c:6e4855d3 20120725090309 :4778f12
+  5f759490:1d43ab47:b3c4d158 20131210131855 :4792fc4
+  2833c194:3aab58cd:3aab58cd 20130220094150 :47a0ebd
+  24f31221:e9f08f3c:72586779 20130626162701 :480eba0
+  d1192300:888f4bbb:733748be 20140310110128 :4882d9f
+  bbaa5d63:c3118719:98177a88 20130806122516 :4893859
+  b084f173:f2aa5b6f:5e158006 20130510120048 :48b11a3
+  48b8264d:48b8264d:48b8264d 20120706191247 :48b8264
+  c46c1146:f92c1a68:9d580ea8 20130510120018 :491c119
+  1cb0f570:531ace18:32378753 20120816102025 :491e89c
+  49378a9e:49378a9e:49378a9e 20120509160152 :49378a9
+  49477611:49477611:49477611 20120426135014 :4947761
+  f9b78d1d:40cc7999:40cc7999 20121023150703 :49ccb2a
+  74b2fb4f:2026176f:a8d0f3df 20121214120732 :49fe6bf
+  3d3036a6:dc5d617c:8c8eb84b 20131108090051 :4a6a7fb
+  0d1491b2:fd451b31:f1a32dea 20140107160813 :4aaaf83
+  13b5eb5f:3b6757f5:d3a661a5 20120816102022 :4aab4b2
+  b49f7d21:54557c85:41ea589f 20120913191111 :4ac5a20
+  681f7890:4b109329:4b109329 20120511134125 :4b10932
+  503f695d:d1ce3756:4059d634 20140224190323 :4bcfadc
+  c6b6660a:441ea1f1:441ea1f1 20140224190414 :4bd0782
+  27332108:bcdce037:a9bbed7e 20131112190808 :4c09d41
+  a24ce274:37fb74fb:b76d671a 20130412132247 :4c95b69
+  b0363640:88d2d3c3:88d2d3c3 20130620085629 :4cf5921
+  ee400c8c:e314f19c:6361ec26 20130626162700 :4d0182b
+  cddf1069:67a9bddf:9acd5c92 20130912181244 :4d2babf
+  b7a44134:037852cf:0246b1cb 20130709085059 :4d3cf93
+  aa7b2f5e:1e637876:320feebf 20140107160828 :4d4ed5c
+  4347a907:0a7f6fd2:0a7f6fd2 20130620085631 :4d6319b
+  09d9d3bf:542ae248:542ae248 20121115190300 :4d6f128
+  4d7eaf23:4d7eaf23:4d7eaf23 20110427184256 :4d7eaf2
+  6cf51885:f593a6d3:f593a6d3 20140310110126 :4dc1918
+  4ddf620c:4ddf620c:4ddf620c 20120504174834 :4ddf620
+  3bcac298:9e12e810:b41a15e6 20140320084653 :4de49e0
+  22102ac6:19187694:e476241d 20120925135646 :4e1281b
+  5ef19bfa:a8d46a65:6716b722 20120820185542 :4e7a9eb
+  8eecd63b:45f47f5c:45f47f5c 20130620085628 :4ea625b
+  a6d53c20:331e7f15:96a733f5 20130626162712 :4eaf8cf
+  22a7f047:407152fd:73899fbe 20121212102309 :4fb6100
+  73d512d9:10991590:c5ed8198 20140129182803 :4fb7d70
+  e0877ad6:605a7e35:a1663cc9 20130717101931 :4fde4d2
+  ea431832:ef236af6:5000664e 20120209171409 :5000664
+  7da6e4bb:8395d941:be8f555e 20140304125800 :5052ed0
+  27f13163:eb2b8793:5e777990 20130912181244 :50dd4b9
+  50ee8cf2:50ee8cf2:50ee8cf2 20110427184304 :50ee8cf
+  34eaa0db:ae8bde53:1998bbee 20130626162713 :5125ef4
+  51468378:51468378:51468378 20110915112626 :5146837
+  58d9d1ca:23f14213:c045e9ba 20130510120047 :522ccde
+  6bc0b168:639dc43e:0966210e 20130318141434 :5271d6a
+  41a6335c:57fd23f6:57fd23f6 20131108144143 :527312b
+  89bcdfb3:2ecfe444:13f854ed 20121212102246 :5297158
+  521c04ce:baf960a2:774f06a6 20140224190412 :52f2b9a
+  bec0941c:205d6c91:205d6c91 20140331153301 :52f64f2
+  bb93c8fe:89a57b82:89a57b82 20130620085629 :52fecf0
+  52ff6766:52ff6766:52ff6766 20130719140018 :52ff676
+  f13183e9:f094abc5:f094abc5 20140321120450 :53c54b1
+  234a6a24:53dcb065:53dcb065 20120511134126 :53dcb06
+  ca9c8a6b:dccb77f9:dccb77f9 20140128161337 :540ec0a
+  40e2143d:4e295a3b:4e295a3b 20130620085625 :542806e
+  542ef100:542ef100:542ef100 20120518095645 :542ef10
+  fe806928:40b2f152:30c462d6 20140304125803 :54336bb
+  47ec9a00:92730309:d7e58c54 20140107160825 :5479459
+  ad580f21:139fe1ea:2e3dd5dd 20140107160751 :54859fd
+  50ec9c14:f470f428:f470f428 20121212102312 :549265b
+  54cd4a10:54cd4a10:54cd4a10 20110511174731 :54cd4a1
+  9e4b4640:8f2d7f35:c65efce3 20130916124304 :5557c04
+  556aa2ba:556aa2ba:556aa2ba 20110810121239 :556aa2b
+  bdd5fdbb:abfa06b1:8dc70545 20120816102040 :55d8499
+  720ea3ee:769d6cc7:475bf5c1 20121214120735 :55eb9be
+  80dad2c5:816207ee:816207ee 20130620085625 :55f5b6a
+  718e781a:fce3e10f:b17f39db 20140224190356 :561c8af
+  eb9a9482:6be962ed:05be3501 20130802145615 :56281bd
+  5307d10f:59bae966:efd0b4a7 20120816102045 :564f318
+  f3380a70:01713b50:01713b50 20130620085624 :5660096
+  69d3fa7c:6ddf953a:205784dd 20140310110053 :5685516
+  d85ea41f:2678d8d4:28722719 20121023150649 :56891a3
+  19b18f47:b9925a00:b9925a00 20130327144426 :569bd5c
+  c89c9e14:06008eb8:06008eb8 20121221170600 :56b2f46
+  e2e23261:608d64f8:608d64f8 20131108144201 :56d4601
+  274e67b3:05f25502:c995958e 20131108090045 :572a727
+  57e92445:57e92445:57e92445 20110427184305 :57e9244
+  4fff982e:44f6539b:44f6539b 20130620085626 :5830f8e
+  b63cd7bc:324b6442:324b6442 20130620085631 :584cb5b
+  8f169079:524ee70e:524ee70e 20130620085625 :587c9f4
+  5fdc1fa2:58c9a1a4:58c9a1a4 20080204152344 :58c9a1a
+  d3a09886:2db18e71:a273fcc9 20121008180313 :590cfe5
+  4ef954b8:ff2a9ee9:5272a426 20140224190324 :59100d0
+  d968bfa1:f7196bf5:f7196bf5 20131108090108 :5912498
+  a55fa97b:6d2be3d8:b2b34fbd 20121212102303 :59503e0
+  54324804:38335719:d713d47a 20140224190406 :598d0fd
+  c3cdfa73:da9726b8:da9726b8 20130620085629 :59f3629
+  ba51e520:cfb31b56:40b8050c 20121211105229 :5a50a9e
+  8e36ff4d:08337e72:08337e72 20131108090113 :5a6f6f2
+  c6730709:0bb47f02:9b78d9c6 20120911171722 :5a71b58
+  c3a597df:1363cf45:8ba67f43 20120911171733 :5a71e2f
+  9d6c3c20:25b9ba42:692157ea 20130510120018 :5a88784
+  80dd7c7b:05441be1:65145dfe 20131108090056 :5b03a32
+  dd22ba46:669f94f8:7f3c7afe 20140107160833 :5b5857d
+  5ec7dd4f:be06867c:6d031eec 20120725090306 :5b83654
+  5fb422d7:5bab7768:5bab7768 20110427184312 :5bab776
+  dbe04762:dec2cbc4:dec2cbc4 20130918185716 :5bd64fb
+  93f3a920:9318a836:9318a836 20130620085619 :5c7f396
+  b901bad7:5cc5e4e5:5cc5e4e5 20120209171411 :5cc5e4e
+  2e10710e:1c12db5c:1c12db5c 20120731184508 :5cfdef1
+  c0172575:08e9a6bb:08e9a6bb 20140310110137 :5d479ff
+  82562288:7e94c46c:a49c22f8 20130430113719 :5d6e928
+  7f225384:a9f2cced:544df635 20131210131854 :5da6834
+  fcdf8254:1ca2d42b:1ca2d42b 20130515123654 :5dc26c8
+  bd608d78:7f84137c:02348ce5 20130626162700 :5e0e489
+  5e32d936:5e32d936:5e32d936 20110427184300 :5e32d93
+  8daf0587:7bef6652:7bef6652 20131108144147 :5e5f1e4
+  1680407d:5f2bf066:5f2bf066 20130806122520 :5e73d56
+  064f6838:fbd72a84:ec468aad 20120911171727 :5e9450a
+  5852015b:e43a6a51:ddeb791b 20121112173226 :5ebed8a
+  859c561b:d8eefc52:d8eefc52 20130603184132 :5ebeffe
+  8a2d5aa5:0f8eafea:9c8df86d 20131108090051 :5eff582
+  e5fefe6a:a7a8571f:a4473f66 20120913191131 :5f97d35
+  99264b19:c8d9d7ff:1d20bec4 20131108090044 :608a731
+  b54a10b9:2802891f:847069b8 20130412132246 :61b2013
+  61cc8613:61cc8613:61cc8613 20120217180550 :61cc861
+  bee83f9b:d57ecf30:6714cc42 20130510120044 :61e27aa
+  87d4c6dc:62509daf:62509daf 20110427184320 :62509da
+  bac30d9e:3515d95e:633579fc 20110915112632 :633579f
+  5fc0af15:bb56a14f:bb56a14f 20130220094143 :6379925
+  5a40b171:9017d436:63e90571 20110427184315 :63e9057
+  f28a2082:91c9c83e:5d8728a2 20130806122515 :6400d01
+  b5bce4e9:b6615179:b6615179 20130918185719 :642a3e6
+  fdbf083b:10f52e9f:10f52e9f 20130620085622 :645ccb4
+  5d90f9c6:2c16cce4:2c16cce4 20130620085626 :64ccfd0
+  650f1976:650f1976:650f1976 20110427184302 :650f197
+  cbe3a720:e28c13b6:c00d1c01 20130806122516 :655080e
+  7d7142b7:ac4f04fb:ac4f04fb 20130327144436 :6563e4d
+  32230b3e:de0f4b67:de0f4b67 20131108144139 :6566ced
+  707f4c73:869935af:0050e982 20131108090040 :656e49e
+  659ad6a3:659ad6a3:659ad6a3 20110427184302 :659ad6a
+  871367fd:09ebebb4:264ccaa3 20120913191137 :65a044d
+  6fac47cc:54031bf9:54031bf9 20130620085617 :65b4203
+  bd98e312:7d8b7b83:30414a7e 20130412132235 :65b724e
+  dfd6fc01:39305d52:39305d52 20130327144432 :65e80ff
+  fdd86160:df483e43:df483e43 20131126094113 :669b001
+  974dfffe:2270d1d3:2270d1d3 20130717101952 :66c6b54
+  ef47c43c:5cb5e756:5cb5e756 20130620085628 :66d3435
+  68175df5:68175df5:68175df5 20110427184257 :68175df
+  ed533a8e:1101099d:1101099d 20130620085628 :685ca9d
+  4064f82d:68a9e41d:68a9e41d 20110427184323 :68a9e41
+  faad5889:01574846:7b83b909 20131108090053 :68c26a7
+  ed17e80b:c0774b9c:c0774b9c 20130712115007 :6997294
+  8d7383bb:378d47a3:3b97874e 20120911171732 :69c6344
+  69e8d3f2:69e8d3f2:69e8d3f2 20041012123420 :69e8d3f
+  69f98f44:69f98f44:69f98f44 20120719085503 :69f98f4
+  07623415:feb25410:feb25410 20130220094149 :6ac949b
+  cedc9823:6b03b636:6b03b636 20110622180904 :6b03b63
+  4b75f024:a18835d3:800f663e 20121023150659 :6b21693
+  3cbaf33f:7c01608d:6d59a8a8 20140224190408 :6b2ed42
+  b19cdcd7:6c7527dc:5ac4a6dd 20131108090043 :6b4a1f9
+  d11c12e7:72d84464:df550760 20130510120041 :6b55b87
+  463244ad:2ec5be18:7248916f 20120725090307 :6b9be77
+  b4f0144f:ad6009f3:f025a720 20130415094142 :6bda18b
+  a5c1a45d:46bc8abb:a531d55c 20140107160827 :6be7010
+  e54e1474:8e6e86fe:8e6e86fe 20130918185717 :6c0972f
+  130fa4f7:11f738cb:11f738cb 20131108090038 :6c445dd
+  0363837b:6cefa034:6cefa034 20111019181548 :6cefa03
+  08e9b386:efe4df5a:222bcab5 20140304125801 :6d0580a
+  76f1a6c5:4f5fd00c:2c4f7c52 20130603184130 :6d0ecce
+  019533b4:211a95b7:211a95b7 20121023150702 :6d4e5b7
+  6d537b58:6d537b58:6d537b58 20110712124027 :6d537b5
+  f98cee58:a92d0b73:a92d0b73 20131128192431 :6d88799
+  15b90e92:f337c142:4ef29fb9 20120816102017 :6db4a1d
+  562911ed:fe627e38:580fd4ce 20140107160820 :6ddd30d
+  5b27c084:bff7e2f7:0d754f3a 20131108090046 :6e6d86d
+  7b050572:19beb807:6c06e16b 20140224190404 :6e95217
+  38b32381:539d508b:d7cacae6 20120911171723 :6eb2559
+  5826778a:ec86b155:ec86b155 20131126094114 :6ec610a
+  437e4c7a:8ff06ebf:a0571e03 20131108090054 :6eeb7cb
+  746518dd:505ddead:96d8de9f 20121112173251 :6f052d8
+  eda94e32:fb028b80:64dd8d02 20120911171736 :6f4b54e
+  6f562f44:6f562f44:6f562f44 20120622190734 :6f562f4
+  a5c55e4f:e784141f:abf5dab7 20140224190405 :6f60a5a
+  3e7ba0fe:e5798aa8:92bce3ab 20120911171721 :7010d5c
+  da0e5f3b:5ae2070d:5ae2070d 20130717101941 :7020151
+  65a4f3ce:bafa94eb:53b80293 20130806122445 :70db0b4
+  90f22843:9a394351:9a394351 20131108090054 :70e6870
+  e49a4d53:7cfed86e:213375c2 20131126094108 :7136f63
+  4d4d4078:b2708b83:3876582d 20130301144932 :71ed897
+  b381c157:61f99c77:61f99c77 20130717101946 :7218443
+  8f909293:7621c563:7621c563 20130220094151 :725c4d1
+  75ab6eda:d196b36f:07cfb7fb 20140107160819 :7261bf6
+  12efaa8a:fd439584:fd439584 20120731184508 :72816fa
+  405f673e:8a754127:8a754127 20140304125831 :72ab4f1
+  714c2455:6b417d33:6b417d33 20130620085627 :73396ee
+  7c722c86:e6643b1f:e6643b1f 20130620085625 :736bb19
+  bc656a8e:577ded16:349d8177 20120913191111 :736bdcd
+  05d7dd9b:4d261e2a:26137386 20140304125802 :7390168
+  5e9283bd:96894323:bc2bfd5b 20130415094143 :73b4b15
+  340a0827:1f203f15:1f203f15 20140310110139 :7413c94
+  75ce8986:798e12a4:798e12a4 20130131163911 :74aa578
+  74b442ad:74b442ad:74b442ad 20110921153855 :74b442a
+  03d27e8b:20945491:20945491 20130620085627 :7552924
+  6b965e53:cc98564a:670169d9 20140224190357 :7600e77
+  4840cb31:d4b4f0ca:57c3ea5f 20130912181215 :76c8724
+  05e0622c:33c0faa0:690e64e2 20130415094123 :76cad5d
+  7234ac29:2290ca06:d1b5d980 20130806122446 :76d5524
+  de37da73:135ec375:8768a851 20140304125759 :76e56f1
+  072d92b5:2dc28879:e5c40c17 20120816102056 :770767c
+  f31b7f0e:13c58d1f:f452d375 20120913191130 :770f78c
+  ca4f933a:6ffc4a94:0e464a4f 20121112173250 :7714768
+  21be8404:598c0461:b3fe0d01 20121112173229 :7730ae8
+  aaa767f7:2e6e2da0:cb98ca48 20120911134257 :7771236
+  e9f54c16:8c8a6940:c50695bb 20130717101949 :77a6e8f
+  77dbfdb9:77dbfdb9:77dbfdb9 20110607113443 :77dbfdb
+  780fae40:780fae40:780fae40 20110427184313 :780fae4
+  d0377fb6:b2c9d1ba:b2c9d1ba 20120911171735 :7833242
+  c4e89446:598b905c:598b905c 20131108144140 :78608eb
+  dd2590fd:e78fcac8:ffa96a89 20131108090052 :78a6628
+  e5ab99f3:8ae58092:62c63012 20120820185545 :78d3182
+  79764107:79764107:79764107 20130130102401 :7976410
+  4dfc4a65:73850fa9:d87c420a 20121214120733 :79bc762
+  9858a7fa:c4b91d7a:c4b91d7a 20130425145853 :79f3443
+  08b6ad08:e227ccf5:96b7e2ff 20140310110135 :7a02f3e
+  ec340514:493beb58:13da9b86 20130412132240 :7a0ea69
+  7a3e7065:7a3e7065:7a3e7065 20120209171408 :7a3e706
+  19d2ff0f:51d4dbc5:51d4dbc5 20121112173251 :7a3fc29
+  01bd45e3:7a69707b:7a69707b 20120105100752 :7a69707
+  6ad2d2ef:cf2b3329:cf2b3329 20130310165128 :7a705d2
+  6ea57596:eb61a6e8:9d8978d6 20140224190404 :7a824b7
+  c09459be:7af39214:7af39214 20120511134125 :7af3921
+  3146cea1:66357ee8:d71e6f1b 20130510120050 :7af6dde
+  7c039e95:7c039e95:7c039e95 20110427184301 :7c039e9
+  ab98c5a8:858ef1f2:e4f03c57 20130912181234 :7c3cb07
+  aed43ce7:7c95033d:7c95033d 20130418165750 :7c5dc20
+  c0f4dd03:aaee9249:aaee9249 20130620085631 :7c62b5c
+  b9f726b7:baed602e:2007d3aa 20140129182802 :7c9a07f
+  7cc7d8db:7cc7d8db:7cc7d8db 20130115124011 :7cc7d8d
+  7d1ad162:7d1ad162:7d1ad162 20120420125340 :7d1ad16
+  7d1fb895:7d1fb895:7d1fb895 20120426135014 :7d1fb89
+  f090ac0b:26d78d5b:26d78d5b 20130620085621 :7d22f08
+  0550259e:96193b71:c293d3c9 20130717101909 :7d25571
+  7d4c2fe8:7d4c2fe8:7d4c2fe8 20100414130528 :7d4c2fe
+  7d5ba6c5:7d5ba6c5:7d5ba6c5 20110427184313 :7d5ba6c
+  d9d10603:8633ad97:a3c2bc34 20130717101951 :7d8e657
+  7dcbc083:7dcbc083:7dcbc083 20110427184257 :7dcbc08
+  913ef48f:dd31427b:dd31427b 20140203093417 :7e0e5ad
+  6ba0edbd:09b01afc:45477e7d 20130717101948 :7e1f2db
+  5e944700:73e03764:df7671b8 20140224190402 :7e2766e
+  6f9870cd:6b04c5cc:6b04c5cc 20130620085631 :7e27d80
+  423c8006:6bb1874c:f45e1469 20130301144933 :7e422c9
+  c99f14af:40b6a855:e08874d6 20131217114044 :7e48558
+  9e7a562b:1eb24586:be673342 20121112173251 :7e69372
+  75f7717e:5a129913:50e181bf 20140310110120 :7ecaf63
+  c5988ee2:7e31c954:7e31c954 20130220094150 :7ee1b64
+  2a6fe63f:87820c83:4d3f42ff 20130510120048 :7ee5c00
+  0a62595f:1fdf8806:1fdf8806 20120725090306 :7f0caa5
+  3c97c668:7f4e01e3:7f4e01e3 20051104100628 :7f4e01e
+  e4f73639:31db241b:9f38e6b0 20131108090039 :7f72243
+  22f44e82:4374df88:4374df88 20121023150701 :7f7b681
+  cd1759e2:a51eb307:bfcd936f 20121112173148 :7fd5fcd
+  7e4a76b3:30d23286:5a2b4272 20130912181239 :8060187
+  8065a6d8:8065a6d8:8065a6d8 20120410153439 :8065a6d
+  64b69d61:807b5cf0:807b5cf0 20120719085502 :807b5cf
+  97a60c68:3af5907c:3af5907c 20131112190805 :8080c5d
+  58681df5:ff8192ec:ff8192ec 20130620085621 :81279d2
+  9b27de3d:37b7af07:f50b78ff 20131108090052 :815af39
+  01366e2a:28a2610e:ab384eb7 20130418165755 :8257770
+  8f1aedb8:62ea5645:a4d099df 20130912181243 :82ea972
+  23fdd832:931183ee:931183ee 20130620085629 :82f900a
+  d2793ada:f63db31e:f63db31e 20131121184057 :82fd182
+  41f6c468:3972bafb:bbac9c3b 20120816102041 :831ca5e
+  7b6511b8:8dfe5120:b1525813 20140224190406 :8345a4f
+  c8a7e8c2:36d02ae2:36d02ae2 20130603184131 :8401da2
+  03f04d09:4762c053:4762c053 20130220094145 :842b417
+  c0fbed5b:5b309998:ebecda54 20131217114051 :8440667
+  d0bb2288:3abbf6f9:99143f56 20130802145618 :8459df8
+  9e63b822:c3a160fa:829677ae 20121212102309 :845f984
+  3d50f430:86d75ad6:86d75ad6 20130712115007 :84baf91
+  f38ce080:df45163d:df45163d 20130606154503 :84bdce3
+  f6866c55:25f7db8f:b104caf8 20130626162643 :84c3ab4
+  b34b36fd:dc296ecc:43a664a3 20140107160831 :851a497
+  ef6d3160:d76986e3:8b7699de 20140304125802 :851b4f9
+  35fd8880:44ab2445:8fc5a9c0 20121116160106 :85318d3
+  cfa5bd7c:dca4c93e:86e2e428 20130916124307 :8543c84
+  85cde342:85cde342:85cde342 20110607113443 :85cde34
+  85b4e50f:801d19a0:801d19a0 20131108144201 :85f658a
+  562ba8b8:6032f012:72efd006 20130626162706 :8654be5
+  84c62a62:590cbcb4:f8d744dd 20121023150649 :869e627
+  4e1d6fa8:870dff24:870dff24 20110318145714 :870dff2
+  d667afbd:635e8763:635e8763 20130115124011 :871c759
+  67942886:13c3e369:9d552931 20130626162703 :875624c
+  8026d149:ddba73b0:ddba73b0 20130418165750 :8759ba2
+  aea0cdf0:8e98d6c3:d2c8749b 20130626162711 :87eda42
+  d79ae05c:aa9ae399:6cb8a080 20120913191136 :8864ee5
+  a6064eb5:21a00b23:e539cc6a 20120816102025 :8865642
+  9685e9d1:5ee6af27:1b5db8e3 20121212102306 :8874a0b
+  5f30e54a:40dc712e:bbc83ed5 20130115124010 :88db417
+  8d58a4df:711b68a7:711b68a7 20130510120058 :89866b3
+  5b475fe7:38af62cc:31278dad 20130412132246 :89e8d32
+  89ef9ccf:89ef9ccf:89ef9ccf 20120416094112 :89ef9cc
+  d315bcd5:e067b4d9:67c5a3c9 20130412132209 :8a2556e
+  9f056f4c:cd012243:adac04ac 20140107160827 :8a4bbd1
+  fbdd2719:21e0a0da:11f1aea2 20130717101908 :8a5a0e7
+  8a7c6c10:8a7c6c10:8a7c6c10 20120426135014 :8a7c6c1
+  3dfe8bce:491b21d2:dd89fe16 20140224190411 :8a9baa4
+  4ccba142:8ac2d354:8ac2d354 20120209171411 :8ac2d35
+  298a1843:81173942:81173942 20130301144932 :8acc72b
+  ae5adc57:a838d16d:a838d16d 20121112173252 :8b4b4a3
+  89f05951:3d749efc:3d749efc 20130327144437 :8b83ec9
+  8b85c6b0:8b85c6b0:8b85c6b0 20111113172355 :8b85c6b
+  47587235:67cd49fb:67cd49fb 20140224190413 :8bc6c35
+  8970f030:547d1952:9a80362b 20121116160107 :8bdc0c4
+  65ed2317:87683a89:87683a89 20130620085619 :8c102cb
+  1e94ca97:bd6a0454:bd6a0454 20140128161336 :8c1f017
+  864f3e36:4e504c79:71a43053 20140304125803 :8cb22fe
+  7c2091fb:1aeb1c4e:dcb074dd 20120911171727 :8cb79b4
+  74c9cb8c:5b134353:b068803a 20130510120048 :8ccb7b4
+  a7e4721f:28639bfb:efe06095 20120911171718 :8cf0ce3
+  92d6fe5e:8ab823e3:70099a32 20130717101933 :8d1bd03
+  723d1953:40e51ed1:04d05a72 20120725090308 :8d233c2
+  80c3666a:d2067c8f:5e234a46 20130510120049 :8d54f2c
+  0cce8957:5dd77788:f74602e3 20130626162702 :8d62762
+  a12e491f:ed7f3658:42475afd 20131108090038 :8d65fae
+  411f9395:a8c8209f:a8c8209f 20121211105226 :8dd17a3
+  443586eb:a88b9304:0378e76d 20121214120733 :8dee1e1
+  ce352eb4:f635c769:f12854a0 20130717101944 :8e6d51e
+  ec1d12e9:8c2f56d4:f324478c 20131108090042 :8e753b4
+  01cb6b02:fa377ebc:fa377ebc 20130620085619 :8e7f3b7
+  1a95a704:8e9a4bd8:8e9a4bd8 20120209171409 :8e9a4bd
+  c3f6a80b:ca476f61:453ebb6f 20120816102054 :8eb3709
+  8f8265d7:8f8265d7:8f8265d7 20120321112352 :8f8265d
+  ce28c0c3:dae36ed3:dae36ed3 20130620085618 :8fbab9f
+  feb864c4:93e5205c:e3c9772c 20130603184130 :9050f7c
+  d47414e2:f30b67f4:f30b67f4 20130620085630 :90db644
+  9103f2a4:9103f2a4:9103f2a4 20110921153855 :9103f2a
+  a49b04b5:57346447:bfb2c608 20130626162643 :918cdbd
+  83beaa3b:06183fc2:06183fc2 20130922205456 :9193871
+  919ab06b:919ab06b:919ab06b 20110427184304 :919ab06
+  8461ea07:520f4bbf:aaa72569 20121023150651 :91a2670
+  3edbea9d:91b604bc:91b604bc 20111111130801 :91b604b
+  3f0204c1:b5324fa1:b5324fa1 20131112190808 :91ece67
+  a6575741:e71b763d:1df6fde7 20140107160826 :920bb88
+  48f1e7fe:9f7dd217:8429cdf2 20130412132244 :9242695
+  9246febb:9246febb:9246febb 20120424093046 :9246feb
+  8340b113:925d6501:925d6501 20110427184320 :925d650
+  cb0bff0f:2bde7745:cd4327b7 20130717101943 :927a018
+  d9d6a0fd:92b2335d:92b2335d 20110427184324 :92b2335
+  a0cbc821:d6ae2a73:63f39f29 20121212102302 :92f5d86
+  15078cc1:d7524d6f:d7524d6f 20130425145854 :93ef183
+  396c0338:9b7bc6f2:9b7bc6f2 20121115190256 :93fff45
+  994bc907:a1872664:c2ad46eb 20130510120044 :94270cd
+  e26d8227:9a028c7f:47e4bcdf 20121214120701 :946a6a1
+  fe5e88fd:5bb22727:4ae16910 20121023150657 :949bd32
+  ae3a8b1d:2373c955:f4d58338 20131118153924 :94ff912
+  9558400d:9558400d:9558400d 20110427184258 :9558400
+  a0e79757:62c3e57a:96d894ca 20130510120040 :959a882
+  2bc09dd2:6ee478ba:31616900 20120913191135 :95b064e
+  95d95ec7:95d95ec7:95d95ec7 20120426135014 :95d95ec
+  45b9c0e7:11af45d4:11af45d4 20131128192433 :95dc5b1
+  e30c2d35:6bab76e6:9920940e 20140107160819 :9601a9e
+  80292676:ec20bd35:ec20bd35 20130717101953 :964d054
+  ba38f0b5:6aec7d72:c42e4301 20121023150652 :9658419
+  68812903:ad218639:ad218639 20130620085625 :96b64b9
+  2bc37097:ef3c76b7:0e25a5aa 20130415094123 :96f6644
+  9d10e2bb:9f9a85ec:e0fa5458 20140224190353 :96fda6c
+  db461901:006aa4e7:9768d24a 20120209171411 :9768d24
+  1ffc57a1:d8c53c68:99f28580 20130412132234 :976f171
+  3a7de33c:b092ae38:c80540e8 20121112173223 :9776c16
+  edb1212e:54e1d268:5a1bf1a2 20130912181234 :978271e
+  f76d2d07:fa59929e:35bbfa9f 20131108090051 :97b16f4
+  fc688a6e:ce8bb782:ce8bb782 20130620085631 :980c0ed
+  983ce9fb:983ce9fb:983ce9fb 20140129190736 :983ce9f
+  048f7ada:ec1664e0:31781d51 20131108090053 :98ed9a8
+  0c487538:9963461c:9963461c 20110930082836 :9963461
+  018a40ae:3d98b262:8b5a0472 20120911171721 :997c308
+  a09359f9:dbe557f9:cfaed5bb 20120913191139 :99ffac9
+  217fda71:e6c7b2db:e6c7b2db 20130620085627 :9a5d689
+  016c9606:7ece3654:b65e3b3d 20130418165803 :9a71e19
+  b8884449:f330c20b:9c88602b 20140107160824 :9a7d054
+  9e1c6e42:b8867229:b8867229 20130806124405 :9aac920
+  70067154:15a9c10a:5ca25a3f 20130626162712 :9ac3768
+  cdd5e19d:3ba074a7:2614ee59 20131108090043 :9ae3dd1
+  8d0701cb:0e5df466:0e5df466 20121128185924 :9b51283
+  0ec8a021:692b3a3f:360d56b5 20130626162700 :9b8a1d3
+  401e7abc:167f4ba9:387d457e 20130412132240 :9ba4194
+  a51faffe:3822a196:71b626fc 20130626162642 :9bd6317
+  6d84ad6d:fdd1462d:fdd1462d 20130620085621 :9c541ad
+  6f133d5e:4511cc76:f14614a2 20130626162700 :9c69647
+  26940bb7:d2e667d2:d2e667d2 20121212102302 :9cb5c47
+  58890d12:88a007cc:88a007cc 20131128192431 :9cd00a0
+  6f637ac0:cf273413:95c63016 20121112173248 :9d3e74d
+  f61b1308:152f9254:8ffe32a4 20130429123806 :9de88c8
+  e468ab76:17935710:63b42046 20130912181244 :9dfa8d2
+  64659917:acf8378b:acf8378b 20130220094152 :9e5ef6a
+  d03d7226:0186bca8:6b03706d 20140107160826 :9e8320a
+  848802a4:c87920e7:e02ae507 20121023150656 :9ec9cc5
+  c04cdc37:576fb16a:188a4576 20140224190405 :9f31a95
+  89f649c7:0af6de7a:b982344a 20120913191131 :9f33e3c
+  76be2a58:f1025a5a:f1025a5a 20131115121413 :9f3edd7
+  6289fe14:ae1dff3b:ae1dff3b 20130830115655 :9f478a5
+  54f622cb:8548fead:c80ded1c 20140310110106 :9f4f815
+  414abeff:2bbd5351:2bbd5351 20130620085618 :9fb0312
+  845278de:440bd310:9fbde8da 20120426135013 :9fbde8d
+  7e7293fe:d74ae2cf:d74ae2cf 20130220094150 :9fc8fc3
+  548d19b5:063a675b:8e9edd3c 20131108090104 :9fe6a5f
+  d50d714a:c0231edb:c863800f 20130626162713 :a043e69
+  c9ca4821:071753cf:8ee56e79 20130806122515 :a0b64f1
+  c47c5c71:a100c1cf:a100c1cf 20120511134125 :a100c1c
+  64d68b19:9dea7514:c10b83cc 20131108090052 :a117677
+  fd327bf1:3ea619e3:3ea619e3 20130620085617 :a11cfc7
+  cb52c615:62186bc8:fb4d472b 20130510120041 :a141d03
+  3a6e7d02:8d53853f:b76871f9 20130412132245 :a1afb63
+  3ffb6d19:d7c0cb43:9f7a2da9 20131108090049 :a1dbb28
+  0eb05f4b:a21f73a7:a21f73a7 20120209171410 :a21f73a
+  ba2ab7e2:590f5393:dc68b793 20140107160825 :a24f6a7
+  75c28983:a34cecf3:24ef1046 20130806122504 :a29bad1
+  104daf1c:c3f513b7:7a08c3d0 20140224190352 :a2afc61
+  01dac040:c53c6966:ceb70d99 20140203093422 :a2b2409
+  8f355cb4:080e27d3:beadad0b 20131108090053 :a2d4ac6
+  c0eb9d1d:c49b7cf8:678b412b 20130717101936 :a32c2da
+  f2a91605:50f4712c:5453ad4a 20140107160752 :a465aaf
+  6fcfab73:d97e7d8c:bb4d2b5e 20121112173223 :a498d57
+  7468cd5b:fd06c646:3cab0644 20130412132245 :a4cfe2a
+  ec7d3f47:1db4975b:ead88ee2 20140310110124 :a51a31d
+  c74535dd:f9732380:876e6a70 20121214120732 :a558870
+  45c8ac0d:89ccfea6:7daf8f62 20130510120019 :a57f477
+  7f1a4f6e:ce08c7b7:ce08c7b7 20131126094111 :a5be098
+  e854002f:2d9ac788:85597abd 20130902143713 :a5ff558
+  fd68f57b:f2fac92c:f2fac92c 20121128185910 :a60f59b
+  1459717b:c4ca4a4f:c4ca4a4f 20130426141825 :a66bbaf
+  9e4ffe7b:317393db:317393db 20130418165751 :a6d5a3b
+  c7f3c599:7aff7262:5eb1a6dd 20130626162712 :a704e50
+  9053df56:15e74f1a:503dd9bc 20140224190405 :a70b988
+  71e20bd8:db3c670e:47eaaa10 20140304125801 :a721407
+  e4677b47:17a812c1:17a812c1 20130510120043 :a7768a2
+  715ad7c2:ec9a4e87:d5119656 20121212102301 :a799385
+  b58c15e2:4b5dc969:b5925059 20140310110124 :a7ba5b7
+  989d4761:bc6269f4:bc6269f4 20130912181247 :a7edca6
+  23705a6a:d98c5123:120e1b4b 20121212102309 :a7f31ef
+  0821126b:a39d156a:a39d156a 20130430113720 :a826473
+  e16e6d60:7ad6c268:d0d903d7 20121112173223 :a82d33a
+  7c1c3548:76ee979e:64ad744d 20120913191140 :a8ebf0f
+  af853987:713a8a6c:713a8a6c 20120816102035 :a8f517d
+  f1bfc0e9:3c147515:e72a475d 20121112173250 :a93962b
+  1ab0092f:9b79999e:f2ddd904 20120913191136 :a962856
+  a991729e:a991729e:a991729e 20120702094251 :a991729
+  df936b71:deb5ae92:deb5ae92 20130620085623 :a99306b
+  bb9278e0:af216006:af216006 20131108090102 :aa018ff
+  9ca82de4:b61d9a31:d8bf7431 20121023150656 :aa02370
+  8dc3557e:aa0fa91d:aa0fa91d 20120911171735 :aa0fa91
+  0cd506b3:ee3fca88:37410b31 20130912181236 :aa7faf3
+  2f0762bd:ebafa733:ebafa733 20140113170528 :aa889b5
+  c47f5ab8:aa0aac0a:fa190548 20140203093419 :aaa2bd0
+  2a26f984:af0c56ec:1818dba1 20121112173247 :aadc832
+  aaeffc0c:aaeffc0c:aaeffc0c 20131108144148 :aaeffc0
+  2d7e4e50:1bb3b28d:d563e7e1 20120725090307 :ab11828
+  b7e55ad6:88652d8f:88652d8f 20121206182940 :ab3a993
+  fdc22b4d:1e4af45f:9a2e26e5 20130412132234 :ab4bb60
+  660dde82:bb96e1d5:bb96e1d5 20131108090103 :ab5a81b
+  8ddf1e5d:e1021743:b0343fad 20121121153659 :ab79445
+  a1c6d88b:ebcef022:82440ba0 20130912181239 :abdb78c
+  120efaaf:546ca903:546ca903 20121023150703 :abe4c1f
+  abe815e8:abe815e8:abe815e8 20110607113443 :abe815e
+  866e3bf0:6b08fb16:03a2cd33 20131108090050 :abe84d4
+  6284e9b5:8d9132bf:8d9132bf 20140224190406 :ac77c0f
+  eea163f4:3f1bcf39:5ae31d89 20130717101931 :acb8c9e
+  53d1fbf6:ed009a37:6c62171c 20130709085058 :ad0b72f
+  f367b37c:66069db0:66069db0 20120731184508 :ad17319
+  00b2b698:08ae7a3e:08ae7a3e 20121211105230 :ad22f1b
+  5b9f208a:e6ad8cca:33484ce2 20121212102309 :ad2fcb6
+  3e5d229f:9cc21df9:a8eb9759 20140310110058 :ad40621
+  311f7a37:15e8c0ef:15e8c0ef 20130510120054 :ad44ab7
+  cc03f7ad:6bb6ba90:6bb6ba90 20131108144139 :ad9dcb2
+  c3f11d1e:da5de45e:ad714ac5 20140107160751 :adc2cad
+  92ea2ff2:7a476262:3956df8a 20130122175545 :ae19308
+  d61d116a:1914e6ef:263afae5 20120913191132 :ae2d45a
+  35ccd83b:83f45701:42ab98c1 20121023150649 :ae3e30d
+  aaa7e0fb:b82036e6:b82036e6 20120816102053 :ae69016
+  ae776ee7:ae776ee7:ae776ee7 20110802154650 :ae776ee
+  3a3ffc2e:2f384074:2f384074 20121211105230 :ae95303
+  677c74f9:f9bbde89:f9bbde89 20120911171735 :aea5157
+  e2900e3d:22552a48:a7bcfb70 20130412132236 :aee879f
+  4d1465ef:b2fd54cd:b2fd54cd 20130717101954 :af1ed32
+  f3a2d2f4:942157f0:fdcb77c7 20131210131854 :af5808f
+  45229f6a:630fe47b:e191ef1f 20120911171736 :af5ed1d
+  84825621:44f3fa8d:e9982c57 20120911171732 :af8e104
+  1e1b7b53:49ac4ada:49ac4ada 20131210131853 :b02840d
+  9ac28235:9d10515c:69678104 20121112173250 :b02a35a
+  5d03f0d1:6cce2783:6cce2783 20130620085629 :b082070
+  f0c5d9d1:974cf242:24da4354 20140224190407 :b0a807a
+  fb0598f8:49fd8bd2:49fd8bd2 20130620085627 :b0ac923
+  8fc147f6:532a61f8:7c084c42 20140129182803 :b105a05
+  6e3022e9:6200cd00:b1492f77 20110427184314 :b1492f7
+  31605a96:6797ad44:f5df7ed5 20121115190259 :b152034
+  b1a406f6:b1a406f6:b1a406f6 20110427184301 :b1a406f
+  f098a2b4:da0e584f:da0e584f 20130429123808 :b1b4cda
+  d7be2f80:071b3807:b1bdf4b6 20110427184320 :b1bdf4b
+  193e70da:456930d4:456930d4 20130418165755 :b23885d
+  0689308a:b23c7100:b23c7100 20100311104526 :b23c710
+  371e21dc:dab05150:dab05150 20130510120058 :b28876d
+  9b4adc60:568b527d:fd7e334c 20130626162712 :b2b7cf5
+  b2ef2c55:b2ef2c55:b2ef2c55 20110713122756 :b2ef2c5
+  6761f931:e4f04e08:c3ebc5df 20121023150656 :b2f274b
+  007dfe7c:89629c41:89629c41 20130620085628 :b332808
+  97449af1:b36d8f77:b36d8f77 20111111123302 :b36d8f7
+  9816fb0b:8877b58f:07a473d7 20130412132243 :b37e58a
+  7b98d013:e197f9a6:8f76d403 20120816102017 :b3dc6dd
+  809174b5:65e217b9:65e217b9 20130620085627 :b483961
+  60574822:b4c01f62:b4c01f62 20120614132309 :b4c01f6
+  b5a0eabc:b5a0eabc:b5a0eabc 20110427184300 :b5a0eab
+  b60eef5d:b60eef5d:b60eef5d 20110427184300 :b60eef5
+  62fca2f8:368901ce:368901ce 20140107160831 :b6bf381
+  66d013cb:80b7bf0e:19f7de6c 20140224190350 :b6ce787
+  c8eac641:46007588:f5d564c1 20121023150658 :b71a6fa
+  c6a557d0:4b58ef87:f5175f00 20130806122506 :b739f88
+  b73a1618:b73a1618:b73a1618 20110427184301 :b73a161
+  a77a4839:5a0e15e5:556f1154 20121112173225 :b73eeee
+  90fc060c:c4f07e7c:c4f07e7c 20130603184839 :b74c5d1
+  ceebfa50:dcbd3388:dcbd3388 20130327144431 :b79165b
+  10ab7036:10ab7036:b7e560e5 20120405163054 :b7e560e
+  438e9538:910ba1b9:576e9142 20130412132234 :b824759
+  ea6a2691:3d55214e:3d55214e 20130618093140 :b844971
+  33f4e518:fd96a1e0:970787f8 20140107160828 :b85472b
+  88eda3c4:847e3a1f:847e3a1f 20130122175545 :b87e245
+  723793c8:127bfbd6:87bed5c8 20130412132250 :b8c2ca8
+  b8c3af50:b8c3af50:b8c3af50 20110427184302 :b8c3af5
+  544101a7:08774629:08774629 20131108090112 :b8d5d24
+  bde71c0b:7253ace0:b9040757 20110427184312 :b904075
+  f59759ea:ec8de82a:ec8de82a 20130620085619 :b9076c0
+  eecf82a5:c58afe4b:c58afe4b 20131108090105 :b974229
+  c517ed51:b01b7a69:b01b7a69 20131121184059 :b9987eb
+  02ce19b8:7dd936d1:4aacd14a 20120911171727 :ba5d65b
+  80b5b769:a1cf3cce:a1cf3cce 20130912181245 :baa7890
+  ae83d808:bef97666:34fb4dab 20130412132249 :baa9a22
+  71900013:4c3cd46e:b4d3ae17 20121023150659 :badfe08
+  79380a46:bb2a452b:bb2a452b 20120511173504 :bb2a452
+  3de55192:6ce91e43:6ce91e43 20131108144139 :bb30c8d
+  98ed887c:8cf3a79c:0f344425 20120816102017 :bb728ca
+  af1920cb:52580207:52580207 20130122175546 :bb8445e
+  92596b63:3c320fa5:2b79b7e0 20120725090309 :bbfdddb
+  81c3b2a5:e6d941a1:e6d941a1 20130130102401 :bc18d5f
+  2656eff0:4247515c:5ec488dd 20130412132246 :bc28853
+  2718be6b:a313cf0b:2eb93001 20121212102247 :bc38fc2
+  bcb926fe:bcb926fe:bcb926fe 20110427184304 :bcb926f
+  f071eab4:bcbccad6:bcbccad6 20120725090246 :bcbccad
+  bf99fe51:949f5eca:bd354e1a 20120426174741 :bd354e1
+  bd573380:bd573380:bd573380 20110427184320 :bd57338
+  b2ae4d15:693bf9cc:28a1e135 20140224190406 :bddfa6f
+  8a49d299:a6a9087b:411f7247 20121008180312 :be10189
+  69aaaa2c:707b5fbe:707b5fbe 20120911171735 :be2287e
+  31b7eb85:67763be0:67763be0 20131220173602 :be3fbeb
+  6640edf4:c8abf92b:5f5e2047 20130719130459 :be529e3
+  67a91cab:2cbe05b9:2cbe05b9 20130620085619 :bf03208
+  b0a03893:2ce719f4:2ce719f4 20131108144134 :bf940ca
+  6baa287b:9625441b:6b0bd0e6 20121211105229 :bf9bfca
+  91e46266:023733b8:584e378b 20120911171733 :bfb1d52
+  78e735c8:f2e4b41a:8aaad591 20130603184046 :bfc8552
+  e5ba1f51:2063bc70:8c54242b 20130415094141 :c035a34
+  5f1552e1:aeb472d3:2e47481f 20130830115652 :c05c93d
+  fcf7664e:9e7427c9:b8d915b6 20140107160819 :c0873c7
+  f26a69b2:b9aa68a9:b94a536b 20120820185516 :c0cafcc
+  c0e6e54f:c0e6e54f:c0e6e54f 20110427184302 :c0e6e54
+  cf0a36a4:417b857b:81601705 20130415094143 :c10d2cf
+  f7f91764:695b469f:695b469f 20130620085621 :c10ee50
+  f931d366:5116ed03:5116ed03 20140129182805 :c18cfa3
+  2858f9fb:143e8641:5f51f67a 20120816102051 :c196574
+  27a175fb:cabe8c81:5ce4d79e 20130220094149 :c1bff11
+  081097a9:88116bf7:aa18b740 20140224190404 :c1ce442
+  6ebc3137:01bd4fbf:01bd4fbf 20130130102401 :c22a734
+  ef58d1ce:4b563ad2:4b563ad2 20121212102312 :c278bca
+  1e414460:b41dc358:f1654d45 20130806122503 :c28423c
+  83d74e82:c2e47fe6:c2e47fe6 20130301144932 :c295a4c
+  e2fa134e:a3aa7674:a3aa7674 20121211105226 :c2d3afe
+  de62f818:bf251a6c:9669c7a9 20120925135646 :c34c9fa
+  5a95e20a:c3a623d2:c3a623d2 20111111123305 :c3a623d
+  2b80ed08:7165517b:8792b1d6 20120911171736 :c3cb1ee
+  860cf65b:28facffa:0be19966 20121112173251 :c3df462
+  c3f8675e:c3f8675e:c3f8675e 20120511134125 :c3f8675
+  f9849bf7:4972690f:c784f5d0 20121212102310 :c41eef8
+  625e0317:4100807a:4100807a 20130620085628 :c4e87a7
+  cafddfbb:534c36fb:15169e4c 20121214120733 :c4eccba
+  5a355f79:c5899233:c5899233 20051104114558 :c589923
+  ddb5620b:247010d3:0598b0ed 20120820185541 :c609b9d
+  b2bb6e05:c496da00:5c20f01b 20121023150703 :c613d6f
+  d59b38f9:5138fb59:0eb46801 20130412132242 :c62a917
+  3ec33984:dd6644c9:b737424c 20140120164218 :c6e4886
+  f5f70b7c:4654643e:8c34e510 20130626162706 :c6ec673
+  18bec84a:c729958a:c729958a 20120706191248 :c729958
+  c76690e2:c76690e2:c76690e2 20120525160044 :c76690e
+  23b40b49:aa220dd4:a09b0d9f 20130912181239 :c77336e
+  9f013a62:6de8cc00:4200d471 20120725090309 :c7d3e3f
+  6af043e1:00b3ebea:49593f7c 20130510120050 :c7f314c
+  038681bf:a58af897:a58af897 20140310110056 :c83c26e
+  c88a1284:fdad6bb5:4079ef9a 20130412132238 :c874048
+  c8a61322:c8a61322:c8a61322 20131108144201 :c8a6132
+  c22a87cb:beda4fda:0fe90bef 20121112173250 :c8d3789
+  5384bf75:136c25aa:1055c4f7 20121023150659 :c8fa20d
+  e7cd811c:466408d7:c6e41266 20140304125756 :c9d2b87
+  6d7308e1:86697cf2:3d1b67cc 20130806122512 :c9fea00
+  b39685bd:95a09fd4:0eb55bff 20130912181249 :ca21e75
+  f94698ab:eb72e7ff:ca45b966 20120209171410 :ca45b96
+  97534e83:ca5b4e4d:ca5b4e4d 20121211105229 :ca5928d
+  9bd78e9d:7c2ed1cc:98993956 20130510120051 :cab7ae7
+  cacbad88:cacbad88:cacbad88 20120405163054 :cacbad8
+  c645f6ef:5e99b898:5e99b898 20130301144931 :cb31287
+  7ba02429:d5197ce5:4c7a5d4c 20121112173229 :cb7949e
+  4c27cee5:c9eabc1a:c9eabc1a 20120816102140 :cc2923e
+  83ab060d:8305ceaa:0b9cf34d 20131108090044 :cc46659
+  cc5b1533:cc5b1533:cc5b1533 20120523085317 :cc5b153
+  304a7109:6313767a:ccbf16f7 20130806122503 :cc9725a
+  7cfe9574:748e288e:748e288e 20130314192504 :ccf2e92
+  bf2d6b26:8e23dae3:7b8b4177 20120816102049 :ccf6c90
+  02e7b337:164500d2:164500d2 20131108144145 :cd23934
+  227c035e:99917efc:30f4a747 20130717101908 :cd77f9b
+  5e8590cd:a944192a:a944192a 20130220094151 :cd9b718
+  eecdd834:2bcbbd7f:09dc0751 20131108090019 :cdcad0b
+  a00b9b5b:1fdfc46b:f4c39219 20130626162701 :cdcd9f9
+  d70d22c6:56ab4345:94be36ca 20121023150634 :cde50be
+  41e4c55a:0f966605:e2f659b7 20140107160815 :ce65913
+  690d714b:e632d4a7:e632d4a7 20130620085630 :ce69e79
+  fcb59ee0:f8539c50:f8539c50 20121115190112 :ceafd07
+  286e2f41:bca15671:bca15671 20131108144144 :cef74c4
+  474df889:306fb399:438299c0 20140107160826 :cf36bec
+  2703d19e:c6cc40cb:c6cc40cb 20130620085629 :cf4ad6a
+  beca6c36:66512b4d:d4c918d3 20121023150700 :cf52d1b
+  d0560c65:d0560c65:d0560c65 20120426135013 :d0560c6
+  edb70e47:bbd5006d:779c0290 20130916124306 :d061915
+  83f60979:beda251f:beda251f 20130510120039 :d111b77
+  4e4634ac:1abbc300:f9298501 20120911134258 :d12ddf5
+  be4eefba:e74d9ea4:f6ee6f41 20140304125803 :d12ecfe
+  8ff85796:fbdb0be9:0eb04290 20131217114041 :d19daf3
+  d1a61d70:d1a61d70:d1a61d70 20120405163054 :d1a61d7
+  265d8025:5a0a9ace:0e972b74 20140107160828 :d1d9b59
+  6505fab9:bc4d6ef4:2ffade4a 20120913191131 :d1eab72
+  2a106a78:9d7d2a80:712aec69 20140107160814 :d1fb3f0
+  6e539e37:d21bc3c1:d21bc3c1 20120209171409 :d21bc3c
+  9f4adcca:1951192e:7e2abe9e 20140120164217 :d2482ef
+  d282429b:d282429b:d282429b 20110915112627 :d282429
+  3a6e09f6:2718e284:7c0f5d7a 20131108144135 :d2af3ac
+  d9427651:2ca5c070:7c92e2ed 20121121153702 :d2b5289
+  a90be58d:735e78e5:f09f7e3c 20120816102056 :d32e24b
+  e6dbfeff:dafa5c00:45b227b7 20140128161321 :d34736d
+  8865b316:55b512c9:55b512c9 20130515123652 :d35c72c
+  a7eb6c09:e170494e:e170494e 20121112173251 :d444efb
+  9f3fdb42:d89403ae:a37b515b 20121112173249 :d473b8b
+  047d1df9:bbf616c1:bbf616c1 20121116160123 :d47c7f8
+  1032a428:641e5be5:b026eb7d 20121112173248 :d4abf5e
+  3e4b2966:2518847e:17edcd1f 20140224190351 :d514e8f
+  d53247c8:d53247c8:d53247c8 20110427184301 :d53247c
+  65a07817:45868f8c:65b70e36 20130912181241 :d534024
+  b2c973cd:1fe6bbfa:6ea75e92 20130130102401 :d53fdfd
+  d5973cd2:d5973cd2:d5973cd2 20120504174834 :d5973cd
+  e8d91f40:2f8f522e:2f8f522e 20131108090055 :d5a7667
+  94c067ff:14803e1c:14803e1c 20130620085626 :d5c84be
+  b1afe8b7:9dc8847f:c7d6ebc9 20120911171727 :d69cf2b
+  d6cf9638:d6cf9638:d6cf9638 20110427184257 :d6cf963
+  f45317e5:312ba90d:d6edc3bb 20110427184323 :d6edc3b
+  9dc5f3eb:26a7a4fa:ead46d3b 20130806122514 :d6f4a66
+  225838a6:ecd9d5a6:d16fca6e 20130912181238 :d7ad910
+  c34c0564:b28089ed:0b73f3fe 20120913191139 :d804836
+  8b8d974c:c4e1a2c5:c4e1a2c5 20130130102401 :d822b12
+  06ec1326:fa26c0e9:138b8a3a 20130806122508 :d83e75f
+  d888370a:d888370a:d888370a 20110427184302 :d888370
+  8fb80871:c1b4eb1d:c1b4eb1d 20130418165754 :d8ac47b
+  754582f3:d4210d76:fa276f15 20120911171736 :d8aed79
+  d8cf629d:d8cf629d:d8cf629d 20110607113444 :d8cf629
+  c6e6c88c:89bed43e:7bf876e2 20130723121932 :d976025
+  0d006fe0:60c66564:fccab0df 20130510120038 :d99735d
+  7cccd648:454ae2e6:5bfe8e0e 20140304125757 :d99bc6f
+  0b1db59a:3d0d9b87:0483fe47 20140310110136 :d9d8065
+  45138af4:2f871355:2a5982d5 20130717101949 :da88b65
+  5e130135:d1ee211c:884b63ed 20140304125803 :dac6c85
+  1b2d023e:a26105d7:44afe10f 20130510120049 :db0842d
+  e52d5f71:f7e70599:f7e70599 20131108090110 :db27922
+  4469a80d:35d602ad:5ff4c2e7 20121214120731 :db62285
+  dead0306:87f2e802:dbab80ab 20110427184317 :dbab80a
+  2ade4bd1:158392b5:158392b5 20121115190300 :dbea732
+  e921946d:d26bb225:d26bb225 20130327144435 :dc51549
+  1667c1c2:c2ed8e1d:c2ed8e1d 20130620085621 :dc5df09
+  a9b88b85:bb12ff79:bb12ff79 20130620085623 :dc5e469
+  7a7b797c:d73e8910:34c2756b 20121023150634 :dc68f25
+  be05754f:a8538d0e:ba4ba362 20131210131811 :dc6eed8
+  e5154139:e3d3e407:12218249 20140107160826 :dc8bfe0
+  302e6ece:3c531c79:f5f3040d 20120925135646 :dc98154
+  2f5261a3:d97bab37:cefe4056 20130717101935 :dca049d
+  95e6a7d6:a2c3e4f0:a2c3e4f0 20130618093139 :dce49cb
+  dd434a3b:dd434a3b:dd434a3b 20130327144433 :dd434a3
+  bdf513ac:9244090c:a7690e5a 20131108090047 :dd51bf9
+  14e68243:df831d14:df831d14 20140107160831 :dd562d0
+  f65b46be:3ff3dab9:b7489b95 20130510120038 :dd59e0a
+  4994f970:4ad29b6c:10fb8896 20131115121412 :dd83010
+  c34eb4b4:c0b9c49e:690ac98f 20130806122507 :ddad364
+  dd8be098:3ebc47aa:9099bb31 20140113170527 :ddb25fc
+  42d5f051:d46065ad:02bbb1d8 20140224190407 :de00b50
+  32230b3e:de0f4b67:de0f4b67 20110427184304 :de0f4b6
+  de3a020b:de3a020b:de3a020b 20110427184305 :de3a020
+  e2ecf219:4ee8a5c8:34896dcb 20121212102311 :dea7ec4
+  1075e431:aa86618e:8c45d3d6 20130412132246 :df214dc
+  69c08cac:1d27a17a:1d27a17a 20130918185716 :df2af81
+  1b4c3f8f:4bd7c668:a8398f2c 20131108090020 :df46e7a
+  f210dbfa:a8793b5a:2f412d1e 20121212102306 :df4cf9e
+  df5c2e64:df5c2e64:df5c2e64 20120104150116 :df5c2e6
+  df64e953:df64e953:df64e953 20120618193758 :df64e95
+  716bb2bc:e3ad6944:ee960a6e 20131108090052 :dfa081d
+  1a28951f:784186c8:a2586476 20120911171735 :e00279e
+  e0088259:e0088259:e0088259 20110427184323 :e008825
+  125e41a7:eae778cd:b7926955 20120913191131 :e0c9101
+  11ab9886:a33d22a3:d0b31fc3 20121214120734 :e10e66d
+  e1122705:e1122705:e1122705 20120209171408 :e112270
+  fbb6ff45:828664fa:7f55367f 20130802145617 :e195509
+  9d799480:f290b346:52f648b8 20131108144134 :e1a35a8
+  caf5d5c9:497b6793:497b6793 20130620085618 :e223557
+  d13b9df9:e250f0c4:e250f0c4 20110427184423 :e250f0c
+  083cee69:80ca4110:441dc771 20121008180313 :e299d04
+  a9fd5dfb:8b5d05aa:48d3b6ae 20130412132237 :e29ce47
+  1cae1eb8:21bbe371:dd54b055 20120911171731 :e2d9779
+  826c5121:692b19a4:d9e1ca04 20131108090052 :e316077
+  be9b585d:a9e4ed11:963fa86e 20140107160813 :e3847e5
+  fdcf3ea4:a728eda3:71d5f1d4 20120820185545 :e420816
+  7df1ba0a:bf607aef:a7f234c4 20120816102044 :e425c9b
+  e43ae265:e43ae265:e43ae265 20110427184304 :e43ae26
+  e48eee8c:e48eee8c:e48eee8c 20110722185155 :e48eee8
+  6ca73722:fef40c9e:fef40c9e 20130418165755 :e4ac596
+  cb803014:fe92b191:bc640cbe 20121112173243 :e4c54e5
+  bbfdf28a:5055dac8:9419f775 20140304125802 :e511d1c
+  122e117d:02bec82b:95eb911f 20130412132236 :e519732
+  8781b4a6:cce0e043:8ae534cc 20121023150652 :e51f8c6
+  ddefdb85:a7604c17:643c359f 20130717101931 :e5852db
+  8a9a21f6:2ac306f5:73c3d21d 20140203093420 :e5bb833
+  b27f193c:65b639b7:da6f9c0f 20140109131943 :e5d7db0
+  ede733b4:935940d7:2cc94820 20131108090019 :e63d2f9
+  e6573d54:e6573d54:e6573d54 20091007123732 :e6573d5
+  448a723b:3fe54b01:54a7d4a4 20121212102310 :e6be0b6
+  ade5d7d9:e6e0879f:e6e0879f 20110427184424 :e6e0879
+  f1fcb6fe:62dd2eb1:d5b2ea68 20140310110139 :e6f1a32
+  e71b5942:e71b5942:e71b5942 20110427184304 :e71b594
+  e732729e:e732729e:e732729e 20120504174834 :e732729
+  eda907c8:ba375cd2:d4e42c12 20140224190358 :e73ec3f
+  e7c1c98c:e7c1c98c:e7c1c98c 20120328172104 :e7c1c98
+  e7e6c262:e7e6c262:e7e6c262 20110607113444 :e7e6c26
+  1c182ad3:0d2ebf9c:e0872697 20120913191139 :e7f4bb6
+  0c93202a:7c2d3c26:7c2d3c26 20131108090059 :e8d453e
+  e8f24a89:e8f24a89:e8f24a89 20110427184301 :e8f24a8
+  903ddf36:bdd57579:00fe8fb0 20121206182939 :e90d9cf
+  7869b6e9:9496d271:9496d271 20130425145854 :e972e45
+  5aa8315e:469bd4b2:469bd4b2 20130418165754 :e9748ae
+  e97f0bd0:e97f0bd0:e97f0bd0 20050317155900 :e97f0bd
+  9713156f:772c5550:fff87a4b 20130806122515 :e98dddb
+  9583393f:09723285:37a0f43f 20121023150650 :e9a20a8
+  65aa177e:aa0b7125:aa0b7125 20140224190416 :ea0ae68
+  3e464914:eaada93d:eaada93d 20120719085503 :eaada93
+  34537947:4bf26aaf:4bf26aaf 20140203093424 :eac1476
+  bdfc313b:16d3e450:31ac0b25 20120911171734 :eae579f
+  34694b3c:a3837bd1:a3837bd1 20130620085621 :eb283f4
+  2e0772d5:29bd99bf:d8440861 20130717101932 :eb3e195
+  c5e2cc36:5f55ee19:5f55ee19 20131108090102 :eb581ab
+  4ab0a770:cd3eef84:7368f357 20130626162713 :eb9e7b0
+  0f44978b:05162db1:05162db1 20140115095403 :ebb3839
+  f259b230:98589990:382373af 20140115095347 :ebc9b1d
+  bfd66556:e6529101:b31777ca 20120816102020 :ebe8c3b
+  71ad830e:8e5f3c19:8e5f3c19 20130709085059 :ec31205
+  e160bd63:328f6bd7:328f6bd7 20130425145855 :ecc92e4
+  8aa96718:ed5ed804:ed5ed804 20130620085618 :ed30264
+  ea139b83:fc16eee5:e3f332c7 20130412132209 :ed3d887
+  ed7a6b52:ed7a6b52:ed7a6b52 20120209171408 :ed7a6b5
+  9d264e83:37c59001:9cd7545b 20130527093640 :eda967e
+  6c927ce8:d948f236:d948f236 20120731184508 :ee196db
+  8ca7a101:eea1390d:eea1390d 20110427184424 :eea1390
+  0475d090:c0f4b2f6:23fcefee 20130418165749 :eedc0cd
+  78f76764:1bf17549:131cf40f 20130723121930 :ef32a62
+  d9de5013:c319aabf:0e01c444 20131108090050 :ef3a24a
+  a6e4e624:e2b97cb3:e2b97cb3 20140124110441 :efa18d5
+  638fbbd8:c20d4eba:c20d4eba 20121115190259 :efbe308
+  1acc9fb0:5fb91fe1:5fb91fe1 20130620085617 :efcc8eb
+  5307d10f:59bae966:efd0b4a7 20110427184314 :efd0b4a
+  88c21039:f42a447d:67309286 20130719130432 :efd72ea
+  34c551af:fb40431f:897a965d 20131108090053 :efe2e90
+  9cd7c1b0:768234f5:8ae0d347 20130912181216 :eff9b99
+  4c0e9d53:cbb05f86:cbb05f86 20130220094150 :f02a87d
+  a6b500ef:939e31e8:939e31e8 20130830115655 :f083cf5
+  3e4967a1:ad327b1c:fb55be9b 20130412132234 :f0ede05
+  5a87840c:d5b9b3bf:d5b9b3bf 20130717101953 :f1ceae4
+  b54f5a8f:564d9387:3cc930fa 20130830115656 :f21266a
+  a9185a08:03b9e7cc:ac58077a 20140115095435 :f2d64f7
+  f2dce0fe:f2dce0fe:f2dce0fe 20120618193758 :f2dce0f
+  f2f8c5c3:f2f8c5c3:f2f8c5c3 20110427184305 :f2f8c5c
+  9607bedf:8c7b4f59:5a445eae 20120913191138 :f3ae4f0
+  1b5f63b0:14bd7977:4329b459 20120731184509 :f3db27a
+  27aabb22:7266b167:c61b4687 20120911171723 :f41603b
+  f42bdae5:f42bdae5:f42bdae5 20120525160044 :f42bdae
+  d28311a1:7f4b378a:36de2f92 20130717101935 :f478cf4
+  efce1ac1:fd198faa:fd198faa 20130620085621 :f48de7a
+  b9290e1b:a38c614f:a38c614f 20130918185717 :f4b226d
+  da9a96f0:c4a36938:c4a36938 20140310110133 :f4d0193
+  70161420:eba52bb3:905cbec2 20130310165128 :f504b2b
+  dbfa16f8:d682c170:2837f1a0 20121214120731 :f511e0a
+  17fe1925:6b5f86d7:b90ce865 20140304125802 :f539735
+  f658bff4:f658bff4:f658bff4 20120104150117 :f658bff
+  58a65376:03f75f6c:03f75f6c 20130620085624 :f6a6a49
+  5d07ce62:5a17b580:e6996aa7 20130412132245 :f6aec3a
+  05343d1d:19c8ab57:04c79c3c 20121212102307 :f6b4288
+  7752319c:bdba1e96:93731353 20130626162644 :f6f703f
+  1989a8fd:06446d96:e4b7b816 20130912181244 :f7666be
+  8cddc629:d25a8721:d25a8721 20130220094143 :f7795ac
+  09930346:57089fa2:ff14e41d 20140224190324 :f7d0e2e
+  7691d0df:e10ed2f9:e10ed2f9 20131120124756 :f7d84cd
+  90970d21:fa681d33:88c2cb8c 20121212102303 :f7ef40b
+  8c299f50:fa1a1f7e:81e6fbe9 20130912181216 :f86a606
+  f9c3ecfc:5a556f94:5a556f94 20131217114049 :f870ca0
+  093f047e:779fcb17:f74b5fe5 20130527093640 :f8a7119
+  27a3a43a:9609e9d0:15c3a54f 20130806122507 :f8d752a
+  ad745271:dcc5d15a:caee3b4e 20121212102246 :f8e6dea
+  49ea8681:68c0ee8d:68c0ee8d 20130620085625 :f942a88
+  49367f9d:8f4cb648:649e0cce 20131128192438 :f9509b4
+  3d99ec6d:59f5f761:3b318980 20121212102310 :f9634f8
+  b01e3ac1:f9e1d840:f9e1d840 20110318145714 :f9e1d84
+  83958803:ffb85389:ffb85389 20121207192759 :fa4373f
+  fa47c405:fa47c405:fa47c405 20110427184257 :fa47c40
+  85644e81:81d264b0:81d264b0 20130620085623 :fa6063d
+  8f3a3458:aeadcce7:c09eefe0 20121112173148 :faf5f97
+  dd9117f7:824f7000:8caf9a7e 20130912181215 :fafa4b5
+  a1929071:1a1be0ba:5271a802 20120816102034 :fb25609
+  fdc71361:4490cd2a:63dba6f4 20121112173246 :fb9c71c
+  05308eda:21df4694:f25272fc 20130412132240 :fb9d9c4
+  34fbda4c:77ba7ec0:77ba7ec0 20120911171736 :fba3694
+  9f3513c9:450d7442:450d7442 20131217114054 :fbba5f4
+  039c9a57:cafdac63:cafdac63 20140129182804 :fbf165b
+  69d52472:c056c55c:8e9a6016 20121214120734 :fc08bce
+  fc2ffcc6:fc2ffcc6:fc2ffcc6 20120618193758 :fc2ffcc
+  fc474c55:fc474c55:fc474c55 20120228174815 :fc474c5
+  fc48b04a:fc48b04a:fc48b04a 20120405163053 :fc48b04
+  fc4ad942:fc4ad942:fc4ad942 20120426135014 :fc4ad94
+  fc6c0417:fc6c0417:fc6c0417 20111015183119 :fc6c041
+  6b5ff8b0:e81b757e:5ad0451e 20140107160829 :fc7638b
+  e39a6824:1e2967fd:59fc158f 20131108090037 :fc9dc6d
+  889b108a:91cf7904:d2d3fa13 20130605094209 :fcc28a5
+  b7153812:bae5be03:ce6c36db 20130806122514 :fcddb65
+  4685bacc:30ee9e13:f380bd40 20140224190355 :fd69038
+  01c74ba1:65e68950:8e461112 20130620085628 :fd9b13d
+  99f2762e:1e50089c:4b8c659b 20121211105229 :fde17e5
+  fde9a8db:fde9a8db:fde9a8db 20120426135014 :fde9a8d
+  fe3c8871:fe3c8871:fe3c8871 20110427184302 :fe3c887
+  5ef3fe52:4d594841:4118e5a6 20130418165749 :fe63351
+  fe6908d9:fe6908d9:fe6908d9 20120214110328 :fe6908d
+  24386d20:bcdd125d:9d6665e4 20130717101951 :fe932db
+  4ba3c76b:a2e8cdd8:a2e8cdd8 20130620085618 :ff0e448
+  bcdfa72e:8af6e02d:1e83a35d 20120911171723 :ff1b82f
+  a76132f0:dbd04028:41a538ee 20130415094140 :ff70de9
+  af189a89:729db22f:bdc1c960 20121214120702 :ff772f8
+  a15791e0:723fa207:2510e060 20130912181245 :ffff0cc
+  7c30c48a 20121112173253 Contents/Info.plist
+  6b82c620 20121112173253 Contents/Resources/Fiji.icns
+  992807f6 20130412132251 Contents/Resources/ImageJ.icns
+  0f7817ae 20130806122514 ImageJ-win64.exe
+  9eebd1cc 20130717101955 fiji-win64.exe
+  1faaeed6 20110715105710 images/icon-flat.png
+  a02d5340 20110427184256 images/icon.png
+  91ece67d 20131112190808 jars/JWlz.jar
+  c3f8675e 20120511134125 jars/Jama.jar
+  ad44ab73 20130510120054 jars/VIB-lib-2.0.0-SNAPSHOT.jar
+  bd573380 20110427184320 jars/VectorString.jar
+  68a9e41d 20110427184323 jars/ant-junit.jar
+  4199e180 20110427184312 jars/ant-launcher.jar
+  92b2335d 20110427184324 jars/ant-nodeps.jar
+  b1492f77 20110427184314 jars/ant.jar
+  5bab7768 20110427184312 jars/autocomplete.jar
+  2daf8bdd 20130412132249 jars/base64-2.3.8.jar
+  dbab80ab 20110427184317 jars/batik.jar
+  ab79445e 20121121153659 jars/bcmail-jdk14-138.jar
+  d2b52892 20121121153702 jars/bcprov-jdk14-138.jar
+  4dc1918b 20140310110126 jars/bio-formats/formats-api.jar
+  21e64d4b 20140310110127 jars/bio-formats/formats-bsd-5.0.0.jar
+  4882d9f6 20140310110128 jars/bio-formats/formats-common-5.0.0.jar
+  7413c94a 20140310110139 jars/bio-formats/formats-gpl.jar
+  b8d5d243 20131108090112 jars/bio-formats/jai_imageio-4.4.9.jar
+  e8d453ec 20140310110129 jars/bio-formats/mdbtools-java-5.0.0.jar
+  70e68706 20140310110129 jars/bio-formats/metakit-5.0.0.jar
+  096abf51 20140310110131 jars/bio-formats/ome-poi-5.0.0.jar
+  1c18921b 20140310110131 jars/bio-formats/ome-xml-5.0.0.jar
+  f4d01930 20140310110133 jars/bio-formats/specification.jar
+  5e5f1e48 20131210131857 jars/bio-formats/turbojpeg.jar
+  d21bc3c1 20120209171409 jars/bsh.jar
+  9963461c 20110930082836 jars/clojure.jar
+  265cb26d 20130510120052 jars/commons-lang3-3.1.jar
+  8eb3709e 20120816102054 jars/commons-logging-1.1.1.jar
+  f9509b47 20131128192438 jars/commons-math3-3.2.jar
+  368901ce 20110427184317 jars/edu_mines_jtk.jar
+  bbfdddb0 20120911171618 jars/eventbus-1.4.jar
+  efcc8eb3 20130620085617 jars/fake-2.0.0-SNAPSHOT.jar
+  851b4f99 20140304125802 jars/fiji-compat-2.0.0-SNAPSHOT.jar
+  f2d64f77 20140115095435 jars/fiji-lib-2.0.0-SNAPSHOT.jar
+  7c5dc207 20130418165750 jars/fiji-scripting-2.0.0-SNAPSHOT.jar
+  52f64f25 20140331153301 jars/ij-1.48s.jar
+  9f31a952 20140224190405 jars/ij-commands-2.0.0-beta-7.7.jar
+  f7d0e2eb 20140224190324 jars/ij-core-2.0.0-beta-7.7.jar
+  24e0bde0 20140224190354 jars/ij-data-2.0.0-beta-7.7.jar
+  00efaa63 20130806122514 jars/ij-launcher-2.0.2.jar
+  56855167 20140310110053 jars/ij-legacy-2.0.0-SNAPSHOT.jar
+  6e95217d 20140224190404 jars/ij-minimaven-2.0.0-beta-7.7.jar
+  7600e777 20140224190357 jars/ij-options-2.0.0-beta-7.7.jar
+  7e2766e2 20140224190402 jars/ij-platforms-2.0.0-beta-7.7.jar
+  7a824b7e 20140224190404 jars/ij-scripting-beanshell-2.0.0-beta-7.7.jar
+  433f2bc8 20140224190406 jars/ij-scripting-clojure-2.0.0-beta-7.7.jar
+  0a5d89fe 20140224190404 jars/ij-scripting-java-2.0.0-beta-7.7.jar
+  de00b500 20140224190407 jars/ij-scripting-javascript-2.0.0-beta-7.7.jar
+  8345a4fd 20140224190406 jars/ij-scripting-jruby-2.0.0-beta-7.7.jar
+  598d0fdf 20140224190406 jars/ij-scripting-jython-2.0.0-beta-7.7.jar
+  351a73ce 20140224190405 jars/ij-text-2.0.0-beta-7.7.jar
+  3cd39ba0 20140224190350 jars/ij-tools-2.0.0-beta-7.7.jar
+  d514e8f0 20140224190351 jars/ij-ui-2.0.0-beta-7.7.jar
+  b6ce787a 20140224190350 jars/ij-ui-common-awt-2.0.0-beta-7.7.jar
+  05b1de42 20140224190403 jars/ij-ui-swing-2.0.0-beta-7.7.jar
+  c1ce4424 20140224190404 jars/ij-ui-swing-commands-2.0.0-beta-7.7.jar
+  31d20704 20140224190404 jars/ij-ui-swing-script-editor-2.0.0-beta-7.7.jar
+  59100d0b 20140224190324 jars/ij-ui-swing-updater-2.0.0-beta-7.7.jar
+  4bcfadc6 20140224190323 jars/ij-updater-core-2.0.0-beta-7.7.jar
+  6f60a5ac 20140224190405 jars/ij-updater-webdav-2.0.0-beta-7.7.jar
+  27161205 20140224190350 jars/ij-util-awt-2.0.0-beta-7.7.jar
+  11b4297f 20140224190357 jars/ij-util-swing-2.0.0-beta-7.7.jar
+  7390168e 20140304125802 jars/ij1-patcher-0.1.1.jar
+  be2287e8 20120911171735 jars/imagescience-2.4.1.jar
+  780fae40 20110427184313 jars/imageware.jar
+  1bef7c8a 20140304125801 jars/imglib2-2.0.0-beta-25.jar
+  5052ed01 20140304125800 jars/imglib2-algorithms-2.0.0-beta-25.jar
+  e511d1cf 20140304125802 jars/imglib2-algorithms-gpl-2.0.0-beta-25.jar
+  dac6c85a 20140304125803 jars/imglib2-algorithms-legacy-2.0.0-beta-25.jar
+  6d0580ab 20140304125801 jars/imglib2-ij-2.0.0-beta-25.jar
+  a7214071 20140304125801 jars/imglib2-meta-2.0.0-beta-25.jar
+  c9d2b877 20140304125756 jars/imglib2-ops-2.0.0-beta-25.jar
+  f539735b 20140304125802 jars/imglib2-realtransform-2.0.0-beta-25.jar
+  9768d24a 20120209171411 jars/itextpdf.jar
+  1d98f525 20110427184315 jars/jacl.jar
+  25331672 20110427184313 jars/jai_codec.jar
+  2a328b6b 20110427184320 jars/jai_core.jar
+  e5852db5 20130717101931 jars/jai_imageio-1.0.1.jar
+  ac77c0f5 20140224190406 jars/jama-1.0.3.jar
+  e4ac596e 20130418165755 jars/java-cup-0.11a.jar
+  40e5c3d0 20111015183115 jars/javac.jar
+  fb25609e 20120816102034 jars/javassist-3.16.1-GA.jar
+  ccf6c908 20120816102049 jars/jcommon-1.0.17.jar
+  efe2e903 20131108090053 jars/jdatepicker-1.3.2.jar
+  c295a4c5 20130301144932 jars/jdom-2.0.2.jar
+  4b109329 20120511134125 jars/jdom-contrib.jar
+  166036ab 20110427184323 jars/jep.jar
+  55d8499c 20120816102040 jars/jfreechart-1.0.14.jar
+  0e15c072 20130301144933 jars/jgrapht-0.8.3.jar
+  0b768690 20130301144932 jars/jgraphx-1.10.4.1.jar
+  242749dc 20120911171720 jars/jhotdraw-7.6.0.jar
+  925d6501 20110427184320 jars/jna.jar
+  4c09d41c 20140310110134 jars/joda-time-2.2.jar
+  63e90571 20110427184315 jars/jpedalSTD.jar
+  7ecaf631 20140310110120 jars/jruby-complete-1.7.11.jar
+  10841226 20110427184314 jars/js.jar
+  2ce2c00a 20130412132241 jars/jsch-0.1.49.jar
+  24d47d70 20120816102052 jars/junit-4.8.1.jar
+  9f4f8151 20140310110106 jars/jython-2.5.2.jar
+  a21f73a7 20120209171410 jars/jzlib.jar
+  5a6f6f25 20131108090113 jars/legacy-imglib1-2.0.0-SNAPSHOT.jar
+  7a02f3e7 20140310110135 jars/logback-classic-1.0.9.jar
+  d9d80652 20140310110136 jars/logback-core-1.0.9.jar
+  d1d9b590 20140107160828 jars/mapdb-0.9.7.jar
+  1daf5806 20130510120050 jars/markdownj-0.3.0-1.0.2b4.jar
+  7f0caa5d 20120911171618 jars/miglayout-3.7.3.1-swing.jar
+  a11cfc71 20130620085617 jars/mij-1.3.6-fiji2-SNAPSHOT.jar
+  b6bf3817 20140107160831 jars/mines-jtk-20100113.jar
+  5bd64fbe 20130918185716 jars/mpicbg-0.6.1-SNAPSHOT.jar
+  a51a31db 20140310110124 jars/netcdf-4.3.19.jar
+  f41603bf 20120911171723 jars/object-inspector-0.1.jar
+  e0088259 20110427184323 jars/pal-optimization.jar
+  82577709 20130418165755 jars/pentaho-package-manager-1.0.0.jar
+  5cc5e4e5 20120209171411 jars/postgresql.jar
+  72184439 20130717101946 jars/rsyntaxtextarea-2.0.4.1.jar
+  0d70010d 20140310110055 jars/scifio-0.10.1.jar
+  a7ba5b7d 20140310110124 jars/scifio-bf-compat-1.6.1.jar
+  54336bb0 20140304125803 jars/scifio-lifesci-0.4.0.jar
+  e6f1a324 20140310110139 jars/scifio-ome-xml-0.7.0.jar
+  38772153 20140224190324 jars/scijava-common-2.9.0.jar
+  eedc0cd9 20130418165749 jars/serializer-2.7.1.jar
+  1dedefe8 20121112173242 jars/tools-1.4.2.jar
+  68c26a79 20131108090053 jars/udunits-4.3.18.jar
+  7d5ba6c5 20110427184313 jars/wavelets.jar
+  fc6c0417 20111015183119 jars/weave_jy2java.jar
+  9a71e194 20130418165803 jars/weka-dev-3.7.6.jar
+  36cdef55 20130418165748 jars/xalan-2.7.1.jar
+  1583965d 20131108144201 lib/win64/ffmpeg.dll
+  c432f64b 20110427184310 luts/16_colors.lut
+  89419f99 20110427184309 luts/5_ramps.lut
+  dc3a1bdd 20110427184309 luts/6_shades.lut
+  0b3bbb6c 20110427184310 luts/Cyan Hot.lut
+  945b6a66 20120523085712 luts/FociPicker_256Colors.lut
+  655b55e6 20110427184309 luts/Green Fire Blue.lut
+  2918f6d3 20110427184309 luts/HiLo.lut
+  a3312d3f 20110427184309 luts/ICA.lut
+  db5bf8a4 20110427184310 luts/ICA2.lut
+  9f7dd167 20110427184310 luts/ICA3.lut
+  697dd3a4 20110427184310 luts/Magenta Hot.lut
+  524604de 20110427184310 luts/Orange Hot.lut
+  9c9a56c2 20110427184310 luts/Rainbow RGB.lut
+  4e686ec6 20110427184310 luts/Red Hot.lut
+  2fdb7c96 20110427184310 luts/Thermal.lut
+  32157491 20110427184309 luts/Yellow Hot.lut
+  a4cec22b 20110427184309 luts/blue_orange_icb.lut
+  c9e396a3 20110427184310 luts/brgbcmyw.lut
+  60f85e63 20110427184310 luts/cool.lut
+  ba88e5f3 20110427184310 luts/edges.lut
+  0a4dce83 20110427184309 luts/gem.lut
+  c616e765 20110427184309 luts/glasbey.lut
+  325c01f3 20130515123654 luts/glow.lut
+  1f99f07e 20110427184310 luts/phase.lut
+  52a3c399 20110427184309 luts/physics.lut
+  49f5e48a 20110427184310 luts/royal.lut
+  898954dd 20110427184310 luts/sepia.lut
+  ebd4ed6b 20110427184309 luts/smart.lut
+  36e7ca9e 20110427184309 luts/thal.lut
+  940b38f9 20110427184309 luts/thallium.lut
+  17243681 20110427184309 luts/unionjack.lut
+  1ea8fa46 20130916131724 macros/111_aaa_batch_import_stack_rgb.txt
+  80956779 20121009152315 macros/111_aaa_color_balance_macro.txt
+  9cf3b208 20110923161001 macros/111_aaa_enlarge etc for green nuclei with marking nuclei in rgb.txt
+  9266dc86 20111024135042 macros/111_aaa_enlarge etc for red and green nuclei with marking nuclei in rgb.txt
+  5387c4a9 20110923160950 macros/111_aaa_enlarge etc for red nuclei with marking nuclei in rgb.txt
+  b0cde0db 20111020095816 macros/111_aaa_mirna_measurements.txt
+  fcbf54a3 20111020105416 macros/111_aaa_mirna_measurements.txt.ijm
+  bd83c289 20110401124826 macros/111_measure_with_labeling_prelim.txt
+  f8411313 20110707184651 macros/111_nuclei all channels costanza.txt
+  f4d32597 20120515110102 macros/111aaa_new_trial for cell segmentation.txt
+  e9069e80 20140304191320 macros/1a_sphere_size.txt
+  31021293 20140321101205 macros/AB BATCHmeasure GFPper nucleus from stk v4.txt
+  5bb83622 20140321101216 macros/AB measure GFPper nucleus from stk v2.txt
+  57c8cfa0 20140321101311 macros/BATCHcount dapi+green from 2Xobjective DSUexports.txt
+  2f1d86bd 20140321101316 macros/BATCHcount dapi+green from 2Xobjective DSUexportsGRNONLY.txt
+  4ef92895 20140321101040 macros/Batch process a folder of images saving to NEW folder.txt
+  5ed698bf 20140321101033 macros/Batch process a folder of images saving to ORIGINAL folder.txt
+  932b5ac9 20140321101333 macros/BrdU+NeuN coloc macro.txt
+  20a5d7c7 20140321101352 macros/ClosestDistMacro_v0.txt
+  4ff91275 20120511143425 macros/ColocTools.ijm
+  4d2621d6 20140321101412 macros/Color image cell count.txt
+  c17412a8 20120426180156 macros/CountCellularSpotsMacro.txt
+  3c926dc8 20120511143626 macros/CreateINRrepresentation.ijm
+  24b4246b 20140321115722 macros/CustomTabStatFromResults.txt
+  0e4d4601 20120511143657 macros/HighlightByResult.ijm
+  ad867722 20140321101523 macros/IHC quant macro - simple version.txt
+  9ecbd8ad 20120511144154 macros/Inscyde.ijm
+  f2311a01 20120511143451 macros/LawsTexture.ijm
+  e2c88391 20120424175254 macros/Macro.ijm
+  c4c748b1 20140321101549 macros/Macro2maskBkgd.txt
+  4be57f97 20120215092931 macros/Macro_green.ijm
+  008febfe 20120215092937 macros/Macro_red.ijm
+  a565a598 20120215092926 macros/Macro_yellow.ijm
+  6cda17d8 20130220094440 macros/Protein Array Analyzer.txt
+  2f15720b 20120511143727 macros/ScatterplotByMetric.ijm
+  a5a203e0 20130603190354 macros/StartupMacros.txt
+  72b258e5 20111116143603 macros/Untitled.txt
+  47ddcea6 20120426184133 macros/YK count nuclear particles from stk v4.txt
+  23d9c4e2 20140324182314 macros/aaa_ki_in_gfp_positive_20x.txt
+  788492be 20121213102636 macros/aaa_ki_in_gfp_positive_20x_mark in RGB.txt
+  5e80c4ec 20140113185916 macros/aaa_ki_red_mark in blue_40x.txt
+  27cf3b2c 20120416181122 macros/aaa_new_ki_10x.ijm
+  33a597fe 20121112180934 macros/aaa_new_ki_20x.txt
+  efb571e1 20140321101242 macros/autophagosome three parts INSTALL.txt
+  809081f4 20130717105348 macros/caspase_macro.txt
+  81890e46 20120216171201 macros/coloc.ijm
+  be4cd91e 20120808140942 macros/coloc.txt
+  1422dd15 20120823125508 macros/exp681_dapi_measurement.txt
+  426e7603 20120822190727 macros/exp681_dcx_measurement.txt
+  345d1203 20120823125027 macros/exp681_gfap_measurement.txt
+  c462fd70 20130402141216 macros/exp700_gfap_dapi_runx_measurment.txt
+  1d370d90 20130610125223 macros/exp714_gfap_dapi_gfp_measurment.txt
+  7d24f042 20140313180533 macros/exp794_color_segmentation.ijm
+  64d40c45 20140313191832 macros/exp794_gfap_dapi_measurment.txt
+  1f7e33b0 20140324122902 macros/exp800_gfap_measurement.ijm
+  c45f87c3 20140324125350 macros/exp800_gfap_measurement.txt
+  01b40bb8 20120619093802 macros/flat_fix_v3.txt
+  fb87ccd5 20120619093814 macros/flat_fix_v4.txt
+  e104b15f 20140321101504 macros/fociPerNucleus'.txt
+  753b03ff 20120426184228 macros/foci_DoG_Macro.txt
+  01b21c6b 20140320124715 macros/gfap after ilastik.txt
+  d85e1ccb 20140320161720 macros/gfap after ilastik.txt.ijm
+  ad59c576 20121009113323 macros/glast_macs.txt
+  f610247a 20120703105859 macros/glast_new.txt
+  22cb3fee 20131112085034 macros/greys_.txt
+  60f13824 20120427163943 macros/ki.txt
+  a97e1da9 20110427184256 macros/listManagement.txt
+  aa52142a 20120426184206 macros/manual measure in two images.txt
+  2638f473 20140321101601 macros/measure particle details per nucleus from stk.txt
+  761fbcf7 20120426184148 macros/nuclear vs cytosolic signal macro.txt
+  3baf3844 20111222164449 macros/particle_cluster_analysis.txt
+  edb70388 20140321101647 macros/particle_surround_measures_TJ v1.txt
+  2c8ecbbe 20120426183956 macros/percent of nuclei that are green macro 2.txt
+  5fc283ce 20140321101635 macros/perinuclear_measures''.txt
+  d09960c7 20120426184024 macros/perinuclear_measures_v1.txt
+  5b91d7d1 20140331175247 macros/perinuclear_measures_v1_with_my_modifications.txt
+  bfe7d378 20110713151841 macros/rgb.ijm
+  e146cb03 20110624114207 macros/rgb_measure.ijm
+  90faf9b5 20111117193245 macros/temp_test.txt
+  465fbb49 20110923161001 macros/toolsets/111_aaa_enlarge etc for green nuclei with marking nuclei in rgb.txt
+  d99d2e65 20110923160950 macros/toolsets/111_aaa_enlarge etc for red nuclei with marking nuclei in rgb.txt
+  4eaa887a 20110408203140 macros/toolsets/111_measure_with_labeling_prelim2.txt
+  26c404d1 20110707184651 macros/toolsets/111_nuclei all channels costanza.txt
+  5ff78d4e 20110713153230 macros/toolsets/111_nuclei all channels costanza_40x.txt
+  b68e2c5e 20110715175027 macros/toolsets/111_nuclei all channels costanza_40x_noBG subtraction.txt
+  13585e6c 20091012155846 macros/toolsets/3d.txt
+  42c09105 20140310110140 macros/toolsets/BioVoxxel_Toolbox.ijm
+  8674e334 20131112190658 macros/toolsets/BioVoxxel_Toolbox.ijm.txt
+  1785bbbf 20110427184256 macros/toolsets/Clear Custom Tools.txt
+  ea887a5c 20110420140856 macros/toolsets/Counting.txt
+  54200f47 20110427184256 macros/toolsets/Drawing Tools.txt
+  febb9d05 20131108144201 macros/toolsets/LineAndProfileTool.txt
+  9bd39ac4 20110712124028 macros/toolsets/Lookup Tables.txt
+  b0814aab 20110705183434 macros/toolsets/MRI Adipocyte Tools.txt
+  64b673e1 20110413175352 macros/toolsets/MRI Artemia Tools.txt
+  cd7d7921 20110628172052 macros/toolsets/MRI Count Segments.txt
+  7403fa9c 20110706144220 macros/toolsets/MRI FRAP Tool.txt
+  5556902c 20091007123726 macros/toolsets/MRI Metrology.txt
+  ebcb3361 20110706142840 macros/toolsets/MRI Tools.txt
+  3b764a3e 20110702124408 macros/toolsets/Magic_Montage.txt
+  3da9830a 20120426165102 macros/toolsets/MiToBo_Runner.txt
+  31d50235 20091007123726 macros/toolsets/Montpellier Rio Imaging.txt
+  545b95ef 20131112190809 macros/toolsets/Nearest_Neighbor_Indicator.ijm
+  acd6c7e7 20091007123726 macros/toolsets/Region Growing.txt
+  db0ea801 20091007123726 macros/toolsets/Tracing.txt
+  aad216e5 20110923161233 macros/toolsets/matthias_just_brightest_function.txt
+  8b23daf8 20140321101046 macros/use ROI manager to analyze more than one image.txt
+  a59cf939 20111117175644 macros/voronoi.txt
+  dd0089ce 20100414154944 plugins/3D/Object_Counter3D.class
+  8fbab9f6 20130620085618 plugins/3D_Blob_Segmentation-2.0.0-SNAPSHOT.jar
+  d5c84beb 20130620085626 plugins/3D_Objects_Counter-2.0.0-SNAPSHOT.jar
+  f42bdae5 20120525160044 plugins/3D_Viewer.jar
+  b271d121 20090402091730 plugins/ActionBar/Action_Bar$1.class
+  55cff819 20090402091730 plugins/ActionBar/Action_Bar$2.class
+  d9c87758 20090402091730 plugins/ActionBar/Action_Bar$3.class
+  58260dce 20090402091730 plugins/ActionBar/Action_Bar.class
+  02a52ea2 20131112190808 plugins/ActionBar/BioVoxxel_bar.txt
+  692ddf3d 20080526115822 plugins/ActionBar/Editor_Paster.class
+  c7cb48a5 20080912144546 plugins/ActionBar/F_Finder.class
+  b067aaf6 20090428113000 plugins/ActionBar/Macro.txt
+  da8b6c01 20081103151918 plugins/ActionBar/_AnimationBar.txt
+  2854b418 20081103152724 plugins/ActionBar/_Demo.txt
+  0b5fadfa 20090428145510 plugins/ActionBar/_Magic_Montage2.txt
+  3dbf0280 20090330135416 plugins/ActionBar/_StickyBarDemo1.txt
+  1496e128 20090330141606 plugins/ActionBar/_StickyBarDemo2.txt
+  4c0331a3 20090330110944 plugins/ActionBar/_ZoomBar.txt
+  b3fcedf1 20080213152414 plugins/ActionBar/_lookuptables.txt
+  38337e8c 20080916115748 plugins/ActionBar/codeBar_.txt
+  ede8b4a3 20090428141024 plugins/ActionBar/color_and_merge.txt
+  e750edbd 20080811114552 plugins/ActionBar/color_mixer.txt
+  221959f0 20080213143658 plugins/ActionBar/createAB.txt
+  9dd01ef1 20080916115624 plugins/ActionBar/demo_counter.txt
+  676a27f8 20081030150154 plugins/ActionBar/design_action_bar.txt
+  53aa0283 20080219143618 plugins/ActionBar/ez_counters.txt
+  57e3d7b7 20080613144034 plugins/ActionBar/rotation_bar.txt
+  68175df5 20110427184257 plugins/Algorithm_Launcher.jar
+  9274f337 20110427184309 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  7acae667 20110427184309 plugins/Analyze/Measure_RGB.txt
+  b1c34a79 20111024141519 plugins/Analyze/RGB_Measure.class
+  4d3cf935 20130709085059 plugins/AnalyzeSkeleton_-2.0.0-SNAPSHOT.jar
+  263158a7 20130318141434 plugins/Analyze_Reader_Writer-2.0.0-SNAPSHOT.jar
+  645ccb4c 20130620085622 plugins/Anisotropic_Diffusion_2D-2.0.0-SNAPSHOT.jar
+  08fc08f9 20130806123742 plugins/Apply_Formula.class
+  295ba57e 20130620085628 plugins/Arrow_-2.0.0-SNAPSHOT.jar
+  e57feed9 20130410104031 plugins/AutoCellQuant_1.00.ijm
+  04478f7a 20131210131850 plugins/Auto_Threshold-1.16-SNAPSHOT.jar
+  fd9b13d9 20130620085628 plugins/BalloonSegmentation_-2.0.0-SNAPSHOT.jar
+  75529242 20130620085627 plugins/BeanShell_Interpreter-2.0.0-SNAPSHOT.jar
+  9ce49f7d 20130806123451 plugins/Blob_Labeler.class
+  b0ac9234 20130620085627 plugins/Bug_Submitter-2.0.0-SNAPSHOT.jar
+  69972944 20130712115007 plugins/CLI_-2.0.0-SNAPSHOT.jar
+  3e4163b4 20130620085619 plugins/CPU_Meter-2.0.0-SNAPSHOT.jar
+  8c102cb9 20130620085619 plugins/Calculator_Plus-2.0.0-SNAPSHOT.jar
+  e2235578 20130620085618 plugins/Clojure_Interpreter-2.0.0-SNAPSHOT.jar
+  8a9baa41 20140224190411 plugins/Colocalisation_Analysis-2.0.0-SNAPSHOT.jar
+  7a69707b 20120105100752 plugins/Color/CDAPlugin_v2_.jar
+  bfa5d6cd 20050509171714 plugins/Color/Colocalisation_Test.class
+  b97f9189 20040109113918 plugins/Color/ColocaliserWindow.class
+  702eafc5 20081207111201 plugins/Color/Colocalization_.class
+  1194fece 20040203135634 plugins/Color/Colocalization_Finder.class
+  09dc3860 20050401183946 plugins/Color/Colocalization_Highligter.class
+  60e6f5b6 20120216132713 plugins/Color/ColocalizeRGB_.class
+  575b05dc 20120215190035 plugins/Color/Densitometry_3_Channel_(1).class
+  ab681992 20120105100231 plugins/Color/Densitometry_3_Channel_.class
+  38358124 20050418105406 plugins/Color/Image_Correlator_Plus.class
+  7630edbd 20050909101842 plugins/Color/Intensity_Correlation_Analysis.class
+  3ee4adfb 20060323140900 plugins/Color/Manders_Coefficients.class
+  d6ad6c84 20100317154210 plugins/Color/RGBtoLab_.class
+  29bf6198 20100317154210 plugins/Color/RGBtoYUV_.class
+  1cee99e7 20080204152336 plugins/Color/Threshold_Colour.jar
+  a99306b3 20130620085623 plugins/Color_Histogram-2.0.6-SNAPSHOT.jar
+  3bac3fbe 20130620085630 plugins/Color_Inspector_3D-2.3-SNAPSHOT.jar
+  1902ce83 20130620085619 plugins/Colour_Deconvolution-2.0.0-SNAPSHOT.jar
+  fa6063d9 20130620085623 plugins/CorrectBleach_-2.0.0-SNAPSHOT.jar
+  f9e1d840 20110318145714 plugins/Costanza/CostanzaLib.jar
+  870dff24 20110318145714 plugins/Costanza/Costanza_Plugin.jar
+  52ff6766 20130719140018 plugins/Create_Template.jar
+  2a722593 20130830115655 plugins/Descriptor_based_registration-2.0.0-SNAPSHOT.jar
+  4d6319b8 20130620085631 plugins/Dichromacy_-2.0.0-SNAPSHOT.jar
+  96b64b9e 20130620085625 plugins/Differentials_-2.0.0-SNAPSHOT.jar
+  eb283f44 20130620085621 plugins/Directionality_-2.0.1-SNAPSHOT.jar
+  c8a61322 20131108144201 plugins/Droplet_.jar
+  83caa3df 20110427184306 plugins/Examples/Add_Popup_Split_Channels.bsh
+  f6fcfac7 20110427184307 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  5dcd79ab 20110427184306 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  73eff736 20110427184307 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  95549b2f 20110427184307 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  dceba709 20110427184307 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  e4954eac 20110427184307 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  f5111212 20110427184307 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  6076ad74 20130620085618 plugins/Examples/CoverMaker/Cover_Maker.py
+  eabbed47 20130620085618 plugins/Examples/CoverMaker/Prepare_Cover_Maker_Database.py
+  77c7bef5 20110427184306 plugins/Examples/Delayed_Snapshot.py
+  5536e038 20110427184306 plugins/Examples/Delayed_Snapshot_Window.bsh
+  4164c08c 20110427184306 plugins/Examples/Edit_LUT_As_Text.py
+  780e948e 20110427184306 plugins/Examples/Extended_Profile_Plot.bsh
+  b8881af2 20110427184306 plugins/Examples/Fiji_Cube.ijm
+  3687a018 20110427184306 plugins/Examples/Fiji_Logo_3D.js
+  998cb717 20110427184306 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  66cf50fd 20110607113444 plugins/Examples/Image_To_Tool_Icon.bsh
+  ccccc81e 20110607113443 plugins/Examples/Multithreaded_Image_Processing.clj
+  720c237b 20110427184307 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  92ce736d 20110607113443 plugins/Examples/Plasma_Cloud.rb
+  9efb2292 20110427184307 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  206a0bbd 20120420125340 plugins/Examples/The_Hue_Game.bsh
+  1b6eee3a 20110427185046 plugins/Examples/TrakEM2_Example_Scripts/Homogenize_Ball_Radius.py
+  940f6500 20110427184307 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  3f4bba61 20110427184307 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  72f00949 20110427184308 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  89ef0307 20110427184307 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  f8479f84 20110930082837 plugins/Examples/blend_two_images.clj
+  0989cf74 20110427184306 plugins/Examples/celsius_to_fahrenheit.clj
+  ff3b9902 20110427184306 plugins/Examples/chess_.py
+  69838e21 20121112173253 plugins/Examples/compose_rgb-stacks.bsh
+  4193ae7c 20110427184307 plugins/Examples/downsample_.js
+  66a204d6 20110427184306 plugins/Examples/list_all_threads.py
+  ff4099b9 20110930082837 plugins/Examples/random_noise_example.clj
+  53c54b16 20140321120450 plugins/Excel_Writer.jar
+  56600961 20130620085624 plugins/Extended_Depth_Field-2.0.0-SNAPSHOT.jar
+  aaeffc0c 20131108144148 plugins/FFMPEG_IO.jar
+  ff0e4481 20130620085618 plugins/FeatureJ_-1.6.1-SNAPSHOT.jar
+  4ea625bc 20130620085628 plugins/Feature_Detection-2.0.0-SNAPSHOT.jar
+  56d4601b 20131108144201 plugins/FigureJ_.jar
+  52f2b9a9 20140224190412 plugins/Fiji_Developer-2.0.0-SNAPSHOT.jar
+  460995d2 20130620085625 plugins/Fiji_Package_Maker-2.0.0-SNAPSHOT.jar
+  aa889b53 20140113170528 plugins/Fiji_Plugins-2.0.0-SNAPSHOT.jar
+  aa0fa91d 20120911171735 plugins/Fiji_Updater.jar
+  9688e682 20131112190809 plugins/Filters/Gaussian_Weighted_Median.class
+  0f8b59bf 20060217161502 plugins/Filters/LoG3D.class
+  5c40ff02 20060217161502 plugins/Filters/LoG_3D.class
+  7d4c2fe8 20100414130528 plugins/Filters/Watershed_Algorithm.jar
+  638dabe7 20060217161502 plugins/Filters/imageware/Access.class
+  91cb1623 20060217161502 plugins/Filters/imageware/Buffer.class
+  42f959a8 20060217161502 plugins/Filters/imageware/Builder.class
+  6be5bfcb 20060217161502 plugins/Filters/imageware/ByteAccess.class
+  a63bca6b 20060217161502 plugins/Filters/imageware/ByteBuffer.class
+  b2452ffa 20060217161502 plugins/Filters/imageware/BytePointwise.class
+  9df8eb8c 20060217161502 plugins/Filters/imageware/ByteProcess.class
+  27c19368 20060217161502 plugins/Filters/imageware/ByteSet.class
+  298cea7a 20060217161502 plugins/Filters/imageware/Convolver.class
+  67e536d6 20060217161502 plugins/Filters/imageware/Display.class
+  e5f6cf9d 20060217161502 plugins/Filters/imageware/DoubleAccess.class
+  cb0275c5 20060217161502 plugins/Filters/imageware/DoubleBuffer.class
+  d15772a0 20060217161502 plugins/Filters/imageware/DoublePointwise.class
+  7312fc00 20060217161502 plugins/Filters/imageware/DoubleProcess.class
+  9e5d2996 20060217161502 plugins/Filters/imageware/DoubleSet.class
+  7dbfa61d 20060217161502 plugins/Filters/imageware/FMath.class
+  d7d9f623 20060217161502 plugins/Filters/imageware/FloatAccess.class
+  3657b8d9 20060217161502 plugins/Filters/imageware/FloatBuffer.class
+  2288c56d 20060217161502 plugins/Filters/imageware/FloatPointwise.class
+  b3a9ffe9 20060217161502 plugins/Filters/imageware/FloatProcess.class
+  dd78e7bf 20060217161502 plugins/Filters/imageware/FloatSet.class
+  df76af6b 20060217161502 plugins/Filters/imageware/ImageAccess.class
+  888b2bf2 20060217161502 plugins/Filters/imageware/ImageWare.class
+  a701e6d0 20060217161502 plugins/Filters/imageware/Pointwise.class
+  a00e82a7 20060217161502 plugins/Filters/imageware/Process.class
+  aefbb4be 20060217161502 plugins/Filters/imageware/ShortAccess.class
+  d8633a27 20060217161502 plugins/Filters/imageware/ShortBuffer.class
+  771a184a 20060217161502 plugins/Filters/imageware/ShortPointwise.class
+  99e7c723 20060217161502 plugins/Filters/imageware/ShortProcess.class
+  ab34879a 20060217161502 plugins/Filters/imageware/ShortSet.class
+  ce69e79a 20130620085630 plugins/FlowJ_-1.29.1-SNAPSHOT.jar
+  80fdb256 20120523085703 plugins/Foci/Foci_Picker3D$PixelCollection3D.class
+  039a06db 20120523085654 plugins/Foci/Foci_Picker3D.class
+  f942a886 20130620085625 plugins/Graph_Cut-0.1.1-SNAPSHOT.jar
+  bf032087 20130620085619 plugins/Gray_Morphology-2.3.2-SNAPSHOT.jar
+  f48de7ae 20130620085621 plugins/Helmholtz_Analysis-2.0.1-SNAPSHOT.jar
+  f481dc68 20140321101001 plugins/Hybrid_2D_Filters.class
+  6b2de3e5 20140321101006 plugins/Hybrid_3D_Filters.class
+  20e2cec7 20130410141726 plugins/ICTN_1_6_.jar
+  85f658a2 20131108144201 plugins/IJ_Ed2.jar
+  dc5df090 20130620085621 plugins/IJ_Robot-2.0.0-SNAPSHOT.jar
+  eb581ab4 20131108090102 plugins/IO_-2.0.0-SNAPSHOT.jar
+  06fa951e 20140129092503 plugins/ISAC_.jar
+  8b85c6b0 20111113172355 plugins/Image_5D.jar
+  dc5e4695 20130620085623 plugins/Image_Expression_Parser-2.0.0-SNAPSHOT.jar
+  65b42030 20130620085617 plugins/Interactive_3D_Surface_Plot-2.31.1-SNAPSHOT.jar
+  b483961e 20130620085627 plugins/IsoData_Classifier-2.0.0-SNAPSHOT.jar
+  28582f55 20110427184308 plugins/JRuby/imagej.rb
+  9a5d6894 20130620085627 plugins/JRuby_Interpreter-2.0.0-SNAPSHOT.jar
+  7d22f08d 20130620085621 plugins/Javascript_-2.0.0-SNAPSHOT.jar
+  a7edca68 20130912181247 plugins/Jython_Interpreter-2.0.0-SNAPSHOT.jar
+  a2047503 20140321101009 plugins/KalmanStack_Filter.class
+  ad9dcb27 20131108144139 plugins/LSM_Reader.jar
+  6566ced8 20131108144139 plugins/LSM_Toolbox.jar
+  5830f8ee 20130620085626 plugins/Lasso_and_Blow_Tool-2.0.0-SNAPSHOT.jar
+  c10ee505 20130620085621 plugins/Linear_Kuwahara-2.0.0-SNAPSHOT.jar
+  da134cb8 20110418111938 plugins/LiveWire/LiveWire1DTool_.class
+  b064a417 20110418111938 plugins/LiveWire/LiveWire2DTool_.class
+  2f9f7acd 20110418111938 plugins/LiveWire/LiveWireTool.class
+  1fe5cd25 20060217151502 plugins/LoG3D/imageware/Access.class
+  7cdd61d3 20060217151502 plugins/LoG3D/imageware/Buffer.class
+  f1da288c 20060217151502 plugins/LoG3D/imageware/Builder.class
+  9052d070 20060217151502 plugins/LoG3D/imageware/ByteAccess.class
+  d122c864 20060217151502 plugins/LoG3D/imageware/ByteBuffer.class
+  dd47fc25 20060217151502 plugins/LoG3D/imageware/BytePointwise.class
+  140ed17c 20060217151502 plugins/LoG3D/imageware/ByteProcess.class
+  31c0d21f 20060217151502 plugins/LoG3D/imageware/ByteSet.class
+  11d4a88b 20060217151502 plugins/LoG3D/imageware/Convolver.class
+  03cca71a 20060217151502 plugins/LoG3D/imageware/Display.class
+  4d942e3d 20060217151502 plugins/LoG3D/imageware/DoubleAccess.class
+  ff3fd92c 20060217151502 plugins/LoG3D/imageware/DoubleBuffer.class
+  d59278f6 20060217151502 plugins/LoG3D/imageware/DoublePointwise.class
+  23badf1a 20060217151502 plugins/LoG3D/imageware/DoubleProcess.class
+  b75069ca 20060217151502 plugins/LoG3D/imageware/DoubleSet.class
+  60c4dbb3 20060217151502 plugins/LoG3D/imageware/FMath.class
+  856f718c 20060217151502 plugins/LoG3D/imageware/FloatAccess.class
+  1a374b16 20060217151502 plugins/LoG3D/imageware/FloatBuffer.class
+  95dce0f9 20060217151502 plugins/LoG3D/imageware/FloatPointwise.class
+  9b8a6a1c 20060217151502 plugins/LoG3D/imageware/FloatProcess.class
+  bbdd7dd7 20060217151502 plugins/LoG3D/imageware/FloatSet.class
+  159fd13f 20060217151502 plugins/LoG3D/imageware/ImageAccess.class
+  bb737658 20060217151502 plugins/LoG3D/imageware/ImageWare.class
+  45772d84 20060217151502 plugins/LoG3D/imageware/Pointwise.class
+  7de57b9b 20060217151502 plugins/LoG3D/imageware/Process.class
+  a4464928 20060217151502 plugins/LoG3D/imageware/ShortAccess.class
+  2ef85e24 20060217151502 plugins/LoG3D/imageware/ShortBuffer.class
+  42737fb1 20060217151502 plugins/LoG3D/imageware/ShortPointwise.class
+  3829fc6c 20060217151502 plugins/LoG3D/imageware/ShortProcess.class
+  b1207f2a 20060217151502 plugins/LoG3D/imageware/ShortSet.class
+  cf4ad6ab 20130620085629 plugins/LocalThickness_-3.1.1-SNAPSHOT.jar
+  fa4373f7 20121207192759 plugins/Local_Norm.jar
+  587c9f4b 20130620085625 plugins/MTrack2_-2.0.0-SNAPSHOT.jar
+  f6a6a497 20130620085624 plugins/MTrackJ_-1.5.1-SNAPSHOT.jar
+  64ccfd05 20130620085626 plugins/M_I_P-2.0.0-SNAPSHOT.jar
+  65a2dd78 20110427184305 plugins/Macros/About_Plugin_Macros.txt
+  dff5642d 20110427184306 plugins/Macros/Bulls_Eye.txt
+  e7ffe8ba 20110427184305 plugins/Macros/Polygon_.txt
+  39f7ffcd 20110427184305 plugins/Macros/RGB_Histogram.txt
+  3ee0edfa 20110427184305 plugins/Macros/batch_convert_any_to_tif.txt
+  55f5b6a0 20130620085625 plugins/Manual_Tracking-2.0.0-SNAPSHOT.jar
+  dda39f6a 20130806123327 plugins/Mexican_Hat_Filter.class
+  41ba642a 20110420140026 plugins/Montpellier RIO Imaging/MRI_Launcher.class
+  ff8572b3 20110420140026 plugins/Montpellier RIO Imaging/MRI_Line_Profile_3D.class
+  8ea5be57 20110418111938 plugins/Montpellier RIO Imaging/MRI_LookupTableTool.class
+  4197b0a0 20110420140026 plugins/Montpellier RIO Imaging/MRI_MagicWand.class
+  1e0124de 20110420140026 plugins/Montpellier RIO Imaging/MRI_MoleculeLengthAnalyzer.class
+  6ee61291 20110420140026 plugins/Montpellier RIO Imaging/MRI_ObjectModelingWorkbench.class
+  dc05b8ee 20110418111938 plugins/Montpellier RIO Imaging/MRI_SlideShowControl.class
+  605a17a6 20110420140026 plugins/Montpellier RIO Imaging/MRI_Spark_Master_2D.class
+  d98fa6c4 20110420140026 plugins/Montpellier RIO Imaging/MRI_Toolbox.class
+  839e3fb0 20110420140026 plugins/Montpellier RIO Imaging/MRI_VisualScripting.class
+  585c3502 20110420140026 plugins/Montpellier RIO Imaging/MagicWandTool_.class
+  598c0704 20110420140026 plugins/Montpellier RIO Imaging/SplitAndMergeTool_.class
+  58c9a1a4 20080204152344 plugins/Montpellier RIO Imaging/Wait_For_User.jar
+  6b03b636 20110622180904 plugins/Montpellier RIO Imaging/mri-cia.jar
+  5cccefae 20100913095428 plugins/Morphology/AnnularClosing.txt
+  763870ef 20100913095434 plugins/Morphology/AnnularDilation.txt
+  26feb35e 20120416171255 plugins/Morphology/BinaryConditionalErode_.class
+  d7424d2e 20120416171201 plugins/Morphology/BinaryConnectivity_.class
+  ebe4d9b0 20111110085448 plugins/Morphology/BinaryDilateNoMerge4_.class
+  da5dc033 20081019152450 plugins/Morphology/BinaryDilateTest.txt
+  9f2b4ef9 20081019152918 plugins/Morphology/BinaryErodeTest.txt
+  3f39caaf 20060525101716 plugins/Morphology/BinaryFilterReconstruct.txt
+  6a2c8b7a 20111109154430 plugins/Morphology/BinaryGeodesicDilateNoMerge8_.class
+  4204c1c6 20101206082940 plugins/Morphology/BinaryLabel8_.class
+  d3c84f8c 20070712112240 plugins/Morphology/BinaryLabelMacro.txt
+  36e4a042 20060525101718 plugins/Morphology/BinaryPrune.txt
+  3e83cc61 20060525101718 plugins/Morphology/Boundary4.txt
+  9d64440e 20060525101718 plugins/Morphology/Boundary8_.txt
+  e9fc745d 20090602153322 plugins/Morphology/Catalogue_Particles.txt
+  f53a898e 20090511083446 plugins/Morphology/CloseByReconstructionTopHat.txt
+  2c7f38f5 20101005103840 plugins/Morphology/CloseByReconstruction_.txt
+  1c33105a 20060525101718 plugins/Morphology/ConvexHull1.txt
+  7cb69fdf 20060525101718 plugins/Morphology/ConvexHull2.txt
+  b19cb415 20060525101718 plugins/Morphology/ConvexHull3.txt
+  bd22187f 20060525101718 plugins/Morphology/Corners.txt
+  d463ee86 20081019163010 plugins/Morphology/Delete_ZeroArea.txt
+  8df2eb76 20060525101718 plugins/Morphology/Diagonal8to4.txt
+  e428a0f5 20060525101718 plugins/Morphology/Domes_stack.txt
+  1be944ae 20090506082436 plugins/Morphology/DoubleWaterfall.txt
+  925d3d8c 20111208091210 plugins/Morphology/DrawBoundingBox.txt
+  63c4cd27 20111208091158 plugins/Morphology/DrawBoundingCircle.txt
+  b97f945a 20111208091142 plugins/Morphology/DrawConvexHulls.txt
+  2adcfe94 20111208091226 plugins/Morphology/DrawFeret&amp;Breadth.txt
+  b60f4365 20111208091236 plugins/Morphology/DrawMinR&amp;MaxR.txt
+  288ace7a 20100805124116 plugins/Morphology/EDM_16bits.txt
+  71d10273 20081019170232 plugins/Morphology/Euler.txt
+  63757672 20090511083446 plugins/Morphology/Extended_Maxima.txt
+  285e4c16 20090511083446 plugins/Morphology/Extended_Minima.txt
+  2b80b381 20100418175426 plugins/Morphology/FillHolesReconstruct.txt
+  205b6052 20060525130102 plugins/Morphology/Fill_Border_Holes.txt
+  54d7ef21 20090506082436 plugins/Morphology/Fill_Greyscale_Holes.txt
+  4d6a07b6 20110418111938 plugins/Morphology/FloatMorphology_.class
+  7414776d 20110418111938 plugins/Morphology/GrayMorphology_.class
+  75041650 20101001143722 plugins/Morphology/GreyBlackTopHatByReconstruction_.txt
+  6f716dcc 20101001143322 plugins/Morphology/GreyWhiteTopHatByReconstruction_.txt
+  579b5383 20090504142458 plugins/Morphology/GreyscaleCentreFilter.txt
+  0a50379d 20100920132950 plugins/Morphology/GreyscaleKillBorders.txt
+  d3047959 20090503182436 plugins/Morphology/GreyscaleProperAutomedian.txt
+  b4d94111 20090504122820 plugins/Morphology/GreyscaleProperClose.txt
+  44d81a95 20090504123000 plugins/Morphology/GreyscaleProperOpen.txt
+  4d7e6035 20100908144402 plugins/Morphology/GreyscaleTopHat.txt
+  cb2dc22a 20100908144826 plugins/Morphology/GreyscaleWell.txt
+  282495a6 20060525101718 plugins/Morphology/H-break.txt
+  a73d2279 20090511130552 plugins/Morphology/HMaxima_Transform.txt
+  f1c1b630 20090527092132 plugins/Morphology/HMinima_Transform.txt
+  af3183b2 20080605122624 plugins/Morphology/Hole_Counter.txt
+  930ee9e1 20090527171616 plugins/Morphology/HomotopicMarking.txt
+  3429c4f3 20060525101718 plugins/Morphology/Hysteresis.txt
+  2511df4c 20090513103656 plugins/Morphology/Impose_Minimum.txt
+  6be72748 20060525101718 plugins/Morphology/Influence_Zones.txt
+  5859277c 20060525101718 plugins/Morphology/KeepLargestParticle.txt
+  559e475f 20080521222500 plugins/Morphology/KeepLargestParticlePixels_.txt
+  4605ad0a 20080605144602 plugins/Morphology/KeepParticlesInRange.txt
+  b46b2695 20110415151004 plugins/Morphology/Lines8_.class
+  43259a0b 20090519121520 plugins/Morphology/LocalMaxima.txt
+  c0207001 20090519122406 plugins/Morphology/LocalMinMax.txt
+  b2139bd8 20090519121444 plugins/Morphology/LocalMinima.txt
+  05f0502d 20060525101718 plugins/Morphology/MCentroids.txt
+  b3ea5e05 20101007145910 plugins/Morphology/MinimaDynamic.txt
+  57e4bbaa 20060525101718 plugins/Morphology/Morphological2Derivative1.txt
+  35b51e7e 20060525101718 plugins/Morphology/Morphological2Derivative2.txt
+  ef809632 20060525101718 plugins/Morphology/Morphological2Derivative3.txt
+  73902be6 20100908144214 plugins/Morphology/MorphologicalContrastTopHat.txt
+  86d43a13 20100906132436 plugins/Morphology/MorphologicalExternalGradient.txt
+  66d657f2 20100908173708 plugins/Morphology/MorphologicalGradient3.txt
+  2cd67873 20100906132436 plugins/Morphology/MorphologicalGradientBeucher.txt
+  b141cc35 20100906132436 plugins/Morphology/MorphologicalInternalGradient.txt
+  babf8d91 20060525101718 plugins/Morphology/MorphologicalSharpGradient.txt
+  7e05ec43 20060525101718 plugins/Morphology/MorphologicalSmoothing1.txt
+  df30c851 20060525101718 plugins/Morphology/MorphologicalSmoothing2.txt
+  b4232d82 20100913095526 plugins/Morphology/Morphological_Clustering.txt
+  c4024220 20100922234422 plugins/Morphology/Morphological_PCA.txt
+  44b58573 20101005101848 plugins/Morphology/Morphological_SelfDualCentre.txt
+  d20caeeb 20101005163722 plugins/Morphology/Morphological_contrast.txt
+  c40dcb5d 20100908144252 plugins/Morphology/MultiscaleGradient.txt
+  7fa60ae6 20110425171914 plugins/Morphology/NumberParticles8_.txt
+  cd6cf4de 20090511083446 plugins/Morphology/OpenByReconstructionTopHat.txt
+  5f844fa9 20101005103856 plugins/Morphology/OpenByReconstruction_.txt
+  8fdf1b15 20080521221818 plugins/Morphology/Parameter_Matrix.txt
+  65c22a1e 20080529224340 plugins/Morphology/ParticleHoleArea.txt
+  9a713d79 20080529224456 plugins/Morphology/ParticleHoleNumber.txt
+  9c0a7763 20080529224152 plugins/Morphology/Particle_Data_Map.txt
+  ac25812c 20080521215826 plugins/Morphology/Plot_BivariateGraphs.txt
+  e8ea53cb 20080606114752 plugins/Morphology/Plot_Histograms.txt
+  ce077644 20060525101718 plugins/Morphology/Prune1.txt
+  c4126534 20060525101718 plugins/Morphology/PruneAll.txt
+  916ac5a4 20090511083446 plugins/Morphology/RegionalMinMax.txt
+  3dcf6fa2 20090511083446 plugins/Morphology/Regional_Maxima.txt
+  bc61499e 20101001113926 plugins/Morphology/Regional_Minima.txt
+  358d5270 20100922235812 plugins/Morphology/SelfComplementaryTopHat.txt
+  36e7e0b4 20101005094120 plugins/Morphology/SelfDualReconstruction_.txt
+  64886ac9 20060525101718 plugins/Morphology/Skeleton1.txt
+  64fa451e 20060525101718 plugins/Morphology/Skeleton2.txt
+  809a6770 20060525101718 plugins/Morphology/Skeleton3.txt
+  16447730 20090511121302 plugins/Morphology/Skeleton4.txt
+  b2242712 20100922212400 plugins/Morphology/SkeletonFiltering.txt
+  5d0400a0 20080521215352 plugins/Morphology/Summarize_Results.txt
+  ab0b29c3 20080603111018 plugins/Morphology/Thin_Results_Table.txt
+  090f96c1 20100621090218 plugins/Morphology/UnbiasedCounting.txt
+  fecf6a46 20080605121016 plugins/Morphology/UnbiasedParticleArea.txt
+  19a9433c 20090330080642 plugins/Morphology/Viscous_Geodesic_Reconstruction.txt
+  e6573d54 20091007123732 plugins/Morphology/mmorpho.jar
+  9c541ad9 20130620085621 plugins/MosaicJ_-2.0.0-SNAPSHOT.jar
+  94ff9125 20131118153924 plugins/Mosaic_ToolSuite/Mosaic_ToolSuite.jar
+  4bd74852 20131111170133 plugins/Mosaic_ToolSuite/mosaic_segmentation_parameters.txt
+  2dbeb38d 20131108144201 plugins/PDF_MacroExt.jar
+  04a4a5c1 20130620085624 plugins/PIV_analyser-1.1.1-SNAPSHOT.jar
+  c999276f 20110222232434 plugins/PZFociEZ/AutoRun.txt
+  1006fdae 20101205194417 plugins/PZFociEZ/BackgroundCorrectedBatch.txt
+  65356033 20120512134202 plugins/PZFociEZ/FociEZ.txt
+  337e4cb6 20120109092254 plugins/PZFociEZ/MakeAgain.txt
+  42e18cf6 20120110150106 plugins/PZFociEZ/MakeMask.txt
+  e586cfad 20120109092557 plugins/PZFociEZ/MakeMaskSettings.txt
+  5783a2f3 20120110151923 plugins/PZFociEZ/MaskEZ.txt
+  fa40e465 20120110195406 plugins/PZFociEZ/StartMacros.txt
+  436d6096 20120110145402 plugins/PZFociEZ/SuperMaska.txt
+  e27c8217 20090428145510 plugins/PZFociEZ/_Magic_Montage2.txt
+  86e2e6c2 20111107001733 plugins/PZFociEZ/_PZ-FociEZ.txt
+  86206530 20101124003316 plugins/PZFociEZ/color_and_merge.txt
+  7b8cbc4a 20101208110214 plugins/PZFociEZ/shrink.txt
+  e97f0bd0 20050317155900 plugins/Particle Analysis/Cell_Counter.jar
+  7f4e01e3 20051104100628 plugins/Particle Analysis/Gran_Filter.jar
+  e2495d36 20050317114914 plugins/Particle Analysis/GrayLevelClass.class
+  233c8a17 20050317114526 plugins/Particle Analysis/GrayLevelClass2.class
+  a6c9ed5c 20040520181044 plugins/Particle Analysis/Grid_.class
+  664dfea0 20050516114654 plugins/Particle Analysis/Nucleus_Counter.class
+  23e06d00 20050428150248 plugins/Particle Analysis/OtsuThresholding_8Bit.class
+  c5899233 20051104114558 plugins/Particle Analysis/SpotTracker2D_.jar
+  e352278f 20050617125708 plugins/Particle Analysis/_3D_objects_counter.class
+  19181db3 20130620085625 plugins/PointPicker_-2.0.0-SNAPSHOT.jar
+  372082ae 20111021173342 plugins/Polynomial_Fit.class
+  e5a3af81 20041222133114 plugins/Pseudo_Flat_Field.class
+  964d054a 20130717101953 plugins/QuickPALM_-1.1.1-SNAPSHOT.jar
+  9fb03125 20130620085618 plugins/RATS_-2.0.0-SNAPSHOT.jar
+  5db9a77d 20050509175320 plugins/ROI/Add_Particles_to_ROI_Manager.txt
+  2469f406 20050202135020 plugins/ROI/BG_Subtraction_from_ROI.txt
+  0118d9a2 20050426161812 plugins/ROI/MultiMeasure.class
+  a76d710b 20050426161804 plugins/ROI/Multi_Measure.class
+  3f5cbb5d 20040226112450 plugins/ROI/Select_Half.class
+  0bbf33bc 20060110123938 plugins/ROI/SpecifyLine_.class
+  6e8dff45 20041013133544 plugins/ROI/Specify_ROI.class
+  5c7f3968 20130620085619 plugins/RandomJ_-1.5.1-SNAPSHOT.jar
+  7d1ad162 20120420125340 plugins/Reconstruct_Reader.jar
+  8bc6c355 20140224190413 plugins/Refresh_Javas-2.0.0-SNAPSHOT.jar
+  33ecc4fa 20120426140446 plugins/Region_Growing_Segmentation.jar
+  a529ad67 20050302175648 plugins/Registration/StackReg_.class
+  0af51c01 20080619152418 plugins/Registration/TurboReg_.class
+  cdb58b99 20050302175648 plugins/Registration/stackRegCredits$1.class
+  c7b432a4 20050302175648 plugins/Registration/stackRegCredits.class
+  63963121 20080619152418 plugins/Registration/turboRegCredits$1.class
+  04e54939 20080619152418 plugins/Registration/turboRegCredits.class
+  122823cc 20080619152418 plugins/Registration/turboRegDialog$1.class
+  86c8f9ab 20080619152418 plugins/Registration/turboRegDialog$10.class
+  5714cc04 20080619152418 plugins/Registration/turboRegDialog$11.class
+  3a28ec80 20080619152418 plugins/Registration/turboRegDialog$12.class
+  3b844b88 20080619152418 plugins/Registration/turboRegDialog$13.class
+  63c85ccc 20080619152418 plugins/Registration/turboRegDialog$14.class
+  1056159b 20080619152418 plugins/Registration/turboRegDialog$15.class
+  24f9894e 20080619152418 plugins/Registration/turboRegDialog$16.class
+  9a34fb23 20080619152418 plugins/Registration/turboRegDialog$2.class
+  442f00d9 20080619152418 plugins/Registration/turboRegDialog$3.class
+  be44f0a2 20080619152418 plugins/Registration/turboRegDialog$4.class
+  0b0ffb58 20080619152418 plugins/Registration/turboRegDialog$5.class
+  f7d709f6 20080619152418 plugins/Registration/turboRegDialog$6.class
+  107bde15 20080619152418 plugins/Registration/turboRegDialog$7.class
+  5f5eba37 20080619152418 plugins/Registration/turboRegDialog$8.class
+  3757d3cd 20080619152418 plugins/Registration/turboRegDialog$9.class
+  c4b1eee4 20080619152418 plugins/Registration/turboRegDialog.class
+  aa18e489 20080619152418 plugins/Registration/turboRegFinalAction.class
+  72559402 20080619152418 plugins/Registration/turboRegImage.class
+  ec64fe25 20080619152418 plugins/Registration/turboRegMask.class
+  30df8bf9 20080619152418 plugins/Registration/turboRegPointAction.class
+  3b6a23a1 20080619152418 plugins/Registration/turboRegPointHandler.class
+  e54acbcd 20080619152418 plugins/Registration/turboRegPointToolbar.class
+  3b518c82 20080619152418 plugins/Registration/turboRegProgressBar.class
+  c96c8739 20080619152418 plugins/Registration/turboRegTransform.class
+  4ddf620c 20120504174834 plugins/SPIM_Opener.jar
+  5b5857d2 20140107160833 plugins/SPIM_Registration-2.0.0-SNAPSHOT.jar
+  b9076c0a 20130620085619 plugins/Samples_-2.0.0-SNAPSHOT.jar
+  6d88799a 20131128192431 plugins/Script_Editor-2.0.0-SNAPSHOT.jar
+  578994ca 20130731112708 plugins/Scripts/File/Make_Screencast.bsh
+  c70b2e6f 20110427184308 plugins/Scripts/File/Open_Samples/Adelsons_Squares.ijm
+  60df5674 20130510120058 plugins/Scripts/File/Open_Samples/Spirals_.ijm
+  a3edd6db 20110427184308 plugins/Scripts/Image/Adjust/Scale_to_DPI.js
+  209aed52 20110427184308 plugins/Scripts/Image/Color/Set_Color_By_Wavelength.ijm
+  1de6c712 20130709085059 plugins/Scripts/Image/Hyperstacks/Temporal-Color_Code.ijm
+  af064f17 20130912181249 plugins/Scripts/Plugins/Registration/Correct_3D_drift.py
+  a6e496fc 20130301144933 plugins/Scripts/Plugins/Utilities/Create_Desktop_Icon.bsh
+  b5ee58a2 20130314192504 plugins/Scripts/Plugins/Utilities/Find_Jar_For_Class.bsh
+  fc46bd40 20120816102057 plugins/Scripts/Plugins/Utilities/Record_Desktop.py
+  9d4d012a 20120816102057 plugins/Scripts/Plugins/Utilities/Record_Window.py
+  b23c7100 20100311104526 plugins/Segment_ActiveMasks_v1.2_MacOSX.jar
+  8cb22fe2 20140304125803 plugins/Series_Labeler-2.0.0-SNAPSHOT.jar
+  23a23f4e 20140303124335 plugins/Shading_Corrector.class
+  9aac920d 20130806124405 plugins/Shape_Filter_1.0.8a_.jar
+  7c62b5c5 20130620085631 plugins/SheppLogan_-2.0.0-SNAPSHOT.jar
+  259df97d 20140124110439 plugins/Sholl_Analysis-3.4.0.jar
+  95dc5b19 20131128192433 plugins/Simple_Neurite_Tracer-2.0.2-SNAPSHOT.jar
+  0bd5f179 20130620085627 plugins/Siox_Segmentation-1.0.1-SNAPSHOT.jar
+  52fecf09 20130620085629 plugins/Skeletonize3D_-1.0.1-SNAPSHOT.jar
+  b0820703 20130620085629 plugins/Snakuscule_-2.0.0-SNAPSHOT.jar
+  33b6af85 20131121184057 plugins/SplineDeformationGenerator_-2.0.0-SNAPSHOT.jar
+  27de591e 20130620085620 plugins/StackReg_-2.0.0-SNAPSHOT.jar
+  736bb192 20130620085625 plugins/Stack_Manipulation-2.0.0-SNAPSHOT.jar
+  38a7f729 20100414152810 plugins/Stacks/Align_slices.txt
+  59f36299 20130620085629 plugins/Statistical_Region_Merging-2.0.0-SNAPSHOT.jar
+  08a4daec 20140310110122 plugins/Stitching_-2.0.0-SNAPSHOT.jar
+  30100de7 20130620085618 plugins/Sync_Win-1.7-fiji2-SNAPSHOT.jar
+  aa5c6fa7 20100428175856 plugins/Texture/GLCM_Texture.class
+  685ca9dc 20130620085628 plugins/Thread_Killer-2.0.0-SNAPSHOT.jar
+  23ae2c33 20120604170623 plugins/Thresholding_Segmentation.jar
+  d822b123 20130130102401 plugins/Time_Stamper-2.0.0-SNAPSHOT.jar
+  584cb5b9 20130620085631 plugins/ToAST_-25.0.1-SNAPSHOT.jar
+  4cf59217 20130620085629 plugins/TopoJ_-2.0.0-SNAPSHOT.jar
+  4de49e00 20140320084653 plugins/TrackMate_-2.2.0.jar
+  279a86b1 20140224190412 plugins/Trainable_Segmentation-2.0.0-SNAPSHOT.jar
+  59124982 20131108090108 plugins/TrakEM2_-1.0b-SNAPSHOT.jar
+  8e7f3b79 20130620085619 plugins/TransformJ_-2.8.1-SNAPSHOT.jar
+  c4e87a76 20130620085628 plugins/TurboReg_-2.0.0-SNAPSHOT.jar
+  9558400d 20110427184258 plugins/UnwarpJ_.jar
+  a32dfe46 20110427184309 plugins/Utilities/Close_All_Without_Saving.txt
+  253c6df4 20130719130500 plugins/VIB_-2.0.0-SNAPSHOT.jar
+  baa78901 20130912181245 plugins/Vaa3d_Reader-2.0.0-SNAPSHOT.jar
+  d7cec1ac 20121221172224 plugins/Versatile_Wand.class
+  81279d21 20130620085621 plugins/Video_Editing-2.0.0-SNAPSHOT.jar
+  73396eef 20130620085627 plugins/View5D_-1.3.1-SNAPSHOT.jar
+  980c0ed9 20130620085631 plugins/Volume_Calculator-1.0.1-SNAPSHOT.jar
+  2ef6f1eb 20140320084653 plugins/Volume_Viewer-2.01.1-SNAPSHOT.jar
+  bb2a452b 20120511173504 plugins/Watershed_.jar
+  0b477c63 20131108144201 plugins/action_bar.jar
+  2079ca32 20130603184133 plugins/bUnwarpJ_-2.6.1-SNAPSHOT.jar
+  5d479ffe 20140310110137 plugins/bio-formats_plugins-5.0.0.jar
+  0307564a 20130918185717 plugins/blockmatching_-2.0.0-SNAPSHOT.jar
+  bd354e1a 20120426174741 plugins/gdsc_.jar
+  659ad6a3 20110427184302 plugins/ij-ImageIO_.jar
+  6e03e7ff 20100922224634 plugins/landini/Add_Borders.class
+  edb38215 20100928180030 plugins/landini/BinaryConditionalDilate_.class
+  e581dd27 20111116142432 plugins/landini/BinaryDilateNoMerge8_.class
+  85b14719 20081019162450 plugins/landini/BinaryDilateTest.txt
+  28ef467d 20111116142523 plugins/landini/BinaryDilate_.class
+  1c9d27b2 20081019162918 plugins/landini/BinaryErodeTest.txt
+  0cebb052 20060525203102 plugins/landini/BinaryErode_.class
+  2486e669 20060525111716 plugins/landini/BinaryFilterReconstruct.txt
+  c742b24e 20090525203222 plugins/landini/BinaryFilterReconstruct_.class
+  f8eefb20 20080602101844 plugins/landini/BinaryHitOrMiss_.class
+  754cf072 20100418162848 plugins/landini/BinaryKillBorders_.class
+  dbe3669d 20100508095308 plugins/landini/BinaryLabel_.class
+  05fa5bf9 20060525111718 plugins/landini/BinaryPrune.txt
+  77736d40 20090526175400 plugins/landini/BinaryReconstruct_.class
+  7810191d 20060525203502 plugins/landini/BinaryThick2_.class
+  7a234299 20060525203450 plugins/landini/BinaryThick_.class
+  60cc2694 20060525203520 plugins/landini/BinaryThin2_.class
+  ec09dbed 20120416111257 plugins/landini/BinaryThin_.class
+  60598e3a 20060525111718 plugins/landini/Boundary4.txt
+  0c8715de 20060525111718 plugins/landini/Boundary8.txt
+  ee26bba1 20090602163322 plugins/landini/Catalogue_Particles.txt
+  ef5057d7 20070607100848 plugins/landini/Classify_Particles.class
+  56d67e16 20090523181002 plugins/landini/CloseByReconstruction.txt
+  cb283fef 20090511093446 plugins/landini/CloseByReconstructionTopHat.txt
+  ba2e9a8d 20101005113840 plugins/landini/CloseByReconstruction_.txt
+  d51a38c5 20060525111718 plugins/landini/ConvexHull1.txt
+  963ff5c4 20060525111718 plugins/landini/ConvexHull2.txt
+  92ac1da0 20060525111718 plugins/landini/ConvexHull3.txt
+  cf04eaa2 20060525111718 plugins/landini/Corners.txt
+  5b4ebf9b 20061116102256 plugins/landini/Correlate_Results.class
+  f7600610 20081019173010 plugins/landini/Delete_ZeroArea.txt
+  ec18416f 20060525111718 plugins/landini/Diagonal8to4.txt
+  fdff9147 20120416180434 plugins/landini/Domes_.class
+  a17e1b7c 20060525111718 plugins/landini/Domes_stack.txt
+  d49efd37 20081019173928 plugins/landini/DrawBoundingBox.txt
+  bd3c07e5 20081019173944 plugins/landini/DrawBoundingCircle.txt
+  070c0aaf 20080521224310 plugins/landini/DrawConvexHulls.txt
+  d24a26ee 20081019173958 plugins/landini/DrawFeret&amp;Breadth.txt
+  fae15dc9 20081019174006 plugins/landini/DrawMinR&amp;MaxR.txt
+  7d37ff21 20100805134116 plugins/landini/EDM_16bits.txt
+  74fb092b 20081019180232 plugins/landini/Euler.txt
+  3d8ff25a 20090511093446 plugins/landini/Extended_Maxima.txt
+  83e94dbb 20090511093446 plugins/landini/Extended_Minima.txt
+  dcfa02a4 20100418185426 plugins/landini/FillHolesReconstruct.txt
+  9380dd14 20060525140102 plugins/landini/Fill_Border_Holes.txt
+  6baccf11 20090506092436 plugins/landini/Fill_Greyscale_Holes.txt
+  2e6472bb 20090504152458 plugins/landini/GreyscaleCenterFilter.txt
+  9267c21e 20060525203602 plugins/landini/GreyscaleDilate_.class
+  7271bb20 20060525203612 plugins/landini/GreyscaleErode_.class
+  df005587 20090503192436 plugins/landini/GreyscaleProperAutomedian.txt
+  45977dd8 20090504132820 plugins/landini/GreyscaleProperClose.txt
+  2d07e935 20090504133000 plugins/landini/GreyscaleProperOpen.txt
+  4e63c7d1 20090526175732 plugins/landini/GreyscaleReconstruct_.class
+  f79eac1a 20100908154402 plugins/landini/GreyscaleTopHat.txt
+  18cd4cba 20100908154826 plugins/landini/GreyscaleWell.txt
+  4f067d83 20060525111718 plugins/landini/H-break.txt
+  a9bdaea7 20090511140552 plugins/landini/HMaxima_Transform.txt
+  103f0c78 20090527102132 plugins/landini/HMinima_Transform.txt
+  18a1aa2e 20080605132624 plugins/landini/Hole_Counter.txt
+  0de39490 20090527181616 plugins/landini/HomotopicMarking.txt
+  26d1217c 20060525111718 plugins/landini/Hysteresis.txt
+  92338a65 20090513113656 plugins/landini/Impose_Minimum.txt
+  bd3522fd 20060525111718 plugins/landini/Influence_Zones.txt
+  c3adc86a 20060525111718 plugins/landini/KeepLargestParticle.txt
+  c9839282 20080521232500 plugins/landini/KeepLargestParticlePixels_.txt
+  1e61abfd 20080605154602 plugins/landini/KeepParticlesInRange.txt
+  b53839a6 20090519131520 plugins/landini/LocalMaxima.txt
+  65f838de 20090519132406 plugins/landini/LocalMinMax.txt
+  6757854e 20090519131444 plugins/landini/LocalMinima.txt
+  b5a5e626 20060525111718 plugins/landini/MCentroids.txt
+  1c9b2c10 20060525111718 plugins/landini/Morphological2Derivative1.txt
+  a1fd8dee 20060525111718 plugins/landini/Morphological2Derivative2.txt
+  6b1d7c74 20060525111718 plugins/landini/Morphological2Derivative3.txt
+  c257f9de 20100908154214 plugins/landini/MorphologicalContrastTopHat.txt
+  bc84b023 20100906142436 plugins/landini/MorphologicalExternalGradient.txt
+  b2b39435 20100908183708 plugins/landini/MorphologicalGradient3.txt
+  8719a9e9 20100906142436 plugins/landini/MorphologicalGradientBeucher.txt
+  59e1fbaa 20100906142436 plugins/landini/MorphologicalInternalGradient.txt
+  973c1def 20060525111718 plugins/landini/MorphologicalSharpGradient.txt
+  524bcac4 20060525111718 plugins/landini/MorphologicalSmoothing1.txt
+  dd54e302 20060525111718 plugins/landini/MorphologicalSmoothing2.txt
+  02b6c001 20100913105526 plugins/landini/Morphological_Clustering.txt
+  b9b547db 20100923004640 plugins/landini/Morphological_PCA.txt
+  1c177f5e 20100908154252 plugins/landini/MultiscaleGradient.txt
+  3a52e32a 20060919125718 plugins/landini/NumberParticles8_.txt
+  89cfdd6d 20090511093446 plugins/landini/OpenByReconstruction.txt
+  df9d5717 20090511093446 plugins/landini/OpenByReconstructionTopHat.txt
+  75429740 20101005113856 plugins/landini/OpenByReconstruction_.txt
+  7243d2b1 20080521231818 plugins/landini/Parameter_Matrix.txt
+  6023cba8 20080529234340 plugins/landini/ParticleHoleArea.txt
+  3cde6311 20080529234456 plugins/landini/ParticleHoleNumber.txt
+  0f59dec5 20080529234152 plugins/landini/Particle_Data_Map.txt
+  b448eb29 20100914160816 plugins/landini/Particles4_.class
+  83f6e1e7 20100914160808 plugins/landini/Particles8_.class
+  5fc0ce6e 20080521225826 plugins/landini/Plot_BivariateGraphs.txt
+  39e724b8 20080606124752 plugins/landini/Plot_Histograms.txt
+  bdaed532 20060525111718 plugins/landini/Prune1.txt
+  49232cef 20060525111718 plugins/landini/PruneAll.txt
+  a4a8d370 20090511093446 plugins/landini/RegionalMinMax.txt
+  0ca7604a 20090511093446 plugins/landini/Regional_Maxima.txt
+  60d83e8a 20101001123926 plugins/landini/Regional_Minima.txt
+  d0b6c25c 20100923005812 plugins/landini/SelfComplementaryTopHat.txt
+  0f243035 20101005104120 plugins/landini/SelfDualReconstruction_.txt
+  2a7d42e7 20060525111718 plugins/landini/Skeleton1.txt
+  121a139d 20060525111718 plugins/landini/Skeleton2.txt
+  6bee5785 20060525111718 plugins/landini/Skeleton3.txt
+  1f0f518c 20090511131302 plugins/landini/Skeleton4.txt
+  b0a73578 20100922222400 plugins/landini/SkeletonFiltering.txt
+  8196e8c3 20080521225352 plugins/landini/Summarize_Results.txt
+  b45afd17 20080603121018 plugins/landini/Thin_Results_Table.txt
+  6f0a06f8 20100621100218 plugins/landini/UnbiasedCounting.txt
+  7aa0e73a 20080605131016 plugins/landini/UnbiasedParticleArea.txt
+  56eb001c 20090330090642 plugins/landini/Viscous_Geodesic_Reconstruction.txt
+  82f900ac 20130620085629 plugins/level_sets-1.0.1-SNAPSHOT.jar
+  91b604bc 20111111130801 plugins/lineagetracker_1.1.2.jar
+  17b1f507 20111111130615 plugins/lineagetracker_multichannelsegmentation.jar
+  527312b2 20131108144143 plugins/mcib3d-suite/mcib3d-core.jar
+  cef74c40 20131108144144 plugins/mcib3d-suite/mcib3d_plugins.jar
+  df2af815 20130918185716 plugins/mpicbg_-0.6.1-SNAPSHOT.jar
+  b34ce557 20110413144614 plugins/mri-artemia-tools/1_mri_artemia_prepare.ijm
+  d4dc1ea1 20110413151912 plugins/mri-artemia-tools/2_mri_artemia_measure.ijm
+  a34129b2 20110413181624 plugins/mri-artemia-tools/3_mri_artemia_next-image.ijm
+  df95c132 20110413185040 plugins/mri-artemia-tools/4_mri_artemia_calculate_redness.ijm
+  5e32d936 20110427184300 plugins/panorama_.jar
+  4bd07822 20140224190414 plugins/register_virtual_stack_slices-2.0.0-SNAPSHOT.jar
+  16012d5a 20130620085631 plugins/registration_3d-2.0.0-SNAPSHOT.jar
+  bc2c9805 20040909131042 plugins/stack manipulation/Binner_.class
+  97069cd9 20040601145326 plugins/stack manipulation/Delete_slices_after_here.class
+  6bb5518d 20040601145318 plugins/stack manipulation/Delete_slices_before_here.class
+  cda49346 20030627131048 plugins/stack manipulation/Substack_Maker.class
+  69e8d3f2 20041012123420 plugins/stack manipulation/Substack_Select.jar
+  8fec66c5 20111107133804 plugins/test/Image_Browser$1.class
+  d6989f7c 20111107133804 plugins/test/Image_Browser$IBCanvas.class
+  2755d297 20111107133804 plugins/test/Image_Browser$IBFakeProcessor.class
+  fa3f84b1 20111107133804 plugins/test/Image_Browser$IBImage.class
+  40a6e55d 20111107133804 plugins/test/Image_Browser$IBImagePlus.class
+  048d08da 20111107133804 plugins/test/Image_Browser$IBKeyListener.class
+  691f56fc 20111107133804 plugins/test/Image_Browser$IBLoader.class
+  8839f94b 20111107133804 plugins/test/Image_Browser$IBPanel.class
+  d968b765 20111107133804 plugins/test/Image_Browser$IBWindow.class
+  da89bfdb 20111107133804 plugins/test/Image_Browser$Item.class
+  4a471895 20111107133804 plugins/test/Image_Browser.class
+  983ce9fb 20140129190736 plugins/test_.jar
+  62665aac 20120320124156 plugins/vamp/Readme.txt
+  b8b78622 20120320123128 plugins/vamp/vamp2d_v2$pixel.class
+  1d2d98cf 20120320123128 plugins/vamp/vamp2d_v2.class
+  c70932f5 20120320123144 plugins/vamp/vamp3d_v1$pixel.class
+  7694d226 20120320123144 plugins/vamp/vamp3d_v1.class
+  e6e0879f 20110427184424 retro/backport-util-concurrent-3.1.jar
+  8759ba20 20130418165750 retro/retrotranslator-runtime-1.2.9.jar
+  a6d5a3b2 20130418165751 retro/retrotranslator-transformer-1.2.9.jar
+  d7160d38 20110810121239 scripts/InstallJava3D.m
+  05a92a3c 20110802154650 scripts/IsJava3DInstalled.m
+  ff34d026 20120816102053 scripts/Matlab3DViewerDemo_1.m
+  25be149f 20110915112632 scripts/Matlab3DViewerDemo_2.m
+  cb529b6c 20120816102053 scripts/Matlab3DViewerDemo_3.m
+  53d2da73 20120816102053 scripts/Matlab3DViewerIntroduction.m
+  4bb342fa 20120816102053 scripts/Miji.m
+  868cd434 20110802154650 scripts/Miji_Test.m
+  d3260180 20110427184310 scripts/Record_Desktop.py
+  0ea7f8fc 20110427184310 scripts/Record_Window.py
+  dc94c3a3 20110427185046 scripts/bfopen.m
+  a77cab39 20130830115657 scripts/importTrackMateTracks.m</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=724#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-31 11:20:50 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please provide a small test macro that reproduces the problem.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=724#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-31 11:32:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Matthias, it would be good if you could capture a console log as described here: <a href="http://fiji.sc/Command_Line_Debugging">http://fiji.sc/Command_Line_Debugging</a> (just the part when it stopped working would be enough)</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=724#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-04-29 11:11:58 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please feel free to reopen with the information requested.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=724">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=724">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=724">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=724&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=724" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=724&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731763-YetS087JK6Dii0IXe5-5SvcYxRykAteI2IpkhwTvw7s">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

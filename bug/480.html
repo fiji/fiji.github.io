@@ -1,0 +1,1561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 480 &ndash; cannot open NIS4.0 .nd2 images</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=480&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=480">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=480">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=480">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 480 – cannot open NIS4.0 .nd2 images",  
+                             "show_bug.cgi?id=480" );
+        document.title = "Bug 480 – cannot open NIS4.0 .nd2 images";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 480 – cannot open NIS4.0 .nd2 images", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Bio-Formats bz_bug_480 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;480</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">cannot open NIS4.0 .nd2 images</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2013-07-07 09:27:15 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=480&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=480" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=480&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731659-ev48XQLTUnQLrUMMgcneE4nPEIEKOBtS7G8w5wDga74">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2013-07-07 09:27:15">
+  <input type="hidden" name="longdesclength" value="3">
+  <input type="hidden" name="id" value="480">
+  <input type="hidden" name="token" value="1492731659-lMRuNxI3Qdm4-ZAtqxhQlkfHPvsPSErqLRnR8jeUuwc">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=480"><b>Bug&nbsp;480</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">cannot open NIS4.0 .nd2 images</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>cannot open NIS4.0 .nd2 images
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('cannot open NIS4.0 .nd2 images', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          WORKSFORME
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Bio-Formats</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=480&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=480">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2012-08-31 14:46 CDT by <span class="vcard"><span class="fn">sylvie le guyader</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2013-07-07 09:27 CDT 
+      (<a href="show_activity.cgi?id=480">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="melissa">melissa</option>
+                <option value="sylvie.le.guyader">sylvie.le.guyader</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=480&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=480&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=480#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">sylvie le guyader</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-08-31 14:46:28 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >since we updated NIS to 4.0, we are unable to open our .nd2 files in Fiji even using the latest Fiji update and the nd2 reader plugin.
+
+Information about your version of Java - this information is useful for the Fiji developers:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\Users\Public\DOCUME~1\FIJINO~1\Fiji.app/java/win64/jdk1.6.0_24/jre/
+  ij.dir =&gt; C:\Users\Public\DOCUME~1\FIJINO~1\Fiji.app
+
+Information about the version of each plugin:
+
+  018c76c3fbfc41a7dd3f7c2ac5cd7cbbde8dc21b:018c76c3fbfc41a7dd3f7c2ac5cd7cbbde8dc21b:018c76c3fbfc41a7dd3f7c2ac5cd7cbbde8dc21b 20120831142443 :018c76c3fbfc41a7dd3f7c2ac5cd7cbbde8dc21b
+  0384fcf1924f7e512c15ceb5c38275f822b590a6:0384fcf1924f7e512c15ceb5c38275f822b590a6:0384fcf1924f7e512c15ceb5c38275f822b590a6 20120831142448 :0384fcf1924f7e512c15ceb5c38275f822b590a6
+  04530e150af0702f6f963104facda5eaa6e866ae:04530e150af0702f6f963104facda5eaa6e866ae:04530e150af0702f6f963104facda5eaa6e866ae 20120831142456 :04530e150af0702f6f963104facda5eaa6e866ae
+  06097e6d24c69a9ca3e2c8a18971639419147dbf:06097e6d24c69a9ca3e2c8a18971639419147dbf:06097e6d24c69a9ca3e2c8a18971639419147dbf 20120831142449 :06097e6d24c69a9ca3e2c8a18971639419147dbf
+  3f876cb1e01aa462b30b1b37bab3ed3c9ba79bb9:205f633a1566ae4fc8c70ccbfc15f369b1a13e7d:205f633a1566ae4fc8c70ccbfc15f369b1a13e7d 20120831142925 :07e9a4968388d806e32b0804269ddae847f89ec8
+  0845320763a27b14105ab6d09f8a5c2e0c0b3495:0845320763a27b14105ab6d09f8a5c2e0c0b3495:0845320763a27b14105ab6d09f8a5c2e0c0b3495 20120831142928 :0845320763a27b14105ab6d09f8a5c2e0c0b3495
+  09868b512410628e06c7dc25a6999c7dda8cf078:09868b512410628e06c7dc25a6999c7dda8cf078:09868b512410628e06c7dc25a6999c7dda8cf078 20120831142449 :09868b512410628e06c7dc25a6999c7dda8cf078
+  0a93f0be09a55f7c7db875d893e7337f3a0e9f05:0a93f0be09a55f7c7db875d893e7337f3a0e9f05:0a93f0be09a55f7c7db875d893e7337f3a0e9f05 20120831142919 :0a93f0be09a55f7c7db875d893e7337f3a0e9f05
+  0ab9e3b0886ae1aab0651865d98473295f2cc715:0ab9e3b0886ae1aab0651865d98473295f2cc715:0ab9e3b0886ae1aab0651865d98473295f2cc715 20120831142450 :0ab9e3b0886ae1aab0651865d98473295f2cc715
+  0b192ea98d65b21fe6b89e16d99492f2bb749bf5:0b192ea98d65b21fe6b89e16d99492f2bb749bf5:0b192ea98d65b21fe6b89e16d99492f2bb749bf5 20120831142449 :0b192ea98d65b21fe6b89e16d99492f2bb749bf5
+  0d2f57ac196ff70c91c9f5f9cb71cf65c78e2723:0d2f57ac196ff70c91c9f5f9cb71cf65c78e2723:0d2f57ac196ff70c91c9f5f9cb71cf65c78e2723 20120831142452 :0d2f57ac196ff70c91c9f5f9cb71cf65c78e2723
+  0e0ee2ccceadc26f65f318d17971fa040f7a4fbd:0e0ee2ccceadc26f65f318d17971fa040f7a4fbd:0e0ee2ccceadc26f65f318d17971fa040f7a4fbd 20120831142453 :0e0ee2ccceadc26f65f318d17971fa040f7a4fbd
+  0f44924c71cfec3b0b2569a9130f739636118f42:0f44924c71cfec3b0b2569a9130f739636118f42:0f44924c71cfec3b0b2569a9130f739636118f42 20120831142920 :0f44924c71cfec3b0b2569a9130f739636118f42
+  97b8883ab851a55fb38f12826d2f81ce5c81f2c6:254d00c1ee1ea1946b9ee678f88b297c4940f53d:108412260f226609c8161f6e831119f47e6d9380 20120831142456 :108412260f226609c8161f6e831119f47e6d9380
+  10ab70365c69a9c0f5e2a14895a680b7de615909:10ab70365c69a9c0f5e2a14895a680b7de615909:b7e560e563ea242fab7fc2d272b7777ee9190033 20120831142937 :10ab70365c69a9c0f5e2a14895a680b7de615909
+  0b28d98f575a58b70c068e14cc403f99a83e7fb1:deb4038f40ce5b62d119efeeb47140ac461826a9:682b642a98f0d3f9cccd2a67ae6f8c633dc76611 20120831142939 :13575613a511c56f80e8b854eaa0accf435de08d
+  1398b098bf9d094f2dbabe8e7c6ce6fdca8c05ae:1398b098bf9d094f2dbabe8e7c6ce6fdca8c05ae:1398b098bf9d094f2dbabe8e7c6ce6fdca8c05ae 20120831142923 :1398b098bf9d094f2dbabe8e7c6ce6fdca8c05ae
+  431a37470abb5ce0c018491bc6fbb1ed97e38496:4cead5ae6a94829ff09e3602bb47a158c70eabad:4cead5ae6a94829ff09e3602bb47a158c70eabad 20120831142939 :13d94c1e419a43de7e08b83f2b5b259f21d8a160
+  7222de21b437dd343cf5d20c2e023a33412a3f05:aaed1bde27812faad4f0af6ff086038942a088d7:40e5c3d0d87f81298f365c948d03647af71d53fc 20120831142918 :15f34947f8427af56243ed09f96357265e17b4bf
+  166036abb16a0b57c7f7c0a0e0e610ef72b48746:166036abb16a0b57c7f7c0a0e0e610ef72b48746:166036abb16a0b57c7f7c0a0e0e610ef72b48746 20120831142459 :166036abb16a0b57c7f7c0a0e0e610ef72b48746
+  174a4b19524f15ff22356cb08dbef7f4e1f550c1:174a4b19524f15ff22356cb08dbef7f4e1f550c1:174a4b19524f15ff22356cb08dbef7f4e1f550c1 20120831142448 :174a4b19524f15ff22356cb08dbef7f4e1f550c1
+  17ec33c7680851d7d83b25c28c86663deb474359:17ec33c7680851d7d83b25c28c86663deb474359:17ec33c7680851d7d83b25c28c86663deb474359 20120831142448 :17ec33c7680851d7d83b25c28c86663deb474359
+  1867a1e097738fc53ea3b09af362dc8f6a74cf02:1867a1e097738fc53ea3b09af362dc8f6a74cf02:1867a1e097738fc53ea3b09af362dc8f6a74cf02 20120831142926 :1867a1e097738fc53ea3b09af362dc8f6a74cf02
+  1a5f4c622997d1d23f1d08c81c46b80b4da05d47:1a5f4c622997d1d23f1d08c81c46b80b4da05d47:1a5f4c622997d1d23f1d08c81c46b80b4da05d47 20120831142442 :1a5f4c622997d1d23f1d08c81c46b80b4da05d47
+  1a6345a290ff4a28ac4215cbb47fc561dcc886be:1a6345a290ff4a28ac4215cbb47fc561dcc886be:1a6345a290ff4a28ac4215cbb47fc561dcc886be 20120831142449 :1a6345a290ff4a28ac4215cbb47fc561dcc886be
+  1a992dbc077ef84020d44a980c7992ba6c8edf3d:1a992dbc077ef84020d44a980c7992ba6c8edf3d:1a992dbc077ef84020d44a980c7992ba6c8edf3d 20120831142448 :1a992dbc077ef84020d44a980c7992ba6c8edf3d
+  5bc465b37b8a72621c3b8393450014e80723d309:676ab56667dd30e770715ecf9291997b62db8673:e9ac277bcb7d1ec818c447e4756b8b892a55f2d0 20120831142939 :1af5eaef59bdb19e80cf71daf3b7f2ab991cf765
+  1cee26bc818eb02dafe9ad08dd437b10c412aa2b:1cee26bc818eb02dafe9ad08dd437b10c412aa2b:1cee26bc818eb02dafe9ad08dd437b10c412aa2b 20120831142446 :1cee26bc818eb02dafe9ad08dd437b10c412aa2b
+  6478da40fb332bdd6346d363d11b993b63779152:1d98f5251cb21553b4907228cd281e6b84d3a216:1d98f5251cb21553b4907228cd281e6b84d3a216 20120831142457 :1d98f5251cb21553b4907228cd281e6b84d3a216
+  981f35fd029aadf4cd7d5dff9100ba3b48c1e2dd:f48d5b7d13a74a5a121e85d061b9d71e21320443:a7d5f82c7395536b606328b3a188c312a75c114c 20120831142909 :1dedefe8d2340a34f77b6d89d443b4f32c0957e7
+  1eb5c9ef4eb74ad09baac1433eb554dcbf8601c8:1eb5c9ef4eb74ad09baac1433eb554dcbf8601c8:1eb5c9ef4eb74ad09baac1433eb554dcbf8601c8 20120831142930 :1eb5c9ef4eb74ad09baac1433eb554dcbf8601c8
+  202a7fb92385bce3da4af58179d1459409eb96d7:202a7fb92385bce3da4af58179d1459409eb96d7:202a7fb92385bce3da4af58179d1459409eb96d7 20120831142922 :202a7fb92385bce3da4af58179d1459409eb96d7
+  2104ef529005d7b7604be49b93aec1dd5f4b294b:2104ef529005d7b7604be49b93aec1dd5f4b294b:2104ef529005d7b7604be49b93aec1dd5f4b294b 20120831142933 :2104ef529005d7b7604be49b93aec1dd5f4b294b
+  bac30d9e330fdfc639fb04e7d6135eba3fd51174:3515d95e727cd5f743a3d773030c563912f13813:633579fc096732b7acaaf3489f4e2c04de1b7ed0 20120831142927 :216b5903205f4a1f66f0002d01118f5135cc84a6
+  86b5ee6c97656a14f1db72f019762c4111323825:21c2d3f654c1c599751df995a1b183d02301c76d:21c2d3f654c1c599751df995a1b183d02301c76d 20120831142459 :21c2d3f654c1c599751df995a1b183d02301c76d
+  22fd045b2a57d7ed84b5dcb7b6146484143e36fc:22fd045b2a57d7ed84b5dcb7b6146484143e36fc:22fd045b2a57d7ed84b5dcb7b6146484143e36fc 20120831142446 :22fd045b2a57d7ed84b5dcb7b6146484143e36fc
+  232cc1e4937c882ded32e1c2b078f2ef5ac0813b:232cc1e4937c882ded32e1c2b078f2ef5ac0813b:232cc1e4937c882ded32e1c2b078f2ef5ac0813b 20120831142937 :232cc1e4937c882ded32e1c2b078f2ef5ac0813b
+  8f95a96cedefc328b009f4521dccb1d87dc3c55b:b13de7d6008327c8db602ad04cf99ee47cb7083a:3a9f3a1aae22e979f0be157c6dc5ac8c7c07fad8 20120831142939 :23808c6738fdacb7637ad29da6048fdffa0d86cc
+  23cae80cce99d71dc4669da51c6909c3a7ca68ca:23cae80cce99d71dc4669da51c6909c3a7ca68ca:23cae80cce99d71dc4669da51c6909c3a7ca68ca 20120831142450 :23cae80cce99d71dc4669da51c6909c3a7ca68ca
+  aefbb9901410d6fc01de87d27a65c5585fbe0a24:32e916980bc287c5127e4d3169c001a51e81d81d:32e916980bc287c5127e4d3169c001a51e81d81d 20120831142920 :244c41e4053a4ac5142aff27baf83bd9aa27a41e
+  357b1056f9bbe211b62e39f62b50ca2ef8868927:8156e009260210e15127e262e0cdb0933fa8ffac:8156e009260210e15127e262e0cdb0933fa8ffac 20120831142919 :24d47d70322420166ece5981dc127bbc90e6cea2
+  2500db76f284b2c729636bf2924cad33cd8ce8f9:2500db76f284b2c729636bf2924cad33cd8ce8f9:2500db76f284b2c729636bf2924cad33cd8ce8f9 20120831142446 :2500db76f284b2c729636bf2924cad33cd8ce8f9
+  cf53c30067595ced134f2f6b00c2a6d851a42fd0:253316728c4012a86fae361e7b7fcb0fab0f5c38:253316728c4012a86fae361e7b7fcb0fab0f5c38 20120831142456 :253316728c4012a86fae361e7b7fcb0fab0f5c38
+  2534593d70ffd8b08b6969b78be423676e4ac9ba:2534593d70ffd8b08b6969b78be423676e4ac9ba:2534593d70ffd8b08b6969b78be423676e4ac9ba 20120831142457 :2534593d70ffd8b08b6969b78be423676e4ac9ba
+  25446dc149f86e6897ae4c6299d744fba62e793a:25446dc149f86e6897ae4c6299d744fba62e793a:25446dc149f86e6897ae4c6299d744fba62e793a 20120831142918 :25446dc149f86e6897ae4c6299d744fba62e793a
+  499735bccb57b799122f417301304eb1689cae10:25d48038eae645618fd16923085ad2f2e804dd81:25d48038eae645618fd16923085ad2f2e804dd81 20120831142459 :25d48038eae645618fd16923085ad2f2e804dd81
+  265850b38137898969ca510b0cb1e5e2536f4226:265850b38137898969ca510b0cb1e5e2536f4226:265850b38137898969ca510b0cb1e5e2536f4226 20120831142448 :265850b38137898969ca510b0cb1e5e2536f4226
+  269134edd05d40f1e326c8f351a969397ab261ea:269134edd05d40f1e326c8f351a969397ab261ea:269134edd05d40f1e326c8f351a969397ab261ea 20120831142448 :269134edd05d40f1e326c8f351a969397ab261ea
+  2727a642fb63f329acd33f4b48bcc20e926c5f40:2727a642fb63f329acd33f4b48bcc20e926c5f40:2727a642fb63f329acd33f4b48bcc20e926c5f40 20120831142456 :2727a642fb63f329acd33f4b48bcc20e926c5f40
+  a653e14cba6670ca3439c198eccb1a7fd52ea59f:2a328b6b63ebec85d369427875739304dc1cf2cb:2a328b6b63ebec85d369427875739304dc1cf2cb 20120831142457 :2a328b6b63ebec85d369427875739304dc1cf2cb
+  2b4610f09c5ed4164734d3238b27969d6bd14399:2b4610f09c5ed4164734d3238b27969d6bd14399:2b4610f09c5ed4164734d3238b27969d6bd14399 20120831142456 :2b4610f09c5ed4164734d3238b27969d6bd14399
+  2dc5d027ef23416f31860dc0e158aa1b6ab9a11f:2dc5d027ef23416f31860dc0e158aa1b6ab9a11f:2dc5d027ef23416f31860dc0e158aa1b6ab9a11f 20120831142449 :2dc5d027ef23416f31860dc0e158aa1b6ab9a11f
+  2e7c5f2d14a85c9a073074d5540aef234cb3cea5:2e7c5f2d14a85c9a073074d5540aef234cb3cea5:2e7c5f2d14a85c9a073074d5540aef234cb3cea5 20120831142452 :2e7c5f2d14a85c9a073074d5540aef234cb3cea5
+  5c8665b82b87393e44b8ce76afd33ba27cb7258b:9198e5ae80283ff5f674f5391c51ed4b5debb180:ff77db020243c30ebb43fd3ca07a8dda478b9644 20120831142910 :301c9579342edab623560ecd65bd961dd3d22d31
+  3e1c5d89e4c677f9484b1dcf2d0e64be15094348:582ff79336a24eb1da7edc0d4a8b426386b4445a:6c213b8e297e090035440285dff218a79ac4fd9e 20120831142912 :30f98809b8764e9e7ebcce9501b7baf129efb882
+  31fc72943db1de218eb827e7ea3becc16d76d851:31fc72943db1de218eb827e7ea3becc16d76d851:31fc72943db1de218eb827e7ea3becc16d76d851 20120831142459 :31fc72943db1de218eb827e7ea3becc16d76d851
+  32aabe78307ac40b391428e2fd9d7c6b19eed604:32aabe78307ac40b391428e2fd9d7c6b19eed604:32aabe78307ac40b391428e2fd9d7c6b19eed604 20120831142930 :32aabe78307ac40b391428e2fd9d7c6b19eed604
+  32d24a273fef021b079fc64f151c2436af700b30:32d24a273fef021b079fc64f151c2436af700b30:32d24a273fef021b079fc64f151c2436af700b30 20120831142447 :32d24a273fef021b079fc64f151c2436af700b30
+  34dfe8f4b5518cc3b348ef10ca4f1acae07e1e72:34dfe8f4b5518cc3b348ef10ca4f1acae07e1e72:34dfe8f4b5518cc3b348ef10ca4f1acae07e1e72 20120831142922 :34dfe8f4b5518cc3b348ef10ca4f1acae07e1e72
+  62fca2f819f9428814158ff5d4c6fae8121cfb38:368901ce572a723c0ae0e68f0563b2712a69fd5d:368901ce572a723c0ae0e68f0563b2712a69fd5d 20120831142457 :368901ce572a723c0ae0e68f0563b2712a69fd5d
+  37922f54ac020847467a9ace9bdf8cfa5c3b6db8:37922f54ac020847467a9ace9bdf8cfa5c3b6db8:37922f54ac020847467a9ace9bdf8cfa5c3b6db8 20120831142458 :37922f54ac020847467a9ace9bdf8cfa5c3b6db8
+  3913aeadf2f94efc7f9bc1a732a7e4cef2714e99:3913aeadf2f94efc7f9bc1a732a7e4cef2714e99:3913aeadf2f94efc7f9bc1a732a7e4cef2714e99 20120831142459 :3913aeadf2f94efc7f9bc1a732a7e4cef2714e99
+  39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2:39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2:39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2 20120831142452 :39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2
+  3ea0d59d5878d1eeed2f7e1796b504b28ff1818a:3ea0d59d5878d1eeed2f7e1796b504b28ff1818a:3ea0d59d5878d1eeed2f7e1796b504b28ff1818a 20120831142452 :3ea0d59d5878d1eeed2f7e1796b504b28ff1818a
+  3f5f1faad124a996bb28c72fa10cd50e06295934:3f5f1faad124a996bb28c72fa10cd50e06295934:3f5f1faad124a996bb28c72fa10cd50e06295934 20120831142449 :3f5f1faad124a996bb28c72fa10cd50e06295934
+  4053be284a4fd91bfddc9e512ddc6366b2dc6f11:4053be284a4fd91bfddc9e512ddc6366b2dc6f11:4053be284a4fd91bfddc9e512ddc6366b2dc6f11 20120831142457 :4053be284a4fd91bfddc9e512ddc6366b2dc6f11
+  409919971c60b6cfc8ded41ba5999eb53eb595f3:409919971c60b6cfc8ded41ba5999eb53eb595f3:409919971c60b6cfc8ded41ba5999eb53eb595f3 20120831142441 :409919971c60b6cfc8ded41ba5999eb53eb595f3
+  1c41e9ffb45f4d407b1b7ff2896449e29b75d93f:4199e18036ba2020bdcbc733f603564f41cf9009:4199e18036ba2020bdcbc733f603564f41cf9009 20120831142456 :4199e18036ba2020bdcbc733f603564f41cf9009
+  41d82921719c38520d5472a3608b79394db1b7b0:41d82921719c38520d5472a3608b79394db1b7b0:41d82921719c38520d5472a3608b79394db1b7b0 20120831142453 :41d82921719c38520d5472a3608b79394db1b7b0
+  42556198e68860b4135544fe9e4687c9fbffbfe2:42556198e68860b4135544fe9e4687c9fbffbfe2:42556198e68860b4135544fe9e4687c9fbffbfe2 20120831142449 :42556198e68860b4135544fe9e4687c9fbffbfe2
+  4332f84ddcaef82ab642672690be31aec582fe3a:4332f84ddcaef82ab642672690be31aec582fe3a:4332f84ddcaef82ab642672690be31aec582fe3a 20120831142923 :4332f84ddcaef82ab642672690be31aec582fe3a
+  149624c410b45b1dd36acc4f0e9e2f6200af3e38:43bb3a7b79d1fc23958a7775f407fa9567c6f67f:43bb3a7b79d1fc23958a7775f407fa9567c6f67f 20120831142453 :43bb3a7b79d1fc23958a7775f407fa9567c6f67f
+  441d49d6b49c35df6e42768a061890a5054d0c63:441d49d6b49c35df6e42768a061890a5054d0c63:441d49d6b49c35df6e42768a061890a5054d0c63 20120831142444 :441d49d6b49c35df6e42768a061890a5054d0c63
+  ccfe8d4325bca420fd29eb054addcdb61a5604f6:5b1349d6d27f52039d54ab05fde3f0a46d5eb1b9:5b1349d6d27f52039d54ab05fde3f0a46d5eb1b9 20120831142940 :45634065162f39dab14543b03f7ea137a6b36aa7
+  ca77a12e0dcb58575aa49114feb36bcd39d09230:b587c49c7e734b7f6b1eb0c80cfca1b8c918c634:6e4855d3a80e46555cadc97ae9fed0dbe5e05867 20120831142813 :4778f122f1e05f6f59512d04de9b7ade90f3ab3d
+  48b8264d7be97d82ac4837ce4a19bf154d08cf54:48b8264d7be97d82ac4837ce4a19bf154d08cf54:48b8264d7be97d82ac4837ce4a19bf154d08cf54 20120831142923 :48b8264d7be97d82ac4837ce4a19bf154d08cf54
+  1cb0f570c0655bd62c73ec14e2ccac741ccec24d:531ace18d4a2d3919c8ef8b9d579e9cc4e53ce40:3237875357acc6ac6c2a25e36d272ff4cc77e6f0 20120831142906 :491e89c0c862d96fcac012a36a2023a2f92cf7ef
+  49378a9e532530fcb855f6e0fd7e0edd21b5cc15:49378a9e532530fcb855f6e0fd7e0edd21b5cc15:49378a9e532530fcb855f6e0fd7e0edd21b5cc15 20120831142928 :49378a9e532530fcb855f6e0fd7e0edd21b5cc15
+  4d7eaf239c033d305a464a06c3e64c68d096c7e1:4d7eaf239c033d305a464a06c3e64c68d096c7e1:4d7eaf239c033d305a464a06c3e64c68d096c7e1 20120831142440 :4d7eaf239c033d305a464a06c3e64c68d096c7e1
+  4ddf620c5f93aab6deb357284ead79f1faa2588c:4ddf620c5f93aab6deb357284ead79f1faa2588c:4ddf620c5f93aab6deb357284ead79f1faa2588c 20120831142938 :4ddf620c5f93aab6deb357284ead79f1faa2588c
+  5ef19bfa18bd47e2584db7a48aa95c46b41b2a4b:a8d46a65eef3c657bc8fcaa2ad0fbf0a8e499ed9:6716b722e86d85e5d1855421c2f9c10d8d040ac1 20120831142902 :4e7a9ebb5fe87cf8a706346d4de70911c90a81ec
+  ea4318324e11a03d54ecf543eac7677b1881da56:ef236af6741c0c19fc8155ba45e44276379d1d65:5000664ee8b54ad75a72da627ab7665ca422f10b 20120831142456 :5000664ee8b54ad75a72da627ab7665ca422f10b
+  50ee8cf26b2e4bf1b9774a83d227fae873158ef8:50ee8cf26b2e4bf1b9774a83d227fae873158ef8:50ee8cf26b2e4bf1b9774a83d227fae873158ef8 20120831142449 :50ee8cf26b2e4bf1b9774a83d227fae873158ef8
+  51468378eaec5b38e9afa03b73739c0dffbf523b:51468378eaec5b38e9afa03b73739c0dffbf523b:51468378eaec5b38e9afa03b73739c0dffbf523b 20120831142920 :51468378eaec5b38e9afa03b73739c0dffbf523b
+  542ef100c9e601c98d9113d72bc1e47de6b047b4:542ef100c9e601c98d9113d72bc1e47de6b047b4:542ef100c9e601c98d9113d72bc1e47de6b047b4 20120831142925 :542ef100c9e601c98d9113d72bc1e47de6b047b4
+  54cd4a1066d31573ce3181c08565f8ede58ec3a5:54cd4a1066d31573ce3181c08565f8ede58ec3a5:54cd4a1066d31573ce3181c08565f8ede58ec3a5 20120831142919 :54cd4a1066d31573ce3181c08565f8ede58ec3a5
+  556aa2baca4b32676b2a5a5c986f0f2b5c44d03d:556aa2baca4b32676b2a5a5c986f0f2b5c44d03d:556aa2baca4b32676b2a5a5c986f0f2b5c44d03d 20120831142927 :556aa2baca4b32676b2a5a5c986f0f2b5c44d03d
+  bdd5fdbb805546b624229110d921311799ff9649:abfa06b1195e8d2822358f877f869ab28c95f4ba:8dc70545bfd637e06f2affab62fba3a8a84d1681 20120831142910 :55d8499ceb048f735c19c99acc2891200cc584a8
+  fd62ef6a865f25fc0d4aadd0e7303c8f0c3e32a8:561f139e28c58f72a4cd969b1c52a26cf6aa8362:561f139e28c58f72a4cd969b1c52a26cf6aa8362 20120831142459 :561f139e28c58f72a4cd969b1c52a26cf6aa8362
+  5307d10f3305df824851bad5bc6235742f009429:59bae9664c1e41a2a381188b5ad51b4cc0377467:efd0b4a7eaf55c0716fde3243ac45cb49fdd2606 20120831142913 :564f318ca36134df352e3df25a9c342881eb1ccf
+  57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9:57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9:57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9 20120831142453 :57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9
+  aa7f923c395e45ecd95c23099a66f4a44927a21e:60c2709f9d8c9c117f735c7aeb3e44f064a78fd9:5951e73c2a4280d562535f8da8e39a8749010bd7 20120831142445 :5951e73c2a4280d562535f8da8e39a8749010bd7
+  0c48753894fbe3ca94e6680fc8b65b7fa8b9d642:9963461cfa1f078539b5c0ed0cc0553b4d5e30ec:9963461cfa1f078539b5c0ed0cc0553b4d5e30ec 20120831142917 :5967b4df872efdefcd3428987383ae1863747c7f
+  5fb422d78289dbde8571574ff779ba39bbb01159:5bab776822719667a604b8fb2eafc679161aeb0f:5bab776822719667a604b8fb2eafc679161aeb0f 20120831142456 :5bab776822719667a604b8fb2eafc679161aeb0f
+  b901bad7a812a9d3922d0e90353907e8b8c3eb77:5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f:5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f 20120831142457 :5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f
+  2e10710eeb6be044b176804b81ae518e558ab8c6:1c12db5ce7645bf58f96c3af7302ce4740f6baae:1c12db5ce7645bf58f96c3af7302ce4740f6baae 20120831142925 :5cfdef194ff1a8a9a8b40e630b729931642b6c2a
+  5dad0d14403c14be8273bf53efcfc3d75c07f361:5dad0d14403c14be8273bf53efcfc3d75c07f361:5dad0d14403c14be8273bf53efcfc3d75c07f361 20120831142456 :5dad0d14403c14be8273bf53efcfc3d75c07f361
+  5e20cc0a6c833ebfdcd5fc6517eed89a44ae35dc:5e20cc0a6c833ebfdcd5fc6517eed89a44ae35dc:5e20cc0a6c833ebfdcd5fc6517eed89a44ae35dc 20120831142444 :5e20cc0a6c833ebfdcd5fc6517eed89a44ae35dc
+  5e32d936ba53c22ba6b70e5eee3992a361bc2ff8:5e32d936ba53c22ba6b70e5eee3992a361bc2ff8:5e32d936ba53c22ba6b70e5eee3992a361bc2ff8 20120831142445 :5e32d936ba53c22ba6b70e5eee3992a361bc2ff8
+  61cc86131f0c7f2c21a9373bcc490d7a0efed712:61cc86131f0c7f2c21a9373bcc490d7a0efed712:61cc86131f0c7f2c21a9373bcc490d7a0efed712 20120831142923 :61cc86131f0c7f2c21a9373bcc490d7a0efed712
+  87d4c6dc541c83feb5bbc06a3014890753767813:62509dafa2ad38e0e3c34c538f6d3da1e25971ce:62509dafa2ad38e0e3c34c538f6d3da1e25971ce 20120831142457 :62509dafa2ad38e0e3c34c538f6d3da1e25971ce
+  5a40b1718ff85710d2d703a72ebba29d371f37d9:9017d436ab42b389e68eee18f5bfec0c2e6d2284:63e9057128a2096b3787c4c784a5b6dab862264d 20120831142457 :63e9057128a2096b3787c4c784a5b6dab862264d
+  681f78903b5b402ab554cb7959784fe7c6d1c5f2:4b109329a3e3192d758c0b22191e78e3e3f1010b:4b109329a3e3192d758c0b22191e78e3e3f1010b 20120831142938 :64241209869be019d27bacc1d46ea51b08beeaf2
+  650f19766157bdd8d35f67ea474a57ed1b4c24f7:650f19766157bdd8d35f67ea474a57ed1b4c24f7:650f19766157bdd8d35f67ea474a57ed1b4c24f7 20120831142449 :650f19766157bdd8d35f67ea474a57ed1b4c24f7
+  659ad6a335b4947eef8758b1b0cf050779430b78:659ad6a335b4947eef8758b1b0cf050779430b78:659ad6a335b4947eef8758b1b0cf050779430b78 20120831142449 :659ad6a335b4947eef8758b1b0cf050779430b78
+  68175df528f66e558b40d41867aa3539f55518bd:68175df528f66e558b40d41867aa3539f55518bd:68175df528f66e558b40d41867aa3539f55518bd 20120831142445 :68175df528f66e558b40d41867aa3539f55518bd
+  4064f82deea4759c1b3a1af398e86005683cf42e:68a9e41d2a7cec1ffedd5e38f4c064927b43b3c7:68a9e41d2a7cec1ffedd5e38f4c064927b43b3c7 20120831142458 :68a9e41d2a7cec1ffedd5e38f4c064927b43b3c7
+  6c6b298e9c055f147224ed889b2e74e0d6496c4d:6c6b298e9c055f147224ed889b2e74e0d6496c4d:6c6b298e9c055f147224ed889b2e74e0d6496c4d 20120831142444 :6c6b298e9c055f147224ed889b2e74e0d6496c4d
+  fee76c1324e86e6460e0b65d33322da039e22dff:1dd39b5d523769525dbc38bf34ae1bd103509a28:0f12a56739d149625cadf23f4af5488001c171b9 20120831142812 :6c701ea3a131c7f0ffe27fa17533bbf242e9995b
+  6d537b584457026203446d7e15292a3118a156f2:6d537b584457026203446d7e15292a3118a156f2:6d537b584457026203446d7e15292a3118a156f2 20120831142921 :6d537b584457026203446d7e15292a3118a156f2
+  15b90e920f506fa54de313aced7b3d49ae9bc27b:f337c142317ed76a720e807133e9449d3e82cdbc:4ef29fb95761af2fa1e356396f010f5a79ed18db 20120831142901 :6db4a1ddabfea787391830295ce6baa079d0d6da
+  6e155e63de9510ee2fb990d9cc6ddf0c5f209cb5:6e155e63de9510ee2fb990d9cc6ddf0c5f209cb5:6e155e63de9510ee2fb990d9cc6ddf0c5f209cb5 20120831142449 :6e155e63de9510ee2fb990d9cc6ddf0c5f209cb5
+  18bec84a5461a59fa1ebfbb9fec04e5b211457ff:c729958a0034ca9adf19debcd440c61973648c84:c729958a0034ca9adf19debcd440c61973648c84 20120831142924 :6e19687296375ff799bbe9e9eb6f5fe85fdaca43
+  6e539e37ef8543c870d843f1108184ca8ffcbe2b:d21bc3c19ebc5b3924caff5f859e6c50071590c9:d21bc3c19ebc5b3924caff5f859e6c50071590c9 20120831142935 :6e31282966a0f08f7043ff0f50cd901d936e1d75
+  6f562f44abb24c381f7b353b427b024dd465a2c7:6f562f44abb24c381f7b353b427b024dd465a2c7:6f562f44abb24c381f7b353b427b024dd465a2c7 20120831142924 :6f562f44abb24c381f7b353b427b024dd465a2c7
+  72a5abf5f3842b5301c5f0d1f389c878add4d13b:72a5abf5f3842b5301c5f0d1f389c878add4d13b:72a5abf5f3842b5301c5f0d1f389c878add4d13b 20120831142446 :72a5abf5f3842b5301c5f0d1f389c878add4d13b
+  74b442ad599bb17b5435bcc8ce3acf3016340208:74b442ad599bb17b5435bcc8ce3acf3016340208:74b442ad599bb17b5435bcc8ce3acf3016340208 20120831142931 :74b442ad599bb17b5435bcc8ce3acf3016340208
+  7666962cc18a0275b7198d6d64afba9033ca1604:7666962cc18a0275b7198d6d64afba9033ca1604:7666962cc18a0275b7198d6d64afba9033ca1604 20120831142448 :7666962cc18a0275b7198d6d64afba9033ca1604
+  072d92b5e4c933a0eaee67c8126b2f5007cf129a:2dc28879f569bf4c9611893b3ca5e0622e76c3b6:e5c40c170742a9661fb94564eb7d54c70b715fc7 20120831142940 :770767c440b513e05a89fbbb1239b26f18a705a9
+  77dbfdb93eac55cb0affb28efdac66c2ab8ee728:77dbfdb93eac55cb0affb28efdac66c2ab8ee728:77dbfdb93eac55cb0affb28efdac66c2ab8ee728 20120831142925 :77dbfdb93eac55cb0affb28efdac66c2ab8ee728
+  780fae4087869e6c485796fd6df1e399e64fc44e:780fae4087869e6c485796fd6df1e399e64fc44e:780fae4087869e6c485796fd6df1e399e64fc44e 20120831142456 :780fae4087869e6c485796fd6df1e399e64fc44e
+  785fd9ee2450a11697d7b60d88165f395639562f:785fd9ee2450a11697d7b60d88165f395639562f:785fd9ee2450a11697d7b60d88165f395639562f 20120831142456 :785fd9ee2450a11697d7b60d88165f395639562f
+  e5ab99f3668ff50cb5e5785ee730310ba26b9331:8ae58092d5ea97a6ee7ab29ce380b5a4b82d7eb5:62c63012b8436de0642728655e35bf82f5199d95 20120831142914 :78d3182d453ab0c620f6655aabe601c9c33b138f
+  7c039e95cd514cf9bdf2e325122c4cdbf9fbd07d:7c039e95cd514cf9bdf2e325122c4cdbf9fbd07d:7c039e95cd514cf9bdf2e325122c4cdbf9fbd07d 20120831142448 :7c039e95cd514cf9bdf2e325122c4cdbf9fbd07d
+  7d1ad162b127b627f9f3bdf14b9790d6ae33a453:7d1ad162b127b627f9f3bdf14b9790d6ae33a453:7d1ad162b127b627f9f3bdf14b9790d6ae33a453 20120831142933 :7d1ad162b127b627f9f3bdf14b9790d6ae33a453
+  7d5ba6c535ddd4557ca46698f08262348eeb072c:7d5ba6c535ddd4557ca46698f08262348eeb072c:7d5ba6c535ddd4557ca46698f08262348eeb072c 20120831142456 :7d5ba6c535ddd4557ca46698f08262348eeb072c
+  7dcbc0831ee6cec3b79e90e8b292d25b34174e54:7dcbc0831ee6cec3b79e90e8b292d25b34174e54:7dcbc0831ee6cec3b79e90e8b292d25b34174e54 20120831142444 :7dcbc0831ee6cec3b79e90e8b292d25b34174e54
+  0a62595f10b89928ef51b2804eade9c0901fb688:1fdf8806c62542ca9c4c74fca33b3b30ea3b87b5:1fdf8806c62542ca9c4c74fca33b3b30ea3b87b5 20120831142811 :7f0caa5d45a8bfe8bd553b810cca6addfb588a12
+  8065a6d8e8ea6cb262b9a9a422db9dc918c90d81:8065a6d8e8ea6cb262b9a9a422db9dc918c90d81:8065a6d8e8ea6cb262b9a9a422db9dc918c90d81 20120831142934 :8065a6d8e8ea6cb262b9a9a422db9dc918c90d81
+  d9f4929d9921b7834590a4ac32f9065eb644a8e9:a1aa8dd532f3d5ca8998349130483e53f3e7760a:80b8e588bbdba61cf76f1f7b218a0387a6691ab3 20120831142457 :80b8e588bbdba61cf76f1f7b218a0387a6691ab3
+  83496926787f5d4215cd6a4c54e816014b413f34:83496926787f5d4215cd6a4c54e816014b413f34:83496926787f5d4215cd6a4c54e816014b413f34 20120831142458 :83496926787f5d4215cd6a4c54e816014b413f34
+  85af6645584bd2339848a2a9c95db234ba0a68ea:85af6645584bd2339848a2a9c95db234ba0a68ea:85af6645584bd2339848a2a9c95db234ba0a68ea 20120831142457 :85af6645584bd2339848a2a9c95db234ba0a68ea
+  85cde3427627d577408abbd947525da4d37bc1bd:85cde3427627d577408abbd947525da4d37bc1bd:85cde3427627d577408abbd947525da4d37bc1bd 20120831142927 :85cde3427627d577408abbd947525da4d37bc1bd
+  c47c5c715f1b1964f7226551b336b30a538ac812:a100c1cfc3a54288b9b269cfdb67fc27130a7ff4:a100c1cfc3a54288b9b269cfdb67fc27130a7ff4 20120831142939 :864add79c81c7309ba910513085f413dadeaeb83
+  a6064eb5432c84e6b5bbaf8ea0f1f4e9df8da9c6:21a00b23a8a1ccf43b329a54af696db684e7fb5a:e539cc6a7d5ae02154af25ecf45b5fc2cf3a4e75 20120831142905 :88656426157c08dacd208dedfb71de919fb3f8b1
+  89ef9ccfa7d9324603493888cf716f049a666a9f:89ef9ccfa7d9324603493888cf716f049a666a9f:89ef9ccfa7d9324603493888cf716f049a666a9f 20120831142926 :89ef9ccfa7d9324603493888cf716f049a666a9f
+  8a7c6c1097e54db68497968119c8434cbb5ae29e:8a7c6c1097e54db68497968119c8434cbb5ae29e:8a7c6c1097e54db68497968119c8434cbb5ae29e 20120831142932 :8a7c6c1097e54db68497968119c8434cbb5ae29e
+  8b85c6b0e0b7e725395ad684dbf13b34efcb798d:8b85c6b0e0b7e725395ad684dbf13b34efcb798d:8b85c6b0e0b7e725395ad684dbf13b34efcb798d 20120831142921 :8b85c6b0e0b7e725395ad684dbf13b34efcb798d
+  1a95a704aa430bbef0174d3c235ec960b699d705:8e9a4bd810c0d4c6cc42df2e974373c24f3b4372:8e9a4bd810c0d4c6cc42df2e974373c24f3b4372 20120831142456 :8e9a4bd810c0d4c6cc42df2e974373c24f3b4372
+  c3f6a80b0fa61a20ddd4fe99e050263e7c731371:ca476f616a32d70c4694af95d3094801c7f3942a:453ebb6fe35c2c9582a3aa5acce173e23a43ac5c 20120831142939 :8eb3709e6e5cfbef92d97253f63dd7b8c5134db6
+  8f8265d71a122877a6312a67145bbf36cd04b11f:8f8265d71a122877a6312a67145bbf36cd04b11f:8f8265d71a122877a6312a67145bbf36cd04b11f 20120831142921 :8f8265d71a122877a6312a67145bbf36cd04b11f
+  9103f2a4a1eab68fc5eedc0d897a2c051907ef4d:9103f2a4a1eab68fc5eedc0d897a2c051907ef4d:9103f2a4a1eab68fc5eedc0d897a2c051907ef4d 20120831142931 :9103f2a4a1eab68fc5eedc0d897a2c051907ef4d
+  919ab06bdcbf59c28aeca3f340f7cd8285e29780:919ab06bdcbf59c28aeca3f340f7cd8285e29780:919ab06bdcbf59c28aeca3f340f7cd8285e29780 20120831142450 :919ab06bdcbf59c28aeca3f340f7cd8285e29780
+  91bf372e9c531a68d08cb158239df303c0a37fb1:91bf372e9c531a68d08cb158239df303c0a37fb1:91bf372e9c531a68d08cb158239df303c0a37fb1 20120831142442 :91bf372e9c531a68d08cb158239df303c0a37fb1
+  9246febb586565b43ea877090b439c4ade10dfee:9246febb586565b43ea877090b439c4ade10dfee:9246febb586565b43ea877090b439c4ade10dfee 20120831142922 :9246febb586565b43ea877090b439c4ade10dfee
+  9248e7c9e5684badab20772f46f020ade733afc6:9248e7c9e5684badab20772f46f020ade733afc6:9248e7c9e5684badab20772f46f020ade733afc6 20120831142444 :9248e7c9e5684badab20772f46f020ade733afc6
+  8340b11310fbed95eaa0c403d63f3910857d73ee:925d65018db8d43d79f3e1236c0178805f68c488:925d65018db8d43d79f3e1236c0178805f68c488 20120831142457 :925d65018db8d43d79f3e1236c0178805f68c488
+  d9d6a0fd650a9aa023b60293a18f6236e6dec7be:92b2335d3a97549b633dbcc3c41381a90f2b924b:92b2335d3a97549b633dbcc3c41381a90f2b924b 20120831142459 :92b2335d3a97549b633dbcc3c41381a90f2b924b
+  a503904bee4c422b8aa5f301ee9fb73b714de36d:942f0e609a95728147c0ad1ca8ff8787e33afeaf:942f0e609a95728147c0ad1ca8ff8787e33afeaf 20120831142449 :942f0e609a95728147c0ad1ca8ff8787e33afeaf
+  94559184bb4bf02414286cb9d20b95dd8806bd32:94559184bb4bf02414286cb9d20b95dd8806bd32:94559184bb4bf02414286cb9d20b95dd8806bd32 20120831142449 :94559184bb4bf02414286cb9d20b95dd8806bd32
+  9558400db089262849c33428a77645c323390145:9558400db089262849c33428a77645c323390145:9558400db089262849c33428a77645c323390145 20120831142445 :9558400db089262849c33428a77645c323390145
+  9631521c22c7406e80d627145f1323648cd4a588:9631521c22c7406e80d627145f1323648cd4a588:9631521c22c7406e80d627145f1323648cd4a588 20120831142448 :9631521c22c7406e80d627145f1323648cd4a588
+  963f0b325919991a8c31ef06a1c84ad499d52232:963f0b325919991a8c31ef06a1c84ad499d52232:963f0b325919991a8c31ef06a1c84ad499d52232 20120831142442 :963f0b325919991a8c31ef06a1c84ad499d52232
+  9d756f88aa74cf6511a6890a3096eccf054da978:9d756f88aa74cf6511a6890a3096eccf054da978:9d756f88aa74cf6511a6890a3096eccf054da978 20120831142442 :9d756f88aa74cf6511a6890a3096eccf054da978
+  605748225c5bff3b426cf674a64ba7c860dd0076:b4c01f626cac381d2318c310a493e9fed3c49438:b4c01f626cac381d2318c310a493e9fed3c49438 20120831142934 :9f2075bb63002acf68cdd3b3902708161f588025
+  0eb05f4bc10ce35c3a13ca5c513bb78b50705381:a21f73a79260a9098df7eabf10982ab9ff2d9efe:a21f73a79260a9098df7eabf10982ab9ff2d9efe 20120831142456 :a21f73a79260a9098df7eabf10982ab9ff2d9efe
+  a349b390595c90be2924a20a372aac99bad438e7:a349b390595c90be2924a20a372aac99bad438e7:a349b390595c90be2924a20a372aac99bad438e7 20120831142453 :a349b390595c90be2924a20a372aac99bad438e7
+  a3ba469005582347c7228767e41bdfc2025e712d:a3ba469005582347c7228767e41bdfc2025e712d:a3ba469005582347c7228767e41bdfc2025e712d 20120625123356 :a3ba469005582347c7228767e41bdfc2025e712d
+  a43c9ad3f07dbfa56be075a9ebdcfa115f6675c8:a43c9ad3f07dbfa56be075a9ebdcfa115f6675c8:a43c9ad3f07dbfa56be075a9ebdcfa115f6675c8 20120831142445 :a43c9ad3f07dbfa56be075a9ebdcfa115f6675c8
+  b584b23e7faec99d89023b8c307bc54f3cc1ce8b:a88a4b46ddcdcf0312b0fe03b1900412bdb71873:a88a4b46ddcdcf0312b0fe03b1900412bdb71873 20120831142457 :a88a4b46ddcdcf0312b0fe03b1900412bdb71873
+  af8539874dd70aa2c471e4e0dfc4923606615a26:713a8a6c2d8ce4b1f0d5c7937585d899b45a735e:713a8a6c2d8ce4b1f0d5c7937585d899b45a735e 20120831142910 :a8f517df84bb55ce0b6126874627c7d134008ee6
+  8dc3557ed72623f072b7681387f23c64d72a318e:aa0fa91de81af5bdc1e69e7f70aa572bbc996b82:aa0fa91de81af5bdc1e69e7f70aa572bbc996b82 20120831142750 :aa0fa91de81af5bdc1e69e7f70aa572bbc996b82
+  2d7e4e5064ecaa13d0df7b1bf2dcafcb0d2dcfa7:1bb3b28d331b621a9ff340e4d03fbac8abe218fd:d563e7e130528f9494be43eb938275d446aba326 20120831142901 :ab11828a28e1f90d0af47bac3be6715aac84f475
+  8ddf1e5d5ccf0573a4f5a462b7b4fe2416c5116f:e10217432ad69d40ec9cf13e316c13edc5a52d10:b0343fad9cdc0c38272fc625e05c98da804c3389 20120831142901 :ab79445e171d7fb1b47bfc09a647b205c097c805
+  abe815e897d0bf5e97a29cec0b6af47df8a5ec35:abe815e897d0bf5e97a29cec0b6af47df8a5ec35:abe815e897d0bf5e97a29cec0b6af47df8a5ec35 20120831142927 :abe815e897d0bf5e97a29cec0b6af47df8a5ec35
+  f367b37ce8814d57ea6d7e6072a7f9b37ad59a1f:66069db01ad43175dae0684c180a382e923c1dc0:66069db01ad43175dae0684c180a382e923c1dc0 20120831142922 :ad17319a768778df49cfa8243bcd4154da976079
+  aaa7e0fbb8a67b3754b73f97780029e42dfb5707:b82036e65f5796f3189b7b2ebbbd2326ad614cf7:b82036e65f5796f3189b7b2ebbbd2326ad614cf7 20120831142929 :ae69016caaa450844b5d418bf34416ed6f92ddef
+  677c74f934f563095d92dd84d1c43cfde4ce4079:f9bbde898ac29fca4ac56fbcfa857d0bfbc89249:f9bbde898ac29fca4ac56fbcfa857d0bfbc89249 20120831142926 :aea5157cf8c9464710c150d06a93bf70da34618f
+  aee7e97d8a959676872ecafaaaf37724e83b55e4:aee7e97d8a959676872ecafaaaf37724e83b55e4:aee7e97d8a959676872ecafaaaf37724e83b55e4 20120831142445 :aee7e97d8a959676872ecafaaaf37724e83b55e4
+  6e3022e9e31800253c6a3eebaa6ba974a6b7ba1c:6200cd0047cb15d228e51fab7fb7c1c21f883846:b1492f77c5c13e4f9dc05fe0ba9f95d6ec826660 20120831142457 :b1492f77c5c13e4f9dc05fe0ba9f95d6ec826660
+  b1a406f658f5b62633275c8316849532a0d90797:b1a406f658f5b62633275c8316849532a0d90797:b1a406f658f5b62633275c8316849532a0d90797 20120831142448 :b1a406f658f5b62633275c8316849532a0d90797
+  d7be2f80ea0aa7d98087f7d5092119eb3ebeb360:071b38079170beb504b28a2c8d34a928cbea3258:b1bdf4b6b3e47ac5edb3d9ec8273401f6e8f64a3 20120831142458 :b1bdf4b6b3e47ac5edb3d9ec8273401f6e8f64a3
+  b2ef2c55503e2a4b036a97c5576afa723a119ecb:b2ef2c55503e2a4b036a97c5576afa723a119ecb:b2ef2c55503e2a4b036a97c5576afa723a119ecb 20120831142926 :b2ef2c55503e2a4b036a97c5576afa723a119ecb
+  b5a0eabcb770437c30575d4ea6f5dbd346b8bd89:b5a0eabcb770437c30575d4ea6f5dbd346b8bd89:b5a0eabcb770437c30575d4ea6f5dbd346b8bd89 20120831142447 :b5a0eabcb770437c30575d4ea6f5dbd346b8bd89
+  b5b1a692bbf0bac82c904dbbfeba3040144be964:b5b1a692bbf0bac82c904dbbfeba3040144be964:b5b1a692bbf0bac82c904dbbfeba3040144be964 20120831142456 :b5b1a692bbf0bac82c904dbbfeba3040144be964
+  b60eef5d020c0e881b4bb97d1579339e1cb2a60e:b60eef5d020c0e881b4bb97d1579339e1cb2a60e:b60eef5d020c0e881b4bb97d1579339e1cb2a60e 20120831142446 :b60eef5d020c0e881b4bb97d1579339e1cb2a60e
+  3e46491409531323056e27a234d57a0f9d44bce5:eaada93dd78825198c21e0f92b5ff53f3bed3dd3:eaada93dd78825198c21e0f92b5ff53f3bed3dd3 20120831142926 :b70fe248dc8b0e215f25f02efaca0dee79885ac3
+  b73a16189c15d0e5f59d0b9da7d9dafc19177379:b73a16189c15d0e5f59d0b9da7d9dafc19177379:b73a16189c15d0e5f59d0b9da7d9dafc19177379 20120831142448 :b73a16189c15d0e5f59d0b9da7d9dafc19177379
+  b8c3af50365b12b0beb010f1c35134cbd310341a:b8c3af50365b12b0beb010f1c35134cbd310341a:b8c3af50365b12b0beb010f1c35134cbd310341a 20120831142449 :b8c3af50365b12b0beb010f1c35134cbd310341a
+  bde71c0baf04619964b40d4751e30dea0bc7c920:7253ace09a4130528f690762e57e980efcd6729a:b904075730a195dff53e602e836e6ced7b438257 20120831142456 :b904075730a195dff53e602e836e6ced7b438257
+  98ed887ce833bc85cac1f37bbe95a9d96c81292a:8cf3a79c7445a94cf6bbba0cae8e4d1c8aeb8af9:0f344425d8b8ec3fd16e24800e2571e9dea329fa 20120831142901 :bb728cada3ea166528747dd744b4239ba124400d
+  92596b63fd4938a1283f9e3e20ca7e531ff515f2:3c320fa510b60d9109daa662b55ec07800c1089e:2b79b7e08c2e7f322e2705ba7513df414479b86b 20120831142812 :bbfdddb0785bbc1c410f898101ba93fa44f6b559
+  bcb926fe63b7637bd53e3602feda2166951acdec:bcb926fe63b7637bd53e3602feda2166951acdec:bcb926fe63b7637bd53e3602feda2166951acdec 20120831142450 :bcb926fe63b7637bd53e3602feda2166951acdec
+  997159721fae19b3c0f4077b95bdbf81f4fa96d7:bd25e435c97440c39a1edea79332016aad7f1091:bd25e435c97440c39a1edea79332016aad7f1091 20120831142456 :bd25e435c97440c39a1edea79332016aad7f1091
+  bd57338068f48b9ce4c5275544633ba172b0902a:bd57338068f48b9ce4c5275544633ba172b0902a:bd57338068f48b9ce4c5275544633ba172b0902a 20120831142458 :bd57338068f48b9ce4c5275544633ba172b0902a
+  69aaaa2ccf481f4ea0a5799a51211775acd814ba:707b5fbee9c7c3fd0f22f314699fbfda6c0d38de:707b5fbee9c7c3fd0f22f314699fbfda6c0d38de 20120831142918 :be2287e8dce9596b6fe36703e3a821410ebbb551
+  bf462abc7897f13ab9e6ad7cccbdc28cd97f5e32:bf462abc7897f13ab9e6ad7cccbdc28cd97f5e32:bf462abc7897f13ab9e6ad7cccbdc28cd97f5e32 20120831142447 :bf462abc7897f13ab9e6ad7cccbdc28cd97f5e32
+  f26a69b21f865f66368f131ac0759807dc4bd657:b9aa68a9fa53a287fa102ad546c60e8edd497f23:b94a536bdbc82096f593c2022ffe108351f7742a 20120831142811 :c0cafccdbc69c0f85782c08040b4e95ca3b36c04
+  c0e6e54ff0ec7c62350f232af75c85ca7006b51f:c0e6e54ff0ec7c62350f232af75c85ca7006b51f:c0e6e54ff0ec7c62350f232af75c85ca7006b51f 20120831142449 :c0e6e54ff0ec7c62350f232af75c85ca7006b51f
+  2858f9fb063d6639782bafe38ffed9c0952ad486:143e86419d6de6cbc769acde41d504bb168c0be2:5f51f67a551716d02bc9a45f04e6f7aa54b5d4ae 20120831142915 :c1965743bcd1b20604cfe74ef11de05ffc55ed95
+  c3f8675eefe36bda5477a47a0070bdfa4d5cacc9:c3f8675eefe36bda5477a47a0070bdfa4d5cacc9:c3f8675eefe36bda5477a47a0070bdfa4d5cacc9 20120831142916 :c3f8675eefe36bda5477a47a0070bdfa4d5cacc9
+  db4619014386271b7fee14037c4d0370342338fb:006aa4e7caf9b9c3da017ac6a0ab61bfea39615e:9768d24a942a92c6981c719b3157429569806384 20120831142931 :c425867192e85a11c23d68d1e537bc720fa0bd43
+  ddb5620bc8351b3185b143b4502743f0e35fa16e:247010d38891eace9c87499c0b3fd181c0274c97:0598b0edaa05e6fa25bac58292c4d16786899a7a 20120831142811 :c609b9da20fdb567e90ffabf73bfeacd0ffbcc9b
+  c09459bea781e38c9a00f5674a7bd7aa515ab699:7af39214b5711c711761fc04ab9d495c525a931b:7af39214b5711c711761fc04ab9d495c525a931b 20120831142938 :c62c4f45c50118fa3db4fe077c77819d85237ed8
+  c76690e2c0baa02df620315b2dd6ed7f904cdaf7:c76690e2c0baa02df620315b2dd6ed7f904cdaf7:c76690e2c0baa02df620315b2dd6ed7f904cdaf7 20120831142922 :c76690e2c0baa02df620315b2dd6ed7f904cdaf7
+  9f013a62571429028b48422b5b7a1074a2dea03f:6de8cc00264da1c45c9708cb91725dbc5e6ea349:4200d471e0eb758005f65a73681cb353f6704231 20120831142906 :c7d3e3feed32e94f47bfcb216b41da9f5b1a6eb9
+  f94698ab863bc2cf71308680c84fe118dc8fddb2:eb72e7ff3a9e7ea2689927a3690581c62b37f6e2:ca45b966d92e07a3bcea6be98cbab05ea0d4e1ba 20120831142456 :ca45b966d92e07a3bcea6be98cbab05ea0d4e1ba
+  5d4f6cfa32385450c90ada64e51ae1dc5d7b8b71:ca9bc7b44bf9b2b7b91f4aecabf1296634337e99:ca9bc7b44bf9b2b7b91f4aecabf1296634337e99 20120831142457 :ca9bc7b44bf9b2b7b91f4aecabf1296634337e99
+  cacbad88a5cb53e3878fb425c06212ed759cbf07:cacbad88a5cb53e3878fb425c06212ed759cbf07:cacbad88a5cb53e3878fb425c06212ed759cbf07 20120831142928 :cacbad88a5cb53e3878fb425c06212ed759cbf07
+  bf2d6b268300e87fe5e5fd9d2a403a5603e27765:8e23dae3d0233bec3e9b22d694fd823fb2968174:7b8b4177c05a718c93c5ff5caaadca6e51690338 20120831142914 :ccf6c9088b30de17c26527c548f4094c80e41134
+  ce0504b97f7820a918e9ff4cc62d590da32161d6:ce0504b97f7820a918e9ff4cc62d590da32161d6:ce0504b97f7820a918e9ff4cc62d590da32161d6 20120831142450 :ce0504b97f7820a918e9ff4cc62d590da32161d6
+  d0560c6508347d63acef1441800c7b6cccea4373:d0560c6508347d63acef1441800c7b6cccea4373:d0560c6508347d63acef1441800c7b6cccea4373 20120831142926 :d0560c6508347d63acef1441800c7b6cccea4373
+  d08b0ee85679350fbd6b609d33f5acc2ad70775d:d08b0ee85679350fbd6b609d33f5acc2ad70775d:d08b0ee85679350fbd6b609d33f5acc2ad70775d 20120831142448 :d08b0ee85679350fbd6b609d33f5acc2ad70775d
+  d0cd293b359b7bcdf390e560dc28f68fa8033677:d0cd293b359b7bcdf390e560dc28f68fa8033677:d0cd293b359b7bcdf390e560dc28f68fa8033677 20120831142452 :d0cd293b359b7bcdf390e560dc28f68fa8033677
+  d109763cccc66e8bf39603f25f28991d89e90d15:d109763cccc66e8bf39603f25f28991d89e90d15:d109763cccc66e8bf39603f25f28991d89e90d15 20120831142444 :d109763cccc66e8bf39603f25f28991d89e90d15
+  d1a61d70003a162ceb6651a0c250428c0ace57d2:d1a61d70003a162ceb6651a0c250428c0ace57d2:d1a61d70003a162ceb6651a0c250428c0ace57d2 20120831142932 :d1a61d70003a162ceb6651a0c250428c0ace57d2
+  6e539e37ef8543c870d843f1108184ca8ffcbe2b:d21bc3c19ebc5b3924caff5f859e6c50071590c9:d21bc3c19ebc5b3924caff5f859e6c50071590c9 20120831142457 :d21bc3c19ebc5b3924caff5f859e6c50071590c9
+  d282429b4edade4bc6df44e03d239e8aab2f03a6:d282429b4edade4bc6df44e03d239e8aab2f03a6:d282429b4edade4bc6df44e03d239e8aab2f03a6 20120831142921 :d282429b4edade4bc6df44e03d239e8aab2f03a6
+  d9427651eaa004bec8e517319037aabe13216ffb:2ca5c07070a541c2e398b703e37f63a233bd4313:7c92e2edfb9ad0d93ab2a1b7e2e043258af9c9a5 20120831142903 :d2b52892a275ad2a7372cbf480833bfef06d5c10
+  a90be58d09e9de8bf51021c09c7d635023d90373:735e78e5aa84688bb5e8eb7d67524c00f56afa0e:f09f7e3c426ad1b2bc79d0c6d007d9f2b1f22e8f 20120831142940 :d32e24b85eaec6c21db8baeb66212455454c999a
+  d53247c86445afc29f991a39cb39b79f2f3fd4c1:d53247c86445afc29f991a39cb39b79f2f3fd4c1:d53247c86445afc29f991a39cb39b79f2f3fd4c1 20120831142447 :d53247c86445afc29f991a39cb39b79f2f3fd4c1
+  d5973cd2c372b872a1d3464b779498e197eb5def:d5973cd2c372b872a1d3464b779498e197eb5def:d5973cd2c372b872a1d3464b779498e197eb5def 20120831142921 :d5973cd2c372b872a1d3464b779498e197eb5def
+  d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2:d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2:d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2 20120831142442 :d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2
+  f45317e5854323b681d50216a9a47d698e4699ea:312ba90dfc90b839c3a3f247bbe648f34055d710:d6edc3bbc639248e808f4cc0e372cfa249320016 20120831142458 :d6edc3bbc639248e808f4cc0e372cfa249320016
+  092870f33dbbe78a3231184f72b48f01f2c0bac6:d760adf70f63d2f07fe00dc5f36b9bc32f11fc97:d760adf70f63d2f07fe00dc5f36b9bc32f11fc97 20120831142456 :d760adf70f63d2f07fe00dc5f36b9bc32f11fc97
+  d888370a9a41fe87d542665027edc84eff31637e:d888370a9a41fe87d542665027edc84eff31637e:d888370a9a41fe87d542665027edc84eff31637e 20120831142449 :d888370a9a41fe87d542665027edc84eff31637e
+  d8cf629d370ad131b753d8b549c3f7525c4ccbbd:d8cf629d370ad131b753d8b549c3f7525c4ccbbd:d8cf629d370ad131b753d8b549c3f7525c4ccbbd 20120831142928 :d8cf629d370ad131b753d8b549c3f7525c4ccbbd
+  db71677ea83bdec19cb32d6c708882b4a77b791b:db71677ea83bdec19cb32d6c708882b4a77b791b:db71677ea83bdec19cb32d6c708882b4a77b791b 20120831142446 :db71677ea83bdec19cb32d6c708882b4a77b791b
+  dead03061c6076690b67113d8038837d3941bd07:87f2e80288e242c45658a0862e0f1e9aafb3f886:dbab80ab5e11fb33328c7da88a849d0a19793ff5 20120831142457 :dbab80ab5e11fb33328c7da88a849d0a19793ff5
+  dd9e7806031f8b85742e0e3121b301d1e129162d:dd9e7806031f8b85742e0e3121b301d1e129162d:dd9e7806031f8b85742e0e3121b301d1e129162d 20120831142449 :dd9e7806031f8b85742e0e3121b301d1e129162d
+  32230b3ee723134b4bd56d75cf8c570b461c0c1b:de0f4b6754561dc8a412f2d2c67ec10351f5d238:de0f4b6754561dc8a412f2d2c67ec10351f5d238 20120831142449 :de0f4b6754561dc8a412f2d2c67ec10351f5d238
+  de3a020be174270600534345eb47fd76267d8080:de3a020be174270600534345eb47fd76267d8080:de3a020be174270600534345eb47fd76267d8080 20120831142454 :de3a020be174270600534345eb47fd76267d8080
+  df5c2e6408abfcd7358d892ff07dd858ab09560c:df5c2e6408abfcd7358d892ff07dd858ab09560c:df5c2e6408abfcd7358d892ff07dd858ab09560c 20120831142921 :df5c2e6408abfcd7358d892ff07dd858ab09560c
+  df64e95348d93d638a66bcbcd8de782d1d0956a9:df64e95348d93d638a66bcbcd8de782d1d0956a9:df64e95348d93d638a66bcbcd8de782d1d0956a9 20120831142923 :df64e95348d93d638a66bcbcd8de782d1d0956a9
+  e008825954f9c01c5e3b3fa0004caa7535a45423:e008825954f9c01c5e3b3fa0004caa7535a45423:e008825954f9c01c5e3b3fa0004caa7535a45423 20120831142458 :e008825954f9c01c5e3b3fa0004caa7535a45423
+  d13b9df9359cbaf3864d7b83bd444ecf8ed7b5d6:e250f0c40b768e90ed7d3910d9869075f3e438cd:e250f0c40b768e90ed7d3910d9869075f3e438cd 20120831142507 :e250f0c40b768e90ed7d3910d9869075f3e438cd
+  e2d20ba7cb6a291bc7063a84f90b059b4e8125ab:e2d20ba7cb6a291bc7063a84f90b059b4e8125ab:e2d20ba7cb6a291bc7063a84f90b059b4e8125ab 20120831142449 :e2d20ba7cb6a291bc7063a84f90b059b4e8125ab
+  234a6a2484ff93d650db20a14bce859cfa57069b:53dcb065a39d57fc395bca0b39c56ac39b3ecce3:53dcb065a39d57fc395bca0b39c56ac39b3ecce3 20120831142939 :e3540ab714bd6603bfa0856ac7071f5bce1e1cb6
+  7df1ba0a1e1f6384da36f4cae213758c578c1287:bf607aef79a46803af347751a012319d79b236dc:a7f234c4f1e9a6ae10e16b5bb490d7439c05e96c 20120831142911 :e425c9bfb2b8b63c6e557b3e3f642e1c46961e14
+  e43ae2651743ca70a12b898b8bd7e084e2288943:e43ae2651743ca70a12b898b8bd7e084e2288943:e43ae2651743ca70a12b898b8bd7e084e2288943 20120831142451 :e43ae2651743ca70a12b898b8bd7e084e2288943
+  e48eee8c5bedb45660ef94930f7931d0984cf606:e48eee8c5bedb45660ef94930f7931d0984cf606:e48eee8c5bedb45660ef94930f7931d0984cf606 20120831142929 :e48eee8c5bedb45660ef94930f7931d0984cf606
+  ade5d7d97630a1718d27bbbba568f73ca85c5f40:e6e0879f5d50afa8d0dd213b4b66e396a39a47b7:e6e0879f5d50afa8d0dd213b4b66e396a39a47b7 20120831142507 :e6e0879f5d50afa8d0dd213b4b66e396a39a47b7
+  e71b5942e5343cbc3d591f249cc9f3dfc73c7e29:e71b5942e5343cbc3d591f249cc9f3dfc73c7e29:e71b5942e5343cbc3d591f249cc9f3dfc73c7e29 20120831142451 :e71b5942e5343cbc3d591f249cc9f3dfc73c7e29
+  e732729ef7f7ac59caedb5459db77a82bcd2e90a:e732729ef7f7ac59caedb5459db77a82bcd2e90a:e732729ef7f7ac59caedb5459db77a82bcd2e90a 20120831142925 :e732729ef7f7ac59caedb5459db77a82bcd2e90a
+  e7c1c98c51a7a6cc24bdc2591b67b1cf20a6db1b:e7c1c98c51a7a6cc24bdc2591b67b1cf20a6db1b:e7c1c98c51a7a6cc24bdc2591b67b1cf20a6db1b 20120831142935 :e7c1c98c51a7a6cc24bdc2591b67b1cf20a6db1b
+  e7e6c262a7d9a2c9f55ac3718b7084a7945e0e2a:e7e6c262a7d9a2c9f55ac3718b7084a7945e0e2a:e7e6c262a7d9a2c9f55ac3718b7084a7945e0e2a 20120831142929 :e7e6c262a7d9a2c9f55ac3718b7084a7945e0e2a
+  e8f24a89734ea514ba6405423368a107f324fc5b:e8f24a89734ea514ba6405423368a107f324fc5b:e8f24a89734ea514ba6405423368a107f324fc5b 20120831142448 :e8f24a89734ea514ba6405423368a107f324fc5b
+  e91eeedb968afe7b4af6c2404f278bb5fd568e92:e91eeedb968afe7b4af6c2404f278bb5fd568e92:e91eeedb968afe7b4af6c2404f278bb5fd568e92 20120831142450 :e91eeedb968afe7b4af6c2404f278bb5fd568e92
+  e984a5e3af7b87b718ae82f5c5ba8b36e1665f3b:e984a5e3af7b87b718ae82f5c5ba8b36e1665f3b:e984a5e3af7b87b718ae82f5c5ba8b36e1665f3b 20120831142932 :e984a5e3af7b87b718ae82f5c5ba8b36e1665f3b
+  e9a7358277abe3a90df974fc81d96be9c9a71a9e:e9a7358277abe3a90df974fc81d96be9c9a71a9e:e9a7358277abe3a90df974fc81d96be9c9a71a9e 20120831142443 :e9a7358277abe3a90df974fc81d96be9c9a71a9e
+  eb8a84a1111ec35b85a444766fa37cd4a610a965:eb8a84a1111ec35b85a444766fa37cd4a610a965:eb8a84a1111ec35b85a444766fa37cd4a610a965 20120831142441 :eb8a84a1111ec35b85a444766fa37cd4a610a965
+  bfd66556ef612511de284cdc72e373394f1b10fa:e6529101c6ffc7fa0d6a749bda140f8f8e5343ff:b31777cab2fe32d184235e6bfa2ac963334e81b7 20120831142902 :ebe8c3b799dc6a9664b3a246a009d9a8b3412dc9
+  ed7a6b52f226090b784819c316410d93a2a6fe4d:ed7a6b52f226090b784819c316410d93a2a6fe4d:ed7a6b52f226090b784819c316410d93a2a6fe4d 20120831142920 :ed7a6b52f226090b784819c316410d93a2a6fe4d
+  6c927ce8a60f05bd2ccb386d12d9ffdc4987c87d:d948f236f2006f48819aba48775a673a9bae4d1c:d948f236f2006f48819aba48775a673a9bae4d1c 20120831142934 :ee196db079890854554e6446a92a51871d7ed271
+  8ca7a101501dece499f87e2b6e6c672a875c06d6:eea1390da8fac38763ed4c03f1acb3342b942717:eea1390da8fac38763ed4c03f1acb3342b942717 20120831142507 :eea1390da8fac38763ed4c03f1acb3342b942717
+  5307d10f3305df824851bad5bc6235742f009429:59bae9664c1e41a2a381188b5ad51b4cc0377467:efd0b4a7eaf55c0716fde3243ac45cb49fdd2606 20120831142456 :efd0b4a7eaf55c0716fde3243ac45cb49fdd2606
+  f05089fa82aca755fea1268bff7f63793692e5c8:f05089fa82aca755fea1268bff7f63793692e5c8:f05089fa82aca755fea1268bff7f63793692e5c8 20120831142440 :f05089fa82aca755fea1268bff7f63793692e5c8
+  f1c1878b78908742c7f29e8e23f4ce0125aefeb4:f1c1878b78908742c7f29e8e23f4ce0125aefeb4:f1c1878b78908742c7f29e8e23f4ce0125aefeb4 20120831142448 :f1c1878b78908742c7f29e8e23f4ce0125aefeb4
+  f1e7ff046afb5a2a4136449fbb16ccc78ce4e4cc:f1e7ff046afb5a2a4136449fbb16ccc78ce4e4cc:f1e7ff046afb5a2a4136449fbb16ccc78ce4e4cc 20120831142450 :f1e7ff046afb5a2a4136449fbb16ccc78ce4e4cc
+  f2dce0fee9615d9c1eaad6e01665a9b56862ca9e:f2dce0fee9615d9c1eaad6e01665a9b56862ca9e:f2dce0fee9615d9c1eaad6e01665a9b56862ca9e 20120831142926 :f2dce0fee9615d9c1eaad6e01665a9b56862ca9e
+  f2f8c5c376c80df66cc1ccbcbf12babd366eda85:f2f8c5c376c80df66cc1ccbcbf12babd366eda85:f2f8c5c376c80df66cc1ccbcbf12babd366eda85 20120831142452 :f2f8c5c376c80df66cc1ccbcbf12babd366eda85
+  f42bdae54ab799e3b7623d5222777e31a109fd29:f42bdae54ab799e3b7623d5222777e31a109fd29:f42bdae54ab799e3b7623d5222777e31a109fd29 20120831142926 :f42bdae54ab799e3b7623d5222777e31a109fd29
+  f5b2c18843647be28a96a3e7d163a7f2f970921b:f5b2c18843647be28a96a3e7d163a7f2f970921b:f5b2c18843647be28a96a3e7d163a7f2f970921b 20120831142449 :f5b2c18843647be28a96a3e7d163a7f2f970921b
+  f658bff40fb04112a21da67873fbc1e73953f7c5:f658bff40fb04112a21da67873fbc1e73953f7c5:f658bff40fb04112a21da67873fbc1e73953f7c5 20120831142923 :f658bff40fb04112a21da67873fbc1e73953f7c5
+  f7efa1b3ca937510748f52b79ce283c1342d2012:f7efa1b3ca937510748f52b79ce283c1342d2012:f7efa1b3ca937510748f52b79ce283c1342d2012 20120831142456 :f7efa1b3ca937510748f52b79ce283c1342d2012
+  5df046b2c70bc67e858d977037ed6ad0b9e38f8d:f90b43422e5be48eada0dc1602a9bea6caa6c592:f90b43422e5be48eada0dc1602a9bea6caa6c592 20120831142900 :f9f1333a7d680060eaf2117d4634484623f9d7a7
+  fa47c405e684e4a9fa699507c2f9605c17d6fc02:fa47c405e684e4a9fa699507c2f9605c17d6fc02:fa47c405e684e4a9fa699507c2f9605c17d6fc02 20120831142445 :fa47c405e684e4a9fa699507c2f9605c17d6fc02
+  a19290719ec2bb3e547b968dee8a38eb9461b3aa:1a1be0ba2390cc02cb797afbc7742d893e465edb:5271a80228993f256bccb3229791ae19757dab37 20120831142910 :fb25609e0d233154d1a8324bc9a3e0887f0ef719
+  34fbda4c7cbbc5e3a49e7ff8aa71a4dd0c7fcaae:77ba7ec0ac64ba6db740a44d58b557fe8b666881:77ba7ec0ac64ba6db740a44d58b557fe8b666881 20120831142941 :fba36941491ba1319e0682342fae00355338cf8c
+  fc2ffcc6cd655fa3185bf6368e405067be226074:fc2ffcc6cd655fa3185bf6368e405067be226074:fc2ffcc6cd655fa3185bf6368e405067be226074 20120831142923 :fc2ffcc6cd655fa3185bf6368e405067be226074
+  fc474c5557c93b2462dfb6b8f4c568e7b66d4b81:fc474c5557c93b2462dfb6b8f4c568e7b66d4b81:fc474c5557c93b2462dfb6b8f4c568e7b66d4b81 20120831142921 :fc474c5557c93b2462dfb6b8f4c568e7b66d4b81
+  fc48b04a353e7ca1f0254f7f40fc0395b96efd7c:fc48b04a353e7ca1f0254f7f40fc0395b96efd7c:fc48b04a353e7ca1f0254f7f40fc0395b96efd7c 20120831142928 :fc48b04a353e7ca1f0254f7f40fc0395b96efd7c
+  fc4ad942561dab35af9e28c2a1f1c93d34d636f5:fc4ad942561dab35af9e28c2a1f1c93d34d636f5:fc4ad942561dab35af9e28c2a1f1c93d34d636f5 20120831142937 :fc4ad942561dab35af9e28c2a1f1c93d34d636f5
+  fc6c0417408aa74faaf4769e70ed4f8b55d0ea87:fc6c0417408aa74faaf4769e70ed4f8b55d0ea87:fc6c0417408aa74faaf4769e70ed4f8b55d0ea87 20120831142930 :fc6c0417408aa74faaf4769e70ed4f8b55d0ea87
+  fde9a8dbe17b6d2721cad7bad5782d87152e3e9e:fde9a8dbe17b6d2721cad7bad5782d87152e3e9e:fde9a8dbe17b6d2721cad7bad5782d87152e3e9e 20120831142928 :fde9a8dbe17b6d2721cad7bad5782d87152e3e9e
+  fe3c88710e380c7a741cbf676cf5d8144e7edb8a:fe3c88710e380c7a741cbf676cf5d8144e7edb8a:fe3c88710e380c7a741cbf676cf5d8144e7edb8a 20120831142449 :fe3c88710e380c7a741cbf676cf5d8144e7edb8a
+  6478aedc41b465ca6fb54da8dcf14c4d20f9e52c 20120831142914 ImageJ-win64.exe
+  8c95cc556856de6332168d673e5c6ce4035ebc56 20120831142915 fiji-win64.exe
+  39d63a0c15bb230039064641d25d2c1f87fb745b 20120831143658 images/icon.png
+  ca9bc7b44bf9b2b7b91f4aecabf1296634337e99 20120831142457 jars/Fiji.jar
+  c3f8675eefe36bda5477a47a0070bdfa4d5cacc9 20120831142916 jars/Jama.jar
+  89ef9ccfa7d9324603493888cf716f049a666a9f 20120831142926 jars/VIB-lib.jar
+  bd57338068f48b9ce4c5275544633ba172b0902a 20120831142458 jars/VectorString.jar
+  68a9e41d2a7cec1ffedd5e38f4c064927b43b3c7 20120831142458 jars/ant-junit.jar
+  4199e18036ba2020bdcbc733f603564f41cf9009 20120831142456 jars/ant-launcher.jar
+  92b2335d3a97549b633dbcc3c41381a90f2b924b 20120831142459 jars/ant-nodeps.jar
+  b1492f77c5c13e4f9dc05fe0ba9f95d6ec826660 20120831142457 jars/ant.jar
+  5bab776822719667a604b8fb2eafc679161aeb0f 20120831142456 jars/autocomplete.jar
+  dbab80ab5e11fb33328c7da88a849d0a19793ff5 20120831142457 jars/batik.jar
+  ab79445e171d7fb1b47bfc09a647b205c097c805 20120831142901 jars/bcmail-jdk14-138.jar
+  d2b52892a275ad2a7372cbf480833bfef06d5c10 20120831142903 jars/bcprov-jdk14-138.jar
+  1af5eaef59bdb19e80cf71daf3b7f2ab991cf765 20120831142939 jars/bio-formats-4.4-SNAPSHOT.jar
+  d21bc3c19ebc5b3924caff5f859e6c50071590c9 20120831142457 jars/bsh-2.0b4.jar
+  6e31282966a0f08f7043ff0f50cd901d936e1d75 20120831142935 jars/bsh.jar
+  564f318ca36134df352e3df25a9c342881eb1ccf 20120831142913 jars/clibwrapper_jiio-1.1.jar
+  5967b4df872efdefcd3428987383ae1863747c7f 20120831142917 jars/clojure.jar
+  8eb3709e6e5cfbef92d97253f63dd7b8c5134db6 20120831142939 jars/commons-logging-1.1.1.jar
+  216b5903205f4a1f66f0002d01118f5135cc84a6 20120831142927 jars/commons-math.jar
+  368901ce572a723c0ae0e68f0563b2712a69fd5d 20120831142457 jars/edu_mines_jtk.jar
+  bbfdddb0785bbc1c410f898101ba93fa44f6b559 20120831142812 jars/eventbus-1.4.jar
+  07e9a4968388d806e32b0804269ddae847f89ec8 20120831142925 jars/fake.jar
+  9f2075bb63002acf68cdd3b3902708161f588025 20120831142934 jars/fiji-compat.jar
+  5cfdef194ff1a8a9a8b40e630b729931642b6c2a 20120831142925 jars/fiji-lib.jar
+  25446dc149f86e6897ae4c6299d744fba62e793a 20120831142918 jars/fiji-scripting.jar
+  491e89c0c862d96fcac012a36a2023a2f92cf7ef 20120831142906 jars/forms-1.2.1.jar
+  e425c9bfb2b8b63c6e557b3e3f642e1c46961e14 20120831142911 jars/ij-1.47b.jar
+  6c701ea3a131c7f0ffe27fa17533bbf242e9995b 20120831142812 jars/ij-core-2.0.0-SNAPSHOT.jar
+  c1965743bcd1b20604cfe74ef11de05ffc55ed95 20120831142915 jars/ij-launcher-2.0.0-SNAPSHOT.jar
+  c609b9da20fdb567e90ffabf73bfeacd0ffbcc9b 20120831142811 jars/ij-ui-swing-updater-2.0.0-SNAPSHOT.jar
+  c0cafccdbc69c0f85782c08040b4e95ca3b36c04 20120831142811 jars/ij-updater-core-2.0.0-SNAPSHOT.jar
+  be2287e8dce9596b6fe36703e3a821410ebbb551 20120831142918 jars/imagescience-2.4.1.jar
+  780fae4087869e6c485796fd6df1e399e64fc44e 20120831142456 jars/imageware.jar
+  fde9a8dbe17b6d2721cad7bad5782d87152e3e9e 20120831142928 jars/imglib-algorithms.jar
+  fc48b04a353e7ca1f0254f7f40fc0395b96efd7c 20120831142928 jars/imglib-ij.jar
+  0845320763a27b14105ab6d09f8a5c2e0c0b3495 20120831142928 jars/imglib-io.jar
+  cacbad88a5cb53e3878fb425c06212ed759cbf07 20120831142928 jars/imglib-scripting.jar
+  d0560c6508347d63acef1441800c7b6cccea4373 20120831142926 jars/imglib.jar
+  78d3182d453ab0c620f6655aabe601c9c33b138f 20120831142914 jars/imglib2-2.0.0-SNAPSHOT.jar
+  301c9579342edab623560ecd65bd961dd3d22d31 20120831142910 jars/imglib2-algorithms-2.0.0-SNAPSHOT.jar
+  fc4ad942561dab35af9e28c2a1f1c93d34d636f5 20120831142937 jars/imglib2-algorithms-gpl.jar
+  8a7c6c1097e54db68497968119c8434cbb5ae29e 20120831142932 jars/imglib2-ij.jar
+  30f98809b8764e9e7ebcce9501b7baf129efb882 20120831142912 jars/imglib2-io-2.0.0-SNAPSHOT.jar
+  d1a61d70003a162ceb6651a0c250428c0ace57d2 20120831142932 jars/imglib2-ui.jar
+  f9f1333a7d680060eaf2117d4634484623f9d7a7 20120831142900 jars/itext-2.1.5.jar
+  c425867192e85a11c23d68d1e537bc720fa0bd43 20120831142931 jars/itextpdf.jar
+  1d98f5251cb21553b4907228cd281e6b84d3a216 20120831142457 jars/jacl.jar
+  253316728c4012a86fae361e7b7fcb0fab0f5c38 20120831142456 jars/jai_codec.jar
+  2a328b6b63ebec85d369427875739304dc1cf2cb 20120831142457 jars/jai_core.jar
+  6db4a1ddabfea787391830295ce6baa079d0d6da 20120831142901 jars/jai_imageio-4.4-SNAPSHOT.jar
+  15f34947f8427af56243ed09f96357265e17b4bf 20120831142918 jars/javac.jar
+  fb25609e0d233154d1a8324bc9a3e0887f0ef719 20120831142910 jars/javassist-3.16.1-GA.jar
+  ccf6c9088b30de17c26527c548f4094c80e41134 20120831142914 jars/jcommon-1.0.17.jar
+  64241209869be019d27bacc1d46ea51b08beeaf2 20120831142938 jars/jdom-contrib.jar
+  e3540ab714bd6603bfa0856ac7071f5bce1e1cb6 20120831142939 jars/jdom.jar
+  166036abb16a0b57c7f7c0a0e0e610ef72b48746 20120831142459 jars/jep.jar
+  55d8499ceb048f735c19c99acc2891200cc584a8 20120831142910 jars/jfreechart-1.0.14.jar
+  864add79c81c7309ba910513085f413dadeaeb83 20120831142939 jars/jgrapht-jdk1.6.jar
+  c62c4f45c50118fa3db4fe077c77819d85237ed8 20120831142938 jars/jgraphx.jar
+  925d65018db8d43d79f3e1236c0178805f68c488 20120831142457 jars/jna.jar
+  63e9057128a2096b3787c4c784a5b6dab862264d 20120831142457 jars/jpedalSTD.jar
+  b904075730a195dff53e602e836e6ced7b438257 20120831142456 jars/jruby.jar
+  108412260f226609c8161f6e831119f47e6d9380 20120831142456 jars/js.jar
+  a8f517df84bb55ce0b6126874627c7d134008ee6 20120831142910 jars/jsch-0.1.42.jar
+  24d47d70322420166ece5981dc127bbc90e6cea2 20120831142919 jars/junit-4.8.1.jar
+  d6edc3bbc639248e808f4cc0e372cfa249320016 20120831142458 jars/jython.jar
+  a21f73a79260a9098df7eabf10982ab9ff2d9efe 20120831142456 jars/jzlib-1.0.7.jar
+  88656426157c08dacd208dedfb71de919fb3f8b1 20120831142905 jars/loci-common-4.4-SNAPSHOT.jar
+  ab11828a28e1f90d0af47bac3be6715aac84f475 20120831142901 jars/log4j-1.2.14.jar
+  bb728cada3ea166528747dd744b4239ba124400d 20120831142901 jars/lwf-stubs-4.4-SNAPSHOT.jar
+  13575613a511c56f80e8b854eaa0accf435de08d 20120831142939 jars/mdbtools-java-4.4-SNAPSHOT.jar
+  23808c6738fdacb7637ad29da6048fdffa0d86cc 20120831142939 jars/metakit-4.4-SNAPSHOT.jar
+  7f0caa5d45a8bfe8bd553b810cca6addfb588a12 20120831142811 jars/miglayout-3.7.3.1-swing.jar
+  ae69016caaa450844b5d418bf34416ed6f92ddef 20120831142929 jars/mij.jar
+  f2dce0fee9615d9c1eaad6e01665a9b56862ca9e 20120831142926 jars/mpicbg.jar
+  45634065162f39dab14543b03f7ea137a6b36aa7 20120831142940 jars/netcdf-java-4.0.41.jar
+  ebe8c3b799dc6a9664b3a246a009d9a8b3412dc9 20120831142902 jars/ome-xml-4.4-SNAPSHOT.jar
+  e008825954f9c01c5e3b3fa0004caa7535a45423 20120831142458 jars/pal-optimization.jar
+  d32e24b85eaec6c21db8baeb66212455454c999a 20120831142940 jars/poi-loci-4.4-SNAPSHOT.jar
+  5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f 20120831142457 jars/postgresql-8.2-506.jdbc3.jar
+  b1bdf4b6b3e47ac5edb3d9ec8273401f6e8f64a3 20120831142458 jars/rsyntaxtextarea.jar
+  4e7a9ebb5fe87cf8a706346d4de70911c90a81ec 20120831142902 jars/scifio-4.4-SNAPSHOT.jar
+  4778f122f1e05f6f59512d04de9b7ade90f3ab3d 20120831142813 jars/sezpoz-1.9.jar
+  c7d3e3feed32e94f47bfcb216b41da9f5b1a6eb9 20120831142906 jars/slf4j-api-1.5.10.jar
+  1dedefe8d2340a34f77b6d89d443b4f32c0957e7 20120831142909 jars/tools-1.4.2.jar
+  7d5ba6c535ddd4557ca46698f08262348eeb072c 20120831142456 jars/wavelets.jar
+  fc6c0417408aa74faaf4769e70ed4f8b55d0ea87 20120831142930 jars/weave_jy2java.jar
+  62509dafa2ad38e0e3c34c538f6d3da1e25971ce 20120831142457 jars/weka.jar
+  c432f64b204f9657354de2010b24535670e3073b 20120831142455 luts/16_colors.lut
+  89419f9999bc7d1dc09ad1a66e04e819396fe09f 20120831142455 luts/5_ramps.lut
+  dc3a1bdd2b34edec84c29affaded489d0a22601d 20120831142455 luts/6_shades.lut
+  0b3bbb6cf86adcb697c53c0277a12140966375dc 20120831142455 luts/Cyan Hot.lut
+  655b55e6322c870632e5ff3156f002c0f5b893fe 20120831142455 luts/Green Fire Blue.lut
+  2918f6d391ee38a4491163c30b4e75256a6633e7 20120831142455 luts/HiLo.lut
+  a3312d3ff046120cccf5adcd400c512f78d18f93 20120831142455 luts/ICA.lut
+  db5bf8a4e880d787d88f3273caf3db7ae6a5974f 20120831142455 luts/ICA2.lut
+  9f7dd167f698970549ec20aa7d26b221ae7928f8 20120831142455 luts/ICA3.lut
+  697dd3a4daf4abcd05cc4a79af3bcb3364fd0bb0 20120831142455 luts/Magenta Hot.lut
+  524604de124b812940b02541a63516c84621237b 20120831142455 luts/Orange Hot.lut
+  9c9a56c239e5d9c3262ace5124fff406cb3b831d 20120831142455 luts/Rainbow RGB.lut
+  4e686ec669057c7de78497720bf52ebe00c3f8da 20120831142455 luts/Red Hot.lut
+  2fdb7c96583f42348cd5cc789fba38dd6e349c89 20120831142455 luts/Thermal.lut
+  321574916ccee56861ca6d581f6915cff5fe80e1 20120831142455 luts/Yellow Hot.lut
+  a4cec22b96c306321ba4c7b3ff30df9fa7919616 20120831142455 luts/blue_orange_icb.lut
+  c9e396a3f83ee8cebf1ed28d3e2d53296cc908e7 20120831142455 luts/brgbcmyw.lut
+  60f85e63ba9a31fbb769ab32c75c22883df22883 20120831142455 luts/cool.lut
+  ba88e5f3db79551a10b7bed5c2517b33cea57dda 20120831142455 luts/edges.lut
+  0a4dce83c72986c06356ecbab98747c30c9366ad 20120831142455 luts/gem.lut
+  c616e76585643c232c743e16358d68e4dfe24620 20120831142455 luts/glasbey.lut
+  1f99f07ea5760dd8c044639b02da116112a2b985 20120831142455 luts/phase.lut
+  52a3c3995ef92bc35eb4e691848af5351be589e4 20120831142455 luts/physics.lut
+  49f5e48a355fe0646cd99bf7b371afb7c603def8 20120831142455 luts/royal.lut
+  898954dd1342741de1cd48e7c581b6ec0f0cbff2 20120831142455 luts/sepia.lut
+  ebd4ed6b0fd5375bd4d143134da5692253d4d44a 20120831142455 luts/smart.lut
+  36e7ca9e01240243fb69ea5da21655608d6b5ef8 20120831142455 luts/thal.lut
+  940b38f9db4fbe78ccd66222a08b28d1ae98ba04 20120831142455 luts/thallium.lut
+  172436819bfde39bcf02fc8b41735f0c20db2ad1 20120831142455 luts/unionjack.lut
+  91d561da7f518f2bf5f72bd7ed64320d9c322103 20120831142933 macros/StartupMacros.fiji.ijm
+  a97e1da9c67b6764787b27473bbdb4a21d68292b 20120831142440 macros/listManagement.txt
+  1785bbbf1033afe28da411beb5c2efea6bab1186 20120831142440 macros/toolsets/Clear Custom Tools.txt
+  54200f47f8a6d5a131a7d9d65d7fcb75d53f97ae 20120831142440 macros/toolsets/Drawing Tools.txt
+  9bd39ac4d51a3fa9ed4c85b78fac065b2aa6b201 20120831142930 macros/toolsets/Lookup Tables.txt
+  f7efa1b3ca937510748f52b79ce283c1342d2012 20120831142456 misc/headless.jar
+  1eb5c9ef4eb74ad09baac1433eb554dcbf8601c8 20120831142930 plugins/3D_Blob_Segmentation.jar
+  fa47c405e684e4a9fa699507c2f9605c17d6fc02 20120831142445 plugins/3D_Objects_Counter.jar
+  f42bdae54ab799e3b7623d5222777e31a109fd29 20120831142926 plugins/3D_Viewer.jar
+  68175df528f66e558b40d41867aa3539f55518bd 20120831142445 plugins/Algorithm_Launcher.jar
+  9274f3373b27930ae5e6f3d1f88674f64110e970 20120831142455 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  7acae667f3873c3f47eb0fbf1d6b5f0718a5a1f9 20120831142455 plugins/Analyze/Measure_RGB.txt
+  0a93f0be09a55f7c7db875d893e7337f3a0e9f05 20120831142919 plugins/AnalyzeSkeleton_.jar
+  57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9 20120831142453 plugins/Analyze_Reader_Writer.jar
+  abe815e897d0bf5e97a29cec0b6af47df8a5ec35 20120831142927 plugins/Anisotropic_Diffusion_2D.jar
+  54cd4a1066d31573ce3181c08565f8ede58ec3a5 20120831142919 plugins/Arrow_.jar
+  ed7a6b52f226090b784819c316410d93a2a6fe4d 20120831142920 plugins/Auto_Threshold.jar
+  10ab70365c69a9c0f5e2a14895a680b7de615909 20120831142937 plugins/BalloonSegmentation_.jar
+  51468378eaec5b38e9afa03b73739c0dffbf523b 20120831142920 plugins/BeanShell_Interpreter.jar
+  244c41e4053a4ac5142aff27baf83bd9aa27a41e 20120831142920 plugins/Bug_Submitter.jar
+  e43ae2651743ca70a12b898b8bd7e084e2288943 20120831142451 plugins/CLI_.jar
+  919ab06bdcbf59c28aeca3f340f7cd8285e29780 20120831142450 plugins/CPU_Meter.jar
+  d888370a9a41fe87d542665027edc84eff31637e 20120831142449 plugins/Calculator_Plus.jar
+  2dc5d027ef23416f31860dc0e158aa1b6ab9a11f 20120831142449 plugins/Clojure_Interpreter.jar
+  0f44924c71cfec3b0b2569a9130f739636118f42 20120831142920 plugins/Colocalisation_Analysis.jar
+  f2f8c5c376c80df66cc1ccbcbf12babd366eda85 20120831142452 plugins/Color_Histogram.jar
+  1cee26bc818eb02dafe9ad08dd437b10c412aa2b 20120831142446 plugins/Color_Inspector_3D.jar
+  74b442ad599bb17b5435bcc8ce3acf3016340208 20120831142931 plugins/Colour_Deconvolution.jar
+  232cc1e4937c882ded32e1c2b078f2ef5ac0813b 20120831142937 plugins/CorrectBleach_.jar
+  8065a6d8e8ea6cb262b9a9a422db9dc918c90d81 20120831142934 plugins/Descriptor_based_registration.jar
+  9103f2a4a1eab68fc5eedc0d897a2c051907ef4d 20120831142931 plugins/Dichromacy_.jar
+  b73a16189c15d0e5f59d0b9da7d9dafc19177379 20120831142448 plugins/Differentials_.jar
+  b2ef2c55503e2a4b036a97c5576afa723a119ecb 20120831142926 plugins/Directionality_.jar
+  83caa3dfc56cba0ff2a4ec8a2532dd674784d356 20120831142455 plugins/Examples/Add_Popup_Split_Channels.bsh
+  f6fcfac7beaaf48901cf57d1dd5a9232d6e43570 20120831142455 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  5dcd79ab303b72dbd5540b604bd30ce0e2a5ddcb 20120831142455 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  73eff73688cbf8356485d4dac6fe2b26db598e93 20120831142455 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  95549b2f2f2c42a8bf5bb5f6d18f58d25c4c06cc 20120831142455 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  dceba709afa80f33ae5d0091f5811b32610e1fd0 20120831142455 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  e4954eacd4b1b679813c4227563996121f7e6d98 20120831142455 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  f51112123ed16a9ff9c0cf5002dea3804731a8cb 20120831142455 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  630afb917027bbd48fc9d8cd5eb6c69dbb30e50e 20120831142939 plugins/Examples/CoverMaker/Cover_Maker.py
+  fcf8330224e5ce34f0de2854c821a7fe791c2220 20120831142939 plugins/Examples/CoverMaker/Prepare_Cover_Maker_Database.py
+  77c7bef5e629a85ae8b037caf2377cb6772f59df 20120831142455 plugins/Examples/Delayed_Snapshot.py
+  5536e038a497982f3e10d924849c4ffe6c4fdd3c 20120831142455 plugins/Examples/Delayed_Snapshot_Window.bsh
+  4164c08c7ef62e27e731d45643a1cbe10098fce1 20120831142455 plugins/Examples/Edit_LUT_As_Text.py
+  780e948e100ffc6bfcd5583146752eff86671b39 20120831142455 plugins/Examples/Extended_Profile_Plot.bsh
+  b8881af27131bb518e2c8f45510811963f091e21 20120831142455 plugins/Examples/Fiji_Cube.ijm
+  3687a018e780919fc238a411c0d76607060ae47f 20120831142455 plugins/Examples/Fiji_Logo_3D.js
+  998cb71706d82992543115b6ad1b85f7d199d096 20120831142455 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  66cf50fd8cefccf7056e7dd53f946e195392d4ab 20120831142930 plugins/Examples/Image_To_Tool_Icon.bsh
+  ccccc81ed242c08cf81b2c9da3f2b6d8c2e6e278 20120831142924 plugins/Examples/Multithreaded_Image_Processing.clj
+  720c237bd586550b63e2d423d2e85759e045869c 20120831142455 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  92ce736dc63c171342bce7b382fa0450394dffc9 20120831142924 plugins/Examples/Plasma_Cloud.rb
+  9efb229268bb88ae20f4b2bca157e73c0c0afbdf 20120831142455 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  206a0bbd9f1f3aa0512c0a7aac0497fa0af51f53 20120831142937 plugins/Examples/The_Hue_Game.bsh
+  1b6eee3ac18ab226fb3d5151d04b38308a22d2cf 20120831142930 plugins/Examples/TrakEM2_Example_Scripts/Homogenize_Ball_Radius.py
+  940f6500947184db3dfbcad055aa98c11db41c24 20120831142455 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  3f4bba61fc90eb79a8ade2a6399cad72ede26fb9 20120831142455 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  72f0094941e8aae9c451161f05a67f6516d70a55 20120831142455 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  89ef030758e89f6a6767ab5e3513ee82a8e54127 20120831142455 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  f8479f84ce5a282bf4f00df5bf05a3abc70f9153 20120831142924 plugins/Examples/blend_two_images.clj
+  0989cf7430916a9e0c9f004bc2d5bc6b276e2775 20120831142455 plugins/Examples/celsius_to_fahrenheit.clj
+  ff3b990238ad1f85e4a8aa8135e2e3b1221b43a8 20120831142455 plugins/Examples/chess_.py
+  4193ae7c8fbe191bff50f19367c5cfa5e0048fbe 20120831142455 plugins/Examples/downsample_.js
+  66a204d61b3076d96797ca04671180ed83ebf866 20120831142455 plugins/Examples/list_all_threads.py
+  ff4099b90cb718c63d3e747fb0041356180d47cd 20120831142924 plugins/Examples/random_noise_example.clj
+  e48eee8c5bedb45660ef94930f7931d0984cf606 20120831142929 plugins/Extended_Depth_Field.jar
+  650f19766157bdd8d35f67ea474a57ed1b4c24f7 20120831142449 plugins/FeatureJ_.jar
+  32aabe78307ac40b391428e2fd9d7c6b19eed604 20120831142930 plugins/Feature_Detection.jar
+  77dbfdb93eac55cb0affb28efdac66c2ab8ee728 20120831142925 plugins/Fiji_Developer.jar
+  ee196db079890854554e6446a92a51871d7ed271 20120831142934 plugins/Fiji_Package_Maker.jar
+  df5c2e6408abfcd7358d892ff07dd858ab09560c 20120831142921 plugins/Fiji_Plugins.jar
+  aa0fa91de81af5bdc1e69e7f70aa572bbc996b82 20120831142750 plugins/Fiji_Updater.jar
+  d53247c86445afc29f991a39cb39b79f2f3fd4c1 20120831142447 plugins/FlowJ_.jar
+  49378a9e532530fcb855f6e0fd7e0edd21b5cc15 20120831142928 plugins/Graph_Cut.jar
+  42556198e68860b4135544fe9e4687c9fbffbfe2 20120831142449 plugins/Gray_Morphology.jar
+  2104ef529005d7b7604be49b93aec1dd5f4b294b 20120831142933 plugins/Helmholtz_Analysis.jar
+  e8f24a89734ea514ba6405423368a107f324fc5b 20120831142448 plugins/IJ_Robot.jar
+  d5973cd2c372b872a1d3464b779498e197eb5def 20120831142921 plugins/IO_.jar
+  8b85c6b0e0b7e725395ad684dbf13b34efcb798d 20120831142921 plugins/Image_5D.jar
+  556aa2baca4b32676b2a5a5c986f0f2b5c44d03d 20120831142927 plugins/Image_Expression_Parser.jar
+  43bb3a7b79d1fc23958a7775f407fa9567c6f67f 20120831142453 plugins/Interactive_3D_Surface_Plot.jar
+  3ea0d59d5878d1eeed2f7e1796b504b28ff1818a 20120831142452 plugins/IsoData_Classifier.jar
+  28582f554fdbc4905b5ca4eb192a516202b2f334 20120831142455 plugins/JRuby/imagej.rb
+  6d537b584457026203446d7e15292a3118a156f2 20120831142921 plugins/JRuby_Interpreter.jar
+  8f8265d71a122877a6312a67145bbf36cd04b11f 20120831142921 plugins/Javascript_.jar
+  7c039e95cd514cf9bdf2e325122c4cdbf9fbd07d 20120831142448 plugins/Jython_Interpreter.jar
+  542ef100c9e601c98d9113d72bc1e47de6b047b4 20120831142925 plugins/LSM_Reader.jar
+  de0f4b6754561dc8a412f2d2c67ec10351f5d238 20120831142449 plugins/LSM_Toolbox.jar
+  7dcbc0831ee6cec3b79e90e8b292d25b34174e54 20120831142444 plugins/Lasso_and_Blow_Tool.jar
+  fe3c88710e380c7a741cbf676cf5d8144e7edb8a 20120831142449 plugins/Linear_Kuwahara.jar
+  bcb926fe63b7637bd53e3602feda2166951acdec 20120831142450 plugins/LocalThickness_.jar
+  1a6345a290ff4a28ac4215cbb47fc561dcc886be 20120831142449 plugins/MTrack2_.jar
+  fba36941491ba1319e0682342fae00355338cf8c 20120831142941 plugins/MTrackJ_-1.5.0.jar
+  fc474c5557c93b2462dfb6b8f4c568e7b66d4b81 20120831142921 plugins/M_I_P.jar
+  65a2dd7816efceb28030dc0ea7cb4ad51c42e9a0 20120831142454 plugins/Macros/About_Plugin_Macros.txt
+  dff5642dcb662c06fd8cd7dfce73f60a4b8b8244 20120831142454 plugins/Macros/Bulls_Eye.txt
+  e7ffe8ba782ce90d3b80ad882c474ab1836b58a4 20120831142454 plugins/Macros/Polygon_.txt
+  39f7ffcd9b21888b618524a811eb39c93625578d 20120831142454 plugins/Macros/RGB_Histogram.txt
+  3ee0edfae7b40189254e38a6ed8108c52859bc33 20120831142454 plugins/Macros/batch_convert_any_to_tif.txt
+  e732729ef7f7ac59caedb5459db77a82bcd2e90a 20120831142925 plugins/Manual_Tracking.jar
+  de3a020be174270600534345eb47fd76267d8080 20120831142454 plugins/MosaicJ_.jar
+  d282429b4edade4bc6df44e03d239e8aab2f03a6 20120831142921 plugins/PIV_analyser.jar
+  c0e6e54ff0ec7c62350f232af75c85ca7006b51f 20120831142449 plugins/PointPicker_.jar
+  32d24a273fef021b079fc64f151c2436af700b30 20120831142447 plugins/QuickPALM_.jar
+  174a4b19524f15ff22356cb08dbef7f4e1f550c1 20120831142448 plugins/RATS_.jar
+  b1a406f658f5b62633275c8316849532a0d90797 20120831142448 plugins/RandomJ_.jar
+  7d1ad162b127b627f9f3bdf14b9790d6ae33a453 20120831142933 plugins/Reconstruct_Reader.jar
+  9246febb586565b43ea877090b439c4ade10dfee 20120831142922 plugins/Refresh_Javas.jar
+  4ddf620c5f93aab6deb357284ead79f1faa2588c 20120831142938 plugins/SPIM_Opener.jar
+  b70fe248dc8b0e215f25f02efaca0dee79885ac3 20120831142926 plugins/SPIM_Registration.jar
+  d8cf629d370ad131b753d8b549c3f7525c4ccbbd 20120831142928 plugins/Samples_.jar
+  6e19687296375ff799bbe9e9eb6f5fe85fdaca43 20120831142924 plugins/Script_Editor.jar
+  c70b2e6f4dbfcd1183c3027c924069866095c940 20120831142455 plugins/Scripts/File/Open_Samples/Adelsons_Squares.ijm
+  943b100eff4798a466a85a87d3cf7a94f9b9be59 20120831142930 plugins/Scripts/File/Open_Samples/Spirals_.ijm
+  a3edd6db28d98349de92ec85b28c015768f782a5 20120831142455 plugins/Scripts/Image/Adjust/Scale_to_DPI.js
+  209aed5232d40e0b4bcd237750383865dd07b0d3 20120831142455 plugins/Scripts/Image/Color/Set_Color_By_Wavelength.ijm
+  525d47016c940615854859f0f87b2a26f81c1b58 20120831142930 plugins/Scripts/Image/Hyperstacks/Temporal-Color_Code.ijm
+  d3841c4a5d74295cd73b547aaa85961682805c83 20120831142455 plugins/Scripts/Plugins/Registration/Correct_3D_drift.py
+  ad7294399c717b8c4c6f04bcaa95cf9942da0035 20120831142940 plugins/Scripts/Plugins/Utilities/Find_Jar_For_Class.bsh
+  fc46bd40e7ab175c534bc5bbe71658e3bc3ccd1d 20120831142940 plugins/Scripts/Plugins/Utilities/Record_Desktop.py
+  9d4d012ab3325fb24ab3ae0957c2aea663c6dd12 20120831142940 plugins/Scripts/Plugins/Utilities/Record_Window.py
+  e7e6c262a7d9a2c9f55ac3718b7084a7945e0e2a 20120831142929 plugins/Series_Labeler.jar
+  50ee8cf26b2e4bf1b9774a83d227fae873158ef8 20120831142449 plugins/SheppLogan_.jar
+  1867a1e097738fc53ea3b09af362dc8f6a74cf02 20120831142926 plugins/Simple_Neurite_Tracer.jar
+  265850b38137898969ca510b0cb1e5e2536f4226 20120831142448 plugins/Siox_Segmentation.jar
+  34dfe8f4b5518cc3b348ef10ca4f1acae07e1e72 20120831142922 plugins/Skeletonize3D_.jar
+  e71b5942e5343cbc3d591f249cc9f3dfc73c7e29 20120831142451 plugins/Snakuscule_.jar
+  41d82921719c38520d5472a3608b79394db1b7b0 20120831142453 plugins/SplineDeformationGenerator_.jar
+  b5a0eabcb770437c30575d4ea6f5dbd346b8bd89 20120831142447 plugins/StackReg_.jar
+  202a7fb92385bce3da4af58179d1459409eb96d7 20120831142922 plugins/Stack_Manipulation.jar
+  23cae80cce99d71dc4669da51c6909c3a7ca68ca 20120831142450 plugins/Statistical_Region_Merging.jar
+  ad17319a768778df49cfa8243bcd4154da976079 20120831142922 plugins/Stitching_.jar
+  6f562f44abb24c381f7b353b427b024dd465a2c7 20120831142924 plugins/Sync_Win.jar
+  b60eef5d020c0e881b4bb97d1579339e1cb2a60e 20120831142446 plugins/Thread_Killer.jar
+  e984a5e3af7b87b718ae82f5c5ba8b36e1665f3b 20120831142932 plugins/Threshold_Colour.jar
+  c76690e2c0baa02df620315b2dd6ed7f904cdaf7 20120831142922 plugins/Time_Stamper.jar
+  22fd045b2a57d7ed84b5dcb7b6146484143e36fc 20120831142446 plugins/ToAST_.jar
+  85cde3427627d577408abbd947525da4d37bc1bd 20120831142927 plugins/TopoJ_.jar
+  13d94c1e419a43de7e08b83f2b5b259f21d8a160 20120831142939 plugins/TrackMate_.jar
+  aea5157cf8c9464710c150d06a93bf70da34618f 20120831142926 plugins/Trainable_Segmentation.jar
+  48b8264d7be97d82ac4837ce4a19bf154d08cf54 20120831142923 plugins/TrakEM2_.jar
+  39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2 20120831142452 plugins/TransformJ_.jar
+  09868b512410628e06c7dc25a6999c7dda8cf078 20120831142449 plugins/TurboReg_.jar
+  9558400db089262849c33428a77645c323390145 20120831142445 plugins/UnwarpJ_.jar
+  a32dfe463fa2c8814cb0caf9079478ff4e1c44bf 20120831142455 plugins/Utilities/Close_All_Without_Saving.txt
+  61cc86131f0c7f2c21a9373bcc490d7a0efed712 20120831142923 plugins/VIB_.jar
+  d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2 20120831142442 plugins/Video_Editing.jar
+  f658bff40fb04112a21da67873fbc1e73953f7c5 20120831142923 plugins/View5D_.jar
+  b8c3af50365b12b0beb010f1c35134cbd310341a 20120831142449 plugins/Volume_Viewer.jar
+  df64e95348d93d638a66bcbcd8de782d1d0956a9 20120831142923 plugins/bUnwarpJ_.jar
+  e7c1c98c51a7a6cc24bdc2591b67b1cf20a6db1b 20120831142935 plugins/blockmatching_.jar
+  659ad6a335b4947eef8758b1b0cf050779430b78 20120831142449 plugins/ij-ImageIO_.jar
+  1398b098bf9d094f2dbabe8e7c6ce6fdca8c05ae 20120831142923 plugins/level_sets.jar
+  770767c440b513e05a89fbbb1239b26f18a705a9 20120831142940 plugins/loci_plugins-4.4-SNAPSHOT.jar
+  fc2ffcc6cd655fa3185bf6368e405067be226074 20120831142923 plugins/mpicbg_.jar
+  5e32d936ba53c22ba6b70e5eee3992a361bc2ff8 20120831142445 plugins/panorama_.jar
+  a3ba469005582347c7228767e41bdfc2025e712d 20120625123356 plugins/plugins/Nd_Viewer.jar
+  4332f84ddcaef82ab642672690be31aec582fe3a 20120831142923 plugins/register_virtual_stack_slices.jar
+  4d7eaf239c033d305a464a06c3e64c68d096c7e1 20120831142440 plugins/registration_3d.jar
+  e6e0879f5d50afa8d0dd213b4b66e396a39a47b7 20120831142507 retro/backport-util-concurrent-3.1.jar
+  e250f0c40b768e90ed7d3910d9869075f3e438cd 20120831142507 retro/retrotranslator-runtime-1.2.7.jar
+  eea1390da8fac38763ed4c03f1acb3342b942717 20120831142507 retro/retrotranslator-transformer-1.2.7.jar
+  d7160d38a0b805381cb0c0dcedd60e197e247897 20120831142930 scripts/InstallJava3D.m
+  05a92a3c3f518ec50976326bf16a8a8858af2183 20120831142930 scripts/IsJava3DInstalled.m
+  ff34d026692414ecd743ba34e828780c8614ea8d 20120831142930 scripts/Matlab3DViewerDemo_1.m
+  25be149fecd1f6551b9b0ad53946642db65d5a4e 20120831142930 scripts/Matlab3DViewerDemo_2.m
+  cb529b6c4fb0505e6e58f8d18fa8f81fc86ebe82 20120831142931 scripts/Matlab3DViewerDemo_3.m
+  53d2da73a4a560c41f3c4493d1377c56fe84106c 20120831142930 scripts/Matlab3DViewerIntroduction.m
+  4bb342fa00a9d96bda9fd36c8e7df515bbfa8b60 20120831142929 scripts/Miji.m
+  868cd43462fefc57c310656d4b35a028f0bda4f4 20120831142929 scripts/Miji_Test.m
+  d326018044a582f5106efc6fc90ad09f98a6a822 20120831142455 scripts/Record_Desktop.py
+  0ea7f8fc6683e74065ae7fd82c1b92676e069526 20120831142455 scripts/Record_Window.py
+  dc94c3a32b5edb3106ad7f2c7c68a852d064089a 20120831142929 scripts/bfopen.m</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=480#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Melissa Linkert</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-08-31 19:41:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Do you see an error message when you open the .nd2 files?  If so, can you please paste the complete text of the error into this bug report?</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=480#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-07-07 09:27:15 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This ticket has been inactive for a long enough time to assume safely that there is nothing to be fixed.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=480">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=480">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=480">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=480&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=480" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=480&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731659-ev48XQLTUnQLrUMMgcneE4nPEIEKOBtS7G8w5wDga74">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,2774 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 805 &ndash; Fiji not closing</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=805&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=805">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=805">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=805">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 805 – Fiji not closing",  
+                             "show_bug.cgi?id=805" );
+        document.title = "Bug 805 – Fiji not closing";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 805 – Fiji not closing", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Other bz_bug_805 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;805</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Fiji not closing</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-07-14 13:03:41 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=805&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=805" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=805&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731798-9X0a1F0pYKxBlYQ1EZIY-LD2XzBLo-J1Vdf52dKkTvU">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-07-14 13:03:41">
+  <input type="hidden" name="longdesclength" value="49">
+  <input type="hidden" name="id" value="805">
+  <input type="hidden" name="token" value="1492731798-WChkvBT558a83awHZxfyfVriJKfPy88zgvYn7PpS1yo">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=805"><b>Bug&nbsp;805</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Fiji not closing</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>Fiji not closing
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Fiji not closing', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       enhancement
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          <tr>
+    <th class="field_label">
+      <label for="duplicates">Duplicates</label>:
+    </th>
+    <td class="field_value" colspan="2">
+      <span id="duplicates"><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Process does not terminate when window is closed"
+   href="show_bug.cgi?id=822">822</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Fiji fails to quit"
+   href="show_bug.cgi?id=847">847</a> 
+      </span>
+      (<a href="buglist.cgi?bug_id=822,847">view as bug list</a>)
+    </td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=805&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=805">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-06-20 01:36 CDT by <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-07-14 13:03 CDT 
+      (<a href="show_activity.cgi?id=805">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>6 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="aryeh">aryeh</option>
+                <option value="ctrueden">ctrueden</option>
+                <option value="hinerm">hinerm</option>
+                <option value="imagej-bugs">imagej-bugs</option>
+                <option value="nikolaus.ehrenfeuchter">nikolaus.ehrenfeuchter</option>
+                <option value="nodice73">nodice73</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=805&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=805&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-20 01:36:36 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >In order to avoid any complaints I try to keep Beth Israel Hospital up to date with Fiji. I am on Haifa time and they are on Boston time so I can go in when they are sleeping and make sure all is well.
+Today I met with disaster. I did the usual update, closed Fiji and then restarted to verify that all was updated. This is what I always do to verify that all is well.
+All of a sudden I get a message of permission denided when Fiji tried to move some file imagej-common-0.7.5 (name may not be completely accuarate). I could try it as often as I liked and Fiji was basically dead in the water.
+
+After some poking around taskmanager discovered that the previous instance of Fiji wasn't dead and the previous instance was causing the permission problem. I killed the previous instance with task manager and the problem was solved.
+
+There are 4 machines at the hospital which I keep updated (all of them Windows 7), and all 4 showed the same problem. After I finished the update I continued to look and not always does Fiji die when I kill it. I can't say that I have figured out the logic but it has horrible consequences when it looks like it is dead but it isn't completely dead.
+
+Please let me know if I can do anything to help.
+
+Ilan</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-21 00:01:31 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks Ilan, this is a known issue, and fixing it is one of our top priorities over the next few days.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-23 15:29:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I will work on fixing this over the next day or two.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-26 15:07:25 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >*** <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Process does not terminate when window is closed"
+   href="show_bug.cgi?id=822">Bug 822</a> has been marked as a duplicate of this bug. ***</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-28 22:36:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >First cut at a fix:
+
+<a href="https://github.com/imagej/ij1-patcher/compare/close-all-windows">https://github.com/imagej/ij1-patcher/compare/close-all-windows</a>
+<a href="https://github.com/imagej/imagej-legacy/compare/fiji-wont-quit">https://github.com/imagej/imagej-legacy/compare/fiji-wont-quit</a>
+
+Still needs manual testing as well as regression tests. Barring any critical flaws in the approach, we can hopefully finish resolving this problem by end of Monday.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-01 13:59:35 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >We have now released and uploaded the quit-related fixes! Can you please test, and reopen this bug if the issue is not resolved?</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">nodice73&#64;yahoo.com</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-01 14:06:12 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I just went to update Fiji, and I noticed that the button which usually says &quot;Apply changes&quot; now says &quot;Apply changes (upload)&quot;. When I clicked it, I got the following errors:
+
+Exception in thread &quot;Thread-7&quot; java.lang.RuntimeException: Missing upload information for site <a href="http://update.imagej.net/">http://update.imagej.net/</a>
+	at net.imagej.updater.UpdateSite.getUploadProtocol(UpdateSite.java:186)
+	at net.imagej.updater.FilesUploader.&lt;init&gt;(FilesUploader.java:126)
+	at net.imagej.ui.swing.updater.UpdaterFrame.upload(UpdaterFrame.java:799)
+	at net.imagej.ui.swing.updater.UpdaterFrame$5$1.run(UpdaterFrame.java:311)
+
+Thanks.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-02 00:58:56 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+I updated this morning to ImageJ 1.49c and the situation is horrible. Even Fiji won't die. I have to go into System monitor in order to kill it. I'm on a Linux 32 bit machine. I'll continue to check.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-02 01:25:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+I have some more details for you. On my Linux machine if I leave an Image stack open, then Fiji won't close. A couple of versions ago closing Fiji would close all open images. Now it just hangs.
+The situation is also bad on the Mac. Apparently when I close my Pet-Ct Viewer some daughter process is still alive. Closing Fiji on the Mac makes all the visible windows go away but Activity Monitor shows that it is still alive. On the Mac Quit isn't enough - you need Force Quit.
+Since this is my program I have to find out what daughter process is still alive and kill it. It used to be that closing Fiji would kill everything so I never knew a problem existed.
+
+On Linux I don't need any Force Quit but I can see that Pet-Ct Viewer still has something hanging around. I need to find out what is still alive from my program.
+
+In addition, on Linux, even if I never activate Pet-Ct Viewer, but I leave an Image open, Fiji will simply refuse to close and all windows remain visible.
+
+So, in the meantime, let me see what part of the mess Pet-Ct Viewer is contributing.
+Ilan</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-02 06:38:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+I've been over my programs Pet-Ct Viewer and 3 view. Pet-Ct Viewer is more complicated that it needs to sync up to N instances so that they all shift together.
+I saw that if I read Pet and CT data with Pet-Ct Viewer ImageJ won't close. It looks like it is closed but System Monitor shows it is still alive. I looked at what ImageJ was running and the result was &quot;everything&quot;. Every process I've ever come across was running inside ImageJ, including my Pet-Ct Viewer. My program was one of hundreds so it was difficult to find.
+I saw that even if I ran 3 view, the problem still exists. 3 view is far simpler with just a single pipe to the original data. It seems that as soon as I connect to even a single ImagePlus object, even if I free the object by setting the pipe=null, something or other isn't being freed.
+This fits in with the general problem that even if I operate none of my programs, but just close ImageJ with an ImagePlus object open, it crashes. My program which establishes a connection to the ImagePlus object, and then breaks the connection, shows a less serious problem. In this case I &quot;x&quot; out the ImagePlus object but something is remaining such that ImageJ apparently closes but really doesn't close.
+
+Ilan</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-02 11:40:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Ilan, I am sorry that you are still having problems. However, based on your description, I cannot reproduce any of them. You need to be much more precise in how to replicate the issue. Something like this:
+
+&quot;With a fully up-to-date Fiji, with only the ImageJ and Fiji update sites enabled, on Ubuntu 14.04 LTS 32-bit, I see the following behavior:
+
+* Launch Fiji on the command line with ./ImageJ-linux32
+* Press Shift+B to open the Blobs sample image
+* Run &quot;Quit&quot; from the &quot;File&quot; menu
+* Observe that the process does not terminate and return control to the command line&quot;
+
+Please write a description like that so that it is possible for me to reproduce, or else I will not be able to debug the problem.
+
+P.S. You could also try generating a stack trace to glean more information about why Fiji isn't quitting: <a href="http://fiji.sc/Debugging_intro#Debugging_JVM_hangs">http://fiji.sc/Debugging_intro#Debugging_JVM_hangs</a></pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">nodice73&#64;yahoo.com</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-02 14:15:47 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+I was able to update Fiji, but I still see the problem:
+
+$ /usr/share/Fiji.app/ImageJ-linux64  --java-home '/usr/lib/jvm/java-7-openjdk-amd64'
+
+log4j:WARN No appenders could be found for logger (org.bushe.swing.event.EventService).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See <a href="http://logging.apache.org/log4j/1.2/faq.html#noconfig">http://logging.apache.org/log4j/1.2/faq.html#noconfig</a> for more info.
+[ERROR] Skipping unsupported option -port7
+
+
+And when I close Fiji:
+
+
+Exception during disposal:
+java.lang.reflect.InvocationTargetException
+	at java.awt.EventQueue.invokeAndWait(EventQueue.java:1272)
+	at java.awt.Window.doDispose(Window.java:1209)
+	at java.awt.Window.dispose(Window.java:1147)
+	at ij.ImageJ.run(ImageJ.java:767)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: null source
+	at java.util.EventObject.&lt;init&gt;(EventObject.java:56)
+	at java.awt.AWTEvent.&lt;init&gt;(AWTEvent.java:337)
+	at java.awt.event.InvocationEvent.&lt;init&gt;(InvocationEvent.java:224)
+	at java.awt.event.InvocationEvent.&lt;init&gt;(InvocationEvent.java:188)
+	at java.awt.event.InvocationEvent.&lt;init&gt;(InvocationEvent.java:150)
+	at sun.awt.X11.XBaseMenuWindow.dispose(XBaseMenuWindow.java:907)
+	at java.awt.MenuComponent.removeNotify(MenuComponent.java:310)
+	at java.awt.Menu.removeNotify(Menu.java:198)
+	at java.awt.Component.removeNotify(Component.java:6980)
+	at java.awt.Container.removeNotify(Container.java:2800)
+	at java.awt.Window.removeNotify(Window.java:782)
+	at java.awt.Frame.removeNotify(Frame.java:1041)
+	at java.awt.Window$1DisposeAction.run(Window.java:1190)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:241)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:708)
+	at java.awt.EventQueue$4.run(EventQueue.java:706)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:705)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+
+
+Here is the output when I run the bug report form:
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.11.0-24-generic
+  java.version =&gt; 1.7.0_55
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; OpenJDK Runtime Environment
+  java.runtime.version =&gt; 1.7.0_55-b14
+  java.vm.name =&gt; OpenJDK 64-Bit Server VM
+  java.vm.version =&gt; 24.51-b03
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.7
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /usr/lib/jvm/java-7-openjdk-amd64/jre
+  imagej.dir =&gt; /usr/share/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140701154719)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140702124334)
+
+Files not up-to-date:
+  0d538731 (LOCAL_ONLY) 20140604135013 plugins/PhiDM_Version4_1.class
+  e768f18b (LOCAL_ONLY) 20140623155730 plugins/jars/commons-math3-3.3.jar
+  bd1f4461 (LOCAL_ONLY) 20140623155740 plugins/jars/jtransforms-2.4.jar</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-03 01:05:58 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+I appreciate your problem. I didn't even know about the blob test image.
+With exactly what you suggest I do, I loaded the blob image and without closing it I tried to close Fiji. I got no errors in the terminal but Fiji wouldn't close.
+All this I tried on Jerry Kolodny's Mac (so Mac in place of Linux). The real problem with Jerry is he just wants to do his clinical stuff and not be bothered by our nonsense.
+He wants to do Pet-Ct. The problem for him is it looks like Fiji is being shut down when it isn't. All the windows go away but in the system monitor it is still clearly running. He can't turn off his computer unless he first does a Force Quit of the phantom Fiji.
+At least for the moment I showed him how to Force Quit Fiji. He isn't exactly happy that I updated Fiji and introduced all this mess.
+
+BTW, what is the question about using SCSIO (or some other thing) after an update? I always leave the check, but maybe I should remove it? It seems to be an important question since it comes up after every update.
+
+I'll keep plugging away to see what I can learn from my local Linux machine.
+Thanks,
+Ilan</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-03 03:17:15 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+I'm still looking at &quot;high level&quot; actions to see if I can find anything. I ran Plugins-&gt;Debug-&gt;Stack Dump and I didn't see my plugins which were running at the time. It would make eminent sense that if my programs don't appear in the stack dump, Fiji doesn't know that they exist and would therefore not close them.
+As per your suggestion I added WindowManager.addWindow(this). This is enough to close the window but it probably isn't enough for Stack Dump to know about the program.
+Thus it would make sense that any remnants of the program wouldn't get killed when Fiji dies. This would give the phantom Fiji which I see.
+
+Another symptom of the same problem turns up when I press the menu item Windows. I see a check box but no title for any of my plugins. Apparently the windows manager addWindow is necessary but not sufficient.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-03 23:49:55 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+I didn't realize that SCIFIO was ImageJ2. I need a way to turn it on and off. Jerry couldn't care less about it - he just wants to read the scans and report clinical findings. The fact that he can't turn off the computer without first killing the phantom Fiji is super annoying.
+On the other hand, I do want to check out ImageJ2 on Mac. So when Jerry lets me play with his Mac while he is sleeping, I can check out ImageJ2. Then I can turn it off and let him proceed with his normal work without annoyances.
+When all is well, we can leave it on.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-04 09:16:11 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Yes, use of the SCIFIO library is one the things that ImageJ2 brings to the table. However, SCIFIO is not limited to ImageJ2 -- it is a general-purpose scientific multidimensional image I/O library.
+
+You can toggle usage of SCIFIO in the Edit &gt; Options &gt; ImageJ2 dialog. Turning it off should result in ImageJ's file I/O behaving the same as it used to.
+
+However, I am confused why you are mentioning SCIFIO on this issue thread, which is about ImageJ not quitting properly. Is SCIFIO somehow contributing to the not-quitting behavior you observe?</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-04 10:06:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+With your answer, now there is a way to check the problem. I certainly want to use the software and find if I have any troubles with it. Together with that I would love to free Jerry from our troubles and let him work in peace.
+Of course, until I actually try it, I can't say for sure what the problem is. All he knows is that it used to work OK and why did I make waves?
+I also would love to find out what I need to do to have my plugins appear in the list of Windows, with their names, instead of just blank titles. Maybe it is connected and maybe not. I need to try different combinations to see what affects what.
+If I discover that I have problems, I will ask all my users not to use SCIFIO until we can figure out what is going on.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-06 00:30:20 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+I just got another shot to try the Mac. I turned off ImageJ2 and the problem is still there. He has to force quit ImageJ in order to power down his computer. This is a real bummer. I left ImageJ2 turned off just to make the problem a bit simpler.
+Thanks,
+Ilan</pre>
+    </div><div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-08 14:30:15 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Ilan,
+
+ Could you do the following:
+
+1) Run Help &gt; Report a Bug from Fiji
+2) Copy the &quot;Useful information about your system&quot; section
+3) Paste the copied text here
+
+That will tell us if anything is out of date on the affected systems, or if an update site/plugin is causing problems.
+
+
+
+Adam,
+
+ Could you clarify: does your Fiji appear to close (e.g. do the windows disappear) after throwing those exceptions, or do all the windows remain open and it just refuses to close?
+
+If it is the latter case then I think your issue is unrelated to Ilan's and should be in a separate bug report. Regardless, your problems may be from a negative interaction with one of your local plugins, so you could try removing them one at a time to see which, if any, is/are the culprit:
+
+  0d538731 (LOCAL_ONLY) 20140604135013 plugins/PhiDM_Version4_1.class
+  e768f18b (LOCAL_ONLY) 20140623155730 plugins/jars/commons-math3-3.3.jar
+  bd1f4461 (LOCAL_ONLY) 20140623155740 plugins/jars/jtransforms-2.4.jar</pre>
+    </div><div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-08 15:12:06 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I was finally able to reproduce this in a Windows VM on my system. Investigating now.</pre>
+    </div><div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">nodice73&#64;yahoo.com</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-08 16:13:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+
+<span class="quote">&gt; Could you clarify: does your Fiji appear to close (e.g. do the windows 
+&gt; disappear) after throwing those exceptions, or do all the windows remain 
+&gt; open and it just refuses to close?</span >
+
+The former: Fiji appears to close (all windows disappear).
+
+I removed the plugins, and the problem persists. Below is the bug report output.
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.11.0-24-generic
+  java.version =&gt; 1.7.0_55
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; OpenJDK Runtime Environment
+  java.runtime.version =&gt; 1.7.0_55-b14
+  java.vm.name =&gt; OpenJDK 64-Bit Server VM
+  java.vm.version =&gt; 24.51-b03
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.7
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /usr/lib/jvm/java-7-openjdk-amd64/jre
+  imagej.dir =&gt; /usr/share/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140701154719)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140702124334)</pre>
+    </div><div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-08 23:16:52 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+Here is the information. You can see there is a lot of vtk stuff. This isn't in use on most systems, which also show the problem. I rarely use it as well. At the end are Postage_Action_Tool and Window_Level_Tool. I am working on them and asked Wayne for a couple of additions to make them fly. They too are not on other systems until Wayne agrees to the changes.
+
+In short, my software is up to date. Likewise a physician in France with whom I collaborate has discovered the problem on Windows 7. He just told me this morning. He can't close Fiji, a nasty problem.
+
+Ilan
+
+Information about your version of Java:
+
+  os.arch =&gt; i386
+  os.name =&gt; Linux
+  os.version =&gt; 3.13.0-30-generic
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) Client VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; gnome
+  file.separator =&gt; /
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /home/ilan/Fiji.app/java/linux/jdk1.6.0_24//jre
+  imagej.dir =&gt; /home/ilan/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140703024308)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140707144211)
+PET-CT: <a href="http://sites.imagej.net/Ilan/">http://sites.imagej.net/Ilan/</a> (last check:20140707092847)
+
+Files not up-to-date:
+  a46e247d (LOCAL_ONLY) 20120103101835 lib/linux32/libvtkChartsJava.so
+  b3ede7e1 (LOCAL_ONLY) 20120103101835 lib/linux32/libvtkChartsJava.so.5.8
+  c94d497e (LOCAL_ONLY) 20120103101835 lib/linux32/libvtkChartsJava.so.5.8.0
+  02aff146 (LOCAL_ONLY) 20120103095153 lib/linux32/libvtkCommonJava.so
+  b612a4cd (LOCAL_ONLY) 20120103095153 lib/linux32/libvtkCommonJava.so.5.8
+  39bdf759 (LOCAL_ONLY) 20120103095153 lib/linux32/libvtkCommonJava.so.5.8.0
+  40a461cc (LOCAL_ONLY) 20120103095501 lib/linux32/libvtkFilteringJava.so
+  48f9018f (LOCAL_ONLY) 20120103095501 lib/linux32/libvtkFilteringJava.so.5.8
+  1899375d (LOCAL_ONLY) 20120103095501 lib/linux32/libvtkFilteringJava.so.5.8.0
+  712a4050 (LOCAL_ONLY) 20120103100147 lib/linux32/libvtkGenericFilteringJava.so
+  72522e61 (LOCAL_ONLY) 20120103100147 lib/linux32/libvtkGenericFilteringJava.so.5.8
+  f82289a5 (LOCAL_ONLY) 20120103100147 lib/linux32/libvtkGenericFilteringJava.so.5.8.0
+  b01aca5c (LOCAL_ONLY) 20120103101746 lib/linux32/libvtkGeovisJava.so
+  db799449 (LOCAL_ONLY) 20120103101746 lib/linux32/libvtkGeovisJava.so.5.8
+  1e4de413 (LOCAL_ONLY) 20120103101746 lib/linux32/libvtkGeovisJava.so.5.8.0
+  5543e3ba (LOCAL_ONLY) 20120103100130 lib/linux32/libvtkGraphicsJava.so
+  55f7863f (LOCAL_ONLY) 20120103100130 lib/linux32/libvtkGraphicsJava.so.5.8
+  16375cb7 (LOCAL_ONLY) 20120103100130 lib/linux32/libvtkGraphicsJava.so.5.8.0
+  ee29631c (LOCAL_ONLY) 20120103101155 lib/linux32/libvtkHybridJava.so
+  adbd9088 (LOCAL_ONLY) 20120103101155 lib/linux32/libvtkHybridJava.so.5.8
+  1007647b (LOCAL_ONLY) 20120103101155 lib/linux32/libvtkHybridJava.so.5.8.0
+  47f32ad5 (LOCAL_ONLY) 20120103100456 lib/linux32/libvtkIOJava.so
+  3fd3549e (LOCAL_ONLY) 20120103100456 lib/linux32/libvtkIOJava.so.5.8
+  9d3af464 (LOCAL_ONLY) 20120103100456 lib/linux32/libvtkIOJava.so.5.8.0
+  04434b81 (LOCAL_ONLY) 20120103095653 lib/linux32/libvtkImagingJava.so
+  dac59c32 (LOCAL_ONLY) 20120103095653 lib/linux32/libvtkImagingJava.so.5.8
+  da52f13c (LOCAL_ONLY) 20120103095653 lib/linux32/libvtkImagingJava.so.5.8.0
+  7e1088f5 (LOCAL_ONLY) 20120103101634 lib/linux32/libvtkInfovisJava.so
+  d40ccc67 (LOCAL_ONLY) 20120103101634 lib/linux32/libvtkInfovisJava.so.5.8
+  5bad1672 (LOCAL_ONLY) 20120103101634 lib/linux32/libvtkInfovisJava.so.5.8.0
+  5160f481 (LOCAL_ONLY) 20120103100902 lib/linux32/libvtkRenderingJava.so
+  a6c26925 (LOCAL_ONLY) 20120103100902 lib/linux32/libvtkRenderingJava.so.5.8
+  bfc03e33 (LOCAL_ONLY) 20120103100902 lib/linux32/libvtkRenderingJava.so.5.8.0
+  7ad40e25 (LOCAL_ONLY) 20120103101735 lib/linux32/libvtkViewsJava.so
+  f897d718 (LOCAL_ONLY) 20120103101735 lib/linux32/libvtkViewsJava.so.5.8
+  5731aeed (LOCAL_ONLY) 20120103101735 lib/linux32/libvtkViewsJava.so.5.8.0
+  74e99696 (LOCAL_ONLY) 20120103101031 lib/linux32/libvtkVolumeRenderingJava.so
+  984ee555 (LOCAL_ONLY) 20120103101031 lib/linux32/libvtkVolumeRenderingJava.so.5.8
+  d95a6ae1 (LOCAL_ONLY) 20120103101031 lib/linux32/libvtkVolumeRenderingJava.so.5.8.0
+  f41eeeae (LOCAL_ONLY) 20120103101434 lib/linux32/libvtkWidgetsJava.so
+  a4a41242 (LOCAL_ONLY) 20120103101434 lib/linux32/libvtkWidgetsJava.so.5.8
+  31e0a9a0 (LOCAL_ONLY) 20120103101434 lib/linux32/libvtkWidgetsJava.so.5.8.0
+  3f8b7a08 (MODIFIED) 20140707092447 macros/AutoRun/StartupMacros.ijm
+  23c5fc2d (LOCAL_ONLY) 20140625135658 macros/Macro1.ijm
+  71467a9a (LOCAL_ONLY) 20140407074039 macros/Macrosalim_simpleV2.ijm
+  831660de (MODIFIED) 20140701080935 macros/StartupMacros.fiji.ijm
+  f7b16601 (LOCAL_ONLY) 20140703095140 macros/toolsets/Postage_Action_Tool.ijm
+  6bc41fc4 (LOCAL_ONLY) 20130124080621 plugins/CT_Window_Level.jar
+  aaa758e4 (MODIFIED) 20140626162109 plugins/Gastric_Emptying.jar
+  e51d0400 (LOCAL_ONLY) 20100413082708 plugins/PluginsUpdater.jar
+  5e0fb5fa (MODIFIED) 20140707113136 plugins/Read_CD.jar
+  634d303b (LOCAL_ONLY) 20140703095140 plugins/Tools/Postage_Action_Tool.ijm
+  fda14d1b (LOCAL_ONLY) 20140625083706 plugins/Tools/Window_Level_Tool.class</pre>
+    </div><div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-09 02:22:13 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I can add that on our Linux box (openSuse 13.1) we often find that Fiji does
+not close. It hangs, and then we close it by opening a terminal, find the process with ps -ef | grep Fiji, and then killing the process.
+This occasionally happens on my OSX 10.9 system, but less often. 
+
+We have also observed that we might close Fiji, and the windows close, but then something we thought was finished (maybe a big image file that we tried to open and thought had failed) will pop up. So it runs out that closing Fiji did not shut down all of the processes that it spawned.
+
+For both of these events, we cannot run the bug reporter when they occur.
+What is the best way to run Fiji, so that it will produce output (eg to sdterr) that might help you?
+
+We also noticed (on the Linux box) that as we work, the response slows down, until the macro we are running fails (probably because of a timing issue, like a window that needs to open did not open in time). We ran with the monitor memory window open, to check if memory was being grabbed and not released. We did not observe this (ie, 4GB available, and &lt; 1GB in use). Restarting Fiji will make teh macro work again.
+
+For this last event, we should be able to use the bug reporting system to show you the state  of the program, so we will try to do that.</pre>
+    </div><div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-09 02:31:01 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Aryeh,
+I have seen the same problem on my Ubuntu machine. To kill the process I find it easier to use System Monitor and under Processes look for either ImageJ or Fiji, usually ImageJ. The End Process button kills it.
+On the Mac it is more difficult as you have to do a Force Quit.
+
+Ilan</pre>
+    </div><div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-09 02:34:12 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+On OSX I do a force quit, but I can also open a shell and use 
+ps -ef | grep Fiji to find the process and kill it.</pre>
+    </div><div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">nodice73&#64;yahoo.com</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 10:24:05 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+I'm not sure if it is helpful, but I just updated Fiji, and I get the same behavior and the same error upon exiting.
+
+Thanks,
+Adam</pre>
+    </div><div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 10:47:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Just a quick update: we are still actively working on the &quot;ImageJ2 won't quit&quot; issue, getting very close to a resolution. I believe we've finally found the root cause of the issue (actually, there were multiple &quot;root causes&quot;) and are now refining the fix so that things still work across various scenarios.
+
+We will get the fix uploaded ASAP and I'll follow up with a blog post explaining the nature of the difficulty, for those curious.</pre>
+    </div><div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 13:06:53 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I uploaded a new version of the imagej-legacy library which hopefully fixes the quitting problems. Please give it a try and reopen the issue if ImageJ still does not quit. Thanks!</pre>
+    </div><div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">nodice73&#64;yahoo.com</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 13:16:02 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+
+I just tried it out, and it closes appropriately. However, the same error (see <a href="show_bug.cgi?id=805#c11">comment 11</a>) is printed to the screen upon exit.
+
+Adam</pre>
+    </div><div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 13:41:28 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for the feedback, Adam. Glad the program closes now.
+
+As for the warnings and exception you reported, they can be safely ignored. I do notice the same exception on Linux running OpenJDK 1.7.0_55 64-bit, which I believe happens due to a &quot;double dispose&quot; of the main ImageJ window. We will investigate fixing it, but in the meantime it shouldn't negatively impact your usage of ImageJ/Fiji. Please let me know otherwise.</pre>
+    </div><div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 02:38:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >As mentioned on the IJ mailing list, I keep on seeing this bug. Here's the requested information:
+
+-------------- report a bug details --------------
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.11.0-24-generic
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; gnome
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /home/noenc_ehrenfeu/usr/packages/Fiji.app.vanilla_2014-06-13/java/linux-amd64/jdk1.6.0_24//jre
+  imagej.dir =&gt; /home/noenc_ehrenfeu/usr/packages/Fiji.app.vanilla_2014-06-13
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140710195854)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140709223742)
+IBMP-CNRS: <a href="http://www-ibmp.u-strasbg.fr/fijiupdates/">http://www-ibmp.u-strasbg.fr/fijiupdates/</a> (last check:20140526164644)
+IMCF Uni Basel: <a href="http://sites.imagej.net/UniBas-IMCF/">http://sites.imagej.net/UniBas-IMCF/</a> (last check:20140710225635)
+-------------- report a bug details --------------
+
+Steps to reproduce: just start Fiji with the update sites activated listed above (I did so by calling &quot;./ImageJ-linux64&quot;), the main ImageJ window pops up, plus the actionbar from our update site. Hitting the &quot;X&quot; button from the window manager decoration results in the actionbar being closed whereas the ImageJ main window stays open but doesn't accept any input anymore (mouse clicks, keyboard shortcuts). Using File &gt; Quit is behaving the same way.
+
+Manually closing the actionbar (again by using the &quot;X&quot; button) before trying to close ImageJ via the &quot;X&quot; button on the main window actually does work, Fiji is quitting normally then! Closing the actionbar, opening something else (e.g. &quot;blobs&quot;, B&amp;C, Histogram, ROIManager, ...) does not impact this, behaviour is as expected (quitting normally).
+
+Closing *our* actionbar, then opening any other actionbar (shipped with the actionbar-plugin itself, in Plugins &gt; ActionBar) results in the same behaviour as with ours. So it seems the actionbar plugin is pulling some trigger that makes Fiji misbehave on exit, but I guess this could also be triggered by other pieces and plugins...?
+
+Cheers
+Niko</pre>
+    </div><div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 02:45:21 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >In case this is of any interest, running Fiji with Oracle Java 1.7 (via &quot;./ImageJ-linux64 --java-home /usr/lib/jvm/jre-7-oracle-x64&quot;) is behaving the same, except that when closing the actionbar in advance and then closing the ImageJ main window results in this error message being printed to the console:
+
+------------------------------------------------------------------------
+java.lang.reflect.InvocationTargetException
+	at java.awt.EventQueue.invokeAndWait(Unknown Source)
+	at java.awt.Window.doDispose(Unknown Source)
+	at java.awt.Window.dispose(Unknown Source)
+	at ij.ImageJ.run(ImageJ.java:767)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: null source
+	at java.util.EventObject.&lt;init&gt;(Unknown Source)
+	at java.awt.AWTEvent.&lt;init&gt;(Unknown Source)
+	at java.awt.event.InvocationEvent.&lt;init&gt;(Unknown Source)
+	at java.awt.event.InvocationEvent.&lt;init&gt;(Unknown Source)
+	at sun.awt.X11.XBaseMenuWindow.dispose(Unknown Source)
+	at java.awt.MenuComponent.removeNotify(Unknown Source)
+	at java.awt.Menu.removeNotify(Unknown Source)
+	at java.awt.Component.removeNotify(Unknown Source)
+	at java.awt.Container.removeNotify(Unknown Source)
+	at java.awt.Window.removeNotify(Unknown Source)
+	at java.awt.Frame.removeNotify(Unknown Source)
+	at java.awt.Window$1DisposeAction.run(Unknown Source)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$200(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+------------------------------------------------------------------------</pre>
+    </div><div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 03:33:41 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Niko,
+I just tried it this morning and it seems to work for me.
+Since the update is so new, the &quot;Remind Later&quot; probably means you are still running the old version. Try Help -&gt; Update Fiji, and get the latest software and give it another try.
+
+Ilan</pre>
+    </div><div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 03:48:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+the &quot;Remind Later&quot; only means that I clicked away the update dialog after the startup of Fiji. Still, I did run it manually later on.
+
+~Niko</pre>
+    </div><div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 04:05:46 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Just tested on Win7x64, behaviour is very similar except for that the ImageJ main window is still accepting clicks on the menus (including sub-menus) /after/ hitting the &quot;X&quot; button. Buttons on the toolbar don't respond to clicks any more neither do keyboard shortcuts work (like Ctrl-L).</pre>
+    </div><div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 04:36:50 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Niko,
+Your freeze of the keyboard etc is exactly what I would see before the fix. After this morning's fix that has all gone away. Just for kicks, maybe try to update it again?
+I am on Linux-32 and you are on Windows-64 so there could be a difference.
+
+Ilan</pre>
+    </div><div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 04:42:10 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+believe me, I *really* made sure to have everything updated - more than just once, and on all platforms investigated ;-)
+
+I am usually /not/ on Win-64 but on Linux-64, the last comment was just additional information as I could also reproduce it on the Windows platform.
+
+My blind guess is that you don't have any ActionBars open, which I identified as causing this problem on my side (see <a href="show_bug.cgi?id=805#c30">comment #30</a> above), right?
+
+Cheers
+Niko</pre>
+    </div><div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 04:56:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Niko,
+I'll admit that I didn't notice your action bar statement. In my case I have my Pet-Ct viewer running, as well as B&amp;C and my Read from CD. If these qualify as action bars, then I do have some running. Obviously I don't have your action bar as I don't know what it does.
+
+I have something strange which you might just know the answer to. With my Pet-Ct viewer and Read from CD, there is a title clearly appearing on each bar, but when I hit Window on the Fiji menu, I see B&amp;C listed but I don't see my stuff listed. For my stuff I see only a box, like next to B&amp;C, but no text for the Window. I can't figure out what I am missing.
+
+Thanks,
+Ilan</pre>
+    </div><div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ilan Tal</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 05:11:30 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Niko,
+Way back when Curtis told me I had to add
+
+	private void init() {
+		WindowManager.addWindow(this);
+
+the WindowManager.addWindow for Fiji to close my program. I did it inside my init routine. Do you have such a call?
+
+Ilan</pre>
+    </div><div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 07:02:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Ilan,
+
+ActionBar is a plugin for ImageJ, and it also has a Fiji update site (you can see it in the list of activated sites in my &quot;bug report details&quot; section from above). It is described on the ImageJ wiki on <a href="http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:action_bar:start">http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:action_bar:start</a> 
+
+So if you don't know what ActionBars are, you probably don't have them, and this would also be the reason why you're unaffected by the behaviour I'm describing ;-)
+
+For your second comment, that one I really don't get. To me this looks as if something ate away half of your comment (at least one missing &quot;}&quot;, but even with that I have no clue what it is supposed to do, or where).
+
+Cheers
+Niko</pre>
+    </div><div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 07:13:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Niko,
+
+Ilan's comments were in reference to these methods of WindowManager: <a href="https://github.com/imagej/ImageJA/blob/master/src/main/java/ij/WindowManager.java#L239-264">https://github.com/imagej/ImageJA/blob/master/src/main/java/ij/WindowManager.java#L239-264</a>
+
+Essentially, best practice is that when software creates a Frame, Window or ImageWindow the created object should register itself in the WindowManager on instantiation.
+
+This exposes the object so that, for example, the shutdown routine in ImageJ2 can attempt to use the WindowManager to close all active Windows explicitly (to avoid the necessity of a System.exit(0) call, which was always being called in ImageJ 1.x, for example).
+
+However, this is clearly fragile as it means that anyone can create a plugin that accidentally or intentionally creates windows without registering them, which will lead to ImageJ not shutting down properly.
+
+I was under the impression that manual window registration isn't explicitly necessary right now and we're still falling back to IJ 1.x's System.exit calls... but I'm not 100% sure based on Curtis's latest fixes for this closing issue.</pre>
+    </div><div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 07:26:47 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Also I confirm that trying to close Fiji with an ActionBar open causes the ActionBar to close (or at least go invisible.. which could be an important distinction) but Fiji to remain open and unresponsive.
+
+Closing the ActionBar first allows Fiji to close as usual.</pre>
+    </div><div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 07:33:00 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks Mark for the clarification (and of course thanks Ilan for your suggestions!).
+
+I'm pretty sure we can ask Jérôme (the author of the ActionBar plugin) to fix this in the source code in case this is really the reason of this issue. Maybe we can even mavenize the ActionBar plugin... I'd love to do that as an exercise, but currently my schedule is so packed, I'm afraid I won't find the time for it :-(</pre>
+    </div><div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 07:39:26 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I do not think failure to register your windows is the issue.. it looks like the IJ2 code that closes the windows (<a href="https://github.com/imagej/imagej-legacy/blob/master/src/main/java/net/imagej/legacy/IJ1Helper.java#L205-219">https://github.com/imagej/imagej-legacy/blob/master/src/main/java/net/imagej/legacy/IJ1Helper.java#L205-219</a>) is not even being called when attempting to shut down with an ActionBar open.
+
+investigating further...</pre>
+    </div><div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 07:59:17 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Confirmed:
+
+The problem is with attempting to dispose windows after dispatching a WINDOW_CLOSING event: <a href="https://github.com/imagej/imagej-legacy/blob/master/src/main/java/net/imagej/legacy/DefaultLegacyHooks.java#L536">https://github.com/imagej/imagej-legacy/blob/master/src/main/java/net/imagej/legacy/DefaultLegacyHooks.java#L536</a>
+
+WINDOW_CLOSING events for the ActionBar trigger a WindowManager.removeWindow call. This method is synchronized, as is the intercepted WindowManager.closeAllWindows method.
+
+This causes removeWindow to block the EDT until closeAllWindows complets. So when Window.dispose() is called from closeallWindows, a dispose action is attempted to be invoked the EDT, which leads to a deadlock.</pre>
+    </div><div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 12:27:02 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Niko Ehrenfeuchter wrote:
+<span class="quote">&gt; Caused by: java.lang.IllegalArgumentException: null source</span >
+
+The &quot;null source&quot; bug is a separate problem, documented at:
+
+   <a href="https://github.com/fiji/fiji/issues/94">https://github.com/fiji/fiji/issues/94</a>
+
+Note that our current belief is that this exception is _not_ actually a crash, meaning it does not block shutdown. Also, this &quot;null source&quot; bug is limited to recent versions of OpenJDK 7 on Linux.
+
+As for the actual quitting problem with ActionBar: it is a deadlock between the Quit and EDT threads due to WindowManager having synchronized methods. We have a fix in the works right now, which we will upload later today.
+
+Generally speaking, the fix will also make quitting less deadlock prone, and less likely to block shutdown altogether due to misbehaving windows (i.e., windows with WindowListeners that do evil things with windowClosing).</pre>
+    </div><div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 17:12:49 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >OK, we have uploaded another slew of fixes, and dubbed it ImageJ 2.0.0-rc-9. Once again, we believe the quitting problems to be fixed. Please test again and let us know how it goes.</pre>
+    </div><div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Niko Ehrenfeuchter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-14 04:51:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Seems to be solved for me now! Thanks A LOT to all of you guys, amazing work!</pre>
+    </div><div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=805#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-14 13:03:41 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >*** <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Fiji fails to quit"
+   href="show_bug.cgi?id=847">Bug 847</a> has been marked as a duplicate of this bug. ***</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=805">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=805">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=805">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=805&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=805" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=805&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731798-9X0a1F0pYKxBlYQ1EZIY-LD2XzBLo-J1Vdf52dKkTvU">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

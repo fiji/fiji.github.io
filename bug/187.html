@@ -1,0 +1,1482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 187 &ndash; error saving/loading preferences</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=187&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=187">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=187">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=187">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 187 – error saving\/loading preferences",  
+                             "show_bug.cgi?id=187" );
+        document.title = "Bug 187 – error saving\/loading preferences";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 187 – error saving\/loading preferences", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_187 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;187</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">error saving/loading preferences</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2010-08-31 14:09:23 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=187&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=187" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=187&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731537-_RakHDj-V2IbvK58uR30M-53viyRiFwfr8hYvfTQ4nM">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2010-08-31 14:09:23">
+  <input type="hidden" name="longdesclength" value="17">
+  <input type="hidden" name="id" value="187">
+  <input type="hidden" name="token" value="1492731537-0OvCRFd5_xmBALvzD62QRVHLkADoGHtegjzImd35Crc">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=187"><b>Bug&nbsp;187</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">error saving/loading preferences</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>error saving/loading preferences
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('error saving\/loading preferences', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=187&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=187">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2010-06-18 12:49 CDT by <span class="vcard"><span class="fn">Christian</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2010-08-31 14:09 CDT 
+      (<a href="show_activity.cgi?id=187">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="Goosmann">Goosmann</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=187&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=187&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-06-18 12:49:49 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi
+With one of the last updates came one new problem when starting or quitting fiji.
+The program seeks to save or load preferences in  a path that is not accessible. The error message reads: \\fileserver\profiles$\Desktop\IJ_Prefs.txt (Zugriff verweigert)
+I work in a network environment that allows us to work from any machine within the institute. Thus the reference to \\fileserver. Where fiji gets this path from i don't know. I'd much rather have it try to save my preferences somwhere related to the path where it resides, which is local c: drive.
+Can this be improved? Is there a way to set it to use a different path?
+
+Information about your version of Java - this information is useful for the Fiji developers:
+  os.arch =&gt; x86
+  os.name =&gt; Windows XP
+  os.version =&gt; 5.1
+  java.version =&gt; 1.6.0_16
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_16-b01
+  java.vm.name =&gt; Java HotSpot(TM) Client VM
+  java.vm.version =&gt; 14.2-b01
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-06-18 15:30:10 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Unfortunately, the change was due to an explicit user request (see <a href="http://pacific.mpi-cbg.de/cgi-bin/bugzilla/﷒0">http://pacific.mpi-cbg.de/cgi-bin/bugzilla/﷒0</a>﷓, in general, it is a good idea to search the bugzilla for keywords related to your problem). The preferences should be user-specific.
+
+So changing it back to an application-specific place would break that again. You might understand that this is not in our mutual interest.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-07-05 16:47:14 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi?id=187#c1">comment #1</a>)
+<span class="quote">&gt; Unfortunately, the change was due to an explicit user request (see
+&gt; <a href="http://pacific.mpi-cbg.de/cgi-bin/bugzilla/﷒0">http://pacific.mpi-cbg.de/cgi-bin/bugzilla/﷒0</a>﷓, in general, it
+&gt; is a good idea to search the bugzilla for keywords related to your problem).
+&gt; The preferences should be user-specific.
+&gt; 
+&gt; So changing it back to an application-specific place would break that again.
+&gt; You might understand that this is not in our mutual interest.
+&gt; </span >
+I apologize for not having found that and for not being clear enough. But there still is an issue. First: i am fine with having the preferences in a user-specific place of course. But it seems that in the case of the network environment at the institute here, FIJI confuses the path and attempts to search or write the preferences in a directory the user has no access to.
+I haven't found the reason for that when reading the patch you attached (...<a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - On Windows, Fiji will create a new IJ_Prefs.txt in the folder it was launched."
+   href="show_bug.cgi?id=184">show_bug.cgi?id=184</a>), neither did our admin.
+I want to describe two scenarios and the outcome that might give a clue to the problem.
+One: I log onto the machine locally (without all the roaming functionality of our network environment)Outcome: FIJI uses &quot;C:\Dokumente und Einstellungen\&lt;username&gt;\ as preference directory and encounters no problem.
+Two: I log onto the network environment. Outcome: ImageJA uses \\fileserver\profiles$\Desktop\ and fails to read/write.
+Now, \\fileserver\profiles$\Desktop\ is not a path that ImageJA would get from the system, at least it doesn't exist in the registry variables. It is rather a path that is a truncated part of a path that exists there, which would be \\fileserver\profiles$\Desktop\&lt;username&gt;\ if ImageJA were to use that path it would save the preferences in a funny, but user-specific place (on the users desktop). Is there any place in the code, where such a truncation stopping at &quot;Desktop&quot; would happen?
+</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-07-06 10:31:08 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The path Fiji tries to access is determined by the &quot;user.home&quot; property. From <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/System.html#getProperties">http://java.sun.com/j2se/1.5.0/docs/api/java/lang/System.html#getProperties</a>() I assumed that &quot;user.home&quot; is the &quot;User's home directory&quot;.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-07-19 17:14:06 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Johannes. After spending some more time with our admin and searching the web I have found this: <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4787931">http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4787931</a> .
+Well, I see that it's nothing to do with FIJI. It is just that system.get.property(user.home) returns nonsense on some windows systems. I confirmed that this is the problem I'm having by testing the command in an independent java project on my machine. There seem to be a couple of (awkward)workarounds. Can you see anything that could be used in FIJI without breaching useability in other os?</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-29 19:17:28 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >You could use some getenv() call guarded by a check whether we're on Windows.
+
+But note that there is an ongoing controversy whether USERPROFILE is the place to put things or HOMEDRIVE/HOMEPATH is it. It would not do any good to please just one half of the users, while offending the other one.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 11:16:23 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Well, I really don't care where it puts things as long as it picks a place where it has access. As pointed out in javas bugdatabase <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4787931">http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4787931</a>
+it is an ongoing issue with windows users who have their user profiles on some remote server that their java programs try to go to places where they can't write. It affects all java programs that try to put anything in a user related place.
+The reason is the bug in the command &quot;system.get.property(user.home)&quot; which returns non functional paths. If I were more proficient in programming I would try one of the fixes mentioned in above thread in bugs.sun.com. My problem is that, being merely a basic user, I don't know how to implement such a fix in my fiji. 
+</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 11:41:22 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Johannes---may be that is a stupid idea but what about the following solution?
+
+We introduce an optional environment variable $FIJI_USERHOME which is expected to contain the path a user wants to save his/her settings.  That is checked first when attempting to get the path for saving settings.  If it doesn't exist or doesn't allow opening a file, the current behavior is called.
+
+In that scenario, Christian's admin could setup this system variable for each user and Fiji would work fine and save in a reasonable place.  It's a bit like with the JAVA_HOME thing.
+
+What do you think?  If you could point me to the place where the settings are saved, I could help implementing it---doesn't sound like much effort.</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 12:03:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Stephan, a very good idea!
+
+The prefsDir is set here:
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/Prefs.java;h=4f812755b4f47698bb959acaa6ce1577edf2167e;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l144">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/Prefs.java;h=4f812755b4f47698bb959acaa6ce1577edf2167e;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l144</a>
+
+But as you can see, it tries to use homeDir, which can be set by ImageJ's -ijpath option:
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/ImageJ.java;h=4959abfa3bd35829d51608433e7797273a28ecc9;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l580">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/ImageJ.java;h=4959abfa3bd35829d51608433e7797273a28ecc9;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l580</a>
+
+So there are two options: either we patch the Fiji launcher (which would mean that we need to recompile all the launchers), or we put the stuff into fiji.Main:
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=blob;f=src-plugins/Fiji/fiji/Main.java;h=c79a55613335b2984fe1a2aa41dd8cc8b16a94d3;hb=1cb83ff476115d7f80b336d3c0f00f3a5dfa1b6d#l358">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=blob;f=src-plugins/Fiji/fiji/Main.java;h=c79a55613335b2984fe1a2aa41dd8cc8b16a94d3;hb=1cb83ff476115d7f80b336d3c0f00f3a5dfa1b6d#l358</a>
+
+Something like
+
+    String fijiPrefsDir = System.getenv(&quot;FIJI_PREFS_DIR&quot;);
+    if (fijiPrefsDir != null) {
+         String[] args2 = new String[args.length + 2];
+         args2[0] = &quot;-ijpath&quot;;
+         args2[1] = fijiPrefsDir;
+         System.arraycopy(args, 0, args2, 2, args.length);
+         args = args2;
+    }
+
+should do the trick, but I haven't checked that all the code paths leading up to Prefs.loadPrefs() parse the -ijpath parameter properly. I'd just try that out, though.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 13:01:31 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Johannes,
+
+thanks for the reply.  That is, the workaround for Christian's trouble would be to launch Fiji with -ijpath MY:\home\path until we include the setenv checking?
+
+I propose the following hierarchy for choosing that path:
+
+1. -ijpath
+2. IJ_HOME
+3. user.home
+4. ...
+
+Not as deeply involved in the ImageJ logic, can you give me a hint how
+
+Prefs.prefsDir and Prefs.homeDir are expected to be related to each other?
+
+In ij.Prefs, I can see both as static fields with only homeDir published through a setter
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/Prefs.java;h=4f812755b4f47698bb959acaa6ce1577edf2167e;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l193">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/Prefs.java;h=4f812755b4f47698bb959acaa6ce1577edf2167e;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l193</a>
+
+In case, we want to set homeDir and not prefsDir, I suggest introducing a fallback after parsing the arguments and before opening the preferences at
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/ImageJ.java;h=4959abfa3bd35829d51608433e7797273a28ecc9;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l595">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=blob;f=ij/ImageJ.java;h=4959abfa3bd35829d51608433e7797273a28ecc9;hb=c08cf5bd42734df6ad8e557117cd366009e561cc#l595</a>
+
+like
+
+if ( Prefs.getHomeDir() != null &amp;&amp; !Prefs.getHomeDir().equals(&quot;&quot;) &amp;&amp; System.getenv(&quot;IJ_HOME&quot;) != null &amp;&amp; !System.getenv(&quot;IJ_HOME&quot;).equals(&quot;&quot;) )  Prefs.setHomeDir(System.getenv(&quot;IJ_HOME&quot;));
+
+That is not failsafe in case that the paths are bogus but for testing that, we need to change Prefs where files are actually accessed.
+
+I can look into that tomorrow...</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 13:54:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Yes, that workaround _should_ do the job.
+
+I misread the code to assume that prefsDir is set from homeDir, but it is set to userHome (sorry for the confusion, I was mislead by the similar names).
+
+My previous worry about the variable being set via -ijpath _before_ the first call to loadPrefs() are therefore moot.
+
+I just wanted to make sure that Fiji works in the intended way even if you chose to use plain ImageJ instead of ImageJA (e.g. by calling Help&gt;Update ImageJ to the daily build). But the only way to ensure that would be to set the property user.home ourselves, which might break other code in all kind of funny ways.
+
+Anyhow, I am willing to go that route:
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=commitdiff;h=be8367179ef2874e9fcfb79452968819c28f8ad8;hb=refs/heads/ij-home">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=commitdiff;h=be8367179ef2874e9fcfb79452968819c28f8ad8;hb=refs/heads/ij-home</a>
+
+Could you test, please, and merge if everything seems right? Thanks. (/me has to run off to give a course for the rest of the day...)</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-30 14:15:11 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I feel a bit cautious about setting System.user.home.  That might have undesired consequences for other applications (plugins?) that handle the problem otherwise.  We should stick with changing the path for saving ImageJ preferences which is not necessarily where people expect to be System.user.home.
+
+That is, I would prefer a solution that either is what I suggested before or we set an additional property instead (e.g. System.ij.home) that is then used instead of System.user.home from the Prefs implementation.</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-31 00:03:56 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >As I said, what you suggest implies changing ImageJA and leaves behind ImageJ. That is why _I_ am hesitant to implement this.</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-31 00:53:02 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Besides, calling it IJ_HOME (instead of IJ_PREFS_DIR, as I suggested) would imply that the home is redirected for ImageJ, not just the prefs directory.</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-31 11:04:31 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I understand your concerns.  Still, changing a standard property (even a broken one) can have undesired consequences for all applications that run in the context of Fiji.  I was actually thinking about making this variable something that could also work for plain ImageJ because it provides a nice way to work with customized system-wide installations.  Should we suggest it to Wayne?
+
+Otherwise, I am not completely against doing it as you suggested (what about $FIJI_USER_HOME ?).  But we need some big red warning signs in front of that property, just to protect ourselves against the resulting bug-reports.</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-31 13:53:37 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >With the help of Stephan, I implemented this, committed it, pushed it, and uploaded a new ij.jar.
+
+Now you can override the path to the directory where the preferences are read from/written to by setting the environment variable IJ_PREFS_DIR to the full path. Note: this directory _must already_ exist. ImageJA will not create it.
+
+Here is the commit explaining things:
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=commitdiff;h=d146c0807b4cb2a8f14feebb78fd6b2043229b99">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=commitdiff;h=d146c0807b4cb2a8f14feebb78fd6b2043229b99</a>
+
+and here is the actual commit in ImageJA:
+
+<a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=commitdiff;h=a861dffe935a18527d2709b46e4419aad0f777a1">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=ImageJA.git;a=commitdiff;h=a861dffe935a18527d2709b46e4419aad0f777a1</a></pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=187#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Christian</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-31 14:09:23 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I like it! Works perfect
+Thank you guys so much!</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=187">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=187">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=187">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=187&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=187" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=187&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731537-_RakHDj-V2IbvK58uR30M-53viyRiFwfr8hYvfTQ4nM">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

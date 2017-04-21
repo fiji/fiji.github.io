@@ -1,0 +1,1342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 620 &ndash; SPIM_Registration fails to compile</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=620&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=620">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=620">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=620">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 620 – SPIM_Registration fails to compile",  
+                             "show_bug.cgi?id=620" );
+        document.title = "Bug 620 – SPIM_Registration fails to compile";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 620 – SPIM_Registration fails to compile", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Other bz_bug_620 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;620</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">SPIM_Registration fails to compile</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2013-06-11 11:10:23 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=620&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=620" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=620&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731718-GImbY8EXmk5Sc_WeC3-41KuBENVVOuH8AcjKk9294vU">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2013-06-11 11:10:23">
+  <input type="hidden" name="longdesclength" value="9">
+  <input type="hidden" name="id" value="620">
+  <input type="hidden" name="token" value="1492731718-aw3e523TEwsBqTZLD7iWC55p_w7fY7iEKcdqyCbRsLI">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=620"><b>Bug&nbsp;620</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">SPIM_Registration fails to compile</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>SPIM_Registration fails to compile
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('SPIM_Registration fails to compile', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       blocker
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=620&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=620">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2013-06-11 04:38 CDT by <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2013-06-11 11:10 CDT 
+      (<a href="show_activity.cgi?id=620">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="preibisch">preibisch</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=620&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=620&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 04:38:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Just pulled Fiji and called mvn which stops with:
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Building plugins/SPIM_Registration.jar
+[INFO]    task-segment: [install]
+[INFO] ------------------------------------------------------------------------
+[INFO] [buildnumber:create {execution: default}]
+[INFO] [imagej:set-rootdir {execution: set-rootdir}]
+[debug] execute contextualize
+[INFO] [resources:resources {execution: default-resources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] [compiler:compile {execution: default-compile}]
+[INFO] Compiling 24 source files to /home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/bead/BeadRegistration.java:[192,73] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: mpicbg.spim.registration.bead.BeadIdentification
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;mpicbg.spim.registration.bead.BeadIdentification,T&gt;
+[ERROR] /home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/bead/BeadRegistration.java:[361,73] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: mpicbg.spim.registration.bead.BeadIdentification
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;mpicbg.spim.registration.bead.BeadIdentification,T&gt;
+[ERROR] /home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java:[35,56] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: S
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;S,T&gt;
+[ERROR] /home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java:[174,22] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: S
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;S,T&gt;
+[ERROR] /home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java:[192,35] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: S
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;S,T&gt;
+[INFO] 5 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Compilation failure
+
+/home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/bead/BeadRegistration.java:[192,73] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: mpicbg.spim.registration.bead.BeadIdentification
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;mpicbg.spim.registration.bead.BeadIdentification,T&gt;
+/home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/bead/BeadRegistration.java:[361,73] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: mpicbg.spim.registration.bead.BeadIdentification
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;mpicbg.spim.registration.bead.BeadIdentification,T&gt;
+/home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java:[35,56] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: S
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;S,T&gt;
+/home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java:[174,22] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: S
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;S,T&gt;
+/home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java:[192,35] invalid inferred types for S; inferred type does not conform to declared bound(s)
+inferred: S
+bound(s): mpicbg.spim.registration.detection.DetectionIdentification&lt;S,T&gt;
+
+[INFO] ------------------------------------------------------------------------
+[INFO] For more information, run Maven with the -e switch
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 50 seconds
+[INFO] Finished at: Tue Jun 11 11:30:17 CEST 2013
+[INFO] Final Memory: 126M/765M
+[INFO] ------------------------------------------------------------------------
+
+
+
+then tried with Build.sh which stops with
+
+Compiling 155 files in /home/saalfeld/workspace/fiji-clean/src-plugins/SPIM_Registration
+error: Bad service configuration file, or exception thrown while constructing Processor object: javax.annotation.processing.Processor: Error reading configuration file
+Exception in thread &quot;main&quot; imagej.build.minimaven.JavaCompiler$CompileError: Compile error: 1
+	at imagej.build.minimaven.JavaCompiler.call(JavaCompiler.java:83)
+	at imagej.build.minimaven.MavenProject.build(MavenProject.java:444)
+	at imagej.build.minimaven.MavenProject.build(MavenProject.java:375)
+	at imagej.build.minimaven.MavenProject.build(MavenProject.java:398)
+	at imagej.build.minimaven.MavenProject.buildAndInstall(MavenProject.java:332)
+	at imagej.build.minimaven.MavenProject.buildAndInstall(MavenProject.java:327)
+	at imagej.build.minimaven.MavenProject.buildAndInstall(MavenProject.java:327)
+	at imagej.build.minimaven.MavenProject.buildAndInstall(MavenProject.java:289)
+	at imagej.build.MiniMaven.main(MiniMaven.java:138)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   395  100   395    0     0   1452      0 --:--:-- --:--:-- --:--:--  2841
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   357  100   357    0     0   1317      0 --:--:-- --:--:-- --:--:--  2586
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16801  100 16801    0     0  41915      0 --:--:-- --:--:-- --:--:-- 62690
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 34881  100 34881    0     0  65708      0 --:--:-- --:--:-- --:--:-- 88083
+
+
+
+This is my Java:
+
+java -version
+java version &quot;1.6.0_27&quot;
+OpenJDK Runtime Environment (IcedTea6 1.12.5) (6b27-1.12.5-0ubuntu0.12.04.1)
+OpenJDK 64-Bit Server VM (build 20.0-b12, mixed mode)
+
+Thanks in advance for any assistance.</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 09:07:41 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; OpenJDK Runtime Environment (IcedTea6 1.12.5) (6b27-1.12.5-0ubuntu0.12.04.1)</span >
+
+Try Oracle JDK.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Preibisch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 09:29:06 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Stephan,
+
+this source code has not been changes for quite some time ... so it should be a compiler issue as Johannes suggested. Eclipse builds it and on my MAC and Ubuntu it builds as well.
+
+Bye bye,
+Steffi</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 09:33:33 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for the hints.  Before I install Oracle Java, which compiler are you using Stephan?  On Ubuntu 12.04, the mentioned
+
+java version &quot;1.6.0_27&quot;
+OpenJDK Runtime Environment (IcedTea6 1.12.5) (6b27-1.12.5-0ubuntu0.12.04.1)
+OpenJDK 64-Bit Server VM (build 20.0-b12, mixed mode)
+
+is the default---at least to my knowledge.
+
+Have you actually built it with mvn from the terminal?</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Preibisch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 09:51:15 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+for me he does build the SPIM Registration when compiling with 'mvn', but he fails later on:
+
+...
+[INFO] plugins/SPIM_Opener.jar ........................... SUCCESS [0.816s]
+[INFO] plugins/SPIM_Registration.jar ..................... SUCCESS [1.538s]
+...
+[ERROR] Failed to execute goal on project Image_Expression_Parser: Could not resolve dependencies for project sc.fiji:Image_Expression_Parser:jar:2.0.0-SNAPSHOT: Could not find artifact jama:Jama:jar:1.0.2 in imagej.releases (<a href="http://maven.imagej.net/content/repositories/releases">http://maven.imagej.net/content/repositories/releases</a>) -&gt; [Help 1]
+
+Java is:
+
+preibisc&#64;myers-pc-8:~/workspace/fiji$ java -version
+java version &quot;1.6.0_27&quot;
+OpenJDK Runtime Environment (IcedTea6 1.12.5) (6b27-1.12.5-0ubuntu0.12.04.1)
+OpenJDK 64-Bit Server VM (build 20.0-b12, mixed mode)
+
+Bye bye,
+Steffi</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 10:05:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >In response to Steffi's bug about Jama, the problem is that it is stored in the &quot;thirdparty&quot; repository rather than the &quot;releases&quot; one. I am adding that to the Fiji POM now; will comment again when it is working.
+
+In response to Stephan's bug, I too am able to build on Ubuntu 12.04 with OpenJDK 7:
+
+    $ java -version
+    java version &quot;1.7.0_21&quot;
+    OpenJDK Runtime Environment (IcedTea 2.3.9) (7u21-2.3.9-0ubuntu0.12.04.1)
+    OpenJDK 64-Bit Server VM (build 23.7-b01, mixed mode)
+
+I will test with OpenJDK 6 too, in a bit.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 10:35:21 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I tested with OpenJDK 6 (same version as Stephan) and get the same build errors.
+
+Unfortunately, the following changes are not enough to fix everything:
+
+--snip--
+diff --git a/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java b/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java
+index f099816..c355b5b 100644
+--- a/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java
++++ b/src-plugins/SPIM_Registration/src/main/java/mpicbg/spim/registration/detection/DetectionRegistration.java
+&#64;&#64; -32,7 +32,8 &#64;&#64;
+                {
+                        final T detectionA = correspondences.get( i ).getPoint1();
+                        final T detectionB = correspondences.get( i ).getPoint2();
+-                       final ArrayList&lt;Integer&gt; inconsistent = getOccurences( detectionA, detectionB, correspondences );
++                       // NB: pass &lt;S, T&gt; to avoid bug in OpenJDK 6 &quot;1.6.0_27&quot; (IcedTea6 1.12.5)
++                       final ArrayList&lt;Integer&gt; inconsistent = DetectionRegistration.&lt;S, T&gt;getOccurences( detectionA, detectionB, correspondences );
+                        
+                        if ( inconsistent.size() &gt; 0 )
+                                for ( int index : inconsistent )
+&#64;&#64; -171,7 +172,8 &#64;&#64;
+                        final ArrayList&lt;PointMatchGeneric&lt;T&gt;&gt; inlierList, 
+                        final Model&lt;?&gt; model )
+        {
+-               return computeRANSAC( correspondenceCandidates, inlierList, model, 10, 0.1f, 3, 10000 );
++               // NB: pass &lt;S, T&gt; to avoid bug in OpenJDK 6 &quot;1.6.0_27&quot; (IcedTea6 1.12.5)
++               return DetectionRegistration.&lt;S, T&gt;computeRANSAC( correspondenceCandidates, inlierList, model, 10, 0.1f, 3, 10000 );
+        }
+ 
+        public static &lt;S extends DetectionIdentification&lt;S,T&gt;, T extends DetectionView&lt;S,T&gt; &gt; String computeRANSAC( 
+&#64;&#64; -189,7 +191,8 &#64;&#64;
+                /*
+                 * First remove the inconsistent correspondences
+                 */
+-               removeInconsistentCorrespondences( correspondenceCandidates );
++               // NB: pass &lt;S, T&gt; to avoid bug in OpenJDK 6 &quot;1.6.0_27&quot; (IcedTea6 1.12.5)
++               DetectionRegistration.&lt;S, T&gt;removeInconsistentCorrespondences( correspondenceCandidates );
+ 
+                // if there are not enough correspondences for the used model
+                if ( numCorrespondences &lt; minNumCorrespondences )
+--snap--
+
+I think that the bug is relating to the specific combination of S and T here, such that any usage of those methods causes problems. Given that it is fixed in OpenJDK 7, it is not worth working around, IMO.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stephan Saalfeld</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 10:49:52 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks a lot Curtis!
+
+I will switch to OpenJDK7 then.
+
+Surprising that the bug didn't hit me earlier.  Seems to be something recently introduced into OpenJDK6...
+
+All the best and thanks again!</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=620#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-11 11:10:23 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Closing this ticket as &quot;WONTFIX&quot; since we didn't resolve the OpenJDK6 build failures.
+
+Regarding the Jama issue: I was wrong about the thirdparty repository not being available from the Fiji POM. (Of course it is, since it inherits that reference from the parent.)
+
+Rather, the issue was a version mismatch for the jep dependency of Image_Expression_Parser. I pushed a fix to fiji master.
+
+If you pull and rebuild, the problem should be gone.
+
+If you want to be completely tidy, you can clean out the invalid jama reference:
+
+    rm -rf ~/.m2/repository/jama/Jama
+
+All of Fiji now builds on my Ubuntu Linux 12.04 64-bit system with OpenJDK7, though you need to crank up the available RAM to do it all in one shot:
+
+    export MAVEN_OPTS=&quot;-Xmx1536m -XX:MaxPermSize=256m&quot;
+
+Otherwise the build fails halfway through with OutOfMemoryError. You can still resume with &quot;mvn&quot; again though.
+
+Lastly, I had one test failure in TrackMate_. You can skip the tests using:
+
+    mvn -DskipTests</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=620">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=620">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=620">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=620&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=620" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=620&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731718-GImbY8EXmk5Sc_WeC3-41KuBENVVOuH8AcjKk9294vU">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

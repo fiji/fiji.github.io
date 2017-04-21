@@ -1,0 +1,1417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 801 &ndash; Some plugins do not appear in subfolder but under plugins directly</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=801&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi?id=801">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=801">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=801">
+
+
+
+    
+    <link href="skins/standard/global.css?1492730519"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1492730519" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1492730519" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1492730519" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css?1492730519" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1492730519"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1492730519"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1492730519"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1492730519"></script><script type="text/javascript" src="js/yui/json/json-min.js?1492730519"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1492730519"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1492730519"></script><script type="text/javascript" src="js/global.js?1492730519"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 801 – Some plugins do not appear in subfolder but under plugins directly",  
+                             "show_bug.cgi?id=801" );
+        document.title = "Bug 801 – Some plugins do not appear in subfolder but under plugins directly";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 801 – Some plugins do not appear in subfolder but under plugins directly", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1492730519"></script><script type="text/javascript" src="js/field.js?1492730519"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_ASSIGNED bz_product_Fiji bz_component_Plugins bz_bug_801 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;801</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Some plugins do not appear in subfolder but under plugins directly</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-06-23 15:28:37 CDT</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi?id=801&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=801" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi?id=801&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1492731796-_WUo3-5aGZDxVmVtrkyM30AlglMkD36Av3yADc1iMV4">
+    <a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-06-23 15:28:37">
+  <input type="hidden" name="longdesclength" value="5">
+  <input type="hidden" name="id" value="801">
+  <input type="hidden" name="token" value="1492731796-oE3tFB3KNRvUTFvGZ5S30cu_BEBryLUwZm11VMWfIsE">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi?id=801"><b>Bug&nbsp;801</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Some plugins do not appear in subfolder but under plugins directly</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>Some plugins do not appear in subfolder but under plugins directly
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Some plugins do not appear in subfolder but under plugins directly', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi?id=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">ASSIGNED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Fiji"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi?id=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'imagej-bugs\x40imagej.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=801&amp;hide_resolved=1">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi?id=801">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-06-19 13:25 CDT by <span class="vcard"><span class="fn">Jan Brocher</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-06-23 15:28 CDT 
+      (<a href="show_activity.cgi?id=801">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="imagej-bugs">imagej-bugs</option>
+                <option value="jan.brocher">jan.brocher</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <a href="attachment.cgi?bugid=801&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi?id=801&amp;GoAheadAndLogIn=1">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js?1492730519" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=801#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Brocher</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 13:25:02 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >In the most recent updated version of Fiji/IJ 2.0.0-rc5 some specific plugins do appear directly in the plugins loder even though they are located in a subfolder thereof. 
+Those are for example: JACoP (which in my case is located in a folder named Colocalization) or for the manual &quot;Cell Counter&quot; plugin (in my case located in a folder named &quot;Analyze&quot;
+
+Other plugins like self-written ones are displayed in the correct subfolder menu point.
+
+cheers,
+Jan
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: D:\Fiji\Fiji.app/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; D:\Fiji\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140618215931)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140618220039)
+
+Files not up-to-date:
+  52941f0a (LOCAL_ONLY) 20120724120027 images/ToolIcon.png
+  03fce6da (LOCAL_ONLY) 20120706180550 images/icon (BioVoxxel).png
+  ff3d290a (LOCAL_ONLY) 20110307142230 images/icon (normal).png
+  c30b7a18 (LOCAL_ONLY) 20140615103103 images/icon - Kopie.png
+  8baeb36c (MODIFIED) 20140615103103 images/icon.png
+  4deb407f (LOCAL_ONLY) 20140413132328 luts/Difference Indicator.lut
+  99298680 (MODIFIED) 20140430123629 macros/StartupMacros.fiji.ijm
+  dbf50690 (LOCAL_ONLY) 20140612124305 macros/toolsets/BASF Toolbar.ijm
+  51b2e57a (LOCAL_ONLY) 20140519180637 macros/toolsets/BioVoxxel_Toolbox.ijm
+  362707f5 (LOCAL_ONLY) 20140330181216 macros/toolsets/Filter_Menu.ijm
+  1e2f8875 (LOCAL_ONLY) 20120903105628 macros/toolsets/Gamma Tool.txt
+  febb9d05 (LOCAL_ONLY) 20131017152831 macros/toolsets/LineAndProfileTool.txt
+  0f88195e (LOCAL_ONLY) 20140411114616 macros/toolsets/Montage Tools.ijm
+  5e54fa1e (LOCAL_ONLY) 20130314141116 macros/toolsets/Multichannel and Stack Tools.txt
+  545b95ef (LOCAL_ONLY) 20130528125840 macros/toolsets/Nearest_Neighbor_Indicator.ijm
+  b6e9506b (LOCAL_ONLY) 20130314140737 macros/toolsets/ROI Manager Tools.txt
+  e3fa44e3 (LOCAL_ONLY) 20140423214721 macros/toolsets/Stack Tools.ijm
+  f6ae959f (LOCAL_ONLY) 20111029210608 macros/toolsets/Toolset Creator.txt
+  3959d9a3 (LOCAL_ONLY) 20140430121549 macros/toolsets/Workshop_Menus.ijm
+  8de3bfbb (LOCAL_ONLY) 20140124091116 plugins/ActionBar/BioVoxxel_bar.txt
+  c8a057b9 (LOCAL_ONLY) 20140124092913 plugins/ActionBar/analysis_bar.txt
+  5d7830e9 (LOCAL_ONLY) 20140124092115 plugins/ActionBar/filters_bar.txt
+  44834401 (LOCAL_ONLY) 20121220144054 plugins/ActionBar/overlay_bar.txt
+  ebe53ae9 (LOCAL_ONLY) 20140209142014 plugins/ActionBar/segmentation_bar.txt
+  2f6a1b83 (LOCAL_ONLY) 20140124091527 plugins/ActionBar/selection_bar.txt
+  13948d9d (LOCAL_ONLY) 20130721170100 plugins/ActionBar/test_bar.txt
+  402a2633 (LOCAL_ONLY) 20140124091754 plugins/ActionBar/transformation_bar.txt
+  52ff6766 (LOCAL_ONLY) 20130129192442 plugins/Analyze/Create_Template.jar
+  3b647140 (LOCAL_ONLY) 20140501175454 plugins/Analyze/Find_Ridges.class
+  11a9c570 (LOCAL_ONLY) 20140523171626 plugins/Analyze/MultipleKymograph_.class
+  0c5c3f94 (LOCAL_ONLY) 20120718080724 plugins/Analyze/PCA/Compute.class
+  b3fb8490 (LOCAL_ONLY) 20120718080724 plugins/Analyze/PCA/MSA_514.class
+  29275003 (LOCAL_ONLY) 20120718080518 plugins/Analyze/Volumest_20101201.jar
+  b2afde18 (LOCAL_ONLY) 20120612185532 plugins/Analyze/cell_counter.jar
+  e281a3d7 (LOCAL_ONLY) 20140530103939 plugins/BASF/Analysis_Settings04.class
+  054c4a86 (LOCAL_ONLY) 20140610220147 plugins/BASF/Threshold_Sections_v17.class
+  1a93eb34 (LOCAL_ONLY) 20140320091532 plugins/Binary/Adjustable_Watershed.class
+  bca18f7e (LOCAL_ONLY) 20140426234304 plugins/BioVoxxel/Adaptive_Filter02.class
+  bb1bb5cf (LOCAL_ONLY) 20140505083440 plugins/BioVoxxel/Advanced_Particle_Analyzer.class
+  1ddc6498 (LOCAL_ONLY) 20140505125519 plugins/BioVoxxel/Advanced_Particle_Analyzer02.class
+  1b231415 (LOCAL_ONLY) 20140507172829 plugins/BioVoxxel/Advanced_Particle_Analyzer03.class
+  833a8fcd (LOCAL_ONLY) 20140407203108 plugins/BioVoxxel/Advanced_Particle_Analyzer_Test.class
+  4d93a69c (LOCAL_ONLY) 20140507221541 plugins/BioVoxxel/Extended_Particle_Analyzer.class
+  bedbc713 (LOCAL_ONLY) 20140507230253 plugins/BioVoxxel/Extended_Particle_Analyzer_Test.class
+  76cc0e1f (LOCAL_ONLY) 20140508110753 plugins/BioVoxxel/Extended_Particle_Analyzer_Test02.class
+  4e0330a7 (LOCAL_ONLY) 20140508153949 plugins/BioVoxxel/Extended_Particle_Analyzer_Test03.class
+  ca3b344e (LOCAL_ONLY) 20140508181916 plugins/BioVoxxel/Extended_Particle_Analyzer_Test04.class
+  860a79c2 (LOCAL_ONLY) 20140509112400 plugins/BioVoxxel/Extended_Particle_Analyzer_Test05.class
+  6ae1ff9d (LOCAL_ONLY) 20140509132248 plugins/BioVoxxel/Extended_Particle_Analyzer_Test06.class
+  57735677 (LOCAL_ONLY) 20140512120325 plugins/BioVoxxel/Extended_Particle_Analyzer_Test07.class
+  48205e75 (LOCAL_ONLY) 20140512190444 plugins/BioVoxxel/Extended_Particle_Analyzer_Test08.class
+  be0de061 (LOCAL_ONLY) 20140427002226 plugins/BioVoxxel/Gaussian_Weighted_Median02.class
+  954969d9 (LOCAL_ONLY) 20140514193714 plugins/BioVoxxel/Pseudo_flat_field_correction01.class
+  ac2b9245 (LOCAL_ONLY) 20140515105243 plugins/BioVoxxel/Pseudo_flat_field_correction02.class
+  bcd9cc13 (LOCAL_ONLY) 20140515220911 plugins/BioVoxxel/Pseudo_flat_field_correction03.class
+  4b963e0f (LOCAL_ONLY) 20140516084911 plugins/BioVoxxel/Pseudo_flat_field_correction04.class
+  484f2f1a (LOCAL_ONLY) 20140516140638 plugins/BioVoxxel/Pseudo_flat_field_correction05.class
+  749f45a0 (LOCAL_ONLY) 20140331095117 plugins/Colocalization/Colocalization_Colormap_.jar
+  71331805 (LOCAL_ONLY) 20120815173201 plugins/Colocalization/jacop_.jar
+  925f2bdd (LOCAL_ONLY) 20120602170419 plugins/Color/Alpha_Channel.class
+  aefd11ed (LOCAL_ONLY) 20130315165456 plugins/Color/Color_Transformer.class
+  e2d6a637 (LOCAL_ONLY) 20140209104729 plugins/Color/Color_Transformer_2.class
+  dcea879b (LOCAL_ONLY) 20131208134611 plugins/Deconvolution/Diffraction_PSF_3D.class
+  af22a2df (LOCAL_ONLY) 20131208134607 plugins/Deconvolution/Iterative_Deconvolve_3D.class
+  8d9bdfa0 (LOCAL_ONLY) 20090703152912 plugins/DeconvolutionLab/DeconvolutionLab_.jar
+  c8a61322 (LOCAL_ONLY) 20140430130459 plugins/Droplet_.jar
+  03999f43 (LOCAL_ONLY) 20110711135856 plugins/EDF/Demo.class
+  2b08ff32 (LOCAL_ONLY) 20110711140036 plugins/EDF/EDF-demo.txt
+  df409258 (LOCAL_ONLY) 20110711140720 plugins/EDF/EDF_Easy_.class
+  97036c5b (LOCAL_ONLY) 20110711135856 plugins/EDF/EDF_Expert_.class
+  26eaeb16 (LOCAL_ONLY) 20110711135856 plugins/EDF/EDF_Viewer3D_.class
+  3f5cc128 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/AbstractEdfAlgorithm.class
+  94cb75b0 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/Color2BW.class
+  8e6be0b2 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/EdfComplexWavelets.class
+  fb218014 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/EdfRealWavelets.class
+  a7ef1a84 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/EdfSobel.class
+  92c9b291 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/EdfVariance.class
+  6916bcdd (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/EdfWaveletMaximumModulus.class
+  9fbcfcd1 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/LogSingleton.class
+  267fe2fc (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/MorphologicalOperators.class
+  ed732583 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/PostProcessing.class
+  ed51b555 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/ProcessTopology.class
+  2321c8d8 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/Sobel.class
+  bb9ae47e (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/Tools.class
+  2b8ba320 (LOCAL_ONLY) 20110711135856 plugins/EDF/edf/Variance.class
+  1aedfb3f (LOCAL_ONLY) 20110711163530 plugins/EDF/edfgui/AboutDialog.class
+  0c639c6c (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/AbstractDialog$TimerListener.class
+  f2c07124 (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/AbstractDialog.class
+  7ed319d6 (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/AdvancedDialog$MyVerifier.class
+  d488e269 (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/AdvancedDialog.class
+  7be3ea66 (LOCAL_ONLY) 20110711163612 plugins/EDF/edfgui/BasicDialog.class
+  e88712ba (LOCAL_ONLY) 20110711140956 plugins/EDF/edfgui/ExtendedDepthOfField.class
+  5ca9e395 (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/LogPane.class
+  f0f56b51 (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/MySlider.class
+  442538e1 (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/MyTableRenderer.class
+  265b3bea (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/Parameters.class
+  6ec6b0e1 (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/SimpleTableModel.class
+  a404eb8e (LOCAL_ONLY) 20110711140924 plugins/EDF/edfgui/ThreadEdf.class
+  db8163fa (LOCAL_ONLY) 20110711135856 plugins/EDF/edfgui/ThreadTopoProc.class
+  b77b5da8 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/Access.class
+  895118eb (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/Buffer.class
+  8f404b54 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/Builder.class
+  0caa808d (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ByteAccess.class
+  f773aa9e (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ByteBuffer.class
+  d31572ce (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/BytePointwise.class
+  a1c28f6c (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ByteProcess.class
+  f91ef099 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ByteSet.class
+  10ade4a4 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/Convolver.class
+  79469ee7 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/Display.class
+  c1576be6 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/DoubleAccess.class
+  3bb456d7 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/DoubleBuffer.class
+  eed062ce (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/DoublePointwise.class
+  e3f707cd (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/DoubleProcess.class
+  f7d47d5d (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/DoubleSet.class
+  3c98dbe0 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/FMath.class
+  e72c54a9 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/FloatAccess.class
+  752ca783 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/FloatBuffer.class
+  13d2c8ed (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/FloatPointwise.class
+  f92fc306 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/FloatProcess.class
+  cbb54e2a (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/FloatSet.class
+  a4b3f20a (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ImageAccess.class
+  a3cb9815 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ImageWare.class
+  3b5db209 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/Pointwise.class
+  bab794cb (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/Process.class
+  2475b92b (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ShortAccess.class
+  589b6994 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ShortBuffer.class
+  808d9fc0 (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ShortPointwise.class
+  7a16250c (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ShortProcess.class
+  9edb2a7c (LOCAL_ONLY) 20110711140036 plugins/EDF/imageware/ShortSet.class
+  2cecb7c4 (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$1.class
+  d701e2d7 (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$2.class
+  aa71cdde (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$Cube.class
+  75f963eb (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow$1.class
+  9f71ceeb (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow.class
+  be688c54 (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$ImageRegion.class
+  3370662a (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$Lines.class
+  8ae02fcd (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$Lut.class
+  c1648126 (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$Misc.class
+  9919bf14 (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$Picture.class
+  16ac3c3a (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$PlotVal.class
+  d717fe7c (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$TextField.class
+  f954757f (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D$Transform.class
+  fb38ada4 (LOCAL_ONLY) 20110711135856 plugins/EDF/surfacemap/SurfaceMap3D.class
+  6d6af260 (LOCAL_ONLY) 20110711140036 plugins/EDF/wavelets/ComplexWaveFilter.class
+  62046e79 (LOCAL_ONLY) 20110711140036 plugins/EDF/wavelets/ComplexWavelet.class
+  b3f1dbba (LOCAL_ONLY) 20110711140036 plugins/EDF/wavelets/ImageAccess.class
+  68788aa5 (LOCAL_ONLY) 20110711140036 plugins/EDF/wavelets/WaveSpline.class
+  f469ca9f (LOCAL_ONLY) 20110711140036 plugins/EDF/wavelets/WaveSplineFilter.class
+  e6545de9 (LOCAL_ONLY) 20140527192022 plugins/FigureJ_.jar
+  0fb65ed4 (LOCAL_ONLY) 20140430131709 plugins/Filters/Adaptive_Filter.class
+  f02e6e81 (LOCAL_ONLY) 20130624145025 plugins/Filters/Edge_Enhancement.ijm
+  7f2acd01 (LOCAL_ONLY) 20140422155505 plugins/Filters/Enhance_True_Color_Contrast.class
+  448b2287 (LOCAL_ONLY) 20140408084334 plugins/Filters/Gaussian_Weighted_Median.class
+  9bdfcd0a (LOCAL_ONLY) 20130813164727 plugins/Filters/Hybrid_2D_Median_Filter.class
+  2c9ade75 (LOCAL_ONLY) 20140505091915 plugins/Filters/Limited_Mean.class
+  61d742a8 (LOCAL_ONLY) 20140224094701 plugins/Filters/Lipschitz_.class
+  328fe563 (LOCAL_ONLY) 20131128112022 plugins/Filters/Manual_Threshold_Quant.ijm
+  e255711a (LOCAL_ONLY) 20140223204214 plugins/Filters/Mean_Shift.class
+  ee9b1292 (LOCAL_ONLY) 20121119175722 plugins/Filters/Mexican_Hat_Filter.class
+  1656d24d (LOCAL_ONLY) 20140516141441 plugins/Filters/Pseudo_flat_field_correction.class
+  adbd06cc (LOCAL_ONLY) 20130624144145 plugins/Filters/Thresholded_Blur.class
+  85f658a2 (LOCAL_ONLY) 20140430130459 plugins/IJ_Ed2.jar
+  ad9dcb27 (MODIFIED) 20140430130459 plugins/LSM_Reader.jar
+  b97c3a95 (LOCAL_ONLY) 20120807122350 plugins/Macros/3D Cluster Analysis.txt
+  ecb420cd (LOCAL_ONLY) 20130722114723 plugins/Macros/Image_to_Icon.txt
+  d84cc2bb (LOCAL_ONLY) 20100922214634 plugins/Morphology/Add_Borders.class
+  5cccefae (LOCAL_ONLY) 20100913095428 plugins/Morphology/AnnularClosing.txt
+  763870ef (LOCAL_ONLY) 20100913095434 plugins/Morphology/AnnularDilation.txt
+  5d777e5e (LOCAL_ONLY) 20100928170030 plugins/Morphology/BinaryConditionalDilate_.class
+  6cfae168 (LOCAL_ONLY) 20060525192652 plugins/Morphology/BinaryConditionalErode_.class
+  877be8e6 (LOCAL_ONLY) 20060525192958 plugins/Morphology/BinaryConnectivity_.class
+  ebe4d9b0 (LOCAL_ONLY) 20111110085448 plugins/Morphology/BinaryDilateNoMerge4_.class
+  65b35fcd (LOCAL_ONLY) 20111109155612 plugins/Morphology/BinaryDilateNoMerge8_.class
+  da5dc033 (LOCAL_ONLY) 20081019152450 plugins/Morphology/BinaryDilateTest.txt
+  fe9208a2 (LOCAL_ONLY) 20060525193012 plugins/Morphology/BinaryDilate_.class
+  9f2b4ef9 (LOCAL_ONLY) 20081019152918 plugins/Morphology/BinaryErodeTest.txt
+  b38e2aa0 (LOCAL_ONLY) 20060525193102 plugins/Morphology/BinaryErode_.class
+  3f39caaf (LOCAL_ONLY) 20060525101716 plugins/Morphology/BinaryFilterReconstruct.txt
+  76eb6799 (LOCAL_ONLY) 20090525193222 plugins/Morphology/BinaryFilterReconstruct_.class
+  6a2c8b7a (LOCAL_ONLY) 20111109154430 plugins/Morphology/BinaryGeodesicDilateNoMerge8_.class
+  14c67860 (LOCAL_ONLY) 20080602091844 plugins/Morphology/BinaryHitOrMiss_.class
+  33b507c2 (LOCAL_ONLY) 20100418152848 plugins/Morphology/BinaryKillBorders_.class
+  134d68cd (LOCAL_ONLY) 20140205190552 plugins/Morphology/BinaryLabel8_.class
+  d3c84f8c (LOCAL_ONLY) 20070712112240 plugins/Morphology/BinaryLabelMacro.txt
+  59e1afe9 (LOCAL_ONLY) 20100508085308 plugins/Morphology/BinaryLabel_.class
+  36e4a042 (LOCAL_ONLY) 20060525101718 plugins/Morphology/BinaryPrune.txt
+  c8c66f92 (LOCAL_ONLY) 20090526165400 plugins/Morphology/BinaryReconstruct_.class
+  3ff298c7 (LOCAL_ONLY) 20060525193502 plugins/Morphology/BinaryThick2_.class
+  b73f68f4 (LOCAL_ONLY) 20060525193450 plugins/Morphology/BinaryThick_.class
+  2c4c813e (LOCAL_ONLY) 20060525193520 plugins/Morphology/BinaryThin2_.class
+  d8a5d664 (LOCAL_ONLY) 20060525193512 plugins/Morphology/BinaryThin_.class
+  3e83cc61 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Boundary4.txt
+  9d64440e (LOCAL_ONLY) 20060525101718 plugins/Morphology/Boundary8_.txt
+  e9fc745d (LOCAL_ONLY) 20090602153322 plugins/Morphology/Catalogue_Particles.txt
+  4d0095a2 (LOCAL_ONLY) 20070607090848 plugins/Morphology/Classify_Particles.class
+  f53a898e (LOCAL_ONLY) 20090511083446 plugins/Morphology/CloseByReconstructionTopHat.txt
+  2c7f38f5 (LOCAL_ONLY) 20101005103840 plugins/Morphology/CloseByReconstruction_.txt
+  1c33105a (LOCAL_ONLY) 20060525101718 plugins/Morphology/ConvexHull1.txt
+  7cb69fdf (LOCAL_ONLY) 20060525101718 plugins/Morphology/ConvexHull2.txt
+  b19cb415 (LOCAL_ONLY) 20060525101718 plugins/Morphology/ConvexHull3.txt
+  bd22187f (LOCAL_ONLY) 20060525101718 plugins/Morphology/Corners.txt
+  55c709bf (LOCAL_ONLY) 20061116092256 plugins/Morphology/Correlate_Results.class
+  d463ee86 (LOCAL_ONLY) 20081019163010 plugins/Morphology/Delete_ZeroArea.txt
+  8df2eb76 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Diagonal8to4.txt
+  61193e21 (LOCAL_ONLY) 20100929125932 plugins/Morphology/Domes_.class
+  e428a0f5 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Domes_stack.txt
+  1be944ae (LOCAL_ONLY) 20090506082436 plugins/Morphology/DoubleWaterfall.txt
+  925d3d8c (LOCAL_ONLY) 20111208091210 plugins/Morphology/DrawBoundingBox.txt
+  63c4cd27 (LOCAL_ONLY) 20111208091158 plugins/Morphology/DrawBoundingCircle.txt
+  b97f945a (LOCAL_ONLY) 20111208091142 plugins/Morphology/DrawConvexHulls.txt
+  d9ae9295 (LOCAL_ONLY) 20111208091226 plugins/Morphology/DrawFeret_Breadth.txt
+  f1a7575d (LOCAL_ONLY) 20111208091236 plugins/Morphology/DrawMinR_MaxR.txt
+  288ace7a (LOCAL_ONLY) 20100805124116 plugins/Morphology/EDM_16bits.txt
+  71d10273 (LOCAL_ONLY) 20081019170232 plugins/Morphology/Euler.txt
+  63757672 (LOCAL_ONLY) 20090511083446 plugins/Morphology/Extended_Maxima.txt
+  285e4c16 (LOCAL_ONLY) 20090511083446 plugins/Morphology/Extended_Minima.txt
+  2b80b381 (LOCAL_ONLY) 20100418175426 plugins/Morphology/FillHolesReconstruct.txt
+  205b6052 (LOCAL_ONLY) 20060525130102 plugins/Morphology/Fill_Border_Holes.txt
+  54d7ef21 (LOCAL_ONLY) 20090506082436 plugins/Morphology/Fill_Greyscale_Holes.txt
+  75041650 (LOCAL_ONLY) 20101001143722 plugins/Morphology/GreyBlackTopHatByReconstruction_.txt
+  6f716dcc (LOCAL_ONLY) 20101001143322 plugins/Morphology/GreyWhiteTopHatByReconstruction_.txt
+  579b5383 (LOCAL_ONLY) 20090504142458 plugins/Morphology/GreyscaleCentreFilter.txt
+  c4267b67 (LOCAL_ONLY) 20060525193602 plugins/Morphology/GreyscaleDilate_.class
+  d8091e12 (LOCAL_ONLY) 20131021105343 plugins/Morphology/GreyscaleErode_.class
+  0a50379d (LOCAL_ONLY) 20100920132950 plugins/Morphology/GreyscaleKillBorders.txt
+  d3047959 (LOCAL_ONLY) 20090503182436 plugins/Morphology/GreyscaleProperAutomedian.txt
+  b4d94111 (LOCAL_ONLY) 20090504122820 plugins/Morphology/GreyscaleProperClose.txt
+  44d81a95 (LOCAL_ONLY) 20090504123000 plugins/Morphology/GreyscaleProperOpen.txt
+  9aadbae0 (LOCAL_ONLY) 20090526165732 plugins/Morphology/GreyscaleReconstruct_.class
+  4d7e6035 (LOCAL_ONLY) 20100908144402 plugins/Morphology/GreyscaleTopHat.txt
+  cb2dc22a (LOCAL_ONLY) 20100908144826 plugins/Morphology/GreyscaleWell.txt
+  282495a6 (LOCAL_ONLY) 20060525101718 plugins/Morphology/H-break.txt
+  a73d2279 (LOCAL_ONLY) 20090511130552 plugins/Morphology/HMaxima_Transform.txt
+  f1c1b630 (LOCAL_ONLY) 20090527092132 plugins/Morphology/HMinima_Transform.txt
+  af3183b2 (LOCAL_ONLY) 20080605122624 plugins/Morphology/Hole_Counter.txt
+  930ee9e1 (LOCAL_ONLY) 20090527171616 plugins/Morphology/HomotopicMarking.txt
+  3429c4f3 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Hysteresis.txt
+  2511df4c (LOCAL_ONLY) 20090513103656 plugins/Morphology/Impose_Minimum.txt
+  6be72748 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Influence_Zones.txt
+  5859277c (LOCAL_ONLY) 20060525101718 plugins/Morphology/KeepLargestParticle.txt
+  559e475f (LOCAL_ONLY) 20080521222500 plugins/Morphology/KeepLargestParticlePixels_.txt
+  4605ad0a (LOCAL_ONLY) 20080605144602 plugins/Morphology/KeepParticlesInRange.txt
+  b46b2695 (LOCAL_ONLY) 20110415151004 plugins/Morphology/Lines8_.class
+  43259a0b (LOCAL_ONLY) 20090519121520 plugins/Morphology/LocalMaxima.txt
+  c0207001 (LOCAL_ONLY) 20090519122406 plugins/Morphology/LocalMinMax.txt
+  b2139bd8 (LOCAL_ONLY) 20090519121444 plugins/Morphology/LocalMinima.txt
+  05f0502d (LOCAL_ONLY) 20060525101718 plugins/Morphology/MCentroids.txt
+  b3ea5e05 (LOCAL_ONLY) 20101007145910 plugins/Morphology/MinimaDynamic.txt
+  57e4bbaa (LOCAL_ONLY) 20060525101718 plugins/Morphology/Morphological2Derivative1.txt
+  35b51e7e (LOCAL_ONLY) 20060525101718 plugins/Morphology/Morphological2Derivative2.txt
+  ef809632 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Morphological2Derivative3.txt
+  73902be6 (LOCAL_ONLY) 20100908144214 plugins/Morphology/MorphologicalContrastTopHat.txt
+  86d43a13 (LOCAL_ONLY) 20100906132436 plugins/Morphology/MorphologicalExternalGradient.txt
+  66d657f2 (LOCAL_ONLY) 20100908173708 plugins/Morphology/MorphologicalGradient3.txt
+  2cd67873 (LOCAL_ONLY) 20100906132436 plugins/Morphology/MorphologicalGradientBeucher.txt
+  b141cc35 (LOCAL_ONLY) 20100906132436 plugins/Morphology/MorphologicalInternalGradient.txt
+  babf8d91 (LOCAL_ONLY) 20060525101718 plugins/Morphology/MorphologicalSharpGradient.txt
+  7e05ec43 (LOCAL_ONLY) 20060525101718 plugins/Morphology/MorphologicalSmoothing1.txt
+  df30c851 (LOCAL_ONLY) 20060525101718 plugins/Morphology/MorphologicalSmoothing2.txt
+  b4232d82 (LOCAL_ONLY) 20100913095526 plugins/Morphology/Morphological_Clustering.txt
+  c4024220 (LOCAL_ONLY) 20100922234422 plugins/Morphology/Morphological_PCA.txt
+  44b58573 (LOCAL_ONLY) 20101005101848 plugins/Morphology/Morphological_SelfDualCentre.txt
+  d20caeeb (LOCAL_ONLY) 20101005163722 plugins/Morphology/Morphological_contrast.txt
+  c40dcb5d (LOCAL_ONLY) 20100908144252 plugins/Morphology/MultiscaleGradient.txt
+  7fa60ae6 (LOCAL_ONLY) 20110425171914 plugins/Morphology/NumberParticles8_.txt
+  cd6cf4de (LOCAL_ONLY) 20090511083446 plugins/Morphology/OpenByReconstructionTopHat.txt
+  5f844fa9 (LOCAL_ONLY) 20101005103856 plugins/Morphology/OpenByReconstruction_.txt
+  8fdf1b15 (LOCAL_ONLY) 20080521221818 plugins/Morphology/Parameter_Matrix.txt
+  65c22a1e (LOCAL_ONLY) 20080529224340 plugins/Morphology/ParticleHoleArea.txt
+  9a713d79 (LOCAL_ONLY) 20080529224456 plugins/Morphology/ParticleHoleNumber.txt
+  9c0a7763 (LOCAL_ONLY) 20080529224152 plugins/Morphology/Particle_Data_Map.txt
+  85b99ff0 (LOCAL_ONLY) 20100914150816 plugins/Morphology/Particles4_.class
+  583118b2 (LOCAL_ONLY) 20100914150808 plugins/Morphology/Particles8_.class
+  ac25812c (LOCAL_ONLY) 20080521215826 plugins/Morphology/Plot_BivariateGraphs.txt
+  e8ea53cb (LOCAL_ONLY) 20080606114752 plugins/Morphology/Plot_Histograms.txt
+  ce077644 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Prune1.txt
+  c4126534 (LOCAL_ONLY) 20060525101718 plugins/Morphology/PruneAll.txt
+  916ac5a4 (LOCAL_ONLY) 20090511083446 plugins/Morphology/RegionalMinMax.txt
+  3dcf6fa2 (LOCAL_ONLY) 20090511083446 plugins/Morphology/Regional_Maxima.txt
+  bc61499e (LOCAL_ONLY) 20101001113926 plugins/Morphology/Regional_Minima.txt
+  358d5270 (LOCAL_ONLY) 20100922235812 plugins/Morphology/SelfComplementaryTopHat.txt
+  36e7e0b4 (LOCAL_ONLY) 20101005094120 plugins/Morphology/SelfDualReconstruction_.txt
+  64886ac9 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Skeleton1.txt
+  64fa451e (LOCAL_ONLY) 20060525101718 plugins/Morphology/Skeleton2.txt
+  809a6770 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Skeleton3.txt
+  16447730 (LOCAL_ONLY) 20090511121302 plugins/Morphology/Skeleton4.txt
+  b2242712 (LOCAL_ONLY) 20100922212400 plugins/Morphology/SkeletonFiltering.txt
+  5d0400a0 (LOCAL_ONLY) 20080521215352 plugins/Morphology/Summarize_Results.txt
+  ab0b29c3 (LOCAL_ONLY) 20080603111018 plugins/Morphology/Thin_Results_Table.txt
+  090f96c1 (LOCAL_ONLY) 20100621090218 plugins/Morphology/UnbiasedCounting.txt
+  fecf6a46 (LOCAL_ONLY) 20080605121016 plugins/Morphology/UnbiasedParticleArea.txt
+  19a9433c (LOCAL_ONLY) 20090330080642 plugins/Morphology/Viscous_Geodesic_Reconstruction.txt
+  2dbeb38d (LOCAL_ONLY) 20140430130459 plugins/PDF_MacroExt.jar
+  0eb97953 (LOCAL_ONLY) 20120813152940 plugins/RGB_Profiler.class
+  f54d2fa6 (LOCAL_ONLY) 20130308095544 plugins/RGB_to_CMYK.class
+  0a02a4b5 (LOCAL_ONLY) 20130719132647 plugins/ScientiFig/GraphThemes/BasicTheme.txt
+  b96aa8df (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/JournalStyles/Cell.txt
+  40135485 (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/JournalStyles/Development.txt
+  ef7335e0 (LOCAL_ONLY) 20130719132647 plugins/ScientiFig/JournalStyles/NATUREMETHODS.txt
+  67b8012e (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/JournalStyles/Nature.txt
+  3201f7a4 (LOCAL_ONLY) 20130719132647 plugins/ScientiFig/JournalStyles/PLOSONE.txt
+  e7c1dbab (LOCAL_ONLY) 20130719132647 plugins/ScientiFig/JournalStyles/PowerPoint2010.txt
+  6d047759 (LOCAL_ONLY) 20131220145113 plugins/ScientiFig/ScientiFigPrefs.txt
+  4f745d1c (LOCAL_ONLY) 20130719132645 plugins/ScientiFig/ScientiFig_.jar
+  443aff01 (LOCAL_ONLY) 20130719132644 plugins/ScientiFig/changes.txt
+  7872d78f (LOCAL_ONLY) 20130719132645 plugins/ScientiFig/lib/AbsoluteLayout.jar
+  6f3fdc0d (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/lib/Icons.jar
+  c3cdf2d0 (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/lib/REngine.jar
+  6ba3fcd5 (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/lib/Rserve.jar
+  269cc20e (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/lib/Rsession.jar
+  a81233bf (LOCAL_ONLY) 20130719132646 plugins/ScientiFig/license.txt
+  aeb1c45f (LOCAL_ONLY) 20120530144342 plugins/Stacks/Smart_Projector.class
+  423a1e7b (MODIFIED) 20140603105552 plugins/TrackMate_-2.3.0-SNAPSHOT.jar
+  0b477c63 (LOCAL_ONLY) 20130911100406 plugins/action_bar.jar
+  16e7eed3 (LOCAL_ONLY) 20140516140913 plugins/jars/Compiler.jar
+  86bf5a23 (LOCAL_ONLY) 20140430130501 plugins/mcib3d-suite/mcib3d-core.jar
+  859549db (LOCAL_ONLY) 20140430130502 plugins/mcib3d-suite/mcib3d_plugins.jar</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=801#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Brocher</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 13:39:49 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Additionally, the Refresh Menu option is blocked in the &quot;Help&quot; menu.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=801#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 21:09:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Yes, Help&gt;Refresh Menus is disabled for now. It is just too hard to support it properly. I hope to be able to resurrect it, but for now, we simply cannot support it. Sorry!
+
+As to the .jar files in subdirectories: wow. What a &quot;magical&quot; feature. Even I did not know about it, and TBH I find it highly unintuitive.
+
+However, I vowed to pursue backwards compatibility, so I will address this issue soon, hopefully tomorrow, but certainly until end of next week!</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=801#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-20 10:58:11 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Jan replied:
+
+<span class="quote">&gt; Hi Johannes,</span >
+&gt;
+<span class="quote">&gt; First of all, this might anyway be a very minor issue in comparison to all
+&gt; the things you and all the colleagues need to think about now.
+&gt; Second, if this &quot;unintuitive&quot; behaviour is not intented, i guess we (at
+&gt; least I) can live with it, if jar files in future are never shown in the
+&gt; respective subdirectories but only *.class files.
+&gt; I am also not asking for a detailed explanation for the unintuitiveness
+&gt;  (to save you time) since it might be obvious and unintuitive to many and
+&gt; as mentioned it is actually a minor issue.</span >
+&gt;
+<span class="quote">&gt; Anyway, since you and all the IJ2 team is mostly bombarded with mails about
+&gt; thinks which are not working, I wanted to congratulate you and say thanks
+&gt; for the big effort and all the thousands of thing which are working
+&gt; undetected by the users already now, considering such a big change.</span >
+&gt;
+<span class="quote">&gt; All of you are doing really a great work and I feel a little embarrassed
+&gt; not being able to contribute more than only sending annoying questions or
+&gt; bug reports (even though that might be important).</span >
+&gt;
+<span class="quote">&gt; kind regards,
+&gt; Jan</span >
+
+First of all: thank you for your kind words. You have no idea how big a difference they make.
+
+Second: I am serious about backwards compatibility. I know that ImageJ 1.x breaks backwards compatibility with itself quite often, and I cannot do anything about that. At least not much. But I can do something about backwards compatibility of Fiji/ImageJ2 and I will try very hard to keep it.
+
+So I will address the issue you reported, hopefully soon (to add insult to injury, this morning we found all of our servers rebooted, some services having problems, one server even not rebooting on its own, and the server offering the Fiji Wiki getting stuck on something or else, therefore we're even more swamped today than we already are).
+
+And thank you for your patience with reporting bugs and being helpful!</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi?id=801#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-23 15:28:37 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Assigning to Johannes, who plans to address this as time allows.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=801">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=801">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=801">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi?id=801&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi?id=801" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi?id=801&amp;GoAheadAndLogIn=1#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1492731796-_WUo3-5aGZDxVmVtrkyM30AlglMkD36Av3yADc1iMV4">
+    <a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>
