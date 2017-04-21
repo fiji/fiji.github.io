@@ -399,7 +399,6 @@
 
 
         <td valign="top">
-          <a href="attachment.cgi?id=117&amp;action=edit">Details</a>
         </td>
       </tr>
 
@@ -449,7 +448,7 @@
 
 
 
-<pre class="bz_comment_text" >Created <span class=""><a href="../attach/117/cylinder.zip" name="attach_117" title="Stack with a cylinder, rendered by 3D viewer, then inverted in MeshLab">attachment 117</a> <a href="attachment.cgi?id=117&amp;action=edit" title="Stack with a cylinder, rendered by 3D viewer, then inverted in MeshLab">[details]</a></span>
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/117/cylinder.zip" name="attach_117" title="Stack with a cylinder, rendered by 3D viewer, then inverted in MeshLab">attachment 117</a></span>
 Stack with a cylinder, rendered by 3D viewer, then inverted in MeshLab
 
 I've been having a persistent problem with 3D Viewer. When you create surfaces from a tiff stack, the surfaces are &quot;inside-out&quot;, i.e. they have inverted normals. This seems to be a problem mostly when Direct3D is used as a rendering engine, since it seems like in the OpenGL mode double-sided lighting is the default mode, i.e. the surfaces are rendered on both sides. What results is that when you set maximum memory to over 1G then Java3D switches to Direct3D and suddenly all objects appear black from the outside. Setting maximum memory to 640MB reverts the rendering engine to OpenGL and objects look normal again. It's sort of a workaround, but I have also found issues with the OpenGL renderer using Java 1.7 (it won't start at all), so it would be great if the surfaces could be rendered with the correct normals to start with.
