@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 721 &ndash; ROIs inside a CZI file are not read correctly from BioFormats 5.0</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Bio-Formats bz_bug_721 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;721</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">ROIs inside a CZI file are not read correctly from BioFormats 5.0</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-03-24 11:14:56 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-03-24 11:14:56">
+  <input type="hidden" name="longdesclength" value="2">
+  <input type="hidden" name="id" value="721">
+  <input type="hidden" name="token" value="1492731762-6FGtIYAio_koST14Ka0t4cEidO4y7BsAziXeORaTFZc">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="721.html"><b>Bug&nbsp;721</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">ROIs inside a CZI file are not read correctly from BioFormats 5.0</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>ROIs inside a CZI file are not read correctly from BioFormats 5.0
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          MOVED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Bio-Formats</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       major
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-03-24 03:35 CDT by <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-03-24 11:14 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="sebrhode">sebrhode</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-24 03:35:36 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi guys,
+
+I just got aware of the following issue.-
+
+- Create a CZI file in ZEN Blue and add a rectan gular ROI
+
+&lt;GraphicElementCollection&gt;
+  &lt;Rectangle Id=&quot;49&quot;&gt;
+    &lt;Attributes&gt;
+      &lt;UniqueName&gt;a30d3f7d-88ee-4f66-aa06-e9953ea8ab6f&lt;/UniqueName&gt;
+      &lt;FontSize&gt;4&lt;/FontSize&gt;
+      &lt;IsMeasurementVisible&gt;true&lt;/IsMeasurementVisible&gt;
+    &lt;/Attributes&gt;
+    &lt;TextElements&gt;
+      &lt;TextElement Id=&quot;Annotation&quot; Type=&quot;AlignPosition&quot;&gt;
+        &lt;Position&gt;59.319587628866,36.2268041237113&lt;/Position&gt;
+      &lt;/TextElement&gt;
+    &lt;/TextElements&gt;
+    &lt;Geometry&gt;
+      &lt;Left&gt;57.319587628865975&lt;/Left&gt;
+      &lt;Top&gt;34.226804123711347&lt;/Top&gt;
+      &lt;Width&gt;58.969072164948471&lt;/Width&gt;
+      &lt;Height&gt;47.835051546391767&lt;/Height&gt;
+    &lt;/Geometry&gt;
+    &lt;Features&gt;
+      &lt;Feature&gt;
+        &lt;Name&gt;Area&lt;/Name&gt;
+        &lt;IsDisplayEnabled&gt;true&lt;/IsDisplayEnabled&gt;
+      &lt;/Feature&gt;
+      &lt;Feature&gt;
+        &lt;Name&gt;IntensityMean&lt;/Name&gt;
+        &lt;IsDisplayEnabled&gt;true&lt;/IsDisplayEnabled&gt;
+      &lt;/Feature&gt;
+    &lt;/Features&gt;
+  &lt;/Rectangle&gt;
+&lt;/GraphicElementCollection&gt;
+
+This is the corresponding XML entry copied from ZEN.
+When I use BioFormtas 5.0 to read the file and display the ROI the position of the ROI is wrong. The XML shows a different Y-Coordinate. To me it looks like Y does not start on the upper left, but the lower left ...
+
+Part of the XML looks like this
+
+&lt;OME xmlns=&quot;<a href="http://www.openmicroscopy.org/Schemas/OME/2013-06">http://www.openmicroscopy.org/Schemas/OME/2013-06</a>&quot; xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>&quot; xsi:schemaLocation=&quot;<a href="http://www.openmicroscopy.org/Schemas/OME/2013-06">http://www.openmicroscopy.org/Schemas/OME/2013-06</a> <a href="http://www.openmicroscopy.org/Schemas/OME/2013-06/ome.xsd">http://www.openmicroscopy.org/Schemas/OME/2013-06/ome.xsd</a>&quot;&gt;
+&lt;Experimenter ID=&quot;Experimenter:0&quot; UserName=&quot;M1SRH&quot;/&gt;
+&lt;Instrument ID=&quot;Instrument:0&quot;&gt;
+&lt;Microscope Type=&quot;Inverted&quot;/&gt;
+&lt;Detector ID=&quot;Detector:Camera&quot; Model=&quot;TestCam&quot;/&gt;
+&lt;Objective ID=&quot;Objective:1&quot; Immersion=&quot;Air&quot; LensNA=&quot;0.3&quot; NominalMagnification=&quot;10.0&quot; WorkingDistance=&quot;5580.0&quot;/&gt;
+&lt;FilterSet ID=&quot;FilterSet:1&quot;/&gt;
+&lt;FilterSet ID=&quot;FilterSet:2&quot;/&gt;
+&lt;Filter ID=&quot;Filter:1&quot;&gt;
+&lt;TransmittanceRange CutIn=&quot;335&quot; CutOut=&quot;383&quot;/&gt;
+&lt;Filter ID=&quot;Filter:2&quot;&gt;
+&lt;TransmittanceRange CutIn=&quot;420&quot; CutOut=&quot;470&quot;/&gt;
+&lt;Filter ID=&quot;Filter:3&quot;&gt;
+&lt;TransmittanceRange CutIn=&quot;335&quot; CutOut=&quot;383&quot;/&gt;
+&lt;Filter ID=&quot;Filter:4&quot;&gt;
+&lt;TransmittanceRange CutIn=&quot;420&quot; CutOut=&quot;470&quot;/&gt;
+&lt;Dichroic ID=&quot;Dichroic:1&quot;/&gt;
+&lt;Dichroic ID=&quot;Dichroic:2&quot;/&gt;
+&lt;Image ID=&quot;Image:0&quot; Name=&quot;CZI_with_rectangular_ROI.czi #1&quot;&gt;
+&lt;AcquisitionDate&gt;2014-03-24T08:13:31.875&lt;/AcquisitionDate&gt;
+&lt;ExperimenterRef ID=&quot;Experimenter:0&quot;/&gt;
+&lt;InstrumentRef ID=&quot;Instrument:0&quot;/&gt;
+&lt;ObjectiveSettings ID=&quot;Objective:1&quot;/&gt;
+&lt;Pixels BigEndian=&quot;false&quot; DimensionOrder=&quot;XYCZT&quot; ID=&quot;Pixels:0&quot; Interleaved=&quot;false&quot; PhysicalSizeX=&quot;1.0&quot; PhysicalSizeY=&quot;1.0&quot; SignificantBits=&quot;16&quot; SizeC=&quot;2&quot; SizeT=&quot;1&quot; SizeX=&quot;160&quot; SizeY=&quot;120&quot; SizeZ=&quot;1&quot; Type=&quot;uint16&quot;&gt;
+&lt;Channel AcquisitionMode=&quot;WideField&quot; Color=&quot;-16776961&quot; EmissionWavelength=&quot;515&quot; ExcitationWavelength=&quot;366&quot; Fluor=&quot;Dye1&quot; ID=&quot;Channel:0:0&quot; IlluminationType=&quot;Other&quot; Name=&quot;Fura-2 in pH 7.2 Ca free&quot; SamplesPerPixel=&quot;1&quot;&gt;
+&lt;DetectorSettings Binning=&quot;1x1&quot; ID=&quot;Detector:Camera&quot;/&gt;
+&lt;LightPath/&gt;
+&lt;Channel AcquisitionMode=&quot;WideField&quot; Color=&quot;16725759&quot; EmissionWavelength=&quot;515&quot; ExcitationWavelength=&quot;366&quot; Fluor=&quot;Dye2&quot; ID=&quot;Channel:0:1&quot; IlluminationType=&quot;Other&quot; Name=&quot;Fura-2 in pH 7.2 Ca free_2&quot; SamplesPerPixel=&quot;1&quot;&gt;
+&lt;DetectorSettings Binning=&quot;1x1&quot; ID=&quot;Detector:Camera&quot;/&gt;
+&lt;LightPath/&gt;
+&lt;MetadataOnly/&gt;
+&lt;Plane DeltaT=&quot;0.9330000877380371&quot; PositionX=&quot;0.0&quot; PositionY=&quot;0.0&quot; PositionZ=&quot;0.0&quot; TheC=&quot;0&quot; TheT=&quot;0&quot; TheZ=&quot;0&quot;/&gt;
+&lt;Plane DeltaT=&quot;1.0450000762939453&quot; PositionX=&quot;0.0&quot; PositionY=&quot;0.0&quot; PositionZ=&quot;0.0&quot; TheC=&quot;1&quot; TheT=&quot;0&quot; TheZ=&quot;0&quot;/&gt;
+&lt;ROIRef ID=&quot;ROI:0&quot; xmlns=&quot;<a href="http://www.openmicroscopy.org/Schemas/ROI/2013-06">http://www.openmicroscopy.org/Schemas/ROI/2013-06</a>&quot;/&gt;
+&lt;StructuredAnnotations xmlns=&quot;<a href="http://www.openmicroscopy.org/Schemas/SA/2013-06">http://www.openmicroscopy.org/Schemas/SA/2013-06</a>&quot;/&gt;
+&lt;ROI ID=&quot;ROI:0&quot; Name=&quot;Annotation&quot; xmlns=&quot;<a href="http://www.openmicroscopy.org/Schemas/ROI/2013-06">http://www.openmicroscopy.org/Schemas/ROI/2013-06</a>&quot;&gt;
+&lt;Union&gt;
+&lt;Shape ID=&quot;Shape:0:0&quot;&gt;
+&lt;Rectangle Height=&quot;47.83505154639177&quot; Width=&quot;58.96907216494847&quot; X=&quot;57.319587628865975&quot; Y=&quot;85.77319587628865&quot;/&gt;
+&lt;Description&gt;Annotation&lt;/Description&gt;</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-24 11:14:56 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for the report, Sebastian. As this is a Bio-Formats issue, I filed a ticket in the OME issue tracker at: <a href="https://trac.openmicroscopy.org.uk/ome/ticket/12124">https://trac.openmicroscopy.org.uk/ome/ticket/12124</a></pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

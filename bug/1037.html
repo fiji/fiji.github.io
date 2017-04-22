@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1037 &ndash; Out of bounds java exception when limit to threshold is activated and measuring a region out of the threshold limits in 16 bits iamges (previous FIJI versions do not have this bug)</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_ImageJ2 bz_bug_1037 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1037</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Out of bounds java exception when limit to threshold is activated and measuring a region out of the threshold limits in 16 bits iamges (previous FIJI versions do not have this bug)</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-03-26 14:39:45 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2015-03-26 14:39:45">
+  <input type="hidden" name="longdesclength" value="2">
+  <input type="hidden" name="id" value="1037">
+  <input type="hidden" name="token" value="1492731895-po3J3Kd92EN7is27gly1l8A3ZILarNhcJ_rn4nvGfek">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="1037.html"><b>Bug&nbsp;1037</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Out of bounds java exception when limit to threshold is activated and measuring a region out of the threshold limits in 16 bits iamges (previous FIJI versions do not have this bug)</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td><span title="Out of bounds java exception when limit to threshold is activated and measuring a region out of the threshold limits in 16 bits iamges (previous FIJI versions do not have this bug)">Out of bounds java exception when limit to threshold is activated and measuri...
+        </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >ImageJ2</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       critical
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2015-03-26 05:24 CDT by <span class="vcard"><span class="fn">Jorge Valero</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-03-26 14:39 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="jorge.valero">jorge.valero</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jorge Valero</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-26 05:24:48 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >When &quot;limit to threshold&quot; is activated in &quot;Set measurements&quot; and measuring an area out of Threshold limits in a 16 bits image the following execption appears:
+
+(Fiji Is Just) ImageJ 2.0.0-rc-26/1.49p; Java 1.6.0_24 [64-bit]; Windows 7 6.1; 56MB of 4500MB (1%)
+ 
+java.lang.ArrayIndexOutOfBoundsException: 1015
+	at ij.process.ShortStatistics.getRawMinAndMax(ShortStatistics.java:55)
+	at ij.process.ShortStatistics.&lt;init&gt;(ShortStatistics.java:33)
+	at ij.process.ImageStatistics.getStatistics(ImageStatistics.java:64)
+	at ij.ImagePlus.getStatistics(ImagePlus.java:891)
+	at ij.ImagePlus.getStatistics(ImagePlus.java:863)
+	at ij.plugin.filter.Analyzer.measure(Analyzer.java:256)
+	at ij.plugin.filter.Analyzer.run(Analyzer.java:92)
+	at ij.plugin.filter.PlugInFilterRunner.processOneImage(PlugInFilterRunner.java:263)
+	at ij.plugin.filter.PlugInFilterRunner.&lt;init&gt;(PlugInFilterRunner.java:112)
+	at ij.IJ.runPlugIn(IJ.java:171)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:662)
+
+
+I have many macros meauring all the ROIs allocated at the ROI Manager at the same time so this error continuosly appear when a threshold is applied an a ROI is in an area out of the threshold limits...
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\FIJI-W~2\Fiji.app/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; C:\FIJI-W~2\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20150319171059)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20150325032333)
+3D ImageJ Suite: <a href="http://sites.imagej.net/Tboudier/">http://sites.imagej.net/Tboudier/</a> (last check:20150325042001)
+BAR: <a href="http://sites.imagej.net/Tiago/">http://sites.imagej.net/Tiago/</a> (last check:20150321134850)
+BioVoxxel: <a href="http://sites.imagej.net/BioVoxxel/">http://sites.imagej.net/BioVoxxel/</a> (last check:20150323091050)
+CMP-BIA tools: <a href="http://sites.imagej.net/CMP-BIA/">http://sites.imagej.net/CMP-BIA/</a> (last check:20140423153817)
+GDSC: <a href="http://sites.imagej.net/GDSC/">http://sites.imagej.net/GDSC/</a> (last check:20150203173032)
+IJPB-plugins: <a href="http://sites.imagej.net/IJPB-plugins/">http://sites.imagej.net/IJPB-plugins/</a> (last check:20150323094329)
+Morphology: <a href="http://sites.imagej.net/Landini/">http://sites.imagej.net/Landini/</a> (last check:20140723155558)
+MOSAIC ToolSuite: <a href="http://mosaic.mpi-cbg.de/Downloads/update/Fiji/MosaicToolsuite/">http://mosaic.mpi-cbg.de/Downloads/update/Fiji/MosaicToolsuite/</a> (last check:20150227190151)
+NucleusJ: <a href="http://sites.imagej.net/PouletAxel/">http://sites.imagej.net/PouletAxel/</a> (last check:20141101093602)
+SLIM Curve: <a href="http://sites.imagej.net/SLIM-Curve/">http://sites.imagej.net/SLIM-Curve/</a> (last check:20150227231116)
+
+Files not up-to-date:
+  1ad3be0d (LOCAL_ONLY) 20140616201203 jars/jpedalSTD.jar
+  cd81328f (LOCAL_ONLY) 20141029175310 plugins/FLEYE/FLEYE_menu_v2.ijm
+  37d2f99e (LOCAL_ONLY) 20141029175338 plugins/FLEYE/Fleye_ROISv1.2.ijm
+  a3d657b3 (LOCAL_ONLY) 20141029175308 plugins/FLEYE/Fleye_optimizer_v4.2.ijm
+  fd0293cf (LOCAL_ONLY) 20141030182219 plugins/FLEYE/Fleye_v10.4.ijm
+  73397728 (LOCAL_ONLY) 20140812193210 plugins/FLEYE/README_FLEYE GNU GPL license.txt
+  9f2412ff (LOCAL_ONLY) 20141206090416 plugins/PSF_Generator.jar
+  26561b0f (LOCAL_ONLY) 20040312144544 plugins/Stacks - T-functions/Bleach_Correction.class
+  9b90c530 (LOCAL_ONLY) 20081102090042 plugins/Stacks - T-functions/Combine_IPL_ratio_pairs.txt
+  1fd44c07 (LOCAL_ONLY) 20080305162032 plugins/Stacks - T-functions/Delta_F.class
+  55583e84 (LOCAL_ONLY) 20040402120146 plugins/Stacks - T-functions/Delta_F_down.class
+  b9d1fc6d (LOCAL_ONLY) 20031208125132 plugins/Stacks - T-functions/Delta_F_up.class
+  a215837f (LOCAL_ONLY) 20080719142644 plugins/Stacks - T-functions/FRAP_Profiler.class
+  03ffdaee (LOCAL_ONLY) 20081107084940 plugins/Stacks - T-functions/F_div_F0.txt
+  4a10d14e (LOCAL_ONLY) 20081107073650 plugins/Stacks - T-functions/F_divided_by_F0.class
+  3ae569df (LOCAL_ONLY) 20050202133014 plugins/Stacks - T-functions/Intensity_v_Time_Monitor.class
+  76680012 (LOCAL_ONLY) 20081102091104 plugins/Stacks - T-functions/Quick_Ratio_Profiler.class
+  5adafe19 (LOCAL_ONLY) 20081102091036 plugins/Stacks - T-functions/Ratio_Profiler.class
+  d7baa540 (LOCAL_ONLY) 20070514122852 plugins/Stacks - T-functions/Ratio_ROI_Manager.class
+  3d37fb07 (LOCAL_ONLY) 20090707153430 plugins/Stacks - T-functions/Ratio_Stack.txt
+  03bba501 (LOCAL_ONLY) 20050202133404 plugins/Stacks - T-functions/Running_Stack_Projector.class
+  106fd846 (LOCAL_ONLY) 20150131190705 plugins/Thresholderer_v1.1.ijm
+  982ac976 (LOCAL_ONLY) 20130319100126 plugins/beansbinding-1.2.1.jar
+  2d3e83d3 (LOCAL_ONLY) 20150124114418 plugins/binarization_chow_and_kaneko.jar
+  b2afde18 (LOCAL_ONLY) 20150114160752 plugins/cell_counter.jar
+  1e936db8 (LOCAL_ONLY) 20130319100124 plugins/commons-math3-3.0.jar
+  fff007e0 (LOCAL_ONLY) 20130319100142 plugins/ejml-0.21.jar
+  0dfa5070 (LOCAL_ONLY) 20130319100144 plugins/imagescience.jar
+  6f4f44d4 (LOCAL_ONLY) 20141005110128 plugins/mvfg_windows_x64/MVFG_.jar
+  62665aac (LOCAL_ONLY) 20140723110928 plugins/vamp/Readme.txt
+  b8b78622 (LOCAL_ONLY) 20140723110928 plugins/vamp/vamp2d_v2$pixel.class
+  1d2d98cf (LOCAL_ONLY) 20140723110928 plugins/vamp/vamp2d_v2.class
+  c70932f5 (LOCAL_ONLY) 20140723110928 plugins/vamp/vamp3d_v1$pixel.class
+  7694d226 (LOCAL_ONLY) 20140723110928 plugins/vamp/vamp3d_v1.class
+  bbfcceee (LOCAL_ONLY) 20130319100156 plugins/xstream-1.4.3.jar</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-26 14:39:45 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This 1.49n regression is fixed in the latest ImageJ daily build (1.49q19).</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 528 &ndash; SaveAs and LOCI Exporter do not function correctly on consecutive Macro calls</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Other bz_bug_528 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;528</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">SaveAs and LOCI Exporter do not function correctly on consecutive Macro calls</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2013-07-07 10:09:03 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2013-07-07 10:09:03">
+  <input type="hidden" name="longdesclength" value="7">
+  <input type="hidden" name="id" value="528">
+  <input type="hidden" name="token" value="1492731680-Fnx_E95JviJTwaUwh_7Vk1GcSjrgqvjdPgVA8PEM7Pc">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="528.html"><b>Bug&nbsp;528</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">SaveAs and LOCI Exporter do not function correctly on consecutive Macro calls</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>SaveAs and LOCI Exporter do not function correctly on consecutive Macro calls
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       enhancement
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2012-11-09 13:58 CST by <span class="vcard"><span class="fn">vito smolej</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2013-07-07 10:09 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="melissa">melissa</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_zip">
+        <td valign="top">
+            <a href="../attach/81/SaveAsBug.zip"
+               title="View the content of the attachment">
+          <b>see redma.1st in the zip file</b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.28 KB,
+                application/zip)
+
+            <br>
+            <a href="#attach_81"
+               title="Go to the comment associated with the attachment">2012-11-09 13:58 CST</a>,
+
+            <span class="vcard"><span class="fn">vito smolej</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+
+  </table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">vito smolej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-09 13:58:27 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/81/SaveAsBug.zip" name="attach_81" title="see redma.1st in the zip file">attachment 81</a></span>
+see redma.1st in the zip file
+
+To make it simple, here's is a batch windows file, 
+set IJ=ImageJ
+%IJ% -macro macro1.ijm
+pause
+%IJ% -macro macro2.ijm
+pause
+%IJ% -macro macro3.ijm
+pause
+
+consisting of consecutive calls of three macros. which are identical...
+
+    if (getMetadata(&quot;Info&quot;) == &quot;&quot;)
+        saveAs(&quot;Tiff&quot;, &quot;image1.tif&quot;);
+    else
+        {
+        args = &quot;save=[image1.ome.tif] compression=Uncompressed&quot;;
+         run(&quot;Bio-Formats Exporter&quot;, args);
+        }
+
+... save for file names (image1 in macro1, image2 in macro2 and image3 in macro3). After running this sequence one would expect to end up with three images saved. This is not so: the second and third macro do not save automatically as requested.Instead of that they open a SaveAs dialog (resp LOCI Exporter dialog) with a suggestion for the file name provided in the previous macro (see log file for details). Note pause statements - it is not due to command getting executed to fast. 
+
+Versions: ImageJ 1.46r and Fiji current snapshot
+
+Corrolary question: any suggestion for a more robust test of whether the image is 2D or multidimensional - i.e. to bes tored via LOCI? TiA</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-09 18:49:45 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I can reproduce this problem with Fiji on OS X as well.
+
+I posted some files demonstrating the issue at:
+    <a href="https://gist.github.com/4047102">https://gist.github.com/4047102</a>
+
+Steps to reproduce:
+1) Change paths in the script &amp; macros to your liking.
+2) Launch Fiji.
+3) Open Blobs.
+4) Run go.sh from the console.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Melissa Linkert</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-13 02:23:56 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I don't fully understand why, but adding '/bin/sleep 60' immediately after the 'read' command in go.sh solves the problem (at least for me, on Linux, with a fully up-to-date Fiji).
+
+So maybe this really is a timing issue?  In any case, it appears to be something deep in ImageJ, and not something to be fixed in the Bio-Formats plugins.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">vito smolej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-13 09:56:10 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Melissa, Curtis:
+
+Re &quot;not something to be fixed in the Bio-Formats plugins.&quot; I can confirm that: the same behavior is seen for plain 2d images, where SaveAs and not the bioformats exporter is used. Looks like the cause is somewhere below both the generic SaveAs command and Bio-Formats exporter.
+
+I thought the possible cause could be that the one and the same active image is addressed on consecutive calls. So I loaded three images in the &quot;mother&quot; instance and changed macros to close the current active image after it has been saved. Again the first call went by OK and the following two came up with the Save As dialog, with identical arguments as before.
+
+I also interspersed consecutive SaveAs*.ijm macro calls with &lt;IJ&gt; -macro - i.e. with a do nothing requests. No change in behavior. 
+
+Looks like a &quot;first-time-only&quot; kind of a problem to me. I'll try the suggestion by Melissa next;
+
+out = &quot;/Users/curtis/Desktop/image1.tif&quot;;
+sleep 60;
+saveAs(&quot;Tiff&quot;, out);
+
+Will keep you posted.Thanks everybody for helping out.
+
+Vito</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">vito smolej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-13 11:00:42 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I changed the macros as follows
+
+  // save the image either as tif (simple 2D) or as
+    // a ome.tif image - to be imported later on
+	argsA = &quot;image1.tif&quot;;
+	argsB = &quot;image1.ome.tif&quot;;
+	wait(100);
+    if (getMetadata(&quot;Info&quot;) == &quot;&quot;)
+        saveAs(&quot;Tiff&quot;, argsA);
+    else
+        {
+        args = &quot;save=[&quot;+argsB+&quot;] compression=Uncompressed&quot;;
+         run(&quot;Bio-Formats Exporter&quot;, args);
+        }
+   
+it worked on the first or second execution of the batch file and then it reverted to the described behavior for the rest - could be  just luck/stochastics.
+
+This applies to BioFormats branch as well - there 100 ms were not enough as it took the first macro a minute or so to store a 55MB zstack - in this case the second request for the macro execution was not even detected by Fiji(!). 
+
+Switching to ImageJ 1.47e and changing wait to a messageBox: save OK in macro1, in macro2 I got back the SaveAs dialog.
+
+Summarizing, it does not look that sleeps make any difference. At least not the desired difference.
+
+Regards
+
+Vito</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">vito smolej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-16 09:50:17 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >we have replaced the macro with java injection as suggested here
+
+<a href="http://stackoverflow.com/questions/12699463/have-imagej-automatically-overwrite-when-using-saveas">http://stackoverflow.com/questions/12699463/have-imagej-automatically-overwrite-when-using-saveas</a>
+
+The problems for us are thus gone, which could be an additional hint at the cause of the problem reported. 
+
+Im putting the status to WORKFORME. Reopen it and/reassign it as deemed useful.
+
+Thanks everybody for comments.
+
+Regards
+
+Vito</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-16 19:05:53 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This bug is fixed in the ImageJ 1.47f8 daily build.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

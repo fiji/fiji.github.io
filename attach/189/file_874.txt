@@ -1,0 +1,88 @@
+2014-07-31 15:55:06
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (19.1-b02 mixed mode):
+
+"DestroyJavaVM" prio=10 tid=0x0000000000dc6000 nid=0x55bd waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"SciJava-5f873eb2-Thread-1" prio=10 tid=0x00007fc200002000 nid=0x55cf waiting on condition [0x00007fc23cc1b000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+        at sun.misc.Unsafe.park(Native Method)
+        - parking to wait for  <0x0000000749461180> (a java.util.concurrent.SynchronousQueue$TransferStack)
+        at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+        at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
+        at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
+        at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
+        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+        at java.lang.Thread.run(Thread.java:662)
+
+"SciJava-5f873eb2-Thread-0" prio=10 tid=0x00000000016d6000 nid=0x55cc waiting on condition [0x00007fc23d1f3000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+        at sun.misc.Unsafe.park(Native Method)
+        - parking to wait for  <0x0000000749461180> (a java.util.concurrent.SynchronousQueue$TransferStack)
+        at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
+        at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
+        at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
+        at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
+        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+        at java.lang.Thread.run(Thread.java:662)
+
+"Timer-0" daemon prio=10 tid=0x0000000001641000 nid=0x55cb in Object.wait() [0x00007fc23d2f4000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+        at java.lang.Object.wait(Native Method)
+        - waiting on <0x000000074a6b0078> (a java.util.TaskQueue)
+        at java.util.TimerThread.mainLoop(Timer.java:509)
+        - locked <0x000000074a6b0078> (a java.util.TaskQueue)
+        at java.util.TimerThread.run(Timer.java:462)
+
+"Low Memory Detector" daemon prio=10 tid=0x0000000000ec5800 nid=0x55c8 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread1" daemon prio=10 tid=0x0000000000ec3000 nid=0x55c7 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread0" daemon prio=10 tid=0x0000000000ec1000 nid=0x55c6 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=10 tid=0x0000000000ebe800 nid=0x55c5 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Surrogate Locker Thread (CMS)" daemon prio=10 tid=0x0000000000ebc800 nid=0x55c4 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=10 tid=0x0000000000ea0800 nid=0x55c3 in Object.wait() [0x00007fc244ee4000]
+   java.lang.Thread.State: WAITING (on object monitor)
+        at java.lang.Object.wait(Native Method)
+        - waiting on <0x000000074bf27d10> (a java.lang.ref.ReferenceQueue$Lock)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+        - locked <0x000000074bf27d10> (a java.lang.ref.ReferenceQueue$Lock)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+        at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x0000000000e9e800 nid=0x55c2 in Object.wait() [0x00007fc244fe5000]
+   java.lang.Thread.State: WAITING (on object monitor)
+        at java.lang.Object.wait(Native Method)
+        - waiting on <0x000000074bdbe280> (a java.lang.ref.Reference$Lock)
+        at java.lang.Object.wait(Object.java:485)
+        at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+        - locked <0x000000074bdbe280> (a java.lang.ref.Reference$Lock)
+
+"VM Thread" prio=10 tid=0x0000000000e97800 nid=0x55c1 runnable
+
+"Gang worker#0 (Parallel GC Threads)" prio=10 tid=0x0000000000ddd000 nid=0x55be runnable
+
+"Gang worker#1 (Parallel GC Threads)" prio=10 tid=0x0000000000ddf000 nid=0x55bf runnable
+
+"Concurrent Mark-Sweep GC Thread" prio=10 tid=0x0000000000e3d800 nid=0x55c0 runnable
+"VM Periodic Task Thread" prio=10 tid=0x0000000000ed8800 nid=0x55c9 waiting on condition
+
+JNI global references: 1319
+
+Heap
+ par new generation   total 19136K, used 17730K [0x0000000749400000, 0x000000074a8c0000, 0x000000074bd90000)
+  eden space 17024K,  94% used [0x0000000749400000, 0x000000074a3a5b50, 0x000000074a4a0000)
+  from space 2112K,  80% used [0x000000074a6b0000, 0x000000074a85b070, 0x000000074a8c0000)
+  to   space 2112K,   0% used [0x000000074a4a0000, 0x000000074a4a0000, 0x000000074a6b0000)
+ concurrent mark-sweep generation total 63872K, used 11834K [0x000000074bd90000, 0x000000074fbf0000, 0x00000007f8000000)
+ concurrent-mark-sweep perm gen total 131072K, used 21782K [0x00000007f8000000, 0x0000000800000000, 0x0000000800000000)

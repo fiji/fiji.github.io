@@ -1,0 +1,939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 799 &ndash; SCIFIO does not allow .LIF file to be opened in ImageJ2</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_ImageJ bz_component_SCIFIO bz_bug_799 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;799</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">SCIFIO does not allow .LIF file to be opened in ImageJ2</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-04-06 15:49:25 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2015-04-06 15:49:25">
+  <input type="hidden" name="longdesclength" value="15">
+  <input type="hidden" name="id" value="799">
+  <input type="hidden" name="token" value="1492731795-i4CoCdSIv6aXDxvXP8pw3g-CHOv1zhMaVR88bS6C8J4">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="799.html"><b>Bug&nbsp;799</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">SCIFIO does not allow .LIF file to be opened in ImageJ2</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>SCIFIO does not allow .LIF file to be opened in ImageJ2
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >ImageJ</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >SCIFIO</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-06-19 09:21 CDT by <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-04-06 15:49 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>5 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="hinerm">hinerm</option>
+                <option value="imagej-bugs">imagej-bugs</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="keith.siew">keith.siew</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 09:21:01 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The following exception window (below) opens when I try to load a .LIF file from &quot;FILE---&gt; OPEN&quot;, while the drag-&amp;-drop feature just says &quot;Computing min/max complete.&quot; and does nothing else. If I disable the SCIFIO feature I can open my file as normal.
+
+(Fiji Is Just) ImageJ 2.0.0-rc-5/1.49b; Java 1.6.0_24 [64-bit]; Windows NT (unknown) 6.2; 34MB of 12221MB (&lt;1%)
+ 
+java.lang.IndexOutOfBoundsException: Index: 4, Size: 4
+	at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+	at java.util.ArrayList.get(ArrayList.java:322)
+	at io.scif.AbstractImageMetadata.getAxis(AbstractImageMetadata.java:496)
+	at net.imagej.legacy.translate.AbstractImagePlusCreator.fillImageInfo(AbstractImagePlusCreator.java:222)
+	at net.imagej.legacy.translate.AbstractImagePlusCreator.fillInfo(AbstractImagePlusCreator.java:198)
+	at net.imagej.legacy.translate.AbstractImagePlusCreator.makeImagePlus(AbstractImagePlusCreator.java:185)
+	at net.imagej.legacy.translate.GrayImagePlusCreator.makeImagePlus(GrayImagePlusCreator.java:197)
+	at net.imagej.legacy.translate.GrayImagePlusCreator.makeExactImagePlus(GrayImagePlusCreator.java:217)
+	at net.imagej.legacy.translate.GrayImagePlusCreator.createLegacyImage(GrayImagePlusCreator.java:128)
+	at net.imagej.legacy.translate.DefaultImageTranslator.createLegacyImage(DefaultImageTranslator.java:128)
+	at net.imagej.legacy.translate.DefaultImageTranslator.createLegacyImage(DefaultImageTranslator.java:110)
+	at net.imagej.legacy.LegacyImageMap.registerDisplay(LegacyImageMap.java:178)
+	at net.imagej.legacy.plugin.DefaultLegacyOpener.open(DefaultLegacyOpener.java:157)
+	at net.imagej.legacy.DefaultLegacyHooks.interceptFileOpen(DefaultLegacyHooks.java:434)
+	at net.imagej.legacy.DefaultLegacyHooks.interceptRunPlugIn(DefaultLegacyHooks.java:156)
+	at ij.IJ.runPlugIn(IJ.java)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at java.lang.Thread.run(Thread.java:662)
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows NT (unknown)
+  os.version =&gt; 6.2
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\Users\Keith\Desktop\Fiji.app/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; C:\Users\Keith\Desktop\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140618205931)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140618210039)
+
+Files not up-to-date:
+  c83c26ea (OBSOLETE_UNINSTALLED) 20140519014204 jars/forms-1.3.0.jar
+  78314a5e (MODIFIED) 20140519014205 jars/ij-1.49a.jar
+  18337fb7 (MODIFIED) 20140619150751 jars/ij-1.49b.jar
+  e5852db5 (OBSOLETE_UNINSTALLED) 20140519014216 jars/jai_imageio-1.0.1.jar
+  7ecaf631 (OBSOLETE_UNINSTALLED) 20140519014228 jars/jruby-complete-1.7.11.jar
+  24d47d70 (OBSOLETE_UNINSTALLED) 20140519014229 jars/junit-4.8.1.jar
+  6d88799a (OBSOLETE_UNINSTALLED) 20140519014130 plugins/Script_Editor-2.0.0-SNAPSHOT.jar</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 09:24:31 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Keith,
+
+ Would you be able to upload your image that caused this problem, via Help &gt; Upload Sample Image in Fiji?
+
+Thanks,
+Mark</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 09:26:30 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Mark,
+
+The file is 513MB. Is this okay?</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 09:31:10 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Keith,
+
+That should be fine. I can always delete it after downloading locally.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 09:32:46 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Cool. Uploading now</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 09:34:10 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >How will I know when it's completed uploading?</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 10:20:05 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Keith,
+
+ There should have been a progress update, and an &quot;Upload completed!&quot; message at the end. There has been some confusion about using Upload Sample Image, so I filed a ticket to try and make it clearer what's going on: <a href="https://github.com/imagej/imagej-plugins-commands/issues/7">https://github.com/imagej/imagej-plugins-commands/issues/7</a>
+
+ Anyway, your image did upload successfully! It's on a private site for use by Fiji developers for testing. Thanks, we'll try to get this issue resolved quickly.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Hiner</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 10:53:39 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This was a ridiculously stupid bug that is now fixed in this commit: <a href="https://github.com/imagej/imagej-legacy/commit/0c263f62d0aead6316b8c1c238555859b78f1cf1">https://github.com/imagej/imagej-legacy/commit/0c263f62d0aead6316b8c1c238555859b78f1cf1</a>
+
+It's not yet uploaded to Fiji but should be later today.
+
+However, it exposed a new issue in the ImageJ2 layer, in that datasets with multiple images just open the first image in the series.
+
+So I filed a new ticket for that: <a href="https://github.com/imagej/imagej-legacy/issues/61">https://github.com/imagej/imagej-legacy/issues/61</a> which will allow all the images in your dataset to be opened.</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 11:11:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for that I look forward to the fix.
+
+I'll let you know if I stumble upon anything else.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 16:06:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Mark had to leave for a well-deserved two week absence, so I uploaded his fix. Keith, it would be really nice if you could try with again with an updated Fiji and verify that it fixes your problem.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 16:19:43 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Johannes,
+
+I just updated and tried the drag and drop, as well as the File--&gt;Open and it opens the .LIF file but only the first image and doesn't not ask about opening up other stacks within the file. 
+
+If you look at Comment no.7 Mark has filed a separate ticket for this issue which he identified also.
+
+Please let me know if there is anything else I can provide to help.
+
+Regards,
+Keith</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-19 16:39:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for the feedback, Keith!</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Keith Siew</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-24 02:39:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Dear Curtis/Johannes,
+
+Is there any update on the other ticket for opening multiple images from a .LIF file format?
+
+
+From this ticket:
+
+<a href="https://github.com/imagej/imagej-legacy/issues/61">https://github.com/imagej/imagej-legacy/issues/61</a>
+
+
+Kind Regards,
+Keith</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-24 07:45:50 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Keith,
+
+As Johannes said, Mark is on vacation now for the next couple of weeks. I _might_ be able to tackle the imagej-legacy issue 61 before he returns, but I don't want to promise anything -- there is a lot going on.
+
+If you want to receive automatic updates via email, you can create a GitHub account (it's free) and make a comment on the issue at <a href="https://github.com/imagej/imagej-legacy/issues/61">https://github.com/imagej/imagej-legacy/issues/61</a>. Then you will receive a notification whenever the issue changes.
+
+Until the problem is fixed, you can work around the issue by using the File&gt;Import&gt;Bio-Formats command!</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-24 08:16:30 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; If you want to receive automatic updates via email, you can create a GitHub account (it's free) and make a comment on the issue at <a href="https://github.com/imagej/imagej-legacy/issues/61">https://github.com/imagej/imagej-legacy/issues/61</a>.</span >
+
+It might be necessary to click the &quot;Watch&quot; button on the top, AFAIR GitHub switched off the automatic mail notification by default.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

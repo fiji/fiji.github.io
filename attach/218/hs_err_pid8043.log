@@ -1,0 +1,1050 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f88c9e97c32, pid=8043, tid=140225452848896
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (19.1-b02 mixed mode linux-amd64 )
+# Problematic frame:
+# V  [libjvm.so+0x64ec32]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000014c9800):  GCTaskThread [stack: 0x0000000000000000,0x0000000000000000] [id=8049]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00007f886bfcb7f8
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00007f88c84e2780, RCX=0x0000000000000000, RDX=0x0000000000000000
+RSP=0x00007f88c84e26c0, RBP=0x00007f88c84e2730, RSI=0x00000000000000ff, RDI=0x00007f886bc50010
+R8 =0x00007f79486d2101, R9 =0x0000000000000000, R10=0x0000000000004000, R11=0x0000003fc3b71efc
+R12=0x000000000006f6fc, R13=0x00007f88c84e2790, R14=0x00000000014e5a50, R15=0x00000000014e29e0
+RIP=0x00007f88c9e97c32, EFL=0x0000000000010246, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Register to memory mapping:
+
+RAX=0x0000000000000000
+0x0000000000000000 is pointing to unknown location
+
+RBX=0x00007f88c84e2780
+0x00007f88c84e2780 is pointing to unknown location
+
+RCX=0x0000000000000000
+0x0000000000000000 is pointing to unknown location
+
+RDX=0x0000000000000000
+0x0000000000000000 is pointing to unknown location
+
+RSP=0x00007f88c84e26c0
+0x00007f88c84e26c0 is pointing to unknown location
+
+RBP=0x00007f88c84e2730
+0x00007f88c84e2730 is pointing to unknown location
+
+RSI=0x00000000000000ff
+0x00000000000000ff is pointing to unknown location
+
+RDI=0x00007f886bc50010
+0x00007f886bc50010 is an unallocated location in the heap
+
+R8 =0x00007f79486d2101
+0x00007f79486d2101 is pointing to unknown location
+
+R9 =0x0000000000000000
+0x0000000000000000 is pointing to unknown location
+
+R10=0x0000000000004000
+0x0000000000004000 is pointing to unknown location
+
+R11=0x0000003fc3b71efc
+0x0000003fc3b71efc is pointing to unknown location
+
+R12=0x000000000006f6fc
+0x000000000006f6fc is pointing to unknown location
+
+R13=0x00007f88c84e2790
+0x00007f88c84e2790 is pointing to unknown location
+
+R14=0x00000000014e5a50
+0x00000000014e5a50 is pointing to unknown location
+
+R15=0x00000000014e29e0
+0x00000000014e29e0 is pointing to unknown location
+
+
+Top of Stack: (sp=0x00007f88c84e26c0)
+0x00007f88c84e26c0:   00007f7960af1200 0000000000000000
+0x00007f88c84e26d0:   00007f79486d2100 0000000000000000
+0x00007f88c84e26e0:   00007f79486d2100 0000000004000003
+0x00007f88c84e26f0:   00007f874e3df968 00007f886bc50010
+0x00007f88c84e2700:   00000000014c9cd0 00007f79486d1f00
+0x00007f88c84e2710:   00000000014e29e0 00007f7948c9f0b9
+0x00007f88c84e2720:   00007f88c84e2860 00007f88c84e2780
+0x00007f88c84e2730:   00007f88c84e27e0 00007f88c9e979a8
+0x00007f88c84e2740:   0000007f79417623 0000000000075e7c
+0x00007f88c84e2750:   00007f88c84e27e0 00007f88c84e2790
+0x00007f88c84e2760:   00007f88c84e27a0 00000000014c9cd0
+0x00007f88c84e2770:   00000024014e29e0 00000000014e5a50
+0x00007f88c84e2780:   00007f874e5e0000 0000000000004000
+0x00007f88c84e2790:   00007f7960660000 00000001d4f36e03
+0x00007f88c84e27a0:   00007f874e5e0000 0000000000004000
+0x00007f88c84e27b0:   00007f88c84e2820 00000000014e5a78
+0x00007f88c84e27c0:   00007f88c84e28c0 00000000014e5a50
+0x00007f88c84e27d0:   00000000014e29e0 0000000000000012
+0x00007f88c84e27e0:   00007f88c84e28a0 00007f88c9e97818
+0x00007f88c84e27f0:   00007f88c84e2900 0000000000000400
+0x00007f88c84e2800:   00007f886bc50010 0000007f79417623
+0x00007f88c84e2810:   0000000000075e7c 00000000014e29e0
+0x00007f88c84e2820:   00007f88c84e2890 0000000000000024
+0x00007f88c84e2830:   00007f88c84e2900 00000000014c9cd0
+0x00007f88c84e2840:   00000007c84e2880 00007f886bc50010
+0x00007f88c84e2850:   0000007f79417623 0000000000075e7c
+0x00007f88c84e2860:   00007f7960660000 00000001d4f36e03
+0x00007f88c84e2870:   00000000015d3b80 00000000014e29e0
+0x00007f88c84e2880:   00007f88c84e28f0 00000000014c9cd0
+0x00007f88c84e2890:   00007f88c84e2900 00000000014e29b0
+0x00007f88c84e28a0:   00007f88c84e28e0 00007f88c9aba40e
+0x00007f88c84e28b0:   00007f8800000012 00007f88c9b1e821 
+
+Instructions: (pc=0x00007f88c9e97c32)
+0x00007f88c9e97c22:   89 7d b0 4c 8b 4d 98 76 47 48 8b 7d c8 4d 85 c9
+0x00007f88c9e97c32:   4a 8b 54 e7 08 74 1f 48 85 d2 74 07 4c 39 ca 4c 
+
+Stack: [0x0000000000000000,0x0000000000000000],  sp=0x00007f88c84e26c0,  free space=136938918793k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x64ec32]
+V  [libjvm.so+0x64e9a8]
+V  [libjvm.so+0x64e818]
+V  [libjvm.so+0x27140e]
+V  [libjvm.so+0x2721ad]
+V  [libjvm.so+0x3bc038]
+V  [libjvm.so+0x30491f]
+V  [libjvm.so+0x27209a]
+V  [libjvm.so+0x3ae199]
+V  [libjvm.so+0x651e06]
+V  [libjvm.so+0x7a745d]
+V  [libjvm.so+0x7a7374]
+V  [libjvm.so+0x64314f]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f7858020000 JavaThread "Thread-25179" [_thread_blocked, id=1276, stack(0x00007f78e5430000,0x00007f78e5531000)]
+  0x00007f785801f000 JavaThread "Thread-25178" [_thread_blocked, id=1275, stack(0x00007f78e502c000,0x00007f78e512d000)]
+  0x00007f785801e800 JavaThread "Thread-25177" [_thread_blocked, id=1274, stack(0x00007f78573f4000,0x00007f78574f5000)]
+  0x00007f7858014000 JavaThread "Thread-25176" [_thread_blocked, id=1273, stack(0x00007f78e4d29000,0x00007f78e4e2a000)]
+  0x00007f7858013000 JavaThread "Thread-25175" [_thread_blocked, id=1272, stack(0x00007f7857dfe000,0x00007f7857eff000)]
+  0x00007f7858036800 JavaThread "Thread-25174" [_thread_blocked, id=1271, stack(0x00007f7857bfc000,0x00007f7857cfd000)]
+  0x00007f7858035800 JavaThread "Thread-25173" [_thread_blocked, id=1270, stack(0x00007f78e5531000,0x00007f78e5632000)]
+  0x00007f7858024800 JavaThread "Thread-25172" [_thread_blocked, id=1269, stack(0x00007f78e590a000,0x00007f78e5a0b000)]
+  0x00007f785800b000 JavaThread "Thread-25171" [_thread_blocked, id=1268, stack(0x00007f78576f7000,0x00007f78577f8000)]
+  0x00007f7858019000 JavaThread "Thread-25170" [_thread_blocked, id=1267, stack(0x00007f78e4594000,0x00007f78e4695000)]
+  0x00007f7858001800 JavaThread "Thread-25169" [_thread_blocked, id=1266, stack(0x00007f7857afb000,0x00007f7857bfc000)]
+  0x00007f7858028000 JavaThread "Thread-25168" [_thread_blocked, id=1265, stack(0x00007f7857eff000,0x00007f7858000000)]
+  0x00007f7858006000 JavaThread "Thread-25167" [_thread_blocked, id=1264, stack(0x00007f78e5d2b000,0x00007f78e5e2c000)]
+  0x00007f7858007800 JavaThread "Thread-25166" [_thread_blocked, id=1262, stack(0x00007f78e4493000,0x00007f78e4594000)]
+  0x00007f785800d800 JavaThread "Thread-25165" [_thread_blocked, id=1261, stack(0x00007f78e408f000,0x00007f78e4190000)]
+  0x00007f7858023000 JavaThread "Thread-25164" [_thread_blocked, id=1258, stack(0x00007f78e4f2b000,0x00007f78e502c000)]
+  0x00007f785800c000 JavaThread "Thread-25163" [_thread_blocked, id=1257, stack(0x00007f78e4796000,0x00007f78e4897000)]
+  0x00007f785801c800 JavaThread "Thread-25162" [_thread_blocked, id=1256, stack(0x00007f78574f5000,0x00007f78575f6000)]
+  0x00007f7858004800 JavaThread "Thread-25161" [_thread_blocked, id=1255, stack(0x00007f78577f8000,0x00007f78578f9000)]
+  0x00007f7858017800 JavaThread "Thread-25160" [_thread_blocked, id=1254, stack(0x00007f78578f9000,0x00007f78579fa000)]
+  0x00007f7858010000 JavaThread "Thread-25159" [_thread_blocked, id=1253, stack(0x00007f78e522e000,0x00007f78e532f000)]
+  0x00007f7858030000 JavaThread "Thread-25158" [_thread_blocked, id=1252, stack(0x00007f78e532f000,0x00007f78e5430000)]
+  0x00007f7858011800 JavaThread "Thread-25157" [_thread_blocked, id=1250, stack(0x00007f78575f6000,0x00007f78576f7000)]
+  0x00007f785800f000 JavaThread "Thread-25156" [_thread_blocked, id=1249, stack(0x00007f78e5c2a000,0x00007f78e5d2b000)]
+  0x00007f78a8060800 JavaThread "Fuse/Deconvolve Dataset" [_thread_blocked, id=8157, stack(0x00007f78e4190000,0x00007f78e4291000)]
+  0x00007f78a8062000 JavaThread "TimerQueue" daemon [_thread_blocked, id=8090, stack(0x00007f78e4897000,0x00007f78e4998000)]
+  0x00000000014b3800 JavaThread "DestroyJavaVM" [_thread_blocked, id=8043, stack(0x00007fff230e1000,0x00007fff231e1000)]
+  0x0000000002f4f800 JavaThread "Timer-0" daemon [_thread_blocked, id=8083, stack(0x00007f78e5e2c000,0x00007f78e5f2d000)]
+  0x0000000002ac2000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=8082, stack(0x00007f78e5f2d000,0x00007f78e602e000)]
+  0x0000000002acb800 JavaThread "AWT-Shutdown" [_thread_blocked, id=8081, stack(0x00007f78e602e000,0x00007f78e612f000)]
+  0x0000000002ac0000 JavaThread "AWT-XAWT" daemon [_thread_blocked, id=8079, stack(0x00007f78e612f000,0x00007f78e6230000)]
+  0x0000000002a84000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=8078, stack(0x00007f78e6230000,0x00007f78e6331000)]
+  0x0000000001a65800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=8076, stack(0x00007f78e725c000,0x00007f78e735d000)]
+  0x0000000001a63000 JavaThread "CompilerThread1" daemon [_thread_blocked, id=8075, stack(0x00007f78e735d000,0x00007f78e745e000)]
+  0x0000000001a61000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=8074, stack(0x00007f78e745e000,0x00007f78e755f000)]
+  0x0000000001a5e800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8073, stack(0x00007f78e755f000,0x00007f78e7660000)]
+  0x0000000001a5d000 JavaThread "Surrogate Locker Thread (CMS)" daemon [_thread_blocked, id=8072, stack(0x00007f78e7660000,0x00007f78e7761000)]
+  0x0000000001a41800 JavaThread "Finalizer" daemon [_thread_blocked, id=8071, stack(0x00007f78e7761000,0x00007f78e7862000)]
+  0x0000000001a3f800 JavaThread "Reference Handler" daemon [_thread_blocked, id=8070, stack(0x00007f78e7862000,0x00007f78e7963000)]
+
+Other Threads:
+  0x0000000001a38800 VMThread [stack: 0x00007f78e7963000,0x00007f78e7a64000] [id=8069]
+  0x0000000001a78800 WatcherThread [stack: 0x00007f78e715b000,0x00007f78e725c000] [id=8077]
+
+=>0x00000000014c9800 (exited) GCTaskThread [stack: 0x0000000000000000,0x0000000000000000] [id=8049]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000000014b0250] Threads_lock - owner thread: 0x0000000001a38800
+[0x00000000014b07d0] Heap_lock - owner thread: 0x00007f7858020000
+
+Heap
+ par new generation   total 345024K, used 307218K [0x00007f7949000000, 0x00007f7960660000, 0x00007f7960660000)
+  eden space 306688K, 100% used [0x00007f7949000000, 0x00007f795bb80000, 0x00007f795bb80000)
+  from space 38336K,   1% used [0x00007f795bb80000, 0x00007f795bc04ac0, 0x00007f795e0f0000)
+  to   space 38336K,   0% used [0x00007f795e0f0000, 0x00007f795e136f80, 0x00007f7960660000)
+ concurrent mark-sweep generation total 61816300K, used 38594157K [0x00007f7960660000, 0x00007f881d5db000, 0x00007f886c000000)
+ concurrent-mark-sweep perm gen total 131072K, used 37505K [0x00007f886c000000, 0x00007f8874000000, 0x00007f8874000000)
+
+Dynamic libraries:
+00400000-00411000 r-xp 00000000 08:13 84803620                           /home/janosch/Tools/Fiji.app/ImageJ-linux64
+00610000-00611000 r--p 00010000 08:13 84803620                           /home/janosch/Tools/Fiji.app/ImageJ-linux64
+00611000-00612000 rw-p 00011000 08:13 84803620                           /home/janosch/Tools/Fiji.app/ImageJ-linux64
+00612000-00614000 rw-p 00000000 00:00 0 
+01496000-02f68000 rw-p 00000000 00:00 0                                  [heap]
+7f7820000000-7f7820021000 rw-p 00000000 00:00 0 
+7f7820021000-7f7824000000 ---p 00000000 00:00 0 
+7f7828000000-7f7828021000 rw-p 00000000 00:00 0 
+7f7828021000-7f782c000000 ---p 00000000 00:00 0 
+7f782c000000-7f782c021000 rw-p 00000000 00:00 0 
+7f782c021000-7f7830000000 ---p 00000000 00:00 0 
+7f7830000000-7f7830021000 rw-p 00000000 00:00 0 
+7f7830021000-7f7834000000 ---p 00000000 00:00 0 
+7f7834000000-7f7834025000 rw-p 00000000 00:00 0 
+7f7834025000-7f7838000000 ---p 00000000 00:00 0 
+7f7838000000-7f7838021000 rw-p 00000000 00:00 0 
+7f7838021000-7f783c000000 ---p 00000000 00:00 0 
+7f783c000000-7f783c021000 rw-p 00000000 00:00 0 
+7f783c021000-7f7840000000 ---p 00000000 00:00 0 
+7f7840000000-7f7840021000 rw-p 00000000 00:00 0 
+7f7840021000-7f7844000000 ---p 00000000 00:00 0 
+7f7844000000-7f7844021000 rw-p 00000000 00:00 0 
+7f7844021000-7f7848000000 ---p 00000000 00:00 0 
+7f7848000000-7f7848021000 rw-p 00000000 00:00 0 
+7f7848021000-7f784c000000 ---p 00000000 00:00 0 
+7f784c000000-7f784c021000 rw-p 00000000 00:00 0 
+7f784c021000-7f7850000000 ---p 00000000 00:00 0 
+7f7850000000-7f7850021000 rw-p 00000000 00:00 0 
+7f7850021000-7f7854000000 ---p 00000000 00:00 0 
+7f78573f4000-7f78573f7000 ---p 00000000 00:00 0 
+7f78573f7000-7f78574f5000 rwxp 00000000 00:00 0                          [stack:1274]
+7f78574f5000-7f78574f8000 ---p 00000000 00:00 0 
+7f78574f8000-7f78575f6000 rwxp 00000000 00:00 0                          [stack:1256]
+7f78575f6000-7f78575f9000 ---p 00000000 00:00 0 
+7f78575f9000-7f78576f7000 rwxp 00000000 00:00 0                          [stack:1250]
+7f78576f7000-7f78576fa000 ---p 00000000 00:00 0 
+7f78576fa000-7f78577f8000 rwxp 00000000 00:00 0                          [stack:1268]
+7f78577f8000-7f78577fb000 ---p 00000000 00:00 0 
+7f78577fb000-7f78578f9000 rwxp 00000000 00:00 0                          [stack:1255]
+7f78578f9000-7f78578fc000 ---p 00000000 00:00 0 
+7f78578fc000-7f78579fa000 rwxp 00000000 00:00 0                          [stack:1254]
+7f78579fa000-7f78579fd000 ---p 00000000 00:00 0 
+7f78579fd000-7f7857afb000 rwxp 00000000 00:00 0 
+7f7857afb000-7f7857afe000 ---p 00000000 00:00 0 
+7f7857afe000-7f7857bfc000 rwxp 00000000 00:00 0                          [stack:1266]
+7f7857bfc000-7f7857bff000 ---p 00000000 00:00 0 
+7f7857bff000-7f7857cfd000 rwxp 00000000 00:00 0                          [stack:1271]
+7f7857cfd000-7f7857d00000 ---p 00000000 00:00 0 
+7f7857d00000-7f7857dfe000 rwxp 00000000 00:00 0 
+7f7857dfe000-7f7857e01000 ---p 00000000 00:00 0 
+7f7857e01000-7f7857eff000 rwxp 00000000 00:00 0                          [stack:1272]
+7f7857eff000-7f7857f02000 ---p 00000000 00:00 0 
+7f7857f02000-7f7858000000 rwxp 00000000 00:00 0                          [stack:1265]
+7f7858000000-7f785823e000 rw-p 00000000 00:00 0 
+7f785823e000-7f785c000000 ---p 00000000 00:00 0 
+7f785c000000-7f785c021000 rw-p 00000000 00:00 0 
+7f785c021000-7f7860000000 ---p 00000000 00:00 0 
+7f7860000000-7f7860021000 rw-p 00000000 00:00 0 
+7f7860021000-7f7864000000 ---p 00000000 00:00 0 
+7f7864000000-7f7864021000 rw-p 00000000 00:00 0 
+7f7864021000-7f7868000000 ---p 00000000 00:00 0 
+7f7868000000-7f7868021000 rw-p 00000000 00:00 0 
+7f7868021000-7f786c000000 ---p 00000000 00:00 0 
+7f786c000000-7f786c021000 rw-p 00000000 00:00 0 
+7f786c021000-7f7870000000 ---p 00000000 00:00 0 
+7f7870000000-7f7870021000 rw-p 00000000 00:00 0 
+7f7870021000-7f7874000000 ---p 00000000 00:00 0 
+7f7874000000-7f7874021000 rw-p 00000000 00:00 0 
+7f7874021000-7f7878000000 ---p 00000000 00:00 0 
+7f7878000000-7f7878021000 rw-p 00000000 00:00 0 
+7f7878021000-7f787c000000 ---p 00000000 00:00 0 
+7f787c000000-7f787c021000 rw-p 00000000 00:00 0 
+7f787c021000-7f7880000000 ---p 00000000 00:00 0 
+7f7880000000-7f7880021000 rw-p 00000000 00:00 0 
+7f7880021000-7f7884000000 ---p 00000000 00:00 0 
+7f7884000000-7f7884021000 rw-p 00000000 00:00 0 
+7f7884021000-7f7888000000 ---p 00000000 00:00 0 
+7f7888000000-7f7888021000 rw-p 00000000 00:00 0 
+7f7888021000-7f788c000000 ---p 00000000 00:00 0 
+7f788c000000-7f788c021000 rw-p 00000000 00:00 0 
+7f788c021000-7f7890000000 ---p 00000000 00:00 0 
+7f7890000000-7f7890021000 rw-p 00000000 00:00 0 
+7f7890021000-7f7894000000 ---p 00000000 00:00 0 
+7f7894000000-7f7894021000 rw-p 00000000 00:00 0 
+7f7894021000-7f7898000000 ---p 00000000 00:00 0 
+7f7898000000-7f7898028000 rw-p 00000000 00:00 0 
+7f7898028000-7f789c000000 ---p 00000000 00:00 0 
+7f789c000000-7f789c021000 rw-p 00000000 00:00 0 
+7f789c021000-7f78a0000000 ---p 00000000 00:00 0 
+7f78a0000000-7f78a0021000 rw-p 00000000 00:00 0 
+7f78a0021000-7f78a4000000 ---p 00000000 00:00 0 
+7f78a4000000-7f78a41c4000 rw-p 00000000 00:00 0 
+7f78a41c4000-7f78a8000000 ---p 00000000 00:00 0 
+7f78a8000000-7f78a80f4000 rw-p 00000000 00:00 0 
+7f78a80f4000-7f78ac000000 ---p 00000000 00:00 0 
+7f78ac000000-7f78ac021000 rw-p 00000000 00:00 0 
+7f78ac021000-7f78b0000000 ---p 00000000 00:00 0 
+7f78b0000000-7f78b0029000 rw-p 00000000 00:00 0 
+7f78b0029000-7f78b4000000 ---p 00000000 00:00 0 
+7f78b4000000-7f78b404d000 rw-p 00000000 00:00 0 
+7f78b404d000-7f78b8000000 ---p 00000000 00:00 0 
+7f78b8000000-7f78b8021000 rw-p 00000000 00:00 0 
+7f78b8021000-7f78bc000000 ---p 00000000 00:00 0 
+7f78bc000000-7f78bc021000 rw-p 00000000 00:00 0 
+7f78bc021000-7f78c0000000 ---p 00000000 00:00 0 
+7f78c0000000-7f78c2253000 rw-p 00000000 00:00 0 
+7f78c2253000-7f78c4000000 ---p 00000000 00:00 0 
+7f78c4000000-7f78c4021000 rw-p 00000000 00:00 0 
+7f78c4021000-7f78c8000000 ---p 00000000 00:00 0 
+7f78c8000000-7f78c8021000 rw-p 00000000 00:00 0 
+7f78c8021000-7f78cc000000 ---p 00000000 00:00 0 
+7f78cc000000-7f78ce661000 rw-p 00000000 00:00 0 
+7f78ce661000-7f78d0000000 ---p 00000000 00:00 0 
+7f78d0000000-7f78d0021000 rw-p 00000000 00:00 0 
+7f78d0021000-7f78d4000000 ---p 00000000 00:00 0 
+7f78d4000000-7f78d4021000 rw-p 00000000 00:00 0 
+7f78d4021000-7f78d8000000 ---p 00000000 00:00 0 
+7f78d8000000-7f78d808c000 rw-p 00000000 00:00 0 
+7f78d808c000-7f78dc000000 ---p 00000000 00:00 0 
+7f78dc000000-7f78dc021000 rw-p 00000000 00:00 0 
+7f78dc021000-7f78e0000000 ---p 00000000 00:00 0 
+7f78e0000000-7f78e0021000 rw-p 00000000 00:00 0 
+7f78e0021000-7f78e4000000 ---p 00000000 00:00 0 
+7f78e408f000-7f78e4092000 ---p 00000000 00:00 0 
+7f78e4092000-7f78e4190000 rwxp 00000000 00:00 0                          [stack:1261]
+7f78e4190000-7f78e4193000 ---p 00000000 00:00 0 
+7f78e4193000-7f78e4291000 rwxp 00000000 00:00 0                          [stack:8157]
+7f78e4291000-7f78e4294000 ---p 00000000 00:00 0 
+7f78e4294000-7f78e4392000 rwxp 00000000 00:00 0 
+7f78e4392000-7f78e4395000 ---p 00000000 00:00 0 
+7f78e4395000-7f78e4493000 rwxp 00000000 00:00 0 
+7f78e4493000-7f78e4496000 ---p 00000000 00:00 0 
+7f78e4496000-7f78e4594000 rwxp 00000000 00:00 0                          [stack:1262]
+7f78e4594000-7f78e4597000 ---p 00000000 00:00 0 
+7f78e4597000-7f78e4695000 rwxp 00000000 00:00 0                          [stack:1267]
+7f78e4695000-7f78e4698000 ---p 00000000 00:00 0 
+7f78e4698000-7f78e4796000 rwxp 00000000 00:00 0 
+7f78e4796000-7f78e4799000 ---p 00000000 00:00 0 
+7f78e4799000-7f78e4897000 rwxp 00000000 00:00 0                          [stack:1257]
+7f78e4897000-7f78e489a000 ---p 00000000 00:00 0 
+7f78e489a000-7f78e4998000 rwxp 00000000 00:00 0                          [stack:8090]
+7f78e4a5b000-7f78e4d29000 rw-s 00000000 00:04 1037041768                 /SYSV00000000 (deleted)
+7f78e4d29000-7f78e4d2c000 ---p 00000000 00:00 0 
+7f78e4d2c000-7f78e4e2a000 rwxp 00000000 00:00 0                          [stack:1273]
+7f78e4e2a000-7f78e4e2d000 ---p 00000000 00:00 0 
+7f78e4e2d000-7f78e4f2b000 rwxp 00000000 00:00 0 
+7f78e4f2b000-7f78e4f2e000 ---p 00000000 00:00 0 
+7f78e4f2e000-7f78e502c000 rwxp 00000000 00:00 0                          [stack:1258]
+7f78e502c000-7f78e502f000 ---p 00000000 00:00 0 
+7f78e502f000-7f78e512d000 rwxp 00000000 00:00 0                          [stack:1275]
+7f78e512d000-7f78e5130000 ---p 00000000 00:00 0 
+7f78e5130000-7f78e522e000 rwxp 00000000 00:00 0 
+7f78e522e000-7f78e5231000 ---p 00000000 00:00 0 
+7f78e5231000-7f78e532f000 rwxp 00000000 00:00 0                          [stack:1253]
+7f78e532f000-7f78e5332000 ---p 00000000 00:00 0 
+7f78e5332000-7f78e5430000 rwxp 00000000 00:00 0                          [stack:1252]
+7f78e5430000-7f78e5433000 ---p 00000000 00:00 0 
+7f78e5433000-7f78e5531000 rwxp 00000000 00:00 0                          [stack:1276]
+7f78e5531000-7f78e5534000 ---p 00000000 00:00 0 
+7f78e5534000-7f78e5632000 rwxp 00000000 00:00 0                          [stack:1270]
+7f78e5632000-7f78e5640000 r--s 00000000 08:13 160569170                  /var/cache/fontconfig/6aa41aa22e18b8fa06a12da28ea9c28b-le64.cache-4
+7f78e5640000-7f78e5641000 r--s 00000000 08:13 160569760                  /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le64.cache-4
+7f78e5641000-7f78e564c000 r--s 00000000 08:13 160568012                  /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-4
+7f78e564c000-7f78e564e000 r--s 00000000 08:13 160566484                  /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le64.cache-4
+7f78e564e000-7f78e5654000 r--s 00000000 08:13 160580185                  /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le64.cache-4
+7f78e5654000-7f78e5655000 r--s 00000000 08:13 160572770                  /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le64.cache-4
+7f78e5655000-7f78e5656000 r--s 00000000 08:13 160566474                  /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le64.cache-4
+7f78e5656000-7f78e565d000 r--s 00000000 08:13 160572773                  /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le64.cache-4
+7f78e565d000-7f78e5669000 r--s 00000000 08:13 160566472                  /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le64.cache-4
+7f78e5669000-7f78e567d000 r--s 00000000 08:13 160567277                  /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le64.cache-4
+7f78e567d000-7f78e567e000 r--s 00000000 08:13 160567266                  /var/cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le64.cache-4
+7f78e567e000-7f78e5682000 r--s 00000000 08:13 160566223                  /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le64.cache-4
+7f78e5682000-7f78e5683000 r--s 00000000 08:13 160567256                  /var/cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le64.cache-4
+7f78e5683000-7f78e5685000 r--s 00000000 08:13 160566411                  /var/cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le64.cache-4
+7f78e5685000-7f78e5687000 r--s 00000000 08:13 160569726                  /var/cache/fontconfig/2fe16cf53f8bd2da9ea33d9eb6e69eee-le64.cache-4
+7f78e5687000-7f78e5688000 r--s 00000000 08:13 160567462                  /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le64.cache-4
+7f78e5688000-7f78e568d000 r--s 00000000 08:13 160565552                  /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le64.cache-4
+7f78e568d000-7f78e5694000 r--s 00000000 08:13 160566382                  /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le64.cache-4
+7f78e5694000-7f78e5695000 r--s 00000000 08:13 160566311                  /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le64.cache-4
+7f78e5695000-7f78e5696000 r--s 00000000 08:13 160565546                  /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le64.cache-4
+7f78e5696000-7f78e569c000 r--s 00000000 08:13 160565539                  /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le64.cache-4
+7f78e569c000-7f78e56af000 r--s 00000000 08:13 160566357                  /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le64.cache-4
+7f78e56af000-7f78e56b8000 r--s 00000000 08:13 160567653                  /var/cache/fontconfig/3f7329c5293ffd510edef78f73874cfd-le64.cache-4
+7f78e56b8000-7f78e56c3000 r--s 00000000 08:13 160567239                  /var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le64.cache-4
+7f78e56c3000-7f78e56c4000 r--s 00000000 08:13 160580077                  /var/cache/fontconfig/0c9eb80ebd1c36541ebe2852d3bb0c49-le64.cache-4
+7f78e56c4000-7f78e56db000 r--s 00000000 08:13 160580250                  /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le64.cache-4
+7f78e56db000-7f78e56e8000 r--s 00000000 08:13 160568858                  /var/cache/fontconfig/8f02d4cb045bd6ce15663e43f347c9f8-le64.cache-4
+7f78e57d3000-7f78e57e9000 r-xp 00000000 08:13 84804371                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libdcpr.so
+7f78e57e9000-7f78e58eb000 ---p 00016000 08:13 84804371                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libdcpr.so
+7f78e58eb000-7f78e5903000 rw-p 00018000 08:13 84804371                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libdcpr.so
+7f78e5903000-7f78e590a000 r--s 00094000 08:13 84804257                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/jsse.jar
+7f78e590a000-7f78e590d000 ---p 00000000 00:00 0 
+7f78e590d000-7f78e5a0b000 rwxp 00000000 00:00 0                          [stack:1269]
+7f78e5a0b000-7f78e5a12000 r-xp 00000000 08:13 84804406                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libnio.so
+7f78e5a12000-7f78e5b11000 ---p 00007000 08:13 84804406                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libnio.so
+7f78e5b11000-7f78e5b13000 rw-p 00006000 08:13 84804406                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libnio.so
+7f78e5b13000-7f78e5b26000 r-xp 00000000 08:13 84804409                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libnet.so
+7f78e5b26000-7f78e5c27000 ---p 00013000 08:13 84804409                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libnet.so
+7f78e5c27000-7f78e5c2a000 rw-p 00014000 08:13 84804409                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libnet.so
+7f78e5c2a000-7f78e5c2d000 ---p 00000000 00:00 0 
+7f78e5c2d000-7f78e5d2b000 rwxp 00000000 00:00 0                          [stack:1249]
+7f78e5d2b000-7f78e5d2e000 ---p 00000000 00:00 0 
+7f78e5d2e000-7f78e5e2c000 rwxp 00000000 00:00 0                          [stack:1264]
+7f78e5e2c000-7f78e5e2f000 ---p 00000000 00:00 0 
+7f78e5e2f000-7f78e5f2d000 rwxp 00000000 00:00 0                          [stack:8083]
+7f78e5f2d000-7f78e5f30000 ---p 00000000 00:00 0 
+7f78e5f30000-7f78e602e000 rwxp 00000000 00:00 0                          [stack:8082]
+7f78e602e000-7f78e6031000 ---p 00000000 00:00 0 
+7f78e6031000-7f78e612f000 rwxp 00000000 00:00 0                          [stack:8081]
+7f78e612f000-7f78e6132000 ---p 00000000 00:00 0 
+7f78e6132000-7f78e6230000 rwxp 00000000 00:00 0                          [stack:8079]
+7f78e6230000-7f78e6233000 ---p 00000000 00:00 0 
+7f78e6233000-7f78e6331000 rwxp 00000000 00:00 0                          [stack:8078]
+7f78e6331000-7f78e63aa000 r-xp 00000000 08:13 84804403                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libfontmanager.so
+7f78e63aa000-7f78e64a9000 ---p 00079000 08:13 84804403                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libfontmanager.so
+7f78e64a9000-7f78e64be000 rw-p 00078000 08:13 84804403                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libfontmanager.so
+7f78e64be000-7f78e64cf000 rw-p 00000000 00:00 0 
+7f78e64cf000-7f78e64de000 r-xp 00000000 08:13 90575270                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f78e64de000-7f78e66dd000 ---p 0000f000 08:13 90575270                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f78e66dd000-7f78e66de000 r--p 0000e000 08:13 90575270                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f78e66de000-7f78e66df000 rw-p 0000f000 08:13 90575270                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f78e66df000-7f78e66e4000 r-xp 00000000 08:13 90574604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f78e66e4000-7f78e68e3000 ---p 00005000 08:13 90574604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f78e68e3000-7f78e68e4000 r--p 00004000 08:13 90574604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f78e68e4000-7f78e68e5000 rw-p 00005000 08:13 90574604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f78e68e5000-7f78e68e9000 r--s 00000000 08:13 160568753                  /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-4
+7f78e68e9000-7f78e68eb000 r--s 00000000 08:13 160568869                  /var/cache/fontconfig/16326683038b281783a0ef8c680e3a10-le64.cache-4
+7f78e68eb000-7f78e68ec000 r--s 00000000 08:13 160568829                  /var/cache/fontconfig/e0aa53bcfa504e64f87823c16bc01eb6-le64.cache-4
+7f78e68ec000-7f78e690a000 r--s 00000000 08:13 160567667                  /var/cache/fontconfig/467c019e582ee353435ea5c21d137ef6-le64.cache-4
+7f78e690a000-7f78e694c000 r-xp 00000000 08:13 84804389                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/xawt/libmawt.so
+7f78e694c000-7f78e6a4b000 ---p 00042000 08:13 84804389                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/xawt/libmawt.so
+7f78e6a4b000-7f78e6a57000 rw-p 00041000 08:13 84804389                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/xawt/libmawt.so
+7f78e6a57000-7f78e6a58000 rw-p 00000000 00:00 0 
+7f78e6a58000-7f78e6aea000 r-xp 00000000 08:13 84804400                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libawt.so
+7f78e6aea000-7f78e6be9000 ---p 00092000 08:13 84804400                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libawt.so
+7f78e6be9000-7f78e6c02000 rw-p 00091000 08:13 84804400                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libawt.so
+7f78e6c02000-7f78e6c27000 rw-p 00000000 00:00 0 
+7f78e6c27000-7f78e6c2f000 r--s 00115000 08:13 84804206                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/resources.jar
+7f78e6c2f000-7f78e6c32000 r--s 0001d000 08:13 84803688                   /home/janosch/Tools/Fiji.app/plugins/Colocalisation_Analysis-2.0.0-SNAPSHOT.jar
+7f78e6c32000-7f78e6c33000 r--s 0000b000 08:13 84803776                   /home/janosch/Tools/Fiji.app/plugins/QuickPALM_-1.1.1-SNAPSHOT.jar
+7f78e6c33000-7f78e6c34000 r--s 00007000 08:13 84803744                   /home/janosch/Tools/Fiji.app/plugins/Graph_Cut-0.1.1-SNAPSHOT.jar
+7f78e6c34000-7f78e6c35000 r--s 00002000 08:13 84803765                   /home/janosch/Tools/Fiji.app/plugins/M_I_P-2.0.0-SNAPSHOT.jar
+7f78e6c35000-7f78e6c37000 r--s 0000b000 08:13 84803681                   /home/janosch/Tools/Fiji.app/plugins/BalloonSegmentation_-2.0.0-SNAPSHOT.jar
+7f78e6c37000-7f78e6c38000 r--s 00005000 08:13 84803772                   /home/janosch/Tools/Fiji.app/plugins/Manual_Tracking-2.0.0-SNAPSHOT.jar
+7f78e6c38000-7f78e6c39000 r--s 0000a000 08:13 84803827                   /home/janosch/Tools/Fiji.app/plugins/TransformJ_-2.8.1-SNAPSHOT.jar
+7f78e6c39000-7f78e6c3a000 r--s 00006000 08:13 84803745                   /home/janosch/Tools/Fiji.app/plugins/Gray_Morphology-2.3.2-SNAPSHOT.jar
+7f78e6c3a000-7f78e6c3b000 r--s 00005000 08:13 84803834                   /home/janosch/Tools/Fiji.app/plugins/Video_Editing-2.0.0-SNAPSHOT.jar
+7f78e6c3b000-7f78e6c3c000 r--s 0000a000 08:13 84803739                   /home/janosch/Tools/Fiji.app/plugins/Fiji_Developer-2.0.0-SNAPSHOT.jar
+7f78e6c3c000-7f78e6c3d000 r--s 00001000 08:13 84803763                   /home/janosch/Tools/Fiji.app/plugins/MTrack2_-2.0.0-SNAPSHOT.jar
+7f78e6c3d000-7f78e6c3f000 r--s 0000e000 08:13 84803820                   /home/janosch/Tools/Fiji.app/plugins/Time_Lapse-2.0.0.jar
+7f78e6c3f000-7f78e6c40000 r--s 00009000 08:13 85329571                   /home/janosch/Tools/Fiji.app/plugins/register_virtual_stack_slices-2.0.0.jar
+7f78e6c40000-7f78e6c44000 r--s 00038000 08:13 84803743                   /home/janosch/Tools/Fiji.app/plugins/FlowJ_-1.29.1-SNAPSHOT.jar
+7f78e6c44000-7f78e6c46000 r--s 00017000 08:13 84803837                   /home/janosch/Tools/Fiji.app/plugins/Volume_Viewer-2.01.1-SNAPSHOT.jar
+7f78e6c46000-7f78e6c47000 r--s 00004000 08:13 84803670                   /home/janosch/Tools/Fiji.app/plugins/3D_Objects_Counter-2.0.0-SNAPSHOT.jar
+7f78e6c47000-7f78e6c48000 r--s 00007000 08:13 84803811                   /home/janosch/Tools/Fiji.app/plugins/Snakuscule_-2.0.0-SNAPSHOT.jar
+7f78e6c48000-7f78e6c49000 r--s 00004000 08:13 84803696                   /home/janosch/Tools/Fiji.app/plugins/Directionality_-2.0.1-SNAPSHOT.jar
+7f78e6c49000-7f78e6c4a000 r--s 00003000 08:13 84803813                   /home/janosch/Tools/Fiji.app/plugins/StackReg_-2.0.0-SNAPSHOT.jar
+7f78e6c4a000-7f78e6c4b000 r--s 00004000 08:13 84803742                   /home/janosch/Tools/Fiji.app/plugins/Fiji_Updater.jar
+7f78e6c4b000-7f78e6c4e000 r--s 00036000 08:13 85329244                   /home/janosch/Tools/Fiji.app/plugins/bio-formats_plugins.jar
+7f78e6c4e000-7f78e6c4f000 r--s 00001000 08:13 84803757                   /home/janosch/Tools/Fiji.app/plugins/Jython_Interpreter-2.0.0-SNAPSHOT.jar
+7f78e6c4f000-7f78e6c50000 r--s 00005000 08:13 84803847                   /home/janosch/Tools/Fiji.app/plugins/registration_3d-2.0.0-SNAPSHOT.jar
+7f78e6c50000-7f78e6c51000 r--s 00003000 08:13 84803758                   /home/janosch/Tools/Fiji.app/plugins/LSM_Reader.jar
+7f78e6c51000-7f78e6c52000 r--s 00002000 08:13 84803777                   /home/janosch/Tools/Fiji.app/plugins/RATS_-2.0.0-SNAPSHOT.jar
+7f78e6c52000-7f78e6c54000 r--s 0001a000 08:13 85329572                   /home/janosch/Tools/Fiji.app/plugins/Siox_Segmentation-1.0.3.jar
+7f78e6c54000-7f78e6c55000 r--s 00005000 08:13 84803775                   /home/janosch/Tools/Fiji.app/plugins/PointPicker_-2.0.0-SNAPSHOT.jar
+7f78e6c55000-7f78e6c58000 r--s 0001f000 08:13 85329249                   /home/janosch/Tools/Fiji.app/plugins/bigdataviewer_fiji-1.0.0-SNAPSHOT.jar
+7f78e6c58000-7f78e6c59000 r--s 00002000 08:13 84803780                   /home/janosch/Tools/Fiji.app/plugins/Refresh_Javas-2.0.0-SNAPSHOT.jar
+7f78e6c59000-7f78e6c5a000 r--s 00002000 08:13 85329581                   /home/janosch/Tools/Fiji.app/plugins/Skeletonize3D_-1.0.1.jar
+7f78e6c5a000-7f78e6c5b000 r--s 00004000 08:13 85329601                   /home/janosch/Tools/Fiji.app/plugins/Vaa3d_Reader-2.0.0.jar
+7f78e6c5b000-7f78e6c5c000 r--s 00000000 08:13 84803818                   /home/janosch/Tools/Fiji.app/plugins/Thread_Killer-2.0.0-SNAPSHOT.jar
+7f78e6c5c000-7f78e6c5d000 r--s 00001000 08:13 84803756                   /home/janosch/Tools/Fiji.app/plugins/Javascript_-2.0.0-SNAPSHOT.jar
+7f78e6c5d000-7f78e6c5e000 r--s 00005000 08:13 84803679                   /home/janosch/Tools/Fiji.app/plugins/Arrow_-2.0.0-SNAPSHOT.jar
+7f78e6c5e000-7f78e6c5f000 r--s 00004000 08:13 84803822                   /home/janosch/Tools/Fiji.app/plugins/ToAST_-25.0.1-SNAPSHOT.jar
+7f78e6c5f000-7f78e6c60000 r--s 00001000 08:13 85329570                   /home/janosch/Tools/Fiji.app/plugins/JRuby_Interpreter-2.0.0-SNAPSHOT.jar
+7f78e6c60000-7f78e6c62000 r--s 00006000 08:13 84803781                   /home/janosch/Tools/Fiji.app/plugins/SPIM_Opener.jar
+7f78e6c62000-7f78e6c63000 r--s 00004000 08:13 84803819                   /home/janosch/Tools/Fiji.app/plugins/Threshold_Colour-2.0.1-SNAPSHOT.jar
+7f78e6c63000-7f78e6c64000 r--s 00003000 08:13 86048916                   /home/janosch/Tools/Fiji.app/plugins/CorrectBleach_-2.0.0.jar
+7f78e6c64000-7f78e6c6b000 r--s 0006f000 08:13 84803671                   /home/janosch/Tools/Fiji.app/plugins/3D_Viewer.jar
+7f78e6c6b000-7f78e6c6c000 r--s 00001000 08:13 84803678                   /home/janosch/Tools/Fiji.app/plugins/Anisotropic_Diffusion_2D-2.0.0-SNAPSHOT.jar
+7f78e6c6c000-7f78e6c6d000 r--s 00004000 08:13 84803680                   /home/janosch/Tools/Fiji.app/plugins/Auto_Threshold-1.16-SNAPSHOT.jar
+7f78e6c6d000-7f78e6c6e000 r--s 00001000 08:13 84803686                   /home/janosch/Tools/Fiji.app/plugins/Calculator_Plus-2.0.0-SNAPSHOT.jar
+7f78e6c6e000-7f78e6c6f000 r--s 00001000 08:13 84803746                   /home/janosch/Tools/Fiji.app/plugins/Helmholtz_Analysis-2.0.1-SNAPSHOT.jar
+7f78e6c6f000-7f78e6c70000 r--s 00011000 08:13 84803751                   /home/janosch/Tools/Fiji.app/plugins/Interactive_3D_Surface_Plot-2.31.1-SNAPSHOT.jar
+7f78e6c70000-7f78e6c71000 r--s 00004000 08:13 84803774                   /home/janosch/Tools/Fiji.app/plugins/PIV_analyser-1.1.1-SNAPSHOT.jar
+7f78e6c71000-7f78e6c75000 r--s 00053000 08:13 84803816                   /home/janosch/Tools/Fiji.app/plugins/Stitching_-2.0.0-SNAPSHOT.jar
+7f78e6c75000-7f78e6c77000 r--s 0000c000 08:13 84803693                   /home/janosch/Tools/Fiji.app/plugins/Descriptor_based_registration-2.0.0-SNAPSHOT.jar
+7f78e6c77000-7f78e6c78000 r--s 00005000 08:13 85198173                   /home/janosch/Tools/Fiji.app/plugins/Bug_Submitter-2.0.1.jar
+7f78e6c78000-7f78e6c79000 r--s 00000000 08:13 84803685                   /home/janosch/Tools/Fiji.app/plugins/CPU_Meter-2.0.0-SNAPSHOT.jar
+7f78e6c79000-7f78e6c7a000 r--s 00002000 08:13 84803672                   /home/janosch/Tools/Fiji.app/plugins/Algorithm_Launcher.jar
+7f78e6c7a000-7f78e6c7b000 r--s 00003000 08:13 84803738                   /home/janosch/Tools/Fiji.app/plugins/Feature_Detection-2.0.0-SNAPSHOT.jar
+7f78e6c7b000-7f78e6c7c000 r--s 00005000 08:13 84803740                   /home/janosch/Tools/Fiji.app/plugins/Fiji_Package_Maker-2.0.0-SNAPSHOT.jar
+7f78e6c7c000-7f78e6c7e000 r--s 00003000 08:13 84803762                   /home/janosch/Tools/Fiji.app/plugins/LocalThickness_-3.1.1-SNAPSHOT.jar
+7f78e6c7e000-7f78e6c7f000 r--s 00001000 08:13 84803815                   /home/janosch/Tools/Fiji.app/plugins/Statistical_Region_Merging-2.0.0-SNAPSHOT.jar
+7f78e6c7f000-7f78e6c8b000 r--s 000f5000 08:13 85329245                   /home/janosch/Tools/Fiji.app/plugins/SPIM_Registration-2.0.0-SNAPSHOT.jar
+7f78e6c8b000-7f78e6c8c000 r--s 00000000 08:13 84803821                   /home/janosch/Tools/Fiji.app/plugins/Time_Stamper-2.0.0-SNAPSHOT.jar
+7f78e6c8c000-7f78e6c8d000 r--s 00001000 08:13 84803806                   /home/janosch/Tools/Fiji.app/plugins/SheppLogan_-2.0.0-SNAPSHOT.jar
+7f78e6c8d000-7f78e6c8f000 r--s 0001f000 08:13 84803748                   /home/janosch/Tools/Fiji.app/plugins/IO_-2.0.0-SNAPSHOT.jar
+7f78e6c8f000-7f78e6c90000 r--s 00008000 08:13 84803684                   /home/janosch/Tools/Fiji.app/plugins/CLI_-2.0.0-SNAPSHOT.jar
+7f78e6c90000-7f78e6c93000 r--s 00017000 08:13 84803750                   /home/janosch/Tools/Fiji.app/plugins/Image_Expression_Parser-2.0.0-SNAPSHOT.jar
+7f78e6c93000-7f78e6c95000 r--s 00017000 08:13 84803736                   /home/janosch/Tools/Fiji.app/plugins/Extended_Depth_Field-2.0.0-SNAPSHOT.jar
+7f78e6c95000-7f78e6c99000 r--s 00062000 08:13 85329600                   /home/janosch/Tools/Fiji.app/plugins/Trainable_Segmentation-2.1.0.jar
+7f78e6c99000-7f78e6c9a000 r--s 00007000 08:13 84803737                   /home/janosch/Tools/Fiji.app/plugins/FeatureJ_-1.6.1-SNAPSHOT.jar
+7f78e6c9a000-7f78e6c9b000 r--s 00001000 08:13 84803823                   /home/janosch/Tools/Fiji.app/plugins/TopoJ_-2.0.0-SNAPSHOT.jar
+7f78e6c9b000-7f78e6c9d000 r--s 00000000 08:13 84803747                   /home/janosch/Tools/Fiji.app/plugins/IJ_Robot-2.0.0-SNAPSHOT.jar
+7f78e6c9d000-7f78e6c9e000 r--s 00008000 08:13 84803817                   /home/janosch/Tools/Fiji.app/plugins/Sync_Win-1.7-fiji2-SNAPSHOT.jar
+7f78e6c9e000-7f78e6ca0000 r--s 0001b000 08:13 84803749                   /home/janosch/Tools/Fiji.app/plugins/Image_5D.jar
+7f78e6ca0000-7f78e6ca2000 r--s 00006000 08:13 84803844                   /home/janosch/Tools/Fiji.app/plugins/panorama_.jar
+7f78e6ca2000-7f78e6ca4000 r--s 0002d000 08:13 85329569                   /home/janosch/Tools/Fiji.app/plugins/bUnwarpJ_-2.6.1.jar
+7f78e6ca4000-7f78e6ca6000 r--s 00002000 08:13 84803840                   /home/janosch/Tools/Fiji.app/plugins/blockmatching_-2.0.0-SNAPSHOT.jar
+7f78e6ca6000-7f78e6ca7000 r--s 00002000 08:13 84803687                   /home/janosch/Tools/Fiji.app/plugins/Clojure_Interpreter-2.0.0-SNAPSHOT.jar
+7f78e6ca7000-7f78e6ca8000 r--s 00000000 08:13 84803783                   /home/janosch/Tools/Fiji.app/plugins/Samples_-2.0.0-SNAPSHOT.jar
+7f78e6ca8000-7f78e6caa000 r--s 00005000 08:13 84803778                   /home/janosch/Tools/Fiji.app/plugins/RandomJ_-1.5.1-SNAPSHOT.jar
+7f78e6caa000-7f78e6cab000 r--s 00013000 08:13 84803829                   /home/janosch/Tools/Fiji.app/plugins/UnwarpJ_.jar
+7f78e6cab000-7f78e6cad000 r--s 00001000 08:13 84803695                   /home/janosch/Tools/Fiji.app/plugins/Differentials_-2.0.0-SNAPSHOT.jar
+7f78e6cad000-7f78e6cc8000 r--s 007ad000 08:13 84541804                   /home/janosch/Tools/Fiji.app/plugins/jhdf5-12.02.3.jar
+7f78e6cc8000-7f78e6cd1000 r--s 0005c000 08:13 85329248                   /home/janosch/Tools/Fiji.app/plugins/bigdataviewer-core-1.0.0-SNAPSHOT.jar
+7f78e6cd1000-7f78e6cd2000 r--s 00001000 08:13 84541749                   /home/janosch/Tools/Fiji.app/plugins/bigdataviewer-server-1.0.0-SNAPSHOT.jar
+7f78e6cd2000-7f78e6cd3000 r--s 00008000 08:13 85329596                   /home/janosch/Tools/Fiji.app/plugins/Stack_Manipulation-2.0.1.jar
+7f78e6cd3000-7f78e6cd4000 r--s 0000c000 08:13 84803773                   /home/janosch/Tools/Fiji.app/plugins/MosaicJ_-2.0.0-SNAPSHOT.jar
+7f78e6cd4000-7f78e6cd6000 r--s 00000000 08:13 84803682                   /home/janosch/Tools/Fiji.app/plugins/BeanShell_Interpreter-2.0.0-SNAPSHOT.jar
+7f78e6cd6000-7f78e6cd7000 r--s 00006000 08:13 84803779                   /home/janosch/Tools/Fiji.app/plugins/Reconstruct_Reader.jar
+7f78e6cd7000-7f78e6cd8000 r--s 00001000 08:13 84803677                   /home/janosch/Tools/Fiji.app/plugins/Analyze_Reader_Writer-2.0.0-SNAPSHOT.jar
+7f78e6cd8000-7f78e6cd9000 r--s 00001000 08:13 84803761                   /home/janosch/Tools/Fiji.app/plugins/Linear_Kuwahara-2.0.0-SNAPSHOT.jar
+7f78e6cd9000-7f78e6cda000 r--s 00002000 08:13 84803669                   /home/janosch/Tools/Fiji.app/plugins/3D_Blob_Segmentation-2.0.0-SNAPSHOT.jar
+7f78e6cda000-7f78e6cdb000 r--s 00001000 08:13 84803691                   /home/janosch/Tools/Fiji.app/plugins/Colour_Deconvolution-2.0.0-SNAPSHOT.jar
+7f78e6cdb000-7f78e6cdd000 r--s 0005e000 08:13 84803690                   /home/janosch/Tools/Fiji.app/plugins/Color_Inspector_3D-2.3-SNAPSHOT.jar
+7f78e6cdd000-7f78e6cef000 r--s 00109000 08:13 85329246                   /home/janosch/Tools/Fiji.app/plugins/TrackMate_-2.3.0-SNAPSHOT.jar
+7f78e6cef000-7f78e6cf0000 r--s 00000000 08:13 84803752                   /home/janosch/Tools/Fiji.app/plugins/IsoData_Classifier-2.0.0-SNAPSHOT.jar
+7f78e6cf0000-7f78e6cf3000 r--s 0000d000 08:13 84541792                   /home/janosch/Tools/Fiji.app/plugins/imglib2-ui-2.0.0-beta-26.jar
+7f78e6cf3000-7f78e6cf5000 r--s 0000f000 08:13 84803842                   /home/janosch/Tools/Fiji.app/plugins/level_sets-1.0.1-SNAPSHOT.jar
+7f78e6cf5000-7f78e6cfa000 r--s 00053000 08:13 84803832                   /home/janosch/Tools/Fiji.app/plugins/VIB_-2.0.0-SNAPSHOT.jar
+7f78e6cfa000-7f78e6cfd000 r--s 00039000 08:13 84803808                   /home/janosch/Tools/Fiji.app/plugins/Simple_Neurite_Tracer-2.0.2-SNAPSHOT.jar
+7f78e6cfd000-7f78e6cfe000 r--s 00004000 08:13 84803760                   /home/janosch/Tools/Fiji.app/plugins/Lasso_and_Blow_Tool-2.0.0-SNAPSHOT.jar
+7f78e6cfe000-7f78e6d14000 r--s 001b4000 08:13 84803826                   /home/janosch/Tools/Fiji.app/plugins/TrakEM2_-1.0b-SNAPSHOT.jar
+7f78e6d14000-7f78e6d16000 r--s 0000e000 08:13 84803841                   /home/janosch/Tools/Fiji.app/plugins/ij-ImageIO_.jar
+7f78e6d16000-7f78e6d18000 r--s 00012000 08:13 84803828                   /home/janosch/Tools/Fiji.app/plugins/TurboReg_-2.0.0-SNAPSHOT.jar
+7f78e6d18000-7f78e6d19000 r--s 00010000 08:13 85198174                   /home/janosch/Tools/Fiji.app/plugins/Sholl_Analysis-3.4.3.jar
+7f78e6d19000-7f78e6d1c000 r--s 00013000 08:13 84541805                   /home/janosch/Tools/Fiji.app/plugins/spim_data-1.0.0-SNAPSHOT.jar
+7f78e6d1c000-7f78e6d1d000 r--s 00007000 08:13 84803805                   /home/janosch/Tools/Fiji.app/plugins/Series_Labeler-2.0.0-SNAPSHOT.jar
+7f78e6d1d000-7f78e6d1f000 r--s 00015000 08:13 84803764                   /home/janosch/Tools/Fiji.app/plugins/MTrackJ_-1.5.1-SNAPSHOT.jar
+7f78e6d1f000-7f78e6d21000 r--s 00009000 08:13 84803812                   /home/janosch/Tools/Fiji.app/plugins/SplineDeformationGenerator_-2.0.0-SNAPSHOT.jar
+7f78e6d21000-7f78e6d23000 r--s 00005000 08:13 84803836                   /home/janosch/Tools/Fiji.app/plugins/Volume_Calculator-1.0.1-SNAPSHOT.jar
+7f78e6d23000-7f78e6d24000 r--s 00007000 08:13 85329540                   /home/janosch/Tools/Fiji.app/plugins/AnalyzeSkeleton_-2.0.0.jar
+7f78e6d24000-7f78e6d25000 r--s 00000000 08:13 84803694                   /home/janosch/Tools/Fiji.app/plugins/Dichromacy_-2.0.0-SNAPSHOT.jar
+7f78e6d25000-7f78e6d28000 r--s 00015000 08:13 84803741                   /home/janosch/Tools/Fiji.app/plugins/Fiji_Plugins-2.0.0-SNAPSHOT.jar
+7f78e6d28000-7f78e6d2c000 r--s 00049000 08:13 84803759                   /home/janosch/Tools/Fiji.app/plugins/LSM_Toolbox.jar
+7f78e6d2c000-7f78e6d2e000 r--s 0001a000 08:13 84803843                   /home/janosch/Tools/Fiji.app/plugins/mpicbg_-0.6.1-SNAPSHOT.jar
+7f78e6d2e000-7f78e6d2f000 r--s 00004000 08:13 84803689                   /home/janosch/Tools/Fiji.app/plugins/Color_Histogram-2.0.6-SNAPSHOT.jar
+7f78e6d2f000-7f78e6d30000 r--s 00021000 08:13 84803835                   /home/janosch/Tools/Fiji.app/plugins/View5D_-1.3.1-SNAPSHOT.jar
+7f78e6d30000-7f78e6db9000 r--s 0071a000 08:13 84803865                   /home/janosch/Tools/Fiji.app/jars/batik.jar
+7f78e6db9000-7f78e6dbb000 r--s 00010000 08:13 84803965                   /home/janosch/Tools/Fiji.app/jars/imglib2-algorithms-legacy-2.0.0-beta-26.jar
+7f78e6dbb000-7f78e6dbd000 r--s 0000f000 08:13 84803863                   /home/janosch/Tools/Fiji.app/jars/autocomplete.jar
+7f78e6dbd000-7f78e6dbf000 r--s 0000b000 08:13 85263317                   /home/janosch/Tools/Fiji.app/jars/pentaho-package-manager-1.0.8.jar
+7f78e6dbf000-7f78e6dc2000 r--s 00013000 08:13 85263280                   /home/janosch/Tools/Fiji.app/jars/spim_data-1.0.0-beta-2.jar
+7f78e6dc2000-7f78e6dc3000 r--s 00002000 08:13 84804024                   /home/janosch/Tools/Fiji.app/jars/mij-1.3.6-fiji2-SNAPSHOT.jar
+7f78e6dc3000-7f78e6e0d000 r--s 006b0000 08:13 85263320                   /home/janosch/Tools/Fiji.app/jars/weka-dev-3.7.11.jar
+7f78e6e0d000-7f78e6e2b000 r--s 008b9000 08:13 85263278                   /home/janosch/Tools/Fiji.app/jars/jhdf5-13.06.2.jar
+7f78e6e2b000-7f78e6e3a000 r--s 0017d000 08:13 84803973                   /home/janosch/Tools/Fiji.app/jars/itextpdf.jar
+7f78e6e3a000-7f78e6e3b000 r--s 00005000 08:13 84804044                   /home/janosch/Tools/Fiji.app/jars/scifio-tools-0.14.0.jar
+7f78e6e3b000-7f78e6e46000 r--s 000bb000 08:13 84803994                   /home/janosch/Tools/Fiji.app/jars/jgraphx-1.10.4.1.jar
+7f78e6e46000-7f78e6e49000 r--s 00031000 08:13 84803975                   /home/janosch/Tools/Fiji.app/jars/jai_codec.jar
+7f78e6e49000-7f78e6e54000 r--s 000dd000 08:13 85263270                   /home/janosch/Tools/Fiji.app/jars/scifio-0.16.3.jar
+7f78e6e54000-7f78e6e59000 r--s 00070000 08:13 84803974                   /home/janosch/Tools/Fiji.app/jars/jacl.jar
+7f78e6e59000-7f78e6e6c000 r--s 0016d000 08:13 84803976                   /home/janosch/Tools/Fiji.app/jars/jai_core.jar
+7f78e6e6c000-7f78e6e72000 r--s 00043000 08:13 84803985                   /home/janosch/Tools/Fiji.app/jars/jdom-2.0.2.jar
+7f78e6e72000-7f78e6e73000 r--s 00026000 08:13 84803960                   /home/janosch/Tools/Fiji.app/jars/imageware.jar
+7f78e6e73000-7f78e6e74000 r--s 00007000 08:13 84803852                   /home/janosch/Tools/Fiji.app/jars/VectorString.jar
+7f78e6e74000-7f78e6e79000 r--s 00065000 08:13 84804037                   /home/janosch/Tools/Fiji.app/jars/postgresql.jar
+7f78e6e79000-7f78e6f1d000 r--s 00d39000 08:13 85263304                   /home/janosch/Tools/Fiji.app/jars/jython-shaded-2.5.3.jar
+7f78e6f1d000-7f78e6f22000 r--s 00039000 08:13 84804019                   /home/janosch/Tools/Fiji.app/jars/logback-classic-1.0.9.jar
+7f78e6f22000-7f78e6f33000 r--s 000bf000 08:13 85263316                   /home/janosch/Tools/Fiji.app/jars/legacy-imglib1-2.0.0-SNAPSHOT.jar
+7f78e6f33000-7f78e6f47000 r--s 00131000 08:13 84803856                   /home/janosch/Tools/Fiji.app/jars/ant.jar
+7f78e6f47000-7f78e6f56000 r--s 00139000 08:13 84803886                   /home/janosch/Tools/Fiji.app/jars/edu_mines_jtk.jar
+7f78e6f56000-7f78e6f5d000 r--s 00035000 08:13 84803993                   /home/janosch/Tools/Fiji.app/jars/jgrapht-0.8.3.jar
+7f78e6f5d000-7f78e6f5e000 r--s 00002000 08:13 84804067                   /home/janosch/Tools/Fiji.app/jars/weave_jy2java-2.0.0-SNAPSHOT.jar
+7f78e6f5e000-7f78e6f63000 r--s 0002a000 08:13 85263279                   /home/janosch/Tools/Fiji.app/jars/gson-2.2.4.jar
+7f78e6f63000-7f78e6f6b000 r--s 00063000 08:13 84803855                   /home/janosch/Tools/Fiji.app/jars/ant-nodeps.jar
+7f78e6f6b000-7f78e6f6d000 r--s 00007000 08:13 84804034                   /home/janosch/Tools/Fiji.app/jars/pal-optimization.jar
+7f78e6f6d000-7f78e6f8b000 r--s 00180000 08:13 84803885                   /home/janosch/Tools/Fiji.app/jars/commons-math3-3.2.jar
+7f78e6f8b000-7f78e6f8e000 r--s 00023000 08:13 84803964                   /home/janosch/Tools/Fiji.app/jars/imglib2-algorithms-gpl-2.0.0-beta-26.jar
+7f78e6f8e000-7f78e6f92000 r--s 000e4000 08:13 84803997                   /home/janosch/Tools/Fiji.app/jars/jna.jar
+7f78e6f92000-7f78e6f99000 r--s 0007c000 08:13 84803851                   /home/janosch/Tools/Fiji.app/jars/VIB-lib-2.0.0-SNAPSHOT.jar
+7f78e6f99000-7f78e6fa3000 r--s 0007d000 08:13 84803987                   /home/janosch/Tools/Fiji.app/jars/jep.jar
+7f78e6fa3000-7f78e6fb1000 r--s 000e8000 08:13 84803979                   /home/janosch/Tools/Fiji.app/jars/javac.jar
+7f78e6fb1000-7f78e6fb2000 r--s 00007000 08:13 84803891                   /home/janosch/Tools/Fiji.app/jars/fiji-scripting-2.0.0-SNAPSHOT.jar
+7f78e6fb2000-7f78e6fb5000 r--s 00015000 08:13 84803853                   /home/janosch/Tools/Fiji.app/jars/ant-junit.jar
+7f78e6fb5000-7f78e6fb7000 r--s 00007000 08:13 84803850                   /home/janosch/Tools/Fiji.app/jars/Jama.jar
+7f78e6fb7000-7f78e6fc0000 r--s 00051000 08:13 84804020                   /home/janosch/Tools/Fiji.app/jars/logback-core-1.0.9.jar
+7f78e6fc0000-7f78e6fc3000 r--s 00019000 08:13 85263319                   /home/janosch/Tools/Fiji.app/jars/scifio-ome-xml-0.9.2.jar
+7f78e6fc3000-7f78e6fc4000 r--s 00002000 08:13 84803854                   /home/janosch/Tools/Fiji.app/jars/ant-launcher.jar
+7f78e6fc4000-7f78e6fd1000 r--s 000d7000 08:13 85263264                   /home/janosch/Tools/Fiji.app/jars/bio-formats/ome-poi.jar
+7f78e6fd1000-7f78e6fd4000 r--s 00013000 08:13 85263262                   /home/janosch/Tools/Fiji.app/jars/bio-formats/mdbtools-java.jar
+7f78e6fd4000-7f78e6fdb000 r--s 00111000 08:13 85263260                   /home/janosch/Tools/Fiji.app/jars/bio-formats/formats-gpl.jar
+7f78e6fdb000-7f78e6fdd000 r--s 0013b000 08:13 85263267                   /home/janosch/Tools/Fiji.app/jars/bio-formats/turbojpeg.jar
+7f78e6fdd000-7f78e6fe1000 r--s 0007d000 08:13 85263266                   /home/janosch/Tools/Fiji.app/jars/bio-formats/specification.jar
+7f78e6fe1000-7f78e6fe4000 r--s 0002c000 08:13 85263257                   /home/janosch/Tools/Fiji.app/jars/bio-formats/formats-api.jar
+7f78e6fe4000-7f78e6ff4000 r--s 000ec000 08:13 85263261                   /home/janosch/Tools/Fiji.app/jars/bio-formats/jai_imageio.jar
+7f78e6ff4000-7f78e6ffa000 r--s 00095000 08:13 85263258                   /home/janosch/Tools/Fiji.app/jars/bio-formats/formats-bsd.jar
+7f78e6ffa000-7f78e6ffc000 r--s 0001a000 08:13 85263259                   /home/janosch/Tools/Fiji.app/jars/bio-formats/formats-common.jar
+7f78e6ffc000-7f78e7001000 r--s 00077000 08:13 85263265                   /home/janosch/Tools/Fiji.app/jars/bio-formats/ome-xml.jar
+7f78e7001000-7f78e7003000 r--s 00003000 08:13 86048915                   /home/janosch/Tools/Fiji.app/jars/scifio-lifesci-0.5.2.jar
+7f78e7003000-7f78e7005000 r--s 00016000 08:13 84803978                   /home/janosch/Tools/Fiji.app/jars/java-cup-0.11a.jar
+7f78e7005000-7f78e700b000 r--s 00056000 08:13 84804016                   /home/janosch/Tools/Fiji.app/jars/kryo-2.21-shaded.jar
+7f78e700b000-7f78e7010000 r--s 00018000 08:13 84803849                   /home/janosch/Tools/Fiji.app/jars/JWlz-1.4.0.jar
+7f78e7010000-7f78e7043000 r--s 0042e000 08:13 84804031                   /home/janosch/Tools/Fiji.app/jars/netcdf-4.3.19.jar
+7f78e7043000-7f78e7046000 r--s 00018000 08:13 84804036                   /home/janosch/Tools/Fiji.app/jars/perf4j-0.9.13.jar
+7f78e7046000-7f78e7048000 r--s 00007000 08:13 84803991                   /home/janosch/Tools/Fiji.app/jars/jgoodies-common-1.7.0.jar
+7f78e7048000-7f78e704a000 r--s 0001b000 08:13 84803992                   /home/janosch/Tools/Fiji.app/jars/jgoodies-forms-1.7.2.jar
+7f78e704a000-7f78e7055000 r--s 0015c000 08:13 84804008                   /home/janosch/Tools/Fiji.app/jars/jpedalSTD.jar
+7f78e7055000-7f78e70b4000 r--s 00baa000 08:13 84804064                   /home/janosch/Tools/Fiji.app/jars/tools-1.4.2.jar
+7f78e70b4000-7f78e715b000 r--s 0073b000 08:13 84804009                   /home/janosch/Tools/Fiji.app/jars/jruby-core-1.7.12.jar
+7f78e715b000-7f78e715c000 ---p 00000000 00:00 0 
+7f78e715c000-7f78e725c000 rwxp 00000000 00:00 0                          [stack:8077]
+7f78e725c000-7f78e725f000 ---p 00000000 00:00 0 
+7f78e725f000-7f78e735d000 rwxp 00000000 00:00 0                          [stack:8076]
+7f78e735d000-7f78e7360000 ---p 00000000 00:00 0 
+7f78e7360000-7f78e745e000 rwxp 00000000 00:00 0                          [stack:8075]
+7f78e745e000-7f78e7461000 ---p 00000000 00:00 0 
+7f78e7461000-7f78e755f000 rwxp 00000000 00:00 0                          [stack:8074]
+7f78e755f000-7f78e7562000 ---p 00000000 00:00 0 
+7f78e7562000-7f78e7660000 rwxp 00000000 00:00 0                          [stack:8073]
+7f78e7660000-7f78e7663000 ---p 00000000 00:00 0 
+7f78e7663000-7f78e7761000 rwxp 00000000 00:00 0                          [stack:8072]
+7f78e7761000-7f78e7764000 ---p 00000000 00:00 0 
+7f78e7764000-7f78e7862000 rwxp 00000000 00:00 0                          [stack:8071]
+7f78e7862000-7f78e7865000 ---p 00000000 00:00 0 
+7f78e7865000-7f78e7963000 rwxp 00000000 00:00 0                          [stack:8070]
+7f78e7963000-7f78e7964000 ---p 00000000 00:00 0 
+7f78e7964000-7f78e7a64000 rwxp 00000000 00:00 0                          [stack:8069]
+7f78e7a64000-7f78e7bfc000 r--s 03027000 08:13 84804970                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/rt.jar
+7f78e7bfc000-7f78e7bfd000 ---p 00000000 00:00 0 
+7f78e7bfd000-7f78e7cfd000 rwxp 00000000 00:00 0                          [stack:8068]
+7f78e7cfd000-7f78e8000000 rw-p 00000000 00:00 0 
+7f78e8000000-7f78e8029000 rw-p 00000000 00:00 0 
+7f78e8029000-7f78ec000000 ---p 00000000 00:00 0 
+7f78ec000000-7f78ec039000 rw-p 00000000 00:00 0 
+7f78ec039000-7f78f0000000 ---p 00000000 00:00 0 
+7f78f0000000-7f78f0031000 rw-p 00000000 00:00 0 
+7f78f0031000-7f78f4000000 ---p 00000000 00:00 0 
+7f78f4000000-7f78f4021000 rw-p 00000000 00:00 0 
+7f78f4021000-7f78f8000000 ---p 00000000 00:00 0 
+7f78f8000000-7f78f8031000 rw-p 00000000 00:00 0 
+7f78f8031000-7f78fc000000 ---p 00000000 00:00 0 
+7f78fc000000-7f78fc001000 r--s 00002000 08:13 85263263                   /home/janosch/Tools/Fiji.app/jars/bio-formats/metakit.jar
+7f78fc001000-7f78fc003000 r--s 0000d000 08:13 84803884                   /home/janosch/Tools/Fiji.app/jars/commons-logging-1.1.1.jar
+7f78fc003000-7f78fc005000 r--s 00005000 08:13 85263321                   /home/janosch/Tools/Fiji.app/jars/scifio-cli-0.1.0.jar
+7f78fc005000-7f78fc007000 r--s 00006000 08:13 84804061                   /home/janosch/Tools/Fiji.app/jars/slf4j-api-1.7.6.jar
+7f78fc007000-7f78fc009000 r--s 0000f000 08:13 85263318                   /home/janosch/Tools/Fiji.app/jars/scifio-bf-compat-1.8.4.jar
+7f78fc009000-7f78fc00f000 r--s 00044000 08:13 85263269                   /home/janosch/Tools/Fiji.app/jars/jdom2-2.0.5.jar
+7f78fc00f000-7f78fc011000 r--s 0000c000 08:13 84803986                   /home/janosch/Tools/Fiji.app/jars/jdom-contrib.jar
+7f78fc011000-7f78fc014000 r--s 00010000 08:13 84803857                   /home/janosch/Tools/Fiji.app/jars/args4j-2.0.25.jar
+7f78fc014000-7f78fc052000 r--s 00a05000 08:13 84804010                   /home/janosch/Tools/Fiji.app/jars/jruby-stdlib-1.7.12.jar
+7f78fc052000-7f78fcf61000 rw-p 00000000 00:00 0 
+7f78fcf61000-7f78fcf62000 ---p 00000000 00:00 0 
+7f78fcf62000-7f78fd062000 rwxp 00000000 00:00 0                          [stack:8067]
+7f78fd062000-7f78fd063000 ---p 00000000 00:00 0 
+7f78fd063000-7f78fd163000 rwxp 00000000 00:00 0                          [stack:8066]
+7f78fd163000-7f7941432000 rw-p 00000000 00:00 0 
+7f7941432000-7f79416a7000 rw-p 00000000 00:00 0 
+7f79416a7000-7f7941762000 rw-p 00000000 00:00 0 
+7f7941762000-7f7948d4a000 rw-p 00000000 00:00 0 
+7f7948d4a000-7f7948fbf000 rw-p 00000000 00:00 0 
+7f7948fbf000-7f7960660000 rw-p 00000000 00:00 0 
+7f7960660000-7f881d5db000 rw-p 00000000 00:00 0 
+7f886c000000-7f8874000000 rw-p 00000000 00:00 0 
+7f8874000000-7f88741ce000 rw-p 00000000 00:00 0 
+7f88741ce000-7f8878000000 ---p 00000000 00:00 0 
+7f8878000000-7f8878004000 r--s 0003b000 08:13 84804028                   /home/janosch/Tools/Fiji.app/jars/mpicbg-0.6.1-SNAPSHOT.jar
+7f8878004000-7f887800b000 r--s 000b2000 08:13 84804012                   /home/janosch/Tools/Fiji.app/jars/js.jar
+7f887800b000-7f887800d000 r--s 00014000 08:13 84803888                   /home/janosch/Tools/Fiji.app/jars/fake-2.0.0-SNAPSHOT.jar
+7f887800d000-7f887800f000 r--s 00003000 08:13 84804030                   /home/janosch/Tools/Fiji.app/jars/native-lib-loader-2.0.1.jar
+7f887800f000-7f8878018000 r--s 0006f000 08:13 84804018                   /home/janosch/Tools/Fiji.app/jars/log4j-1.2.17.jar
+7f8878018000-7f887801b000 r--s 0001a000 08:13 84803889                   /home/janosch/Tools/Fiji.app/jars/fiji-compat-2.0.0-SNAPSHOT.jar
+7f887801b000-7f887801e000 r--s 00013000 08:13 84803890                   /home/janosch/Tools/Fiji.app/jars/fiji-lib-2.0.0-SNAPSHOT.jar
+7f887801e000-7f8878021000 r--s 0000d000 08:13 85263268                   /home/janosch/Tools/Fiji.app/jars/imglib2-ui-2.0.0-beta-26.jar
+7f8878021000-7f8878022000 r--s 00004000 08:13 84804066                   /home/janosch/Tools/Fiji.app/jars/wavelets.jar
+7f8878022000-7f8878024000 r--s 00037000 08:13 84803959                   /home/janosch/Tools/Fiji.app/jars/imagescience-2.4.1.jar
+7f8878024000-7f887802c000 r--s 00060000 08:13 85917799                   /home/janosch/Tools/Fiji.app/jars/imagej-ui-swing-0.6.1.jar
+7f887802c000-7f887802e000 r--s 00001000 08:13 85263301                   /home/janosch/Tools/Fiji.app/jars/scripting-jython-0.1.3.jar
+7f887802e000-7f887802f000 r--s 00003000 08:13 84804033                   /home/janosch/Tools/Fiji.app/jars/options-1.1.jar
+7f887802f000-7f887803e000 r--s 0007f000 08:13 84804006                   /home/janosch/Tools/Fiji.app/jars/joda-time-2.3.jar
+7f887803e000-7f8878041000 r--s 0002c000 08:13 84804070                   /home/janosch/Tools/Fiji.app/jars/yecht-1.0.jar
+7f8878041000-7f8878043000 r--s 00007000 08:13 84804029                   /home/janosch/Tools/Fiji.app/jars/nailgun-server-0.9.1.jar
+7f8878043000-7f8878049000 r--s 0003d000 08:13 84804062                   /home/janosch/Tools/Fiji.app/jars/snakeyaml-1.13.jar
+7f8878049000-7f8878059000 r--s 0008e000 08:13 84804001                   /home/janosch/Tools/Fiji.app/jars/jnr-ffi-1.0.7.jar
+7f8878059000-7f88780a2000 r--s 003fa000 08:13 85263302                   /home/janosch/Tools/Fiji.app/jars/groovy-2.3.6.jar
+7f88780a2000-7f88780dc000 r--s 00302000 08:13 84803882                   /home/janosch/Tools/Fiji.app/jars/clojure-1.3.0.jar
+7f88780dc000-7f88780dd000 ---p 00000000 00:00 0 
+7f88780dd000-7f88781dd000 rwxp 00000000 00:00 0                          [stack:8065]
+7f88781dd000-7f88781de000 ---p 00000000 00:00 0 
+7f88781de000-7f88782de000 rwxp 00000000 00:00 0                          [stack:8064]
+7f88782de000-7f88782df000 ---p 00000000 00:00 0 
+7f88782df000-7f88783df000 rwxp 00000000 00:00 0                          [stack:8063]
+7f88783df000-7f887c000000 rw-p 00000000 00:00 0 
+7f887c000000-7f887c15f000 rw-p 00000000 00:00 0 
+7f887c15f000-7f8880000000 ---p 00000000 00:00 0 
+7f8880000000-7f8880025000 rw-p 00000000 00:00 0 
+7f8880025000-7f8884000000 ---p 00000000 00:00 0 
+7f8884000000-7f8884105000 rw-p 00000000 00:00 0 
+7f8884105000-7f8888000000 ---p 00000000 00:00 0 
+7f8888000000-7f8888047000 rw-p 00000000 00:00 0 
+7f8888047000-7f888c000000 ---p 00000000 00:00 0 
+7f888c000000-7f888c021000 rw-p 00000000 00:00 0 
+7f888c021000-7f8890000000 ---p 00000000 00:00 0 
+7f8890000000-7f889004c000 rw-p 00000000 00:00 0 
+7f889004c000-7f8894000000 ---p 00000000 00:00 0 
+7f8894000000-7f8894021000 rw-p 00000000 00:00 0 
+7f8894021000-7f8898000000 ---p 00000000 00:00 0 
+7f8898000000-7f8898021000 rw-p 00000000 00:00 0 
+7f8898021000-7f889c000000 ---p 00000000 00:00 0 
+7f889c000000-7f889c021000 rw-p 00000000 00:00 0 
+7f889c021000-7f88a0000000 ---p 00000000 00:00 0 
+7f88a0000000-7f88a00c8000 rw-p 00000000 00:00 0 
+7f88a00c8000-7f88a4000000 ---p 00000000 00:00 0 
+7f88a4000000-7f88a40b6000 rw-p 00000000 00:00 0 
+7f88a40b6000-7f88a8000000 ---p 00000000 00:00 0 
+7f88a8000000-7f88a8135000 rw-p 00000000 00:00 0 
+7f88a8135000-7f88ac000000 ---p 00000000 00:00 0 
+7f88ac000000-7f88ac145000 rw-p 00000000 00:00 0 
+7f88ac145000-7f88b0000000 ---p 00000000 00:00 0 
+7f88b0000000-7f88b0021000 rw-p 00000000 00:00 0 
+7f88b0021000-7f88b4000000 ---p 00000000 00:00 0 
+7f88b4000000-7f88b4021000 rw-p 00000000 00:00 0 
+7f88b4021000-7f88b8000000 ---p 00000000 00:00 0 
+7f88b8000000-7f88b81dd000 rw-p 00000000 00:00 0 
+7f88b81dd000-7f88bc000000 ---p 00000000 00:00 0 
+7f88bc000000-7f88bc02b000 rw-p 00000000 00:00 0 
+7f88bc02b000-7f88c0000000 ---p 00000000 00:00 0 
+7f88c0000000-7f88c0001000 r--s 00008000 08:13 84803970                   /home/janosch/Tools/Fiji.app/jars/invokebinder-1.2.jar
+7f88c0001000-7f88c0003000 r--s 00010000 08:13 84804015                   /home/janosch/Tools/Fiji.app/jars/jzlib-1.1.2.jar
+7f88c0003000-7f88c0005000 r--s 0005d000 08:13 84803988                   /home/janosch/Tools/Fiji.app/jars/jffi-1.2.7-native.jar
+7f88c0005000-7f88c0009000 r--s 00020000 08:13 84803989                   /home/janosch/Tools/Fiji.app/jars/jffi-1.2.7.jar
+7f88c0009000-7f88c0012000 r--s 00133000 08:13 84803981                   /home/janosch/Tools/Fiji.app/jars/jcodings-1.0.10.jar
+7f88c0012000-7f88c0017000 r--s 00048000 08:13 84803998                   /home/janosch/Tools/Fiji.app/jars/jnr-constants-0.8.5.jar
+7f88c0017000-7f88c0018000 r--s 00002000 08:13 84803881                   /home/janosch/Tools/Fiji.app/jars/bytelist-1.0.11.jar
+7f88c0018000-7f88c001c000 r--s 00023000 08:13 84804003                   /home/janosch/Tools/Fiji.app/jars/jnr-posix-3.0.1.jar
+7f88c001c000-7f88c001e000 r--s 00004000 08:13 84804004                   /home/janosch/Tools/Fiji.app/jars/jnr-unixsocket-0.3.jar
+7f88c001e000-7f88c0021000 r--s 00033000 08:13 84804005                   /home/janosch/Tools/Fiji.app/jars/jnr-x86asm-1.0.2.jar
+7f88c0021000-7f88c0023000 r--s 00007000 08:13 84804000                   /home/janosch/Tools/Fiji.app/jars/jnr-enxio-0.4.jar
+7f88c0023000-7f88c0026000 r--s 0000d000 08:13 84804002                   /home/janosch/Tools/Fiji.app/jars/jnr-netdb-1.1.2.jar
+7f88c0026000-7f88c0029000 r--s 0002b000 08:13 84804007                   /home/janosch/Tools/Fiji.app/jars/joni-2.1.1.jar
+7f88c0029000-7f88c002b000 r--s 00008000 08:13 84803862                   /home/janosch/Tools/Fiji.app/jars/asm-util-4.0.jar
+7f88c002b000-7f88c002c000 r--s 00004000 08:13 84803859                   /home/janosch/Tools/Fiji.app/jars/asm-analysis-4.0.jar
+7f88c002c000-7f88c002e000 r--s 00004000 08:13 84803861                   /home/janosch/Tools/Fiji.app/jars/asm-tree-4.0.jar
+7f88c002e000-7f88c0030000 r--s 00008000 08:13 84803860                   /home/janosch/Tools/Fiji.app/jars/asm-commons-4.0.jar
+7f88c0030000-7f88c0032000 r--s 0000a000 08:13 84803858                   /home/janosch/Tools/Fiji.app/jars/asm-4.0.jar
+7f88c0032000-7f88c0033000 r--s 00001000 08:13 85263300                   /home/janosch/Tools/Fiji.app/jars/scripting-jruby-0.1.5.jar
+7f88c0033000-7f88c0034000 r--s 00001000 08:13 85263299                   /home/janosch/Tools/Fiji.app/jars/scripting-javascript-0.2.2.jar
+7f88c0034000-7f88c0035000 r--s 00003000 08:13 85263303                   /home/janosch/Tools/Fiji.app/jars/scripting-groovy-0.1.1.jar
+7f88c0035000-7f88c0036000 r--s 00001000 08:13 85263298                   /home/janosch/Tools/Fiji.app/jars/scripting-clojure-0.1.1.jar
+7f88c0036000-7f88c0038000 r--s 00001000 08:13 85263296                   /home/janosch/Tools/Fiji.app/jars/scijava-plugins-platforms-0.1.2.jar
+7f88c0038000-7f88c003a000 r--s 00003000 08:13 84803954                   /home/janosch/Tools/Fiji.app/jars/imagej-plugins-uploader-webdav-0.1.1.jar
+7f88c003a000-7f88c003d000 r--s 00035000 08:13 84804013                   /home/janosch/Tools/Fiji.app/jars/jsch-0.1.49.jar
+7f88c003d000-7f88c003f000 r--s 00004000 08:13 84803950                   /home/janosch/Tools/Fiji.app/jars/imagej-plugins-uploader-ssh-0.1.1.jar
+7f88c003f000-7f88c0041000 r--s 0000b000 08:13 84803949                   /home/janosch/Tools/Fiji.app/jars/imagej-plugins-tools-0.1.1.jar
+7f88c0041000-7f88c0043000 r--s 00003000 08:13 84803864                   /home/janosch/Tools/Fiji.app/jars/base64-2.3.8.jar
+7f88c0043000-7f88c004a000 r--s 00052000 08:13 85263294                   /home/janosch/Tools/Fiji.app/jars/imagej-plugins-commands-0.2.6.jar
+7f88c004a000-7f88c004e000 r--s 00038000 08:13 85263274                   /home/janosch/Tools/Fiji.app/jars/imagej-updater-0.6.2.jar
+7f88c004e000-7f88c005b000 r--s 00089000 08:13 85263271                   /home/janosch/Tools/Fiji.app/jars/scijava-common-2.33.0.jar
+7f88c005b000-7f88c005e000 r--s 0000e000 08:13 84803969                   /home/janosch/Tools/Fiji.app/jars/imglib2-realtransform-2.0.0-beta-26.jar
+7f88c005e000-7f88c0075000 r--s 000c4000 08:13 85263293                   /home/janosch/Tools/Fiji.app/jars/imagej-ops-0.5.0.jar
+7f88c0075000-7f88c007e000 r--s 001cc000 08:13 85917809                   /home/janosch/Tools/Fiji.app/jars/ij-1.49h.jar
+7f88c007e000-7f88c0080000 r--s 00009000 08:13 84804022                   /home/janosch/Tools/Fiji.app/jars/markdownj-0.3.0-1.0.2b4.jar
+7f88c0080000-7f88c0082000 r--s 00000000 08:13 84804050                   /home/janosch/Tools/Fiji.app/jars/scijava-plugins-text-markdown-0.1.1.jar
+7f88c0082000-7f88c0088000 r--s 00048000 08:13 84803883                   /home/janosch/Tools/Fiji.app/jars/commons-lang3-3.1.jar
+7f88c0088000-7f88c008a000 r--s 00000000 08:13 84804051                   /home/janosch/Tools/Fiji.app/jars/scijava-plugins-text-plain-0.1.1.jar
+7f88c008a000-7f88c008f000 r--s 00040000 08:13 84803880                   /home/janosch/Tools/Fiji.app/jars/bsh-2.0b4.jar
+7f88c008f000-7f88c0090000 r--s 00002000 08:13 85263297                   /home/janosch/Tools/Fiji.app/jars/scripting-beanshell-0.1.3.jar
+7f88c0090000-7f88c0091000 r--s 00005000 08:13 85263295                   /home/janosch/Tools/Fiji.app/jars/scijava-plugins-commands-0.1.7.jar
+7f88c0091000-7f88c0093000 r--s 0000d000 08:13 85263275                   /home/janosch/Tools/Fiji.app/jars/minimaven-2.1.3.jar
+7f88c0093000-7f88c0094000 r--s 00005000 08:13 85263277                   /home/janosch/Tools/Fiji.app/jars/scripting-java-0.2.4.jar
+7f88c0094000-7f88c0096000 r--s 00007000 08:13 84803983                   /home/janosch/Tools/Fiji.app/jars/jdatepicker-1.3.2.jar
+7f88c0096000-7f88c0098000 r--s 00005000 08:13 84804032                   /home/janosch/Tools/Fiji.app/jars/object-inspector-0.1.jar
+7f88c0098000-7f88c009a000 r--s 00001000 08:13 84804063                   /home/janosch/Tools/Fiji.app/jars/swing-checkbox-tree-1.0.0.jar
+7f88c009a000-7f88c009d000 r--s 0001a000 08:13 85263276                   /home/janosch/Tools/Fiji.app/jars/scijava-ui-swing-0.3.0.jar
+7f88c009d000-7f88c009f000 r--s 0000a000 08:13 84804052                   /home/janosch/Tools/Fiji.app/jars/scijava-ui-awt-0.1.2.jar
+7f88c009f000-7f88c00c0000 r--s 001e0000 08:13 84803995                   /home/janosch/Tools/Fiji.app/jars/jhotdraw-7.6.0.jar
+7f88c00c0000-7f88c00e1000 r--s 0015a000 08:13 84803867                   /home/janosch/Tools/Fiji.app/jars/bcprov-jdk14-138.jar
+7f88c00e1000-7f88c00e5000 r--s 0002b000 08:13 84803866                   /home/janosch/Tools/Fiji.app/jars/bcmail-jdk14-138.jar
+7f88c00e5000-7f88c00f1000 r--s 00105000 08:13 84803971                   /home/janosch/Tools/Fiji.app/jars/itext-2.1.5.jar
+7f88c00f1000-7f88c05f6000 rw-p 00000000 00:00 0 
+7f88c05f6000-7f88c05f7000 ---p 00000000 00:00 0 
+7f88c05f7000-7f88c06f7000 rwxp 00000000 00:00 0                          [stack:8062]
+7f88c06f7000-7f88c06f8000 ---p 00000000 00:00 0 
+7f88c06f8000-7f88c07f8000 rwxp 00000000 00:00 0                          [stack:8061]
+7f88c07f8000-7f88c07f9000 ---p 00000000 00:00 0 
+7f88c07f9000-7f88c08f9000 rwxp 00000000 00:00 0                          [stack:8060]
+7f88c08f9000-7f88c08fa000 ---p 00000000 00:00 0 
+7f88c08fa000-7f88c09fa000 rwxp 00000000 00:00 0                          [stack:8059]
+7f88c09fa000-7f88c09fb000 ---p 00000000 00:00 0 
+7f88c09fb000-7f88c0afb000 rwxp 00000000 00:00 0                          [stack:8058]
+7f88c0afb000-7f88c0afc000 ---p 00000000 00:00 0 
+7f88c0afc000-7f88c0bfc000 rwxp 00000000 00:00 0                          [stack:8057]
+7f88c0bfc000-7f88c0bfd000 ---p 00000000 00:00 0 
+7f88c0bfd000-7f88c0cfd000 rwxp 00000000 00:00 0                          [stack:8056]
+7f88c0cfd000-7f88c0cfe000 ---p 00000000 00:00 0 
+7f88c0cfe000-7f88c0dfe000 rwxp 00000000 00:00 0                          [stack:8055]
+7f88c0dfe000-7f88c0dff000 ---p 00000000 00:00 0 
+7f88c0dff000-7f88c0eff000 rwxp 00000000 00:00 0                          [stack:8054]
+7f88c0eff000-7f88c0f00000 ---p 00000000 00:00 0 
+7f88c0f00000-7f88c14b0000 rwxp 00000000 00:00 0                          [stack:8053]
+7f88c14b0000-7f88c4084000 rw-p 00000000 00:00 0 
+7f88c4084000-7f88c8000000 ---p 00000000 00:00 0 
+7f88c8000000-7f88c8001000 r--s 00008000 08:13 84803966                   /home/janosch/Tools/Fiji.app/jars/imglib2-ij-2.0.0-beta-26.jar
+7f88c8001000-7f88c8009000 r--s 00028000 08:13 84804069                   /home/janosch/Tools/Fiji.app/jars/xml-apis-1.3.04.jar
+7f88c8009000-7f88c8012000 r--s 00073000 08:13 84803982                   /home/janosch/Tools/Fiji.app/jars/jcommon-1.0.17.jar
+7f88c8012000-7f88c8022000 r--s 00155000 08:13 84803990                   /home/janosch/Tools/Fiji.app/jars/jfreechart-1.0.14.jar
+7f88c8022000-7f88c8024000 r--s 00011000 08:13 84804023                   /home/janosch/Tools/Fiji.app/jars/miglayout-3.7.3.1-swing.jar
+7f88c8024000-7f88c802f000 r--s 000e4000 08:13 84804038                   /home/janosch/Tools/Fiji.app/jars/rsyntaxtextarea-2.5.2.jar
+7f88c802f000-7f88c8031000 r--s 00008000 08:13 84803977                   /home/janosch/Tools/Fiji.app/jars/jama-1.0.3.jar
+7f88c8031000-7f88c8040000 r--s 00139000 08:13 84804026                   /home/janosch/Tools/Fiji.app/jars/mines-jtk-20100113.jar
+7f88c8040000-7f88c8045000 r--s 00035000 08:13 84803962                   /home/janosch/Tools/Fiji.app/jars/imglib2-algorithms-2.0.0-beta-26.jar
+7f88c8045000-7f88c804e000 r--s 00098000 08:13 84803980                   /home/janosch/Tools/Fiji.app/jars/javassist-3.16.1-GA.jar
+7f88c804e000-7f88c8051000 r--s 00024000 08:13 86048914                   /home/janosch/Tools/Fiji.app/jars/ij1-patcher-0.10.1.jar
+7f88c8051000-7f88c8056000 r--s 0003c000 08:13 85263292                   /home/janosch/Tools/Fiji.app/jars/imagej-legacy-0.8.4.jar
+7f88c8056000-7f88c8058000 r--s 00003000 08:13 84803892                   /home/janosch/Tools/Fiji.app/jars/gentyref-1.1.0.jar
+7f88c8058000-7f88c8067000 r--s 00083000 08:13 84803968                   /home/janosch/Tools/Fiji.app/jars/imglib2-ops-2.0.0-beta-26.jar
+7f88c8067000-7f88c806a000 r--s 00012000 08:13 84803887                   /home/janosch/Tools/Fiji.app/jars/eventbus-1.4.jar
+7f88c806a000-7f88c8077000 r--s 0008a000 08:13 84803961                   /home/janosch/Tools/Fiji.app/jars/imglib2-2.0.0-beta-26.jar
+7f88c8077000-7f88c807c000 r--s 00060000 08:13 84804021                   /home/janosch/Tools/Fiji.app/jars/mapdb-1.0.3.jar
+7f88c807c000-7f88c808c000 r--s 000e2000 08:13 84804041                   /home/janosch/Tools/Fiji.app/jars/scifio-jai-imageio-1.1.0.jar
+7f88c808c000-7f88c8095000 r--s 00061000 08:13 85917798                   /home/janosch/Tools/Fiji.app/jars/imagej-common-0.9.0.jar
+7f88c8095000-7f88c80e0000 rw-p 00000000 00:00 0 
+7f88c80e0000-7f88c80e1000 ---p 00000000 00:00 0 
+7f88c80e1000-7f88c81e1000 rwxp 00000000 00:00 0                          [stack:8052]
+7f88c81e1000-7f88c81e2000 ---p 00000000 00:00 0 
+7f88c81e2000-7f88c82e2000 rwxp 00000000 00:00 0                          [stack:8051]
+7f88c82e2000-7f88c82e3000 ---p 00000000 00:00 0 
+7f88c82e3000-7f88c83e3000 rwxp 00000000 00:00 0                          [stack:8050]
+7f88c83e3000-7f88c83e4000 ---p 00000000 00:00 0 
+7f88c83e4000-7f88c84e4000 rwxp 00000000 00:00 0                          [stack:8049]
+7f88c84e4000-7f88c84e5000 ---p 00000000 00:00 0 
+7f88c84e5000-7f88c85e5000 rwxp 00000000 00:00 0                          [stack:8048]
+7f88c85e5000-7f88c85e6000 ---p 00000000 00:00 0 
+7f88c85e6000-7f88c86e6000 rwxp 00000000 00:00 0                          [stack:8047]
+7f88c86e6000-7f88c86e7000 ---p 00000000 00:00 0 
+7f88c86e7000-7f88c87e7000 rwxp 00000000 00:00 0                          [stack:8046]
+7f88c87e7000-7f88c87e8000 ---p 00000000 00:00 0 
+7f88c87e8000-7f88c88e8000 rwxp 00000000 00:00 0                          [stack:8045]
+7f88c88e8000-7f88c88fb000 rw-p 00000000 00:00 0 
+7f88c88fb000-7f88c89a8000 rw-p 00000000 00:00 0 
+7f88c89a8000-7f88c89b6000 r-xp 00000000 08:13 84804367                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libzip.so
+7f88c89b6000-7f88c8ab8000 ---p 0000e000 08:13 84804367                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libzip.so
+7f88c8ab8000-7f88c8abb000 rw-p 00010000 08:13 84804367                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libzip.so
+7f88c8abb000-7f88c8abc000 rw-p 00000000 00:00 0 
+7f88c8abc000-7f88c8ac7000 r-xp 00000000 08:13 30015575                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f88c8ac7000-7f88c8cc6000 ---p 0000b000 08:13 30015575                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f88c8cc6000-7f88c8cc7000 r--p 0000a000 08:13 30015575                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f88c8cc7000-7f88c8cc8000 rw-p 0000b000 08:13 30015575                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f88c8cc8000-7f88c8cd3000 r-xp 00000000 08:13 30015579                   /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f88c8cd3000-7f88c8ed2000 ---p 0000b000 08:13 30015579                   /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f88c8ed2000-7f88c8ed3000 r--p 0000a000 08:13 30015579                   /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f88c8ed3000-7f88c8ed4000 rw-p 0000b000 08:13 30015579                   /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f88c8ed4000-7f88c8edd000 r-xp 00000000 08:13 30015508                   /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f88c8edd000-7f88c90dc000 ---p 00009000 08:13 30015508                   /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f88c90dc000-7f88c90dd000 r--p 00008000 08:13 30015508                   /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f88c90dd000-7f88c90de000 rw-p 00009000 08:13 30015508                   /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f88c90de000-7f88c90e5000 r-xp 00000000 08:13 84804394                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/native_threads/libhpi.so
+7f88c90e5000-7f88c91e6000 ---p 00007000 08:13 84804394                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/native_threads/libhpi.so
+7f88c91e6000-7f88c91e8000 rw-p 00008000 08:13 84804394                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/native_threads/libhpi.so
+7f88c91e8000-7f88c91e9000 rw-p 00000000 00:00 0 
+7f88c91e9000-7f88c9200000 r-xp 00000000 08:13 30015527                   /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f88c9200000-7f88c93ff000 ---p 00017000 08:13 30015527                   /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f88c93ff000-7f88c9400000 r--p 00016000 08:13 30015527                   /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f88c9400000-7f88c9401000 rw-p 00017000 08:13 30015527                   /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f88c9401000-7f88c9403000 rw-p 00000000 00:00 0 
+7f88c9403000-7f88c942c000 r-xp 00000000 08:13 84804366                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libjava.so
+7f88c942c000-7f88c952b000 ---p 00029000 08:13 84804366                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libjava.so
+7f88c952b000-7f88c9532000 rw-p 00028000 08:13 84804366                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libjava.so
+7f88c9532000-7f88c953f000 r-xp 00000000 08:13 84804380                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libverify.so
+7f88c953f000-7f88c963e000 ---p 0000d000 08:13 84804380                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libverify.so
+7f88c963e000-7f88c9641000 rw-p 0000c000 08:13 84804380                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libverify.so
+7f88c9641000-7f88c9648000 r-xp 00000000 08:13 30015534                   /lib/x86_64-linux-gnu/librt-2.19.so
+7f88c9648000-7f88c9847000 ---p 00007000 08:13 30015534                   /lib/x86_64-linux-gnu/librt-2.19.so
+7f88c9847000-7f88c9848000 r--p 00006000 08:13 30015534                   /lib/x86_64-linux-gnu/librt-2.19.so
+7f88c9848000-7f88c9849000 rw-p 00007000 08:13 30015534                   /lib/x86_64-linux-gnu/librt-2.19.so
+7f88c9849000-7f88ca087000 r-xp 00000000 08:13 84804386                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/server/libjvm.so
+7f88ca087000-7f88ca186000 ---p 0083e000 08:13 84804386                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/server/libjvm.so
+7f88ca186000-7f88ca31a000 rw-p 0083d000 08:13 84804386                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/server/libjvm.so
+7f88ca31a000-7f88ca353000 rw-p 00000000 00:00 0 
+7f88ca353000-7f88ca358000 r-xp 00000000 08:13 90575285                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f88ca358000-7f88ca557000 ---p 00005000 08:13 90575285                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f88ca557000-7f88ca558000 r--p 00004000 08:13 90575285                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f88ca558000-7f88ca559000 rw-p 00005000 08:13 90575285                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f88ca559000-7f88ca562000 r-xp 00000000 08:13 90574511                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f88ca562000-7f88ca761000 ---p 00009000 08:13 90574511                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f88ca761000-7f88ca762000 r--p 00008000 08:13 90574511                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f88ca762000-7f88ca763000 rw-p 00009000 08:13 90574511                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f88ca763000-7f88ca76c000 r-xp 00000000 08:13 90574608                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f88ca76c000-7f88ca96b000 ---p 00009000 08:13 90574608                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f88ca96b000-7f88ca96c000 r--p 00008000 08:13 90574608                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f88ca96c000-7f88ca96d000 rw-p 00009000 08:13 90574608                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f88ca96d000-7f88cac36000 r--p 00000000 08:13 90571326                   /usr/lib/locale/locale-archive
+7f88cac36000-7f88cac37000 ---p 00000000 00:00 0 
+7f88cac37000-7f88cb437000 rwxp 00000000 00:00 0 
+7f88cb437000-7f88cb43c000 r-xp 00000000 08:13 90581900                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f88cb43c000-7f88cb63b000 ---p 00005000 08:13 90581900                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f88cb63b000-7f88cb63c000 r--p 00004000 08:13 90581900                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f88cb63c000-7f88cb63d000 rw-p 00005000 08:13 90581900                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f88cb63d000-7f88cb63f000 r-xp 00000000 08:13 90581897                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f88cb63f000-7f88cb83f000 ---p 00002000 08:13 90581897                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f88cb83f000-7f88cb840000 r--p 00002000 08:13 90581897                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f88cb840000-7f88cb841000 rw-p 00003000 08:13 90581897                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f88cb841000-7f88cb85e000 r-xp 00000000 08:13 90574048                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f88cb85e000-7f88cba5e000 ---p 0001d000 08:13 90574048                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f88cba5e000-7f88cba5f000 r--p 0001d000 08:13 90574048                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f88cba5f000-7f88cba60000 rw-p 0001e000 08:13 90574048                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f88cba60000-7f88cbb65000 r-xp 00000000 08:13 30015559                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f88cbb65000-7f88cbd64000 ---p 00105000 08:13 30015559                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f88cbd64000-7f88cbd65000 r--p 00104000 08:13 30015559                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f88cbd65000-7f88cbd66000 rw-p 00105000 08:13 30015559                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f88cbd66000-7f88cbd77000 r-xp 00000000 08:13 90574055                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f88cbd77000-7f88cbf76000 ---p 00011000 08:13 90574055                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f88cbf76000-7f88cbf77000 r--p 00010000 08:13 90574055                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f88cbf77000-7f88cbf78000 rw-p 00011000 08:13 90574055                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f88cbf78000-7f88cc0a8000 r-xp 00000000 08:13 90572978                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f88cc0a8000-7f88cc2a8000 ---p 00130000 08:13 90572978                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f88cc2a8000-7f88cc2a9000 r--p 00130000 08:13 90572978                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f88cc2a9000-7f88cc2ad000 rw-p 00131000 08:13 90572978                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f88cc2ad000-7f88cc468000 r-xp 00000000 08:13 30015548                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f88cc468000-7f88cc668000 ---p 001bb000 08:13 30015548                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f88cc668000-7f88cc66c000 r--p 001bb000 08:13 30015548                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f88cc66c000-7f88cc66e000 rw-p 001bf000 08:13 30015548                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f88cc66e000-7f88cc673000 rw-p 00000000 00:00 0 
+7f88cc673000-7f88cc68c000 r-xp 00000000 08:13 30015595                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f88cc68c000-7f88cc88b000 ---p 00019000 08:13 30015595                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f88cc88b000-7f88cc88c000 r--p 00018000 08:13 30015595                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f88cc88c000-7f88cc88d000 rw-p 00019000 08:13 30015595                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f88cc88d000-7f88cc891000 rw-p 00000000 00:00 0 
+7f88cc891000-7f88cc894000 r-xp 00000000 08:13 30015591                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f88cc894000-7f88cca93000 ---p 00003000 08:13 30015591                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f88cca93000-7f88cca94000 r--p 00002000 08:13 30015591                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f88cca94000-7f88cca95000 rw-p 00003000 08:13 30015591                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f88cca95000-7f88ccab8000 r-xp 00000000 08:13 30015551                   /lib/x86_64-linux-gnu/ld-2.19.so
+7f88ccab8000-7f88ccaba000 r--s 0001d000 08:13 84804065                   /home/janosch/Tools/Fiji.app/jars/udunits-4.3.18.jar
+7f88ccaba000-7f88ccac8000 r--s 00193000 08:13 84804231                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/ext/j3dutils.jar
+7f88ccb09000-7f88ccb4a000 rw-p 00000000 00:00 0 
+7f88ccb4a000-7f88ccb7f000 r-xp 00000000 08:13 84804414                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libsplashscreen.so
+7f88ccb7f000-7f88ccc7e000 ---p 00035000 08:13 84804414                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libsplashscreen.so
+7f88ccc7e000-7f88ccc89000 rw-p 00034000 08:13 84804414                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/amd64/libsplashscreen.so
+7f88ccc89000-7f88ccc90000 rw-p 00000000 00:00 0 
+7f88ccc90000-7f88ccc91000 r--s 00002000 08:13 84803956                   /home/janosch/Tools/Fiji.app/jars/imagej-ui-awt-0.1.2.jar
+7f88ccc91000-7f88ccc93000 r--s 0000b000 08:13 84803967                   /home/janosch/Tools/Fiji.app/jars/imglib2-meta-2.0.0-beta-26.jar
+7f88ccc93000-7f88ccc95000 r--s 00001000 08:13 85917810                   /home/janosch/Tools/Fiji.app/jars/imagej-2.0.0-rc-15.jar
+7f88ccc95000-7f88ccc97000 r--s 0004c000 08:13 84804232                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/ext/vecmath.jar
+7f88ccc97000-7f88ccca3000 r--s 002c7000 08:13 84804235                   /home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24/jre/lib/ext/j3dcore.jar
+7f88ccca3000-7f88cccab000 rw-s 00000000 08:13 147194106                  /tmp/hsperfdata_janosch/8043
+7f88cccab000-7f88cccac000 rw-p 00000000 00:00 0 
+7f88cccac000-7f88cccad000 ---p 00000000 00:00 0 
+7f88cccad000-7f88cccae000 r--s 00004000 08:13 85263291                   /home/janosch/Tools/Fiji.app/jars/imagej-launcher-3.1.6.jar
+7f88cccae000-7f88cccb5000 r--s 00000000 08:13 90581613                   /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f88cccb5000-7f88cccb7000 rw-p 00000000 00:00 0 
+7f88cccb7000-7f88cccb8000 r--p 00022000 08:13 30015551                   /lib/x86_64-linux-gnu/ld-2.19.so
+7f88cccb8000-7f88cccb9000 rw-p 00023000 08:13 30015551                   /lib/x86_64-linux-gnu/ld-2.19.so
+7f88cccb9000-7f88cccba000 rw-p 00000000 00:00 0 
+7fff230e1000-7fff230e4000 ---p 00000000 00:00 0 
+7fff230e5000-7fff231e1000 rwxp 00000000 00:00 0                          [stack]
+7fff231e1000-7fff231e3000 rw-p 00000000 00:00 0 
+7fff231fe000-7fff23200000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xmx62000m -Dpython.cachedir.skip=true -Dplugins.dir=/home/janosch/Tools/Fiji.app -Xincgc -XX:PermSize=128m 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=/home/janosch/Tools/Fiji.app/java/linux-amd64/jdk1.6.0_24//jre
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+LD_LIBRARY_PATH=/home/janosch/Tools/Fiji.app/lib/linux64:/home/janosch/Tools/Fiji.app/mm/linux64
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x791b30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x791b30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x640ba0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x640ba0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x640ba0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x640ba0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x643780], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x643380], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x643380], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x643380], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x643380], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:jessie/sid
+
+uname:Linux 3.13.0-36-generic #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014 x86_64
+libc:glibc 2.19 NPTL 2.19 
+rlimit: STACK 8192k, CORE 0k, NPROC 514619, NOFILE 4096, AS infinity
+load average:14.50 16.56 14.29
+
+/proc/meminfo:
+MemTotal:       65900608 kB
+MemFree:          258820 kB
+Buffers:            6224 kB
+Cached:           955316 kB
+SwapCached:            0 kB
+Active:         63919288 kB
+Inactive:         881620 kB
+Active(anon):   63841576 kB
+Inactive(anon):    94140 kB
+Active(file):      77712 kB
+Inactive(file):   787480 kB
+Unevictable:          64 kB
+Mlocked:              64 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                64 kB
+Writeback:             0 kB
+AnonPages:      63840160 kB
+Mapped:           201544 kB
+Shmem:             95804 kB
+Slab:             151616 kB
+SReclaimable:      66452 kB
+SUnreclaim:        85164 kB
+KernelStack:        7864 kB
+PageTables:       158620 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    32950304 kB
+Committed_AS:   70077560 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      255988 kB
+VmallocChunk:   34325393916 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:  56182784 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      979156 kB
+DirectMap2M:    63956992 kB
+DirectMap1G:     2097152 kB
+
+
+CPU:total 24 (6 cores per cpu, 2 threads per core) family 6 model 45 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 65900608k(258820k free), swap 0k(0k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (19.1-b02) for linux-amd64 JRE (1.6.0_24-b07), built on Feb  2 2011 16:55:54 by "java_re" with gcc 3.2.2 (SuSE Linux)
+
+time: Tue Oct  7 18:07:41 2014
+elapsed time: 1828 seconds
+

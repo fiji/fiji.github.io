@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 825 &ndash; fiji-compat.jar update (27-Jun-14) breaks jython</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_Plugins bz_bug_825 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;825</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">fiji-compat.jar update (27-Jun-14) breaks jython</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-07-01 02:50:54 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-07-01 02:50:54">
+  <input type="hidden" name="longdesclength" value="1">
+  <input type="hidden" name="id" value="825">
+  <input type="hidden" name="token" value="1492731806-Xev_8S62eXRJyXUsttg4JqcGqSCluAVTHqhICrb9hGY">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="825.html"><b>Bug&nbsp;825</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">fiji-compat.jar update (27-Jun-14) breaks jython</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>fiji-compat.jar update (27-Jun-14) breaks jython
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-07-01 02:50 CDT by <span class="vcard"><span class="fn">michael muniak</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-07-01 02:50 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>0 
+          users
+        <div id="cc_edit_area">
+          <br>
+        </div>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">michael muniak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-01 02:50:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hello. The latest (27-Jun-14) update to jars/fiji-compat.jar causes the following command to fail using jython.  If I replace jars/fiji-compat.jar with the previous version (listed as &quot;98c59472 (UPDATEABLE) 20140626120009 jars/fiji-compat-2.0.0-SNAPSHOT.jar&quot; in bug report interface), it works as expected.  I'm afraid I don't know enough to chase it any further than that.  All other components are up-to-date as of 1-July-14.  Cheers.
+
+<span class="quote">&gt; import os
+&gt; root,dirs,files = os.walk('/').next()</span >
+
+Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;
+  File &quot;C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\os.py&quot;, line 285, in walk
+  File &quot;C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py&quot;, line 270, in isdir
+  File &quot;C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py&quot;, line 270, in isdir
+java.lang.IncompatibleClassChangeError: Found class com.kenai.jffi.InvocationBuffer, but interface was expected
+
+	at com.kenai.jaffl.provider.jffi.AsmRuntime.marshal(AsmRuntime.java:167)
+
+	at org.python.posix.WindowsLibC$jaffl$0.stat$raw(Unknown Source)
+
+	at org.python.posix.WindowsLibC$jaffl$0.stat(Unknown Source)
+
+	at org.python.posix.BaseNativePOSIX.stat(BaseNativePOSIX.java:200)
+
+	at org.python.posix.LazyPOSIX.stat(LazyPOSIX.java:207)
+
+	at org.python.modules.posix.PosixModule$StatFunction.__call__(PosixModule.java:966)
+
+	at ntpath$py.isdir$17(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py:273)
+
+	at ntpath$py.call_function(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py)
+
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:134)
+
+	at org.python.core.PyFunction.__call__(PyFunction.java:317)
+
+	at os$py.walk$5(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\os.py:298)
+
+	at os$py.call_function(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\os.py)
+
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+
+	at org.python.core.PyGenerator.__iternext__(PyGenerator.java:149)
+
+	at org.python.core.PyGenerator.__iternext__(PyGenerator.java:131)
+
+	at org.python.core.PyIterator.next(PyIterator.java:42)
+
+	at org.python.core.PyGenerator.generator_next(PyGenerator.java:81)
+
+	at org.python.core.PyGenerator$generator_next_exposer.__call__(Unknown Source)
+
+	at org.python.core.PyObject.__call__(PyObject.java:375)
+
+	at org.python.pycode._pyx1.f$0(&lt;string&gt;:2)
+
+	at org.python.pycode._pyx1.call_function(&lt;string&gt;)
+
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+
+	at org.python.core.PyCode.call(PyCode.java:18)
+
+	at org.python.core.Py.runCode(Py.java:1261)
+
+	at org.python.core.Py.exec(Py.java:1305)
+
+	at org.python.util.PythonInterpreter.exec(PythonInterpreter.java:206)
+
+	at Jython.Jython_Interpreter.eval(Jython_Interpreter.java:102)
+
+	at common.AbstractInterpreter.execute(AbstractInterpreter.java:659)
+
+	at common.AbstractInterpreter$ExecuteCode.run(AbstractInterpreter.java:559)
+
+
+java.lang.IncompatibleClassChangeError: java.lang.IncompatibleClassChangeError: Found class com.kenai.jffi.InvocationBuffer, but interface was expected
+
+	at org.python.core.PyException.fillInStackTrace(PyException.java:70)
+	at java.lang.Throwable.&lt;init&gt;(Throwable.java:181)
+	at java.lang.Exception.&lt;init&gt;(Exception.java:29)
+	at java.lang.RuntimeException.&lt;init&gt;(RuntimeException.java:32)
+	at org.python.core.PyException.&lt;init&gt;(PyException.java:46)
+	at org.python.core.PyException.&lt;init&gt;(PyException.java:43)
+	at org.python.core.Py.JavaError(Py.java:481)
+	at org.python.core.Py.setException(Py.java:1204)
+	at ntpath$py.isdir$17(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py:273)
+	at ntpath$py.call_function(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:134)
+	at org.python.core.PyFunction.__call__(PyFunction.java:317)
+	at os$py.walk$5(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\os.py:298)
+	at os$py.call_function(C:\Users\MICHAE~1\Fiji.app\jars\jython-2.5.2.jar\Lib\os.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyGenerator.__iternext__(PyGenerator.java:149)
+	at org.python.core.PyGenerator.__iternext__(PyGenerator.java:131)
+	at org.python.core.PyIterator.next(PyIterator.java:42)
+	at org.python.core.PyGenerator.generator_next(PyGenerator.java:81)
+	at org.python.core.PyGenerator$generator_next_exposer.__call__(Unknown Source)
+	at org.python.core.PyObject.__call__(PyObject.java:375)
+	at org.python.pycode._pyx1.f$0(&lt;string&gt;:2)
+	at org.python.pycode._pyx1.call_function(&lt;string&gt;)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyCode.call(PyCode.java:18)
+	at org.python.core.Py.runCode(Py.java:1261)
+	at org.python.core.Py.exec(Py.java:1305)
+	at org.python.util.PythonInterpreter.exec(PythonInterpreter.java:206)
+	at Jython.Jython_Interpreter.eval(Jython_Interpreter.java:102)
+	at common.AbstractInterpreter.execute(AbstractInterpreter.java:659)
+	at common.AbstractInterpreter$ExecuteCode.run(AbstractInterpreter.java:559)
+Caused by: java.lang.IncompatibleClassChangeError: Found class com.kenai.jffi.InvocationBuffer, but interface was expected
+	at com.kenai.jaffl.provider.jffi.AsmRuntime.marshal(AsmRuntime.java:167)
+	at org.python.posix.WindowsLibC$jaffl$0.stat$raw(Unknown Source)
+	at org.python.posix.WindowsLibC$jaffl$0.stat(Unknown Source)
+	at org.python.posix.BaseNativePOSIX.stat(BaseNativePOSIX.java:200)
+	at org.python.posix.LazyPOSIX.stat(LazyPOSIX.java:207)
+	at org.python.modules.posix.PosixModule$StatFunction.__call__(PosixModule.java:966)
+	... 24 more</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

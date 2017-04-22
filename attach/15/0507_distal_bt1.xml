@@ -1,0 +1,1974 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE trakem2_0507 [
+	<!ELEMENT trakem2 (project,t2_layer_set,t2_display)>
+	<!ELEMENT project (0507)>
+	<!ATTLIST project id NMTOKEN #REQUIRED>
+	<!ATTLIST project unuid NMTOKEN #REQUIRED>
+	<!ATTLIST project title NMTOKEN #REQUIRED>
+	<!ATTLIST project preprocessor NMTOKEN #REQUIRED>
+	<!ATTLIST project mipmaps_folder NMTOKEN #REQUIRED>
+	<!ATTLIST project storage_folder NMTOKEN #REQUIRED>
+	<!ELEMENT 0507 (lh)>
+	<!ATTLIST 0507 id NMTOKEN #REQUIRED>
+	<!ATTLIST 0507 expanded NMTOKEN #REQUIRED>
+	<!ELEMENT lh (distal_cluster)>
+	<!ATTLIST lh id NMTOKEN #REQUIRED>
+	<!ATTLIST lh expanded NMTOKEN #REQUIRED>
+	<!ELEMENT distal_cluster (axon, ddt, synapse)>
+	<!ATTLIST distal_cluster id NMTOKEN #REQUIRED>
+	<!ATTLIST distal_cluster expanded NMTOKEN #REQUIRED>
+	<!ELEMENT axon (area_list)>
+	<!ATTLIST axon id NMTOKEN #REQUIRED>
+	<!ATTLIST axon expanded NMTOKEN #REQUIRED>
+	<!ELEMENT area_list EMPTY>
+	<!ATTLIST area_list id NMTOKEN #REQUIRED>
+	<!ATTLIST area_list oid NMTOKEN #REQUIRED>
+	<!ATTLIST area_list expanded NMTOKEN #REQUIRED>
+	<!ELEMENT ddt (area_list)>
+	<!ATTLIST ddt id NMTOKEN #REQUIRED>
+	<!ATTLIST ddt expanded NMTOKEN #REQUIRED>
+	<!ELEMENT synapse (profile_list)>
+	<!ATTLIST synapse id NMTOKEN #REQUIRED>
+	<!ATTLIST synapse expanded NMTOKEN #REQUIRED>
+	<!ELEMENT profile_list (profile)>
+	<!ATTLIST profile_list id NMTOKEN #REQUIRED>
+	<!ATTLIST profile_list oid NMTOKEN #REQUIRED>
+	<!ATTLIST profile_list expanded NMTOKEN #REQUIRED>
+	<!ELEMENT profile EMPTY>
+	<!ATTLIST profile id NMTOKEN #REQUIRED>
+	<!ATTLIST profile oid NMTOKEN #REQUIRED>
+	<!ATTLIST profile expanded NMTOKEN #REQUIRED>
+	<!ELEMENT t2_layer (t2_patch,t2_label,t2_layer_set,t2_profile)>
+	<!ATTLIST t2_layer oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer thickness NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer z NMTOKEN #REQUIRED>
+	<!ELEMENT t2_layer_set (t2_prop,t2_linked_prop,t2_annot,t2_layer,t2_pipe,t2_ball,t2_area_list,t2_calibration,t2_stack,t2_treeline)>
+	<!ATTLIST t2_layer_set oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set layer_width NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set layer_height NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set rot_x NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set rot_y NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set rot_z NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set snapshots_quality NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set color_cues NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set n_layers_color_cue NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set paint_arrows NMTOKEN #REQUIRED>
+	<!ATTLIST t2_layer_set paint_edge_confidence_boxes NMTOKEN #REQUIRED>
+	<!ELEMENT t2_calibration EMPTY>
+	<!ATTLIST t2_calibration pixelWidth NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration pixelHeight NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration pixelDepth NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration xOrigin NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration yOrigin NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration zOrigin NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration info NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration valueUnit NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration timeUnit NMTOKEN #REQUIRED>
+	<!ATTLIST t2_calibration unit NMTOKEN #REQUIRED>
+	<!ELEMENT t2_ball (t2_prop,t2_linked_prop,t2_annot,t2_ball_ob)>
+	<!ATTLIST t2_ball oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball fill NMTOKEN #REQUIRED>
+	<!ELEMENT t2_ball_ob EMPTY>
+	<!ATTLIST t2_ball_ob x NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball_ob y NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball_ob r NMTOKEN #REQUIRED>
+	<!ATTLIST t2_ball_ob layer_id NMTOKEN #REQUIRED>
+	<!ELEMENT t2_label (t2_prop,t2_linked_prop,t2_annot)>
+	<!ATTLIST t2_label oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_label composite NMTOKEN #REQUIRED>
+	<!ELEMENT t2_patch (t2_prop,t2_linked_prop,t2_annot,ict_transform,ict_transform_list)>
+	<!ATTLIST t2_patch oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch file_path NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch original_path NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch type NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch ct NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch o_width NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch o_height NMTOKEN #REQUIRED>
+	<!ATTLIST t2_patch pps NMTOKEN #REQUIRED>
+	<!ELEMENT t2_pipe (t2_prop,t2_linked_prop,t2_annot)>
+	<!ATTLIST t2_pipe oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe d NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe p_width NMTOKEN #REQUIRED>
+	<!ATTLIST t2_pipe layer_ids NMTOKEN #REQUIRED>
+	<!ELEMENT t2_polyline (t2_prop,t2_linked_prop,t2_annot)>
+	<!ATTLIST t2_polyline oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_polyline d NMTOKEN #REQUIRED>
+	<!ELEMENT t2_profile (t2_prop,t2_linked_prop,t2_annot)>
+	<!ATTLIST t2_profile oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_profile d NMTOKEN #REQUIRED>
+	<!ELEMENT t2_area_list (t2_prop,t2_linked_prop,t2_annot,t2_area)>
+	<!ATTLIST t2_area_list oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_area_list fill_paint NMTOKEN #REQUIRED>
+	<!ELEMENT t2_area (t2_path)>
+	<!ATTLIST t2_area layer_id NMTOKEN #REQUIRED>
+	<!ELEMENT t2_path EMPTY>
+	<!ATTLIST t2_path d NMTOKEN #REQUIRED>
+	<!ELEMENT t2_dissector (t2_prop,t2_linked_prop,t2_annot,t2_dd_item)>
+	<!ATTLIST t2_dissector oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dissector composite NMTOKEN #REQUIRED>
+	<!ELEMENT t2_dd_item EMPTY>
+	<!ATTLIST t2_dd_item radius NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dd_item tag NMTOKEN #REQUIRED>
+	<!ATTLIST t2_dd_item points NMTOKEN #REQUIRED>
+	<!ELEMENT t2_stack (t2_prop,t2_linked_prop,t2_annot,(iict_transform|iict_transform_list)?)>
+	<!ATTLIST t2_stack oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack composite NMTOKEN #REQUIRED>
+	<!ATTLIST t2_stack file_path CDATA #REQUIRED>
+	<!ATTLIST t2_stack depth CDATA #REQUIRED>
+	<!ELEMENT t2_tag EMPTY>
+	<!ATTLIST t2_tag name NMTOKEN #REQUIRED>
+	<!ATTLIST t2_tag key NMTOKEN #REQUIRED>
+	<!ELEMENT t2_node (t2_area*,t2_tag*)>
+	<!ATTLIST t2_node x NMTOKEN #REQUIRED>
+	<!ATTLIST t2_node y NMTOKEN #REQUIRED>
+	<!ATTLIST t2_node lid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_node c NMTOKEN #REQUIRED>
+	<!ATTLIST t2_node r NMTOKEN #IMPLIED>
+	<!ELEMENT t2_treeline (t2_node*,t2_prop,t2_linked_prop,t2_annot)>
+	<!ATTLIST t2_treeline oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_treeline composite NMTOKEN #REQUIRED>
+	<!ELEMENT t2_areatree (t2_node*,t2_prop,t2_linked_prop,t2_annot)>
+	<!ATTLIST t2_areatree oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_areatree composite NMTOKEN #REQUIRED>
+	<!ELEMENT t2_connector (t2_node*,t2_prop,t2_linked_prop,t2_annot)>
+	<!ATTLIST t2_connector oid NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector transform NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector style NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector locked NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector visible NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector title NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector links NMTOKEN #REQUIRED>
+	<!ATTLIST t2_connector composite NMTOKEN #REQUIRED>
+	<!ELEMENT t2_prop EMPTY>
+	<!ATTLIST t2_prop key NMTOKEN #REQUIRED>
+	<!ATTLIST t2_prop value NMTOKEN #REQUIRED>
+	<!ELEMENT t2_linked_prop EMPTY>
+	<!ATTLIST t2_linked_prop target_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_linked_prop key NMTOKEN #REQUIRED>
+	<!ATTLIST t2_linked_prop value NMTOKEN #REQUIRED>
+	<!ELEMENT t2_annot EMPTY>
+	<!ELEMENT t2_display EMPTY>
+	<!ATTLIST t2_display id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display layer_id NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display x NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display y NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display magnification NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display srcrect_x NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display srcrect_y NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display srcrect_width NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display srcrect_height NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display scroll_step NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display c_alphas NMTOKEN #REQUIRED>
+	<!ATTLIST t2_display c_alphas_state NMTOKEN #REQUIRED>
+	<!ELEMENT ict_transform EMPTY>
+	<!ATTLIST ict_transform class CDATA #REQUIRED>
+	<!ATTLIST ict_transform data CDATA #REQUIRED>
+	<!ELEMENT iict_transform EMPTY>
+	<!ATTLIST iict_transform class CDATA #REQUIRED>
+	<!ATTLIST iict_transform data CDATA #REQUIRED>
+	<!ELEMENT ict_transform_list (ict_transform|iict_transform)*>
+	<!ELEMENT iict_transform_list (iict_transform*)>
+] >
+
+<trakem2>
+	<project 
+		id="0"
+		title="Project"
+		unuid="1274427919156.1166511918.1249385082"
+		mipmaps_folder="trakem2.1274427919156.1166511918.1249385082/trakem2.mipmaps/"
+		storage_folder=""
+		mipmaps_format="0"
+	>
+	</project>
+	<t2_layer_set
+		oid="3"
+		width="20.0"
+		height="20.0"
+		transform="matrix(1.0,0.0,0.0,1.0,0.0,0.0)"
+		title="Top Level"
+		links=""
+		layer_width="3362.0"
+		layer_height="4071.0"
+		rot_x="0.0"
+		rot_y="0.0"
+		rot_z="0.0"
+		snapshots_quality="true"
+		snapshots_mode="Full"
+		color_cues="true"
+		n_layers_color_cue="-1"
+		paint_arrows="true"
+		paint_edge_confidence_boxes="true"
+	>
+		<t2_calibration
+			pixelWidth="1.0"
+			pixelHeight="1.0"
+			pixelDepth="1.0"
+			xOrigin="0.0"
+			yOrigin="0.0"
+			zOrigin="0.0"
+			info="null"
+			valueUnit="Gray Value"
+			timeUnit="sec"
+			unit="pixel"
+		/>
+		<t2_layer oid="5"
+			 thickness="1.0"
+			 z="0.0"
+			 title=""
+		>
+			<t2_patch
+				oid="49"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(1.0,0.0,-0.0,1.0,849.0,2058.0)"
+				title="bt1 box1 j4-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j4-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="17"
+			 thickness="1.0"
+			 z="1.0"
+			 title=""
+		>
+			<t2_patch
+				oid="50"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9999558925628662,0.009390206076204777,-0.009390206076204777,0.9999558925628662,874.9194755554199,1987.6911010742188)"
+				title="bt1 box1 j4-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j4-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="19"
+			 thickness="1.0"
+			 z="2.0"
+			 title=""
+		>
+			<t2_patch
+				oid="47"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9983916878700256,0.05669235438108444,-0.05669235438108444,0.9983916878700256,895.9970054626465,2005.3812255859375)"
+				title="bt1 box1 j4-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j4-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="21"
+			 thickness="1.0"
+			 z="3.0"
+			 title=""
+		>
+			<t2_patch
+				oid="51"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9982256889343262,0.059543903917074203,-0.059543903917074203,0.9982256889343262,910.2269744873047,1937.615234375)"
+				title="bt1 box1 j4-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j4-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="23"
+			 thickness="1.0"
+			 z="4.0"
+			 title=""
+		>
+			<t2_patch
+				oid="52"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9991620182991028,0.040930502116680145,-0.040930502116680145,0.9991620182991028,921.4705352783203,1909.1678771972656)"
+				title="bt1 box1 j4-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j4-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="25"
+			 thickness="1.0"
+			 z="5.0"
+			 title=""
+		>
+			<t2_patch
+				oid="57"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.2024403065443039,-0.9792945981025696,0.9792945981025696,-0.2024403065443039,1459.3673095703125,3849.9615478515625)"
+				title="bt1 box1 j5-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j5-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="27"
+			 thickness="1.0"
+			 z="6.0"
+			 title=""
+		>
+			<t2_patch
+				oid="74"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.060261137783527374,-0.9981826543807983,0.9981826543807983,-0.060261137783527374,1345.6884765625,3754.9375)"
+				title="bt1 box1 j5-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j5-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="29"
+			 thickness="1.0"
+			 z="7.0"
+			 title=""
+		>
+			<t2_patch
+				oid="73"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.06555084139108658,-0.9978492856025696,0.9978492856025696,-0.06555084139108658,1248.425048828125,3639.70654296875)"
+				title="bt1 box1 j5-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j5-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="31"
+			 thickness="1.0"
+			 z="8.0"
+			 title=""
+		>
+			<t2_patch
+				oid="72"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.0623687319457531,-0.9980531334877014,0.9980531334877014,-0.0623687319457531,1274.749755859375,3768.45556640625)"
+				title="bt1 box1 j5-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j5-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="33"
+			 thickness="1.0"
+			 z="9.0"
+			 title=""
+		>
+			<t2_patch
+				oid="76"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.0702701061964035,-0.9975279569625854,0.9975279569625854,-0.0702701061964035,1303.8334350585938,3890.3475341796875)"
+				title="bt1 box1 j5-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j5-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="35"
+			 thickness="1.0"
+			 z="10.0"
+			 title=""
+		>
+			<t2_patch
+				oid="62"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.08547280728816986,-0.9963405132293701,0.9963405132293701,-0.08547280728816986,1404.8661499023438,3774.4937744140625)"
+				title="bt1 box1 j5-6.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j5-6.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="37"
+			 thickness="1.0"
+			 z="11.0"
+			 title=""
+		>
+			<t2_patch
+				oid="79"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.12957294285297394,-0.9915698766708374,0.9915698766708374,-0.12957294285297394,1417.1764526367188,3951.29443359375)"
+				title="bt1 box1 j5-7.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 j5-7.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="39"
+			 thickness="1.0"
+			 z="12.0"
+			 title=""
+		>
+			<t2_patch
+				oid="75"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9277476668357849,0.37320810556411743,-0.37320810556411743,0.9277476668357849,1503.8212890625,1637.461181640625)"
+				title="bt1 box1 k1-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k1-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="41"
+			 thickness="1.0"
+			 z="13.0"
+			 title=""
+		>
+			<t2_patch
+				oid="81"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9383854269981384,0.3455905020236969,-0.3455905020236969,0.9383854269981384,1376.1505126953125,1825.3998718261719)"
+				title="bt1 box1 k1-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k1-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="43"
+			 thickness="1.0"
+			 z="14.0"
+			 title=""
+		>
+			<t2_patch
+				oid="82"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.932107150554657,0.3621825873851776,-0.3621825873851776,0.932107150554657,1379.6851806640625,1782.4022521972656)"
+				title="bt1 box1 k1-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k1-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="45"
+			 thickness="1.0"
+			 z="15.0"
+			 title=""
+		>
+			<t2_patch
+				oid="77"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9312372207641602,0.36441364884376526,-0.36441364884376526,0.9312372207641602,1370.0817260742188,1784.1668701171875)"
+				title="bt1 box1 k1-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k1-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="48"
+			 thickness="1.0"
+			 z="16.0"
+			 title=""
+		>
+			<t2_patch
+				oid="78"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9260030388832092,0.3775159418582916,-0.3775159418582916,0.9260030388832092,1428.2476806640625,1861.1885375976562)"
+				title="bt1 box1 k1-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k1-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="54"
+			 thickness="1.0"
+			 z="17.0"
+			 title=""
+		>
+			<t2_patch
+				oid="84"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.9456229209899902,0.3252648711204529,-0.3252648711204529,0.9456229209899902,1378.4146728515625,1865.3025207519531)"
+				title="bt1 box1 k1-6.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k1-6.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="56"
+			 thickness="1.0"
+			 z="18.0"
+			 title=""
+		>
+			<t2_patch
+				oid="80"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.09689953178167343,-0.9952942132949829,0.9952942132949829,-0.09689953178167343,1535.7820434570312,3853.3052978515625)"
+				title="bt1 box1 k2-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k2-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="59"
+			 thickness="1.0"
+			 z="19.0"
+			 title=""
+		>
+			<t2_patch
+				oid="87"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.1471388041973114,-0.989115834236145,0.989115834236145,-0.1471388041973114,1576.4066162109375,3957.1221923828125)"
+				title="bt1 box1 k2-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k2-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="61"
+			 thickness="1.0"
+			 z="20.0"
+			 title=""
+		>
+			<t2_patch
+				oid="88"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.16486042737960815,-0.9863169193267822,0.9863169193267822,-0.16486042737960815,1622.2194213867188,3938.73291015625)"
+				title="bt1 box1 k2-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k2-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="64"
+			 thickness="1.0"
+			 z="21.0"
+			 title=""
+		>
+			<t2_patch
+				oid="83"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.18047665059566498,-0.9835793375968933,0.9835793375968933,-0.18047665059566498,1602.5811767578125,3965.7637939453125)"
+				title="bt1 box1 k2-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k2-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="66"
+			 thickness="1.0"
+			 z="22.0"
+			 title=""
+		>
+			<t2_patch
+				oid="86"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.19081702828407288,-0.9816256165504456,0.9816256165504456,-0.19081702828407288,1625.6143798828125,4009.086669921875)"
+				title="bt1 box1 k2-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k2-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="68"
+			 thickness="1.0"
+			 z="23.0"
+			 title=""
+		>
+			<t2_patch
+				oid="85"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.2349381446838379,-0.9720103740692139,0.9720103740692139,-0.2349381446838379,1702.14794921875,3936.1497802734375)"
+				title="bt1 box1 k2-6.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k2-6.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="70"
+			 thickness="1.0"
+			 z="24.0"
+			 title=""
+		>
+			<t2_patch
+				oid="108"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8537629842758179,-0.5206617712974548,0.5206617712974548,-0.8537629842758179,2416.8692626953125,2292.3306579589844)"
+				title="bt1 box1 k3-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k3-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="109"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.2945280373096466,0.9556428790092468,-0.9556428790092468,0.2945280373096466,2290.977783203125,1658.1377563476562)"
+				title="bt1 box1 k3-1a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k3-1a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="89"
+			 thickness="1.0"
+			 z="25.0"
+			 title=""
+		>
+			<t2_patch
+				oid="110"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8432610034942627,-0.537504255771637,0.537504255771637,-0.8432610034942627,2148.109375,2209.476837158203)"
+				title="bt1 box1 k3-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k3-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="115"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.27670955657958984,0.9609535932540894,-0.9609535932540894,0.27670955657958984,2321.610107421875,1628.4047546386719)"
+				title="bt1 box1 k3-2a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k3-2a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="91"
+			 thickness="1.0"
+			 z="26.0"
+			 title=""
+		>
+			<t2_patch
+				oid="114"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.28600624203681946,0.958227813243866,-0.958227813243866,0.28600624203681946,2389.34326171875,1674.2807006835938)"
+				title="bt1 box1 k3-3a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k3-3a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="113"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8771886229515076,-0.48014602065086365,0.48014602065086365,-0.8771886229515076,2247.8475341796875,2133.950469970703)"
+				title="bt1 box1 k3-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k3-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="93"
+			 thickness="1.0"
+			 z="27.0"
+			 title=""
+		>
+			<t2_patch
+				oid="117"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.10369117558002472,-0.994609534740448,0.994609534740448,0.10369117558002472,1220.9080810546875,3550.07177734375)"
+				title="bt1 box1 k4-1a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-1a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="122"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.33755069971084595,0.9413073658943176,-0.9413073658943176,0.33755069971084595,2323.2353515625,1646.8707275390625)"
+				title="bt1 box1 k4-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="95"
+			 thickness="1.0"
+			 z="28.0"
+			 title=""
+		>
+			<t2_patch
+				oid="116"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.34165093302726746,0.9398269057273865,-0.9398269057273865,0.34165093302726746,2279.63671875,1719.1687622070312)"
+				title="bt1 box1 k4-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="124"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.0845593735575676,-0.9964184165000916,0.9964184165000916,0.0845593735575676,1446.3870239257812,3516.213623046875)"
+				title="bt1 box1 k4-2a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-2a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="97"
+			 thickness="1.0"
+			 z="29.0"
+			 title=""
+		>
+			<t2_patch
+				oid="123"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3712444603443146,0.9285351634025574,-0.9285351634025574,0.3712444603443146,2237.668701171875,1659.8978881835938)"
+				title="bt1 box1 k4-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="126"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.04773392900824547,-0.9988600611686707,0.9988600611686707,0.04773392900824547,1371.2466430664062,3539.6417236328125)"
+				title="bt1 box1 k4-3a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-3a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="99"
+			 thickness="1.0"
+			 z="30.0"
+			 title=""
+		>
+			<t2_patch
+				oid="120"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.08342930674552917,-0.9965137243270874,0.9965137243270874,0.08342930674552917,1380.248046875,3541.42138671875)"
+				title="bt1 box1 k4-4a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-4a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="125"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3291177451610565,0.944288969039917,-0.944288969039917,0.3291177451610565,2262.7236328125,1675.1376953125)"
+				title="bt1 box1 k4-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="101"
+			 thickness="1.0"
+			 z="31.0"
+			 title=""
+		>
+			<t2_patch
+				oid="127"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3358505666255951,0.9419152736663818,-0.9419152736663818,0.3358505666255951,2246.1171875,1734.5820007324219)"
+				title="bt1 box1 k4-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="129"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.059051986783742905,-0.9982549548149109,0.9982549548149109,0.059051986783742905,1530.8671264648438,3571.8582763671875)"
+				title="bt1 box1 k4-5a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k4-5a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="103"
+			 thickness="1.0"
+			 z="32.0"
+			 title=""
+		>
+			<t2_patch
+				oid="128"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.18362562358379364,-0.9829962253570557,0.9829962253570557,-0.18362562358379364,1749.320556640625,3689.7789306640625)"
+				title="bt1 box1 k5-1a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-1a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="133"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.38468557596206665,-0.923047661781311,0.923047661781311,0.38468557596206665,889.7631225585938,3451.69921875)"
+				title="bt1 box1 k5-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="105"
+			 thickness="1.0"
+			 z="33.0"
+			 title=""
+		>
+			<t2_patch
+				oid="132"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.2011985182762146,-0.9795504808425903,0.9795504808425903,-0.2011985182762146,1735.4102783203125,3750.7625732421875)"
+				title="bt1 box1 k5-2a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-2a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="134"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.37143343687057495,-0.9284595847129822,0.9284595847129822,0.37143343687057495,818.6235961914062,3464.390380859375)"
+				title="bt1 box1 k5-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="107"
+			 thickness="1.0"
+			 z="34.0"
+			 title=""
+		>
+			<t2_patch
+				oid="131"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3717476427555084,-0.9283338189125061,0.9283338189125061,0.3717476427555084,833.6857299804688,3432.8502197265625)"
+				title="bt1 box1 k5-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="130"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.1977003812789917,-0.9802624583244324,0.9802624583244324,-0.1977003812789917,1742.8564453125,3709.2562255859375)"
+				title="bt1 box1 k5-3a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-3a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="112"
+			 thickness="1.0"
+			 z="35.0"
+			 title=""
+		>
+			<t2_patch
+				oid="135"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3299514949321747,-0.9439979195594788,0.9439979195594788,0.3299514949321747,907.6807250976562,3485.1005859375)"
+				title="bt1 box1 k5-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="136"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.24482804536819458,-0.9695665240287781,0.9695665240287781,-0.24482804536819458,1755.6117553710938,3538.789306640625)"
+				title="bt1 box1 k5-4a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-4a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="119"
+			 thickness="1.0"
+			 z="36.0"
+			 title=""
+		>
+			<t2_patch
+				oid="139"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3284708857536316,-0.9445140957832336,0.9445140957832336,0.3284708857536316,932.7163696289062,3477.5850830078125)"
+				title="bt1 box1 k5-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="140"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.24461114406585693,-0.9696212410926819,0.9696212410926819,-0.24461114406585693,1743.7177734375,3508.191162109375)"
+				title="bt1 box1 k5-5a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-5a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="137"
+			 thickness="1.0"
+			 z="37.0"
+			 title=""
+		>
+			<t2_patch
+				oid="144"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.2663218080997467,-0.963884174823761,0.963884174823761,-0.2663218080997467,1855.34521484375,3588.3311767578125)"
+				title="bt1 box1 k5-6a.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-6a.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+			<t2_patch
+				oid="145"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3126709759235382,-0.949861466884613,0.949861466884613,0.3126709759235382,884.7564086914062,3479.614501953125)"
+				title="bt1 box1 k5-6.bmp"
+				links=""
+				type="0"
+				file_path="bt1 box1 k5-6.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="141"
+			 thickness="1.0"
+			 z="38.0"
+			 title=""
+		>
+			<t2_patch
+				oid="146"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.9112867116928101,0.4117724895477295,-0.4117724895477295,-0.9112867116928101,2574.184814453125,2777.39208984375)"
+				title="bt1 bt2 box1 l1-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l1-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="143"
+			 thickness="1.0"
+			 z="39.0"
+			 title=""
+		>
+			<t2_patch
+				oid="159"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.9002220034599304,0.43543118238449097,-0.43543118238449097,-0.9002220034599304,2739.685546875,2746.013916015625)"
+				title="bt1 bt2 box1 l1-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l1-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="148"
+			 thickness="1.0"
+			 z="40.0"
+			 title=""
+		>
+			<t2_patch
+				oid="160"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8444259166717529,0.5356723070144653,-0.5356723070144653,-0.8444259166717529,2559.4337158203125,2299.6522827148438)"
+				title="bt1 bt2 box1 l2-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l2-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="150"
+			 thickness="1.0"
+			 z="41.0"
+			 title=""
+		>
+			<t2_patch
+				oid="162"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8318174481391907,0.5550493597984314,-0.5550493597984314,-0.8318174481391907,2408.4652099609375,2222.972442626953)"
+				title="bt1 bt2 box1 l2-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l2-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="152"
+			 thickness="1.0"
+			 z="42.0"
+			 title=""
+		>
+			<t2_patch
+				oid="165"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8270595073699951,0.5621143579483032,-0.5621143579483032,-0.8270595073699951,2616.353271484375,2476.0866088867188)"
+				title="bt1 bt2 box1 l2-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l2-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="154"
+			 thickness="1.0"
+			 z="43.0"
+			 title=""
+		>
+			<t2_patch
+				oid="164"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.7945674061775208,0.6071759462356567,-0.6071759462356567,-0.7945674061775208,2632.395751953125,2509.8250732421875)"
+				title="bt1 bt2 box1 l2-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l2-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="156"
+			 thickness="1.0"
+			 z="44.0"
+			 title=""
+		>
+			<t2_patch
+				oid="161"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8132699131965637,0.5818866491317749,-0.5818866491317749,-0.8132699131965637,2516.59912109375,2454.0603637695312)"
+				title="bt1 bt2 box1 l2-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l2-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="158"
+			 thickness="1.0"
+			 z="45.0"
+			 title=""
+		>
+			<t2_patch
+				oid="172"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.798289954662323,0.6022732853889465,-0.6022732853889465,-0.798289954662323,2428.21875,2435.1852111816406)"
+				title="bt1 bt2 box1 l2-7.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l2-7.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="166"
+			 thickness="1.0"
+			 z="46.0"
+			 title=""
+		>
+			<t2_patch
+				oid="173"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.922021210193634,-0.3871392011642456,0.3871392011642456,-0.922021210193634,2045.208251953125,3515.5767822265625)"
+				title="bt1 bt2 box1 l3-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l3-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="168"
+			 thickness="1.0"
+			 z="47.0"
+			 title=""
+		>
+			<t2_patch
+				oid="174"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.9333530068397522,-0.3589598536491394,0.3589598536491394,-0.9333530068397522,2082.869384765625,3475.4320068359375)"
+				title="bt1 bt2 box1 l3-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l3-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="170"
+			 thickness="1.0"
+			 z="48.0"
+			 title=""
+		>
+			<t2_patch
+				oid="178"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.9389350414276123,-0.34409430623054504,0.34409430623054504,-0.9389350414276123,2122.7095947265625,3511.7637939453125)"
+				title="bt1 bt2 box1 l3-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l3-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="175"
+			 thickness="1.0"
+			 z="49.0"
+			 title=""
+		>
+			<t2_patch
+				oid="179"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.9429147243499756,-0.33303433656692505,0.33303433656692505,-0.9429147243499756,2153.175048828125,3563.57275390625)"
+				title="bt1 bt2 box1 l3-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l3-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="177"
+			 thickness="1.0"
+			 z="50.0"
+			 title=""
+		>
+			<t2_patch
+				oid="182"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.828512966632843,0.5599698424339294,-0.5599698424339294,-0.828512966632843,2551.80517578125,2383.9130249023438)"
+				title="bt1 bt2 box1 l4-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l4-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="181"
+			 thickness="1.0"
+			 z="51.0"
+			 title=""
+		>
+			<t2_patch
+				oid="187"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8327473402023315,0.5536532402038574,-0.5536532402038574,-0.8327473402023315,2665.7728271484375,2506.429901123047)"
+				title="bt1 bt2 box1 l4-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l4-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="184"
+			 thickness="1.0"
+			 z="52.0"
+			 title=""
+		>
+			<t2_patch
+				oid="190"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8407365083694458,0.5414445400238037,-0.5414445400238037,-0.8407365083694458,2576.20703125,2486.90087890625)"
+				title="bt1 bt2 box1 l4-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l4-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="186"
+			 thickness="1.0"
+			 z="53.0"
+			 title=""
+		>
+			<t2_patch
+				oid="193"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8296408653259277,0.5582975149154663,-0.5582975149154663,-0.8296408653259277,2572.1129150390625,2430.8391723632812)"
+				title="bt1 bt2 box1 l4-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l4-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="189"
+			 thickness="1.0"
+			 z="54.0"
+			 title=""
+		>
+			<t2_patch
+				oid="195"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.8015038371086121,0.5979896783828735,-0.5979896783828735,-0.8015038371086121,2643.44775390625,2436.628204345703)"
+				title="bt1 bt2 box1 l4-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l4-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="192"
+			 thickness="1.0"
+			 z="55.0"
+			 title=""
+		>
+			<t2_patch
+				oid="202"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-0.803894579410553,0.594771683216095,-0.594771683216095,-0.803894579410553,2633.2481689453125,2317.8060607910156)"
+				title="bt1 bt2 box1 l4-6.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l4-6.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="196"
+			 thickness="1.0"
+			 z="56.0"
+			 title=""
+		>
+			<t2_patch
+				oid="203"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.2439209520816803,0.9697951078414917,-0.9697951078414917,0.2439209520816803,1810.344482421875,1290.5728149414062)"
+				title="bt1 bt2 box1 l5-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l5-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="198"
+			 thickness="1.0"
+			 z="57.0"
+			 title=""
+		>
+			<t2_patch
+				oid="204"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.2546376883983612,0.9670364856719971,-0.9670364856719971,0.2546376883983612,1865.9521484375,1458.2385864257812)"
+				title="bt1 bt2 box1 l5-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l5-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="200"
+			 thickness="1.0"
+			 z="58.0"
+			 title=""
+		>
+			<t2_patch
+				oid="211"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.2938894033432007,0.9558394551277161,-0.9558394551277161,0.2938894033432007,1926.48046875,1456.4771118164062)"
+				title="bt1 bt2 box1 l5-3.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l5-3.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="205"
+			 thickness="1.0"
+			 z="59.0"
+			 title=""
+		>
+			<t2_patch
+				oid="212"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.29923978447914124,0.954177975654602,-0.954177975654602,0.29923978447914124,1904.6810302734375,1510.638671875)"
+				title="bt1 bt2 box1 l5-4.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l5-4.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="207"
+			 thickness="1.0"
+			 z="60.0"
+			 title=""
+		>
+			<t2_patch
+				oid="213"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.3152603507041931,0.9490052461624146,-0.9490052461624146,0.3152603507041931,1716.59130859375,1406.7051391601562)"
+				title="bt1 bt2 box1 l5-5.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l5-5.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="209"
+			 thickness="1.0"
+			 z="61.0"
+			 title=""
+		>
+			<t2_patch
+				oid="216"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.32469239830970764,0.9458196759223938,-0.9458196759223938,0.32469239830970764,1836.71142578125,1407.20849609375)"
+				title="bt1 bt2 box1 l5-6.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l5-6.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="214"
+			 thickness="1.0"
+			 z="62.0"
+			 title=""
+		>
+			<t2_patch
+				oid="221"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.30494096875190735,0.9523712396621704,-0.9523712396621704,0.30494096875190735,1869.4064331054688,1386.3115234375)"
+				title="bt1 bt2 box1 l5-7.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 l5-7.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="217"
+			 thickness="1.0"
+			 z="63.0"
+			 title=""
+		>
+			<t2_patch
+				oid="222"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(0.023816438391804695,0.9997164011001587,-0.9997164011001587,0.023816438391804695,1979.220947265625,1470.3533935546875)"
+				title="bt1 bt2 box1 m1-1.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 m1-1.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+		<t2_layer oid="219"
+			 thickness="1.0"
+			 z="64.0"
+			 title=""
+		>
+			<t2_patch
+				oid="223"
+				width="2004.0"
+				height="1336.0"
+				transform="matrix(-3.7965324736433104E-5,1.0,-1.0,-3.7965324736433104E-5,2036.1298828125,1596.3436584472656)"
+				title="bt1 bt2 box1 m1-2.bmp"
+				links=""
+				type="0"
+				file_path="bt1 bt2 box1 m1-2.bmp"
+				style="fill-opacity:1.0;stroke:#ff0000;"
+				o_width="2004"
+				o_height="1336"
+				min="0.0"
+				max="255.0"
+			>
+			</t2_patch>
+		</t2_layer>
+</t2_layer_set>
+	<t2_display id="7"
+		layer_id="5"
+		c_alphas="-1"
+		c_alphas_state="-1"
+		x="1596"
+		y="-3"
+		magnification="0.3896731547125674"
+		srcrect_x="-7"
+		srcrect_y="521"
+		srcrect_width="3362"
+		srcrect_height="3018"
+		scroll_step="1"
+	/>
+</trakem2>

@@ -1,0 +1,8 @@
+setBatchMode(true);
+run("Blobs (25K)");
+setAutoThreshold("Default");
+run("Convert to Mask");
+setBatchMode(false);
+run("Analyze Particles...", "circularity=0.50-1.00 exclude clear add");
+roiManager("Show All with labels");
+roiManager("Show All");

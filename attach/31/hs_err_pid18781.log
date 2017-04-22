@@ -1,0 +1,649 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (vectornode.cpp:103), pid=18781, tid=140356547311376
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_20-b02
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (16.3-b01 mixed mode linux-amd64 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fa748003800):  JavaThread "CompilerThread0" daemon [_thread_in_native, id=18801, stack(0x00007fa74e14f000,0x00007fa74e250000)]
+
+Stack: [0x00007fa74e14f000,0x00007fa74e250000],  sp=0x00007fa74e248f10,  free space=3e70000000000000018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x70f420]
+V  [libjvm.so+0x2e4732]
+V  [libjvm.so+0x6f9eb6]
+V  [libjvm.so+0x68ed1a]
+V  [libjvm.so+0x68ea4c]
+V  [libjvm.so+0x689208]
+V  [libjvm.so+0x554fbe]
+V  [libjvm.so+0x2a72f0]
+V  [libjvm.so+0x2a3d43]
+V  [libjvm.so+0x2367b6]
+V  [libjvm.so+0x2acd88]
+V  [libjvm.so+0x2ac716]
+V  [libjvm.so+0x6d3909]
+V  [libjvm.so+0x6cd3d2]
+V  [libjvm.so+0x5db02f]
+
+
+Current CompileTask:
+C2: 16%     voltex.VoltexVolume$VoltexByteLoader.loadZ(I[B)V @ 27 (71 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fa748816000 JavaThread "Thread-3" [_thread_in_Java, id=18843, stack(0x00007fa73dd64000,0x00007fa73de65000)]
+  0x00007fa740278800 JavaThread "J3D-InputDeviceScheduler-1" [_thread_blocked, id=18842, stack(0x00007fa73de65000,0x00007fa73df66000)]
+  0x00007fa740276800 JavaThread "J3D-SoundSchedulerUpdateThread-1" [_thread_blocked, id=18841, stack(0x00007fa73df66000,0x00007fa73e067000)]
+  0x00007fa740274800 JavaThread "J3D-RenderStructureUpdateThread-1" [_thread_blocked, id=18840, stack(0x00007fa73e067000,0x00007fa73e168000)]
+  0x00007fa740272800 JavaThread "J3D-BehaviorScheduler-1" [_thread_blocked, id=18839, stack(0x00007fa73e168000,0x00007fa73e269000)]
+  0x00007fa740270800 JavaThread "J3D-TransformStructureUpdateThread-1" [_thread_blocked, id=18838, stack(0x00007fa73e269000,0x00007fa73e36a000)]
+  0x00007fa74026f000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-1" [_thread_blocked, id=18837, stack(0x00007fa7440c8000,0x00007fa7441c9000)]
+  0x00007fa740463000 JavaThread "J3D-SoundStructureUpdateThread-1" [_thread_blocked, id=18836, stack(0x00007fa7441c9000,0x00007fa7442ca000)]
+  0x00007fa7402cd800 JavaThread "J3D-GeometryStructureUpdateThread-1" [_thread_blocked, id=18835, stack(0x00007fa7442ca000,0x00007fa7443cb000)]
+  0x00007fa7402cc800 JavaThread "J3D-BehaviorStructureUpdateThread-1" [_thread_blocked, id=18834, stack(0x00007fa7443cb000,0x00007fa7444cc000)]
+  0x00007fa740df9800 JavaThread "pool-1-thread-1" [_thread_blocked, id=18833, stack(0x00007fa7444cc000,0x00007fa7445cd000)]
+  0x00007fa7490aa000 JavaThread "3D-V-IMP-updater" daemon [_thread_blocked, id=18832, stack(0x00007fa7445cd000,0x00007fa7446ce000)]
+  0x00007fa748e7d000 JavaThread "Image Fetcher 2" daemon [_thread_blocked, id=18831, stack(0x00007fa7446ce000,0x00007fa7447cf000)]
+  0x00007fa7484bd000 JavaThread "Image Fetcher 1" daemon [_thread_blocked, id=18830, stack(0x00007fa7447cf000,0x00007fa7448d0000)]
+  0x00007fa7484bc000 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=18829, stack(0x00007fa7448d0000,0x00007fa7449d1000)]
+  0x00007fa7402c7000 JavaThread "J3D-Renderer-1" [_thread_blocked, id=18828, stack(0x00007fa746d73000,0x00007fa746e74000)]
+  0x00007fa740297800 JavaThread "J3D-MasterControl-1" [_thread_blocked, id=18827, stack(0x00007fa746e74000,0x00007fa746f75000)]
+  0x00007fa740290800 JavaThread "J3D-NotificationThread" [_thread_blocked, id=18826, stack(0x00007fa746f75000,0x00007fa747076000)]
+  0x00007fa740dff800 JavaThread "J3D-TimerThread" [_thread_blocked, id=18825, stack(0x00007fa747076000,0x00007fa747177000)]
+  0x00007fa740467800 JavaThread "J3D-RenderingAttributesStructureUpdateThread" [_thread_blocked, id=18824, stack(0x00007fa747177000,0x00007fa747278000)]
+  0x00007fa74034f800 JavaThread "zSelector" [_thread_blocked, id=18821, stack(0x00007fa74779a000,0x00007fa74789b000)]
+  0x00007fa740e00800 JavaThread "TimerQueue" daemon [_thread_blocked, id=18817, stack(0x00007fa74689a000,0x00007fa74699b000)]
+  0x00007fa748521000 JavaThread "Keep-Alive-Timer" daemon [_thread_blocked, id=18815, stack(0x00007fa7449d1000,0x00007fa744ad2000)]
+  0x0000000001b42000 JavaThread "DestroyJavaVM" [_thread_blocked, id=18781, stack(0x00007ffff67ef000,0x00007ffff68ef000)]
+  0x00007fa748300000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=18811, stack(0x00007fa7479e4000,0x00007fa747ae5000)]
+  0x00007fa7482ff000 JavaThread "AWT-Shutdown" [_thread_blocked, id=18810, stack(0x00007fa747ae5000,0x00007fa747be6000)]
+  0x000000000206b800 JavaThread "GC Daemon" daemon [_thread_blocked, id=18809, stack(0x00007fa747be6000,0x00007fa747ce7000)]
+  0x0000000001ff0800 JavaThread "RMI Reaper" [_thread_blocked, id=18808, stack(0x00007fa747ce7000,0x00007fa747de8000)]
+  0x000000000201d000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=18807, stack(0x00007fa747de8000,0x00007fa747ee9000)]
+  0x000000000213f000 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=18806, stack(0x00007fa74c07e000,0x00007fa74c17f000)]
+  0x00007fa7480f6800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=18805, stack(0x00007fa74c8d9000,0x00007fa74c9da000)]
+  0x00007fa748008800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=18803, stack(0x00007fa74df4d000,0x00007fa74e04e000)]
+  0x00007fa748006000 JavaThread "CompilerThread1" daemon [_thread_blocked, id=18802, stack(0x00007fa74e04e000,0x00007fa74e14f000)]
+=>0x00007fa748003800 JavaThread "CompilerThread0" daemon [_thread_in_native, id=18801, stack(0x00007fa74e14f000,0x00007fa74e250000)]
+  0x0000000001db2000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=18800, stack(0x00007fa74e250000,0x00007fa74e351000)]
+  0x0000000001db0000 JavaThread "Surrogate Locker Thread (CMS)" daemon [_thread_blocked, id=18799, stack(0x00007fa74e351000,0x00007fa74e452000)]
+  0x0000000001d8d800 JavaThread "Finalizer" daemon [_thread_blocked, id=18798, stack(0x00007fa74e491000,0x00007fa74e592000)]
+  0x0000000001d8b000 JavaThread "Reference Handler" daemon [_thread_blocked, id=18797, stack(0x00007fa74e592000,0x00007fa74e693000)]
+
+Other Threads:
+  0x0000000001d86800 VMThread [stack: 0x00007fa74e693000,0x00007fa74e794000] [id=18796]
+  0x00007fa74800c000 WatcherThread [stack: 0x00007fa74de4c000,0x00007fa74df4d000] [id=18804]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ par new generation   total 19136K, used 12007K [0x00007fa767900000, 0x00007fa768dc0000, 0x00007fa774900000)
+  eden space 17024K,  58% used [0x00007fa767900000, 0x00007fa7682a9df8, 0x00007fa7689a0000)
+  from space 2112K, 100% used [0x00007fa7689a0000, 0x00007fa768bb0000, 0x00007fa768bb0000)
+  to   space 2112K,   0% used [0x00007fa768bb0000, 0x00007fa768bb0000, 0x00007fa768dc0000)
+ concurrent mark-sweep generation total 63872K, used 19540K [0x00007fa774900000, 0x00007fa778760000, 0x00007fab8eb00000)
+ concurrent-mark-sweep perm gen total 131072K, used 29565K [0x00007fab8eb00000, 0x00007fab96b00000, 0x00007fab96b00000)
+
+Dynamic libraries:
+00400000-0040b000 r-xp 00000000 08:01 35128415                           /home/mark/Downloads/Fiji.app/fiji-linux64
+0060a000-0060b000 r--p 0000a000 08:01 35128415                           /home/mark/Downloads/Fiji.app/fiji-linux64
+0060b000-0060c000 rw-p 0000b000 08:01 35128415                           /home/mark/Downloads/Fiji.app/fiji-linux64
+0060c000-0060e000 rw-p 00000000 00:00 0 
+01b28000-03873000 rw-p 00000000 00:00 0                                  [heap]
+41330000-4138f000 rw-p 00000000 00:05 1458                               /dev/zero
+7fa73d860000-7fa73dc60000 rw-s 35491b000 00:05 5156                      /dev/nvidia0
+7fa73dc60000-7fa73dc64000 rw-s 354910000 00:05 5156                      /dev/nvidia0
+7fa73dc64000-7fa73dd64000 rw-s 351c07000 00:05 5156                      /dev/nvidia0
+7fa73dd64000-7fa73dd67000 ---p 00000000 00:00 0 
+7fa73dd67000-7fa73de65000 rwxp 00000000 00:00 0 
+7fa73de65000-7fa73de68000 ---p 00000000 00:00 0 
+7fa73de68000-7fa73df66000 rwxp 00000000 00:00 0 
+7fa73df66000-7fa73df69000 ---p 00000000 00:00 0 
+7fa73df69000-7fa73e067000 rwxp 00000000 00:00 0 
+7fa73e067000-7fa73e06a000 ---p 00000000 00:00 0 
+7fa73e06a000-7fa73e168000 rwxp 00000000 00:00 0 
+7fa73e168000-7fa73e16b000 ---p 00000000 00:00 0 
+7fa73e16b000-7fa73e269000 rwxp 00000000 00:00 0 
+7fa73e269000-7fa73e26c000 ---p 00000000 00:00 0 
+7fa73e26c000-7fa73e36a000 rwxp 00000000 00:00 0 
+7fa73e36a000-7fa73f7c2000 r-xp 00000000 08:01 49321517                   /usr/lib/nvidia-current/libGLcore.so.195.36.24
+7fa73f7c2000-7fa73f8c1000 ---p 01458000 08:01 49321517                   /usr/lib/nvidia-current/libGLcore.so.195.36.24
+7fa73f8c1000-7fa73ffeb000 rwxp 01457000 08:01 49321517                   /usr/lib/nvidia-current/libGLcore.so.195.36.24
+7fa73ffeb000-7fa740000000 rwxp 00000000 00:00 0 
+7fa740000000-7fa741969000 rw-p 00000000 00:00 0 
+7fa741969000-7fa744000000 ---p 00000000 00:00 0 
+7fa7440c8000-7fa7440cb000 ---p 00000000 00:00 0 
+7fa7440cb000-7fa7441c9000 rwxp 00000000 00:00 0 
+7fa7441c9000-7fa7441cc000 ---p 00000000 00:00 0 
+7fa7441cc000-7fa7442ca000 rwxp 00000000 00:00 0 
+7fa7442ca000-7fa7442cd000 ---p 00000000 00:00 0 
+7fa7442cd000-7fa7443cb000 rwxp 00000000 00:00 0 
+7fa7443cb000-7fa7443ce000 ---p 00000000 00:00 0 
+7fa7443ce000-7fa7444cc000 rwxp 00000000 00:00 0 
+7fa7444cc000-7fa7444cf000 ---p 00000000 00:00 0 
+7fa7444cf000-7fa7445cd000 rwxp 00000000 00:00 0 
+7fa7445cd000-7fa7445d0000 ---p 00000000 00:00 0 
+7fa7445d0000-7fa7446ce000 rwxp 00000000 00:00 0 
+7fa7446ce000-7fa7446d1000 ---p 00000000 00:00 0 
+7fa7446d1000-7fa7447cf000 rwxp 00000000 00:00 0 
+7fa7447cf000-7fa7447d2000 ---p 00000000 00:00 0 
+7fa7447d2000-7fa7448d0000 rwxp 00000000 00:00 0 
+7fa7448d0000-7fa7448d3000 ---p 00000000 00:00 0 
+7fa7448d3000-7fa7449d1000 rwxp 00000000 00:00 0 
+7fa7449d1000-7fa7449d4000 ---p 00000000 00:00 0 
+7fa7449d4000-7fa744ad2000 rwxp 00000000 00:00 0 
+7fa744ad2000-7fa744ae8000 r-xp 00000000 08:01 35128656                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libdcpr.so
+7fa744ae8000-7fa744bea000 ---p 00016000 08:01 35128656                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libdcpr.so
+7fa744bea000-7fa744c02000 rw-p 00018000 08:01 35128656                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libdcpr.so
+7fa744c02000-7fa744c18000 r-xp 00000000 08:01 16122212                   /lib/libresolv-2.11.1.so
+7fa744c18000-7fa744e17000 ---p 00016000 08:01 16122212                   /lib/libresolv-2.11.1.so
+7fa744e17000-7fa744e18000 r--p 00015000 08:01 16122212                   /lib/libresolv-2.11.1.so
+7fa744e18000-7fa744e19000 rw-p 00016000 08:01 16122212                   /lib/libresolv-2.11.1.so
+7fa744e19000-7fa744e1b000 rw-p 00000000 00:00 0 
+7fa744e1b000-7fa744e20000 r-xp 00000000 08:01 16122520                   /lib/libnss_dns-2.11.1.so
+7fa744e20000-7fa74501f000 ---p 00005000 08:01 16122520                   /lib/libnss_dns-2.11.1.so
+7fa74501f000-7fa745020000 r--p 00004000 08:01 16122520                   /lib/libnss_dns-2.11.1.so
+7fa745020000-7fa745021000 rw-p 00005000 08:01 16122520                   /lib/libnss_dns-2.11.1.so
+7fa745021000-7fa745023000 r-xp 00000000 08:01 16121973                   /lib/libnss_mdns4_minimal.so.2
+7fa745023000-7fa745222000 ---p 00002000 08:01 16121973                   /lib/libnss_mdns4_minimal.so.2
+7fa745222000-7fa745223000 r--p 00001000 08:01 16121973                   /lib/libnss_mdns4_minimal.so.2
+7fa745223000-7fa745224000 rw-p 00002000 08:01 16121973                   /lib/libnss_mdns4_minimal.so.2
+7fa745224000-7fa745251000 r-xp 00000000 08:01 16121993                   /lib/libpcre.so.3.12.1
+7fa745251000-7fa745450000 ---p 0002d000 08:01 16121993                   /lib/libpcre.so.3.12.1
+7fa745450000-7fa745451000 r--p 0002c000 08:01 16121993                   /lib/libpcre.so.3.12.1
+7fa745451000-7fa745452000 rw-p 0002d000 08:01 16121993                   /lib/libpcre.so.3.12.1
+7fa745452000-7fa74552d000 r-xp 00000000 08:01 16121879                   /lib/libglib-2.0.so.0.2400.1
+7fa74552d000-7fa74572d000 ---p 000db000 08:01 16121879                   /lib/libglib-2.0.so.0.2400.1
+7fa74572d000-7fa74572e000 r--p 000db000 08:01 16121879                   /lib/libglib-2.0.so.0.2400.1
+7fa74572e000-7fa74572f000 rw-p 000dc000 08:01 16121879                   /lib/libglib-2.0.so.0.2400.1
+7fa74572f000-7fa745730000 rw-p 00000000 00:00 0 
+7fa745730000-7fa745734000 r-xp 00000000 08:01 48758835                   /usr/lib/libgthread-2.0.so.0.2400.1
+7fa745734000-7fa745933000 ---p 00004000 08:01 48758835                   /usr/lib/libgthread-2.0.so.0.2400.1
+7fa745933000-7fa745934000 r--p 00003000 08:01 48758835                   /usr/lib/libgthread-2.0.so.0.2400.1
+7fa745934000-7fa745935000 rw-p 00004000 08:01 48758835                   /usr/lib/libgthread-2.0.so.0.2400.1
+7fa745935000-7fa74597a000 r-xp 00000000 08:01 48758830                   /usr/lib/libgobject-2.0.so.0.2400.1
+7fa74597a000-7fa745b7a000 ---p 00045000 08:01 48758830                   /usr/lib/libgobject-2.0.so.0.2400.1
+7fa745b7a000-7fa745b7b000 r--p 00045000 08:01 48758830                   /usr/lib/libgobject-2.0.so.0.2400.1
+7fa745b7b000-7fa745b7c000 rw-p 00046000 08:01 48758830                   /usr/lib/libgobject-2.0.so.0.2400.1
+7fa745b7c000-7fa745b7d000 rw-p 00000000 00:00 0 
+7fa745b7d000-7fa745bba000 r-xp 00000000 08:01 16121913                   /lib/libdbus-1.so.3.4.0
+7fa745bba000-7fa745dba000 ---p 0003d000 08:01 16121913                   /lib/libdbus-1.so.3.4.0
+7fa745dba000-7fa745dbb000 r--p 0003d000 08:01 16121913                   /lib/libdbus-1.so.3.4.0
+7fa745dbb000-7fa745dbc000 rw-p 0003e000 08:01 16121913                   /lib/libdbus-1.so.3.4.0
+7fa745dbc000-7fa745ddd000 r-xp 00000000 08:01 48761849                   /usr/lib/libdbus-glib-1.so.2.1.0
+7fa745ddd000-7fa745fdc000 ---p 00021000 08:01 48761849                   /usr/lib/libdbus-glib-1.so.2.1.0
+7fa745fdc000-7fa745fdd000 r--p 00020000 08:01 48761849                   /usr/lib/libdbus-glib-1.so.2.1.0
+7fa745fdd000-7fa745fde000 rw-p 00021000 08:01 48761849                   /usr/lib/libdbus-glib-1.so.2.1.0
+7fa745fde000-7fa74603a000 r-xp 00000000 08:01 48761624                   /usr/lib/libORBit-2.so.0.1.0
+7fa74603a000-7fa74623a000 ---p 0005c000 08:01 48761624                   /usr/lib/libORBit-2.so.0.1.0
+7fa74623a000-7fa746249000 r--p 0005c000 08:01 48761624                   /usr/lib/libORBit-2.so.0.1.0
+7fa746249000-7fa74624c000 rw-p 0006b000 08:01 48761624                   /usr/lib/libORBit-2.so.0.1.0
+7fa74624c000-7fa74624f000 r-xp 00000000 08:01 48758831                   /usr/lib/libgmodule-2.0.so.0.2400.1
+7fa74624f000-7fa74644e000 ---p 00003000 08:01 48758831                   /usr/lib/libgmodule-2.0.so.0.2400.1
+7fa74644e000-7fa74644f000 r--p 00002000 08:01 48758831                   /usr/lib/libgmodule-2.0.so.0.2400.1
+7fa74644f000-7fa746450000 rw-p 00003000 08:01 48758831                   /usr/lib/libgmodule-2.0.so.0.2400.1
+7fa746450000-7fa746488000 r-xp 00000000 08:01 48761955                   /usr/lib/libgconf-2.so.4.1.5
+7fa746488000-7fa746688000 ---p 00038000 08:01 48761955                   /usr/lib/libgconf-2.so.4.1.5
+7fa746688000-7fa74668a000 r--p 00038000 08:01 48761955                   /usr/lib/libgconf-2.so.4.1.5
+7fa74668a000-7fa74668d000 rw-p 0003a000 08:01 48761955                   /usr/lib/libgconf-2.so.4.1.5
+7fa7466ab000-7fa74689a000 rw-s 00000000 00:04 2228246                    /SYSV00000000 (deleted)
+7fa74689a000-7fa74689d000 ---p 00000000 00:00 0 
+7fa74689d000-7fa74699b000 rwxp 00000000 00:00 0 
+7fa74699b000-7fa74699c000 r--s 00007000 08:01 44826704                   /home/mark/Downloads/Fiji.app/jars/fiji-scripting.jar
+7fa74699c000-7fa74699d000 r--s 00001000 08:01 44697591                   /home/mark/Downloads/Fiji.app/jars/imglib-io.jar
+7fa74699d000-7fa74699e000 r--s 0000b000 08:01 35128547                   /home/mark/Downloads/Fiji.app/jars/jzlib-1.0.7.jar
+7fa74699e000-7fa7469a5000 r--s 00083000 08:01 44826764                   /home/mark/Downloads/Fiji.app/jars/VIB-lib.jar
+7fa7469a5000-7fa7469a7000 r--s 0000f000 08:01 35128548                   /home/mark/Downloads/Fiji.app/jars/clibwrapper_jiio.jar
+7fa7469a7000-7fa7469ac000 r--s 00070000 08:01 35128530                   /home/mark/Downloads/Fiji.app/jars/jacl.jar
+7fa7469ac000-7fa7469ad000 r--s 00002000 08:01 35128536                   /home/mark/Downloads/Fiji.app/jars/ant-launcher.jar
+7fa7469ad000-7fa7469af000 r--s 00007000 08:01 35128542                   /home/mark/Downloads/Fiji.app/jars/pal-optimization.jar
+7fa7469af000-7fa7469bd000 r--s 00115000 08:01 35128518                   /home/mark/Downloads/Fiji.app/jars/itext-1.3.jar
+7fa7469bd000-7fa7469be000 r--s 00007000 08:01 46665126                   /home/mark/Downloads/Fiji.app/jars/VectorString.jar
+7fa7469be000-7fa7469c1000 r--s 00036000 08:01 44826705                   /home/mark/Downloads/Fiji.app/jars/imagescience.jar
+7fa7469c1000-7fa7469c2000 r--s 00004000 08:01 46665125                   /home/mark/Downloads/Fiji.app/jars/fiji-lib.jar
+7fa7469c2000-7fa7469c4000 r--s 00007000 08:01 44697589                   /home/mark/Downloads/Fiji.app/jars/imglib-ij.jar
+7fa7469c4000-7fa7469d8000 r--s 00131000 08:01 35128554                   /home/mark/Downloads/Fiji.app/jars/ant.jar
+7fa7469d8000-7fa7469df000 r--s 000b2000 08:01 35128533                   /home/mark/Downloads/Fiji.app/jars/js.jar
+7fa7469df000-7fa746a23000 r--s 0068e000 08:01 35128550                   /home/mark/Downloads/Fiji.app/jars/weka.jar
+7fa746a23000-7fa746a27000 r--s 000e4000 08:01 44826733                   /home/mark/Downloads/Fiji.app/jars/jna.jar
+7fa746a27000-7fa746a3a000 r--s 0016d000 08:01 35128549                   /home/mark/Downloads/Fiji.app/jars/jai_core.jar
+7fa746a3a000-7fa746a3f000 r--s 00040000 08:01 35128541                   /home/mark/Downloads/Fiji.app/jars/bsh-2.0b4.jar
+7fa746a3f000-7fa746a41000 r--s 0001d000 08:01 46665130                   /home/mark/Downloads/Fiji.app/jars/imglib-algorithms.jar
+7fa746a41000-7fa746a44000 r--s 0002c000 08:01 44826716                   /home/mark/Downloads/Fiji.app/jars/mpicbg.jar
+7fa746a44000-7fa746a45000 r--s 00011000 08:01 35128551                   /home/mark/Downloads/Fiji.app/jars/Jama-1.0.2.jar
+7fa746a45000-7fa746ab9000 r--s 007be000 08:01 44826714                   /home/mark/Downloads/Fiji.app/jars/jython.jar
+7fa746ab9000-7fa746ac0000 r--s 0003b000 08:01 46665128                   /home/mark/Downloads/Fiji.app/jars/imglib.jar
+7fa746ac0000-7fa746ac6000 r--s 0002f000 08:01 44826706                   /home/mark/Downloads/Fiji.app/jars/junit-4.5.jar
+7fa746ac6000-7fa746ac9000 r--s 00030000 08:01 35128537                   /home/mark/Downloads/Fiji.app/jars/jsch-0.1.37.jar
+7fa746ac9000-7fa746ad9000 r--s 000b6000 08:01 44826720                   /home/mark/Downloads/Fiji.app/jars/commons-math.jar
+7fa746ad9000-7fa746ae4000 r--s 0015c000 08:01 35128531                   /home/mark/Downloads/Fiji.app/jars/jpedalSTD.jar
+7fa746ae4000-7fa746aee000 r--s 0007d000 08:01 35128534                   /home/mark/Downloads/Fiji.app/jars/jep.jar
+7fa746aee000-7fa746af1000 r--s 00031000 08:01 35128544                   /home/mark/Downloads/Fiji.app/jars/jai_codec.jar
+7fa746af1000-7fa746af2000 r--s 0000d000 08:01 46665127                   /home/mark/Downloads/Fiji.app/jars/fake.jar
+7fa746af2000-7fa746b01000 r--s 000f0000 08:01 35128519                   /home/mark/Downloads/Fiji.app/jars/javac.jar
+7fa746b01000-7fa746b12000 r--s 0014c000 08:01 44826719                   /home/mark/Downloads/Fiji.app/jars/jfreechart-1.0.13.jar
+7fa746b12000-7fa746b19000 r--s 00082000 08:01 44826760                   /home/mark/Downloads/Fiji.app/jars/rsyntaxtextarea.jar
+7fa746b19000-7fa746b65000 r--s 00388000 08:01 44826734                   /home/mark/Downloads/Fiji.app/jars/jruby.jar
+7fa746b65000-7fa746bee000 r--s 0071a000 08:01 35128555                   /home/mark/Downloads/Fiji.app/jars/batik.jar
+7fa746bee000-7fa746bf6000 r--s 00063000 08:01 35128552                   /home/mark/Downloads/Fiji.app/jars/ant-nodeps.jar
+7fa746bf6000-7fa746bfb000 r--s 00065000 08:01 35128556                   /home/mark/Downloads/Fiji.app/jars/postgresql-8.2-506.jdbc3.jar
+7fa746bfb000-7fa746bfe000 ---p 00000000 00:00 0 
+7fa746bfe000-7fa746cfc000 rwxp 00000000 00:00 0 
+7fa746d13000-7fa746d53000 rw-s 349351000 00:05 5156                      /dev/nvidia0
+7fa746d53000-7fa746d73000 rw-s 357b8e000 00:05 5156                      /dev/nvidia0
+7fa746d73000-7fa746d76000 ---p 00000000 00:00 0 
+7fa746d76000-7fa746e74000 rwxp 00000000 00:00 0 
+7fa746e74000-7fa746e77000 ---p 00000000 00:00 0 
+7fa746e77000-7fa746f75000 rwxp 00000000 00:00 0 
+7fa746f75000-7fa746f78000 ---p 00000000 00:00 0 
+7fa746f78000-7fa747076000 rwxp 00000000 00:00 0 
+7fa747076000-7fa747079000 ---p 00000000 00:00 0 
+7fa747079000-7fa747177000 rwxp 00000000 00:00 0 
+7fa747177000-7fa74717a000 ---p 00000000 00:00 0 
+7fa74717a000-7fa747278000 rwxp 00000000 00:00 0 
+7fa747278000-7fa747279000 r-xp 00000000 08:01 49303761                   /usr/lib/nvidia-current/tls/libnvidia-tls.so.195.36.24
+7fa747279000-7fa747379000 ---p 00001000 08:01 49303761                   /usr/lib/nvidia-current/tls/libnvidia-tls.so.195.36.24
+7fa747379000-7fa74737a000 rw-p 00001000 08:01 49303761                   /usr/lib/nvidia-current/tls/libnvidia-tls.so.195.36.24
+7fa74737a000-7fa747424000 r-xp 00000000 08:01 49321516                   /usr/lib/nvidia-current/libGL.so.195.36.24
+7fa747424000-7fa747523000 ---p 000aa000 08:01 49321516                   /usr/lib/nvidia-current/libGL.so.195.36.24
+7fa747523000-7fa747564000 rwxp 000a9000 08:01 49321516                   /usr/lib/nvidia-current/libGL.so.195.36.24
+7fa747564000-7fa747579000 rwxp 00000000 00:00 0 
+7fa747579000-7fa747599000 r-xp 00000000 08:01 35128681                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libj3dcore-ogl.so
+7fa747599000-7fa747698000 ---p 00020000 08:01 35128681                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libj3dcore-ogl.so
+7fa747698000-7fa747699000 rw-p 0001f000 08:01 35128681                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libj3dcore-ogl.so
+7fa747699000-7fa74769a000 r-xp 00000000 08:01 35128682                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libjawt.so
+7fa74769a000-7fa747799000 ---p 00001000 08:01 35128682                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libjawt.so
+7fa747799000-7fa74779a000 rw-p 00000000 08:01 35128682                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libjawt.so
+7fa74779a000-7fa74779d000 ---p 00000000 00:00 0 
+7fa74779d000-7fa74789b000 rwxp 00000000 00:00 0 
+7fa74789b000-7fa74789c000 ---p 00000000 00:00 0 
+7fa74789c000-7fa7478dc000 rwxp 00000000 00:00 0 
+7fa7478dc000-7fa7478e3000 r-xp 00000000 08:01 35128635                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libnio.so
+7fa7478e3000-7fa7479e2000 ---p 00007000 08:01 35128635                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libnio.so
+7fa7479e2000-7fa7479e4000 rw-p 00006000 08:01 35128635                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libnio.so
+7fa7479e4000-7fa7479e7000 ---p 00000000 00:00 0 
+7fa7479e7000-7fa747ae5000 rwxp 00000000 00:00 0 
+7fa747ae5000-7fa747ae8000 ---p 00000000 00:00 0 
+7fa747ae8000-7fa747be6000 rwxp 00000000 00:00 0 
+7fa747be6000-7fa747be9000 ---p 00000000 00:00 0 
+7fa747be9000-7fa747ce7000 rwxp 00000000 00:00 0 
+7fa747ce7000-7fa747cea000 ---p 00000000 00:00 0 
+7fa747cea000-7fa747de8000 rwxp 00000000 00:00 0 
+7fa747de8000-7fa747deb000 ---p 00000000 00:00 0 
+7fa747deb000-7fa747ee9000 rwxp 00000000 00:00 0 
+7fa747ee9000-7fa747efc000 r-xp 00000000 08:01 35128657                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libnet.so
+7fa747efc000-7fa747ffd000 ---p 00013000 08:01 35128657                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libnet.so
+7fa747ffd000-7fa748000000 rw-p 00014000 08:01 35128657                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libnet.so
+7fa748000000-7fa749d63000 rw-p 00000000 00:00 0 
+7fa749d63000-7fa74c000000 ---p 00000000 00:00 0 
+7fa74c014000-7fa74c018000 rw-s 354e07000 00:05 5156                      /dev/nvidia0
+7fa74c018000-7fa74c019000 rw-s b0054000 00:05 5156                       /dev/nvidia0
+7fa74c019000-7fa74c07e000 r--s 008a7000 08:01 44826710                   /home/mark/Downloads/Fiji.app/plugins/loci_tools.jar
+7fa74c07e000-7fa74c081000 ---p 00000000 00:00 0 
+7fa74c081000-7fa74c17f000 rwxp 00000000 00:00 0 
+7fa74c17f000-7fa74c180000 r--s 00000000 08:01 61734977                   /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le64.cache-3
+7fa74c180000-7fa74c189000 r--s 00000000 08:01 61734974                   /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-3
+7fa74c189000-7fa74c18b000 r--s 00000000 08:01 61734975                   /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le64.cache-3
+7fa74c18b000-7fa74c18e000 r--s 00000000 08:01 61734984                   /var/cache/fontconfig/e383d7ea5fbe662a33d9b44caf393297-le64.cache-3
+7fa74c18e000-7fa74c18f000 r--s 00000000 08:01 61734985                   /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le64.cache-3
+7fa74c18f000-7fa74c192000 r--s 00000000 08:01 61742769                   /var/cache/fontconfig/b5ea634b0fb353b8ea17632d1f9ef766-le64.cache-3
+7fa74c192000-7fa74c196000 r--s 00000000 08:01 61734971                   /var/cache/fontconfig/6eb3985aa4124903f6ff08ba781cd364-le64.cache-3
+7fa74c196000-7fa74c197000 r--s 00000000 08:01 61734967                   /var/cache/fontconfig/4c73fe0c47614734b17d736dbde7580a-le64.cache-3
+7fa74c197000-7fa74c198000 r--s 00000000 08:01 61734961                   /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le64.cache-3
+7fa74c198000-7fa74c199000 r--s 00000000 08:01 61734969                   /var/cache/fontconfig/6a53c69dea097a2d716e069445527da8-le64.cache-3
+7fa74c199000-7fa74c19f000 r--s 00000000 08:01 61734976                   /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le64.cache-3
+7fa74c19f000-7fa74c1a8000 r--s 00000000 08:01 61744944                   /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le64.cache-3
+7fa74c1a8000-7fa74c1b8000 r--s 00000000 08:01 61734962                   /var/cache/fontconfig/0f34bcd4b6ee430af32735b75db7f02b-le64.cache-3
+7fa74c1b8000-7fa74c1bb000 r--s 00000000 08:01 61734981                   /var/cache/fontconfig/d60319d88cac85ba9e1a07bd06cfbb8c-le64.cache-3
+7fa74c1bb000-7fa74c1bc000 r--s 00000000 08:01 61735346                   /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le64.cache-3
+7fa74c1bc000-7fa74c1ea000 r--s 00000000 08:01 61744085                   /var/cache/fontconfig/365b55f210c0a22e9a19e35191240f32-le64.cache-3
+7fa74c1ea000-7fa74c1f4000 r--s 00000000 08:01 61734980                   /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le64.cache-3
+7fa74c1f4000-7fa74c207000 r--s 00000000 08:01 61738772                   /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le64.cache-3
+7fa74c207000-7fa74c208000 rw-s 354e06000 00:05 5156                      /dev/nvidia0
+7fa74c208000-7fa74c20a000 r--s 0000f000 08:01 35128523                   /home/mark/Downloads/Fiji.app/jars/autocomplete.jar
+7fa74c20a000-7fa74c20e000 rw-s 352b76000 00:05 5156                      /dev/nvidia0
+7fa74c20e000-7fa74c20f000 rw-s 352b75000 00:05 5156                      /dev/nvidia0
+7fa74c20f000-7fa74c210000 rw-s c2c08000 00:05 5156                       /dev/nvidia0
+7fa74c210000-7fa74c211000 rw-s c2641000 00:05 5156                       /dev/nvidia0
+7fa74c211000-7fa74c212000 rw-s 360062000 00:05 5156                      /dev/nvidia0
+7fa74c212000-7fa74c233000 rw-s 00000000 00:04 0                          /SYSV00000000 (deleted)
+7fa74c233000-7fa74c23a000 r--s 00111000 08:01 35129670                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/resources.jar
+7fa74c23a000-7fa74c23b000 r--s 00005000 08:01 35128477                   /home/mark/Downloads/Fiji.app/plugins/registration_3d.jar
+7fa74c23b000-7fa74c23c000 r--s 00006000 08:01 44826758                   /home/mark/Downloads/Fiji.app/plugins/register_virtual_stack_slices.jar
+7fa74c23c000-7fa74c23e000 r--s 0000b000 08:01 44826711                   /home/mark/Downloads/Fiji.app/plugins/mpicbg_.jar
+7fa74c23e000-7fa74c240000 r--s 0000f000 08:01 44826757                   /home/mark/Downloads/Fiji.app/plugins/level_sets.jar
+7fa74c240000-7fa74c242000 r--s 0000e000 08:01 35128469                   /home/mark/Downloads/Fiji.app/plugins/ij-ImageIO_.jar
+7fa74c242000-7fa74c244000 r--s 00020000 08:01 35128416                   /home/mark/Downloads/Fiji.app/plugins/bUnwarpJ_.jar
+7fa74c244000-7fa74c246000 r--s 0000c000 08:01 35128409                   /home/mark/Downloads/Fiji.app/plugins/Volume_Viewer.jar
+7fa74c246000-7fa74c248000 r--s 00021000 08:01 35128422                   /home/mark/Downloads/Fiji.app/plugins/View5D_.jar
+7fa74c248000-7fa74c249000 r--s 00005000 08:01 35128483                   /home/mark/Downloads/Fiji.app/plugins/Video_Editing.jar
+7fa74c249000-7fa74c24f000 r--s 00052000 08:01 44826756                   /home/mark/Downloads/Fiji.app/plugins/VIB_.jar
+7fa74c24f000-7fa74c250000 r--s 00013000 08:01 44826728                   /home/mark/Downloads/Fiji.app/plugins/UnwarpJ_.jar
+7fa74c250000-7fa74c252000 r--s 00025000 08:01 35128430                   /home/mark/Downloads/Fiji.app/plugins/TurboReg_.jar
+7fa74c252000-7fa74c254000 r--s 00009000 08:01 44826755                   /home/mark/Downloads/Fiji.app/plugins/TransformJ_.jar
+7fa74c254000-7fa74c266000 r--s 0016c000 08:01 46665122                   /home/mark/Downloads/Fiji.app/plugins/TrakEM2_.jar
+7fa74c266000-7fa74c268000 r--s 0000f000 08:01 44826763                   /home/mark/Downloads/Fiji.app/plugins/Trainable_Segmentation.jar
+7fa74c268000-7fa74c269000 r--s 00001000 08:01 44826721                   /home/mark/Downloads/Fiji.app/plugins/TopoJ_.jar
+7fa74c269000-7fa74c26a000 r--s 00004000 08:01 35128404                   /home/mark/Downloads/Fiji.app/plugins/ToAST_.jar
+7fa74c26a000-7fa74c26b000 r--s 00000000 08:01 35128395                   /home/mark/Downloads/Fiji.app/plugins/Time_Stamper.jar
+7fa74c26b000-7fa74c26c000 r--s 00008000 08:01 35128490                   /home/mark/Downloads/Fiji.app/plugins/Sync_Win.jar
+7fa74c26c000-7fa74c26e000 r--s 00017000 08:01 46665121                   /home/mark/Downloads/Fiji.app/plugins/Stitching_.jar
+7fa74c26e000-7fa74c26f000 r--s 00000000 08:01 35128473                   /home/mark/Downloads/Fiji.app/plugins/Statistical_Region_Merging.jar
+7fa74c26f000-7fa74c270000 r--s 00009000 08:01 46665120                   /home/mark/Downloads/Fiji.app/plugins/Stack_Manipulation.jar
+7fa74c270000-7fa74c271000 r--s 00003000 08:01 44826725                   /home/mark/Downloads/Fiji.app/plugins/StackReg_.jar
+7fa74c271000-7fa74c273000 r--s 00007000 08:01 35128393                   /home/mark/Downloads/Fiji.app/plugins/SplineDeformationGenerator_.jar
+7fa74c273000-7fa74c274000 r--s 00007000 08:01 44826730                   /home/mark/Downloads/Fiji.app/plugins/Snakuscule_.jar
+7fa74c274000-7fa74c275000 r--s 00001000 08:01 35128417                   /home/mark/Downloads/Fiji.app/plugins/Skeletonize3D_.jar
+7fa74c275000-7fa74c277000 r--s 00015000 08:01 35128410                   /home/mark/Downloads/Fiji.app/plugins/Siox_Segmentation.jar
+7fa74c277000-7fa74c279000 r--s 00030000 08:01 37495623                   /home/mark/Downloads/Fiji.app/plugins/Simple_Neurite_Tracer.jar
+7fa74c279000-7fa74c27a000 r--s 00000000 08:01 44826729                   /home/mark/Downloads/Fiji.app/plugins/SheppLogan_.jar
+7fa74c27a000-7fa74c27d000 r--s 00030000 08:01 46665123                   /home/mark/Downloads/Fiji.app/plugins/Script_Editor.jar
+7fa74c27d000-7fa74c280000 r--s 00035000 08:01 44697587                   /home/mark/Downloads/Fiji.app/plugins/SPIM_Registration.jar
+7fa74c280000-7fa74c281000 r--s 00002000 08:01 46665119                   /home/mark/Downloads/Fiji.app/plugins/Refresh_Javas.jar
+7fa74c281000-7fa74c282000 r--s 00000000 08:01 35128472                   /home/mark/Downloads/Fiji.app/plugins/Record_Screen.jar
+7fa74c282000-7fa74c283000 r--s 00005000 08:01 44826731                   /home/mark/Downloads/Fiji.app/plugins/RandomJ_.jar
+7fa74c283000-7fa74c284000 r--s 00002000 08:01 35128507                   /home/mark/Downloads/Fiji.app/plugins/RATS_.jar
+7fa74c284000-7fa74c285000 r--s 0000b000 08:01 44826769                   /home/mark/Downloads/Fiji.app/plugins/QuickPALM_.jar
+7fa74c285000-7fa74c286000 r--s 00004000 08:01 44826727                   /home/mark/Downloads/Fiji.app/plugins/PointPicker_.jar
+7fa74c286000-7fa74c288000 r--s 00003000 08:01 44826750                   /home/mark/Downloads/Fiji.app/plugins/PIV_analyser.jar
+7fa74c288000-7fa74c289000 r--s 0000c000 08:01 44826724                   /home/mark/Downloads/Fiji.app/plugins/MosaicJ_.jar
+7fa74c289000-7fa74c28a000 r--s 00004000 08:01 35128423                   /home/mark/Downloads/Fiji.app/plugins/Manual_Tracking.jar
+7fa74c28a000-7fa74c28b000 r--s 00000000 08:01 44826723                   /home/mark/Downloads/Fiji.app/plugins/Macro_Examples.jar
+7fa74c28b000-7fa74c28c000 r--s 00002000 08:01 44826749                   /home/mark/Downloads/Fiji.app/plugins/M_I_P.jar
+7fa74c28c000-7fa74c28d000 r--s 00001000 08:01 35128424                   /home/mark/Downloads/Fiji.app/plugins/MTrack2_.jar
+7fa74c28d000-7fa74c28e000 r--s 00003000 08:01 35128497                   /home/mark/Downloads/Fiji.app/plugins/LocalThickness_.jar
+7fa74c28e000-7fa74c28f000 r--s 00000000 08:01 44826736                   /home/mark/Downloads/Fiji.app/plugins/Linear_Kuwahara.jar
+7fa74c28f000-7fa74c293000 r--s 00049000 08:01 44826748                   /home/mark/Downloads/Fiji.app/plugins/LSM_Toolbox.jar
+7fa74c293000-7fa74c294000 r--s 00003000 08:01 35128481                   /home/mark/Downloads/Fiji.app/plugins/LSM_Reader.jar
+7fa74c294000-7fa74c295000 r--s 00000000 08:01 44826737                   /home/mark/Downloads/Fiji.app/plugins/Jython_Scripts.jar
+7fa74c295000-7fa74c296000 r--s 00001000 08:01 46665118                   /home/mark/Downloads/Fiji.app/plugins/Jython_Interpreter.jar
+7fa74c296000-7fa74c297000 r--s 00000000 08:01 35128419                   /home/mark/Downloads/Fiji.app/plugins/Javascript_.jar
+7fa74c297000-7fa74c298000 r--s 00000000 08:01 35128394                   /home/mark/Downloads/Fiji.app/plugins/JRuby_Interpreter.jar
+7fa74c298000-7fa74c299000 r--s 00000000 08:01 35128491                   /home/mark/Downloads/Fiji.app/plugins/IsoData_Classifier.jar
+7fa74c299000-7fa74c29a000 r--s 00011000 08:01 35128475                   /home/mark/Downloads/Fiji.app/plugins/Interactive_3D_Surface_Plot.jar
+7fa74c29a000-7fa74c29d000 r--s 00017000 08:01 44826768                   /home/mark/Downloads/Fiji.app/plugins/Image_Expression_Parser.jar
+7fa74c29d000-7fa74c29f000 r--s 00018000 08:01 44826708                   /home/mark/Downloads/Fiji.app/plugins/Image_5D.jar
+7fa74c29f000-7fa74c2a1000 r--s 0001c000 08:01 44826747                   /home/mark/Downloads/Fiji.app/plugins/IO_.jar
+7fa74c2a1000-7fa74c2a6000 r-xp 00000000 08:01 48761653                   /usr/lib/libXfixes.so.3.1.0
+7fa74c2a6000-7fa74c4a5000 ---p 00005000 08:01 48761653                   /usr/lib/libXfixes.so.3.1.0
+7fa74c4a5000-7fa74c4a6000 r--p 00004000 08:01 48761653                   /usr/lib/libXfixes.so.3.1.0
+7fa74c4a6000-7fa74c4a7000 rw-p 00005000 08:01 48761653                   /usr/lib/libXfixes.so.3.1.0
+7fa74c4a7000-7fa74c4b0000 r-xp 00000000 08:01 48761673                   /usr/lib/libXrender.so.1.3.0
+7fa74c4b0000-7fa74c6af000 ---p 00009000 08:01 48761673                   /usr/lib/libXrender.so.1.3.0
+7fa74c6af000-7fa74c6b0000 r--p 00008000 08:01 48761673                   /usr/lib/libXrender.so.1.3.0
+7fa74c6b0000-7fa74c6b1000 rw-p 00009000 08:01 48761673                   /usr/lib/libXrender.so.1.3.0
+7fa74c6b1000-7fa74c6ba000 r-xp 00000000 08:01 48761645                   /usr/lib/libXcursor.so.1.0.2
+7fa74c6ba000-7fa74c8b9000 ---p 00009000 08:01 48761645                   /usr/lib/libXcursor.so.1.0.2
+7fa74c8b9000-7fa74c8ba000 r--p 00008000 08:01 48761645                   /usr/lib/libXcursor.so.1.0.2
+7fa74c8ba000-7fa74c8bb000 rw-p 00009000 08:01 48761645                   /usr/lib/libXcursor.so.1.0.2
+7fa74c8bb000-7fa74c8bc000 r--s 00000000 08:01 35128396                   /home/mark/Downloads/Fiji.app/plugins/IJ_Robot.jar
+7fa74c8bc000-7fa74c8bd000 r--s 00006000 08:01 35128466                   /home/mark/Downloads/Fiji.app/plugins/Gray_Morphology.jar
+7fa74c8bd000-7fa74c8be000 r--s 00005000 08:01 44826722                   /home/mark/Downloads/Fiji.app/plugins/Graph_Cut.jar
+7fa74c8be000-7fa74c8c1000 r--s 00038000 08:01 35128468                   /home/mark/Downloads/Fiji.app/plugins/FlowJ_.jar
+7fa74c8c1000-7fa74c8c4000 r--s 00025000 08:01 44826712                   /home/mark/Downloads/Fiji.app/plugins/Fiji_Updater.jar
+7fa74c8c4000-7fa74c8c6000 r--s 00010000 08:01 44826746                   /home/mark/Downloads/Fiji.app/plugins/Fiji_Plugins.jar
+7fa74c8c6000-7fa74c8c8000 r--s 00007000 08:01 44826762                   /home/mark/Downloads/Fiji.app/plugins/Fiji_Developer.jar
+7fa74c8c8000-7fa74c8ca000 r--s 00006000 08:01 44826732                   /home/mark/Downloads/Fiji.app/plugins/FeatureJ_.jar
+7fa74c8ca000-7fa74c8cc000 r--s 00003000 08:01 35128464                   /home/mark/Downloads/Fiji.app/plugins/Directionality_.jar
+7fa74c8cc000-7fa74c8cd000 r--s 00001000 08:01 44826726                   /home/mark/Downloads/Fiji.app/plugins/Differentials_.jar
+7fa74c8cd000-7fa74c8ce000 r--s 00003000 08:01 35128476                   /home/mark/Downloads/Fiji.app/plugins/Daltonize_.jar
+7fa74c8ce000-7fa74c8cf000 r--s 0005e000 08:01 35128498                   /home/mark/Downloads/Fiji.app/plugins/Color_Inspector_3D.jar
+7fa74c8cf000-7fa74c8d0000 r--s 00004000 08:01 35128478                   /home/mark/Downloads/Fiji.app/plugins/Color_Histogram.jar
+7fa74c8d0000-7fa74c8d1000 r--s 00005000 08:01 44826745                   /home/mark/Downloads/Fiji.app/plugins/Colocalisation_Analysis.jar
+7fa74c8d1000-7fa74c8d2000 r--s 00002000 08:01 46665117                   /home/mark/Downloads/Fiji.app/plugins/Clojure_Interpreter.jar
+7fa74c8d2000-7fa74c8d3000 r--s 00000000 08:01 35128408                   /home/mark/Downloads/Fiji.app/plugins/Calculator_Plus.jar
+7fa74c8d3000-7fa74c8d4000 r--s 00008000 08:01 35128401                   /home/mark/Downloads/Fiji.app/plugins/CLI_.jar
+7fa74c8d4000-7fa74c8d5000 r--s 00003000 08:01 44697583                   /home/mark/Downloads/Fiji.app/plugins/Bug_Submitter.jar
+7fa74c8d5000-7fa74c8d6000 r--s 00000000 08:01 44826743                   /home/mark/Downloads/Fiji.app/plugins/BeanShell_Interpreter.jar
+7fa74c8d6000-7fa74c8d7000 r--s 00003000 08:01 44826742                   /home/mark/Downloads/Fiji.app/plugins/Auto_Threshold.jar
+7fa74c8d7000-7fa74c8d9000 r--s 00005000 08:01 35128418                   /home/mark/Downloads/Fiji.app/plugins/Arrow_.jar
+7fa74c8d9000-7fa74c8dc000 ---p 00000000 00:00 0 
+7fa74c8dc000-7fa74c9da000 rwxp 00000000 00:00 0 
+7fa74c9da000-7fa74ca58000 r-xp 00000000 08:01 35128658                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libfontmanager.so
+7fa74ca58000-7fa74cb57000 ---p 0007e000 08:01 35128658                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libfontmanager.so
+7fa74cb57000-7fa74cb6d000 rw-p 0007d000 08:01 35128658                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libfontmanager.so
+7fa74cb6d000-7fa74cb7e000 rw-p 00000000 00:00 0 
+7fa74cb7e000-7fa74cb83000 r-xp 00000000 08:01 48761649                   /usr/lib/libXdmcp.so.6.0.0
+7fa74cb83000-7fa74cd82000 ---p 00005000 08:01 48761649                   /usr/lib/libXdmcp.so.6.0.0
+7fa74cd82000-7fa74cd83000 r--p 00004000 08:01 48761649                   /usr/lib/libXdmcp.so.6.0.0
+7fa74cd83000-7fa74cd84000 rw-p 00005000 08:01 48761649                   /usr/lib/libXdmcp.so.6.0.0
+7fa74cd84000-7fa74cd86000 r-xp 00000000 08:01 48761638                   /usr/lib/libXau.so.6.0.0
+7fa74cd86000-7fa74cf86000 ---p 00002000 08:01 48761638                   /usr/lib/libXau.so.6.0.0
+7fa74cf86000-7fa74cf87000 r--p 00002000 08:01 48761638                   /usr/lib/libXau.so.6.0.0
+7fa74cf87000-7fa74cf88000 rw-p 00003000 08:01 48761638                   /usr/lib/libXau.so.6.0.0
+7fa74cf88000-7fa74cfa3000 r-xp 00000000 08:01 48762644                   /usr/lib/libxcb.so.1.1.0
+7fa74cfa3000-7fa74d1a2000 ---p 0001b000 08:01 48762644                   /usr/lib/libxcb.so.1.1.0
+7fa74d1a2000-7fa74d1a3000 r--p 0001a000 08:01 48762644                   /usr/lib/libxcb.so.1.1.0
+7fa74d1a3000-7fa74d1a4000 rw-p 0001b000 08:01 48762644                   /usr/lib/libxcb.so.1.1.0
+7fa74d1a4000-7fa74d1b3000 r-xp 00000000 08:01 48761659                   /usr/lib/libXi.so.6.1.0
+7fa74d1b3000-7fa74d3b2000 ---p 0000f000 08:01 48761659                   /usr/lib/libXi.so.6.1.0
+7fa74d3b2000-7fa74d3b3000 r--p 0000e000 08:01 48761659                   /usr/lib/libXi.so.6.1.0
+7fa74d3b3000-7fa74d3b4000 rw-p 0000f000 08:01 48761659                   /usr/lib/libXi.so.6.1.0
+7fa74d3b4000-7fa74d3b9000 r-xp 00000000 08:01 48761679                   /usr/lib/libXtst.so.6.1.0
+7fa74d3b9000-7fa74d5b9000 ---p 00005000 08:01 48761679                   /usr/lib/libXtst.so.6.1.0
+7fa74d5b9000-7fa74d5ba000 r--p 00005000 08:01 48761679                   /usr/lib/libXtst.so.6.1.0
+7fa74d5ba000-7fa74d5bb000 rw-p 00006000 08:01 48761679                   /usr/lib/libXtst.so.6.1.0
+7fa74d5bb000-7fa74d6ec000 r-xp 00000000 08:01 48761634                   /usr/lib/libX11.so.6.3.0
+7fa74d6ec000-7fa74d8ec000 ---p 00131000 08:01 48761634                   /usr/lib/libX11.so.6.3.0
+7fa74d8ec000-7fa74d8ed000 r--p 00131000 08:01 48761634                   /usr/lib/libX11.so.6.3.0
+7fa74d8ed000-7fa74d8f1000 rw-p 00132000 08:01 48761634                   /usr/lib/libX11.so.6.3.0
+7fa74d8f1000-7fa74d902000 r-xp 00000000 08:01 48761651                   /usr/lib/libXext.so.6.4.0
+7fa74d902000-7fa74db01000 ---p 00011000 08:01 48761651                   /usr/lib/libXext.so.6.4.0
+7fa74db01000-7fa74db02000 r--p 00010000 08:01 48761651                   /usr/lib/libXext.so.6.4.0
+7fa74db02000-7fa74db03000 rw-p 00011000 08:01 48761651                   /usr/lib/libXext.so.6.4.0
+7fa74db03000-7fa74db04000 rw-s c2060000 00:05 5156                       /dev/nvidia0
+7fa74db04000-7fa74db09000 r--s 00052000 08:01 46665129                   /home/mark/Downloads/Fiji.app/plugins/3D_Viewer.jar
+7fa74db09000-7fa74db0d000 r--s 00000000 08:01 61744522                   /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-3
+7fa74db0d000-7fa74db21000 r--s 00000000 08:01 61742603                   /var/cache/fontconfig/865f88548240fee46819705c6468c165-le64.cache-3
+7fa74db21000-7fa74db63000 r-xp 00000000 08:01 35128651                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/xawt/libmawt.so
+7fa74db63000-7fa74dc62000 ---p 00042000 08:01 35128651                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/xawt/libmawt.so
+7fa74dc62000-7fa74dc6d000 rw-p 00041000 08:01 35128651                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/xawt/libmawt.so
+7fa74dc6d000-7fa74dc6f000 rw-p 00000000 00:00 0 
+7fa74dc6f000-7fa74dd01000 r-xp 00000000 08:01 35128664                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libawt.so
+7fa74dd01000-7fa74de00000 ---p 00092000 08:01 35128664                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libawt.so
+7fa74de00000-7fa74de19000 rw-p 00091000 08:01 35128664                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libawt.so
+7fa74de19000-7fa74de3e000 rw-p 00000000 00:00 0 
+7fa74de3e000-7fa74de4c000 r--s 00193000 08:01 35129668                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/ext/j3dutils.jar
+7fa74de4c000-7fa74de4d000 ---p 00000000 00:00 0 
+7fa74de4d000-7fa74df4d000 rwxp 00000000 00:00 0 
+7fa74df4d000-7fa74df50000 ---p 00000000 00:00 0 
+7fa74df50000-7fa74e04e000 rwxp 00000000 00:00 0 
+7fa74e04e000-7fa74e051000 ---p 00000000 00:00 0 
+7fa74e051000-7fa74e14f000 rwxp 00000000 00:00 0 
+7fa74e14f000-7fa74e152000 ---p 00000000 00:00 0 
+7fa74e152000-7fa74e250000 rwxp 00000000 00:00 0 
+7fa74e250000-7fa74e253000 ---p 00000000 00:00 0 
+7fa74e253000-7fa74e351000 rwxp 00000000 00:00 0 
+7fa74e351000-7fa74e354000 ---p 00000000 00:00 0 
+7fa74e354000-7fa74e452000 rwxp 00000000 00:00 0 
+7fa74e452000-7fa74e491000 r--p 00000000 08:01 48766592                   /usr/lib/locale/en_GB.utf8/LC_CTYPE
+7fa74e491000-7fa74e494000 ---p 00000000 00:00 0 
+7fa74e494000-7fa74e592000 rwxp 00000000 00:00 0 
+7fa74e592000-7fa74e595000 ---p 00000000 00:00 0 
+7fa74e595000-7fa74e693000 rwxp 00000000 00:00 0 
+7fa74e693000-7fa74e694000 ---p 00000000 00:00 0 
+7fa74e694000-7fa74e794000 rwxp 00000000 00:00 0 
+7fa74e794000-7fa74e7c7000 rw-p 00000000 00:00 0 
+7fa74e7c7000-7fa74e95d000 r--s 02fd0000 08:01 35128619                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/rt.jar
+7fa74e95d000-7fa74e9af000 rw-p 00000000 00:00 0 
+7fa74e9af000-7fa74e9b0000 ---p 00000000 00:00 0 
+7fa74e9b0000-7fa74eab0000 rwxp 00000000 00:00 0 
+7fa74eab0000-7fa74f4ba000 rw-p 00000000 00:00 0 
+7fa74f4ba000-7fa74f4bb000 ---p 00000000 00:00 0 
+7fa74f4bb000-7fa74f5bb000 rwxp 00000000 00:00 0 
+7fa74f5bb000-7fa74f5bc000 ---p 00000000 00:00 0 
+7fa74f5bc000-7fa74f6bc000 rwxp 00000000 00:00 0 
+7fa74f6bc000-7fa74f6bd000 ---p 00000000 00:00 0 
+7fa74f6bd000-7fa74f7bd000 rwxp 00000000 00:00 0 
+7fa74f7bd000-7fa762cca000 rw-p 00000000 00:00 0 
+7fa762cca000-7fa764d7c000 rw-p 00000000 00:00 0 
+7fa764d7c000-7fa765791000 rw-p 00000000 00:00 0 
+7fa765791000-7fa7657ee000 rw-p 00000000 00:00 0 
+7fa7657ee000-7fa76580e000 rw-p 00000000 00:00 0 
+7fa76580e000-7fa7678bf000 rw-p 00000000 00:00 0 
+7fa7678bf000-7fa768dc0000 rw-p 00000000 00:00 0 
+7fa768dc0000-7fa774900000 rw-p 00000000 00:00 0 
+7fa774900000-7fa778760000 rw-p 00000000 00:00 0 
+7fa778760000-7fab8eb00000 rw-p 00000000 00:00 0 
+7fab8eb00000-7fab96b00000 rw-p 00000000 00:00 0 
+7fab96b00000-7fab96b01000 r--s 00001000 08:01 35128425                   /home/mark/Downloads/Fiji.app/plugins/Anisotropic_Diffusion_2D.jar
+7fab96b01000-7fab96b02000 r--s 00001000 08:01 35128487                   /home/mark/Downloads/Fiji.app/plugins/Analyze_Reader_Writer.jar
+7fab96b02000-7fab96b03000 r--s 00005000 08:01 44826741                   /home/mark/Downloads/Fiji.app/plugins/AnalyzeSkeleton_.jar
+7fab96b03000-7fab96b04000 ---p 00000000 00:00 0 
+7fab96b04000-7fab96c04000 rwxp 00000000 00:00 0 
+7fab96c04000-7fab96c05000 ---p 00000000 00:00 0 
+7fab96c05000-7fab96d05000 rwxp 00000000 00:00 0 
+7fab96d05000-7fab96d06000 ---p 00000000 00:00 0 
+7fab96d06000-7fab96e06000 rwxp 00000000 00:00 0 
+7fab96e06000-7fab96e07000 ---p 00000000 00:00 0 
+7fab96e07000-7fab96f07000 rwxp 00000000 00:00 0 
+7fab96f07000-7fab96f08000 ---p 00000000 00:00 0 
+7fab96f08000-7fab97008000 rwxp 00000000 00:00 0 
+7fab97008000-7fab97009000 ---p 00000000 00:00 0 
+7fab97009000-7fab97109000 rwxp 00000000 00:00 0 
+7fab97109000-7fab9710a000 ---p 00000000 00:00 0 
+7fab9710a000-7fab9720a000 rwxp 00000000 00:00 0 
+7fab9720a000-7fab9720b000 ---p 00000000 00:00 0 
+7fab9720b000-7fab9730b000 rwxp 00000000 00:00 0 
+7fab9730b000-7fab9730c000 ---p 00000000 00:00 0 
+7fab9730c000-7fab9740c000 rwxp 00000000 00:00 0 
+7fab9740c000-7fab9740d000 ---p 00000000 00:00 0 
+7fab9740d000-7fab9777d000 rwxp 00000000 00:00 0 
+7fab9777d000-7fab9a50d000 rw-p 00000000 00:00 0 
+7fab9a50d000-7fab9a51b000 r-xp 00000000 08:01 35128634                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libzip.so
+7fab9a51b000-7fab9a61d000 ---p 0000e000 08:01 35128634                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libzip.so
+7fab9a61d000-7fab9a620000 rw-p 00010000 08:01 35128634                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libzip.so
+7fab9a620000-7fab9a621000 rw-p 00000000 00:00 0 
+7fab9a621000-7fab9a62d000 r-xp 00000000 08:01 16122524                   /lib/libnss_files-2.11.1.so
+7fab9a62d000-7fab9a82c000 ---p 0000c000 08:01 16122524                   /lib/libnss_files-2.11.1.so
+7fab9a82c000-7fab9a82d000 r--p 0000b000 08:01 16122524                   /lib/libnss_files-2.11.1.so
+7fab9a82d000-7fab9a82e000 rw-p 0000c000 08:01 16122524                   /lib/libnss_files-2.11.1.so
+7fab9a82e000-7fab9a838000 r-xp 00000000 08:01 16122514                   /lib/libnss_nis-2.11.1.so
+7fab9a838000-7fab9aa37000 ---p 0000a000 08:01 16122514                   /lib/libnss_nis-2.11.1.so
+7fab9aa37000-7fab9aa38000 r--p 00009000 08:01 16122514                   /lib/libnss_nis-2.11.1.so
+7fab9aa38000-7fab9aa39000 rw-p 0000a000 08:01 16122514                   /lib/libnss_nis-2.11.1.so
+7fab9aa39000-7fab9aa41000 r-xp 00000000 08:01 16122484                   /lib/libnss_compat-2.11.1.so
+7fab9aa41000-7fab9ac40000 ---p 00008000 08:01 16122484                   /lib/libnss_compat-2.11.1.so
+7fab9ac40000-7fab9ac41000 r--p 00007000 08:01 16122484                   /lib/libnss_compat-2.11.1.so
+7fab9ac41000-7fab9ac42000 rw-p 00008000 08:01 16122484                   /lib/libnss_compat-2.11.1.so
+7fab9ac42000-7fab9ac49000 r-xp 00000000 08:01 35128640                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/native_threads/libhpi.so
+7fab9ac49000-7fab9ad4a000 ---p 00007000 08:01 35128640                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/native_threads/libhpi.so
+7fab9ad4a000-7fab9ad4c000 rw-p 00008000 08:01 35128640                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/native_threads/libhpi.so
+7fab9ad4c000-7fab9ad4d000 rw-p 00000000 00:00 0 
+7fab9ad4d000-7fab9ad64000 r-xp 00000000 08:01 16122198                   /lib/libnsl-2.11.1.so
+7fab9ad64000-7fab9af63000 ---p 00017000 08:01 16122198                   /lib/libnsl-2.11.1.so
+7fab9af63000-7fab9af64000 r--p 00016000 08:01 16122198                   /lib/libnsl-2.11.1.so
+7fab9af64000-7fab9af65000 rw-p 00017000 08:01 16122198                   /lib/libnsl-2.11.1.so
+7fab9af65000-7fab9af67000 rw-p 00000000 00:00 0 
+7fab9af67000-7fab9af90000 r-xp 00000000 08:01 35128647                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libjava.so
+7fab9af90000-7fab9b08f000 ---p 00029000 08:01 35128647                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libjava.so
+7fab9b08f000-7fab9b096000 rw-p 00028000 08:01 35128647                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libjava.so
+7fab9b096000-7fab9b09d000 r-xp 00000000 08:01 16122211                   /lib/librt-2.11.1.so
+7fab9b09d000-7fab9b29c000 ---p 00007000 08:01 16122211                   /lib/librt-2.11.1.so
+7fab9b29c000-7fab9b29d000 r--p 00006000 08:01 16122211                   /lib/librt-2.11.1.so
+7fab9b29d000-7fab9b29e000 rw-p 00007000 08:01 16122211                   /lib/librt-2.11.1.so
+7fab9b29e000-7fab9b2b6000 r-xp 00000000 08:01 16122519                   /lib/libpthread-2.11.1.so
+7fab9b2b6000-7fab9b4b5000 ---p 00018000 08:01 16122519                   /lib/libpthread-2.11.1.so
+7fab9b4b5000-7fab9b4b6000 r--p 00017000 08:01 16122519                   /lib/libpthread-2.11.1.so
+7fab9b4b6000-7fab9b4b7000 rw-p 00018000 08:01 16122519                   /lib/libpthread-2.11.1.so
+7fab9b4b7000-7fab9b4bb000 rw-p 00000000 00:00 0 
+7fab9b4bb000-7fab9b53d000 r-xp 00000000 08:01 16121898                   /lib/libm-2.11.1.so
+7fab9b53d000-7fab9b73c000 ---p 00082000 08:01 16121898                   /lib/libm-2.11.1.so
+7fab9b73c000-7fab9b73d000 r--p 00081000 08:01 16121898                   /lib/libm-2.11.1.so
+7fab9b73d000-7fab9b73e000 rw-p 00082000 08:01 16121898                   /lib/libm-2.11.1.so
+7fab9b73e000-7fab9bef3000 r-xp 00000000 08:01 35128631                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/server/libjvm.so
+7fab9bef3000-7fab9bff2000 ---p 007b5000 08:01 35128631                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/server/libjvm.so
+7fab9bff2000-7fab9c17d000 rw-p 007b4000 08:01 35128631                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/server/libjvm.so
+7fab9c17d000-7fab9c1b6000 rw-p 00000000 00:00 0 
+7fab9c1b6000-7fab9c330000 r-xp 00000000 08:01 16122521                   /lib/libc-2.11.1.so
+7fab9c330000-7fab9c52f000 ---p 0017a000 08:01 16122521                   /lib/libc-2.11.1.so
+7fab9c52f000-7fab9c533000 r--p 00179000 08:01 16122521                   /lib/libc-2.11.1.so
+7fab9c533000-7fab9c534000 rw-p 0017d000 08:01 16122521                   /lib/libc-2.11.1.so
+7fab9c534000-7fab9c539000 rw-p 00000000 00:00 0 
+7fab9c539000-7fab9c53b000 r-xp 00000000 08:01 16122525                   /lib/libdl-2.11.1.so
+7fab9c53b000-7fab9c73b000 ---p 00002000 08:01 16122525                   /lib/libdl-2.11.1.so
+7fab9c73b000-7fab9c73c000 r--p 00002000 08:01 16122525                   /lib/libdl-2.11.1.so
+7fab9c73c000-7fab9c73d000 rw-p 00003000 08:01 16122525                   /lib/libdl-2.11.1.so
+7fab9c73d000-7fab9c75d000 r-xp 00000000 08:01 16122200                   /lib/ld-2.11.1.so
+7fab9c75d000-7fab9c75e000 r--s 00002000 08:01 35128407                   /home/mark/Downloads/Fiji.app/plugins/Algorithm_Launcher.jar
+7fab9c75e000-7fab9c766000 r--s 00142000 08:01 44826715                   /home/mark/Downloads/Fiji.app/jars/ij.jar
+7fab9c766000-7fab9c768000 r--s 0000e000 08:01 44826717                   /home/mark/Downloads/Fiji.app/jars/Fiji.jar
+7fab9c768000-7fab9c76a000 r--s 0004c000 08:01 35129664                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/ext/vecmath.jar
+7fab9c76a000-7fab9c774000 rw-p 00000000 00:00 0 
+7fab9c774000-7fab9c82a000 rw-p 00000000 00:00 0 
+7fab9c82a000-7fab9c837000 r-xp 00000000 08:01 35128670                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libverify.so
+7fab9c837000-7fab9c936000 ---p 0000d000 08:01 35128670                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libverify.so
+7fab9c936000-7fab9c939000 rw-p 0000c000 08:01 35128670                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/amd64/libverify.so
+7fab9c939000-7fab9c93c000 rw-p 00000000 00:00 0 
+7fab9c93c000-7fab9c93d000 r--s 00004000 08:01 35128479                   /home/mark/Downloads/Fiji.app/plugins/3D_Objects_Counter.jar
+7fab9c93d000-7fab9c949000 r--s 002c7000 08:01 35129665                   /home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre/lib/ext/j3dcore.jar
+7fab9c949000-7fab9c950000 r--s 00000000 08:01 48764014                   /usr/lib/gconv/gconv-modules.cache
+7fab9c950000-7fab9c958000 rw-s 00000000 08:01 50069565                   /tmp/hsperfdata_mark/18781
+7fab9c958000-7fab9c959000 rw-p 00000000 00:00 0 
+7fab9c959000-7fab9c95a000 r--p 00000000 00:00 0 
+7fab9c95a000-7fab9c95c000 rw-p 00000000 00:00 0 
+7fab9c95c000-7fab9c95d000 r--p 0001f000 08:01 16122200                   /lib/ld-2.11.1.so
+7fab9c95d000-7fab9c95e000 rw-p 00020000 08:01 16122200                   /lib/ld-2.11.1.so
+7fab9c95e000-7fab9c95f000 rw-p 00000000 00:00 0 
+7ffff67ef000-7ffff67f2000 ---p 00000000 00:00 0 
+7ffff67f3000-7ffff68ef000 rwxp 00000000 00:00 0                          [stack]
+7ffff68ef000-7ffff68f1000 rw-p 00000000 00:00 0 
+7ffff69ff000-7ffff6a00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dpython.cachedir.skip=true -Dplugins.dir=/home/mark/Downloads/Fiji.app -Xmx17010m -Xincgc -XX:PermSize=128m 
+java_command: Fiji
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=/home/mark/Downloads/Fiji.app/java/linux-amd64/jdk1.6.0_20/jre
+PATH=/home/mark/bin:/home/mark/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+USERNAME=mark
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x70ffd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x70ffd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5d8cf0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00001000, sa_flags=0x10000000
+SIGXFSZ: [libjvm.so+0x5d8cf0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5d8cf0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5db510], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:squeeze/sid
+
+uname:Linux 2.6.32-25-generic #45-Ubuntu SMP Sat Oct 16 19:52:42 UTC 2010 x86_64
+libc:glibc 2.11.1 NPTL 2.11.1 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 1024, AS infinity
+load average:0.77 0.68 0.66
+
+CPU:total 12 (16 cores per cpu, 2 threads per core) family 6 model 44 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 24679252k(19643620k free), swap 72294392k(72294392k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (16.3-b01) for linux-amd64 JRE (1.6.0_20-b02), built on Apr 12 2010 13:57:11 by "java_re" with gcc 3.2.2 (SuSE Linux)
+
+time: Mon Nov 22 10:44:06 2010
+elapsed time: 32 seconds
+

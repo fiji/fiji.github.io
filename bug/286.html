@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 286 &ndash; python interpreter cannot import ij.jar classes at startup in MacOSX</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Other bz_bug_286 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;286</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">python interpreter cannot import ij.jar classes at startup in MacOSX</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2011-04-27 17:39:16 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2011-04-27 17:39:16">
+  <input type="hidden" name="longdesclength" value="3">
+  <input type="hidden" name="id" value="286">
+  <input type="hidden" name="token" value="1492731578-pVAQDkqJVpc87jbJgNdNhCdW-puCFDiqHVSOKPUo7k0">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="286.html"><b>Bug&nbsp;286</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">python interpreter cannot import ij.jar classes at startup in MacOSX</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>python interpreter cannot import ij.jar classes at startup in MacOSX
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Mac OS
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       major
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">Albert Cardona</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2011-02-14 23:36 CST by <span class="vcard"><span class="fn">Albert Cardona</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-04-27 17:39 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="imagej-bugs">imagej-bugs</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Albert Cardona</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-14 23:36:54 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Running a python script in MacOSX results in the error pasted below.
+The line in question is the line at Jython_Interpreter.java:116 that I changed recently and that allows for the PythonInterpreter to return the value of the evaluated code. Apparently that doesn't work in a MacOSX.
+
+org.python.core.PyException: null
+	 at org.python.core.PyException.fillInStackTrace(PyException.java:70)
+	 at java.lang.Throwable.&lt;init&gt;(Throwable.java:181)
+	 at java.lang.Exception.&lt;init&gt;(Exception.java:29)
+	 at java.lang.RuntimeException.&lt;init&gt;(RuntimeException.java:32)
+	 at org.python.core.PyException.&lt;init&gt;(PyException.java:46)
+	 at org.python.core.PyException.&lt;init&gt;(PyException.java:43)
+	 at org.python.core.Py.JavaError(Py.java:455)
+	 at org.python.core.Py.findClassEx(Py.java:836)
+	 at org.python.core.packagecache.SysPackageManager.findClass(SysPackageManager.java:133)
+	 at org.python.core.packagecache.PackageManager.findClass(PackageManager.java:28)
+	 at org.python.core.packagecache.SysPackageManager.findClass(SysPackageManager.java:122)
+	 at org.python.core.PyJavaPackage.__findattr_ex__(PyJavaPackage.java:137)
+	 at org.python.core.PyObject.__findattr__(PyObject.java:869)
+	 at org.python.core.packagecache.PackageManager.lookupName(PackageManager.java:136)
+	 at org.python.core.JavaImporter.find_module(JavaImporter.java:39)
+	 at org.python.core.JavaImporter.find_module(JavaImporter.java:25)
+	 at sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+	 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	 at java.lang.reflect.Method.invoke(Method.java:597)
+	 at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:175)
+	 at org.python.core.PyObject.__call__(PyObject.java:355)
+	 at org.python.core.PyMethod.__call__(PyMethod.java:215)
+	 at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:221)
+	 at org.python.core.PyMethod.__call__(PyMethod.java:206)
+	 at org.python.core.PyObject.__call__(PyObject.java:367)
+	 at org.python.core.imp.find_module(imp.java:405)
+	 at org.python.core.imp.import_next(imp.java:635)
+	 at org.python.core.imp.import_name(imp.java:746)
+	 at org.python.core.imp.importName(imp.java:806)
+	 at org.python.core.ImportFunction.__call__(__builtin__.java:1232)
+	 at org.python.core.PyObject.__call__(PyObject.java:367)
+	 at org.python.core.__builtin__.__import__(__builtin__.java:1202)
+	 at org.python.core.imp.importFromAs(imp.java:884)
+	 at org.python.core.imp.importFrom(imp.java:860)
+	 at org.python.pycode._pyx0.f$0(&lt;string&gt;:37)
+	 at org.python.pycode._pyx0.call_function(&lt;string&gt;:-1)
+	 at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	 at org.python.core.PyCode.call(PyCode.java:18)
+	 at org.python.core.Py.runCode(Py.java:1204)
+	 at org.python.core.__builtin__.eval(__builtin__.java:504)
+	 at org.python.util.PythonInterpreter.eval(PythonInterpreter.java:164)
+	 at Jython.Jython_Interpreter.eval(Jython_Interpreter.java:116)
+	 at common.AbstractInterpreter.importAll(AbstractInterpreter.java:962)
+	 at Jython.Refresh_Jython_Scripts.runScript(Refresh_Jython_Scripts.java:71)
+	 at common.RefreshScripts.runScript(RefreshScripts.java:307)
+	 at fiji.scripting.TextEditor$Tab$6.execute(TextEditor.java:1194)
+	 at fiji.scripting.TextEditor$Executer$1.run(TextEditor.java:1753)
+Traceback (most recent call last):
+  File &quot;&lt;iostream&gt;&quot;, line 4, in &lt;module&gt;
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:632)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:616)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:307)
+	at fiji.FijiClassLoader.loadClass(FijiClassLoader.java:140)
+	at fiji.FijiClassLoader.loadClass(FijiClassLoader.java:132)
+	at fiji.FijiClassLoader.loadClass(FijiClassLoader.java:127)
+	at org.python.core.Py.findClassEx(Py.java:804)
+	at org.python.core.packagecache.SysPackageManager.findClass(SysPackageManager.java:133)
+	at org.python.core.packagecache.PackageManager.findClass(PackageManager.java:28)
+	at org.python.core.packagecache.SysPackageManager.findClass(SysPackageManager.java:122)
+	at org.python.core.PyJavaPackage.__findattr_ex__(PyJavaPackage.java:137)
+	at org.python.core.PyObject.__findattr__(PyObject.java:869)
+	at org.python.core.packagecache.PackageManager.lookupName(PackageManager.java:136)
+	at org.python.core.JavaImporter.find_module(JavaImporter.java:39)
+	at org.python.core.JavaImporter.find_module(JavaImporter.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+
+java.lang.NoClassDefFoundError: java.lang.NoClassDefFoundError: ij (wrong name: ij/IJ)</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-23 15:11:43 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >That's fixed now, correct?</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-04-27 17:39:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I assume that's a &quot;yes&quot;.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

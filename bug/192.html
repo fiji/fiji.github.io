@@ -1,0 +1,814 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 192 &ndash; Crash upon image loading</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Other bz_bug_192 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;192</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Crash upon image loading</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2011-04-13 18:36:59 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2011-04-13 18:36:59">
+  <input type="hidden" name="longdesclength" value="6">
+  <input type="hidden" name="id" value="192">
+  <input type="hidden" name="token" value="1492731539-u4qzmqpr3LrreCLu5Ky6EekbZOwSzIQMtBVWD_57NDQ">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="192.html"><b>Bug&nbsp;192</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Crash upon image loading</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Crash upon image loading
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       major
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2010-06-29 03:58 CDT by <span class="vcard"><span class="fn">Brad</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-04-13 18:36 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Brad</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-06-29 03:58:30 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I seem to have stumbled across a fairly show stopping bug: Fiji crashes whenever it loads an image, or tries to run any interpreter via the scripting menu.  GUIs work okay, file dialogs work fine, but any attempt to open an image using them (e.g. the Bio-formats importer) crashes.
+
+The error message would implicate Java as the culprit, but I've updated it, reinstalled, uninstalled and am now running with Fiji's included JDK, all to no avail.  Both the website snapshot and compiling from git produce this error.  I'm running Windows XP, 32-bit, with an ATI Radeon X600 and ~4gb of ram.
+
+Crash dump file:
+
+# Java VM: Java HotSpot(TM) Client VM (16.3-b01 mixed mode windows-x86 )
+# Problematic frame:
+# C  [awt.dll+0x34baa]
+#
+# If you would like to submit a bug report, please visit:
+#   <a href="http://java.sun.com/webapps/bugreport/crash.jsp">http://java.sun.com/webapps/bugreport/crash.jsp</a>
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x6ca1b400):  JavaThread &quot;AWT-Windows&quot; daemon [_thread_in_native, id=720, stack(0x71460000,0x71660000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0xe1f3ec1c
+
+Registers:
+EAX=0x00000000, EBX=0x00000100, ECX=0xff0d0d0d, EDX=0xffffffff
+ESP=0x7165f294, EBP=0x7165f374, ESI=0xe1f3ec1c, EDI=0x03bad18c
+EIP=0x6d434baa, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x7165f294)
+0x7165f294:   7165f2f0 00000100 7165f374 00000100
+0x7165f2a4:   6d4ab551 ff0d0d0d 0000046c 00000100
+0x7165f2b4:   00000100 05b8a57c 00000000 00000000
+0x7165f2c4:   00000000 00000100 6caab010 00000100
+0x7165f2d4:   719ba540 00000400 e1f3ec1c 00000000
+0x7165f2e4:   00000000 00000100 00000100 00000000
+0x7165f2f4:   00000000 00000100 00000100 00000000
+0x7165f304:   00000000 00000004 00000400 00000000 
+
+Instructions: (pc=0x6d434baa)
+0x6d434b9a:   8b d1 c1 fa 18 8d 42 01 85 c0 89 4c 24 14 75 04
+0x6d434baa:   89 0e eb 42 0f b6 6c 24 16 81 e2 ff 00 00 00 8b 
+
+
+Stack: [0x71460000,0x71660000],  sp=0x7165f294,  free space=7fc7165edc8k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [awt.dll+0x34baa]
+C  [awt.dll+0xabdf6]
+C  [awt.dll+0xac4c6]
+C  [awt.dll+0xb34ae]
+C  [awt.dll+0x9c6ec]
+C  [USER32.dll+0x8734]
+C  [USER32.dll+0x8816]
+C  [USER32.dll+0x18ea0]
+C  [USER32.dll+0x18eec]
+C  [ntdll.dll+0xe473]
+C  [USER32.dll+0x9402]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.awt.windows.WToolkit.eventLoop()V+0
+j  sun.awt.windows.WToolkit.run()V+77
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( =&gt; current thread )
+  0x726e4400 JavaThread &quot;zSelector&quot; [_thread_blocked, id=2324, stack(0x009b0000,0x00bb0000)]
+  0x72811400 JavaThread &quot;TimerQueue&quot; daemon [_thread_blocked, id=2000, stack(0x75240000,0x75440000)]
+  0x6cb43c00 JavaThread &quot;Bio-Formats Importer&quot; [_thread_in_native, id=1772, stack(0x73b70000,0x73d70000)]
+  0x00e67000 JavaThread &quot;DestroyJavaVM&quot; [_thread_blocked, id=2716, stack(0x00030000,0x00230000)]
+  0x7281b400 JavaThread &quot;D3D Screen Updater&quot; daemon [_thread_blocked, id=3964, stack(0x73970000,0x73b70000)]
+  0x726af800 JavaThread &quot;AWT-EventQueue-0&quot; [_thread_in_native, id=3880, stack(0x72880000,0x72a80000)]
+  0x6cac4800 JavaThread &quot;AWT-Shutdown&quot; [_thread_blocked, id=1504, stack(0x71ed0000,0x720d0000)]
+  0x6caa6800 JavaThread &quot;RMI Reaper&quot; [_thread_blocked, id=216, stack(0x71cd0000,0x71ed0000)]
+  0x6caa6000 JavaThread &quot;RMI TCP Accept-0&quot; daemon [_thread_in_native, id=3020, stack(0x71260000,0x71460000)]
+  0x6ca5a800 JavaThread &quot;GC Daemon&quot; daemon [_thread_blocked, id=3796, stack(0x71ad0000,0x71cd0000)]
+  0x6c9f6000 JavaThread &quot;RMI RenewClean-[10.90.6.239:1054]&quot; daemon [_thread_blocked, id=3240, stack(0x71660000,0x71860000)]
+=&gt;0x6ca1b400 JavaThread &quot;AWT-Windows&quot; daemon [_thread_in_native, id=720, stack(0x71460000,0x71660000)]
+  0x6ca05400 JavaThread &quot;Java2D Disposer&quot; daemon [_thread_blocked, id=2180, stack(0x71060000,0x71260000)]
+  0x6c968c00 JavaThread &quot;Low Memory Detector&quot; daemon [_thread_blocked, id=1016, stack(0x6d5a0000,0x6d7a0000)]
+  0x6c963000 JavaThread &quot;CompilerThread0&quot; daemon [_thread_blocked, id=3592, stack(0x6d040000,0x6d240000)]
+  0x6c961800 JavaThread &quot;Attach Listener&quot; daemon [_thread_blocked, id=2504, stack(0x6cd60000,0x6cf60000)]
+  0x6c960400 JavaThread &quot;Signal Dispatcher&quot; daemon [_thread_blocked, id=2540, stack(0x6cb60000,0x6cd60000)]
+  0x6b77ec00 JavaThread &quot;Surrogate Locker Thread (CMS)&quot; daemon [_thread_blocked, id=3560, stack(0x6c760000,0x6c960000)]
+  0x6b76e400 JavaThread &quot;Finalizer&quot; daemon [_thread_blocked, id=4080, stack(0x6c560000,0x6c760000)]
+  0x6b769800 JavaThread &quot;Reference Handler&quot; daemon [_thread_blocked, id=1916, stack(0x6c360000,0x6c560000)]
+
+Other Threads:
+  0x6b766c00 VMThread [stack: 0x6c160000,0x6c360000] [id=904]
+  0x6c973c00 WatcherThread [stack: 0x70e60000,0x71060000] [id=3648]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ par new generation   total 14784K, used 11809K [0x03330000, 0x04330000, 0x05330000)
+  eden space 13184K,  89% used [0x03330000, 0x03eb6c20, 0x04010000)
+  from space 1600K,   0% used [0x04010000, 0x04011800, 0x041a0000)
+  to   space 1600K,   0% used [0x041a0000, 0x041a0000, 0x04330000)
+ concurrent mark-sweep generation total 531620K, used 344347K [0x05330000, 0x25a59000, 0x63330000)
+ concurrent-mark-sweep perm gen total 131072K, used 19806K [0x63330000, 0x6b330000, 0x6b330000)
+
+Dynamic libraries:
+0x00400000 - 0x00454000 	c:\Documents and Settings\Administrator\Desktop\Fiji\fiji\fiji.exe
+0x7c900000 - 0x7c9b2000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c8f6000 	C:\WINDOWS\system32\kernel32.dll
+0x77c10000 - 0x77c68000 	C:\WINDOWS\system32\msvcrt.dll
+0x7e410000 - 0x7e4a1000 	C:\WINDOWS\system32\USER32.dll
+0x77f10000 - 0x77f59000 	C:\WINDOWS\system32\GDI32.dll
+0x76390000 - 0x763ad000 	C:\WINDOWS\system32\IMM32.DLL
+0x77dd0000 - 0x77e6b000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e70000 - 0x77f02000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\WINDOWS\system32\Secur32.dll
+0x6d8b0000 - 0x6db47000 	c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\client\jvm.dll
+0x76b40000 - 0x76b6d000 	C:\WINDOWS\system32\WINMM.dll
+0x7c340000 - 0x7c396000 	C:\WINDOWS\system32\MSVCR71.dll
+0x6d860000 - 0x6d86c000 	c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\java.dll
+0x6d340000 - 0x6d348000 	c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d8a0000 - 0x6d8af000 	c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\zip.dll
+0x6d400000 - 0x6d54a000 	C:\Documents and Settings\Administrator\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\awt.dll
+0x73000000 - 0x73026000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x774e0000 - 0x7761d000 	C:\WINDOWS\system32\ole32.dll
+0x6cf60000 - 0x6cffa000 	C:\WINDOWS\system32\COMCTL32.dll
+0x6d240000 - 0x6d278000 	C:\WINDOWS\system32\uxtheme.dll
+0x74720000 - 0x7476c000 	C:\WINDOWS\system32\MSCTF.dll
+0x755c0000 - 0x755ee000 	C:\WINDOWS\system32\msctfime.ime
+0x6d350000 - 0x6d363000 	C:\Documents and Settings\Administrator\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\net.dll
+0x71ab0000 - 0x71ac7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71aa0000 - 0x71aa8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x71a50000 - 0x71a8f000 	C:\WINDOWS\System32\mswsock.dll
+0x76f20000 - 0x76f47000 	C:\WINDOWS\system32\DNSAPI.dll
+0x76fb0000 - 0x76fb8000 	C:\WINDOWS\System32\winrnr.dll
+0x76f60000 - 0x76f8c000 	C:\WINDOWS\system32\WLDAP32.dll
+0x76fc0000 - 0x76fc6000 	C:\WINDOWS\system32\rasadhlp.dll
+0x6d7a0000 - 0x6d7d6000 	C:\WINDOWS\system32\rsaenh.dll
+0x769c0000 - 0x76a74000 	C:\WINDOWS\system32\USERENV.dll
+0x6d7e0000 - 0x6d835000 	C:\WINDOWS\system32\netapi32.dll
+0x71860000 - 0x718b8000 	C:\WINDOWS\system32\hnetcfg.dll
+0x71a90000 - 0x71a98000 	C:\WINDOWS\System32\wshtcpip.dll
+0x718c0000 - 0x71914000 	C:\Documents and Settings\Administrator\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\fontmanager.dll
+0x720d0000 - 0x72276000 	C:\WINDOWS\system32\d3d9.dll
+0x6d3b0000 - 0x6d3b6000 	C:\WINDOWS\system32\d3d8thk.dll
+0x77c00000 - 0x77c08000 	C:\WINDOWS\system32\VERSION.dll
+0x72d70000 - 0x72d79000 	C:\Documents and Settings\Administrator\Desktop\Fiji\fiji\java\win32\jdk1.6.0_20\jre\bin\nio.dll
+0x72d80000 - 0x72d89000 	C:\WINDOWS\system32\mslbui.dll
+0x76d60000 - 0x76d79000 	C:\WINDOWS\system32\iphlpapi.dll
+0x76d40000 - 0x76d58000 	C:\WINDOWS\system32\MPRAPI.dll
+0x77cc0000 - 0x77cf2000 	C:\WINDOWS\system32\ACTIVEDS.dll
+0x76e10000 - 0x76e35000 	C:\WINDOWS\system32\adsldpc.dll
+0x76b20000 - 0x76b31000 	C:\WINDOWS\system32\ATL.DLL
+0x77120000 - 0x771ab000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x76e80000 - 0x76e8e000 	C:\WINDOWS\system32\rtutils.dll
+0x72fe0000 - 0x72ff3000 	C:\WINDOWS\system32\SAMLIB.dll
+0x77920000 - 0x77a13000 	C:\WINDOWS\system32\SETUPAPI.dll
+0x7c9c0000 - 0x7d1d7000 	C:\WINDOWS\system32\SHELL32.DLL
+0x77f60000 - 0x77fd6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x773d0000 - 0x774d3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+0x763b0000 - 0x763f9000 	C:\WINDOWS\system32\COMDLG32.DLL
+0x77b40000 - 0x77b62000 	C:\WINDOWS\system32\appHelp.dll
+0x76fd0000 - 0x7704f000 	C:\WINDOWS\system32\CLBCATQ.DLL
+0x77050000 - 0x77115000 	C:\WINDOWS\system32\COMRes.dll
+0x77a20000 - 0x77a74000 	C:\WINDOWS\System32\cscui.dll
+0x76600000 - 0x7661d000 	C:\WINDOWS\System32\CSCDLL.dll
+0x75f80000 - 0x7607d000 	C:\WINDOWS\system32\browseui.dll
+0x76990000 - 0x769b5000 	C:\WINDOWS\system32\ntshrui.dll
+0x74050000 - 0x74062000 	C:\WINDOWS\system32\MPR.dll
+0x75f60000 - 0x75f67000 	C:\WINDOWS\System32\drprov.dll
+0x74030000 - 0x7403e000 	C:\WINDOWS\System32\ntlanman.dll
+0x74070000 - 0x74087000 	C:\WINDOWS\System32\NETUI0.dll
+0x74090000 - 0x740d0000 	C:\WINDOWS\System32\NETUI1.dll
+0x740d0000 - 0x740d7000 	C:\WINDOWS\System32\NETRAP.dll
+0x75f70000 - 0x75f7a000 	C:\WINDOWS\System32\davclnt.dll
+0x7e290000 - 0x7e401000 	C:\WINDOWS\system32\shdocvw.dll
+0x77a80000 - 0x77b15000 	C:\WINDOWS\system32\CRYPT32.dll
+0x77b20000 - 0x77b32000 	C:\WINDOWS\system32\MSASN1.dll
+0x754d0000 - 0x75550000 	C:\WINDOWS\system32\CRYPTUI.dll
+0x74510000 - 0x745e1000 	C:\WINDOWS\system32\WININET.dll
+0x740f0000 - 0x740f9000 	C:\WINDOWS\system32\Normaliz.dll
+0x745f0000 - 0x74635000 	C:\WINDOWS\system32\iertutil.dll
+0x76c30000 - 0x76c5e000 	C:\WINDOWS\system32\WINTRUST.dll
+0x76c90000 - 0x76cb8000 	C:\WINDOWS\system32\IMAGEHLP.dll
+0x76980000 - 0x76988000 	C:\WINDOWS\system32\LINKINFO.dll
+0x74f70000 - 0x75235000 	C:\WINDOWS\system32\xpsp2res.dll
+0x00be0000 - 0x00c3b000 	C:\Program Files\Common Files\Adobe\Acrobat\ActiveX\PDFShell.dll
+0x00c50000 - 0x00ceb000 	C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700\MSVCR80.dll
+
+VM Arguments:
+jvm_args: -Dpython.cachedir.skip=true -Dplugins.dir=c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji -Xmx1536m -Xincgc -XX:PermSize=128m 
+java_command: Fiji
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji/java/win32/jdk1.6.0_20/jre
+PATH=c:\Documents and Settings\Administrator\bin;.;C:\Program Files\Git\local\bin;C:\Program Files\Git\mingw\bin;C:\Program Files\Git\bin;c:\WINDOWS\system32;c:\WINDOWS;c:\WINDOWS\System32\Wbem;c:\Program Files\ATI Technologies\ATI Control Panel;c:\Program Files\Microsoft SQL Server\80\Tools\Binn\;c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji/java/win32/jdk1.6.0_20/jre/bin;c:\DOCUME~1\ADMINI~1\Desktop\Fiji\fiji/java/win32/jdk1.6.0_20/jre/bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 4 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 15 model 4 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3
+
+Memory: 4k page, physical 3668036k(2501704k free), swap 5595652k(4207632k free)
+
+vm_info: Java HotSpot(TM) Client VM (16.3-b01) for windows-x86 JRE (1.6.0_20-b02), built on Apr 12 2010 13:52:23 by &quot;java_re&quot; with MS VC++ 7.1 (VS2003)
+
+time: Mon Jun 28 19:21:30 2010
+elapsed time: 101 seconds</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-06-29 12:04:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Can you try again with the --system option (i.e. forcing Fiji to launch ImageJ with the system Java, to make sure that the issue is not the Fiji launcher)?</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Brad</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-06-29 19:16:32 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Yes, it still crashes using the system Java.  
+
+Additionally, I'm noticing that it's also crashing when it tries to update Fiji.  This happens on startup when it's called via fiji.exe, without using the --config option.  With it, or via Build.sh, it apparently doesn't check and doesn't crash.  Checking for updates manually at that point works up to the window where you actually install the upgrade, and then it crashes.
+
+Just for kicks, I deleted Java entirely again, did a Build.sh clean, then a git reset --hard, and recompiled.  No change, still crashy.  All errors are the same: something in awt.dll, apparently.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Albert Cardona</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-03 05:00:16 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="#c2">comment #2</a>)
+<span class="quote">&gt; Yes, it still crashes using the system Java.  
+&gt; 
+&gt; Additionally, I'm noticing that it's also crashing when it tries to update
+&gt; Fiji.  This happens on startup when it's called via fiji.exe, without using the
+&gt; --config option.  With it, or via Build.sh, it apparently doesn't check and
+&gt; doesn't crash.  Checking for updates manually at that point works up to the
+&gt; window where you actually install the upgrade, and then it crashes.
+&gt; 
+&gt; Just for kicks, I deleted Java entirely again, did a Build.sh clean, then a git
+&gt; reset --hard, and recompiled.  No change, still crashy.  All errors are the
+&gt; same: something in awt.dll, apparently.</span >
+
+
+Have you tried with one of the latest jdk such as 1.6.0_21 ? Many JVM bugs were fixed.
+</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-23 14:55:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I fear this is related (or identical to) bugs 104, 126, and 129. Not much we can do about it, except maybe check whether starting Fiji via
+
+/path/to/Fiji.app/Contents/MacOS/fiji-macosx -Dapple.laf.useScreenMenuBar=false --
+
+fixes the crash... Could you do that?</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-04-13 18:36:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Oops. I missed the fact that this is a Windows issue, not a MacOSX issue. Nevertheless, from a quick Google search it appears that the problem should be resolved by updating the graphics card driver. If not, please reopen the bug with the information provided by the Help&gt;Report a Bug plugin.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

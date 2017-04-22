@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 247 &ndash; Exception with Macro scripting, command &quot;Stack Combiner&quot;</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_ImageJ1 bz_bug_247 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;247</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Exception with Macro scripting, command &quot;Stack Combiner&quot;</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2010-11-16 16:08:40 CST</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2010-11-16 16:08:40">
+  <input type="hidden" name="longdesclength" value="8">
+  <input type="hidden" name="id" value="247">
+  <input type="hidden" name="token" value="1492731562-zNZEWvTzXcJeT3Kvbkj0Y2_X4VG97aoE4BMrezYs9JI">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="247.html"><b>Bug&nbsp;247</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Exception with Macro scripting, command &quot;Stack Combiner&quot;</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Exception with Macro scripting, command &quot;Stack Combiner&quot;
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >ImageJ1</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2010-11-16 10:41 CST by <span class="vcard"><span class="fn">Julien Colombelli</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2010-11-16 16:08 CST 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>0 
+          users
+        <div id="cc_edit_area">
+          <br>
+        </div>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_octet-stream">
+        <td valign="top">
+            <a href="../attach/30/Bug_with_StackCombiner.ijm"
+               title="View the content of the attachment">
+          <b>A very generic code creating 2 ramp images and trying to combine them, which generates an 'Exception'</b></a>
+
+          <span class="bz_attach_extra_info">
+              (238 bytes,
+                application/octet-stream)
+
+            <br>
+            <a href="#attach_30"
+               title="Go to the comment associated with the attachment">2010-11-16 12:07 CST</a>,
+
+            <span class="vcard"><span class="fn">Julien Colombelli</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+
+  </table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Julien Colombelli</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 10:41:48 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >When trying to recombine two stacks (which are actually two images in this case),
+Image J reports the following error, apparently connected to the scripting editor, in an 'Exception' window.
+
+The 'manual' recombination with the pulldown menu works, and the dimensions and formats of the 2 images are compatible. 
+latest version 1.44i, Fiji updates done today (16-Nov-2010)
+
+
+        java.lang.NullPointerException
+	at Stack_Combiner.run(Stack_Combiner.java:32)
+	at ij.IJ.runUserPlugIn(IJ.java:193)
+	at ij.IJ.runPlugIn(IJ.java:154)
+	at ij.Executer.runCommand(Executer.java:147)
+	at ij.Executer.run(Executer.java:78)
+	at ij.IJ.run(IJ.java:269)
+	at ij.macro.Functions.doRun(Functions.java:559)
+	at ij.macro.Functions.doFunction(Functions.java:79)
+	at ij.macro.Interpreter.doStatement(Interpreter.java:201)
+	at ij.macro.Interpreter.doStatements(Interpreter.java:189)
+	at ij.macro.Interpreter.run(Interpreter.java:100)
+	at ij.macro.Interpreter.run(Interpreter.java:72)
+	at CLI.Refresh_Macros.runScript(Refresh_Macros.java:54)
+	at common.RefreshScripts.runScript(RefreshScripts.java:392)
+	at fiji.scripting.TextEditor$13.execute(TextEditor.java:1494)
+	at fiji.scripting.TextEditor$Executer$1.run(TextEditor.java:1345)
+
+thanks anyone for some help,
+J</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Dan White</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 11:22:53 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Julien,
+
+Can you attach your macro code to this bug report to we can replicate the problem.
+
+Further info, 
+recording the stack combiner in the macro recorder giving this command
+run(&quot;Stack Combiner&quot;, &quot;stack=[Combined Stacks] stack=[Combined Stacks-1]&quot;);
+also give as duplicate commend error. 
+
+cheers, Dan</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Julien Colombelli</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 12:05:37 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi, 
+
+As requested I put here an example of code, generated
+from the recorder with generic images (ramps),
+
+additional info: before the 'Exception' window opens, 
+the 'MyImage' closes, but not 'MyRamp' (the second image to be combined)
+
+I hope someone will be able to reproduce the bug,
+
+thx a lot in advance
+Julien
+
+Macro code: 
+
+newImage(&quot;MyRamp&quot;, &quot;8-bit Ramp&quot;, 600, 50, 1);
+run(&quot;Rotate 90 Degrees Right&quot;);
+newImage(&quot;MyImage&quot;, &quot;8-bit Ramp&quot;, 600, 200, 1);
+run(&quot;Flip Horizontally&quot;);
+run(&quot;Rotate 90 Degrees Right&quot;);
+run(&quot;Stack Combiner&quot;, &quot;stack=MyImage stack=MyRamp&quot;);
+
+ </pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Julien Colombelli</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 12:07:48 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/30/Bug_with_StackCombiner.ijm" name="attach_30" title="A very generic code creating 2 ramp images and trying to combine them, which generates an 'Exception'">attachment 30</a></span>
+A very generic code creating 2 ramp images and trying to combine them, which generates an 'Exception'</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 12:12:36 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I can reproduce!</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 12:21:45 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Fixed in <a href="http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=commitdiff;h=8ac3243e4210d4b0f923cf1ead1e74bf781fd4b6;hb=refs/heads/master">http://pacific.mpi-cbg.de/cgi-bin/gitweb.cgi?p=fiji.git;a=commitdiff;h=8ac3243e4210d4b0f923cf1ead1e74bf781fd4b6;hb=refs/heads/master</a> and uploaded.
+
+Note that the last line of the macro must read
+
+run(&quot;Stack Combiner&quot;, &quot;stack_1=MyImage stack_2=MyRamp&quot;);
+
+now (i.e. both &quot;stack&quot; keys need to be replaced).
+</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 15:54:20 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The Stack Combiner plugin is built into ImageJ as the Image&gt;Stacks&gt;Tools&gt;Combine command. Here is an updated version of the test macro that uses this command.
+
+    newImage(MyRamp&quot;, &quot;8-bit Ramp&quot;, 600, 50, 1);
+    run(&quot;Rotate 90 Degrees Right&quot;);
+    newImage(&quot;MyImage&quot;, &quot;8-bit Ramp&quot;, 600, 200, 1);
+    run(&quot;Flip Horizontally&quot;);
+    run(&quot;Rotate 90 Degrees Right&quot;);
+    run(&quot;Combine...&quot;, &quot;stack1=MyImage stack2=MyRamp&quot;);
+
+-wayne</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Julien Colombelli</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-11-16 16:08:40 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks everyone, 
+very fast and very helpful,
+Best
+Julien</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

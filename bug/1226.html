@@ -1,0 +1,930 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1226 &ndash; Java3D (3D viewer) crashes upon opening</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_Plugins bz_bug_1226 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1226</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Java3D (3D viewer) crashes upon opening</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2016-02-12 07:26:00 CST</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2016-02-12 07:26:00">
+  <input type="hidden" name="longdesclength" value="2">
+  <input type="hidden" name="id" value="1226">
+  <input type="hidden" name="token" value="1492731975-axlxoonrwHnCC-5IFEk7H90CkRdBJWbOqMGtyJ0X0Jg">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="1226.html"><b>Bug&nbsp;1226</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Java3D (3D viewer) crashes upon opening</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Java3D (3D viewer) crashes upon opening
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2016-02-12 07:17 CST by <span class="vcard"><span class="fn">Dhruv Srinivasachar</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2016-02-12 07:26 CST 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="dhruv.srinivasachar">dhruv.srinivasachar</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Dhruv Srinivasachar</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-02-12 07:17:23 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The following error is produced upon opening the 3D viewer plugin or testing Java3D
+A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000000000000, pid=4872, tid=5940
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_66-b18) (build 1.8.0_66-b18)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.66-b18 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  0x0000000000000000
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   <a href="http://bugreport.java.com/bugreport/crash.jsp">http://bugreport.java.com/bugreport/crash.jsp</a>
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000002932c800):  JavaThread &quot;3D Viewer-SharedResourceRunner&quot; daemon [_thread_in_native, id=5940, stack(0x0000000048e30000,0x0000000049030000)]
+
+siginfo: ExceptionCode=0xc0000005, ExceptionInformation=0x0000000000000008 0x0000000000000000
+
+Registers:
+RAX=0x000000004902e054, RBX=0x000007fefdea0000, RCX=0x000000004902e050, RDX=0x0000000000000000
+RSP=0x000000004902e008, RBP=0x000000004902e110, RSI=0x000007feee4bfa00, RDI=0x000000004902e680
+R8 =0x0000000000000140, R9 =0x000000000000000a, R10=0x0000000000000000, R11=0x000000004902e054
+R12=0x000000004902e8f0, R13=0x000007fefad053cc, R14=0x0000000000000000, R15=0x000000002932c800
+RIP=0x0000000000000000, EFLAGS=0x0000000000010213
+
+Top of Stack: (sp=0x000000004902e008)
+0x000000004902e008:   000007fefad03f5d 0072007400730069
+0x000000004902e018:   0061004d005c0079 006e006900680063
+0x000000004902e028:   00790053005c0065 006d006500740073
+0x000000004902e038:   007200750043005c 0074006e00650072
+0x000000004902e048:   0074006e006f0043 0000000000000000
+0x000000004902e058:   0000000000000000 0000000000000000
+0x000000004902e068:   0000000000000000 0000000000000000
+0x000000004902e078:   0000000000000000 0000000000000000
+0x000000004902e088:   0000000000000000 0000000000000000
+0x000000004902e098:   0000000000000000 0000000000000000
+0x000000004902e0a8:   0000000000000000 0000000000000000
+0x000000004902e0b8:   0000000000000000 0000000000000000
+0x000000004902e0c8:   0000000000000000 0000000000000000
+0x000000004902e0d8:   0000000000000000 0000000000000000
+0x000000004902e0e8:   0000000000000000 0000000000000000
+0x000000004902e0f8:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x0000000000000000)
+0xffffffffffffffe0:   
+
+
+Register to memory mapping:
+
+RAX=0x000000004902e054 is pointing into the stack for thread: 0x000000002932c800
+RBX=0x000007fefdea0000 is an unknown value
+RCX=0x000000004902e050 is pointing into the stack for thread: 0x000000002932c800
+RDX=0x0000000000000000 is an unknown value
+RSP=0x000000004902e008 is pointing into the stack for thread: 0x000000002932c800
+RBP=0x000000004902e110 is pointing into the stack for thread: 0x000000002932c800
+RSI=0x000007feee4bfa00 is an unknown value
+RDI=0x000000004902e680 is pointing into the stack for thread: 0x000000002932c800
+R8 =0x0000000000000140 is an unknown value
+R9 =0x000000000000000a is an unknown value
+R10=0x0000000000000000 is an unknown value
+R11=0x000000004902e054 is pointing into the stack for thread: 0x000000002932c800
+R12=0x000000004902e8f0 is pointing into the stack for thread: 0x000000002932c800
+R13=0x000007fefad053cc is an unknown value
+R14=0x0000000000000000 is an unknown value
+R15=0x000000002932c800 is a thread
+
+
+Stack: [0x0000000048e30000,0x0000000049030000],  sp=0x000000004902e008,  free space=2040k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jogamp.nativewindow.windows.GDI.DescribePixelFormat1(JIILjava/nio/ByteBuffer;)I+0
+j  jogamp.nativewindow.windows.GDI.DescribePixelFormat(JIILjogamp/nativewindow/windows/PIXELFORMATDESCRIPTOR;)I+17
+j  jogamp.opengl.windows.wgl.WGLUtil.DescribePixelFormat(JIILjogamp/nativewindow/windows/PIXELFORMATDESCRIPTOR;)I+20
+j  jogamp.opengl.windows.wgl.WindowsWGLGraphicsConfiguration.wglAllGDIPFIDs(J)[I+4
+j  jogamp.opengl.windows.wgl.WindowsWGLGraphicsConfigurationFactory.updateGraphicsConfigurationGDI(Ljogamp/opengl/windows/wgl/WindowsWGLGraphicsConfiguration;Lcom/jogamp/nativewindow/CapabilitiesChooser;JZ[I)Z+361
+j  jogamp.opengl.windows.wgl.WindowsWGLGraphicsConfigurationFactory.updateGraphicsConfiguration(Ljogamp/opengl/windows/wgl/WindowsWGLGraphicsConfiguration;Lcom/jogamp/nativewindow/CapabilitiesChooser;Lcom/jogamp/opengl/GLDrawableFactory;JZ[I)V+239
+j  jogamp.opengl.windows.wgl.WindowsWGLGraphicsConfigurationFactory.updateGraphicsConfiguration(Lcom/jogamp/nativewindow/CapabilitiesChooser;Lcom/jogamp/opengl/GLDrawableFactory;Lcom/jogamp/nativewindow/NativeSurface;[I)V+172
+j  jogamp.opengl.windows.wgl.WindowsWGLGraphicsConfiguration.updateGraphicsConfiguration(Lcom/jogamp/opengl/GLDrawableFactory;Lcom/jogamp/nativewindow/NativeSurface;[I)V+7
+j  jogamp.opengl.windows.wgl.WindowsWGLDrawable.setRealizedImpl()V+29
+j  jogamp.opengl.GLDrawableImpl.setRealized(Z)V+200
+j  jogamp.opengl.windows.wgl.WindowsWGLDrawableFactory$SharedResourceImplementation.createSharedResource(Lcom/jogamp/nativewindow/AbstractGraphicsDevice;)Ljogamp/opengl/SharedResourceRunner$Resource;+124
+j  jogamp.opengl.SharedResourceRunner.run()V+267
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( =&gt; current thread )
+=&gt;0x000000002932c800 JavaThread &quot;3D Viewer-SharedResourceRunner&quot; daemon [_thread_in_native, id=5940, stack(0x0000000048e30000,0x0000000049030000)]
+  0x000000002dc61800 JavaThread &quot;TimerQueue&quot; daemon [_thread_blocked, id=5632, stack(0x000000002e750000,0x000000002e950000)]
+  0x0000000028da4000 JavaThread &quot;3D Viewer&quot; [_thread_blocked, id=11892, stack(0x000000002ca40000,0x000000002cc40000)]
+  0x000000002a168000 JavaThread &quot;zSelector&quot; [_thread_blocked, id=8984, stack(0x000000002ce80000,0x000000002d080000)]
+  0x0000000002387800 JavaThread &quot;DestroyJavaVM&quot; [_thread_blocked, id=5740, stack(0x0000000000030000,0x0000000000230000)]
+  0x000000002b24a000 JavaThread &quot;AWT-EventQueue-0&quot; [_thread_blocked, id=9756, stack(0x000000002e550000,0x000000002e750000)]
+  0x000000002a0c2000 JavaThread &quot;AWT-Windows&quot; daemon [_thread_in_native, id=8664, stack(0x000000002c3f0000,0x000000002c5f0000)]
+  0x000000002ae43000 JavaThread &quot;AWT-Shutdown&quot; [_thread_blocked, id=5268, stack(0x000000002c1f0000,0x000000002c3f0000)]
+  0x000000002ae42800 JavaThread &quot;Java2D Disposer&quot; daemon [_thread_blocked, id=11280, stack(0x000000002bff0000,0x000000002c1f0000)]
+  0x0000000027c88800 JavaThread &quot;Service Thread&quot; daemon [_thread_blocked, id=3204, stack(0x0000000028480000,0x0000000028680000)]
+  0x000000002621e800 JavaThread &quot;C1 CompilerThread3&quot; daemon [_thread_blocked, id=7332, stack(0x0000000027a80000,0x0000000027c80000)]
+  0x00000000261f5800 JavaThread &quot;C2 CompilerThread2&quot; daemon [_thread_blocked, id=12244, stack(0x0000000027880000,0x0000000027a80000)]
+  0x00000000261f3000 JavaThread &quot;C2 CompilerThread1&quot; daemon [_thread_blocked, id=10732, stack(0x0000000027680000,0x0000000027880000)]
+  0x00000000261ec800 JavaThread &quot;C2 CompilerThread0&quot; daemon [_thread_blocked, id=11132, stack(0x0000000027480000,0x0000000027680000)]
+  0x00000000261e5000 JavaThread &quot;Attach Listener&quot; daemon [_thread_blocked, id=12500, stack(0x0000000027280000,0x0000000027480000)]
+  0x00000000261e0000 JavaThread &quot;Signal Dispatcher&quot; daemon [_thread_blocked, id=9212, stack(0x0000000027080000,0x0000000027280000)]
+  0x00000000261db000 JavaThread &quot;Surrogate Locker Thread (Concurrent GC)&quot; daemon [_thread_blocked, id=12896, stack(0x0000000026e80000,0x0000000027080000)]
+  0x000000002617b000 JavaThread &quot;Finalizer&quot; daemon [_thread_blocked, id=12456, stack(0x0000000026c80000,0x0000000026e80000)]
+  0x0000000026174000 JavaThread &quot;Reference Handler&quot; daemon [_thread_blocked, id=10308, stack(0x0000000026a80000,0x0000000026c80000)]
+
+Other Threads:
+  0x000000002616f000 VMThread [stack: 0x00000000176a0000,0x00000000178a0000] [id=5308]
+  0x000000002627d000 WatcherThread [stack: 0x0000000028680000,0x0000000028880000] [id=11728]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ par new generation   total 78656K, used 68528K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K,  85% used [0x00000004c4800000, 0x00000004c826c0b8, 0x00000004c8c50000)
+  from space 8704K, 100% used [0x00000004c94d0000, 0x00000004c9d50000, 0x00000004c9d50000)
+  to   space 8704K,   0% used [0x00000004c8c50000, 0x00000004c8c50000, 0x00000004c94d0000)
+ concurrent mark-sweep generation total 174784K, used 12928K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 45311K, capacity 45548K, committed 46128K, reserved 1089536K
+  class space    used 6007K, capacity 6075K, committed 6192K, reserved 1048576K
+
+Card table byte_map: [0x0000000013db0000,0x0000000015590000] byte_map_base: 0x000000001178c000
+
+Marking Bits: (CMSBitMap*) 0x0000000013224b38
+ Bits: [0x00000000178a0000, 0x0000000022d19c00)
+
+Mod Union Table: (CMSBitMap*) 0x0000000013224bf8
+ Bits: [0x0000000022d20000, 0x0000000022ff1e70)
+
+Polling page: 0x0000000002360000
+
+CodeCache: size=245760Kb used=10571Kb max_used=11053Kb free=235188Kb
+ bounds [0x0000000002dc0000, 0x00000000038c0000, 0x0000000011dc0000]
+ total_blobs=3825 nmethods=2895 adapters=841
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 687.455 Thread 0x000000002621e800 3345  s    3       java.io.BufferedOutputStream::write (67 bytes)
+Event: 687.455 Thread 0x000000002621e800 nmethod 3345 0x0000000003182690 code [0x0000000003182860, 0x00000000031830b8]
+Event: 687.455 Thread 0x000000002621e800 3346       3       java.util.regex.Matcher::find (69 bytes)
+Event: 687.455 Thread 0x000000002621e800 nmethod 3346 0x0000000003165f10 code [0x0000000003166080, 0x0000000003166428]
+Event: 687.459 Thread 0x000000002621e800 3347       1       com.jogamp.common.net.Uri$Encoded::get (5 bytes)
+Event: 687.460 Thread 0x000000002621e800 nmethod 3347 0x0000000003411310 code [0x0000000003411460, 0x0000000003411570]
+Event: 687.496 Thread 0x000000002621e800 3348       3       java.util.concurrent.locks.ReentrantLock$NonfairSync::lock (25 bytes)
+Event: 687.497 Thread 0x000000002621e800 nmethod 3348 0x00000000030c1b90 code [0x00000000030c1d60, 0x00000000030c25b8]
+Event: 687.729 Thread 0x000000002621e800 3349       3       java.util.regex.Pattern$Start::match (90 bytes)
+Event: 687.729 Thread 0x000000002621e800 nmethod 3349 0x0000000003446d90 code [0x0000000003446f20, 0x0000000003447328]
+
+GC Heap History (10 events):
+Event: 0.698 GC heap before
+{Heap before GC invocations=0 (full 0):
+ par new generation   total 78656K, used 69952K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K, 100% used [0x00000004c4800000, 0x00000004c8c50000, 0x00000004c8c50000)
+  from space 8704K,   0% used [0x00000004c8c50000, 0x00000004c8c50000, 0x00000004c94d0000)
+  to   space 8704K,   0% used [0x00000004c94d0000, 0x00000004c94d0000, 0x00000004c9d50000)
+ concurrent mark-sweep generation total 174784K, used 0K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 6640K, capacity 6692K, committed 6912K, reserved 1056768K
+  class space    used 912K, capacity 948K, committed 1024K, reserved 1048576K
+Event: 0.703 GC heap after
+Heap after GC invocations=1 (full 0):
+ par new generation   total 78656K, used 8123K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K,   0% used [0x00000004c4800000, 0x00000004c4800000, 0x00000004c8c50000)
+  from space 8704K,  93% used [0x00000004c94d0000, 0x00000004c9cbee08, 0x00000004c9d50000)
+  to   space 8704K,   0% used [0x00000004c8c50000, 0x00000004c8c50000, 0x00000004c94d0000)
+ concurrent mark-sweep generation total 174784K, used 0K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 6640K, capacity 6692K, committed 6912K, reserved 1056768K
+  class space    used 912K, capacity 948K, committed 1024K, reserved 1048576K
+}
+Event: 1.021 GC heap before
+{Heap before GC invocations=1 (full 0):
+ par new generation   total 78656K, used 78075K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K, 100% used [0x00000004c4800000, 0x00000004c8c50000, 0x00000004c8c50000)
+  from space 8704K,  93% used [0x00000004c94d0000, 0x00000004c9cbee08, 0x00000004c9d50000)
+  to   space 8704K,   0% used [0x00000004c8c50000, 0x00000004c8c50000, 0x00000004c94d0000)
+ concurrent mark-sweep generation total 174784K, used 0K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 10930K, capacity 11012K, committed 11136K, reserved 1058816K
+  class space    used 1860K, capacity 1876K, committed 1920K, reserved 1048576K
+Event: 1.045 GC heap after
+Heap after GC invocations=2 (full 0):
+ par new generation   total 78656K, used 8703K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K,   0% used [0x00000004c4800000, 0x00000004c4800000, 0x00000004c8c50000)
+  from space 8704K,  99% used [0x00000004c8c50000, 0x00000004c94cffa0, 0x00000004c94d0000)
+  to   space 8704K,   0% used [0x00000004c94d0000, 0x00000004c94d0000, 0x00000004c9d50000)
+ concurrent mark-sweep generation total 174784K, used 5607K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 10930K, capacity 11012K, committed 11136K, reserved 1058816K
+  class space    used 1860K, capacity 1876K, committed 1920K, reserved 1048576K
+}
+Event: 1.744 GC heap before
+{Heap before GC invocations=2 (full 1):
+ par new generation   total 78656K, used 78655K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K, 100% used [0x00000004c4800000, 0x00000004c8c50000, 0x00000004c8c50000)
+  from space 8704K,  99% used [0x00000004c8c50000, 0x00000004c94cffa0, 0x00000004c94d0000)
+  to   space 8704K,   0% used [0x00000004c94d0000, 0x00000004c94d0000, 0x00000004c9d50000)
+ concurrent mark-sweep generation total 174784K, used 5607K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 19485K, capacity 19712K, committed 20096K, reserved 1067008K
+  class space    used 2761K, capacity 2833K, committed 2944K, reserved 1048576K
+Event: 1.749 GC heap after
+Heap after GC invocations=3 (full 1):
+ par new generation   total 78656K, used 7716K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K,   0% used [0x00000004c4800000, 0x00000004c4800000, 0x00000004c8c50000)
+  from space 8704K,  88% used [0x00000004c94d0000, 0x00000004c9c59368, 0x00000004c9d50000)
+  to   space 8704K,   0% used [0x00000004c8c50000, 0x00000004c8c50000, 0x00000004c94d0000)
+ concurrent mark-sweep generation total 174784K, used 5607K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 19485K, capacity 19712K, committed 20096K, reserved 1067008K
+  class space    used 2761K, capacity 2833K, committed 2944K, reserved 1048576K
+}
+Event: 2.097 GC heap before
+{Heap before GC invocations=3 (full 1):
+ par new generation   total 78656K, used 77668K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K, 100% used [0x00000004c4800000, 0x00000004c8c50000, 0x00000004c8c50000)
+  from space 8704K,  88% used [0x00000004c94d0000, 0x00000004c9c59368, 0x00000004c9d50000)
+  to   space 8704K,   0% used [0x00000004c8c50000, 0x00000004c8c50000, 0x00000004c94d0000)
+ concurrent mark-sweep generation total 174784K, used 5607K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 25494K, capacity 25722K, committed 25944K, reserved 1071104K
+  class space    used 3630K, capacity 3701K, committed 3736K, reserved 1048576K
+Event: 2.104 GC heap after
+Heap after GC invocations=4 (full 1):
+ par new generation   total 78656K, used 7059K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K,   0% used [0x00000004c4800000, 0x00000004c4800000, 0x00000004c8c50000)
+  from space 8704K,  81% used [0x00000004c8c50000, 0x00000004c9334d70, 0x00000004c94d0000)
+  to   space 8704K,   0% used [0x00000004c94d0000, 0x00000004c94d0000, 0x00000004c9d50000)
+ concurrent mark-sweep generation total 174784K, used 8946K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 25494K, capacity 25722K, committed 25944K, reserved 1071104K
+  class space    used 3630K, capacity 3701K, committed 3736K, reserved 1048576K
+}
+Event: 2.832 GC heap before
+{Heap before GC invocations=4 (full 1):
+ par new generation   total 78656K, used 77011K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K, 100% used [0x00000004c4800000, 0x00000004c8c50000, 0x00000004c8c50000)
+  from space 8704K,  81% used [0x00000004c8c50000, 0x00000004c9334d70, 0x00000004c94d0000)
+  to   space 8704K,   0% used [0x00000004c94d0000, 0x00000004c94d0000, 0x00000004c9d50000)
+ concurrent mark-sweep generation total 174784K, used 8944K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 36008K, capacity 36236K, committed 36528K, reserved 1081344K
+  class space    used 5166K, capacity 5240K, committed 5296K, reserved 1048576K
+Event: 2.840 GC heap after
+Heap after GC invocations=5 (full 1):
+ par new generation   total 78656K, used 8704K [0x00000004c4800000, 0x00000004c9d50000, 0x00000004ee190000)
+  eden space 69952K,   0% used [0x00000004c4800000, 0x00000004c4800000, 0x00000004c8c50000)
+  from space 8704K, 100% used [0x00000004c94d0000, 0x00000004c9d50000, 0x00000004c9d50000)
+  to   space 8704K,   0% used [0x00000004c8c50000, 0x00000004c8c50000, 0x00000004c94d0000)
+ concurrent mark-sweep generation total 174784K, used 12928K [0x00000004ee190000, 0x00000004f8c40000, 0x00000007c0000000)
+ Metaspace       used 36008K, capacity 36236K, committed 36528K, reserved 1081344K
+  class space    used 5166K, capacity 5240K, committed 5296K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 2.841 Thread 0x000000002ae42800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00000000035181b4 method=java.lang.ref.ReferenceQueue.reallyPoll()Ljava/lang/ref/Reference; &#64; 52
+Event: 2.841 Thread 0x000000002ae42800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00000000035196d8 method=java.lang.ref.ReferenceQueue.reallyPoll()Ljava/lang/ref/Reference; &#64; 52
+Event: 3.018 Thread 0x000000002ad73000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000036eea8c method=java.util.IdentityHashMap.get(Ljava/lang/Object;)Ljava/lang/Object; &#64; 43
+Event: 674.051 Thread 0x000000002dc61800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003364104 method=java.lang.String.lastIndexOf([CII[CIII)I &#64; 118
+Event: 674.066 Thread 0x000000002dc61800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f1fce4 method=java.net.URI.match(CJJ)Z &#64; 45
+Event: 674.066 Thread 0x000000002dc61800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002eeb088 method=java.net.URI.match(CJJ)Z &#64; 19
+Event: 687.269 Thread 0x0000000028da4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000036df0b8 method=java.lang.StringCoding.decode(Ljava/lang/String;[BII)[C &#64; 38
+Event: 687.288 Thread 0x0000000028da4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000377d180 method=java.lang.Package.isSealed()Z &#64; 4
+Event: 687.316 Thread 0x0000000028da4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000037bf900 method=java.net.URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V &#64; 347
+Event: 687.407 Thread 0x0000000028da4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032df0d4 method=sun.net.www.ParseUtil.decode(Ljava/lang/String;)Ljava/lang/String; &#64; 15
+
+Internal exceptions (10 events):
+Event: 2.969 Thread 0x000000002b24a000 Exception &lt;a 'java/security/PrivilegedActionException'&gt; (0x00000004c5518d40) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 2.969 Thread 0x000000002b24a000 Exception &lt;a 'java/security/PrivilegedActionException'&gt; (0x00000004c5519320) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 2.970 Thread 0x000000002b24a000 Exception &lt;a 'java/security/PrivilegedActionException'&gt; (0x00000004c551a9d0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 2.970 Thread 0x000000002b24a000 Exception &lt;a 'java/security/PrivilegedActionException'&gt; (0x00000004c551afb0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 674.237 Thread 0x000000002dc61800 Exception &lt;a 'java/lang/ClassCastException': java.awt.MenuItem cannot be cast to java.awt.CheckboxMenuItem&gt; (0x00000004c5f75628) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp,Uï(z…&#64;
+Event: 687.262 Thread 0x0000000028da4000 Exception &lt;a 'java/io/IOException'&gt; (0x00000004c687a510) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 687.263 Thread 0x0000000028da4000 Exception &lt;a 'java/io/IOException'&gt; (0x00000004c6898e08) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 687.263 Thread 0x0000000028da4000 Exception &lt;a 'java/io/IOException'&gt; (0x00000004c6899cd0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 687.408 Thread 0x0000000028da4000 Exception &lt;a 'java/io/FileNotFoundException'&gt; (0x00000004c71cb8e0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 687.447 Thread 0x0000000028da4000 Exception &lt;a 'java/io/FileNotFoundException'&gt; (0x00000004c7403228) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u66\5298\hotspot\src\share\vm\prims\jni.cpp, line 709]
+
+Events (10 events):
+Event: 687.776 loading class com/jogamp/nativewindow/UpstreamSurfaceHookMutableSize
+Event: 687.776 loading class com/jogamp/nativewindow/UpstreamSurfaceHookMutableSize done
+Event: 687.776 loading class com/jogamp/nativewindow/UpstreamSurfaceHook$MutableSize
+Event: 687.776 loading class com/jogamp/nativewindow/UpstreamSurfaceHook$MutableSize done
+Event: 687.776 loading class jogamp/nativewindow/SurfaceUpdatedHelper
+Event: 687.776 loading class jogamp/nativewindow/SurfaceUpdatedHelper done
+Event: 687.777 loading class jogamp/nativewindow/windows/RegisteredClass
+Event: 687.777 loading class jogamp/nativewindow/windows/RegisteredClass done
+Event: 687.778 loading class jogamp/opengl/windows/wgl/WGLUtil
+Event: 687.778 loading class jogamp/opengl/windows/wgl/WGLUtil done
+
+
+Dynamic libraries:
+0x0000000000400000 - 0x0000000000462000 	C:\Users\dsrini9000\Fiji.app\ImageJ-win64.exe
+0x0000000077bb0000 - 0x0000000077d5a000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077990000 - 0x0000000077aaf000 	C:\Windows\system32\kernel32.dll
+0x000007fefdc80000 - 0x000007fefdceb000 	C:\Windows\system32\KERNELBASE.dll
+0x0000000075640000 - 0x00000000756c8000 	C:\Windows\System32\SYSFER.DLL
+0x000007fefdcf0000 - 0x000007fefddcb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe870000 - 0x000007fefe90f000 	C:\Windows\system32\msvcrt.dll
+0x000007feffcf0000 - 0x000007feffd0f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe6a0000 - 0x000007fefe7cd000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077ab0000 - 0x0000000077baa000 	C:\Windows\system32\USER32.dll
+0x000007fefdea0000 - 0x000007fefdf07000 	C:\Windows\system32\GDI32.dll
+0x000007fefe0a0000 - 0x000007fefe0ae000 	C:\Windows\system32\LPK.dll
+0x000007fefddd0000 - 0x000007fefde9a000 	C:\Windows\system32\USP10.dll
+0x000007fefe670000 - 0x000007fefe69e000 	C:\Windows\system32\IMM32.DLL
+0x000007feffdb0000 - 0x000007feffeb9000 	C:\Windows\system32\MSCTF.dll
+0x000000005e980000 - 0x000000005e9b9000 	C:\Users\DSRINI~1\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\splashscreen.dll
+0x0000000074780000 - 0x0000000074852000 	C:\Windows\system32\MSVCR100.dll
+0x000007fefb980000 - 0x000007fefb9d6000 	C:\Windows\system32\uxtheme.dll
+0x000000006f5e0000 - 0x000000006fe69000 	C:\Users\DSRINI~1\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\server\jvm.dll
+0x000007fef7190000 - 0x000007fef7199000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefe110000 - 0x000007fefe15d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe370000 - 0x000007fefe378000 	C:\Windows\system32\NSI.dll
+0x000007fefc790000 - 0x000007fefc7cb000 	C:\Windows\system32\WINMM.dll
+0x000007fefcd80000 - 0x000007fefcd8c000 	C:\Windows\system32\VERSION.dll
+0x0000000077d70000 - 0x0000000077d77000 	C:\Windows\system32\PSAPI.DLL
+0x000000006b500000 - 0x000000006b50f000 	C:\Users\DSRINI~1\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\verify.dll
+0x0000000065770000 - 0x0000000065799000 	C:\Users\DSRINI~1\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\java.dll
+0x000007fedc5d0000 - 0x000007fedc6aa000 	C:\Program Files\Dell\Dell Data Protection\Authentication\Bin\DpoFeedb.dll
+0x000007feffb90000 - 0x000007feffc67000 	C:\Windows\system32\OLEAUT32.dll
+0x000007fefe160000 - 0x000007fefe363000 	C:\Windows\system32\ole32.dll
+0x000007fefda60000 - 0x000007fefda7e000 	C:\Windows\system32\USERENV.dll
+0x000007fefd930000 - 0x000007fefd93f000 	C:\Windows\system32\profapi.dll
+0x0000000062440000 - 0x0000000062456000 	C:\Users\DSRINI~1\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\zip.dll
+0x000007fefd7d0000 - 0x000007fefd7df000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007feffd10000 - 0x000007feffda9000 	C:\Windows\system32\CLBCatQ.DLL
+0x000007fedc030000 - 0x000007fedc08a000 	C:\Program Files\Dell\Dell Data Protection\Authentication\Bin\DpoSet.dll
+0x000007fefe990000 - 0x000007feff71a000 	C:\Windows\system32\SHELL32.dll
+0x000007feffc70000 - 0x000007feffce1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefdb00000 - 0x000007fefdc6d000 	C:\Windows\system32\CRYPT32.dll
+0x000007fefd940000 - 0x000007fefd94f000 	C:\Windows\system32\MSASN1.dll
+0x000007fefc580000 - 0x000007fefc5cc000 	C:\Windows\system32\DPCLBACK.dll
+0x000007fefc910000 - 0x000007fefc926000 	C:\Windows\system32\NETAPI32.dll
+0x000007fefc900000 - 0x000007fefc90c000 	C:\Windows\system32\netutils.dll
+0x000007fefd380000 - 0x000007fefd3a3000 	C:\Windows\system32\srvcli.dll
+0x000007fefc8e0000 - 0x000007fefc8f5000 	C:\Windows\system32\wkscli.dll
+0x000007fefc5d0000 - 0x000007fefc5fd000 	C:\Windows\system32\ntmarta.dll
+0x000007fefe0b0000 - 0x000007fefe102000 	C:\Windows\system32\WLDAP32.dll
+0x000007fefd170000 - 0x000007fefd188000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefce70000 - 0x000007fefceb7000 	C:\Windows\system32\rsaenh.dll
+0x000000006c890000 - 0x000000006ca28000 	C:\Users\dsrini9000\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\awt.dll
+0x000007fefc850000 - 0x000007fefc868000 	C:\Windows\system32\DWMAPI.DLL
+0x000007fef4fc0000 - 0x000007fef5060000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_a4d981ff711297b6\COMCTL32.dll
+0x0000000062920000 - 0x000000006293a000 	C:\Users\dsrini9000\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\net.dll
+0x000007fefd110000 - 0x000007fefd165000 	C:\Windows\system32\mswsock.dll
+0x000007fefd100000 - 0x000007fefd107000 	C:\Windows\System32\wship6.dll
+0x000007fefa890000 - 0x000007fefa8a5000 	C:\Windows\system32\NLAapi.dll
+0x000007fef4600000 - 0x000007fef4615000 	C:\Windows\system32\napinsp.dll
+0x000007fef4160000 - 0x000007fef4179000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefcf90000 - 0x000007fefcfeb000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef4840000 - 0x000007fef484b000 	C:\Windows\System32\winrnr.dll
+0x000007fef49c0000 - 0x000007fef49d0000 	C:\Windows\system32\wshbth.dll
+0x000007fefc9f0000 - 0x000007fefc9f7000 	C:\Windows\System32\wshtcpip.dll
+0x000007fef9f60000 - 0x000007fef9f87000 	C:\Windows\system32\IPHLPAPI.DLL
+0x000007fef9f50000 - 0x000007fef9f5b000 	C:\Windows\system32\WINNSI.DLL
+0x000007fef55c0000 - 0x000007fef55c8000 	C:\Windows\system32\rasadhlp.dll
+0x000007fef95e0000 - 0x000007fef9633000 	C:\Windows\System32\fwpuclnt.dll
+0x000000005e930000 - 0x000000005e977000 	C:\Users\dsrini9000\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\fontmanager.dll
+0x0000000061b20000 - 0x0000000061b31000 	C:\Users\dsrini9000\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\nio.dll
+0x000007fef9560000 - 0x000007fef9578000 	C:\Windows\system32\dhcpcsvc.DLL
+0x000007fef9540000 - 0x000007fef9551000 	C:\Windows\system32\dhcpcsvc6.DLL
+0x000000005e2f0000 - 0x000000005e332000 	C:\Users\dsrini9000\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\t2k.dll
+0x000007fefc290000 - 0x000007fefc484000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\comctl32.dll
+0x000007fefb420000 - 0x000007fefb581000 	C:\Windows\system32\WindowsCodecs.dll
+0x000007fefd770000 - 0x000007fefd7c7000 	C:\Windows\system32\apphelp.dll
+0x000007fefb3b0000 - 0x000007fefb41f000 	C:\Windows\system32\mscoree.dll
+0x000007fef4900000 - 0x000007fef4998000 	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
+0x000007fefd7e0000 - 0x000007fefd871000 	C:\Windows\system32\sxs.dll
+0x000007fef3640000 - 0x000007fef3f9c000 	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+0x000007fef4700000 - 0x000007fef47f7000 	C:\Windows\system32\MSVCR120_CLR0400.dll
+0x000007feef940000 - 0x000007fef0dd8000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\mscorlib\fa8eef6f6cb67c660d71e15c5cad71b5\mscorlib.ni.dll
+0x000007fefd880000 - 0x000007fefd894000 	C:\Windows\system32\RpcRtRemote.dll
+0x000007fef16a0000 - 0x000007fef2271000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\System\856f93ee8a11010c62340ec9fbba8cd0\System.ni.dll
+0x000007fef2dd0000 - 0x000007fef2fbb000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Drawing\cfb726e159aacbe9e4f6a231201832e1\System.Drawing.ni.dll
+0x000007fef4a30000 - 0x000007fef4a33000 	C:\Windows\system32\api-ms-win-core-xstate-l2-1-0.dll
+0x000007fef44e0000 - 0x000007fef45e5000 	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
+0x000007feeefb0000 - 0x000007feef93b000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Core\92568f42a2b92e3314f7ae9e2e5eea4a\System.Core.ni.dll
+0x000007feec0d0000 - 0x000007feed838000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\System.ServiceModel\b7b893ea3237c3c3e874a6a331dc8da1\System.ServiceModel.ni.dll
+0x000007fef2fc0000 - 0x000007fef32f1000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Runteb92aa12#\43d9b9a3b683fbf240d413a7a88f70ba\System.Runtime.Serialization.ni.dll
+0x000007fef49f0000 - 0x000007fef4a06000 	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\nlssorting.dll
+0x000007fef3fc0000 - 0x000007fef40e1000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Configuration\5317331a5322c699e930e10f5374765f\System.Configuration.ni.dll
+0x000007feee710000 - 0x000007feeefa2000 	C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Xml\a06640dcd0fdb525a12f0e438f5be839\System.Xml.ni.dll
+0x000007fee00e0000 - 0x000007fee01fc000 	C:\Users\dsrini9000\AppData\Local\Temp\SlideBook6Reader4632219558713838562.dll
+0x000000005dff0000 - 0x000000005e088000 	C:\Windows\system32\MSVCP100.dll
+0x0000000078cd0000 - 0x000000007922d000 	C:\Windows\system32\mfc100.dll
+0x000007fef9850000 - 0x000007fef9857000 	C:\Windows\system32\MSIMG32.dll
+0x000000005f0a0000 - 0x000000005f0ad000 	C:\Windows\system32\MFC100ENU.DLL
+0x000007feebf50000 - 0x000007feec010000 	C:\Program Files (x86)\Google\Drive\googledrivesync64.dll
+0x000000005f120000 - 0x000000005f1f3000 	C:\Windows\WinSxS\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_08e61857a83bc251\MSVCP90.dll
+0x0000000074a30000 - 0x0000000074ad3000 	C:\Windows\WinSxS\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_08e61857a83bc251\MSVCR90.dll
+0x000007fef41a0000 - 0x000007fef41d5000 	C:\Windows\system32\EhStorShell.dll
+0x000007feff720000 - 0x000007feff8f7000 	C:\Windows\system32\SETUPAPI.dll
+0x000007fefd9f0000 - 0x000007fefda26000 	C:\Windows\system32\CFGMGR32.dll
+0x000007fefdad0000 - 0x000007fefdaea000 	C:\Windows\system32\DEVOBJ.dll
+0x000007fefbcd0000 - 0x000007fefbdfc000 	C:\Windows\system32\PROPSYS.dll
+0x000007fee25e0000 - 0x000007fee2c4f000 	C:\PROGRA~1\MICROS~1\Office14\GROOVEEX.DLL
+0x0000000067680000 - 0x00000000676af000 	C:\Windows\WinSxS\amd64_microsoft.vc90.atl_1fc8b3b9a1e18e3b_9.0.30729.6161_none_0a1fd3a3a768b895\ATL90.DLL
+0x000007fee2d50000 - 0x000007fee316a000 	C:\PROGRA~1\COMMON~1\MICROS~1\OFFICE14\Cultures\office.odf
+0x000007fee0df0000 - 0x000007fee1655000 	C:\PROGRA~1\MICROS~1\Office14\1033\GrooveIntlResource.dll
+0x000000005e2c0000 - 0x000000005e2ea000 	C:\Users\dsrini9000\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\dcpr.dll
+0x00000000637c0000 - 0x00000000637cd000 	C:\Users\dsrini9000\AppData\Local\Temp\jogamp_0000\file_cache\jln4112681005228159935\jln3818572031515916168\natives\windows-amd64\gluegen-rt.dll
+0x0000000062910000 - 0x0000000062917000 	C:\Users\dsrini9000\Fiji.app\java\win64\jdk1.8.0_66\jre\bin\jawt.dll
+0x000000006a440000 - 0x000000006a44d000 	C:\Users\dsrini9000\AppData\Local\Temp\jogamp_0000\file_cache\jln4112681005228159935\jln3818572031515916168\natives\windows-amd64\nativewindow_awt.dll
+0x000000006c100000 - 0x000000006c10f000 	C:\Users\dsrini9000\AppData\Local\Temp\jogamp_0000\file_cache\jln4112681005228159935\jln3818572031515916168\natives\windows-amd64\nativewindow_win32.dll
+0x000007feee3d0000 - 0x000007feee4ed000 	C:\Windows\system32\OpenGL32.dll
+0x000007fef4670000 - 0x000007fef469d000 	C:\Windows\system32\GLU32.dll
+0x000007feed870000 - 0x000007feed961000 	C:\Windows\system32\DDRAW.dll
+0x000007fef9eb0000 - 0x000007fef9eb8000 	C:\Windows\system32\DCIMAN32.dll
+0x0000000064500000 - 0x00000000645b1000 	C:\Users\dsrini9000\AppData\Local\Temp\jogamp_0000\file_cache\jln4112681005228159935\jln3818572031515916168\natives\windows-amd64\jogl_desktop.dll
+0x0000000064340000 - 0x00000000643a2000 	C:\Users\dsrini9000\AppData\Local\Temp\jogamp_0000\file_cache\jln4112681005228159935\jln3818572031515916168\natives\windows-amd64\jogl_mobile.dll
+0x000007fefad00000 - 0x000007fefad18000 	C:\Windows\system32\atig6pxx.dll
+0x000007fefa570000 - 0x000007fefa695000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dpython.cachedir.skip=true -Dplugins.dir=C:\Users\DSRINI~1\Fiji.app -Xmx12216m -Xincgc -XX:PermSize=128m 
+java_command: &lt;unknown&gt;
+java_class_path (initial): C:\Users\DSRINI~1\Fiji.app/jars/imagej-launcher-4.0.3.jar
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=C:\Users\DSRINI~1\Fiji.app/java/win64/jdk1.8.0_66//jre
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Dell\Dell Data Protection\Drivers\TSS\bin\;C:\Program Files\MATLAB\R2015a\runtime\win64;C:\Program Files\MATLAB\R2015a\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\DSRINI~1\Fiji.app/lib/win64;C:\Users\DSRINI~1\Fiji.app/mm/win64;C:\Users\DSRINI~1\Fiji.app/java/win64/jdk1.8.0_66//jre/bin
+USERNAME=dsrini9000
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.8.0_66
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.8.0_66-b18
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 25.66-b18
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.8
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\Users\DSRINI~1\Fiji.app/java/win64/jdk1.8.0_66//jre
+  imagej.dir =&gt; C:\Users\DSRINI~1\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20160121055533)
+Fiji: <a href="http://update.fiji.sc/">http://update.fiji.sc/</a> (last check:20160114142236)
+Java-8: <a href="http://sites.imagej.net/Java-8/">http://sites.imagej.net/Java-8/</a> (last check:20160121051645)</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Dhruv Srinivasachar</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-02-12 07:26:00 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please forgive the verbosity as this is the first bug I have encountered using FIJI.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

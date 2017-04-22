@@ -1,0 +1,938 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 677 &ndash; CZI Tile Image does not open correctly with BioFormats 5 in Fiji</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Bio-Formats bz_bug_677 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;677</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">CZI Tile Image does not open correctly with BioFormats 5 in Fiji</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-01-08 10:10:21 CST</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-01-08 10:10:21">
+  <input type="hidden" name="longdesclength" value="12">
+  <input type="hidden" name="id" value="677">
+  <input type="hidden" name="token" value="1492731742-Kld5pZfoYfpESota99ZeoCNnvu56lHBGYptMblAzqQ0">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="677.html"><b>Bug&nbsp;677</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">CZI Tile Image does not open correctly with BioFormats 5 in Fiji</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>CZI Tile Image does not open correctly with BioFormats 5 in Fiji
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Bio-Formats</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       major
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2013-11-19 09:25 CST by <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-01-08 10:10 CST 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="sebrhode">sebrhode</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="../attach/120/Test_Raw.czi - ZEN system 2012.png"
+               title="View the content of the attachment">
+          <b>Screenshot CZI OK</b></a>
+
+          <span class="bz_attach_extra_info">
+              (450.81 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_120"
+               title="Go to the comment associated with the attachment">2013-11-19 09:25 CST</a>,
+
+            <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="../attach/121/Fiji_BioFormats5_StitchTiles-test raw.czi (16.7%).png"
+               title="View the content of the attachment">
+          <b>Import with BioFormat 5 and Stitch Tiles option</b></a>
+
+          <span class="bz_attach_extra_info">
+              (296.76 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_121"
+               title="Go to the comment associated with the attachment">2013-11-19 09:26 CST</a>,
+
+            <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain">
+        <td valign="top">
+            <a href="../attach/122/Stitch_Log.txt"
+               title="View the content of the attachment">
+          <b>LogFile fron Stitching Plugin</b></a>
+
+          <span class="bz_attach_extra_info">
+              (70.04 KB,
+                text/plain)
+
+            <br>
+            <a href="#attach_122"
+               title="Go to the comment associated with the attachment">2013-11-19 10:26 CST</a>,
+
+            <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="../attach/123/Fiji_BioFormats5_StitchPlugin_Result.png"
+               title="View the content of the attachment">
+          <b>Screeshot Stitching Plugin Result</b></a>
+
+          <span class="bz_attach_extra_info">
+              (821.53 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_123"
+               title="Go to the comment associated with the attachment">2013-11-19 10:27 CST</a>,
+
+            <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="../attach/124/CTR-Fiji_BioFormats5_StitchPlugin_Result.png"
+               title="View the content of the attachment">
+          <b>Curtis's stitching results (see comment)</b></a>
+
+          <span class="bz_attach_extra_info">
+              (448.13 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_124"
+               title="Go to the comment associated with the attachment">2013-11-22 12:31 CST</a>,
+
+            <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+
+  </table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-19 09:25:42 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/120/Test_Raw.czi - ZEN system 2012.png" name="attach_120" title="Screenshot CZI OK">attachment 120</a></span>
+Screenshot CZI OK
+
+Hi,
+
+I have a new ZEN Blue CZI Tile Image. You can find it here:
+
+<a href="https://dl.dropboxusercontent.com/u/623476/test%20raw.czi">https://dl.dropboxusercontent.com/u/623476/test%20raw.czi</a>
+
+Inside ZEN this file is OK, it looks like this:
+
+<a href="https://dl.dropboxusercontent.com/u/623476/Test_Raw.czi%20-%20ZEN%20system%202012.png">https://dl.dropboxusercontent.com/u/623476/Test_Raw.czi%20-%20ZEN%20system%202012.png</a>
+
+It is a 2-Channel image that was acquired with 10% overlap. When I open this file using Fiji &amp; BioFormtats 5 with the Stitch Tiles option, the result looks like this:
+
+<a href="https://dl.dropboxusercontent.com/u/623476/Fiji_BioFormats5_StitchTiles-test%20raw.czi%20(16.7%25).png">https://dl.dropboxusercontent.com/u/623476/Fiji_BioFormats5_StitchTiles-test%20raw.czi%20(16.7%25).png</a>
+
+A large part of the image is just missing, but what one can see looks OK. So question know is, why is that. It could be that we have a problem with our metadata or it could be, that BioFormats 5 does not read the metadata correctly.
+
+Please feel free to contact me, when you need more info on the CZI or anything else that could help to pin down the problem.
+
+Cheers, Sebastian</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-19 09:26:48 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/121/Fiji_BioFormats5_StitchTiles-test raw.czi (16.7%).png" name="attach_121" title="Import with BioFormat 5 and Stitch Tiles option">attachment 121</a></span>
+Import with BioFormat 5 and Stitch Tiles option</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-19 09:41:00 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please try using the Fiji Stitching plugins instead of Bio-Formats's built-in Stitch Tiles feature. The Bio-Formats stitching is an extremely limited feature which does not make full use of the stage position metadata. The Stitching plugins, conversely, are very configurable and use Bio-Formats internally to read the metadata, which is then used to perform the stitching.
+
+You'll want to use the settings:
+* Type = &quot;Positions from File&quot;
+* Order = &quot;Defined by image metadata&quot;
+
+If you still have problems with the stitching when using the Fiji Stitching plugins, feel free to reopen this bug.
+
+See also:
+* <a href="http://loci.wisc.edu/software/fiji-image-stitching">http://loci.wisc.edu/software/fiji-image-stitching</a>
+* <a href="http://fiji.sc/Stitching">http://fiji.sc/Stitching</a></pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-19 10:26:35 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/122/Stitch_Log.txt" name="attach_122" title="LogFile fron Stitching Plugin">attachment 122</a></span>
+LogFile fron Stitching Plugin</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-19 10:27:22 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/123/Fiji_BioFormats5_StitchPlugin_Result.png" name="attach_123" title="Screeshot Stitching Plugin Result">attachment 123</a></span>
+Screeshot Stitching Plugin Result</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-19 10:31:23 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+
+this was actually what I tried first. But see the attached results ...
+
+So I decided to try to import the CZI using the stitch Tile option (usually works fine for me ...) to have a quick look, if the data are imported correctly at all. And to me it looks like that there is already a problem during the import since the file size is much smaller than the original CZI --&gt; it is roughly 1/7th of the original CZI file size ...
+
+Sebi</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Sebastian Rhode</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-22 02:49:14 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+are there any news on this problem yet or anything I should test or try out? We use the combination ZEN &amp; Fiji quite extensively, so I rely on this.
+Please let me know, if there is anything I can do to find the problem.
+
+Cheers, Sebi</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-22 12:31:30 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/124/CTR-Fiji_BioFormats5_StitchPlugin_Result.png" name="attach_124" title="Curtis's stitching results (see comment)">attachment 124</a></span>
+Curtis's stitching results (see comment)
+
+I tried stitching the data using the following settings:
+* Type = Positions from file
+* Order = Defined by image metadata
+* Fusion method = Linear blending
+* &quot;Add tiles as ROIs&quot; checked
+* &quot;Compute overlap&quot; unchecked
+* &quot;Increase overlap [%]&quot; set to 0
+* No other checkboxes
+
+And the resultant stitched image is substantially different than the one Sebastian got.</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-11-22 12:32:09 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >It is definitely a problem with how Bio-Formats parses the metadata. You can inspect what Fiji thinks the coordinates are by checking the &quot;Add tiles as ROIs&quot; checkbox. Then all the ROIs appear in the ROI manager, labeled with information that identifies each corresponding tile. You can also see the tile coordinates outputted to the ImageJ Log window. The bulk of the tiles have coordinates (0.0, 0.0) which is almost certainly incorrect.
+
+I have filed a bug upstream in the Bio-Formats bug tracker:
+<a href="https://trac.openmicroscopy.org.uk/ome/ticket/11750">https://trac.openmicroscopy.org.uk/ome/ticket/11750</a></pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-12-04 10:58:56 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Sebastian Rhode wrote:
+<span class="quote">&gt; I saw that this bug has priority minor. Please do not get me wrong, but from my point of view this means I can not use any tile images recorded in ZEN within Fiji. Unfortunately this is a very typical use case since most applications I deal with use a software module Tile &amp; Positions.</span >
+
+Priority minor is the default priority of new bugs. It is up to the bug's owner to assign a &quot;real&quot; priority, milestone, etc., to the ticket, which has not yet been done.
+
+<span class="quote">&gt; When do think somebody will find the time to look into this? Or how can we support you guys in solving this problem?</span >
+
+That is a question for the Melissa Linkert, the Bio-Formats maintainer.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-12-04 15:20:04 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Melissa has now updated the OME ticket details. You are CCed, so will receive an email whenever a change happens to the ticket.</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-01-08 10:10:21 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >OME ticket #11750 [1] is now closed, meaning this issue should be resolved.
+
+Sebastian, please reopen if not. Thanks!
+
+[1] <a href="https://trac.openmicroscopy.org.uk/ome/ticket/11750">https://trac.openmicroscopy.org.uk/ome/ticket/11750</a></pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

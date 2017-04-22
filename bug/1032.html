@@ -1,0 +1,1024 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1032 &ndash; I'm trying to merge two images (1 gb each, tiff files) and Image J processess the top half of the image while the bottom is black.</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_ImageJ1 bz_bug_1032 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1032</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">I'm trying to merge two images (1 gb each, tiff files) and Image J processess the top half of the image while the bottom is black.</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-04-06 15:54:57 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2015-04-06 15:54:57">
+  <input type="hidden" name="longdesclength" value="16">
+  <input type="hidden" name="id" value="1032">
+  <input type="hidden" name="token" value="1492731893-zefKby-EfAOdlbJ3Ys2yg3Cm5DFlMqaVml9Ppb0k8RU">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="1032.html"><b>Bug&nbsp;1032</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">I'm trying to merge two images (1 gb each, tiff files) and Image J processess the top half of the image while the bottom is black.</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td><span title="I'm trying to merge two images (1 gb each, tiff files) and Image J processess the top half of the image while the bottom is black.">I'm trying to merge two images (1 gb each, tiff files) and Image J processess...
+        </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >ImageJ1</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       blocker
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2015-03-19 18:23 CDT by <span class="vcard">niladri
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-04-06 15:54 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="imagej-bugs">imagej-bugs</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="../attach/241/merge error.png"
+               title="View the content of the attachment">
+          <b>Screenshot of merge error</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.03 MB,
+                image/png)
+
+            <br>
+            <a href="#attach_241"
+               title="Go to the comment associated with the attachment">2015-03-19 18:23 CDT</a>,
+
+            <span class="vcard">niladri
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_image_jpeg">
+        <td valign="top">
+            <a href="../attach/242/bug1032.jpg"
+               title="View the content of the attachment">
+          <b>Update on ImageJ merge error</b></a>
+
+          <span class="bz_attach_extra_info">
+              (637.46 KB,
+                image/jpeg)
+
+            <br>
+            <a href="#attach_242"
+               title="Go to the comment associated with the attachment">2015-03-23 13:29 CDT</a>,
+
+            <span class="vcard">niladri
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="../attach/243/Screenshot.png"
+               title="View the content of the attachment">
+          <b>Screenshot showing merge macro output on OS X</b></a>
+
+          <span class="bz_attach_extra_info">
+              (159.50 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_243"
+               title="Go to the comment associated with the attachment">2015-03-23 22:44 CDT</a>,
+
+            <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_image_png">
+        <td valign="top">
+            <a href="../attach/244/Bug 1032 update.png"
+               title="View the content of the attachment">
+          <b>Update on ImageJ merge error-2</b></a>
+
+          <span class="bz_attach_extra_info">
+              (700.35 KB,
+                image/png)
+
+            <br>
+            <a href="#attach_244"
+               title="Go to the comment associated with the attachment">2015-03-24 12:21 CDT</a>,
+
+            <span class="vcard">niladri
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+
+  </table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-19 18:23:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/241/merge error.png" name="attach_241" title="Screenshot of merge error">attachment 241</a></span>
+Screenshot of merge error
+
+Additional information:
+
+o	ImageJ version - Fiji
+o	OS version - Windows 7
+o	Java version (shown in Help/About ImageJ) - Latest
+o	Memory assigned to ImageJ (Edit/Options/Memory) System memory. Assigned to ImageJ 15-20 GB
+o	Any error messages - No error messages, just incorrect merging
+o	Steps needed to reproduce the problem - This is reproducible on multiple machines. When the size of image drops to 450 MB, ImageJ is able to merge correctly.
+
+Please advise!</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-19 19:34:33 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >How much RAM does you machine have? It should 24GB or more if you are assigning 20GB to ImageJ. My 5 year old Mac laptop with 8GB of RAM cannot cope with 1GB images.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-19 20:15:51 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thank you for your reply. Yes, it is a 24 GB desktop. I've tried it previously with a 16 Gb desktop as well with designating 14 Gb to ImageJ. Thanks!</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-19 20:38:17 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Try using Java 8. I just did some testing and found it handles 1GB images much better than Java 6. I run ImageJ with Java 8 on my Mac by changing to the ImageJ directory and using this command:
+
+    java -Xmx7g -jar ij.jar
+
+Or this FAQ describes how to run Fiji using a different version of Java:
+
+<a href="http://fiji.sc/Frequently_Asked_Questions#How_do_I_launch_ImageJ_with_a_different_version_of_Java.3F">http://fiji.sc/Frequently_Asked_Questions#How_do_I_launch_ImageJ_with_a_different_version_of_Java.3F</a></pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-20 16:34:36 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I just tried merging by updating to Java 8 and have the same issue. No noticable changes. Hoping to resolve it!</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-23 13:29:57 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/242/bug1032.jpg" name="attach_242" title="Update on ImageJ merge error">attachment 242</a></span>
+Update on ImageJ merge error</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-23 13:31:38 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Comment on <span class=""><a href="../attach/242/bug1032.jpg" name="attach_242" title="Update on ImageJ merge error">attachment 242</a></span>
+Update on ImageJ merge error
+
+This was run on a dektop with 18GB of 24 GB RAM allocated to ImageJ. Latest version of JAVA.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-23 22:44:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/243/Screenshot.png" name="attach_243" title="Screenshot showing merge macro output on OS X">attachment 243</a></span>
+Screenshot showing merge macro output on OS X</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-23 23:11:12 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Does the following test macro work as expected on your system? I attached a screenshot that shows what the merged image created by the macro should look like. Before running the macro, you should upgrade to the latest ImageJ daily build (1.49q15). It fixes a bug that caused extremely large images (e.g., 30000x30000) to not be displayed correctly because the minimum magnification was 3.1%. Also, the &quot;Merge Channels&quot; command now deletes the source images only after displaying the composite image. To upgrade, use the Help&gt;Update ImageJ command and select &quot;daily build&quot; from the drop down menu. 
+
+    MB = 850;
+    w = sqrt(MB*1024*1024);
+    doCommand(&quot;Monitor Memory...&quot;);
+    newImage(&quot;c1&quot;, &quot;8-bit ramp&quot;, w, w, 1);
+    newImage(&quot;c2&quot;, &quot;8-bit ramp&quot;, w, w, 1);
+    run(&quot;Rotate 90 Degrees Right&quot;);
+    run(&quot;Merge Channels...&quot;, &quot;c1=c1 c2=c2 create&quot;);</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-24 12:21:11 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/244/Bug 1032 update.png" name="attach_244" title="Update on ImageJ merge error-2">attachment 244</a></span>
+Update on ImageJ merge error-2
+
+Thanks so much for your help on this. I have followed your instructions and run the macro; however, the same error persists (attached screenshot). Not sure if this is a windows error. Please advise.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-24 20:07:03 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I am able to duplicate this problem, using images larger than 500 megapixels, on both Mac and Windows machines. It is a problem only with the way images are displayed, so the pixel data is not corrupted. This appears to be a Java bug so it is not something I can fix. You should be able to work around the problem by either scaling your images to 500 megapixels or less or by processing and analyzing the images at full size and then scaling to screen size to view the results. By the way, I observed many JVM crashes, on both Macs and Windows, while working with 500+ megapixel images.</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-25 11:48:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks. Is there way to scale down both channels in imageJ so that they remain the same size? I tried saving each channel as a JPEG but they end up being different sizes and can't be merged.</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-25 12:59:18 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The following example macro creates two 850 megapixel images, merges them, scales the merged image to 2048x2048, saves it as JPEG and displays it. It does this without displaying any of the 850 megapixel images. The resulting JPEG file is 137K.  
+
+    MB = 850;
+    setBatchMode(true);
+    w = sqrt(MB*1024*1024);
+    doCommand(&quot;Monitor Memory...&quot;);
+    newImage(&quot;c1&quot;, &quot;8-bit ramp&quot;, w, w, 1);
+    newImage(&quot;c2&quot;, &quot;8-bit ramp&quot;, w, w, 1);
+    run(&quot;Rotate 90 Degrees Right&quot;);
+    run(&quot;Merge Channels...&quot;, &quot;c1=c1 c2=c2&quot;);
+    run(&quot;Size...&quot;, &quot;width=2048 height=2048 constrain interpolation=Bilinear&quot;);
+    saveAs(&quot;Jpeg&quot;, &quot;&quot;);
+    setBatchMode(false);
+
+This version of the macro saves the 850 megapixel merged image as a 15MB (29,854x29,854) JPEG without displaying anything.
+
+    MB = 850;
+    setBatchMode(true);
+    w = sqrt(MB*1024*1024);
+    doCommand(&quot;Monitor Memory...&quot;);
+    newImage(&quot;c1&quot;, &quot;8-bit ramp&quot;, w, w, 1);
+    newImage(&quot;c2&quot;, &quot;8-bit ramp&quot;, w, w, 1);
+    run(&quot;Rotate 90 Degrees Right&quot;);
+    run(&quot;Merge Channels...&quot;, &quot;c1=c1 c2=c2&quot;);
+    saveAs(&quot;Jpeg&quot;, &quot;&quot;);</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-25 14:38:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thank you very much. I apologize for the unfamiliarity with macros. How do I change the macro you provided so that it uses my two image files (i.e. the two channels) for merging? Also, how do I assig the desired colors using this macro?</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-26 15:49:28 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >You can use the open() function to open images and you can run commands in the Image&gt;Lookup Tables menu to assign colors to the channels. Here is an example:
+
+    open(&quot;&quot;);
+    rename(&quot;c1&quot;);
+    open(&quot;&quot;);
+    rename(&quot;c2&quot;);
+    run(&quot;Merge Channels...&quot;, &quot;c1=c1 c2=c2 create&quot;);
+    run(&quot;Blue&quot;);
+    setSlice(2);
+    run(&quot;Yellow&quot;);
+
+The command recorder (Plugins&gt;Macros&gt;Record) is helpful for creating macro code.</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">niladri
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-03-26 15:52:29 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for your support on this!</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

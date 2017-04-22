@@ -1,0 +1,886 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 292 &ndash; Trainable segmentation plugin stops processing without error or output</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_292 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;292</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Trainable segmentation plugin stops processing without error or output</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2011-04-14 22:10:13 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2011-04-14 22:10:13">
+  <input type="hidden" name="longdesclength" value="6">
+  <input type="hidden" name="id" value="292">
+  <input type="hidden" name="token" value="1492731581-ECxQH_pme9WCjd_ArGYl6lsBfoNvr2KtPE9yNiWwlSQ">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="292.html"><b>Bug&nbsp;292</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Trainable segmentation plugin stops processing without error or output</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Trainable segmentation plugin stops processing without error or output
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2011-03-06 01:19 CST by <span class="vcard"><span class="fn">Rob Baer</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-04-14 22:10 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="rbaer">rbaer</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Rob Baer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-06 01:19:52 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >[Enter details of the problem or bug and how to reproduce it here.]  I have a rather large stack .tif images that I'm using the trainable segmentation plugin on.  There are about 200 images of size 1388 x 1040.  My machine has 2 GB of memory and ImageJA is set to about 1544 memory.  After processing about 120 images the processing  &quot;progress bar&quot; disappears without comment, error or output.  Unfortunately, the hours of processing (5-6 min per image) are loss because there is no way to recover what has been done.  I'm assuming I'm running into a memory issue, but it is a very &quot;ungraceful landing&quot; and it would at least be nice to have the intermediate work saved to disk.
+
+My next step will be to break up my stacks, but i don't know that this will address the core issues.
+
+Information about your version of Java - this information is useful for the Fiji developers:
+
+  os.arch =&gt; x86
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_20
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_20-b02
+  java.vm.name =&gt; Java HotSpot(TM) Client VM
+  java.vm.version =&gt; 16.3-b01
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: You wanted to be reminded later.
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\Fiji.app/java/win32/jdk1.6.0_20/jre
+  fiji.dir =&gt; C:\Fiji.app
+
+Information about the version of each plugin:
+
+  3c1ea305476bbaad4811e5c18c561aa02bbb316b 20101022084830 fiji-win32.exe
+  ca9bc7b44bf9b2b7b91f4aecabf1296634337e99 20110301084458 jars/Fiji.jar
+  31fc72943db1de218eb827e7ea3becc16d76d851 20101022082938 jars/Jama-1.0.2.jar
+  83496926787f5d4215cd6a4c54e816014b413f34 20110301084501 jars/VIB-lib.jar
+  bd57338068f48b9ce4c5275544633ba172b0902a 20101123182538 jars/VectorString.jar
+  4199e18036ba2020bdcbc733f603564f41cf9009 20101022082918 jars/ant-launcher.jar
+  92b2335d3a97549b633dbcc3c41381a90f2b924b 20101022082939 jars/ant-nodeps.jar
+  b1492f77c5c13e4f9dc05fe0ba9f95d6ec826660 20101022082943 jars/ant.jar
+  5bab776822719667a604b8fb2eafc679161aeb0f 20101022082907 jars/autocomplete.jar
+  dbab80ab5e11fb33328c7da88a849d0a19793ff5 20101022082946 jars/batik.jar
+  d21bc3c19ebc5b3924caff5f859e6c50071590c9 20101022082923 jars/bsh-2.0b4.jar
+  efd0b4a7eaf55c0716fde3243ac45cb49fdd2606 20101022082933 jars/clibwrapper_jiio.jar
+  21c2d3f654c1c599751df995a1b183d02301c76d 20101022082910 jars/clojure.jar
+  d760adf70f63d2f07fe00dc5f36b9bc32f11fc97 20101022083950 jars/commons-math.jar
+  368901ce572a723c0ae0e68f0563b2712a69fd5d 20101022082926 jars/edu_mines_jtk.jar
+  25d48038eae645618fd16923085ad2f2e804dd81 20110301084451 jars/fake.jar
+  b5b1a692bbf0bac82c904dbbfeba3040144be964 20110301084451 jars/fiji-lib.jar
+  37922f54ac020847467a9ace9bdf8cfa5c3b6db8 20110301084407 jars/fiji-scripting.jar
+  561f139e28c58f72a4cd969b1c52a26cf6aa8362 20110301152519 jars/ij.jar
+  04530e150af0702f6f963104facda5eaa6e866ae 20101022083928 jars/imagescience.jar
+  85af6645584bd2339848a2a9c95db234ba0a68ea 20110301084504 jars/imglib-algorithms.jar
+  2727a642fb63f329acd33f4b48bcc20e926c5f40 20110301084503 jars/imglib-ij.jar
+  3913aeadf2f94efc7f9bc1a732a7e4cef2714e99 20110301152524 jars/imglib-io.jar
+  4053be284a4fd91bfddc9e512ddc6366b2dc6f11 20110301152524 jars/imglib-scripting.jar
+  785fd9ee2450a11697d7b60d88165f395639562f 20110301084459 jars/imglib.jar
+  a88a4b46ddcdcf0312b0fe03b1900412bdb71873 20101022082903 jars/itext-1.3.jar
+  1d98f5251cb21553b4907228cd281e6b84d3a216 20101022082914 jars/jacl.jar
+  253316728c4012a86fae361e7b7fcb0fab0f5c38 20101022082925 jars/jai_codec.jar
+  2a328b6b63ebec85d369427875739304dc1cf2cb 20101022082934 jars/jai_core.jar
+  12065f36c73057a77a5deeaf4b8beecbe738ce18 20101022082904 jars/javac.jar
+  5000664ee8b54ad75a72da627ab7665ca422f10b 20101022082906 jars/jcommon-1.0.12.jar
+  166036abb16a0b57c7f7c0a0e0e610ef72b48746 20101022082917 jars/jep.jar
+  ca45b966d92e07a3bcea6be98cbab05ea0d4e1ba 20101022083949 jars/jfreechart-1.0.13.jar
+  925d65018db8d43d79f3e1236c0178805f68c488 20101022083953 jars/jna.jar
+  63e9057128a2096b3787c4c784a5b6dab862264d 20101022082915 jars/jpedalSTD.jar
+  b904075730a195dff53e602e836e6ced7b438257 20101022084833 jars/jruby.jar
+  108412260f226609c8161f6e831119f47e6d9380 20101022082917 jars/js.jar
+  bd25e435c97440c39a1edea79332016aad7f1091 20101022082919 jars/jsch-0.1.37.jar
+  8e9a4bd810c0d4c6cc42df2e974373c24f3b4372 20110106114542 jars/junit-4.5.jar
+  d6edc3bbc639248e808f4cc0e372cfa249320016 20101022083943 jars/jython.jar
+  a21f73a79260a9098df7eabf10982ab9ff2d9efe 20101022082932 jars/jzlib-1.0.7.jar
+  2b4610f09c5ed4164734d3238b27969d6bd14399 20101222092535 jars/mij.jar
+  2534593d70ffd8b08b6969b78be423676e4ac9ba 20110301084457 jars/mpicbg.jar
+  e008825954f9c01c5e3b3fa0004caa7535a45423 20101022082923 jars/pal-optimization.jar
+  5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f 20101022082947 jars/postgresql-8.2-506.jdbc3.jar
+  b1bdf4b6b3e47ac5edb3d9ec8273401f6e8f64a3 20110301084450 jars/rsyntaxtextarea.jar
+  5dad0d14403c14be8273bf53efcfc3d75c07f361 20110301084505 jars/weave_jy2java.jar
+  62509dafa2ad38e0e3c34c538f6d3da1e25971ce 20101022082937 jars/weka.jar
+  c432f64b204f9657354de2010b24535670e3073b 20101022082807 luts/16_colors.lut
+  89419f9999bc7d1dc09ad1a66e04e819396fe09f 20101022082806 luts/5_ramps.lut
+  dc3a1bdd2b34edec84c29affaded489d0a22601d 20101022082803 luts/6_shades.lut
+  0b3bbb6cf86adcb697c53c0277a12140966375dc 20101022082804 luts/Cyan Hot.lut
+  655b55e6322c870632e5ff3156f002c0f5b893fe 20101022082803 luts/Green Fire Blue.lut
+  2918f6d391ee38a4491163c30b4e75256a6633e7 20101022082808 luts/HiLo.lut
+  a3312d3ff046120cccf5adcd400c512f78d18f93 20101022082802 luts/ICA.lut
+  db5bf8a4e880d787d88f3273caf3db7ae6a5974f 20101022082803 luts/ICA2.lut
+  9f7dd167f698970549ec20aa7d26b221ae7928f8 20101022082807 luts/ICA3.lut
+  697dd3a4daf4abcd05cc4a79af3bcb3364fd0bb0 20101022082802 luts/Magenta Hot.lut
+  524604de124b812940b02541a63516c84621237b 20101022082803 luts/Orange Hot.lut
+  9c9a56c239e5d9c3262ace5124fff406cb3b831d 20101022082805 luts/Rainbow RGB.lut
+  4e686ec669057c7de78497720bf52ebe00c3f8da 20101022082805 luts/Red Hot.lut
+  2fdb7c96583f42348cd5cc789fba38dd6e349c89 20101022082804 luts/Thermal.lut
+  321574916ccee56861ca6d581f6915cff5fe80e1 20101022082807 luts/Yellow Hot.lut
+  a4cec22b96c306321ba4c7b3ff30df9fa7919616 20101022082808 luts/blue_orange_icb.lut
+  c9e396a3f83ee8cebf1ed28d3e2d53296cc908e7 20101022082809 luts/brgbcmyw.lut
+  60f85e63ba9a31fbb769ab32c75c22883df22883 20101022082806 luts/cool.lut
+  ba88e5f3db79551a10b7bed5c2517b33cea57dda 20101022082802 luts/edges.lut
+  0a4dce83c72986c06356ecbab98747c30c9366ad 20101022082804 luts/gem.lut
+  c616e76585643c232c743e16358d68e4dfe24620 20101022082808 luts/glasbey.lut
+  1f99f07ea5760dd8c044639b02da116112a2b985 20101022082804 luts/phase.lut
+  52a3c3995ef92bc35eb4e691848af5351be589e4 20101022082805 luts/physics.lut
+  49f5e48a355fe0646cd99bf7b371afb7c603def8 20101022082806 luts/royal.lut
+  898954dd1342741de1cd48e7c581b6ec0f0cbff2 20101022082809 luts/sepia.lut
+  ebd4ed6b0fd5375bd4d143134da5692253d4d44a 20101022082806 luts/smart.lut
+  36e7ca9e01240243fb69ea5da21655608d6b5ef8 20101022082807 luts/thal.lut
+  940b38f9db4fbe78ccd66222a08b28d1ae98ba04 20101022082805 luts/thallium.lut
+  172436819bfde39bcf02fc8b41735f0c20db2ad1 20101022082808 luts/unionjack.lut
+  7c6a5cac2cd68928956572db58081903dc7102e4 20110210105449 macros/Magic_Montage.txt
+  ec9f9e6ef1ea9863c51a615c06dff34ca4b2156f 20101022082900 macros/grey-squares.ijm
+  a97e1da9c67b6764787b27473bbdb4a21d68292b 20101022082900 macros/listManagement.txt
+  bc1d6c6ef8f5dd2802d50dd2326f4d32025266ae 20101022082900 macros/spirals.txt
+  54200f47f8a6d5a131a7d9d65d7fcb75d53f97ae 20101022082901 macros/toolsets/Drawing Tools.txt
+  f7efa1b3ca937510748f52b79ce283c1342d2012 20110301152507 misc/headless.jar
+  8dee3846e4ca1a0ad4169cf5e4859bcf52b878af 20110301084505 plugins/3D_Blob_Segmentation.jar
+  fa47c405e684e4a9fa699507c2f9605c17d6fc02 20101022082831 plugins/3D_Objects_Counter.jar
+  2ded65c517cf85021008dcf5ee43e38d475e9051 20110301084502 plugins/3D_Viewer.jar
+  68175df528f66e558b40d41867aa3539f55518bd 20101022082814 plugins/Algorithm_Launcher.jar
+  9274f3373b27930ae5e6f3d1f88674f64110e970 20101022082845 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  7acae667f3873c3f47eb0fbf1d6b5f0718a5a1f9 20101022082846 plugins/Analyze/Measure_RGB.txt
+  878781f85694533f008e341ad3030396fe85f43c 20110301152507 plugins/AnalyzeSkeleton_.jar
+  57e92445bb3feda9d1ffe6e6d4a682b70d2d0ed9 20101022082835 plugins/Analyze_Reader_Writer.jar
+  ce0504b97f7820a918e9ff4cc62d590da32161d6 20101022082821 plugins/Anisotropic_Diffusion_2D.jar
+  f1c1878b78908742c7f29e8e23f4ce0125aefeb4 20110301152507 plugins/Arrow_.jar
+  0d2f57ac196ff70c91c9f5f9cb71cf65c78e2723 20110301152508 plugins/Auto_Threshold.jar
+  269134edd05d40f1e326c8f351a969397ab261ea 20110301084408 plugins/BeanShell_Interpreter.jar
+  d109763cccc66e8bf39603f25f28991d89e90d15 20110301152508 plugins/Bug_Submitter.jar
+  e43ae2651743ca70a12b898b8bd7e084e2288943 20110301084410 plugins/CLI_.jar
+  d888370a9a41fe87d542665027edc84eff31637e 20101022082815 plugins/Calculator_Plus.jar
+  0717acd58350dcc6de54b9a30a35ba3a32b71a2d 20110106114543 plugins/Clojure_Interpreter.jar
+  db71677ea83bdec19cb32d6c708882b4a77b791b 20110301152508 plugins/Colocalisation_Analysis.jar
+  f2f8c5c376c80df66cc1ccbcbf12babd366eda85 20101022082831 plugins/Color_Histogram.jar
+  1cee26bc818eb02dafe9ad08dd437b10c412aa2b 20101022082843 plugins/Color_Inspector_3D.jar
+  1a992dbc077ef84020d44a980c7992ba6c8edf3d 20101022082831 plugins/Daltonize_.jar
+  b73a16189c15d0e5f59d0b9da7d9dafc19177379 20101022083952 plugins/Differentials_.jar
+  9d756f88aa74cf6511a6890a3096eccf054da978 20110301152520 plugins/Directionality_.jar
+  83caa3dfc56cba0ff2a4ec8a2532dd674784d356 20101022083954 plugins/Examples/Add_Popup_Split_Channels.bsh
+  f6fcfac7beaaf48901cf57d1dd5a9232d6e43570 20101022082849 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  5dcd79ab303b72dbd5540b604bd30ce0e2a5ddcb 20101022082848 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  73eff73688cbf8356485d4dac6fe2b26db598e93 20101022082853 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  95549b2f2f2c42a8bf5bb5f6d18f58d25c4c06cc 20101022082854 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  dceba709afa80f33ae5d0091f5811b32610e1fd0 20101022082854 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  e4954eacd4b1b679813c4227563996121f7e6d98 20101022082853 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  f51112123ed16a9ff9c0cf5002dea3804731a8cb 20101022082854 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  77c7bef5e629a85ae8b037caf2377cb6772f59df 20101222092525 plugins/Examples/Delayed_Snapshot.py
+  5536e038a497982f3e10d924849c4ffe6c4fdd3c 20101022084849 plugins/Examples/Delayed_Snapshot_Window.bsh
+  4164c08c7ef62e27e731d45643a1cbe10098fce1 20101022082852 plugins/Examples/Edit_LUT_As_Text.py
+  780e948e100ffc6bfcd5583146752eff86671b39 20101222092536 plugins/Examples/Extended_Profile_Plot.bsh
+  b8881af27131bb518e2c8f45510811963f091e21 20101022082851 plugins/Examples/Fiji_Cube.ijm
+  3687a018e780919fc238a411c0d76607060ae47f 20101022082849 plugins/Examples/Fiji_Logo_3D.js
+  998cb71706d82992543115b6ad1b85f7d199d096 20101022082850 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  748153294412dc6fd4febc6c529e7620ba48ae1e 20101022082850 plugins/Examples/Multithreaded_Image_Processing.clj
+  720c237bd586550b63e2d423d2e85759e045869c 20101022082851 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  ad263d9ec66f7421f8817b0a9f9e2549fd5883b7 20101022082849 plugins/Examples/Plasma_Cloud.rb
+  9efb229268bb88ae20f4b2bca157e73c0c0afbdf 20101022082847 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  940f6500947184db3dfbcad055aa98c11db41c24 20101022082855 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  3f4bba61fc90eb79a8ade2a6399cad72ede26fb9 20101022082856 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  72f0094941e8aae9c451161f05a67f6516d70a55 20101022082855 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  89ef030758e89f6a6767ab5e3513ee82a8e54127 20101022082856 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  6af490cdb6e2c42e87076b85796dc824203b6e8a 20101022082848 plugins/Examples/blend_two_images.clj
+  0989cf7430916a9e0c9f004bc2d5bc6b276e2775 20101022082852 plugins/Examples/celsius_to_fahrenheit.clj
+  ff3b990238ad1f85e4a8aa8135e2e3b1221b43a8 20101022082846 plugins/Examples/chess_.py
+  4193ae7c8fbe191bff50f19367c5cfa5e0048fbe 20101022082850 plugins/Examples/downsample_.js
+  66a204d61b3076d96797ca04671180ed83ebf866 20101022082848 plugins/Examples/list_all_threads.py
+  6c86493c27f859bd52ad85581479e5f06655ce0d 20110106114545 plugins/Examples/random_noise_example.clj
+  122804a957f1ccf6e6bc90dc44c8b23f3595b2d2 20101022083953 plugins/FeatureJ_.jar
+  bf462abc7897f13ab9e6ad7cccbdc28cd97f5e32 20110301084505 plugins/Feature_Detection.jar
+  9248e7c9e5684badab20772f46f020ade733afc6 20110301152516 plugins/Fiji_Developer.jar
+  3f5f1faad124a996bb28c72fa10cd50e06295934 20110301152509 plugins/Fiji_Plugins.jar
+  69cc5dce996609d19df9acc2c41a610a6dc5e2f6 20110301152307 plugins/Fiji_Updater.jar
+  d53247c86445afc29f991a39cb39b79f2f3fd4c1 20101022082827 plugins/FlowJ_.jar
+  94559184bb4bf02414286cb9d20b95dd8806bd32 20101022083951 plugins/Graph_Cut.jar
+  42556198e68860b4135544fe9e4687c9fbffbfe2 20101022082826 plugins/Gray_Morphology.jar
+  e8f24a89734ea514ba6405423368a107f324fc5b 20101022082811 plugins/IJ_Robot.jar
+  441d49d6b49c35df6e42768a061890a5054d0c63 20101222092458 plugins/IO_.jar
+  f372670cec289607ac065298e38cd59ed9b278f7 20101022083929 plugins/Image_5D.jar
+  2500db76f284b2c729636bf2924cad33cd8ce8f9 20110301152523 plugins/Image_Expression_Parser.jar
+  43bb3a7b79d1fc23958a7775f407fa9567c6f67f 20101022082830 plugins/Interactive_3D_Surface_Plot.jar
+  3ea0d59d5878d1eeed2f7e1796b504b28ff1818a 20101022082837 plugins/IsoData_Classifier.jar
+  28582f554fdbc4905b5ca4eb192a516202b2f334 20101022082845 plugins/JRuby/imagej.rb
+  f1e7ff046afb5a2a4136449fbb16ccc78ce4e4cc 20101222092459 plugins/JRuby_Interpreter.jar
+  0384fcf1924f7e512c15ceb5c38275f822b590a6 20110301084410 plugins/Javascript_.jar
+  7c039e95cd514cf9bdf2e325122c4cdbf9fbd07d 20110301084411 plugins/Jython_Interpreter.jar
+  9cdfe434567ef8b15b6970c02805f20c99411a70 20101022083954 plugins/Jython_Scripts.jar
+  aee7e97d8a959676872ecafaaaf37724e83b55e4 20101222092525 plugins/LSM_Reader.jar
+  de0f4b6754561dc8a412f2d2c67ec10351f5d238 20101022084836 plugins/LSM_Toolbox.jar
+  fe3c88710e380c7a741cbf676cf5d8144e7edb8a 20101022083954 plugins/Linear_Kuwahara.jar
+  bcb926fe63b7637bd53e3602feda2166951acdec 20101022082842 plugins/LocalThickness_.jar
+  1a6345a290ff4a28ac4215cbb47fc561dcc886be 20101022082821 plugins/MTrack2_.jar
+  2e7c5f2d14a85c9a073074d5540aef234cb3cea5 20101022084837 plugins/M_I_P.jar
+  306c9af04cd291be4871abc187a75c270a58eda2 20101022083951 plugins/Macro_Examples.jar
+  65a2dd7816efceb28030dc0ea7cb4ad51c42e9a0 20101022082857 plugins/Macros/About_Plugin_Macros.txt
+  dff5642dcb662c06fd8cd7dfce73f60a4b8b8244 20101022082857 plugins/Macros/Bulls_Eye.txt
+  e7ffe8ba782ce90d3b80ad882c474ab1836b58a4 20101022082858 plugins/Macros/Polygon_.txt
+  39f7ffcd9b21888b618524a811eb39c93625578d 20101022082858 plugins/Macros/RGB_Histogram.txt
+  3ee0edfae7b40189254e38a6ed8108c52859bc33 20101022082857 plugins/Macros/batch_convert_any_to_tif.txt
+  d0cd293b359b7bcdf390e560dc28f68fa8033677 20101022082821 plugins/Manual_Tracking.jar
+  de3a020be174270600534345eb47fd76267d8080 20101022083951 plugins/MosaicJ_.jar
+  a349b390595c90be2924a20a372aac99bad438e7 20101022084837 plugins/PIV_analyser.jar
+  c0e6e54ff0ec7c62350f232af75c85ca7006b51f 20101022083952 plugins/PointPicker_.jar
+  32d24a273fef021b079fc64f151c2436af700b30 20101022084848 plugins/QuickPALM_.jar
+  174a4b19524f15ff22356cb08dbef7f4e1f550c1 20101022082843 plugins/RATS_.jar
+  08f589bb5133aac039fc01f8a0ad15836b3e764d 20101022083953 plugins/RandomJ_.jar
+  0ab9e3b0886ae1aab0651865d98473295f2cc715 20101022082829 plugins/Record_Screen.jar
+  018c76c3fbfc41a7dd3f7c2ac5cd7cbbde8dc21b 20110301084411 plugins/Refresh_Javas.jar
+  7b7bdc5cc68d4c18f12424f861f9e168acd6fb38 20110301152522 plugins/SPIM_Registration.jar
+  6e155e63de9510ee2fb990d9cc6ddf0c5f209cb5 20101222092535 plugins/Samples_.jar
+  06a83a981b04297597773232370b7474931ca202 20110301084448 plugins/Script_Editor.jar
+  0b422ad448d52a4a3f799b29b2e9d1ec954fb20d 20101222092536 plugins/Series_Labeler.jar
+  50ee8cf26b2e4bf1b9774a83d227fae873158ef8 20101022083952 plugins/SheppLogan_.jar
+  6c6b298e9c055f147224ed889b2e74e0d6496c4d 20110301152521 plugins/Simple_Neurite_Tracer.jar
+  265850b38137898969ca510b0cb1e5e2536f4226 20101022082815 plugins/Siox_Segmentation.jar
+  1a5f4c622997d1d23f1d08c81c46b80b4da05d47 20101022082818 plugins/Skeletonize3D_.jar
+  e71b5942e5343cbc3d591f249cc9f3dfc73c7e29 20101022083952 plugins/Snakuscule_.jar
+  41d82921719c38520d5472a3608b79394db1b7b0 20101022082810 plugins/SplineDeformationGenerator_.jar
+  b5a0eabcb770437c30575d4ea6f5dbd346b8bd89 20101022083951 plugins/StackReg_.jar
+  e91eeedb968afe7b4af6c2404f278bb5fd568e92 20110301152509 plugins/Stack_Manipulation.jar
+  23cae80cce99d71dc4669da51c6909c3a7ca68ca 20101022082829 plugins/Statistical_Region_Merging.jar
+  cbde57bbe066ee9478454264ea8546aaf6346965 20101112143731 plugins/Stitching_.jar
+  f05089fa82aca755fea1268bff7f63793692e5c8 20101022082837 plugins/Sync_Win.jar
+  d8b107e55a178c768452f0e95141d732689ce8e4 20101222092534 plugins/Temporal_Color_Coder.jar
+  f5b2c18843647be28a96a3e7d163a7f2f970921b 20101022082810 plugins/Time_Stamper.jar
+  22fd045b2a57d7ed84b5dcb7b6146484143e36fc 20101222092500 plugins/ToAST_.jar
+  5e20cc0a6c833ebfdcd5fc6517eed89a44ae35dc 20101022083951 plugins/TopoJ_.jar
+  963f0b325919991a8c31ef06a1c84ad499d52232 20101022084842 plugins/Trainable_Segmentation.jar
+  85c2d2204e46530eb4236c98cc047aa16c4d6ffd 20110301152513 plugins/TrakEM2_.jar
+  39d4aaafb0c6bea4ef6cdf95bcaf2c4665d9bdc2 20101022084839 plugins/TransformJ_.jar
+  09868b512410628e06c7dc25a6999c7dda8cf078 20101022082823 plugins/TurboReg_.jar
+  9558400db089262849c33428a77645c323390145 20101022083952 plugins/UnwarpJ_.jar
+  a32dfe463fa2c8814cb0caf9079478ff4e1c44bf 20101022082844 plugins/Utilities/Close_All_Without_Saving.txt
+  dd9e7806031f8b85742e0e3121b301d1e129162d 20110301152515 plugins/VIB_.jar
+  b01617f838164de7d0d08fe55311ed33d39dd125 20090713113414 plugins/VNT/Basic_Segment.class
+  d67937059168c8ecaa0b845a69d27fcf1ee0ca1f 20090713113404 plugins/VNT/BatchHelper$1.class
+  f0bf5562c4a55319671006bb0aaf328010dfa27c 20090713113404 plugins/VNT/BatchHelper$2.class
+  27742a26dedca83a001e28c0db0eac667a28cecf 20090713113404 plugins/VNT/BatchHelper.class
+  f90c9603dc307e9d3a852c8392e5549c08087396 20090713113414 plugins/VNT/Batch_File.class
+  2ec08c51480275b8c6fd46011fc4a5fd21276265 20090713113414 plugins/VNT/Batch_Folder.class
+  12d3b60db51157eb3f1fac1ef6525cb26e38629a 20090713113416 plugins/VNT/Batch_Folder_Recursively.class
+  3c8b3dfecde80e02d31a6cf25b813af3cf12f1b8 20090713113416 plugins/VNT/Compile_All.class
+  1a6c978c8625d9055f49726ccd8100633600cccb 20090601161638 plugins/VNT/Coordinate.class
+  8d0b4289a2b971379ff5e79d3d3607498d9c4f8a 20090630143606 plugins/VNT/CoordinateWithDist.class
+  1e5fbac3e77752e2cba048dbcf99859ed9a1e317 20090713113416 plugins/VNT/Create_Settings.class
+  84293217967da8f13dbc00897f7c010b2dec94c2 20090713113416 plugins/VNT/Debug_tool.class
+  e33c657a30b7d1b83f5ecb323f1f6e7f801f795f 20090601173136 plugins/VNT/Delaunay/DelaunayTriangulation.class
+  e7139b7a0e443f8049786bdd28e4ff2be356ed7b 20090601173136 plugins/VNT/Delaunay/Pnt.class
+  14d8247011dd7dd3e8f7c0e74320adbb565339eb 20090601173136 plugins/VNT/Delaunay/Simplex.class
+  a4c7538280515af9161b9e6a6f26ef32b1db167b 20090601173136 plugins/VNT/Delaunay/Triangulation.class
+  1ac432ee85d3f15f2fec5f0799dd88e537f9f5fa 20090713113414 plugins/VNT/DistanceMap_Filled.class
+  1e4925f36963a76d93e27aeab223b39098473aff 20090713113414 plugins/VNT/DistanceMap_Outline.class
+  43176f5542eb5b81068e59a5f1016e9d64f374c8 20090713113414 plugins/VNT/DistanceMap_Skeleton.class
+  1d7d1cf300bf05774b89e41d32c09579cf5e093e 20090713113414 plugins/VNT/Endpoint_Prune.class
+  e498f6b54b6c0547ab89c6cc935598a04d193856 20090713113416 plugins/VNT/Eye_Candy.class
+  97b5461ca689eaff0d5e2fb086f06096acd753da 20090713113414 plugins/VNT/FindEdges_Segment.class
+  569a1951d920cdc89bc981f353af9439d69acd14 20090601162116 plugins/VNT/GrayLevelClass.class
+  33e401aaa317e6409964d08481ae8278dd7e8a17 20090601173134 plugins/VNT/Jama/CholeskyDecomposition.class
+  1a5500da0f6a27dc808cb0bfb470735f9a341548 20090601173134 plugins/VNT/Jama/EigenvalueDecomposition.class
+  a9c5311411d71814bba0d5cd2f9b59ff5fe6013b 20090601173134 plugins/VNT/Jama/LUDecomposition.class
+  7ef99c31391df89a70ec9d205cafbacdf0b4938e 20090601173134 plugins/VNT/Jama/Matrix.class
+  3a5e3617c8a06f820ee15732f13554443c2ba18e 20090601173134 plugins/VNT/Jama/QRDecomposition.class
+  0dcbc51a9c197bd52c9a57e61fb8d99ca01e97aa 20090601173134 plugins/VNT/Jama/SingularValueDecomposition.class
+  751f6f1447e1ddc3121e93efedb2f49ba01d8db3 20090601173134 plugins/VNT/Jama/util/Maths.class
+  ccdd8e1df42353f15980a7a3fcc52da7c38ec1c7 20090713113420 plugins/VNT/Lighting_Correction.class
+  0e3c4e08ba2eb769c5f2270006826e71b2b68314 20090713113414 plugins/VNT/Mesh_Analysis.class
+  c764b0bf6804c2f509ef40413904f35d4b2b902c 20090630121636 plugins/VNT/Node.class
+  2ff1bc83981dcec1b45a98c76267c76c8aabba9a 20090714201424 plugins/VNT/Node_Analysis.class
+  dad0ff753a63c05c413968ba3bf026de67f93592 20090630121648 plugins/VNT/Node_LinkedList.class
+  6400eff73c537ec0b26575a465e7e06c80ab0fa4 20090713113416 plugins/VNT/SetSettingsDialog.class
+  2576df347055c1160545e33df8a8ff28981702bf 20090706153426 plugins/VNT/VascularNetworkToolkit.class
+  d6cf9638dc212f49fc3d2d4e99ca7aedc78956a2 20101022082833 plugins/Video_Editing.jar
+  a43c9ad3f07dbfa56be075a9ebdcfa115f6675c8 20101022082820 plugins/View5D_.jar
+  b8c3af50365b12b0beb010f1c35134cbd310341a 20101022082815 plugins/Volume_Viewer.jar
+  e9a7358277abe3a90df974fc81d96be9c9a71a9e 20101022082818 plugins/bUnwarpJ_.jar
+  659ad6a335b4947eef8758b1b0cf050779430b78 20101022082827 plugins/ij-ImageIO_.jar
+  06097e6d24c69a9ca3e2c8a18971639419147dbf 20110301084412 plugins/level_sets.jar
+  5951e73c2a4280d562535f8da8e39a8749010bd7 20110301084443 plugins/loci_tools.jar
+  7666962cc18a0275b7198d6d64afba9033ca1604 20110301084446 plugins/mpicbg_.jar
+  5e32d936ba53c22ba6b70e5eee3992a361bc2ff8 20110301084504 plugins/panorama_.jar
+  91bf372e9c531a68d08cb158239df303c0a37fb1 20101222092525 plugins/register_virtual_stack_slices.jar
+  4d7eaf239c033d305a464a06c3e64c68d096c7e1 20101022082831 plugins/registration_3d.jar
+  e6e0879f5d50afa8d0dd213b4b66e396a39a47b7 20101022082801 retro/backport-util-concurrent-3.1.jar
+  e250f0c40b768e90ed7d3910d9869075f3e438cd 20101022082759 retro/retrotranslator-runtime-1.2.7.jar
+  eea1390da8fac38763ed4c03f1acb3342b942717 20101022082757 retro/retrotranslator-transformer-1.2.7.jar
+  21e7b7ec24eff575a502e3ac5089de5b3745af15 20101222092535 scripts/Miji.m
+  3daabf6b3c20f374cf42b672eb29035003dbc40e 20101222092535 scripts/Miji_Test.m
+  d326018044a582f5106efc6fc90ad09f98a6a822 20101022082859 scripts/Record_Desktop.py
+  0ea7f8fc6683e74065ae7fd82c1b92676e069526 20101022082859 scripts/Record_Window.py
+  af954bdff6392779e47e43fb4063f255a8a5ec6b 20101222092535 scripts/bfopen.m</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Rob Baer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-07 02:13:01 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Indeed making the stacks contain less images helped them complete on 2 GB machine.  I tried the smaller stacks (50 images) on a 1 GB machine and it stalled completely somewhere on image 1. The memory was set at default 760 MB or so.  If I ignored advice and upped the memory to 1460 MB on the 1 GB machine it could get as far as about 8 images before stalling in the middle of an image.  Again, no errors were reported in either case, and the machine just sort of hangs with not end in sight.
+
+It is a shame that at least the work done can't be recovered.  I don't know if the plugin is working on &quot;real&quot; statcks or &quot;hyper&quot; stacks.  Stacks seem the only option for batch processing, but I would be just as happy if I could apply training to a folder of individual images if this were easier to implement in a memory sparing fashion.
+
+</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Albert Cardona</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-07 16:41:04 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Dear Rob,
+
+(In reply to <a href="#c1">comment #1</a>)
+<span class="quote">&gt; Indeed making the stacks contain less images helped them complete on 2 GB
+&gt; machine.  I tried the smaller stacks (50 images) on a 1 GB machine and it
+&gt; stalled completely somewhere on image 1. The memory was set at default 760 MB
+&gt; or so.  If I ignored advice and upped the memory to 1460 MB on the 1 GB machine
+&gt; it could get as far as about 8 images before stalling in the middle of an
+&gt; image.  Again, no errors were reported in either case, and the machine just
+&gt; sort of hangs with not end in sight.</span >
+
+
+Indeed a better error reporting would be nice. At present all interested in the Trainable Segmentation plugin are working on something else, including a new and revamped Trainable Segmentation plugin with far more capabilities. Would you be willing to provide a few patches for the current version, as an interim solution to the problem you identified?
+
+The easiest solution for you is to buy more RAM, which is really cheap nowadays. Performing high-end image processing in a small machine is not a good idea.
+
+Albert</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-23 15:48:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >So, how to proceed? Is there anybody with enough interest in the issue to code the nicer error message?</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Rob Baer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-23 22:48:01 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I would label myself &quot;interested by incapable&quot;.  My report was not in any way intended to impune this wonderful plugin.  If as Albert implies, people are too busy working on new stuff, maybe we just make a note with the plugin description to keep stack size small relative to memory size, and further note that the possible consequence are that processing may stop functioning with no notification.  For me, a stack of 100 frames of 1388 x 1024 images processed with 2 Mb memory, but 200 frame did not.  For me, the worst part was not the limitation itself, but having to discover it only after losing several batch jobs on several computers at once because I didn't know to anticipate a problem.  I immediately guessed that it was a memory thing even without the error message, so an error message per se would not have helped a lot (except for the additional large stacks that I processed to &quot;verify&quot; my theory).  I only passed it back to you because I like closing circles, not because I expected you to drop everything important to do something.  Keep up the good work on new stuff.  Maybe a next version could GUESS the memory needs are and give a warning if problems are anticipated BEFORE the processing begins?  Further, my wish list would be that whatever intermediate segmentation work had been done up to the point of the crash would not just vaporize.  That said, you guys are a LOT smarter than me, and I'm going with whatever you think.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-03-24 00:49:12 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The idea about adding a note to the documentation is compelling, since it broadens the number of people who could help the issue.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

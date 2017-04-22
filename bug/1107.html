@@ -1,0 +1,1313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1107 &ndash; Cannot run commands from the ijpb/MorphoLibJ plugin in --headless mode using --jython script option</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEEDSINFO bz_product_Fiji bz_component_Plugins bz_bug_1107 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1107</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Cannot run commands from the ijpb/MorphoLibJ plugin in --headless mode using --jython script option</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-07-08 14:00:36 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2015-07-08 14:00:36">
+  <input type="hidden" name="longdesclength" value="11">
+  <input type="hidden" name="id" value="1107">
+  <input type="hidden" name="token" value="1492731924-4ktD6Pz4lRwi7G6fgxaEl31ipavH9snU7RxITF-Jb6o">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="1107.html"><b>Bug&nbsp;1107</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Cannot run commands from the ijpb/MorphoLibJ plugin in --headless mode using --jython script option</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td><span title="Cannot run commands from the ijpb/MorphoLibJ plugin in --headless mode using --jython script option">Cannot run commands from the ijpb/MorphoLibJ plugin in --headless mode using ...
+        </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEEDSINFO
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">Macintosh
+       Mac OS
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2015-07-06 10:36 CDT by <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-07-08 14:00 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="ghv2">ghv2</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-06 10:36:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I'm using Fiji version 21041125 and ijpb/MorphoLibJ release v1.0.7.
+
+I've tried several different commands from the fabulous ijpb/MorphoLibJ plugin library when running Fiji using --headless and --jython.  I have many Jython scripts that call other Fiji plugin commands successfully.  My scripts that attempt to use commands generally follow this pattern:
+
+# Open the input image file.
+input_image_plus = IJ.openImage( input )
+
+# Create a copy of the image.
+input_image_plus_copy = input_image_plus.createImagePlus()
+image_processor_copy = input_image_plus.getProcessor().duplicate()
+input_image_plus_copy.setProcessor( &quot;iCopy&quot;, image_processor_copy )
+
+# Run the command.
+IJ.run( input_image_plus_copy, &quot;Fill Holes (Binary/Gray)&quot;, &quot;&quot; )
+
+# Save the ImagePlus object as a new image.
+IJ.saveAs( input_image_plus_copy, output_datatype, output_path )
+
+The script finishes successfully, but no analysis is performed on the image (i.e., it remains basically the same as the original input).  Also, when running from the command line (instead of a Browser), the Fiji log ends with a &quot;Java Null pointer exception&quot;.
+
+I'm wondering if I'm missing something, or if there is something that needs to be added to the ijpb/MorphoLibJ plugin that enables it to be run in headless mode via Python script calls.  I'm not a Java expert, so any help will be much appreciated.
+
+Thanks!</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-07 14:13:54 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >After working with additional plugins from the command line (e.g., <a href="http://imagejdocu.tudor.lu/doku.php?id=plugin:filter:edge_detection:start">http://imagejdocu.tudor.lu/doku.php?id=plugin:filter:edge_detection:start</a>, <a href="http://imagejdocu.tudor.lu/doku.php?id=plugin:morphology:skeletonize3d:start">http://imagejdocu.tudor.lu/doku.php?id=plugin:morphology:skeletonize3d:start</a> ), it seems that plugins may be producing output images in various ways, and that may be causing the behavior I'm seeing.
+
+For example, the skeletonize3d plugin allows me to save the analyzed image using the following commands from a Python script:
+
+input_image_plus = IJ.openImage( input )
+# Create a copy of the image.
+input_image_plus_copy = input_image_plus.createImagePlus()
+image_processor_copy = input_image_plus.getProcessor().duplicate()
+input_image_plus_copy.setProcessor( &quot;iCopy&quot;, image_processor_copy )
+# Run the command.
+IJ.run( input_image_plus_copy, &quot;Skeletonize (2D/3D)&quot;, &quot;&quot; )
+# Save the ImagePlus object as a new image.
+IJ.saveAs( input_image_plus_copy, output_datatype, tmp_output_path )
+
+In some way, the plugin &quot;overlays&quot; the original input_image_plus_copy object with the new analyzed image, so when I save it, I have what I expect.
+
+However, using similar commands with the edge_detection plugin does not behave the same way.  It must be producing a separate image (to which I do not know how to get a handle from the command line), so the original input_image_plus_copy object is saved rather than the analyzed image.  The behavior of this plugin is similar to the behavior of the ijpb/MorphoLibJ plugin.
+
+So is it possible to get a handle on output images for those plugins that do not &quot;overlay&quot; the original image when run from the command line?
+
+I've looked everywhere in (the Fiji tutorials and docs, OpenStack, etc), but have not found any information about this.
+
+Thanks very much for any insight on this.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-07 15:39:25 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for the report, Greg.
+
+Firstly, please note that there is a serious bug preventing Jython scripts from working headlessly on Windows:
+
+<a href="https://github.com/imagej/imagej/issues/114">https://github.com/imagej/imagej/issues/114</a>
+
+If you are using Windows, as a workaround, you can use any other scripting language besides Jython. Obviously we hope to fix this in the future, but cannot promise a timeline right now.
+
+Anyway, I'm guessing you are on a different OS, since you say the script finishes successfully...
+
+Secondly, note that ImageJ2's headless mode is an extension of ImageJ1 to work headless in only certain cases. Some plugins will simply not work headless, due to hardcoded usage of headless-unfriendly GUI elements. The typical symptom there is java.awt.HeadlessException being thrown, which from your description I assume you are not seeing either?
+
+Off the top of my head, I do not have an easy answer for you for grabbing handles to existing images while headless. (The WindowManager won't work because it is unfortunately a UI element which needs to be overridden.)
+
+Regarding the NullPointerException, that sounds like a likely culprit and it would be helpful if you could paste the full stack trace of that message.
+
+Looking at the Edge Detection plugin source code, I see several serious potential issues with using them headless:
+
+* The Conn_Tres is a PlugInFrame, which is a UI element.
+* There are multiple calls to WindowManager.getCurrentImage(), which (IIRC) may not work correctly headless.
+
+In short, the headless mode is fraught with difficulty, especially when third party plugins are involved. Your best bet is probably to install xvfb on your headless machine and run your scripts that way, so that your scripts behave better.
+
+Or, if you are running these scripts on your local machine (i.e., not a headless server or cluster somewhere), then why use --headless at all? Just don't pass that flag.
+
+I am marking this as NEEDSINFO in case you want to provide more detail on the NullPointerException, or if you can isolate more specifics about how things go wrong, what you expect to happen instead, etc. If xvfb and/or not using --headless works for you instead though, then I would favor closing this issue as &quot;WONTFIX&quot; since we don't have the resources this year to improve ImageJ's legacy headless mode.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 07:23:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >  (In reply to Curtis Rueden from <a href="#c2">comment #2</a>)
+
+Hello Curtis,
+
+Thanks very much for you response to my questions.  Please see my inline comments.
+
+<span class="quote">&gt; Thanks for the report, Greg.
+&gt; 
+&gt; Firstly, please note that there is a serious bug preventing Jython scripts
+&gt; from working headlessly on Windows:
+&gt; 
+&gt; <a href="https://github.com/imagej/imagej/issues/114">https://github.com/imagej/imagej/issues/114</a></span >
+
+This is no problem for me.  I am developing on and for only Mac OS X and Linux x86_64.
+
+<span class="quote">&gt; 
+&gt; If you are using Windows, as a workaround, you can use any other scripting
+&gt; language besides Jython. Obviously we hope to fix this in the future, but
+&gt; cannot promise a timeline right now.
+&gt; 
+&gt; Anyway, I'm guessing you are on a different OS, since you say the script
+&gt; finishes successfully...
+&gt; 
+&gt; Secondly, note that ImageJ2's headless mode is an extension of ImageJ1 to
+&gt; work headless in only certain cases. Some plugins will simply not work
+&gt; headless, due to hardcoded usage of headless-unfriendly GUI elements. The
+&gt; typical symptom there is java.awt.HeadlessException being thrown, which from
+&gt; your description I assume you are not seeing either?</span >
+
+I'm thinking that this is the likely culprit.  Some plugins just do not seem to work in headless mode, while others work perfectly.
+
+<span class="quote">&gt; 
+&gt; Off the top of my head, I do not have an easy answer for you for grabbing
+&gt; handles to existing images while headless. (The WindowManager won't work
+&gt; because it is unfortunately a UI element which needs to be overridden.)
+&gt; 
+&gt; Regarding the NullPointerException, that sounds like a likely culprit and it
+&gt; would be helpful if you could paste the full stack trace of that message.</span >
+
+I will paste the full stack trace of 3 plugins that behave in this way in separate comments.
+
+<span class="quote">&gt; 
+&gt; Looking at the Edge Detection plugin source code, I see several serious
+&gt; potential issues with using them headless:
+&gt; 
+&gt; * The Conn_Tres is a PlugInFrame, which is a UI element.
+&gt; * There are multiple calls to WindowManager.getCurrentImage(), which (IIRC)
+&gt; may not work correctly headless.
+&gt; 
+&gt; In short, the headless mode is fraught with difficulty, especially when
+&gt; third party plugins are involved. Your best bet is probably to install xvfb
+&gt; on your headless machine and run your scripts that way, so that your scripts
+&gt; behave better.</span >
+
+I will try this approach next to see if I an make the problematic plugins work from the command line.  Thanks for this pointer - I did see some comments on this in my searches, but have not yet implemented my tools to use it.
+
+<span class="quote">&gt; 
+&gt; Or, if you are running these scripts on your local machine (i.e., not a
+&gt; headless server or cluster somewhere), then why use --headless at all? Just
+&gt; don't pass that flag.</span >
+
+I am wrapping ImageJ2 tools in Galaxy (<a href="https://galaxyproject.org">https://galaxyproject.org</a>), and in order to do this, I need to run the tools from the command line.  I've wrapped several tools so far using various Fiji plugins and am planning to wrap as many more as possible.  These tools are available at <a href="https://github.com/bgruening/galaxytools/tree/master/tools/image_processing/imagej2">https://github.com/bgruening/galaxytools/tree/master/tools/image_processing/imagej2</a>
+
+
+<span class="quote">&gt; 
+&gt; I am marking this as NEEDSINFO in case you want to provide more detail on
+&gt; the NullPointerException, or if you can isolate more specifics about how
+&gt; things go wrong, what you expect to happen instead, etc. If xvfb and/or not
+&gt; using --headless works for you instead though, then I would favor closing
+&gt; this issue as &quot;WONTFIX&quot; since we don't have the resources this year to
+&gt; improve ImageJ's legacy headless mode.</span ></pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 07:25:51 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Here is the full stack trace of the command that uses the Edge Detection plugin available at <a href="http://imagejdocu.tudor.lu/lib/exe/fetch.php?media=plugin:filter:edge_detection:image_edge.jar">http://imagejdocu.tudor.lu/lib/exe/fetch.php?media=plugin:filter:edge_detection:image_edge.jar</a>.
+
+$ ImageJ-macosx --ij2 --headless --debug --jython /Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_edge_detection/d53f258d585f/imagej2_edge_detection/jython_script.py /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmpkNSSbb /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmp-imagej-Q8RvY3/tmpg30esn.gif area_filter  3.0 1.0 100.0 50.0 None None None None None /Users/gvk/Desktop/tmp5tOFP0.png None None png
+Available RAM: 10164MB, using 3/4 of that: 7623MB
+JRE not found in '/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/jre'
+JAVA_HOME contains a JRE: '/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre'
+Re-executing with correct library lookup path (/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/lib/macosx:/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/mm/macosx)
+Available RAM: 10164MB, using 3/4 of that: 7623MB
+JRE not found in '/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/jre'
+JAVA_HOME contains a JRE: '/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre'
+java -Djava.ext.dirs=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/java/macosx-java3d/Home/lib/ext:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Frameworks/JavaVM.framework/Home/lib/ext -Dpython.cachedir.skip=true -Dplugins.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932 -Xmx7623m -Djava.awt.headless=true -Dapple.awt.UIElement=true -Xincgc -XX:PermSize=128m -Djava.class.path=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/jars/imagej-launcher-3.1.6.jar -Dimagej.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932 -Dij.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932 -Dfiji.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932 -Dfiji.executable=ImageJ-macosx -Dij.executable=ImageJ-macosx -Djava.library.path=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/lib/macosx:/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/mm/macosx -Dij.debug=true -Dscijava.log.level=debug net.imagej.launcher.ClassLauncher -classpath /usr/share/java/jython.jar -classpath . -ijjarpath jars -ijjarpath plugins org.python.util.jython /Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_edge_detection/d53f258d585f/imagej2_edge_detection/jython_script.py /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmpkNSSbb /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmp-imagej-Q8RvY3/tmpg30esn.gif area_filter 3.0 1.0 100.0 50.0 None None None None None /Users/gvk/Desktop/tmp5tOFP0.png None None png
+Using JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre
+Work around attempt at MacOSX world domination: /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre/lib/jli/libjli.dylib
+Opening Java library /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre/lib/server/libjvm.dylib
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=128m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: Using incremental CMS is deprecated and will likely be removed in a future release
+Adding option: -Djava.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/
+ij1.plugin.dirs: null
+$HOME/.plugins: /Users/gvk/.plugins does not exist
+java.lang.IllegalArgumentException: Cannot handle replace call to list in ij.Menus's public static synchronized java.lang.String[] getPlugins()
+	at net.imagej.patcher.CodeHacker.replaceCallInMethod(CodeHacker.java:724)
+	at net.imagej.patcher.CodeHacker.replaceCallInMethod(CodeHacker.java:649)
+	at net.imagej.patcher.LegacyExtensions.addExtraPlugins(LegacyExtensions.java:475)
+	at net.imagej.patcher.LegacyExtensions.injectHooks(LegacyExtensions.java:175)
+	at net.imagej.patcher.LegacyInjector.inject(LegacyInjector.java:308)
+	at net.imagej.patcher.LegacyInjector.injectHooks(LegacyInjector.java:109)
+	at net.imagej.patcher.LegacyEnvironment.initialize(LegacyEnvironment.java:101)
+	at net.imagej.patcher.LegacyEnvironment.applyPatches(LegacyEnvironment.java:495)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:397)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:376)
+	at fiji.IJ1Patcher.run(IJ1Patcher.java:37)
+	at net.imagej.launcher.ClassLauncher.patchIJ1(ClassLauncher.java:195)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:154)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.RuntimeException: java.io.IOException: invalid constant type: 18 at 168
+	at javassist.CtClassType.getClassFile2(CtClassType.java:204)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:98)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:84)
+	at javassist.compiler.TypeChecker.atMethodCallCore(TypeChecker.java:711)
+	at javassist.compiler.TypeChecker.atCallExpr(TypeChecker.java:688)
+	at javassist.compiler.JvstTypeChecker.atCallExpr(JvstTypeChecker.java:157)
+	at javassist.compiler.ast.CallExpr.accept(CallExpr.java:46)
+	at javassist.compiler.CodeGen.doTypeCheck(CodeGen.java:242)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:330)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atIfStmnt(CodeGen.java:391)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:355)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.Javac.compileStmnt(Javac.java:569)
+	at javassist.expr.MethodCall.replace(MethodCall.java:235)
+	at net.imagej.patcher.CodeHacker$7.edit(CodeHacker.java:685)
+	at javassist.expr.ExprEditor.loopBody(ExprEditor.java:192)
+	at javassist.expr.ExprEditor.doit(ExprEditor.java:91)
+	at javassist.CtBehavior.instrument(CtBehavior.java:679)
+	at net.imagej.patcher.CodeHacker$EagerExprEditor.instrument(CodeHacker.java:1278)
+	at net.imagej.patcher.CodeHacker.replaceCallInMethod(CodeHacker.java:669)
+	... 13 more
+Caused by: java.io.IOException: invalid constant type: 18 at 168
+	at javassist.bytecode.ConstPool.readOne(ConstPool.java:1044)
+	at javassist.bytecode.ConstPool.read(ConstPool.java:984)
+	at javassist.bytecode.ConstPool.&lt;init&gt;(ConstPool.java:125)
+	at javassist.bytecode.ClassFile.read(ClassFile.java:770)
+	at javassist.bytecode.ClassFile.&lt;init&gt;(ClassFile.java:114)
+	at javassist.CtClassType.getClassFile2(CtClassType.java:191)
+	... 33 more
+java.lang.IllegalArgumentException: Cannot modify method: public void run()
+	at net.imagej.patcher.CodeHacker.insertAtTopOfMethod(CodeHacker.java:167)
+	at net.imagej.patcher.LegacyExtensions.injectHooks(LegacyExtensions.java:229)
+	at net.imagej.patcher.LegacyInjector.inject(LegacyInjector.java:308)
+	at net.imagej.patcher.LegacyInjector.injectHooks(LegacyInjector.java:109)
+	at net.imagej.patcher.LegacyEnvironment.initialize(LegacyEnvironment.java:101)
+	at net.imagej.patcher.LegacyEnvironment.applyPatches(LegacyEnvironment.java:495)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:397)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:376)
+	at fiji.IJ1Patcher.run(IJ1Patcher.java:37)
+	at net.imagej.launcher.ClassLauncher.patchIJ1(ClassLauncher.java:195)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:154)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.IllegalArgumentException: No such class: JavaScriptEvaluator
+	at net.imagej.patcher.CodeHacker.getClass(CodeHacker.java:880)
+	at net.imagej.patcher.CodeHacker.getMethod(CodeHacker.java:906)
+	at net.imagej.patcher.CodeHacker.getBehavior(CodeHacker.java:896)
+	at net.imagej.patcher.CodeHacker.insertAtTopOfMethod(CodeHacker.java:158)
+	... 11 more
+Caused by: javassist.NotFoundException: JavaScriptEvaluator
+	at javassist.ClassPool.get(ClassPool.java:450)
+	at net.imagej.patcher.CodeHacker.getClass(CodeHacker.java:875)
+	... 14 more
+java.lang.IllegalArgumentException: Cannot handle app name in ij.ImageJ's public &lt;init&gt;(java.applet.Applet applet, int mode)
+	at net.imagej.patcher.CodeHacker.replaceAppNameInCall(CodeHacker.java:445)
+	at net.imagej.patcher.LegacyExtensions.insertAppNameHooks(LegacyExtensions.java:404)
+	at net.imagej.patcher.LegacyExtensions.injectHooks(LegacyExtensions.java:290)
+	at net.imagej.patcher.LegacyInjector.inject(LegacyInjector.java:308)
+	at net.imagej.patcher.LegacyInjector.injectHooks(LegacyInjector.java:109)
+	at net.imagej.patcher.LegacyEnvironment.initialize(LegacyEnvironment.java:101)
+	at net.imagej.patcher.LegacyEnvironment.applyPatches(LegacyEnvironment.java:495)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:397)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:376)
+	at fiji.IJ1Patcher.run(IJ1Patcher.java:37)
+	at net.imagej.launcher.ClassLauncher.patchIJ1(ClassLauncher.java:195)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:154)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.RuntimeException: java.io.IOException: invalid constant type: 18 at 1
+	at javassist.CtClassType.getClassFile2(CtClassType.java:204)
+	at javassist.CtClassType.subtypeOf(CtClassType.java:304)
+	at javassist.CtClassType.subtypeOf(CtClassType.java:319)
+	at javassist.compiler.MemberResolver.compareSignature(MemberResolver.java:235)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:107)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:84)
+	at javassist.compiler.TypeChecker.atMethodCallCore(TypeChecker.java:711)
+	at javassist.compiler.TypeChecker.atCallExpr(TypeChecker.java:688)
+	at javassist.compiler.JvstTypeChecker.atCallExpr(JvstTypeChecker.java:157)
+	at javassist.compiler.ast.CallExpr.accept(CallExpr.java:46)
+	at javassist.compiler.CodeGen.doTypeCheck(CodeGen.java:242)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:330)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.Javac.compileStmnt(Javac.java:569)
+	at javassist.expr.MethodCall.replace(MethodCall.java:235)
+	at net.imagej.patcher.CodeHacker$4.edit(CodeHacker.java:426)
+	at net.imagej.patcher.CodeHacker$4.edit(CodeHacker.java:440)
+	at javassist.expr.ExprEditor.loopBody(ExprEditor.java:220)
+	at javassist.expr.ExprEditor.doit(ExprEditor.java:91)
+	at javassist.CtBehavior.instrument(CtBehavior.java:679)
+	at net.imagej.patcher.CodeHacker$EagerExprEditor.instrument(CodeHacker.java:1278)
+	at net.imagej.patcher.CodeHacker.replaceAppNameInCall(CodeHacker.java:401)
+	... 12 more
+Caused by: java.io.IOException: invalid constant type: 18 at 1
+	at javassist.bytecode.ConstPool.readOne(ConstPool.java:1044)
+	at javassist.bytecode.ConstPool.read(ConstPool.java:984)
+	at javassist.bytecode.ConstPool.&lt;init&gt;(ConstPool.java:125)
+	at javassist.bytecode.ClassFile.read(ClassFile.java:770)
+	at javassist.bytecode.ClassFile.&lt;init&gt;(ClassFile.java:114)
+	at javassist.CtClassType.getClassFile2(CtClassType.java:191)
+	... 33 more
+Launching main class org.python.util.jython with parameters [/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_edge_detection/d53f258d585f/imagej2_edge_detection/jython_script.py, /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmpkNSSbb, /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmp-imagej-Q8RvY3/tmpg30esn.gif, area_filter, 3.0, 1.0, 100.0, 50.0, None, None, None, None, None, /Users/gvk/Desktop/tmp5tOFP0.png, None, None, png]
+Class loader = sun.misc.Launcher$AppClassLoader&#64;c387f44
+java.lang.NullPointerException
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:164)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:167)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:167)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:167)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirs(EssentialLegacyHooks.java:146)
+	at ij.IJ.getClassLoader(IJ.java)
+	at ij.io.Opener.&lt;clinit&gt;(Opener.java:55)
+	at ij.IJ.openImage(IJ.java:1609)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:186)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:204)
+	at org.python.core.PyObject.__call__(PyObject.java:387)
+	at org.python.core.PyObject.__call__(PyObject.java:391)
+	at org.python.pycode._pyx0.f$0(/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_edge_detection/d53f258d585f/imagej2_edge_detection/jython_script.py:67)
+	at org.python.pycode._pyx0.call_function(/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_edge_detection/d53f258d585f/imagej2_edge_detection/jython_script.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyCode.call(PyCode.java:18)
+	at org.python.core.Py.runCode(Py.java:1275)
+	at org.python.util.PythonInterpreter.execfile(PythonInterpreter.java:235)
+	at org.python.util.jython.run(jython.java:247)
+	at org.python.util.jython.main(jython.java:129)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at net.imagej.launcher.ClassLauncher.launch(ClassLauncher.java:258)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:184)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+java.lang.NullPointerException
+java.lang.NumberFormatException: For input string: &quot;&amp;median_filter_radius&quot;
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.lang.Double.parseDouble(Double.java:538)
+	at net.imagej.patcher.HeadlessGenericDialog.getMacroParameter(HeadlessGenericDialog.java:305)
+	at net.imagej.patcher.HeadlessGenericDialog.addNumericField(HeadlessGenericDialog.java:107)
+	at Image_Edge.EdgeDetection(Image_Edge.java:71)
+	at Image_Edge.run(Image_Edge.java:39)
+	at ij.IJ.runUserPlugIn(IJ.java:202)
+	at ij.IJ.runPlugIn(IJ.java:166)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at ij.IJ.run(IJ.java:272)
+	at ij.IJ.run(IJ.java:323)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:186)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:204)
+	at org.python.core.PyObject.__call__(PyObject.java:422)
+	at org.python.core.PyObject.__call__(PyObject.java:426)
+	at org.python.pycode._pyx0.f$0(/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_edge_detection/d53f258d585f/imagej2_edge_detection/jython_script.py:67)
+	at org.python.pycode._pyx0.call_function(/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_edge_detection/d53f258d585f/imagej2_edge_detection/jython_script.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyCode.call(PyCode.java:18)
+	at org.python.core.Py.runCode(Py.java:1275)
+	at org.python.util.PythonInterpreter.execfile(PythonInterpreter.java:235)
+	at org.python.util.jython.run(jython.java:247)
+	at org.python.util.jython.main(jython.java:129)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at net.imagej.launcher.ClassLauncher.launch(ClassLauncher.java:258)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:184)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 07:28:37 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Here is the full stack trace of one of the calls I've made to the MorphoLibJ library available at <a href="http://sites.imagej.net/IJPB-plugins/plugins/MorphoLibJ_-1.0.7.jar-20150323104329">http://sites.imagej.net/IJPB-plugins/plugins/MorphoLibJ_-1.0.7.jar-20150323104329</a>.  All of the calls I've tried to this library end with the java.lang.NullPointerException line shown here.  This is slightly different behavior from the Edge Detection plugin.
+
+$ ImageJ-macosx --ij2 --headless --debug --plugins /Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/plugins --jar-path /Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/plugins --jython /Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_fast_morphology/49bc2ac31165/imagej2_fast_morphology/jython_script.py /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmp-imagej-JaTMwv/tmpYAH3Fo.gif /Users/gvk/Desktop/tmpeowVC0.png png
+Available RAM: 10633MB, using 3/4 of that: 7975MB
+JRE not found in '/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/jre'
+JAVA_HOME contains a JRE: '/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre'
+Re-executing with correct library lookup path (/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/lib/macosx:/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/mm/macosx)
+Available RAM: 10632MB, using 3/4 of that: 7974MB
+JRE not found in '/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/jre'
+JAVA_HOME contains a JRE: '/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre'
+java -Djava.ext.dirs=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/java/macosx-java3d/Home/lib/ext:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Frameworks/JavaVM.framework/Home/lib/ext -Dpython.cachedir.skip=true -Dplugins.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/plugins -Xmx7974m -Djava.awt.headless=true -Dapple.awt.UIElement=true -Xincgc -XX:PermSize=128m -Djava.class.path=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/jars/imagej-launcher-3.1.6.jar -Dimagej.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932 -Dij.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932 -Dfiji.dir=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932 -Dfiji.executable=ImageJ-macosx -Dij.executable=ImageJ-macosx -Djava.library.path=/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/lib/macosx:/Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/mm/macosx -Dij.debug=true -Dscijava.log.level=debug net.imagej.launcher.ClassLauncher -jarpath /Users/gvk/work/ts_install/tool_dependency_dir/fiji/20141125/iuc/package_fiji_20141125/a9ee9bebf932/plugins -classpath /usr/share/java/jython.jar -classpath . -ijjarpath jars -ijjarpath plugins org.python.util.jython /Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_fast_morphology/49bc2ac31165/imagej2_fast_morphology/jython_script.py /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmp-imagej-JaTMwv/tmpYAH3Fo.gif /Users/gvk/Desktop/tmpeowVC0.png png
+Using JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre
+Work around attempt at MacOSX world domination: /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre/lib/jli/libjli.dylib
+Opening Java library /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home//jre/lib/server/libjvm.dylib
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=128m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: Using incremental CMS is deprecated and will likely be removed in a future release
+Adding option: -Djava.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/
+ij1.plugin.dirs: null
+$HOME/.plugins: /Users/gvk/.plugins does not exist
+java.lang.IllegalArgumentException: Cannot handle replace call to list in ij.Menus's public static synchronized java.lang.String[] getPlugins()
+	at net.imagej.patcher.CodeHacker.replaceCallInMethod(CodeHacker.java:724)
+	at net.imagej.patcher.CodeHacker.replaceCallInMethod(CodeHacker.java:649)
+	at net.imagej.patcher.LegacyExtensions.addExtraPlugins(LegacyExtensions.java:475)
+	at net.imagej.patcher.LegacyExtensions.injectHooks(LegacyExtensions.java:175)
+	at net.imagej.patcher.LegacyInjector.inject(LegacyInjector.java:308)
+	at net.imagej.patcher.LegacyInjector.injectHooks(LegacyInjector.java:109)
+	at net.imagej.patcher.LegacyEnvironment.initialize(LegacyEnvironment.java:101)
+	at net.imagej.patcher.LegacyEnvironment.applyPatches(LegacyEnvironment.java:495)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:397)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:376)
+	at fiji.IJ1Patcher.run(IJ1Patcher.java:37)
+	at net.imagej.launcher.ClassLauncher.patchIJ1(ClassLauncher.java:195)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:154)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.RuntimeException: java.io.IOException: invalid constant type: 18 at 168
+	at javassist.CtClassType.getClassFile2(CtClassType.java:204)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:98)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:84)
+	at javassist.compiler.TypeChecker.atMethodCallCore(TypeChecker.java:711)
+	at javassist.compiler.TypeChecker.atCallExpr(TypeChecker.java:688)
+	at javassist.compiler.JvstTypeChecker.atCallExpr(JvstTypeChecker.java:157)
+	at javassist.compiler.ast.CallExpr.accept(CallExpr.java:46)
+	at javassist.compiler.CodeGen.doTypeCheck(CodeGen.java:242)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:330)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atIfStmnt(CodeGen.java:391)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:355)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.Javac.compileStmnt(Javac.java:569)
+	at javassist.expr.MethodCall.replace(MethodCall.java:235)
+	at net.imagej.patcher.CodeHacker$7.edit(CodeHacker.java:685)
+	at javassist.expr.ExprEditor.loopBody(ExprEditor.java:192)
+	at javassist.expr.ExprEditor.doit(ExprEditor.java:91)
+	at javassist.CtBehavior.instrument(CtBehavior.java:679)
+	at net.imagej.patcher.CodeHacker$EagerExprEditor.instrument(CodeHacker.java:1278)
+	at net.imagej.patcher.CodeHacker.replaceCallInMethod(CodeHacker.java:669)
+	... 13 more
+Caused by: java.io.IOException: invalid constant type: 18 at 168
+	at javassist.bytecode.ConstPool.readOne(ConstPool.java:1044)
+	at javassist.bytecode.ConstPool.read(ConstPool.java:984)
+	at javassist.bytecode.ConstPool.&lt;init&gt;(ConstPool.java:125)
+	at javassist.bytecode.ClassFile.read(ClassFile.java:770)
+	at javassist.bytecode.ClassFile.&lt;init&gt;(ClassFile.java:114)
+	at javassist.CtClassType.getClassFile2(CtClassType.java:191)
+	... 33 more
+java.lang.IllegalArgumentException: Cannot modify method: public void run()
+	at net.imagej.patcher.CodeHacker.insertAtTopOfMethod(CodeHacker.java:167)
+	at net.imagej.patcher.LegacyExtensions.injectHooks(LegacyExtensions.java:229)
+	at net.imagej.patcher.LegacyInjector.inject(LegacyInjector.java:308)
+	at net.imagej.patcher.LegacyInjector.injectHooks(LegacyInjector.java:109)
+	at net.imagej.patcher.LegacyEnvironment.initialize(LegacyEnvironment.java:101)
+	at net.imagej.patcher.LegacyEnvironment.applyPatches(LegacyEnvironment.java:495)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:397)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:376)
+	at fiji.IJ1Patcher.run(IJ1Patcher.java:37)
+	at net.imagej.launcher.ClassLauncher.patchIJ1(ClassLauncher.java:195)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:154)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.IllegalArgumentException: No such class: JavaScriptEvaluator
+	at net.imagej.patcher.CodeHacker.getClass(CodeHacker.java:880)
+	at net.imagej.patcher.CodeHacker.getMethod(CodeHacker.java:906)
+	at net.imagej.patcher.CodeHacker.getBehavior(CodeHacker.java:896)
+	at net.imagej.patcher.CodeHacker.insertAtTopOfMethod(CodeHacker.java:158)
+	... 11 more
+Caused by: javassist.NotFoundException: JavaScriptEvaluator
+	at javassist.ClassPool.get(ClassPool.java:450)
+	at net.imagej.patcher.CodeHacker.getClass(CodeHacker.java:875)
+	... 14 more
+java.lang.IllegalArgumentException: Cannot handle app name in ij.ImageJ's public &lt;init&gt;(java.applet.Applet applet, int mode)
+	at net.imagej.patcher.CodeHacker.replaceAppNameInCall(CodeHacker.java:445)
+	at net.imagej.patcher.LegacyExtensions.insertAppNameHooks(LegacyExtensions.java:404)
+	at net.imagej.patcher.LegacyExtensions.injectHooks(LegacyExtensions.java:290)
+	at net.imagej.patcher.LegacyInjector.inject(LegacyInjector.java:308)
+	at net.imagej.patcher.LegacyInjector.injectHooks(LegacyInjector.java:109)
+	at net.imagej.patcher.LegacyEnvironment.initialize(LegacyEnvironment.java:101)
+	at net.imagej.patcher.LegacyEnvironment.applyPatches(LegacyEnvironment.java:495)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:397)
+	at net.imagej.patcher.LegacyInjector.preinit(LegacyInjector.java:376)
+	at fiji.IJ1Patcher.run(IJ1Patcher.java:37)
+	at net.imagej.launcher.ClassLauncher.patchIJ1(ClassLauncher.java:195)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:154)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+Caused by: java.lang.RuntimeException: java.io.IOException: invalid constant type: 18 at 1
+	at javassist.CtClassType.getClassFile2(CtClassType.java:204)
+	at javassist.CtClassType.subtypeOf(CtClassType.java:304)
+	at javassist.CtClassType.subtypeOf(CtClassType.java:319)
+	at javassist.compiler.MemberResolver.compareSignature(MemberResolver.java:235)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:107)
+	at javassist.compiler.MemberResolver.lookupMethod(MemberResolver.java:84)
+	at javassist.compiler.TypeChecker.atMethodCallCore(TypeChecker.java:711)
+	at javassist.compiler.TypeChecker.atCallExpr(TypeChecker.java:688)
+	at javassist.compiler.JvstTypeChecker.atCallExpr(JvstTypeChecker.java:157)
+	at javassist.compiler.ast.CallExpr.accept(CallExpr.java:46)
+	at javassist.compiler.CodeGen.doTypeCheck(CodeGen.java:242)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:330)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.Javac.compileStmnt(Javac.java:569)
+	at javassist.expr.MethodCall.replace(MethodCall.java:235)
+	at net.imagej.patcher.CodeHacker$4.edit(CodeHacker.java:426)
+	at net.imagej.patcher.CodeHacker$4.edit(CodeHacker.java:440)
+	at javassist.expr.ExprEditor.loopBody(ExprEditor.java:220)
+	at javassist.expr.ExprEditor.doit(ExprEditor.java:91)
+	at javassist.CtBehavior.instrument(CtBehavior.java:679)
+	at net.imagej.patcher.CodeHacker$EagerExprEditor.instrument(CodeHacker.java:1278)
+	at net.imagej.patcher.CodeHacker.replaceAppNameInCall(CodeHacker.java:401)
+	... 12 more
+Caused by: java.io.IOException: invalid constant type: 18 at 1
+	at javassist.bytecode.ConstPool.readOne(ConstPool.java:1044)
+	at javassist.bytecode.ConstPool.read(ConstPool.java:984)
+	at javassist.bytecode.ConstPool.&lt;init&gt;(ConstPool.java:125)
+	at javassist.bytecode.ClassFile.read(ClassFile.java:770)
+	at javassist.bytecode.ClassFile.&lt;init&gt;(ClassFile.java:114)
+	at javassist.CtClassType.getClassFile2(CtClassType.java:191)
+	... 33 more
+Launching main class org.python.util.jython with parameters [/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_fast_morphology/49bc2ac31165/imagej2_fast_morphology/jython_script.py, /var/folders/qm/p6jt97wj4239jx8gdv7jy75m0000gn/T/tmp-imagej-JaTMwv/tmpYAH3Fo.gif, /Users/gvk/Desktop/tmpeowVC0.png, png]
+Class loader = sun.misc.Launcher$AppClassLoader&#64;c387f44
+java.lang.NullPointerException
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:164)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:167)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:167)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirectories(EssentialLegacyHooks.java:167)
+	at net.imagej.patcher.EssentialLegacyHooks.missingSubdirs(EssentialLegacyHooks.java:146)
+	at ij.IJ.getClassLoader(IJ.java)
+	at ij.io.Opener.&lt;clinit&gt;(Opener.java:55)
+	at ij.IJ.openImage(IJ.java:1609)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:186)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:204)
+	at org.python.core.PyObject.__call__(PyObject.java:387)
+	at org.python.core.PyObject.__call__(PyObject.java:391)
+	at org.python.pycode._pyx0.f$0(/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_fast_morphology/49bc2ac31165/imagej2_fast_morphology/jython_script.py:28)
+	at org.python.pycode._pyx0.call_function(/Users/gvk/work/ts_install/shed_tools/localhost/repos/iuc/imagej2_fast_morphology/49bc2ac31165/imagej2_fast_morphology/jython_script.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyCode.call(PyCode.java:18)
+	at org.python.core.Py.runCode(Py.java:1275)
+	at org.python.util.PythonInterpreter.execfile(PythonInterpreter.java:235)
+	at org.python.util.jython.run(jython.java:247)
+	at org.python.util.jython.main(jython.java:129)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at net.imagej.launcher.ClassLauncher.launch(ClassLauncher.java:258)
+	at net.imagej.launcher.ClassLauncher.run(ClassLauncher.java:184)
+	at net.imagej.launcher.ClassLauncher.main(ClassLauncher.java:76)
+java.lang.NullPointerException</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 12:19:51 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; java.lang.RuntimeException: java.io.IOException: invalid constant type: 18 at 168</span >
+
+That error was fixed awhile back. So it suggest to me that you are:
+
+A) Using Java 8; and
+B) Not using the most up-to-date version of Fiji.
+
+Is that accurate? If so, please try again with a fully up-to-date Fiji installation.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 12:34:45 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to Curtis Rueden from <a href="#c6">comment #6</a>)
+<span class="quote">&gt; &gt; java.lang.RuntimeException: java.io.IOException: invalid constant type: 18 at 168
+&gt; 
+&gt; That error was fixed awhile back. So it suggest to me that you are:
+&gt; 
+&gt; A) Using Java 8; and
+&gt; B) Not using the most up-to-date version of Fiji.
+&gt; 
+&gt; Is that accurate? If so, please try again with a fully up-to-date Fiji
+&gt; installation.</span >
+
+Hello Curtis,
+
+I am using the latest &quot;stable&quot; version of Fiji (Fiji Life-Line version, 2014 November 25) downloaded from <a href="http://fiji.sc/downloads/Life-Line/fiji-macosx-20141125.dmg">http://fiji.sc/downloads/Life-Line/fiji-macosx-20141125.dmg</a>.  I am also using Java 8 - my &quot;About ImageJ states:
+
+ImageJ 1.49
+Java 1.8.0_20
+
+Obviously this is a fairly old version of Fiji, but I'd like to stay on a specific version if I can because the tools I'm building require reproducible behavior, so always just downloading the latest development build is not possible (I can do so for development purposes however).  
+
+Do you have an estimate as to the date of the next stable release of Fiji?
+
+I'll try the latest development build to see if it makes a difference with these plugins.
+
+Thanks for you help!
+
+Greg</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 12:42:00 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks Greg. To be clear, the continuous release of Fiji is not a &quot;development build&quot; -- each update is a reproducible version (i.e., all release versions of JAR files) built from Fiji's master branch.
+
+The ImageJ2 development build is _not_ reproducible, but I think the Downloads page is pretty clear about that.
+
+The main problem with the Fiji continuous releases is that they are not currently archived anywhere and you can't downgrade. So to actually roll back you'd need to know which commit hash you were on and rebuild Fiji using Maven. Someday we hope to have a rollback feature, but it's probably not going to happen this year.
+
+As for when we do another Life-Line version: we try to do one just before making disruptive changes. The next disruptive change will certainly be the switch over to Java 8 with a new deployment scheme that retires the ImageJ Launcher. We hope to roll that out before September.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 12:43:23 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; The ImageJ2 development build is _not_ reproducible</span >
+
+Actually, it is also &quot;reproducible&quot; in the sense that the build can be recreated at a later date:
+
+<a href="http://imagej.net/Reproducible_builds">http://imagej.net/Reproducible_builds</a>
+
+But unlike the Fiji master branch, the ImageJ2 master branch is not a release version.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Greg Von Kuster</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-07-08 14:00:36 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Curtis,
+
+(In reply to Curtis Rueden from <a href="#c8">comment #8</a>)
+<span class="quote">&gt; Thanks Greg. To be clear, the continuous release of Fiji is not a
+&gt; &quot;development build&quot; -- each update is a reproducible version (i.e., all
+&gt; release versions of JAR files) built from Fiji's master branch.</span >
+
+Thanks for the clarification on this, but when building tools for Galaxy, we build them in such a way that all dependencies come with the tool when it is installed from the Galaxy tool shed (<a href="https://toolshed.g2.bx.psu.edu">https://toolshed.g2.bx.psu.edu</a>) into a Galaxy instance.  The Galaxy wrappers for the Imagej2 tools I'm building define a dependency on the Fiji package using an installation recipe within an xml file.  This xml file has a tag set that looks l-soemthing like this:
+
+<a href="http://fiji.sc/downloads/Life-Line/fiji-linux64-20141125.tar.gz">http://fiji.sc/downloads/Life-Line/fiji-linux64-20141125.tar.gz</a>
+
+This URL always guarantees that specific build of Fiji, so if the Galaxy administrator uninstalls a tool and its required Fiji package from their Galaxy instance, they are guaranteed to get the exact same version of the required Fiji package when they re-install the tool.
+
+Using the latest stable build URL will not guarantee this behavior.
+
+<span class="quote">&gt; 
+&gt; The ImageJ2 development build is _not_ reproducible, but I think the
+&gt; Downloads page is pretty clear about that.
+&gt; 
+&gt; The main problem with the Fiji continuous releases is that they are not
+&gt; currently archived anywhere and you can't downgrade. So to actually roll
+&gt; back you'd need to know which commit hash you were on and rebuild Fiji using
+&gt; Maven. Someday we hope to have a rollback feature, but it's probably not
+&gt; going to happen this year.
+&gt; 
+&gt; As for when we do another Life-Line version: we try to do one just before
+&gt; making disruptive changes. The next disruptive change will certainly be the
+&gt; switch over to Java 8 with a new deployment scheme that retires the ImageJ
+&gt; Launcher. We hope to roll that out before September.</span >
+
+This is really good to know - it helps clarify some of my upcoming development plans.
+
+I have tried using the latest stable release of Fiji for these plugins that I've found that do not produce output images that I expect, and it has made no difference.
+
+I've also looked into using xvfb to see if it will work for what I'm doing, but I've discovered it really won't.  So I guess I just won't be able to wrap some of the plugins into Galaxy tools.  This is unfortunate, but understandable.  There are still very many useful ImageJ tools that I can wrap.
+
+I have not yet figured out an easy way to determine if a plugin command will run successfully from the command line without getting pretty far down the &quot;finished wrapper&quot; path so that it can be tested.  If you have any ideas about this, I would greatly appreciate them.
+
+I appreciate all of your help on this ticket - you can close it when convenient.   Please let me know if there is something else I should do regarding its status.
+
+Thanks again!
+
+Greg Von Kuster</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 397 &ndash; Default object heap is too large for some pc</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_397 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;397</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Default object heap is too large for some pc</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2012-04-20 22:28:28 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2012-04-20 22:28:28">
+  <input type="hidden" name="longdesclength" value="3">
+  <input type="hidden" name="id" value="397">
+  <input type="hidden" name="token" value="1492731625--z4WihGLJl5en-Zyqr_loMfkuwK9snwb50L5z8G-YRA">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="397.html"><b>Bug&nbsp;397</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Default object heap is too large for some pc</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Default object heap is too large for some pc
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2012-01-20 15:23 CST by <span class="vcard"><span class="fn">panovr</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2012-04-20 22:28 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="panovr">panovr</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">panovr</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-01-20 15:23:57 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+  when run &quot;ImageJ.exe&quot; command from command line, there is an error:
+==========================================================
+E:\research\fiji&gt;Error occurred during initialization of VM
+Could not reserve enough space for object heap
+Trying with a smaller heap: --mem=1152m
+ERROR: failed to launch (errno=22;Invalid argument):
+ --mem=1152m
+==========================================================
+
+Information about your version of Java - this information is useful for the Fiji developers:
+
+  os.arch =&gt; x86
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) Client VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: null
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: E:\research\fiji/java/win32/jdk1.6.0_24/jre
+  ij.dir =&gt; E:\research\fiji
+
+Information about the version of each plugin:
+
+  766b3f0c63c910b9aa5a7c61661804af36f0fcc4 20120119112356 images/fiji-logo-1.0-128x128.png
+  5bec251fe355a04c7eacd6b81df10c5129fa0936 20120119112356 images/fiji-logo-1.0-256x256.png
+  78576254ee9836d60bb1ca2bdc6f63243d8b0b57 20120119112356 images/function.png
+  1faaeed6d4934d8a46c051d1bfda65fc5c75e20e 20120119112356 images/icon-flat.png
+  a02d5340c301b7c681bea6bec2bfa822bf05ccf8 20120119112356 images/icon.png
+  499a3cd79960603c78236f3b5998d03ea995f059 20120119112356 images/var.png
+  e570f4c88deec6a19257c93ba898dca4ed7e89ff 20120120084659 jars/Jama.jar
+  2dd56a543b02063042582768b48f6b3aae961ac2 20120120084822 jars/VIB-lib.jar
+  bd57338068f48b9ce4c5275544633ba172b0902a 20120119132732 jars/VectorString.jar
+  68a9e41d2a7cec1ffedd5e38f4c064927b43b3c7 20120119112356 jars/ant-junit.jar
+  4199e18036ba2020bdcbc733f603564f41cf9009 20120119112356 jars/ant-launcher.jar
+  92b2335d3a97549b633dbcc3c41381a90f2b924b 20120119112356 jars/ant-nodeps.jar
+  b1492f77c5c13e4f9dc05fe0ba9f95d6ec826660 20120119112356 jars/ant.jar
+  5bab776822719667a604b8fb2eafc679161aeb0f 20120119132727 jars/autocomplete.jar
+  dbab80ab5e11fb33328c7da88a849d0a19793ff5 20120119131740 jars/batik.jar
+  d9cbda0affdcfbcac770690ef47aa7d221a65ee5 20120120180519 jars/bio-formats.jar
+  d21bc3c19ebc5b3924caff5f859e6c50071590c9 20120119112356 jars/bsh.jar
+  efd0b4a7eaf55c0716fde3243ac45cb49fdd2606 20120119112356 jars/clibwrapper_jiio.jar
+  9963461cfa1f078539b5c0ed0cc0553b4d5e30ec 20120119132727 jars/clojure.jar
+  453ebb6fe35c2c9582a3aa5acce173e23a43ac5c 20120120180519 jars/commons-logging.jar
+  633579fc096732b7acaaf3489f4e2c04de1b7ed0 20120119132727 jars/commons-math.jar
+  368901ce572a723c0ae0e68f0563b2712a69fd5d 20120120084659 jars/edu_mines_jtk.jar
+  2b79b7e08c2e7f322e2705ba7513df414479b86b 20120120180519 jars/eventbus.jar
+  d66f3473b2a936653aa346bead3306b9e2ef6d90 20120120084657 jars/fake.jar
+  abf9ba5ffdf7b545291dc2b3d4a5d9f645579fab 20120120084827 jars/fiji-compat.jar
+  75a3ece544d2aa58b1dc67686b5c3274547356b4 20120120084822 jars/fiji-lib.jar
+  25446dc149f86e6897ae4c6299d744fba62e793a 20120120084841 jars/fiji-scripting.jar
+  f2ddd90433f858b791b383a8999e013f1f3c54f6 20120120180519 jars/forms.jar
+  cb4908da3b639fc246cd2e8019255b15923b91ce 20120120180518 jars/ij-app.jar
+  6b8b7b06fe00bc7601b3a4530672698c5a46dbe1 20120120180519 jars/ij-core.jar
+  0f3d5bbe3fe3c8278c691013069643ebcff1a400 20120120180519 jars/ij-ext.jar
+  3118e02391e8327565363a9ce8299bcbec9701d2 20120120084827 jars/ij-launcher.jar
+  9078577241fc83776342579045bf0c90321c3d66 20120120180519 jars/ij-platform.jar
+  3312875f5fb61185e581287dbcfe977f8bcd7571 20120120180519 jars/ij-ui.jar
+  267b73372f97422d1fdd4e8a1cecdd65731341b7 20120119130528 jars/ij.jar
+  b92b6cc62e5796e6ef474c2e7c0750751595c351 20120120084831 jars/imagescience.jar
+  780fae4087869e6c485796fd6df1e399e64fc44e 20120120084840 jars/imageware.jar
+  58b4d0e0ee6d734f62b6f2d8572e64d5b7dc7aba 20120120084705 jars/imglib-algorithms.jar
+  783041f5d3b83a43f43c33e265f7626195dfd667 20120120084823 jars/imglib-ij.jar
+  0d77e56473bdb66e31c55feb7781a29b2a9af3c2 20120120084827 jars/imglib-io.jar
+  7912326cef8f6f4c9d012ff49334142ace0815b9 20120120084839 jars/imglib-scripting.jar
+  73b18b1fbb249868016a50af7d6b0fa9fb9abf92 20120120214245 jars/imglib.jar
+  42960fce1f1d972e969356deeaf24f4327e4ba01 20120120084858 jars/imglib2-ij.jar
+  2a6324917743d972eb37314d5c2b2c614f00eec6 20120120180519 jars/imglib2-io.jar
+  79fe3791892c036525fb33401920f19fc158b5d7 20120120180519 jars/imglib2-ops.jar
+  da0b6ae4ec7f67b0312da23f6e8bd52209392373 20120120084901 jars/imglib2-ui.jar
+  c15ed4247b18aeff1585665e1cc121bf1f5bd162 20120120180519 jars/imglib2.jar
+  9768d24a942a92c6981c719b3157429569806384 20120119112356 jars/itextpdf.jar
+  1d98f5251cb21553b4907228cd281e6b84d3a216 20120119130528 jars/jacl.jar
+  253316728c4012a86fae361e7b7fcb0fab0f5c38 20120120084835 jars/jai_codec.jar
+  2a328b6b63ebec85d369427875739304dc1cf2cb 20120120084833 jars/jai_core.jar
+  2a47a1aba335d554ce487cff0a0a27b4dbc8734d 20120120180519 jars/jai_imageio.jar
+  c2e0f1a11c8a268a9ec8e07056a6e3cf71a06092 20120120084702 jars/javac.jar
+  978d8abdad853deb3f0521ea5f3b20fc13603c8c 20120119132558 jars/javassist.jar
+  5000664ee8b54ad75a72da627ab7665ca422f10b 20120120084824 jars/jcommon.jar
+  2c22f56ec15caadc75688f4c98a5332ca600f31d 20120120084857 jars/jep.jar
+  ca45b966d92e07a3bcea6be98cbab05ea0d4e1ba 20120120084826 jars/jfreechart.jar
+  2362f25c6a64c44a4dc997f788f72af4a209d228 20120120180519 jars/jhotdraw.jar
+  925d65018db8d43d79f3e1236c0178805f68c488 20120120084835 jars/jna.jar
+  63e9057128a2096b3787c4c784a5b6dab862264d 20120119112356 jars/jpedalSTD.jar
+  b904075730a195dff53e602e836e6ced7b438257 20120119112356 jars/jruby.jar
+  108412260f226609c8161f6e831119f47e6d9380 20120119112356 jars/js.jar
+  a37003e73507e1a710bf519e370eba93909ba7f9 20120120175143 jars/jsch.jar
+  8e9a4bd810c0d4c6cc42df2e974373c24f3b4372 20120120084820 jars/junit.jar
+  7914c30950faa1642967ea53b413d26f0f0c27b4 20120119131735 jars/jython.jar
+  a21f73a79260a9098df7eabf10982ab9ff2d9efe 20120120084705 jars/jzlib.jar
+  d4924a5918ba811b0f6471591d344bbbaa2d29e4 20120120180519 jars/loci-common.jar
+  d563e7e130528f9494be43eb938275d446aba326 20120120180519 jars/log4j.jar
+  766e88b817fa115cbd0bd2cec25b3a3929e14067 20120120180519 jars/lwf-stubs.jar
+  e44fe376ea9cd50ea80697185c8f4aff151c99a7 20120120180519 jars/mdbtools-java.jar
+  76fcf6347981a123971994ed7d9567734e656b37 20120120180519 jars/metakit.jar
+  1fdf8806c62542ca9c4c74fca33b3b30ea3b87b5 20120120180519 jars/miglayout.jar
+  ae776ee76c169400650847991e70e528bc7c6037 20120120084833 jars/mij.jar
+  540bbdb3356ecc7ac7a93f15adc7ac2ebb310460 20120120214243 jars/mpicbg.jar
+  c61b4687f25f8f40334f92d6124674257583423b 20120120180519 jars/object-inspector.jar
+  1be84ecce0561975e5e9e998816774fb601adbd9 20120120180519 jars/ome-xml.jar
+  e008825954f9c01c5e3b3fa0004caa7535a45423 20120120084821 jars/pal-optimization.jar
+  5e74ca7a7938469bc3b440610ed874800e239524 20120120180519 jars/poi-loci.jar
+  5cc5e4e537c2c5824beadcb03b7a1d6805e3a42f 20120120084837 jars/postgresql.jar
+  b1bdf4b6b3e47ac5edb3d9ec8273401f6e8f64a3 20120119132727 jars/rsyntaxtextarea.jar
+  6ebdb4bf3a9b817434f9ac3e7eab049b6b4fedee 20120120180519 jars/scifio.jar
+  23fcefeee32d0fa7e5832e594f67c091aa2de169 20120120180519 jars/serializer.jar
+  6e4855d3a80e46555cadc97ae9fed0dbe5e05867 20120120180519 jars/sezpoz.jar
+  4200d471e0eb758005f65a73681cb353f6704231 20120120180519 jars/slf4j-api.jar
+  5633cb6f932f1b282f0998404aa2691bfcbfdf77 20120120180519 jars/slf4j-log4j12.jar
+  809a6d9082cb814e6964b3211d45bbc76c90236f 20120120180519 jars/tools.jar
+  7d5ba6c535ddd4557ca46698f08262348eeb072c 20120120084842 jars/wavelets.jar
+  fc6c0417408aa74faaf4769e70ed4f8b55d0ea87 20120120084846 jars/weave_jy2java.jar
+  62509dafa2ad38e0e3c34c538f6d3da1e25971ce 20120119132745 jars/weka.jar
+  831d5b930a5a75f038da3b354416b32de4dcda85 20120120180519 jars/xalan.jar
+  3beedaf63bcccd06dc14c9ab328c3c345ffed885 20120120180519 jars/xml-apis.jar
+  c432f64b204f9657354de2010b24535670e3073b 20120119112356 luts/16_colors.lut
+  89419f9999bc7d1dc09ad1a66e04e819396fe09f 20120119112356 luts/5_ramps.lut
+  dc3a1bdd2b34edec84c29affaded489d0a22601d 20120119112356 luts/6_shades.lut
+  0b3bbb6cf86adcb697c53c0277a12140966375dc 20120119112356 luts/Cyan Hot.lut
+  655b55e6322c870632e5ff3156f002c0f5b893fe 20120119112356 luts/Green Fire Blue.lut
+  2918f6d391ee38a4491163c30b4e75256a6633e7 20120119112356 luts/HiLo.lut
+  a3312d3ff046120cccf5adcd400c512f78d18f93 20120119112356 luts/ICA.lut
+  db5bf8a4e880d787d88f3273caf3db7ae6a5974f 20120119112356 luts/ICA2.lut
+  9f7dd167f698970549ec20aa7d26b221ae7928f8 20120119112356 luts/ICA3.lut
+  697dd3a4daf4abcd05cc4a79af3bcb3364fd0bb0 20120119112356 luts/Magenta Hot.lut
+  524604de124b812940b02541a63516c84621237b 20120119112356 luts/Orange Hot.lut
+  9c9a56c239e5d9c3262ace5124fff406cb3b831d 20120119112356 luts/Rainbow RGB.lut
+  4e686ec669057c7de78497720bf52ebe00c3f8da 20120119112356 luts/Red Hot.lut
+  2fdb7c96583f42348cd5cc789fba38dd6e349c89 20120119112356 luts/Thermal.lut
+  321574916ccee56861ca6d581f6915cff5fe80e1 20120119112356 luts/Yellow Hot.lut
+  a4cec22b96c306321ba4c7b3ff30df9fa7919616 20120119112356 luts/blue_orange_icb.lut
+  c9e396a3f83ee8cebf1ed28d3e2d53296cc908e7 20120119112356 luts/brgbcmyw.lut
+  60f85e63ba9a31fbb769ab32c75c22883df22883 20120119112356 luts/cool.lut
+  ba88e5f3db79551a10b7bed5c2517b33cea57dda 20120119112356 luts/edges.lut
+  0a4dce83c72986c06356ecbab98747c30c9366ad 20120119112356 luts/gem.lut
+  324dcd4d1bc9bb1a185227699b31bfed17bebdad 20120119112356 luts/glasbey.lut
+  1f99f07ea5760dd8c044639b02da116112a2b985 20120119112356 luts/phase.lut
+  52a3c3995ef92bc35eb4e691848af5351be589e4 20120119112356 luts/physics.lut
+  49f5e48a355fe0646cd99bf7b371afb7c603def8 20120119112356 luts/royal.lut
+  aa5a9d425ca99e63f15d6ce4a0572b2d1abfca1b 20120119112356 luts/sepia.lut
+  ebd4ed6b0fd5375bd4d143134da5692253d4d44a 20120119112356 luts/smart.lut
+  36e7ca9e01240243fb69ea5da21655608d6b5ef8 20120119112356 luts/thal.lut
+  940b38f9db4fbe78ccd66222a08b28d1ae98ba04 20120119112356 luts/thallium.lut
+  00853e7526730dee54b356cbb7a962bf987a35ed 20120119112356 luts/unionjack.lut
+  64276c2cd1a2c2344f264d2fb00cd0eb65ef64ba 20120119112356 macros/ImportResultsTable.txt
+  84536e7f17ffb5fe0e2983975791335c151fc17d 20120119112356 macros/StartupMacros.fiji.ijm
+  8e177cba9797a1e2788daa0d636b6120a72b1693 20120119112356 macros/listManagement.txt
+  da8227abc7af349404416dd2ea3fb97f89754953 20120119112356 macros/toolsets/Clear Custom Tools.txt
+  6cb11e53f329c04894d1a50a9f454e0bcf213549 20120119112356 macros/toolsets/Drawing Tools.txt
+  6aa695f76ea35e9a6a774e08f6435eb44639e212 20120119112356 macros/toolsets/Lookup Tables.txt
+  bd01027d7b6d9866243818d709a0bad57b1b6084 20120120084900 plugins/3D_Blob_Segmentation.jar
+  435463522d9bd69279917e308d362476231a5742 20120120084858 plugins/3D_Objects_Counter.jar
+  65da67feae2dd67a36e88add14196a5281e1fc50 20120120084826 plugins/3D_Viewer.jar
+  2575146d63d393492e7e45ae80d6286859212f56 20120120084859 plugins/Action_Bar.jar
+  04977c1a7619043b8d91a81cb8b552e9289ffb72 20120120084900 plugins/Algorithm_Launcher.jar
+  1088d361c263e9909d5e2b238fb428f81c5057e8 20120119112356 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  0405ecf449a8ec3a33d9c172f44e6babbcca2387 20120119112356 plugins/Analyze/Measure_RGB.txt
+  e8b12120824e461de64f609b3db3ab405890129e 20120120084835 plugins/AnalyzeSkeleton_.jar
+  a9ee0d5640547abc3a2e6d1c59206945a0339f59 20120120084844 plugins/Analyze_Reader_Writer.jar
+  3b3618553da9539a2c53f7bf788af84723186cb1 20120120084830 plugins/Anisotropic_Diffusion_2D.jar
+  a4026e3ca9492dfd580417b3e65803603eeae825 20120120084900 plugins/Arrow_.jar
+  839e3badff8ba644bea27c67d1b9a4cfef2a1c35 20120120084842 plugins/Auto_Threshold.jar
+  b486323590a7597446aca0255faba5794d7b7881 20120120084844 plugins/BeanShell_Interpreter.jar
+  7c30b6f7cdd0e4fe93f0c1c16d5edddb2d1d5c12 20120120084849 plugins/Bug_Submitter.jar
+  2694488fb2b96df8120f9cc7db84f02d301e1191 20120120084844 plugins/CLI_.jar
+  6810e9c4f5a6b0f6722cd0811a23e31b798653eb 20120120084853 plugins/CPU_Meter.jar
+  4028464f17162d086b71eb91d418a6b1823e6f30 20120120084842 plugins/Calculator_Plus.jar
+  6ff6eb45ad7319a656a896478eb4db8be8565283 20120120084845 plugins/Clojure_Interpreter.jar
+  c6aaeb3fbdf38bee0fbace29b4ef03cbf318edb2 20120120084843 plugins/Colocalisation_Analysis.jar
+  38d461e5feaa7c84c7d0393765e72134c97e7b19 20120120084830 plugins/Color_Histogram.jar
+  8223eb6029808e2b3b5767f9cf318e178bcf6a50 20120120084853 plugins/Color_Inspector_3D.jar
+  11580d9e16b11c66b6697f493aa1791373a8708d 20120120084859 plugins/Colour_Deconvolution.jar
+  1e7ff60f296e131dd0e15e9279e2042645db2d3c 20120120084829 plugins/Descriptor_based_registration.jar
+  6779e08afb29092b3af45e2c1e505b62b91dae52 20120120084901 plugins/Dichromacy_.jar
+  41c7ca4502a1d2515f13541e7ac57c800a70a065 20120120084900 plugins/Differentials_.jar
+  a60daf70806bb8c62a0c877a76e29cf41ebb8095 20120120084841 plugins/Directionality_.jar
+  5bebce46c3ee3ec69b392643c2e8c8798b3e7724 20120119112356 plugins/Examples/Add_Popup_Split_Channels.bsh
+  eb7604aa8124529949242919a316137ff2cf0aa9 20120119112356 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  97703329b9348526240fe5ff2392587155ec04ac 20120119112356 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  59a0224f5e94d3c2467ba0674542d801eeffc395 20120119112356 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  27e13afafe189d4318b20570a18190a25f52d61e 20120119112356 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  fc662235264f1eb20652d10f9550a18bf2fe384d 20120119112356 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  a30801f4bfc71de273cd1ceab04fe9f2633fa9d6 20120119112356 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  9b902989d48265d40a15b325d48922466651c265 20120119112356 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  14b6bd45dc21b298939f39b29fc15844c4f99218 20120119112356 plugins/Examples/Delayed_Snapshot.py
+  8b6f50b5cae2634a4fa39259503e83ae09c80d85 20120119112356 plugins/Examples/Delayed_Snapshot_Window.bsh
+  faf26d176dcfc5410f520b8ebb816bd11abf6d86 20120119112356 plugins/Examples/Edit_LUT_As_Text.py
+  87087080af0848fbc1a4f1ddb381681b0a9826b7 20120119112356 plugins/Examples/Extended_Profile_Plot.bsh
+  8e1feb8a8687de7876512a7cf21e8dcd418ea1a0 20120119112356 plugins/Examples/Fiji_Cube.ijm
+  618c4b427905d43746f93a898aa704974b33d681 20120119112356 plugins/Examples/Fiji_Logo_3D.js
+  b35cbb9de5cf7b76583da7ecac0664c71ad0a4f9 20120119112356 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  efd499f1cb1813c780a0f8f9bc97397b326d1cbd 20120119112356 plugins/Examples/Image_To_Tool_Icon.bsh
+  097c6660b156784003daf37192311b454c4dbcd0 20120119112356 plugins/Examples/Multithreaded_Image_Processing.clj
+  c84ea9a44b0a6a1f8298f82b7f9c690b0502955e 20120119112356 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  5637b4ec4786762c64800c4d4ecca6ca39cdfd2d 20120119112356 plugins/Examples/Plasma_Cloud.rb
+  26f5bf5499c53fe2fc2d801f58e7a2e28dd79eaf 20120119112356 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  501f6e8242b18b36c4cb4b4eaf834560c358bbd0 20120119112356 plugins/Examples/TrakEM2_Example_Scripts/Homogenize_Ball_Radius.py
+  b6fe954cdb634374865f8cc22e0d1a0d302deb3d 20120119112356 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  6a491948d833cb14dc9ce485dcfd0bf3c8b19425 20120119112356 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  e1d0cd0f8a4b85060f24fd0d35807a8bda1ed1af 20120119112356 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  1d3c793c641dff1db83a576acce5eec348bba2a9 20120119112356 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  4780f3772801e5ed19d5f789716a76a2cee8025e 20120119112356 plugins/Examples/blend_two_images.clj
+  3a5a648ff1d8222315951d1f1b7f57b6bdbd996e 20120119112356 plugins/Examples/celsius_to_fahrenheit.clj
+  8f37843d472f11f4f518c9f5be02b3bcf365b707 20120119112356 plugins/Examples/chess_.py
+  e9ade965922ede97274609347848b06a0744b80e 20120119112356 plugins/Examples/downsample_.js
+  5f130a402513d1ce0a08796034290e15033d0b51 20120119112356 plugins/Examples/list_all_threads.py
+  6c1d9d332403a283399f6aad8a335f515e170c35 20120119112356 plugins/Examples/random_noise_example.clj
+  963db76001ca58be80f8b649159e58efb53a20ea 20120120084842 plugins/Extended_Depth_Field.jar
+  6f8054ec2408fd0234b2c8e80907ee8f34e6edbc 20120120084841 plugins/FeatureJ_.jar
+  914ec81b2e350ce3235df442aecd151057506063 20120120084854 plugins/Feature_Detection.jar
+  e6e9829db350305174023d7f961ee3e62b748c5f 20120120084859 plugins/Fiji_Developer.jar
+  001a4c83f8882d5fc8cacb9251d97c5eca6a21a7 20120120084830 plugins/Fiji_Package_Maker.jar
+  0cd6b4fd54e870741fae308a7f17d7cedacaba05 20120120084823 plugins/Fiji_Plugins.jar
+  0351a999dae9ad4d08ba75980cedf03a00c66d1a 20120120084830 plugins/Fiji_Updater.jar
+  5ce86c42892ad8840c08458084443e53325ec375 20120120084833 plugins/FlowJ_.jar
+  0115463fe65d42aeaaaccd6368d67538cf752074 20120120084849 plugins/Graph_Cut.jar
+  e050b15c3f4445b9f7a50ab6657fcda2ecd471c2 20120120084900 plugins/Gray_Morphology.jar
+  0378a93e83f9c44a154001405a513e4db918b12a 20120120084859 plugins/Helmholtz_Analysis.jar
+  7c77b62aabc2603253c5158939620d965bbc78f0 20120120084839 plugins/IJ_Robot.jar
+  7182a2779256d5f48eff440a3bd7ffd93157c8f8 20120120084859 plugins/IO_.jar
+  9f17ef5acd8e36897a4a64382368f947e40177f2 20120119132600 plugins/Image_5D.jar
+  3c9955d3d86318a84a2aa280e6cf0f36e0835b0d 20120120084857 plugins/Image_Expression_Parser.jar
+  113d381b4a7d9d9f378068c7a88f4acff4b95f52 20120120084858 plugins/Interactive_3D_Surface_Plot.jar
+  f7c6f81a7708a28ab0a0121d82ce5de182449710 20120120084844 plugins/IsoData_Classifier.jar
+  046f632b141feb6f5190ab5164946da475294030 20120119112356 plugins/JRuby/imagej.rb
+  e942704a5932a3e632856b93a6ff3298117c2c19 20120120084844 plugins/JRuby_Interpreter.jar
+  8537b58d80dc3e9d44501ddb99bed58859a9ae3b 20120120084841 plugins/Javascript_.jar
+  6942eaaa3a941458b323b25b4f8ddc7a8c21cfb4 20120120084841 plugins/Jython_Interpreter.jar
+  c379093274a330430a829fd0892a32f338d2e2c6 20120120084838 plugins/Kuwahara_Filter.jar
+  591d137dc84dc4e0234dcb5c3a3d9bff6c057d5b 20120120084837 plugins/LSM_Reader.jar
+  94445e0d0ee97da7bff55ae15aa5c300bb031391 20120120084838 plugins/LSM_Toolbox.jar
+  14e0f22fe330e3dfc2399049457ff27d97616c32 20120120084837 plugins/Lasso_and_Blow_Tool.jar
+  f6f9747bda003b63bf096c9e54f002d3153c6054 20120120084857 plugins/Linear_Kuwahara.jar
+  87a0544b1076d10ab514a57de4a6e717da96519c 20120120084900 plugins/LocalThickness_.jar
+  6dd42c417744095d0bdc38d0a7322a6d64994d74 20120120084846 plugins/MTrack2_.jar
+  ad56f62cc637588fd70f7f594ad36501cb0bab99 20120120084901 plugins/M_I_P.jar
+  1def88e18052568ebf8eb45adb3a6f8aa2ff5d03 20120119112356 plugins/Macros/About_Plugin_Macros.txt
+  fc581ec388ad4f332b010873c1977a7e90ec89e7 20120119112356 plugins/Macros/Bulls_Eye.txt
+  f53a136cbc43944bf9472bf0f2dfe6b96264060e 20120119112356 plugins/Macros/Polygon_.txt
+  01be0b84cbf86c614d683b6c630cd8366db33f29 20120119112356 plugins/Macros/RGB_Histogram.txt
+  3db641c1819b8705d17a946b73bc37fd9ca9dc06 20120119112356 plugins/Macros/batch_convert_any_to_tif.txt
+  d997c4151d4652a224c5504cd20c8ed2f2dcf248 20120120084853 plugins/Manual_Tracking.jar
+  3f4f1f29542d59f0c99fcecbcd46f4e415e3f874 20120120084839 plugins/MosaicJ_.jar
+  318f98c943be8443eaa21293f8b1191c33988dc7 20120120084857 plugins/Multi_Kymograph.jar
+  ab791a04af99f47bcf71df0c6169c254243abd00 20120120084857 plugins/PIV_analyser.jar
+  59907cd160a72de18ec7f4fd151bd8db0c69ec4d 20120120084849 plugins/PointPicker_.jar
+  8ea567f4c84924aa2336cf4906654f6c56a82353 20120120084901 plugins/QuickPALM_.jar
+  cb30e789724dbcd6a13e88f114de8870d5b198b2 20120120084842 plugins/RATS_.jar
+  1dfa343b104deb31ef6e080b246b969434835c8f 20120120084853 plugins/RandomJ_.jar
+  55159bedb6129cb4636895fbd571d8cf63f3b8ed 20120120084837 plugins/Reconstruct_Reader.jar
+  d196200a9bd6899381cf656690ac2a344fca7397 20120120084842 plugins/Record_Screen.jar
+  80683a181cef117ab888c5fc3aa4dea653203638 20120120084844 plugins/Refresh_Javas.jar
+  c196c330e2632a394714d09795810dbca95f76cc 20120120084827 plugins/SPIM_Opener.jar
+  4e41643f3d8febc7deab7e7164e7ef6d65fd7181 20120120084829 plugins/SPIM_Registration.jar
+  c0d3996529a127a8f2df98e2cb3dc687ca37f2d6 20120120084901 plugins/Samples_.jar
+  94b539ad540af3eb708fd272f74a08deb80a02bb 20120120084846 plugins/Script_Editor.jar
+  3428c9aac238c0c68d61122ba15b6c707a796ddb 20120119112356 plugins/Scripts/File/Open_Samples/Adelsons_Squares.ijm
+  aaec4e45cc2a1f9af854fd6a9117efb4873b77f1 20120119112356 plugins/Scripts/File/Open_Samples/Spirals_.ijm
+  5e055e90f4a7e1c8c39a42082159e9ed89418cc0 20120119112356 plugins/Scripts/Image/Adjust/Scale_to_DPI.js
+  9ae498cdb40857907ca3b00728385dd208644280 20120119112356 plugins/Scripts/Image/Color/Set_Color_By_Wavelength.ijm
+  db0810f095a9a1900f67925e56816994d9228567 20120119112356 plugins/Scripts/Image/Hyperstacks/Temporal-Color_Code.ijm
+  1ba27fbb65679b831b86373cc2718e112a6bf955 20120119112356 plugins/Scripts/Plugins/Registration/Correct_3D_drift.py
+  c77c56b7642b5de099d253761e95e46b3994fdc3 20120120084844 plugins/Series_Labeler.jar
+  b2fb0440d295777ed99cb7d15f4178a28e04ac3f 20120120084853 plugins/SheppLogan_.jar
+  f759d43e3262fbb7c96baa917dedd744c4d24205 20120120084836 plugins/Simple_Neurite_Tracer.jar
+  01d940e95be100a4ac0491188e66697e89d2a976 20120120084900 plugins/Siox_Segmentation.jar
+  07b94fbdc78244ea9b6f78f58c0704b33f63f62c 20120120084835 plugins/Skeletonize3D_.jar
+  8e38fae6f6c932d017e62519aa6088700061958a 20120120084833 plugins/Snakuscule_.jar
+  a310757014f1e1e4983fc3705ab6ea77850239bf 20120120084849 plugins/SplineDeformationGenerator_.jar
+  558c9115f0abf2b6aaef38c72b4b7dd365954624 20120120084901 plugins/StackReg_.jar
+  48bb7cd7bb90828e9370ab24e10b2b5a2dd53235 20120120084901 plugins/Stack_Manipulation.jar
+  5f0aa908aa3a771c9186a029870d2dac88a73d1d 20120120084841 plugins/Statistical_Region_Merging.jar
+  5efde0feb7dd5fd439bc27d1d6a2d7f628a65263 20120120084824 plugins/Stitching_.jar
+  6548f89296b5e40d49adf9d12a2d774d9515ba76 20120120084840 plugins/Sync_Win.jar
+  0da59c13ca577ee62a7f3b1a981eb44258bd772a 20120120084843 plugins/Thread_Killer.jar
+  1dd79afb537e7e49c4bf9fafc73125f8d68606ac 20120120084841 plugins/Threshold_Colour.jar
+  bc0061b83b8839c8b54b369594a2765a8cc1e6e3 20120120084857 plugins/Time_Stamper.jar
+  94e70d7accdfb7d80e14d416351baec037859d71 20120120084855 plugins/ToAST_.jar
+  8c60810255a076acd1eb3a0fffef451b1e33dc5b 20120120084859 plugins/TopoJ_.jar
+  b159236c3d8831cb36663de3556218d487d73e7e 20120120084832 plugins/Trainable_Segmentation.jar
+  72e6460a5698a9cf7a730525bab1f2a24a0d7708 20120119132738 plugins/TrakEM2_.jar
+  7cd74eb03f27ddce648e74be715bf866c337c998 20120120084854 plugins/TransformJ_.jar
+  9d8b12f3cf303b7d897d6526d90f67ccf448f2d0 20120120084838 plugins/TurboReg_.jar
+  c36ff5fe65463ba9843941fbcf7a735b3228e1ef 20120120084854 plugins/UnwarpJ_.jar
+  1bc4525e9366685ef12fc7b3b8fe2d5236809987 20120119112356 plugins/Utilities/Close_All_Without_Saving.txt
+  5d9687578f2efe890290b11ce6cb97eda3995792 20120120084835 plugins/VIB_.jar
+  9f62f1f97696bc9eed51d6a2152c2dc2d163859d 20120120084850 plugins/Video_Editing.jar
+  ddb3ac39d4716f269fdaf9b75f0deaad19feebe1 20120120084849 plugins/View5D_.jar
+  b8c3af50365b12b0beb010f1c35134cbd310341a 20120120084842 plugins/Volume_Viewer.jar
+  f9f26c3621c74ea90f28c511d09b0e88c6103328 20120120084837 plugins/bUnwarpJ_.jar
+  3399314f9a0bbcbf5caff395b6c06ad866686817 20120119131909 plugins/ij-ImageIO_.jar
+  bbbb56789c5f3cedc5555a7e0d6ea05891c34f2d 20120120084837 plugins/level_sets.jar
+  7fc115ac8bbc3e8c6e17dc07faa7d822a188af27 20120119131740 plugins/loci_tools.jar
+  b5d3b47e569000cd8150997080b7948d8722d621 20120120214248 plugins/mpicbg_.jar
+  ea90a52267efa6d38abc3c8dde37bf86d4027407 20120120084844 plugins/panorama_.jar
+  e1223c791bded597af23d131e78cb351b319225e 20120120084846 plugins/register_virtual_stack_slices.jar
+  6112089bff37ba4d64a0f65f609208785732597f 20120120084901 plugins/registration_3d.jar
+  e6e0879f5d50afa8d0dd213b4b66e396a39a47b7 20120119112357 retro/backport-util-concurrent-3.1.jar
+  e250f0c40b768e90ed7d3910d9869075f3e438cd 20120119112357 retro/retrotranslator-runtime-1.2.7.jar
+  eea1390da8fac38763ed4c03f1acb3342b942717 20120119112357 retro/retrotranslator-transformer-1.2.7.jar
+  afa33ead3ee287ddf33c6a19ded02c33f44a42b9 20120119112357 scripts/InstallJava3D.m
+  57a4bed1420e614279d2addc25914e64e72c25cf 20120119112357 scripts/IsJava3DInstalled.m
+  c216757020e062e3c82e593e2c783bc10d803ea5 20120119112357 scripts/Matlab3DViewerDemo_1.m
+  46982f3c407705029aa682754a6ecd6e29f3d38e 20120119112357 scripts/Matlab3DViewerDemo_2.m
+  ff0ac525ca663d073fd73dff019dd95cf2fd71fe 20120119112357 scripts/Matlab3DViewerDemo_3.m
+  a8eeba08abf23b28c45329730c364e15ae0035a3 20120119112357 scripts/Matlab3DViewerIntroduction.m
+  071b5c4d89f4d6347eb63cdd904565ea4079403a 20120119112357 scripts/Miji.m
+  9be2c495eeaaa01bf0e3732cfb098de10b744358 20120119112357 scripts/Miji_Test.m
+  2d1a0df327608bb793425f0a7c595431ed30f27a 20120119112357 scripts/Record_Desktop.py
+  bdfc512525b8bee087da597e56caad3b8b153a7b 20120119112357 scripts/Record_Window.py
+  6e95a4cc0b80a6509bfc0b576b5d362ee244b24e 20120119112357 scripts/bfopen.m</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-01-20 19:05:35 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I tried for an hour to reproduce the problem now, failing. For me, it always succeeds to re-execute ImageJ.exe with a smaller heap.
+
+Do you have a compiler installed? Is this really a 32-bit Windows? How did you manage to start Fiji (since the report was produced by the Bug Submitter)?</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-04-20 22:28:28 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Even without feedback, I continued to work on a resolution. Since my psi powers are limited, I am closing this bug without knowing whether my endeavors were successful or not; the launcher certainly does what I expect it to do here.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

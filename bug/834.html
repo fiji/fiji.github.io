@@ -1,0 +1,1659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 834 &ndash; recorder does not record arguments correctly</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_ImageJ1 bz_bug_834 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;834</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">recorder does not record arguments correctly</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-07-02 15:37:15 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-07-02 15:37:15">
+  <input type="hidden" name="longdesclength" value="2">
+  <input type="hidden" name="id" value="834">
+  <input type="hidden" name="token" value="1492731810-XF65XCdMFqRheP1mTKoMFux4-AISc_8-TCXBobB5W2c">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="834.html"><b>Bug&nbsp;834</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">recorder does not record arguments correctly</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>recorder does not record arguments correctly
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          DUPLICATE
+            of <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Regression: new smart recording mode leads to unexpected record commands"
+   href="828.html">bug 828</a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >ImageJ1</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">Macintosh
+       Mac OS
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-07-02 12:43 CDT by <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-07-02 15:37 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="aryeh">aryeh</option>
+                <option value="jan.eglinger">jan.eglinger</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-02 12:43:40 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The recorder is not recording the arguments correctly.
+For example, it recorded:
+run(&quot;Z Project...&quot;);
+
+when I expected:
+run(&quot;Z Project...&quot;, &quot;projection=[Average Intensity]&quot;);
+
+If I manually add the arguments, teh macro executes correctly.
+
+SImilarly, recording Java produces:
+IJ.run(imp, &quot;Z Project...&quot;, &quot;&quot;);
+
+Information about your version of Java:
+
+  os.arch =&gt; x86_64
+  os.name =&gt; Mac OS X
+  os.version =&gt; 10.9.3
+  java.version =&gt; 1.6.0_65
+  java.vendor =&gt; Apple Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_65-b14-462-11M4609
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 20.65-b04-462
+  java.vm.vendor =&gt; Apple Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; apple.awt.CGraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: null
+  imagej.dir =&gt; /Applications/local/fiji/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140701224719)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140702194334)
+3D ImageJ Suite: <a href="http://sites.imagej.net/Tboudier/">http://sites.imagej.net/Tboudier/</a> (last check:20140604090506)
+Angiogenesis: <a href="http://sites.imagej.net/Angiogenesis/">http://sites.imagej.net/Angiogenesis/</a> (last check:20140324230848)
+BigDataViewer: <a href="http://sites.imagej.net/Pietzsch/">http://sites.imagej.net/Pietzsch/</a> (last check:20140619141159)
+BioVoxxel: <a href="http://sites.imagej.net/BioVoxxel/">http://sites.imagej.net/BioVoxxel/</a> (last check:20140519212603)
+Cookbook: <a href="http://sites.imagej.net/Cookbook/">http://sites.imagej.net/Cookbook/</a> (last check:20131221011857)
+CMCI-EMBL: <a href="http://sites.imagej.net/Miura/">http://sites.imagej.net/Miura/</a> (last check:20140617140816)
+CMP-BIA tools: <a href="http://sites.imagej.net/CMP-BIA/">http://sites.imagej.net/CMP-BIA/</a> (last check:20140423173817)
+FFMPEG: <a href="http://fiji.sc/~schindelin/ffmpeg-plugins/">http://fiji.sc/~schindelin/ffmpeg-plugins/</a> (last check:20130606182449)
+IBMP-CNRS: <a href="http://www-ibmp.u-strasbg.fr/fijiupdates/">http://www-ibmp.u-strasbg.fr/fijiupdates/</a> (last check:20140526174644)
+ImageJ Latex: <a href="http://sites.imagej.net/Yul.liuyu/">http://sites.imagej.net/Yul.liuyu/</a> (last check:20130817015011)
+LOCI: <a href="http://sites.imagej.net/LOCI/">http://sites.imagej.net/LOCI/</a> (last check:20140401215514)
+Morphology: <a href="http://sites.imagej.net/Landini/">http://sites.imagej.net/Landini/</a> (last check:20140701155554)
+MOSAIC ToolSuite: <a href="http://mosaic.mpi-cbg.de/Downloads/update/Fiji/MosaicToolsuite/">http://mosaic.mpi-cbg.de/Downloads/update/Fiji/MosaicToolsuite/</a> (last check:20140624175404)
+ScientiFig: <a href="http://sites.imagej.net/Aigouy/">http://sites.imagej.net/Aigouy/</a> (last check:20140516145525)
+TrackMate-dev: <a href="http://sites.imagej.net/TrackMate-dev/">http://sites.imagej.net/TrackMate-dev/</a> (last check:20140625192743)
+
+Files not up-to-date:
+  dffac556 (MODIFIED) 20140702151502 jars/ij-1.49b.jar
+  c96ee327 20140702194234 jars/ijblob-1.2.1.jar
+  bd1f4461 20140702194239 jars/jtransforms-2.4.jar
+  72184439 (UPDATEABLE) 20140611011244 jars/rsyntaxtextarea-2.0.4.1.jar
+  0f1fa7f7 (UPDATEABLE) 20140702194501 jars/rsyntaxtextarea-2.5.0.jar
+  d79f9ea6 (LOCAL_ONLY) 20131229114506 luts/ND1-6-11-23 despecal.lut
+  9194f1b2 (LOCAL_ONLY) 20131229115601 luts/hadasLUT.lut
+  f2b7e781 (LOCAL_ONLY) 20131229113201 luts/lifetime.lut
+  e5b59c01 (LOCAL_ONLY) 20131207201339 macros/AutoRun/Register_Jay_Reader.ijm
+  2f19e4ec (LOCAL_ONLY) 20110616115254 macros/BatchMacro.ijm
+  7ac59f8a (LOCAL_ONLY) 20110205211055 macros/Mark_objects.ijm
+  2bed7e59 (LOCAL_ONLY) 20110205211252 macros/Mark_patterns.ijm
+  c630043e (LOCAL_ONLY) 20111116203833 macros/OpenFileList.txt
+  5f405e9f (LOCAL_ONLY) 20100118100436 macros/PSA_dev.txt
+  d4f8abbe (LOCAL_ONLY) 20100118100420 macros/PSA_r12.txt
+  341e79a0 (LOCAL_ONLY) 20140701194842 macros/Particle_Classifier.ijm
+  abb807be (LOCAL_ONLY) 20130623143925 macros/Particle_Classifier.txt
+  6508f387 (LOCAL_ONLY) 20130319122944 macros/StartupMacros.txt
+  cce6f4e1 (LOCAL_ONLY) 20101128170151 macros/amw_macro.ijm
+  cb3df91c (LOCAL_ONLY) 20130319071610 macros/cicleGrid.ijm
+  6f74d729 (LOCAL_ONLY) 20110822153016 macros/claheStack.ijm
+  6f901fd0 (LOCAL_ONLY) 20120418131404 macros/corr_bleach050405.txt
+  a1475486 (LOCAL_ONLY) 20100614204806 macros/creatingimage.ijm
+  1ee9355a (LOCAL_ONLY) 20110818141014 macros/damon_thresholds.ijm
+  c90cbd09 (LOCAL_ONLY) 20140510204133 macros/deleteROI.ijm
+  a71f6a6b (LOCAL_ONLY) 20140512132921 macros/deleteROIa.ijm
+  1873a274 (LOCAL_ONLY) 20090709194926 macros/dima_amw.txt
+  d62aa133 (LOCAL_ONLY) 20090816231515 macros/focus_macro_2.txt
+  43a15391 (LOCAL_ONLY) 20140510222831 macros/gridTool.ijm
+  88d4bd3e (LOCAL_ONLY) 20080127212656 macros/henis-1a.txt
+  32108318 (LOCAL_ONLY) 20120124171147 macros/landini_startup.ijm
+  b6eda886 (LOCAL_ONLY) 20080917110344 macros/naomi_fix_filenumbers.txt
+  b1ce3fba (LOCAL_ONLY) 20090803102549 macros/nrg0091_amw.txt
+  28276e43 (LOCAL_ONLY) 20090914120859 macros/nrg010.txt
+  bcf0803e (LOCAL_ONLY) 20090914113101 macros/nrg010_amw.txt
+  bc690cb9 (LOCAL_ONLY) 20091015102920 macros/nrg016_amw.txt
+  8aa156f2 (LOCAL_ONLY) 20091028095405 macros/nrg022.txt
+  10c27176 (LOCAL_ONLY) 20130319071527 macros/randomLines.ijm
+  a4351c75 (LOCAL_ONLY) 20130419085326 macros/recursiveDirSearch.ijm
+  63598ced (LOCAL_ONLY) 20100720141138 macros/red_to_magenta.txt
+  30324b71 (LOCAL_ONLY) 20110818141531 macros/resizeROIs.ijm
+  1a4001e2 (LOCAL_ONLY) 20090927105412 macros/time_stamp.txt
+  3da9830a (LOCAL_ONLY) 20130301160716 macros/toolsets/MiToBo_Runner.txt
+  4794b9ba (LOCAL_ONLY) 20131216070147 macros/toolsets/ROI Manager Tools.txt
+  9a9b8420 (LOCAL_ONLY) 20140209141104 mmautofocus/MMAutofocus.jar
+  8a993e35 (LOCAL_ONLY) 20131207201338 mmautofocus/MMAutofocusDuo.jar
+  0524fa64 (LOCAL_ONLY) 20140209141104 mmautofocus/MMAutofocusTB.jar
+  ef6fd981 (LOCAL_ONLY) 20140209141104 mmautofocus/MMOughtaFocus.jar
+  e02925cd (LOCAL_ONLY) 20140209141100 mmplugins/SPIMAcquisition.jar
+  81368c3d (LOCAL_ONLY) 20090520001428 plugins/3D/3d-oc_.jar
+  dd0089ce (LOCAL_ONLY) 20090519115018 plugins/3D/Object_Counter3D.class
+  5a02e888 (LOCAL_ONLY) 20120717140527 plugins/3D/VoltIJ_.jar
+  d75ceaf3 (LOCAL_ONLY) 20090723113800 plugins/3D/WatershedCounting3D_Instructions.txt
+  81f10d1d (LOCAL_ONLY) 20090723113752 plugins/3D/WatershedCounting_3D.jar
+  2d117ad9 (LOCAL_ONLY) 20100701083659 plugins/AccPbFRET_Plugin.class
+  af1bd32b (LOCAL_ONLY) 20100701083659 plugins/AcceptorCTCorrDialog.class
+  51cf8d93 (LOCAL_ONLY) 20100701083659 plugins/AcceptorPPCorrDialog.class
+  42d1a127 (LOCAL_ONLY) 20130604183909 plugins/ActionBar/Shared Bars/BIOP_HRM_Manager.ijm
+  bd7bc5d1 (LOCAL_ONLY) 20140605154244 plugins/ActionBar/Shared Bars/BIOP_MultiManualSelect.ijm
+  c271b415 (LOCAL_ONLY) 20140605154244 plugins/ActionBar/Shared Bars/BIOP_PSF_Quality.ijm
+  e9bf0b0f (LOCAL_ONLY) 20130625065921 plugins/ActionBar/Shared Bars/BIOP_SIMAssess.ijm
+  08afb731 (LOCAL_ONLY) 20140310145147 plugins/ActionBar/Shared Bars/BIOP_VSI_Reader.ijm
+  4edb1d6f (LOCAL_ONLY) 20140605154245 plugins/ActionBar/Shared Bars/Common_Tools.ijm
+  db280c9c (LOCAL_ONLY) 20140315231112 plugins/ActionBar/Shared Bars/JaCoP_Tools.ijm
+  fc766719 (LOCAL_ONLY) 20090805063824 plugins/Adrian_FWHM.jar
+  2076fd3d (LOCAL_ONLY) 20110509181247 plugins/Analyze/Auto_Corr.class
+  0faf81bc (LOCAL_ONLY) 20110509181134 plugins/Analyze/Auto_Corr_AW.class
+  b7c33b97 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$1.class
+  ed0770b8 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$2.class
+  df5364aa (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$3.class
+  649faa7f (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$4.class
+  ad4ad3b7 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$5.class
+  e5892834 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$6.class
+  ea85a145 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$7.class
+  64fb05a7 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$8.class
+  2f965736 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$SliceMover.class
+  28b7646e (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner$SliceSetter.class
+  798d5b01 (LOCAL_ONLY) 20091223092558 plugins/Analyze/Cell_Outliner.class
+  07f433a4 (LOCAL_ONLY) 20091209125709 plugins/Analyze/Hough_Circles.class
+  757c47ea (LOCAL_ONLY) 20110202121422 plugins/Analyze/IntraCell_v1.class
+  265de9a4 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$1.class
+  052c8fa8 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$2.class
+  0f0f3ebf (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$3.class
+  d174ffd1 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$4.class
+  05b04d7f (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$5.class
+  8e8c9c1f (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$6.class
+  d70f7c92 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$7.class
+  91d9e8b3 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$8.class
+  a1baffb2 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$SliceMover.class
+  1a5b7df4 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$SliceSetter.class
+  7da88be3 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner$WandMM.class
+  66ebe0b3 (LOCAL_ONLY) 20091125100519 plugins/Analyze/Multi_Cell_Outliner.class
+  435937fb (LOCAL_ONLY) 20130818071157 plugins/Analyze/Nnd_.class
+  ebeb645f (LOCAL_ONLY) 20091223092558 plugins/Analyze/WandMM.class
+  f9f617b5 (LOCAL_ONLY) 20131104101336 plugins/Analyze/analyze_stripes_v2.4.1.ijm
+  b41e0913 (LOCAL_ONLY) 20110429164014 plugins/Analyze/stack_counter.jar
+  287c3f2c (LOCAL_ONLY) 20100822230259 plugins/AnalyzeSkeleton$1.class
+  4dd99988 (LOCAL_ONLY) 20100822230259 plugins/AnalyzeSkeleton.class
+  69d17271 (LOCAL_ONLY) 20100701083659 plugins/ApplyMaskDialog.class
+  324f928d (LOCAL_ONLY) 20111031095200 plugins/Auto_Align_1.jar
+  c0e551d1 (LOCAL_ONLY) 20140604213911 plugins/BIOP_Common_Tools.jar
+  c6c24a8e (LOCAL_ONLY) 20140604213910 plugins/BIOP_VSI_reader.jar
+  82418c28 (LOCAL_ONLY) 20130529090002 plugins/BioVoxxel_Toolbox.ijm
+  606743ae (LOCAL_ONLY) 20130824225122 plugins/Blend_Images.class
+  7f6d6194 (LOCAL_ONLY) 20120225185825 plugins/Blob_Prob.jar
+  59a303cc (LOCAL_ONLY) 20120429112745 plugins/BoneJ_.jar
+  6ddd37a8 (LOCAL_ONLY) 20130328044546 plugins/CUDA_Deconvolution.jar
+  7eee9a1d (LOCAL_ONLY) 20100701083659 plugins/CalculateImgRatioDialog.class
+  65ab9874 (LOCAL_ONLY) 20100512073356 plugins/Colony_Counter.jar
+  bfdf66c3 (LOCAL_ONLY) 20100714203838 plugins/Colour functions/Align_RGB_planes.class
+  4da741fc (LOCAL_ONLY) 20120724065825 plugins/Colour functions/ColorSegmentation_.jar
+  0a5c1981 (LOCAL_ONLY) 20080220153008 plugins/Colour functions/Color_Profiler.jar
+  63cef19d (LOCAL_ONLY) 20121105191335 plugins/Colour functions/Color_Space_Converter$ColorSpaceConverter.class
+  933620c3 (LOCAL_ONLY) 20121105191335 plugins/Colour functions/Color_Space_Converter.class
+  ed9a6168 (LOCAL_ONLY) 20070416171000 plugins/Colour functions/Colour_Balance.class
+  05883551 (LOCAL_ONLY) 20050512174136 plugins/Colour functions/Colour_Correct.class
+  365af84e (LOCAL_ONLY) 20050201173722 plugins/Colour functions/Colour_merge.class
+  4a5615b5 (LOCAL_ONLY) 20070626205056 plugins/Colour functions/HSV_Stack.class
+  d24cd2d1 (LOCAL_ONLY) 20070626205118 plugins/Colour functions/Lab_Stack.class
+  199930f3 (LOCAL_ONLY) 20070626205128 plugins/Colour functions/Luv_Stack.class
+  af44f592 (LOCAL_ONLY) 20070620105212 plugins/Colour functions/RGB_Gray_Merge.class
+  e9928b83 (LOCAL_ONLY) 20050512170626 plugins/Colour functions/RGB_Measure.class
+  ed01e3ec (LOCAL_ONLY) 20130419090306 plugins/Colour functions/RGB_Measure_Plus.class
+  7cf305a0 (LOCAL_ONLY) 20040408181504 plugins/Colour functions/RGB_Profiler.class
+  f26d321b (LOCAL_ONLY) 20050106165130 plugins/Colour functions/RGB_recolor .txt
+  12af1bda (LOCAL_ONLY) 20070214143600 plugins/Colour functions/RGB_to_Montage.class
+  6ad1190e (LOCAL_ONLY) 20061011151400 plugins/Colour functions/Recolor_RGB_to_MGB.txt
+  67914d0c (LOCAL_ONLY) 20050527180332 plugins/Colour functions/Resize2Rotate_.txt
+  109660fc (LOCAL_ONLY) 20100708165138 plugins/Colour functions/Retinex_.class
+  5b673829 (LOCAL_ONLY) 20110529055137 plugins/Colour functions/SmartCapture_Lite.jar
+  3273d22c (LOCAL_ONLY) 20070126123500 plugins/Colour functions/Whiten_background.class
+  f0854dbd (LOCAL_ONLY) 20130319115246 plugins/Common_Toolbar_amw.class
+  52ff6766 (LOCAL_ONLY) 20100211190655 plugins/Create_Template.jar
+  8d9bdfa0 (LOCAL_ONLY) 20090703152912 plugins/DeconvolutionLab/DeconvolutionLab_.jar
+  d14a7cbc (LOCAL_ONLY) 20090625171804 plugins/Depth_from_focus.class
+  6a87ed7d (LOCAL_ONLY) 20100701083659 plugins/DonorBlCorrDialog.class
+  dec56900 (LOCAL_ONLY) 20081202161412 plugins/EDF/Demo.class
+  52b4532b (LOCAL_ONLY) 20081202161546 plugins/EDF/EDF-demo.txt
+  fc7d947e (LOCAL_ONLY) 20081202161412 plugins/EDF/EDF_Easy_$1.class
+  460c8107 (LOCAL_ONLY) 20081202161412 plugins/EDF/EDF_Easy_.class
+  b87549d6 (LOCAL_ONLY) 20081202161412 plugins/EDF/EDF_Expert_$1.class
+  eecd3775 (LOCAL_ONLY) 20081202161412 plugins/EDF/EDF_Expert_.class
+  bb4d8598 (LOCAL_ONLY) 20081202161412 plugins/EDF/EDF_Viewer3D_$MainDialog.class
+  1f8adba2 (LOCAL_ONLY) 20081202161412 plugins/EDF/EDF_Viewer3D_.class
+  402b90b1 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/AbstractEdfAlgorithm.class
+  f3d26126 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/Color2BW.class
+  e4704d0c (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/EdfComplexWavelets.class
+  ef475177 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/EdfRealWavelets.class
+  7510215e (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/EdfSobel.class
+  c5aae14a (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/EdfVariance.class
+  65434783 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/EdfWaveletMaximumModulus.class
+  2f0e80f0 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/LogSingleton.class
+  0ffe4e0d (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/MorphologicalOperators.class
+  f434f107 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/PostProcessing.class
+  9441e9e6 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/ProcessTopology.class
+  0187d9a9 (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/Sobel.class
+  c653047b (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/Tools.class
+  cce5515a (LOCAL_ONLY) 20081202161412 plugins/EDF/edf/Variance.class
+  56f0b03f (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/AboutDialog.class
+  46e2be67 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/AbstractDialog$TimerListener.class
+  794d8ccb (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/AbstractDialog.class
+  cdb53d41 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/AdvancedDialog$MyVerifier.class
+  0fdfdf3d (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/AdvancedDialog.class
+  5bed4a73 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/BasicDialog.class
+  dcb35ca5 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/ExtendedDepthOfField.class
+  5af8f029 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/LogPane.class
+  2a3ab5f0 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/MySlider.class
+  ad85c9b5 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/MyTableRenderer.class
+  44d641d2 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/Parameters.class
+  417bbbb0 (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/SimpleTableModel.class
+  dc4cd10b (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/ThreadEdf.class
+  fc5d4c0d (LOCAL_ONLY) 20081202161412 plugins/EDF/edfgui/ThreadTopoProc.class
+  b77b5da8 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/Access.class
+  895118eb (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/Buffer.class
+  8f404b54 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/Builder.class
+  17439d9c (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ByteAccess.class
+  f773aa9e (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ByteBuffer.class
+  6035dc3e (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/BytePointwise.class
+  6ce255b2 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ByteProcess.class
+  f91ef099 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ByteSet.class
+  10ade4a4 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/Convolver.class
+  79469ee7 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/Display.class
+  05be9179 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/DoubleAccess.class
+  3bb456d7 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/DoubleBuffer.class
+  b17dc16f (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/DoublePointwise.class
+  b4a3c6e6 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/DoubleProcess.class
+  f7d47d5d (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/DoubleSet.class
+  3c98dbe0 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/FMath.class
+  84d13c91 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/FloatAccess.class
+  752ca783 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/FloatBuffer.class
+  49437fea (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/FloatPointwise.class
+  cb6b1fd7 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/FloatProcess.class
+  cbb54e2a (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/FloatSet.class
+  bc7be688 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ImageAccess.class
+  a3cb9815 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ImageWare.class
+  3b5db209 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/Pointwise.class
+  bab794cb (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/Process.class
+  3aaf16b5 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ShortAccess.class
+  589b6994 (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ShortBuffer.class
+  401574fa (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ShortPointwise.class
+  cf524c2d (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ShortProcess.class
+  9edb2a7c (LOCAL_ONLY) 20081202161412 plugins/EDF/imageware/ShortSet.class
+  8961c58e (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$1.class
+  1bb5f6bf (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$2.class
+  bfcba439 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$Cube.class
+  ef435d1d (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow$1.class
+  b42c62d0 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow.class
+  f4abafd9 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$ImageRegion.class
+  cae6b66c (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$Lines.class
+  5d974d9c (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$Lut.class
+  05950138 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$Misc.class
+  6233cdce (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$Picture.class
+  59cb25c7 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$PlotVal.class
+  7bd11935 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$TextField.class
+  d0b39e39 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D$Transform.class
+  daeb1ff1 (LOCAL_ONLY) 20081202161412 plugins/EDF/surfacemap/SurfaceMap3D.class
+  6d6af260 (LOCAL_ONLY) 20081202161412 plugins/EDF/wavelets/ComplexWaveFilter.class
+  69bbb302 (LOCAL_ONLY) 20081202161412 plugins/EDF/wavelets/ComplexWavelet.class
+  28e0c7d6 (LOCAL_ONLY) 20081202161412 plugins/EDF/wavelets/ImageAccess.class
+  fe5d7760 (LOCAL_ONLY) 20081202161412 plugins/EDF/wavelets/WaveSpline.class
+  f469ca9f (LOCAL_ONLY) 20081202161412 plugins/EDF/wavelets/WaveSplineFilter.class
+  3f57d09c (LOCAL_ONLY) 20111228144830 plugins/Examples/Erode_Demo.class
+  88f402c4 (LOCAL_ONLY) 20130525205227 plugins/Exif_Reader.jar
+  206db4d1 (LOCAL_ONLY) 20101223165519 plugins/Export_EPS.class
+  d0909d2c (LOCAL_ONLY) 20130608221345 plugins/ExtendedDepthField.txt
+  bf353b79 (LOCAL_ONLY) 20020221142508 plugins/FFTJ/DeconvolutionJ.txt
+  e8b168ec (LOCAL_ONLY) 20020221143130 plugins/FFTJ/DeconvolutionJ_.class
+  da9bdfd8 (LOCAL_ONLY) 20020221142420 plugins/FFTJ/FFTJ.txt
+  c54574f3 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/FFTJ_.class
+  78f0c1dc (LOCAL_ONLY) 20140330083424 plugins/FFTJ/FFTJ_Script.class
+  918c7ebf (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/ComplexNum2.class
+  5fca0f50 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/ComplexNumPrecision2.class
+  235df616 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/ComplexValueType2.class
+  d72c4b77 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/Deconvoluter3D2.class
+  533e0b67 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/DoublePrecComplNum2.class
+  798faa83 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/DoublePrecFFT3D2.class
+  981c5a9a (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/FFT3D2$1.class
+  b626938e (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/FFT3D2$Direction.class
+  5f7056bb (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/FFT3D2.class
+  3e1427cd (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/FourierDomainOrigin2.class
+  a07deaa7 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/ImageResizeMode2.class
+  2784019b (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/Interpolation2.class
+  17049784 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/MyImageTools2.class
+  3119a7be (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/MyMathLib2.class
+  b8eb82e8 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/Precision2.class
+  ef2546cf (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/PublicObservable2.class
+  006e1695 (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/SinglePrecComplNum2.class
+  2134addf (LOCAL_ONLY) 20020221143130 plugins/FFTJ/deconvolutionj/SinglePrecFFT3D2.class
+  8e5234d7 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/ComplexNum.class
+  824999cb (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/ComplexNumPrecision.class
+  033ed8f2 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/ComplexValueType.class
+  23363496 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/DisclaimerWindow.class
+  1b359b21 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/DoublePrecComplNum.class
+  70d9251f (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/DoublePrecFFT3D.class
+  7152f6ef (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/FFT3D$1.class
+  edfdd4c9 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/FFT3D$Direction.class
+  10ccd6b0 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/FFT3D.class
+  122a437f (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/FourierDomainOrigin.class
+  e1e75e21 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/MyMathLib.class
+  67c2d703 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/OutputFrame$1.class
+  8f3323c4 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/OutputFrame$MyActionL.class
+  fbe07934 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/OutputFrame$MyItemL.class
+  8966424b (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/OutputFrame.class
+  e4b23035 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/PublicObservable.class
+  eb7655cc (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/SinglePrecComplNum.class
+  a625b4e2 (LOCAL_ONLY) 20020221140828 plugins/FFTJ/fftj/SinglePrecFFT3D.class
+  8ab49335 (LOCAL_ONLY) 20100701083231 plugins/FRETcalc_.class
+  f930cf1d (LOCAL_ONLY) 20110310054435 plugins/Feature_Finder$Kernel.class
+  f3373453 (LOCAL_ONLY) 20110310054435 plugins/Feature_Finder.class
+  cfeb32e0 (LOCAL_ONLY) 20100419180500 plugins/Foci_Picker3D$PixelCollection3D.class
+  cda8567a (LOCAL_ONLY) 20100419180500 plugins/Foci_Picker3D.class
+  5fcc0abb (LOCAL_ONLY) 20120513003347 plugins/Frac_Lac.jar
+  b174dc56 (LOCAL_ONLY) 20120307174112 plugins/Fret/AlphaDialog.class
+  c3bb7d09 (LOCAL_ONLY) 20120307174111 plugins/Fret/ApplyMaskRiDialog.class
+  ef3ff09f (LOCAL_ONLY) 20120307174111 plugins/Fret/AutoflDialog.class
+  d4a6a7e2 (LOCAL_ONLY) 20120307174111 plugins/Fret/CalculateRatioDialog.class
+  8a7d27c2 (LOCAL_ONLY) 20120307174111 plugins/Fret/RiFRET_Plugin.class
+  7dd0499d (LOCAL_ONLY) 20120307174112 plugins/Fret/RiHelpWindow.class
+  229a39d2 (LOCAL_ONLY) 20120307174111 plugins/Fret/S1S3Dialog.class
+  2e50b256 (LOCAL_ONLY) 20120307174111 plugins/Fret/S2S4Dialog.class
+  b47e1042 (LOCAL_ONLY) 20120307174112 plugins/Fret/ShiftDialogRi.class
+  63ecdc2e (LOCAL_ONLY) 20100701083334 plugins/Fret_Analyzer.jar
+  8ab787ff (LOCAL_ONLY) 20100512070316 plugins/Granulometry_.class
+  84cf4733 (LOCAL_ONLY) 20110506054913 plugins/Graph_.jar
+  f933f17a (LOCAL_ONLY) 20110604053114 plugins/Grid_.class
+  f251aad9 (LOCAL_ONLY) 20130604183910 plugins/HRM Manager/HRM Manager.jar
+  b4a71322 (LOCAL_ONLY) 20130604183909 plugins/HRM_Manager.jar
+  913aa885 (LOCAL_ONLY) 20100701083659 plugins/HelpWindow.class
+  b97ff22f (LOCAL_ONLY) 20110310054435 plugins/HistogramPlot.class
+  20e2cec7 (LOCAL_ONLY) 20080405041923 plugins/ICTN_1_6_.jar
+  30bc1e95 (LOCAL_ONLY) 20121003090716 plugins/ISight_Capture.jar
+  46230b8b (LOCAL_ONLY) 20100902143644 plugins/ImageJ_3D_Viewer.jar
+  e9cb6eb7 (LOCAL_ONLY) 20130126212107 plugins/Image_CorrelationJ_1o.class
+  7fab3ed1 (LOCAL_ONLY) 20090522134912 plugins/Imageflow/Imageflow_.jar
+  46b97113 (LOCAL_ONLY) 20090522134910 plugins/Imageflow/doc/license.txt
+  4c68b4cb (LOCAL_ONLY) 20090522134910 plugins/Imageflow/doc/readme.txt
+  c2879e9b (LOCAL_ONLY) 20091114200243 plugins/Input-Output/JMF_Movie_Reader.class
+  587e0e38 (LOCAL_ONLY) 20090911064247 plugins/Input-Output/TIFF_Dumper.class
+  b12363f9 (LOCAL_ONLY) 20091114200251 plugins/Input-Output/jmf.jar
+  4bb7dfbf (LOCAL_ONLY) 20090918153515 plugins/Input-Output/tiff_tags.jar
+  dd562d0d (LOCAL_ONLY) 20100215232526 plugins/Jama-1.0.2.jar
+  0761a7f9 (LOCAL_ONLY) 20140606112658 plugins/Jay_Plugins.jar
+  63c3e328 (LOCAL_ONLY) 20140606112658 plugins/Jay_Plugins2.jar
+  f0a489e1 (LOCAL_ONLY) 20130510091601 plugins/LUT_windowing.js
+  3da48f0b (LOCAL_ONLY) 20140606165649 plugins/Low_Light_Tracking_Tool-0.1.jar
+  b0a0be30 (LOCAL_ONLY) 20140209141103 plugins/MMAcqEngine.jar
+  aa93a098 (LOCAL_ONLY) 20140209141058 plugins/MMCoreJ.jar
+  a1deb1d7 (LOCAL_ONLY) 20140209141059 plugins/MMJ_.jar
+  fdd3c405 (LOCAL_ONLY) 20110921170912 plugins/MTrack3_.jar
+  6b777b6c (LOCAL_ONLY) 20100426152533 plugins/Maximum_Finder$MaxPoint.class
+  6342e932 (LOCAL_ONLY) 20100426152533 plugins/Maximum_Finder.class
+  8875eb55 (LOCAL_ONLY) 20130301160716 plugins/Mi_To_Bo.jar
+  bf385aae (LOCAL_ONLY) 20101129185226 plugins/Michal/MyEntropyThreshold.class
+  af1849f3 (LOCAL_ONLY) 20101129185226 plugins/Michal/MyParticleAnalyzer.class
+  9e8fe965 (LOCAL_ONLY) 20101129185227 plugins/Michal/MyRankFilters.class
+  08bf6da4 (LOCAL_ONLY) 20101129185226 plugins/Michal/NewCustomCanvas.class
+  f79d13cf (LOCAL_ONLY) 20101129185227 plugins/Michal/NewCustomWindow.class
+  d3772f2e (LOCAL_ONLY) 20101129185226 plugins/Michal/SegmentCells_Stack.class
+  771b662a (LOCAL_ONLY) 20101129185226 plugins/Michal/StackCombiner.class
+  5cccefae (LOCAL_ONLY) 20100913095428 plugins/Morphology/AnnularClosing.txt
+  763870ef (LOCAL_ONLY) 20100913095434 plugins/Morphology/AnnularDilation.txt
+  da5dc033 (LOCAL_ONLY) 20081019152450 plugins/Morphology/BinaryDilateTest.txt
+  9f2b4ef9 (LOCAL_ONLY) 20081019152918 plugins/Morphology/BinaryErodeTest.txt
+  3f39caaf (LOCAL_ONLY) 20060525101716 plugins/Morphology/BinaryFilterReconstruct.txt
+  d3c84f8c (LOCAL_ONLY) 20070712112240 plugins/Morphology/BinaryLabelMacro.txt
+  36e4a042 (LOCAL_ONLY) 20060525101718 plugins/Morphology/BinaryPrune.txt
+  3e83cc61 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Boundary4.txt
+  9d64440e (LOCAL_ONLY) 20060525101718 plugins/Morphology/Boundary8_.txt
+  42967771 (LOCAL_ONLY) 20140218135448 plugins/Morphology/Catalogue_Particles.txt
+  f53a898e (LOCAL_ONLY) 20090511083446 plugins/Morphology/CloseByReconstructionTopHat.txt
+  6e8c39c9 (LOCAL_ONLY) 20130625111326 plugins/Morphology/CloseByReconstruction_.txt
+  1c33105a (LOCAL_ONLY) 20060525101718 plugins/Morphology/ConvexHull1.txt
+  7cb69fdf (LOCAL_ONLY) 20060525101718 plugins/Morphology/ConvexHull2.txt
+  b19cb415 (LOCAL_ONLY) 20060525101718 plugins/Morphology/ConvexHull3.txt
+  bd22187f (LOCAL_ONLY) 20060525101718 plugins/Morphology/Corners.txt
+  d463ee86 (LOCAL_ONLY) 20081019163010 plugins/Morphology/Delete_ZeroArea.txt
+  8df2eb76 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Diagonal8to4.txt
+  e428a0f5 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Domes_stack.txt
+  925d3d8c (LOCAL_ONLY) 20111208101210 plugins/Morphology/DrawBoundingBox.txt
+  63c4cd27 (LOCAL_ONLY) 20111208101158 plugins/Morphology/DrawBoundingCircle.txt
+  b97f945a (LOCAL_ONLY) 20111208101142 plugins/Morphology/DrawConvexHulls.txt
+  2adcfe94 (LOCAL_ONLY) 20111208101226 plugins/Morphology/DrawFeret&amp;Breadth.txt
+  b60f4365 (LOCAL_ONLY) 20111208101236 plugins/Morphology/DrawMinR&amp;MaxR.txt
+  12880837 (LOCAL_ONLY) 20111208110126 plugins/Morphology/DrawROIs.txt
+  288ace7a (LOCAL_ONLY) 20100805124116 plugins/Morphology/EDM_16bits.txt
+  71d10273 (LOCAL_ONLY) 20081019170232 plugins/Morphology/Euler.txt
+  63757672 (LOCAL_ONLY) 20090511083446 plugins/Morphology/Extended_Maxima.txt
+  285e4c16 (LOCAL_ONLY) 20090511083446 plugins/Morphology/Extended_Minima.txt
+  e60a415f (LOCAL_ONLY) 20130625143654 plugins/Morphology/FillHolesReconstruct.txt
+  fafe8afd (LOCAL_ONLY) 20130726145852 plugins/Morphology/Fill_Border_Holes.txt
+  0d5a39d8 (LOCAL_ONLY) 20130726145642 plugins/Morphology/Fill_Greyscale_Holes.txt
+  75041650 (LOCAL_ONLY) 20101001143722 plugins/Morphology/GreyBlackTopHatByReconstruction_.txt
+  a1118d5c (LOCAL_ONLY) 20130625145618 plugins/Morphology/GreyWhiteTopHatByReconstruction_.txt
+  579b5383 (LOCAL_ONLY) 20090504142458 plugins/Morphology/GreyscaleCentreFilter.txt
+  0a50379d (LOCAL_ONLY) 20100920132950 plugins/Morphology/GreyscaleKillBorders.txt
+  d3047959 (LOCAL_ONLY) 20090503182436 plugins/Morphology/GreyscaleProperAutomedian.txt
+  b4d94111 (LOCAL_ONLY) 20090504122820 plugins/Morphology/GreyscaleProperClose.txt
+  44d81a95 (LOCAL_ONLY) 20090504123000 plugins/Morphology/GreyscaleProperOpen.txt
+  4d7e6035 (LOCAL_ONLY) 20100908144402 plugins/Morphology/GreyscaleTopHat.txt
+  cb2dc22a (LOCAL_ONLY) 20100908144826 plugins/Morphology/GreyscaleWell.txt
+  282495a6 (LOCAL_ONLY) 20060525101718 plugins/Morphology/H-break.txt
+  38dbe775 (LOCAL_ONLY) 20130625143022 plugins/Morphology/HMaxima_Transform.txt
+  3dc157cf (LOCAL_ONLY) 20130625143036 plugins/Morphology/HMinima_Transform.txt
+  af3183b2 (LOCAL_ONLY) 20080605122624 plugins/Morphology/Hole_Counter.txt
+  930ee9e1 (LOCAL_ONLY) 20090527171616 plugins/Morphology/HomotopicMarking.txt
+  3429c4f3 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Hysteresis.txt
+  2511df4c (LOCAL_ONLY) 20090513103656 plugins/Morphology/Impose_Minimum.txt
+  6be72748 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Influence_Zones.txt
+  5859277c (LOCAL_ONLY) 20060525101718 plugins/Morphology/KeepLargestParticle.txt
+  559e475f (LOCAL_ONLY) 20080521222500 plugins/Morphology/KeepLargestParticlePixels_.txt
+  4605ad0a (LOCAL_ONLY) 20080605144602 plugins/Morphology/KeepParticlesInRange.txt
+  43259a0b (LOCAL_ONLY) 20090519121520 plugins/Morphology/LocalMaxima.txt
+  c0207001 (LOCAL_ONLY) 20090519122406 plugins/Morphology/LocalMinMax.txt
+  b2139bd8 (LOCAL_ONLY) 20090519121444 plugins/Morphology/LocalMinima.txt
+  05f0502d (LOCAL_ONLY) 20060525101718 plugins/Morphology/MCentroids.txt
+  b3ea5e05 (LOCAL_ONLY) 20101007145910 plugins/Morphology/MinimaDynamic.txt
+  57e4bbaa (LOCAL_ONLY) 20060525101718 plugins/Morphology/Morphological2Derivative1.txt
+  35b51e7e (LOCAL_ONLY) 20060525101718 plugins/Morphology/Morphological2Derivative2.txt
+  ef809632 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Morphological2Derivative3.txt
+  372d50f9 (LOCAL_ONLY) 20130625145130 plugins/Morphology/MorphologicalContrastTopHat.txt
+  86d43a13 (LOCAL_ONLY) 20100906132436 plugins/Morphology/MorphologicalExternalGradient.txt
+  66d657f2 (LOCAL_ONLY) 20100908173708 plugins/Morphology/MorphologicalGradient3.txt
+  2cd67873 (LOCAL_ONLY) 20100906132436 plugins/Morphology/MorphologicalGradientBeucher.txt
+  b141cc35 (LOCAL_ONLY) 20100906132436 plugins/Morphology/MorphologicalInternalGradient.txt
+  babf8d91 (LOCAL_ONLY) 20060525101718 plugins/Morphology/MorphologicalSharpGradient.txt
+  7e05ec43 (LOCAL_ONLY) 20060525101718 plugins/Morphology/MorphologicalSmoothing1.txt
+  df30c851 (LOCAL_ONLY) 20060525101718 plugins/Morphology/MorphologicalSmoothing2.txt
+  80eff432 (LOCAL_ONLY) 20140205090622 plugins/Morphology/Morphological_Clustering.txt
+  e031d1be (LOCAL_ONLY) 20140205090622 plugins/Morphology/Morphological_PCA.txt
+  44b58573 (LOCAL_ONLY) 20101005101848 plugins/Morphology/Morphological_SelfDualCentre.txt
+  d733fce9 (LOCAL_ONLY) 20130624092626 plugins/Morphology/Morphological_contrast.txt
+  1f7a4f93 (LOCAL_ONLY) 20130624102506 plugins/Morphology/Morphological_contrast_thr.txt
+  c40dcb5d (LOCAL_ONLY) 20100908144252 plugins/Morphology/MultiscaleGradient.txt
+  2d9a97b5 (LOCAL_ONLY) 20131007085502 plugins/Morphology/NumberParticles8_.txt
+  cd6cf4de (LOCAL_ONLY) 20090511083446 plugins/Morphology/OpenByReconstructionTopHat.txt
+  12b00e10 (LOCAL_ONLY) 20130625144140 plugins/Morphology/OpenByReconstruction_.txt
+  8fdf1b15 (LOCAL_ONLY) 20080521221818 plugins/Morphology/Parameter_Matrix.txt
+  65c22a1e (LOCAL_ONLY) 20080529224340 plugins/Morphology/ParticleHoleArea.txt
+  9a713d79 (LOCAL_ONLY) 20080529224456 plugins/Morphology/ParticleHoleNumber.txt
+  9c0a7763 (LOCAL_ONLY) 20080529224152 plugins/Morphology/Particle_Data_Map.txt
+  77e227c2 (LOCAL_ONLY) 20140410095854 plugins/Morphology/Particles8ToCalibratedUnits.txt
+  c1d65ec7 (LOCAL_ONLY) 20120123145452 plugins/Morphology/Plot_BivariateGraphs.txt
+  e8ea53cb (LOCAL_ONLY) 20080606114752 plugins/Morphology/Plot_Histograms.txt
+  ce077644 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Prune1.txt
+  c4126534 (LOCAL_ONLY) 20060525101718 plugins/Morphology/PruneAll.txt
+  916ac5a4 (LOCAL_ONLY) 20090511083446 plugins/Morphology/RegionalMinMax.txt
+  3dcf6fa2 (LOCAL_ONLY) 20090511083446 plugins/Morphology/Regional_Maxima.txt
+  bc61499e (LOCAL_ONLY) 20101001113926 plugins/Morphology/Regional_Minima.txt
+  358d5270 (LOCAL_ONLY) 20100922235812 plugins/Morphology/SelfComplementaryTopHat.txt
+  e13f5159 (LOCAL_ONLY) 20121122102014 plugins/Morphology/SelfDualReconstruction_.txt
+  64886ac9 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Skeleton1.txt
+  64fa451e (LOCAL_ONLY) 20060525101718 plugins/Morphology/Skeleton2.txt
+  809a6770 (LOCAL_ONLY) 20060525101718 plugins/Morphology/Skeleton3.txt
+  16447730 (LOCAL_ONLY) 20090511121302 plugins/Morphology/Skeleton4.txt
+  b2242712 (LOCAL_ONLY) 20100922212400 plugins/Morphology/SkeletonFiltering.txt
+  5d0400a0 (LOCAL_ONLY) 20080521215352 plugins/Morphology/Summarize_Results.txt
+  ab0b29c3 (LOCAL_ONLY) 20080603111018 plugins/Morphology/Thin_Results_Table.txt
+  090f96c1 (LOCAL_ONLY) 20100621090218 plugins/Morphology/UnbiasedCounting.txt
+  fecf6a46 (LOCAL_ONLY) 20080605121016 plugins/Morphology/UnbiasedParticleArea.txt
+  19a9433c (LOCAL_ONLY) 20090330080642 plugins/Morphology/Viscous_Geodesic_Reconstruction.txt
+  3589dfdf (LOCAL_ONLY) 20100325185744 plugins/MultiStackReg1.45_.jar
+  64f1ec20 20140702194228 plugins/NL_Means_.jar
+  4ed208ff 20140702194236 plugins/NanoTrackJ_.jar
+  f07dd15c (LOCAL_ONLY) 20101129194600 plugins/NeuronJ_.jar
+  262572fc (LOCAL_ONLY) 20100426222616 plugins/Nonuniform_Background_Removal.class
+  4f9bb196 (LOCAL_ONLY) 20091221160006 plugins/Optinav/RG_Equal_Macro_with_random.txt
+  dfdff64d (LOCAL_ONLY) 20091220071355 plugins/Optinav/optinav_.jar
+  ab6caa62 (LOCAL_ONLY) 20120301211933 plugins/OrientationJ_.jar
+  597f542e (LOCAL_ONLY) 20080626143250 plugins/PCAc_/PCAc_.jar
+  c999276f (LOCAL_ONLY) 20110223002434 plugins/PZFociEZ/AutoRun.txt
+  1006fdae (LOCAL_ONLY) 20101205204417 plugins/PZFociEZ/BackgroundCorrectedBatch.txt
+  65356033 (LOCAL_ONLY) 20120512134202 plugins/PZFociEZ/FociEZ.txt
+  337e4cb6 (LOCAL_ONLY) 20120109102254 plugins/PZFociEZ/MakeAgain.txt
+  42e18cf6 (LOCAL_ONLY) 20120110160106 plugins/PZFociEZ/MakeMask.txt
+  e586cfad (LOCAL_ONLY) 20120109102557 plugins/PZFociEZ/MakeMaskSettings.txt
+  5783a2f3 (LOCAL_ONLY) 20120110161923 plugins/PZFociEZ/MaskEZ.txt
+  fa40e465 (LOCAL_ONLY) 20120110205406 plugins/PZFociEZ/StartMacros.txt
+  436d6096 (LOCAL_ONLY) 20120110155402 plugins/PZFociEZ/SuperMaska.txt
+  e27c8217 (LOCAL_ONLY) 20090428145510 plugins/PZFociEZ/_Magic_Montage2.txt
+  86e2e6c2 (LOCAL_ONLY) 20111107011733 plugins/PZFociEZ/_PZ-FociEZ.txt
+  86206530 (LOCAL_ONLY) 20101124013316 plugins/PZFociEZ/color_and_merge.txt
+  7b8cbc4a (LOCAL_ONLY) 20101208120214 plugins/PZFociEZ/shrink.txt
+  0e8ddb6d (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/arpack-combo.jar
+  1a08e201 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/csparsej.jar
+  924b8d62 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/jplasma.jar
+  fca468e8 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/jtransforms.jar
+  dd8c3801 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/licenses/parallelcolt.LICENSE.txt
+  de89ab4e (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/licenses/paralleliterativedeconvolution.LICENSE.txt
+  60508fb7 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/macros/ParallelIterativeDeconvolution2D.txt
+  20e21511 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/macros/ParallelIterativeDeconvolution3D.txt
+  89cb5823 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/netlib-java.jar
+  25802519 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/optimization.jar
+  33f69ff8 (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/parallel_iterative_deconvolution-1.12.jar
+  87fc836e (LOCAL_ONLY) 20130919191546 plugins/ParallelIterativeDeconvolution/parallelcolt-0.9.4.jar
+  13ebc0b0 (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/Costs.class
+  bcab4969 (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/CustomCanvas.class
+  e69f80b8 (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/CustomWindow.class
+  cd461996 (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/Dijkstra.class
+  7c5d759d (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/PhaseToBinary_.class
+  148878ff (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/QueueElement.class
+  10d95f65 (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/Runner$1.class
+  a2498470 (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/Runner$2.class
+  b1d69f1a (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/Runner.class
+  9a6d9fcd (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/Segment.class
+  60fda37c (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/Tracing.class
+  914458dc (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/TracingHandler.class
+  7eee6a93 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Candidates.class
+  1f78c7a1 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Differentiator.class
+  df960618 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Edges.class
+  9edde321 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Features.class
+  a804e8e2 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Hessian.class
+  94d2a2a1 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Laplacian.class
+  0f4e4504 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Statistics.class
+  7bac85c1 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Structure.class
+  eaedb4a7 (LOCAL_ONLY) 20031022061352 plugins/PhaseToBinary3_6/imagescience/features/Thresholder.class
+  416177ad (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/Axes.class
+  4b25bd81 (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/Borders.class
+  a3f4cd40 (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/ByteImage.class
+  b9e3df71 (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/Coordinates.class
+  83d7bf54 (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/Dimensions.class
+  c7897e6f (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/FloatImage.class
+  19bd8d7d (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/PixelSize.class
+  bae8cb74 (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/RGBImage.class
+  f368658c (LOCAL_ONLY) 20031022061432 plugins/PhaseToBinary3_6/imagescience/images/ShortImage.class
+  73a8a0d4 (LOCAL_ONLY) 20031022061602 plugins/PhaseToBinary3_6/imagescience/utilities/FMath.class
+  7c388d43 (LOCAL_ONLY) 20031022061602 plugins/PhaseToBinary3_6/imagescience/utilities/Messenger.class
+  10a4b66e (LOCAL_ONLY) 20031022061602 plugins/PhaseToBinary3_6/imagescience/utilities/Progressor.class
+  832a4991 (LOCAL_ONLY) 20031022061602 plugins/PhaseToBinary3_6/imagescience/utilities/Timer.class
+  33b1aa3a (LOCAL_ONLY) 20101129193514 plugins/PhaseToBinary3_6/myContrastAdjuster.class
+  06755f52 (LOCAL_ONLY) 20101028081440 plugins/Play_Plugin_g$MyK.class
+  8b006eb4 (LOCAL_ONLY) 20101028081440 plugins/Play_Plugin_g.class
+  f0b34c69 (LOCAL_ONLY) 20110221071958 plugins/Polynomial_Shading_Corrector.class
+  3f944a37 (LOCAL_ONLY) 20110310094917 plugins/Process_Pixels.class
+  12289f6e (LOCAL_ONLY) 20140217074305 plugins/PureDenoise_.jar
+  e0e5c0b1 (LOCAL_ONLY) 20091210193814 plugins/QuickTime_Plugins.jar
+  cedcde3c (LOCAL_ONLY) 20091019101908 plugins/RandomForest_Segmentation.jar
+  fa141cb9 (LOCAL_ONLY) 20091203054358 plugins/SURF/ImageJ_SURF_2009-12-01_08.19.jar
+  dc7989ae (LOCAL_ONLY) 20140622082219 plugins/ScientiFig/ScientiFigPrefs.txt
+  03903c30 (LOCAL_ONLY) 20130529084227 plugins/Scripts/File/Batch_Convert_Movies.bsh
+  c77c66dc (LOCAL_ONLY) 20130529084227 plugins/Scripts/File/Rename_Blubs.ijm
+  70bbe4f0 (LOCAL_ONLY) 20050616160116 plugins/Segmentation/Adapative3DThreshold_.class
+  a0dc941f (LOCAL_ONLY) 20041201163000 plugins/Segmentation/Apply_Threshold_from_background.txt
+  dcc88443 (LOCAL_ONLY) 20071117192248 plugins/Segmentation/ConnectionThresholding_.class
+  92cb98a0 (LOCAL_ONLY) 20070405195240 plugins/Segmentation/Contour_Plotter.jar
+  cf760754 (LOCAL_ONLY) 20071017134424 plugins/Segmentation/Deriche_.class
+  b6af218a (LOCAL_ONLY) 20070625210634 plugins/Segmentation/DynamicThreshold_1b.class
+  405b81cc (LOCAL_ONLY) 20130126212425 plugins/Segmentation/DynamicThreshold_1d.class
+  300dacc3 (LOCAL_ONLY) 20050509143444 plugins/Segmentation/Entropy_Threshold.class
+  097aee2a (LOCAL_ONLY) 20071031103722 plugins/Segmentation/GLCM_Texture.class
+  e2c50e81 (LOCAL_ONLY) 20071113125232 plugins/Segmentation/GLCM_TextureToo.class
+  efb5b8e0 (LOCAL_ONLY) 20050317124914 plugins/Segmentation/GrayLevelClass.class
+  8ed8f30b (LOCAL_ONLY) 20050317124526 plugins/Segmentation/GrayLevelClass2.class
+  8dfcb8f9 (LOCAL_ONLY) 20050428172114 plugins/Segmentation/GrayLevelClassMixtureModeling.class
+  9402f8f0 (LOCAL_ONLY) 20050425134808 plugins/Segmentation/Local_Threshold.class
+  7bc3c7c8 (LOCAL_ONLY) 20050428160220 plugins/Segmentation/OtsuThresholding_16Bit.class
+  96c42763 (LOCAL_ONLY) 20050428160248 plugins/Segmentation/OtsuThresholding_8Bit.class
+  810881a3 (LOCAL_ONLY) 20041124111450 plugins/Segmentation/Set_Threshold_From_background.txt
+  a3c9dfb5 (LOCAL_ONLY) 20071117192248 plugins/Segmentation/ThresholdPlot.class
+  3ae90a2d (LOCAL_ONLY) 20070904211550 plugins/Segmentation/Watershed/MacroWatershed_.class
+  2a08ddd7 (LOCAL_ONLY) 20060123223000 plugins/Segmentation/Watershed/Watershed_.class
+  417fa7de (LOCAL_ONLY) 20060123213200 plugins/Segmentation/Watershed/imageware.jar
+  993dca09 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/Access.class
+  84c20302 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/Buffer.class
+  42d74f03 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/Builder.class
+  79d8af20 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ByteAccess.class
+  36ed45eb (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ByteBuffer.class
+  b6ad9c1d (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/BytePointwise.class
+  eec3bba5 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ByteProcess.class
+  98ccbac3 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ByteSet.class
+  b738ac05 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/Convolver.class
+  96dd912a (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/Display.class
+  aac5b25b (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/DoubleAccess.class
+  0358c8f3 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/DoubleBuffer.class
+  9590d3d4 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/DoublePointwise.class
+  d5a31158 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/DoubleProcess.class
+  d28202c2 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/DoubleSet.class
+  50ee98b8 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/FMath.class
+  21c1ab0b (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/FloatAccess.class
+  53f8ff7a (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/FloatBuffer.class
+  e15d151f (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/FloatPointwise.class
+  7d07911e (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/FloatProcess.class
+  76e05771 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/FloatSet.class
+  3a5009ac (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ImageAccess.class
+  e4142a2b (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ImageWare.class
+  39fe0f3b (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/Pointwise.class
+  2c1ae107 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/Process.class
+  8d4c2f2d (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ShortAccess.class
+  7df174b7 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ShortBuffer.class
+  fd54f9d0 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ShortPointwise.class
+  bb7f331e (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ShortProcess.class
+  210280b0 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/imageware/ShortSet.class
+  dc4918b3 (LOCAL_ONLY) 20060123213300 plugins/Segmentation/Watershed/watershedflooding.jar
+  0713c0a2 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/watershedflooding/Watershed.class
+  f09faa71 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/watershedflooding/WatershedDisplay.class
+  82e43552 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/watershedflooding/WatershedMeasurements.class
+  55538b01 (LOCAL_ONLY) 20060123224000 plugins/Segmentation/Watershed/watershedflooding/WatershedSelect.class
+  5f60d96e (LOCAL_ONLY) 20130723153309 plugins/Segmentation/Watershed_.jar
+  9b949816 (LOCAL_ONLY) 20071117185836 plugins/Segmentation/absnake_.jar
+  1d92a9be (LOCAL_ONLY) 20091125154054 plugins/Segmentation/siox_.jar
+  eed9d70c (LOCAL_ONLY) 20071023122638 plugins/Segmentation/smart_fish3d.jar
+  490cc5d9 (LOCAL_ONLY) 20050607122134 plugins/Shading corrector/A_posteriori_shading_correction_514_v3.class
+  d16a0f3a (LOCAL_ONLY) 20050607122136 plugins/Shading corrector/Matrice.class
+  9af975d3 (LOCAL_ONLY) 20050607122136 plugins/Shading corrector/poinToolbarBis.class
+  46d91051 (LOCAL_ONLY) 20050607122134 plugins/Shading corrector/pointActionBis.class
+  eff20436 (LOCAL_ONLY) 20050607122136 plugins/Shading corrector/pointHandlerBis.class
+  b7727845 (LOCAL_ONLY) 20050607122136 plugins/Shading corrector/pointPickerClearAllBis.class
+  c38c01ed (LOCAL_ONLY) 20050607122136 plugins/Shading corrector/pointPickerColorSettingsBis.class
+  bdd0eaaa (LOCAL_ONLY) 20050607122136 plugins/Shading corrector/pointPickerFileBis.class
+  edc2e1a5 (LOCAL_ONLY) 20050607122136 plugins/Shading corrector/pointPickerTerminateBis.class
+  a901a56a (LOCAL_ONLY) 20080303224640 plugins/ShapeLogic/CapitalLettersMatch_.txt
+  b8becda4 (LOCAL_ONLY) 20090514123854 plugins/ShapeLogic/shapelogic_-1.6.jar
+  30593bef (LOCAL_ONLY) 20080304195052 plugins/ShapeLogicOld/DigitMatch_.txt
+  4b5d6ddb (LOCAL_ONLY) 20071127115436 plugins/ShapeLogicOld/StraightCapitalLetterMatch_ .txt
+  9aa7d4c3 (LOCAL_ONLY) 20071015130638 plugins/ShapeLogicOld/TaskBasedCapitalLetterMatch_.txt
+  86490386 (LOCAL_ONLY) 20100707065606 plugins/Shape_Descriptor1u.class
+  c19bfcb7 20140702194240 plugins/Shape_Filter_.jar
+  e2690a97 20140702194229 plugins/Shape_Smoothing_.jar
+  75a3a060 (LOCAL_ONLY) 20100701083659 plugins/ShiftDialog.class
+  29fcf879 (LOCAL_ONLY) 20111022214717 plugins/Sigma_Filter_Plus.class
+  63d48f30 (LOCAL_ONLY) 20110814080830 plugins/SpotTracker2D.txt
+  05abab97 (LOCAL_ONLY) 20110813215843 plugins/SpotTracker2D_.jar
+  d31ed141 (LOCAL_ONLY) 20090812002214 plugins/Stack_Focuser_.class
+  55583e84 (LOCAL_ONLY) 20040402120146 plugins/Stacks - T-functions/Delta_F_down.class
+  b9d1fc6d (LOCAL_ONLY) 20031208135132 plugins/Stacks - T-functions/Delta_F_up.class
+  467ee3ba (LOCAL_ONLY) 20080206140818 plugins/Stacks - T-functions/F_divided_by_F0.class
+  2e4b6f3e (LOCAL_ONLY) 20050202143256 plugins/Stacks - T-functions/Grouped_Stack_Projector.class
+  4ba78538 (LOCAL_ONLY) 20090218230214 plugins/Stacks - T-functions/Image_Stabilizer.class
+  109ac314 (LOCAL_ONLY) 20090218230222 plugins/Stacks - T-functions/Image_Stabilizer_Log_Applier.class
+  3ae569df (LOCAL_ONLY) 20050202143014 plugins/Stacks - T-functions/Intensity_v_Time_Monitor.class
+  31733983 (LOCAL_ONLY) 20101124101315 plugins/Stacks - T-functions/K_TimeRGBcolorcode.ijm
+  e63b9cca (LOCAL_ONLY) 20130723153400 plugins/Stacks - T-functions/PixBleach_.jar
+  8f375983 (LOCAL_ONLY) 20060918131800 plugins/Stacks - T-functions/Quick_Ratio_Profiler.class
+  d7baa540 (LOCAL_ONLY) 20070514152800 plugins/Stacks - T-functions/Ratio_ROI_Manager.class
+  d777f1a5 (LOCAL_ONLY) 20061122155900 plugins/Stacks - T-functions/Ratio_Stack.txt
+  03bba501 (LOCAL_ONLY) 20050202143404 plugins/Stacks - T-functions/Running_Stack_Projector.class
+  cf445a74 (LOCAL_ONLY) 20100121171200 plugins/Stacks - T-functions/Time_Series_Analyzer.jar
+  659537b8 (LOCAL_ONLY) 20041116181500 plugins/Stacks - Z-functions/360-» 3D_project....txt
+  5805a17f (LOCAL_ONLY) 20041116171558 plugins/Stacks - Z-functions/360° 3D_project....txt
+  c9019072 (LOCAL_ONLY) 20030319211800 plugins/Stacks - Z-functions/CoefEnhancement.class
+  af3ba135 (LOCAL_ONLY) 20030319211800 plugins/Stacks - Z-functions/CoefThresholding.class
+  96db00d2 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/Depth_Coded_Stack_.class
+  57c9fea8 (LOCAL_ONLY) 20011017035200 plugins/Stacks - Z-functions/GJ.class
+  05ea37fc (LOCAL_ONLY) 20070916050826 plugins/Stacks - Z-functions/MeasureStack.class
+  712be848 (LOCAL_ONLY) 20070916050838 plugins/Stacks - Z-functions/MeasureStackReviewer.class
+  49ede163 (LOCAL_ONLY) 20070916050838 plugins/Stacks - Z-functions/MeasureStacks.class
+  b904bfb5 (LOCAL_ONLY) 20070916050824 plugins/Stacks - Z-functions/Measure_Stack.class
+  f708785a (LOCAL_ONLY) 20070916050838 plugins/Stacks - Z-functions/Measure_Stacks.class
+  930c436b (LOCAL_ONLY) 20050216175800 plugins/Stacks - Z-functions/OrtView_.jar
+  17c3bc50 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/QuickVolII_.jar
+  f8e7b425 (LOCAL_ONLY) 20070110132600 plugins/Stacks - Z-functions/Ratio_Stack.txt
+  be5575fb (LOCAL_ONLY) 20080302214438 plugins/Stacks - Z-functions/Register_Virtual_Stack_MT.jar
+  a7fcd632 (LOCAL_ONLY) 20041116181700 plugins/Stacks - Z-functions/Rocking 3D_project....txt
+  0a81e80d (LOCAL_ONLY) 20091111231429 plugins/Stacks - Z-functions/StackReg_.class
+  f0d9cc7b (LOCAL_ONLY) 20040415144100 plugins/Stacks - Z-functions/Stereo_Pair.class
+  7b546de9 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/SurfaceJ_.class
+  48356c1b (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJAlphaColor.class
+  756ce7c1 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJBackprojection.class
+  297b7449 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJBinaryShell.class
+  d6a6d66e (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJCell.class
+  541e8f8f (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifier.class
+  97564260 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierGradientCT.class
+  6a98ab4d (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierInteger.class
+  d6626a6f (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierIsosurface.class
+  d8490bbc (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierIsosurfaceGrayscale.class
+  1285f653 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierLNoIndex.class
+  a46ab778 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierLNotIndex0.class
+  77f1d094 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierLevoy.class
+  4d4b8eb1 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierLevoyCueing.class
+  359e6eb7 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierLinear.class
+  bdf834cc (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierRGB.class
+  d45c44e0 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifierValue.class
+  a0c19bba (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJClassifiers.class
+  76ad701b (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJCutout.class
+  de298973 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJGradient.class
+  2ac5bb92 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJInterpolator.class
+  969dd4ef (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJIsosurfaceRender.class
+  2b67ef3f (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJLight.class
+  d762e9dd (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJMatrix.class
+  93363c2d (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJNearestNeighbor.class
+  6ae7cbac (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJOutlineShader.class
+  6f280225 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJPhongShader.class
+  4faab97e (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJPlane.class
+  d1a9d3ab (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJProjection.class
+  d3d09d62 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJReconstructor.class
+  659c366b (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJRender.class
+  a7f19fbf (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJRenderView.class
+  2a68123e (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJRenderViewCine.class
+  e0f21cf6 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJRenderViewInteractive.class
+  4a2b40c1 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJRenderViewSingle.class
+  cee4b3ec (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJRenderViewStereo.class
+  3dda15e4 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJRenderer.class
+  c99d761b (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJShade.class
+  65db80ef (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJShader.class
+  d243b127 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJShape.class
+  42d2a116 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJSplineInterpolator.class
+  45130851 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJSurfaceJ.class
+  50aae5cf (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJSurfacePlotShell.class
+  bba08c1c (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJThresholdedVolume.class
+  85ffe576 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJTrilinear.class
+  16da0844 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJUserInterface.class
+  fdbc7d30 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJValue.class
+  384cb697 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJValueHSB.class
+  875f3aac (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJViewerCanvas.class
+  9483c926 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJViewspaceRender.class
+  5c00aac6 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJViewspaceUtil.class
+  6ca292b9 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJVoxelLoc.class
+  8345fc3c (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJZBuffer.class
+  87c1a539 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ/VJrgbValue.class
+  a1ead705 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/VolumeJ_.class
+  4f6a3dba (LOCAL_ONLY) 20081004194406 plugins/Stacks - Z-functions/Volumest_20080522.jar
+  19501299 (LOCAL_ONLY) 20050406201000 plugins/Stacks - Z-functions/X_and_Y_Rotation....txt
+  e2a6fc0b (LOCAL_ONLY) 20090819225936 plugins/Stacks - Z-functions/Z_Profiler.class
+  b9703528 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJException.class
+  cc0ce45d (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJJacobi.class
+  88a297ba (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJLargeMatrix.class
+  7dbf2950 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJMatrix.class
+  fb35bd3f (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJShortMatrix.class
+  3235ab86 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJfht.class
+  cf00a1ae (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJgifa.class
+  d291342f (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJmi.class
+  5d388153 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJpca.class
+  e3f392b4 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJpowell.class
+  77ecc2ce (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJstats.class
+  29eae827 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJtransform.class
+  25a434c8 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/BIJutil.class
+  013d20e1 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/Blas.class
+  ae9c2e27 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/Jacobi.class
+  4ac15464 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/SVDC.class
+  81289686 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/bijnum/SVDCException.class
+  006ed608 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ij/plugin/QuickVolII.class
+  006f86c5 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/interpreter/AdapterOperand.class
+  b79e6813 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/interpreter/Expression.class
+  bdd75597 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/InterpreterException.class
+  b5aa0ec5 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/interpreter/InterpreterTest.class
+  47a26dfc (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/Operand.class
+  0899bed5 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/Operator.class
+  d3ef0d31 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/OperatorLibrary.class
+  c5db8547 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/Parser.class
+  0f7f196f (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTabsvalue.class
+  97e3ccb0 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/ASTarrayderef.class
+  7d5bfbb6 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/ASTconstant.class
+  8404d3b5 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/lexical/ASTe.class
+  0e5d5ded (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTexpr.class
+  0e868e2d (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/lexical/ASTfunction.class
+  4cc7313c (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/interpreter/lexical/ASTidentifier.class
+  62877e0e (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTimplicitpremult.class
+  2a06940d (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/ASTinfixadd.class
+  0faba060 (LOCAL_ONLY) 20060601094656 plugins/Stacks - Z-functions/interpreter/lexical/ASTinfixdivide.class
+  f9bd1775 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/interpreter/lexical/ASTinfixmodulus.class
+  24e6046e (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTinfixmultiply.class
+  21dab68a (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTinfixpower.class
+  9c9c037f (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTinfixsubtract.class
+  2f8500f8 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/lexical/ASTnumber.class
+  9fd0ee34 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/lexical/ASTpi.class
+  8d1b50fc (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/lexical/ASTrand.class
+  c80037d3 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTroot.class
+  e8bae5a6 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/ASTunaryexp.class
+  03f59873 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ASTunaryminus.class
+  cab2ed51 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/lexical/JJTQVTokenizerState.class
+  af4fbaed (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/Node.class
+  b63f6815 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/ParseException.class
+  4f6d1cbe (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/lexical/QVTokenizer$1.class
+  411b282a (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/lexical/QVTokenizer$JJCalls.class
+  d08092c3 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/lexical/QVTokenizer$LookaheadSuccess.class
+  68550073 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/lexical/QVTokenizer.class
+  23c62137 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/QVTokenizerConstants.class
+  14d4a2a4 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/QVTokenizerTokenManager.class
+  cadd8355 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/QVTokenizerTreeConstants.class
+  55011641 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/interpreter/lexical/SimpleCharStream.class
+  a215c571 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/lexical/SimpleNode.class
+  ad7272ed (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/interpreter/lexical/Token.class
+  beda4328 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/lexical/TokenMgrError.class
+  691206d4 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/interpreter/math/LevenbergMarquardt.class
+  72a2a164 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/math/SpecialFunctions.class
+  e3a2c507 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/interpreter/math/simplex/SimplexOptimizer.class
+  ee133e63 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/interpreter/math/simplex/SimplexOptimizerForOperands.class
+  8d7aab2e (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/math/simplex/SimplexTest.class
+  f0e337fa (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/math/simplex/Vertex.class
+  5a5305c8 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/operators/ADCLinRegressOperator.class
+  b0929a06 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/interpreter/operators/ANOVAOneWayOperator.class
+  f3d83e06 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/operators/AbsOperator.class
+  186a3557 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/operators/AddArraysOperator.class
+  99657862 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/interpreter/operators/AllRepsAsArrayOperator.class
+  a139b8a8 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/operators/ArrayDereferenceOperator.class
+  3a3d112b (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/operators/AveArraysOperator.class
+  2e956067 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/operators/AverageArrayOperator.class
+  c6732541 (LOCAL_ONLY) 20060601094656 plugins/Stacks - Z-functions/interpreter/operators/BasicMathOp.class
+  ee581cbc (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/operators/ConcatArrayOperator.class
+  e159659d (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/operators/DfDxDyOperator.class
+  7d09ec05 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/operators/DfDxOperator.class
+  ce619fd5 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/operators/IJAccessOperator.class
+  c6075b74 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/operators/LinRegressOperator.class
+  8a0f2d7f (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/interpreter/operators/MakeArrayOperator.class
+  cbcc47dc (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/operators/MarqMinOperator.class
+  5fbeb1c6 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/interpreter/operators/MedianArrayOperator.class
+  865a46d6 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/operators/NLMinOperator.class
+  d44dfdd4 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/operators/NormalizeArrayOperator.class
+  6151f695 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/operators/SubArrayOperator.class
+  994635b4 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/interpreter/operators/SumArrayOperator.class
+  eee82dbe (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/operators/T2LinRegressOperator.class
+  e4c9ffb0 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/interpreter/operators/TTestOperator.class
+  4057100c (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/interpreter/operators/VarOperator.class
+  c77817a7 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/io/DirFilter.class
+  7a5d6b57 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/io/FileAndString.class
+  8ce63772 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/io/OpenPreviewDialog.class
+  dcd1a9a3 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/io/Open_Different_Sizes_As_Stack.class
+  adc28f71 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/io/Open_HP_volume.class
+  6c02c76c (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/io/Open_Sequence_As_Stack.class
+  8800d5ac (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/calculus/minimizing/nmBracket.class
+  54cc2aaa (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/calculus/minimizing/nmBrent.class
+  fca63875 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/calculus/minimizing/nmLineND.class
+  7e4290bb (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/calculus/minimizing/nmLineNDBrent.class
+  da8e99cc (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/calculus/minimizing/nmLineNDEvaluator.class
+  7925b89f (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/calculus/minimizing/nmPowell.class
+  bc6edc71 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/function/nmDoubleArrayParametrized.class
+  b86d2b33 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/function/nmDoubleArrayValued.class
+  5dfece59 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/function/nmDoubleParametrized.class
+  d817ee9e (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/numericalMethods/function/nmDoubleValued.class
+  10f059c0 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/Correlator.class
+  2fbd57c5 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/HoughTransform.class
+  6acb9476 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/LocatedCircle.class
+  85197501 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/Register.class
+  33fe45de (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/RegisterFFT.class
+  97808f6f (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/RegisterMI.class
+  f4294561 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/RegisterRetina.class
+  f42b1247 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/registration/SearchMI.class
+  e8b3d765 (LOCAL_ONLY) 20091111231429 plugins/Stacks - Z-functions/stackRegCredits$1.class
+  fe6ce74f (LOCAL_ONLY) 20091111231429 plugins/Stacks - Z-functions/stackRegCredits.class
+  8c135e36 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/app/CalcRunnerListener.class
+  a738a966 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/app/CalculationLoader.class
+  bbe8bbc0 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/app/CalculationRunnerThread.class
+  97275b3a (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/app/DataSeriesManager.class
+  a254fb7d (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/app/ModelMakerThread.class
+  9f513eaf (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/app/ROIMeasureThread.class
+  2c5c8978 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/app/VEEvent.class
+  ac5124de (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/app/VEListener.class
+  40d899c3 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/app/VEMgr$1$BriefPause.class
+  6357c8b3 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/app/VEMgr.class
+  c5d1a014 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/app/VersionChecker.class
+  1c3644f0 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/app/WatchThread.class
+  5e74e05c (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/data/RunnableCalculation.class
+  16559efd (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/data/VEProject.class
+  7bc004bc (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/display2d/AltComposite.class
+  352a8b32 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/display2d/AltCompositeContext.class
+  8cc2b460 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/display2d/LUTUtil.class
+  099f513e (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/display2d/MontagePanel.class
+  888037aa (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/display2d/RasterPipeline.class
+  49dedcaf (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/display3d/FasterRaster.class
+  cbbc60d5 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/display3d/Light.class
+  0e1462dc (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/display3d/MeshedSurface.class
+  fd26246d (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/display3d/OffscreenRenderer.class
+  5f4742c9 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/display3d/RenderListener.class
+  3beab4b6 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/display3d/RenderableTriangle.class
+  32f663ea (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/display3d/Scene.class
+  5b341ca7 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/display3d/StageEvent.class
+  4747223e (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/display3d/StageEventGenerator.class
+  c6b61803 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/display3d/StageListener.class
+  83d6cd26 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/display3d/Texture.class
+  3560638e (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/display3d/ViewScreen.class
+  c1062ad5 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/display3d/phongrenderer/PhongRenderer.class
+  cbfb9385 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/display3d/splatrenderer/SplatRenderer.class
+  7a033da2 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/display3d/wireframerenderer/WireFrameRenderer.class
+  2965f6b9 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/geom/AffineTransform3D.class
+  ec4b7057 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/geom/GeomCalculationListener.class
+  4e1ebd3d (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/geom/GeomTest.class
+  bb41d2be (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/geom/Grid3D.class
+  680c8607 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/geom/LaplaceSmoother.class
+  d81bb3d2 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/geom/Line3D.class
+  92751495 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/geom/MarchingCubes.class
+  f65b8620 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/geom/MarchingCubesCases.class
+  67e66650 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/geom/Model.class
+  62764d9f (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/geom/ModelListener.class
+  a5ea30fb (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/geom/Plane3D.class
+  497cd75e (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/geom/Point3D.class
+  adb8182d (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/geom/ScalarField3D.class
+  046156b9 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/geom/SlicePlan.class
+  c2c4cc00 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/geom/SurfaceSmoother.class
+  459b6da9 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/geom/Triangle.class
+  0354cd5d (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/geom/TriangularMesh.class
+  cde73092 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/geom/io/PovReader.class
+  4902c77e (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/geom/io/PovWriter.class
+  e906b09d (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ijadapters/IJHelper.class
+  c946f02a (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ijadapters/ROI.class
+  1353c1b1 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ijadapters/ROIArea.class
+  4b32f96b (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ijadapters/UnitNumberFormatII.class
+  34aa85b7 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ijadapters/VolumeAdapter.class
+  1f7357ed (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/plotpanel/DataSeries.class
+  8cdf5b1b (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/plotpanel/DisplayArea.class
+  99484317 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/plotpanel/PlotAxis.class
+  de293928 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/plotpanel/PlotPanel.class
+  37d6ab6f (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/plotpanel/PlotPanelListener.class
+  1d859e90 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/ui/ActionableJPanel.class
+  13fb2b3c (LOCAL_ONLY) 20060601094656 plugins/Stacks - Z-functions/ve/ui/AnimatorThread.class
+  38d852c8 (LOCAL_ONLY) 20060601094656 plugins/Stacks - Z-functions/ve/ui/CallBackThread.class
+  d6b2490b (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/ui/ClickToAddPanel.class
+  e9eff6d7 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/ColorButton.class
+  a1bc5e0a (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/ControlPanelWindow.class
+  3e8b80e6 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/ui/FunctionHelpWindow.class
+  8671c8b4 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/ui/GenOptSub.class
+  0c3cb0b1 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/ui/LabeledCheckBox.class
+  3056e4f9 (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/ui/LabeledChooser.class
+  9245e940 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/ui/LabeledColorChooser.class
+  6ff53050 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/ui/LabeledLUTChooser.class
+  34db6105 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/LabeledOrientationChooser.class
+  bcc55db4 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/LabeledSpinner.class
+  a1183bdf (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ui/LabeledTextField.class
+  c831e2d2 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/ui/LabeledTwoButtonRadio.class
+  6078bd62 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/LabeledVolumeChooser.class
+  964a7c9f (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/LegendPanel.class
+  22439a3a (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ui/LegendWindow.class
+  6cc8a125 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/Literals.class
+  5cabf8c6 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ui/MiniXButton.class
+  c62fc367 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/ModelItem.class
+  9d8cee35 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/ModelPanel.class
+  c6157078 (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/ui/ModelView.class
+  ed6ed039 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ui/ModelWindow.class
+  74e58b17 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/ui/ModelableChooser.class
+  308b1249 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ui/OperandItem.class
+  d0eb1f1a (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/OperandPane.class
+  0b7b2633 (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/ui/OrientationChooser$IconCreator.class
+  af9f5437 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ui/OrientationChooser.class
+  d1de3c40 (LOCAL_ONLY) 20060601094658 plugins/Stacks - Z-functions/ve/ui/Panel3D.class
+  7aebc284 (LOCAL_ONLY) 20060601094656 plugins/Stacks - Z-functions/ve/ui/PanelAnimate.class
+  ece613e0 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/PanelCalc.class
+  c9e4377f (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/ui/PanelData.class
+  f8df641f (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/PanelDisplay.class
+  d23b0a07 (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/PanelHelp.class
+  f8a13cc7 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/PanelROI.class
+  0d71c88f (LOCAL_ONLY) 20060601094700 plugins/Stacks - Z-functions/ve/ui/PlotWindow.class
+  0839c642 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/ROIItem.class
+  b2cd1f52 (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/ROIViewArea.class
+  768d5abe (LOCAL_ONLY) 20060601094706 plugins/Stacks - Z-functions/ve/ui/RangeControl.class
+  d4eaf73c (LOCAL_ONLY) 20060601094702 plugins/Stacks - Z-functions/ve/ui/SlicePlanSub.class
+  00a951bf (LOCAL_ONLY) 20060601094704 plugins/Stacks - Z-functions/ve/ui/VisualizationWindow.class
+  3f1d77ba (LOCAL_ONLY) 20060601094708 plugins/Stacks - Z-functions/ve/ui/VolumeSubPan.class
+  6346715d (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Beaudetx.class
+  1478abe8 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/CentralDiff.class
+  e886fb4d (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Convolver.class
+  e6610ad9 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Diffusion.class
+  6e7e4461 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Diffusion3D.class
+  6a9891d9 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/DoG.class
+  00f73b07 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/DoG2D.class
+  92ffac35 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/DoG3D.class
+  2e7bcceb (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Equalize.class
+  81b1319e (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/FilterBank.class
+  b80bba79 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/GaborCos.class
+  25506ad5 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/GaborSin.class
+  240511d6 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Gaussian.class
+  d4cc13cc (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Gaussian2D.class
+  2e438dcb (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Gaussian3D.class
+  a560314a (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/GaussianDerivative.class
+  7d259a51 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Hessian.class
+  3e2a1ede (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/HyperVolume.class
+  55728ecd (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Kernel.class
+  9807a5f2 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Kernel1D.class
+  a99008b7 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Kernel2D.class
+  7ef382da (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Kernel3D.class
+  8540a163 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Kernel4D.class
+  2a39ef80 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/LoG.class
+  ddf902c6 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Maximum.class
+  569e13fb (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Sobel.class
+  aecdd452 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Sobel3D.class
+  bd8520ac (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Sobel4D.class
+  cf4f94ea (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Transformer.class
+  a27ae1b7 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/Volume.class
+  e21df746 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/VolumeFloat.class
+  9f5b87a8 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/VolumeIO.class
+  540244a7 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/VolumeInteger.class
+  59921862 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/VolumeRGB.class
+  d29eb5c1 (LOCAL_ONLY) 20031210143700 plugins/Stacks - Z-functions/volume/VolumeShort.class
+  611cee2d (LOCAL_ONLY) 20120610153737 plugins/TIA_Reader.jar
+  27b4abe1 (LOCAL_ONLY) 20120523124729 plugins/Template_Matching.jar
+  71d0e14f (LOCAL_ONLY) 20070519214120 plugins/Texture_Analyzer_1_3/CalculationsThread.class
+  bcacaa99 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$1.class
+  f35928d1 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$10.class
+  c2e20902 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$11.class
+  c9e1a6e8 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$12.class
+  ed352164 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$13.class
+  6bc3b5fe (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$14.class
+  7384c521 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$15.class
+  08de7045 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$16.class
+  d7267403 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$17.class
+  4453bc44 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$18.class
+  176b2c35 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$2.class
+  1fc3b907 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$3.class
+  36dfc392 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$4.class
+  3f371ed5 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$5.class
+  5f213279 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$6.class
+  78aefc19 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$7.class
+  0a997d7d (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$8.class
+  7169de29 (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls$9.class
+  fd58d9ac (LOCAL_ONLY) 20070519231316 plugins/Texture_Analyzer_1_3/FrameControls.class
+  e51c80b1 (LOCAL_ONLY) 20070519233152 plugins/Texture_Analyzer_1_3/FrameMain$1.class
+  c8bf5b8f (LOCAL_ONLY) 20070519233152 plugins/Texture_Analyzer_1_3/FrameMain$2.class
+  f3aecab2 (LOCAL_ONLY) 20070519233152 plugins/Texture_Analyzer_1_3/FrameMain.class
+  5a7210b5 (LOCAL_ONLY) 20070519235922 plugins/Texture_Analyzer_1_3/Texture_Analyser_1_3.class
+  825b6cb6 (LOCAL_ONLY) 20060712210014 plugins/Texture_Analyzer_1_3/glcm_class.class
+  95283eda (LOCAL_ONLY) 20061017183950 plugins/Texture_Analyzer_1_3/swing-layout-1.0.jar
+  99d0927e (LOCAL_ONLY) 20140121202324 plugins/Utilities/Concentric_Circles.class
+  9a02f6c2 (LOCAL_ONLY) 20100930211355 plugins/Utilities/Dotted_Line.class
+  842bdd91 (LOCAL_ONLY) 19700101020000 plugins/Utilities/Figure_Calibration.class
+  9cca87ea (LOCAL_ONLY) 20130917093653 plugins/Utilities/Patchwork_.java.txt
+  1e185e86 (LOCAL_ONLY) 20130731210726 plugins/Utilities/Shading_Corrector_RvH.class
+  cefb81b1 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/Watershed_.class
+  81f064a1 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/Watershed_Demo.txt
+  1dd5886e (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/Access.class
+  d0c0c21b (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/Buffer.class
+  29995129 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/Builder.class
+  430559f0 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ByteAccess.class
+  04e623db (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ByteBuffer.class
+  b17cae22 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/BytePointwise.class
+  b7e41c4f (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ByteProcess.class
+  328b18c1 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ByteSet.class
+  abb8db1f (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/Convolver.class
+  bddef381 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/Display.class
+  65a8e903 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/DoubleAccess.class
+  408b0551 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/DoubleBuffer.class
+  135a8a11 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/DoublePointwise.class
+  199907e8 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/DoubleProcess.class
+  f977d7d8 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/DoubleSet.class
+  1953c2cb (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/FMath.class
+  efe1af5b (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/FloatAccess.class
+  c6e24eb1 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/FloatBuffer.class
+  30b9872f (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/FloatPointwise.class
+  e7288c6b (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/FloatProcess.class
+  94a8a117 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/FloatSet.class
+  f5cee334 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ImageAccess.class
+  c53a3047 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ImageWare.class
+  faf80431 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/Pointwise.class
+  5ed3e84a (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/Process.class
+  820759d2 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ShortAccess.class
+  2aaa1b63 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ShortBuffer.class
+  5210e5e8 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ShortPointwise.class
+  1db31792 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ShortProcess.class
+  e52f9fe4 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/imageware/ShortSet.class
+  83656707 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/watershedflooding/Help.class
+  8a6d479b (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/watershedflooding/MainDialog.class
+  d1a77b21 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/watershedflooding/Processing.class
+  c191d5cf (LOCAL_ONLY) 20080205171152 plugins/Watershed-cls/watershedflooding/Watershed.class
+  5cc945f9 (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/watershedflooding/WatershedDisplay.class
+  6734431e (LOCAL_ONLY) 20080205170844 plugins/Watershed-cls/watershedflooding/WatershedMeasurements.class
+  3aaee704 (LOCAL_ONLY) 20131106093933 plugins/Workspaces.txt
+  293b3560 (LOCAL_ONLY) 20140507054551 plugins/WormSizer_-1.2.0.jar
+  0a351b7e (LOCAL_ONLY) 20130825070533 plugins/amw_test_extended.py
+  56f4f6e3 (LOCAL_ONLY) 20071105221900 plugins/antlr-runtime-3.0.jar
+  94df14b7 (LOCAL_ONLY) 20091011172759 plugins/aviva/Dima_StackAlign.class
+  97d6f0de (LOCAL_ONLY) 20090720154444 plugins/aviva/dima.txt
+  323b817b (LOCAL_ONLY) 20110906213105 plugins/bzw/Get_FirstLine.class
+  1a62b672 (LOCAL_ONLY) 20101114154026 plugins/bzw/Linked_Results_Tablej$My_KRT.class
+  e6ab1fe4 (LOCAL_ONLY) 20101114154026 plugins/bzw/Linked_Results_Tablej.class
+  0f0ad8f3 (LOCAL_ONLY) 20110412221258 plugins/bzw/MakeTracks.class
+  21bb2c38 (LOCAL_ONLY) 20110412221823 plugins/bzw/Make_Tracks.class
+  f1c78b82 (LOCAL_ONLY) 20110412222846 plugins/bzw/Make_Tracks1.class
+  1fd71780 (LOCAL_ONLY) 20110412224559 plugins/bzw/Make_Tracks2.class
+  fc38a75b (LOCAL_ONLY) 20110906213105 plugins/bzw/Make_Tracks3.class
+  547eaefe (LOCAL_ONLY) 20110906213105 plugins/bzw/MarkImage$ColorPoint.class
+  18fc2cc0 (LOCAL_ONLY) 20110906213105 plugins/bzw/MarkImage$SlicePoints$1.class
+  4a5307f4 (LOCAL_ONLY) 20110906213105 plugins/bzw/MarkImage$SlicePoints.class
+  6a5162fb (LOCAL_ONLY) 20110906213105 plugins/bzw/MarkImage.class
+  9999c4b8 (LOCAL_ONLY) 20110404183515 plugins/bzw/My_New_TSA1.class
+  e5dddcee (LOCAL_ONLY) 20110512094310 plugins/bzw/My_New_TSA3.class
+  5bc28701 (LOCAL_ONLY) 20101107203539 plugins/bzw/Run_All.class
+  e9baf7f8 (LOCAL_ONLY) 20101114154436 plugins/bzw/Run_My_ROIManager_new$My_Roi_Manager.class
+  bf0ef55c (LOCAL_ONLY) 20101114154436 plugins/bzw/Run_My_ROIManager_new.class
+  d9dfe114 (LOCAL_ONLY) 20110906213105 plugins/bzw/Track.class
+  ed1cf85e (LOCAL_ONLY) 20110906213105 plugins/bzw/TrackPoint.class
+  5f21dd27 (LOCAL_ONLY) 20101110210153 plugins/bzw/object_to_roiManager$1.class
+  afbafae9 (LOCAL_ONLY) 20101110210153 plugins/bzw/object_to_roiManager$2.class
+  47294aba (LOCAL_ONLY) 20101110210153 plugins/bzw/object_to_roiManager.class
+  6e13c462 (LOCAL_ONLY) 20101107212323 plugins/bzw/resultsToObject_ROI$MyK.class
+  4a0b163c (LOCAL_ONLY) 20101107212323 plugins/bzw/resultsToObject_ROI.class
+  6105e8ef (LOCAL_ONLY) 20130807090731 plugins/ciliaFA/ExcelRunTest.class
+  beb64f57 (LOCAL_ONLY) 20111129144404 plugins/ciliaFA/ciliaFA_Whole_Field.txt
+  64d8a654 (LOCAL_ONLY) 20070820201222 plugins/commons-collections-3.2.jar
+  5a39c468 (LOCAL_ONLY) 20070820201212 plugins/commons-jexl-1.1.jar
+  67a4ba88 (LOCAL_ONLY) 20070816212104 plugins/commons-logging-1.0.4.jar
+  3513c7b3 (LOCAL_ONLY) 20111011200405 plugins/dcraw/ij-dcraw_.jar
+  915376f0 (LOCAL_ONLY) 20130807052830 plugins/dialogBZ/CalculatorPlus_BZ.class
+  42ee923d (LOCAL_ONLY) 20130807052826 plugins/dialogBZ/CalculatorPlus_BZ_BlankNames.class
+  f5cf3570 (LOCAL_ONLY) 20130807052827 plugins/dialogBZ/CalculatorPlus_BZ_DefaultNames.class
+  6de8bb01 (LOCAL_ONLY) 20130807052829 plugins/dialogBZ/CalculatorPlus_BZ_Preview.class
+  3f60c07f (LOCAL_ONLY) 20130807052832 plugins/dialogBZ/CalculatorPlus_Extended.class
+  b8cf6b43 (LOCAL_ONLY) 20130807052833 plugins/dialogBZ/My_GenericDialog.class
+  5296f488 (LOCAL_ONLY) 20130807052833 plugins/dialogBZ/Supply_Files.class
+  a5908c2b (LOCAL_ONLY) 20091013194842 plugins/edf_3D.jar
+  ca87132c (LOCAL_ONLY) 20070821102056 plugins/guice-1.0.jar
+  7e9559ec (LOCAL_ONLY) 20140615105727 plugins/hysteresis_.class
+  00501934 (LOCAL_ONLY) 20120410223928 plugins/ij-plugins_toolkit.jar
+  4350a902 (LOCAL_ONLY) 20110329192918 plugins/ij3d-bin.jar
+  a66e53c8 (LOCAL_ONLY) 20090817205403 plugins/ijtools.jar
+  87da905d (LOCAL_ONLY) 20090711213413 plugins/io/Extract_Images_From_PDF.class
+  19d7735a (LOCAL_ONLY) 20090711213946 plugins/io/PDF_Viewer.class
+  414d7982 (LOCAL_ONLY) 20111109145529 plugins/itext-2.1.4.jar
+  e726539b (LOCAL_ONLY) 20130723153134 plugins/jClustering_.jar
+  71331805 (LOCAL_ONLY) 20120618213657 plugins/jacop_.jar
+  e9ac7469 (LOCAL_ONLY) 20121003090518 plugins/javacpp.jar
+  54278be9 (LOCAL_ONLY) 20121003090540 plugins/javacv-macosx-x86_64.jar
+  76d08e90 (LOCAL_ONLY) 20121003090543 plugins/javacv.jar
+  90915f54 (LOCAL_ONLY) 20120523124851 plugins/jna.jar
+  c3cdf2d0 (LOCAL_ONLY) 20130321172922 plugins/lib/REngine.jar
+  6ba3fcd5 (LOCAL_ONLY) 20130321172922 plugins/lib/Rserve.jar
+  269cc20e (LOCAL_ONLY) 20130321172922 plugins/lib/Rsession.jar
+  b48a6157 (LOCAL_ONLY) 20090909231518 plugins/libs/TIFFTagger$TIFFTag.class
+  435707da (LOCAL_ONLY) 20090909231518 plugins/libs/TIFFTagger.class
+  f7eb0c21 (LOCAL_ONLY) 20130321172924 plugins/licence.txt
+  af873dd9 (LOCAL_ONLY) 20120207210922 plugins/local/Convolve_3D.class
+  483ba6ca (LOCAL_ONLY) 20090819055148 plugins/local/Dynamic_Profiler.class
+  e0cbd3e2 (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$1.class
+  b3b82335 (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$2.class
+  fbfa11cc (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$3.class
+  75a42da0 (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$4.class
+  714d0f98 (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$5.class
+  69103c39 (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$6.class
+  8a36065a (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$7.class
+  e36e5ccf (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$FloatArray.class
+  b2c95063 (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$FloatArray2D.class
+  8fc2818b (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform$FloatArray3D.class
+  bb3ff7a4 (LOCAL_ONLY) 20080428180336 plugins/local/Fast_FourierTransform.class
+  c57a9486 (LOCAL_ONLY) 20060613132714 plugins/local/FindNuclei_.class
+  24eefb02 (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$1.class
+  7a79bf0c (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$2.class
+  e0318201 (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$3.class
+  87cd528a (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$4.class
+  f4b7b350 (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$5.class
+  0ce7a4bd (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$6.class
+  636d68a7 (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$7.class
+  82074424 (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$FloatArray.class
+  849c885e (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$FloatArray2D.class
+  2616cfc1 (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution$FloatArray3D.class
+  fe57eb05 (LOCAL_ONLY) 20080427182452 plugins/local/Gaussian_Convolution.class
+  08042109 (LOCAL_ONLY) 20090902132905 plugins/local/LargeMontage_v1.08.jar
+  e8409915 (LOCAL_ONLY) 20060613132714 plugins/local/MyParticleAnalyzer1.class
+  dea3f780 (LOCAL_ONLY) 20110616131213 plugins/local/Normalize_.class
+  37bb0ac0 (LOCAL_ONLY) 20091014142235 plugins/local/Polar_Transformer.class
+  246b2f53 (LOCAL_ONLY) 20110804094639 plugins/local/RemoveSkeletonNodes.ijm
+  f45cab40 (LOCAL_ONLY) 20110804094728 plugins/local/RemoveSkeletonNodes_.ijm
+  13e6676f (LOCAL_ONLY) 20091107193238 plugins/local/TableHandler.class
+  563886e4 (LOCAL_ONLY) 20110823091103 plugins/local/Versatile_Wand.class
+  5a457aa4 (LOCAL_ONLY) 20120111112438 plugins/local/Warp_$ImageWarper.class
+  c1500cfc (LOCAL_ONLY) 20120111112438 plugins/local/Warp_$MyColor.class
+  dae39575 (LOCAL_ONLY) 20120111112438 plugins/local/Warp_.class
+  b6bf3817 (LOCAL_ONLY) 20070308105404 plugins/local/edu_mines_jtk.jar
+  64530315 (LOCAL_ONLY) 20120113054956 plugins/local/flyover.js
+  cc688631 (LOCAL_ONLY) 20111109144712 plugins/metroloj_.jar
+  6990c9bc (LOCAL_ONLY) 20100426225303 plugins/objectj_.jar
+  2d053fcd (LOCAL_ONLY) 20110812150426 plugins/qr_decoder_1.0.jar
+  c1b00ab5 (LOCAL_ONLY) 20110130100511 plugins/sfcm_clustering.jar
+  09dec5ec (LOCAL_ONLY) 20140307131816 plugins/slim_plugin-2.0.0-SNAPSHOT.jar
+  32546563 (LOCAL_ONLY) 20110320213938 plugins/tracer/Bare_PlugInFilter1.class
+  d0c3d14c (LOCAL_ONLY) 20110318131006 plugins/tracer/RunIt.class
+  bbc2eaff (LOCAL_ONLY) 20110320203538 plugins/tracer/fixer.class
+  5d99cb0b (LOCAL_ONLY) 20140318112640 scripts/find_peaks.bsh
+  41af04e2 (LOCAL_ONLY) 20131028202729 scripts/very_basic_camera_test.bsh</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-02 15:35:50 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This ImageJ 1.48s regression was reported as <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Regression: new smart recording mode leads to unexpected record commands"
+   href="828.html">bug #828</a> already.
+
+I am not sure however if it still gets Wayne Rasband's attention since the recent switch of the default assignee mail address (<a href="mailto:imagej-builds&#64;imagej.net">imagej-builds&#64;imagej.net</a>).
+(I subscribed to this list recently but still do not seem to get any bugzilla mails. &#64;dscho: do you have a solution?)
+
+*** This bug has been marked as a duplicate of <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Regression: new smart recording mode leads to unexpected record commands"
+   href="828.html">bug 828</a> ***</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

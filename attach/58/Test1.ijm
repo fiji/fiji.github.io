@@ -1,0 +1,13 @@
+selectWindow("ctrl-600ms expo-1.zvi - C=1");
+setAutoThreshold("Default dark");
+//run("Threshold...");
+setAutoThreshold("Default dark");
+run("Convert to Mask");
+run("Fill Holes");
+run("Watershed");
+imageCalculator("AND create", "ctrl-600ms expo-1.zvi - C=1","ctrl-600ms expo-1.zvi - C=0");
+selectWindow("Result of ctrl-600ms expo-1.zvi - C=1");
+//run("Threshold...");
+setAutoThreshold("Default dark");
+setThreshold(1, 255);
+run("Analyze Particles...", "size=100-Infinity circularity=0.00-1.00 show=Nothing display exclude clear include");

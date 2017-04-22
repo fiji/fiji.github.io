@@ -1,0 +1,738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 969 &ndash; &quot;Analyse particles&quot; - potential bug if applied to 4-dimensional stack</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_969 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;969</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">&quot;Analyse particles&quot; - potential bug if applied to 4-dimensional stack</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-12-13 13:24:25 CST</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-12-13 13:24:25">
+  <input type="hidden" name="longdesclength" value="3">
+  <input type="hidden" name="id" value="969">
+  <input type="hidden" name="token" value="1492731867-KgbaPh8XSEJtLFwlPYUAkDq68OQ53LclQwhy0nqDA_g">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="969.html"><b>Bug&nbsp;969</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">&quot;Analyse particles&quot; - potential bug if applied to 4-dimensional stack</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>&quot;Analyse particles&quot; - potential bug if applied to 4-dimensional stack
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-12-07 16:45 CST by <span class="vcard"><span class="fn">Kay Schink</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-12-13 13:24 CST 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="k.schink">k.schink</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kay Schink</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-07 16:45:59 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+I have recently come across a problem in the &quot;Analyse Particles&quot; function which I think might be a bug in handling of hyperstacks or ROI position handling. 
+
+I analyse a thresholded timeseries (Z + T) and add identified particles to the ROI manager. I should note that I get the time series by the &quot;Duplicate&quot; command from a composite image.
+
+At the first timepoint, ROIs are added to the ROI manager for each for each of the Z-Planes. 
+However, problems start to occur once the stack reaches the last z-plane of timepoint 1. I would expect that now the ROIs from timepoint 2 should be added to the manager. 
+
+However, when reaching the end of the Z-Stack of timepoint 1, the ROI positions jump not to timepoint 2, but rather to the next timepoint that would come after the Z-Stack, e.g. if the z-stack has 5 planes, the next added ROIs will be localized to Timepoint 6, Z-Position 5.  After this, the ROI-Positions will cycle not through the Z-planes, but rather through the time-axis until the end is reached. After this, the time-axis jumps to a later timepoint (in the case of the &quot;Mitosis 5D&quot; sample timeseries to timepoint 11) and from there on behaves as expected, e.g. ROIs are added first to z-planes and when the last-Z-plane is reached, ROIs will be added to the first Z-plane of the next timepoint..
+I do not think that the problem is with the definition of the ROIs as such, since the shape of the ROIs corresponds to the segmented particles at the expected timepoints. I rather think that wrong position info is written to the ROIs when adding them to the ROI manager. 
+The problem occurs both in FIJI and in plain ImageJ, both in a current version and in the FIJI lifeline version.
+I use Windows 7 64bit version, and run ImageJ / Fiji in 64 bit. However, I have tested the plain ImageJ 32 bit version and find the same behaviour.
+
+I have attached a minimal macro (see below) that calls the &quot;Mitosis&quot; sample, extracts the first channel, applies a threshold  and then runs the Particle analyser which adds the ROIs to the manager. Then the positions of the ROIs in question are printed to the log in order to illustrate the problem.
+
+Thanks a lot for your help
+
+Kay
+
+
+
+// Begin sample macro
+
+run(&quot;Mitosis (26MB, 5D stack)&quot;);
+run(&quot;Duplicate...&quot;, &quot;duplicate channels=1&quot;);
+//run(&quot;Threshold...&quot;);
+setAutoThreshold(&quot;Triangle dark&quot;);
+setOption(&quot;BlackBackground&quot;, true);
+run(&quot;Convert to Mask&quot;, &quot;method=Triangle background=Dark black&quot;);
+
+run(&quot;Analyze Particles...&quot;, &quot;size=1-Infinity add stack&quot;);
+
+// Printing of the ROI positions to the log, not necessary for bug 
+
+roiManager(&quot;Select&quot;, 0);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+roiManager(&quot;Select&quot;, 1);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+roiManager(&quot;Select&quot;, 2);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+roiManager(&quot;Select&quot;, 3);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+roiManager(&quot;Select&quot;, 4);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+//normal behaviour until here, then the &quot;Frame&quot; position jumps not to Frame &quot;2&quot; but to Frame 6 (continues from the &quot;Z&quot; position).
+roiManager(&quot;Select&quot;, 5);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+roiManager(&quot;Select&quot;, 6);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+
+//end of the Timeseries for Z=5 reached, jumps to T=11 and Z=1
+
+roiManager(&quot;Select&quot;, 51);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+roiManager(&quot;Select&quot;, 52);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+roiManager(&quot;Select&quot;, 53);
+Stack.getPosition(channel, slice, frame);
+print(&quot;Position (C, Z, T): &quot;+channel+&quot;, &quot;+slice+&quot;, &quot;+frame);
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: D:\Fiji.app/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; D:\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20141126221327)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20141125171145)
+BigDataViewer: <a href="http://sites.imagej.net/Pietzsch/">http://sites.imagej.net/Pietzsch/</a> (last check:20141126120148)
+BioVoxxel: <a href="http://sites.imagej.net/BioVoxxel/">http://sites.imagej.net/BioVoxxel/</a> (last check:20141201130413)
+CMCI-EMBL: <a href="http://sites.imagej.net/Miura/">http://sites.imagej.net/Miura/</a> (last check:20140718160940)
+GDSC: <a href="http://sites.imagej.net/GDSC/">http://sites.imagej.net/GDSC/</a> (last check:20141118185052)
+GDSC-SMLM: <a href="http://sites.imagej.net/GDSC-SMLM/">http://sites.imagej.net/GDSC-SMLM/</a> (last check:20140918121334)
+NucleusJ: <a href="http://sites.imagej.net/PouletAxel/">http://sites.imagej.net/PouletAxel/</a> (last check:20141101103602)
+
+Files not up-to-date:
+  8c286564 (LOCAL_ONLY) 20141111230316 macros/BatchMacro.ijm
+  ec6d8e8c (LOCAL_ONLY) 20141111182043 macros/Measure_Nuclei.ijm
+  10411e90 (LOCAL_ONLY) 20141015104827 plugins/Calc_TIRF.class
+  011c812b (LOCAL_ONLY) 20141009112831 plugins/Drop_Script-1.0.0.jar
+  ec17890b (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/JHotDraw.jar
+  91ece67d (LOCAL_ONLY) 20140714110424 plugins/Omero/omero/JWlz.jar
+  36cb5c0a (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/TableLayout.jar
+  ff61a1b4 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/ai_path.jar
+  c3a86bd0 (LOCAL_ONLY) 20140714110424 plugins/Omero/omero/assumeng.jar
+  364315a9 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/axis.jar
+  0af1624e (LOCAL_ONLY) 20140714110422 plugins/Omero/omero/backport-util-concurrent.jar
+  52e3b543 (LOCAL_ONLY) 20140805165734 plugins/Omero/omero/blitz-javadoc.jar
+  d336fa64 (LOCAL_ONLY) 20140805165708 plugins/Omero/omero/blitz-sources.jar
+  28e0f97f (LOCAL_ONLY) 20140805165740 plugins/Omero/omero/blitz.jar
+  189f61fa (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/bufr.jar
+  a2a2616b (LOCAL_ONLY) 20140805165522 plugins/Omero/omero/common-javadoc.jar
+  793e910c (LOCAL_ONLY) 20140805165520 plugins/Omero/omero/common-sources.jar
+  d7cff6e6 (LOCAL_ONLY) 20140805165522 plugins/Omero/omero/common.jar
+  940245e0 (LOCAL_ONLY) 20140714110222 plugins/Omero/omero/commons-codec.jar
+  64d8a654 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-collections.jar
+  86ab9004 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-digester.jar
+  9e9eb622 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-discovery.jar
+  c62bea1b (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-httpclient.jar
+  d59d3e4c (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-io.jar
+  f6139801 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-lang.jar
+  7018824c (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-logging.jar
+  60a83b54 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/commons-validator.jar
+  abf211c5 (LOCAL_ONLY) 20140714110422 plugins/Omero/omero/ehcache-core.jar
+  991b5e8a (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/gicentreUtils.jar
+  dbcde867 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/gluegen-rt.jar
+  e33cecc2 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/grib.jar
+  69cd59e7 (LOCAL_ONLY) 20120802213046 plugins/Omero/omero/guava.jar
+  85c28658 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/hibernate-jpa-2.0-api.jar
+  1911c9e1 (LOCAL_ONLY) 20140714110422 plugins/Omero/omero/ice-glacier2.jar
+  b1d709fb (LOCAL_ONLY) 20140714110422 plugins/Omero/omero/ice-grid.jar
+  c49b8fa2 (LOCAL_ONLY) 20140714110422 plugins/Omero/omero/ice-storm.jar
+  53aa5393 (LOCAL_ONLY) 20140714110422 plugins/Omero/omero/ice.jar
+  6e7614ee (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/ij.jar
+  6ce638fb (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/ini4j.jar
+  f1b65457 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/java-getopt.jar
+  c827227f (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/java-image-scaling.jar
+  e72f9b2b (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/jaxrpc.jar
+  4156c7b5 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/jcommon.jar
+  c57f20b0 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/jfreechart.jar
+  df7a0b63 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/jna.jar
+  4c09d41c (LOCAL_ONLY) 20140714110424 plugins/Omero/omero/joda-time.jar
+  9a9b947a (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/jogl.jar
+  d2af3ac9 (LOCAL_ONLY) 20140714110424 plugins/Omero/omero/kryo.jar
+  b2911375 (LOCAL_ONLY) 20140805165430 plugins/Omero/omero/lwf-stubs.jar
+  19da6ad6 (LOCAL_ONLY) 20140805165516 plugins/Omero/omero/model-psql-javadoc.jar
+  0a346f32 (LOCAL_ONLY) 20140805165508 plugins/Omero/omero/model-psql-sources.jar
+  407db314 (LOCAL_ONLY) 20140805165516 plugins/Omero/omero/model-psql.jar
+  a127d67c (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/nanoxml.jar
+  6c7ec21f (LOCAL_ONLY) 20140714110424 plugins/Omero/omero/native-lib-loader.jar
+  a51a31db (LOCAL_ONLY) 20140714110424 plugins/Omero/omero/netcdf.jar
+  e665d66a (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/ols-client.jar
+  18382f06 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/ome-java.jar
+  7af6ddeb (LOCAL_ONLY) 20131104145522 plugins/Omero/omero/perf4j.jar
+  6340be70 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/physics.jar
+  b3056152 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/platform.jar
+  4ef2cfd3 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/poi.jar
+  af4b3176 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/processing-controlP5.jar
+  1cb045e1 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/processing-core.jar
+  2e6cf711 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/saaj.jar
+  eedc0cd9 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/serializer.jar
+  5085d943 (LOCAL_ONLY) 20140714110424 plugins/Omero/omero/slf4j-api.jar
+  1deeabc9 (LOCAL_ONLY) 20140805165428 plugins/Omero/omero/specification.jar
+  ba32bfdf (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/swingx.jar
+  7c4005e7 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/wsdl4j.jar
+  c8694e76 (LOCAL_ONLY) 20131104145444 plugins/Omero/omero/xalan.jar
+  8c81f781 (LOCAL_ONLY) 20140805170144 plugins/Omero/omero_ij.jar
+  46cc7ddc (LOCAL_ONLY) 20141029210256 plugins/SaveAsMovie_win64.jar
+  b2afde18 (LOCAL_ONLY) 20141113134553 plugins/cell_counter.jar</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kay Schink</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-07 17:04:48 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I am very sorry, I made a small error with the demo macro I posted.
+
+The macro misses the &quot;stack&quot; parameter at this line :
+
+run(&quot;Convert to Mask&quot;, &quot;method=Triangle background=Dark black&quot;);
+
+should be :
+
+run(&quot;Convert to Mask&quot;, &quot;method=Triangle background=Dark black stack&quot;);
+
+to run properly, otherwise the thresholding fails..
+This is independent of the reported error, just the preprocessing of the demo data...
+
+Best wishes
+
+Kay</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-12-13 13:24:25 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This bug is fixed in the latest ImageJ daily build (1.49n13). The following is a modified version of the test macro that displays the position and size of all objects found by the particle analyzer. it omits the
+
+   run(&quot;Convert to Mask&quot;, &quot;method=Triangle background=Dark black stack&quot;);
+
+statement because it is only needed when using the &quot;Convert to Mask&quot; command's &quot;Calculate threshold for each image&quot;option.
+
+  run(&quot;Mitosis (26MB, 5D stack)&quot;);
+  run(&quot;Duplicate...&quot;, &quot;duplicate channels=1&quot;);
+  setAutoThreshold(&quot;Triangle dark&quot;);
+  roiManager(&quot;reset&quot;);
+  run(&quot;Analyze Particles...&quot;, &quot;size=1-Infinity add stack&quot;);
+  run(&quot;Clear Results&quot;);
+  n = roiManager(&quot;count&quot;);
+  for (i=0; i&lt;n; i++) {
+     roiManager(&quot;Select&quot;, i);
+     Stack.getPosition(c, z, t);
+     getStatistics(area, mean);
+     setResult(&quot;z&quot;,i,z);
+     setResult(&quot;t&quot;,i,t);
+     setResult(&quot;area&quot;,i,area);
+     setResult(&quot;mean&quot;,i,mean);
+  }
+  updateResults;
+  run(&quot;Select None&quot;);
+
+And here is a version of the macro that uses an overlay instead of the ROI Manager:
+
+  run(&quot;Mitosis (26MB, 5D stack)&quot;);
+  run(&quot;Duplicate...&quot;, &quot;duplicate channels=1&quot;);
+  setAutoThreshold(&quot;Triangle dark&quot;);
+  run(&quot;Analyze Particles...&quot;, &quot;size=1-Infinity show=[Overlay Outlines] stack&quot;);
+  run(&quot;Clear Results&quot;);
+  n = Overlay.size
+  for (i=0; i&lt;n; i++) {
+     Overlay.activateSelection(i)
+     Stack.getPosition(c, z, t);
+     getStatistics(area, mean);
+     setResult(&quot;z&quot;,i,z);
+     setResult(&quot;t&quot;,i,t);
+     setResult(&quot;area&quot;,i,area);
+     setResult(&quot;mean&quot;,i,mean);
+  }
+  updateResults;
+  run(&quot;Select None&quot;);</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

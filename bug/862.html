@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 862 &ndash; Virtual stack of raw import becomes unusable after going beyond EOF</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_Plugins bz_bug_862 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;862</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Virtual stack of raw import becomes unusable after going beyond EOF</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-07-21 10:19:42 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-07-21 10:19:42">
+  <input type="hidden" name="longdesclength" value="1">
+  <input type="hidden" name="id" value="862">
+  <input type="hidden" name="token" value="1492731822-IZ1rtOO0bztAMXlnOTgrMOHJCjQ8FCjIW_N7IPji_lE">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="862.html"><b>Bug&nbsp;862</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Virtual stack of raw import becomes unusable after going beyond EOF</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Virtual stack of raw import becomes unusable after going beyond EOF
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-07-21 10:19 CDT by <span class="vcard"><span class="fn">Adrian Daerr</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-07-21 10:19 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="adrian.daerr">adrian.daerr</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Daerr</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-21 10:19:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >If a file is opened via File-&gt;Import-&gt;Raw... using the &quot;Use Virtual Stack&quot; option, the &quot;Number of Images&quot; parameter is not checked against the file size, and taken as the stack size (i.e. the maximum value for the slice slider at the bottom of the image window). If the file underlying the Virtual Stack does not contain this number of images (i.e. is smaller than Height*Width*NumberOfImages pixels), then trying to access the last images of the Virtual Stack unsurprisingly results in a &quot;Read error or file not found (741)&quot; (Log Window) and a FileOpener error dialog &quot;FileInfo parameter error: Offset+Image size &gt; file size&quot;. The dialog opens three times in a row, and after that (here comes the bug) the slider in the image window does not update the visible slice anymore, even if one goes back to the beginning of the stack. That is, the Image Window appears to be frozen on one of the last loadable slices.
+
+Work-around: calculate the correct number of images from the file size and the image dimensions by hand before importing. This avoids the bug by never creating too big a virtual stack, at the expense of being slightly cumbersome.
+
+Expected/desired behaviour:
+- at least return to a state where the image window showing the virtual stack is usable
+- if possible check the file size and update the virtual stack size accordingly (either once on import, or upon trying to access an image beyond the end of the backing file). If not desireable in all situations, add as a sub-option to &quot;Use Virtual Stack&quot; in the raw import dialog.
+- make the error dialog non modal to make this error less disruptive for the workflow; or use only the log error, or display some text inside the virtual image stack window (on the ImageCanvas) in lieu of a non-existing slice (something like &quot;Could not read slice number ###&quot;).
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.14-1-amd64
+  java.version =&gt; 1.8.0_05
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.8.0_05-b13
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 25.5-b02
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.8
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /usr/lib/jvm/jdk-8-oracle-x64/jre
+  imagej.dir =&gt; /home/adrian/bin/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140712000647)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140715020940)
+Fijiplugins-AD: <a href="http://sites.imagej.net/Daerr/">http://sites.imagej.net/Daerr/</a> (last check:20130606182917)
+
+Files not up-to-date:
+  7ecaf631 (OBSOLETE_UNINSTALLED) 20140425235836 jars/jruby-complete-1.7.11.jar
+  24d47d70 (OBSOLETE_UNINSTALLED) 20120816131104 jars/junit-4.8.1.jar
+  c0eceffa (LOCAL_ONLY) 20130424131105 plugins/About/Get_help_for_PlugIn.class
+  8e1a2522 (LOCAL_ONLY) 20130424131105 plugins/About/Get_help_for_PlugIn_improved.class
+  7a5e7811 (LOCAL_ONLY) 20130424131106 plugins/About/PlugInDoc.class
+  ffb77008 (LOCAL_ONLY) 20130424131106 plugins/About/PlugIn_Doc_Browser$1.class
+  e0400158 (LOCAL_ONLY) 20130424131106 plugins/About/PlugIn_Doc_Browser.class
+  a2c4858c (LOCAL_ONLY) 20130424131106 plugins/Acquisition/Convert_BayerFilter_ToRGB.class
+  b0b942c4 (LOCAL_ONLY) 20130424131106 plugins/Acquisition/Grabber_.class
+  083b4020 (LOCAL_ONLY) 20130424131106 plugins/Acquisition/JNIAkiz.class
+  8ac0e732 (LOCAL_ONLY) 20130424131107 plugins/Acquisition/ScionFGAkiz.class
+  fc4f6de2 (LOCAL_ONLY) 20130424131107 plugins/Bacteries/Detect_Bacilli.class
+  d1d67b4f (LOCAL_ONLY) 20130424131108 plugins/Bacteries/Detect_and_Separate_Bacilli.class
+  d5c4a62d (LOCAL_ONLY) 20130424131108 plugins/Bacteries/Dilate_.class
+  8b1fea26 (LOCAL_ONLY) 20130424131109 plugins/Bacteries/Find_Bacteria.class
+  28d65ae2 (LOCAL_ONLY) 20130424131109 plugins/Bacteries/Find_Connex_Components.class
+  64dbbcec (LOCAL_ONLY) 20130424131109 plugins/Bacteries/Intensity_curvature.class
+  6b29ae9d (LOCAL_ONLY) 20130424131110 plugins/Bacteries/Otsu_Thresholding.jar
+  92d35927 (LOCAL_ONLY) 20130424131110 plugins/Bacteries/Separate_Bacilli_Subtili.class
+  86bc70bf (LOCAL_ONLY) 20130424131110 plugins/Bacteries/TranslationStageRemote$1.class
+  9956f50a (LOCAL_ONLY) 20130424131110 plugins/Bacteries/TranslationStageRemote$2.class
+  30bf6e0d (LOCAL_ONLY) 20130424131110 plugins/Bacteries/TranslationStageRemote$3.class
+  4604d077 (LOCAL_ONLY) 20130424131111 plugins/Bacteries/TranslationStageRemote.class
+  33f7d91e (LOCAL_ONLY) 20130424131111 plugins/Bacteries/Translation_Stage$1.class
+  8d2b5338 (LOCAL_ONLY) 20130424131111 plugins/Bacteries/Translation_Stage.class
+  d58afe12 (LOCAL_ONLY) 20130424131314 plugins/Bacteries/Watershed_Upgrade/MaximumFinderUpgrade$MaxPoint.class
+  dbdb8a8e (LOCAL_ONLY) 20130424131315 plugins/Bacteries/Watershed_Upgrade/MaximumFinderUpgrade.class
+  1bb0c2dd (LOCAL_ONLY) 20130424131315 plugins/Bacteries/Watershed_Upgrade/Watershed_Upgrade.class
+  ed54455d (LOCAL_ONLY) 20130424131111 plugins/Bricabrac/Assisted_Color_Segmenter$Color.class
+  1dc21700 (LOCAL_ONLY) 20130424131112 plugins/Bricabrac/Assisted_Color_Segmenter.class
+  e0c6c648 (LOCAL_ONLY) 20130424131112 plugins/Bricabrac/Batch_Statistics.class
+  536b5aa7 (LOCAL_ONLY) 20130424131112 plugins/Bricabrac/ClearOutside_.class
+  4e2acba1 (LOCAL_ONLY) 20130424131112 plugins/Bricabrac/Color_Space_Converter$ColorSpaceConverter.class
+  d812b2a3 (LOCAL_ONLY) 20130424131112 plugins/Bricabrac/Color_Space_Converter.class
+  ced5243e (LOCAL_ONLY) 20130424131331 plugins/Bricabrac/FFTJ/DeconvolutionJ.txt
+  8431d181 (LOCAL_ONLY) 20130424131331 plugins/Bricabrac/FFTJ/DeconvolutionJ_.class
+  9b08e62b (LOCAL_ONLY) 20130424131332 plugins/Bricabrac/FFTJ/FFTJ.txt
+  1c581a0b (LOCAL_ONLY) 20130424131332 plugins/Bricabrac/FFTJ/FFTJ_.class
+  44596d4d (LOCAL_ONLY) 20130424131339 plugins/Bricabrac/FFTJ/deconvolutionj/ComplexNum2.class
+  460f96ae (LOCAL_ONLY) 20130424131339 plugins/Bricabrac/FFTJ/deconvolutionj/ComplexNumPrecision2.class
+  694840ec (LOCAL_ONLY) 20130424131339 plugins/Bricabrac/FFTJ/deconvolutionj/ComplexValueType2.class
+  c56cfdbc (LOCAL_ONLY) 20130424131339 plugins/Bricabrac/FFTJ/deconvolutionj/Deconvoluter3D2.class
+  778e7af7 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/DoublePrecComplNum2.class
+  23d5a955 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/DoublePrecFFT3D2.class
+  995fb908 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/FFT3D2$1.class
+  f6cca3e5 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/FFT3D2$Direction.class
+  079d1a67 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/FFT3D2.class
+  642260d8 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/FourierDomainOrigin2.class
+  b1eda400 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/ImageResizeMode2.class
+  bd909dd7 (LOCAL_ONLY) 20130424131340 plugins/Bricabrac/FFTJ/deconvolutionj/Interpolation2.class
+  92bfbb54 (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/deconvolutionj/MyImageTools2.class
+  6024caac (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/deconvolutionj/MyMathLib2.class
+  623d4177 (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/deconvolutionj/Precision2.class
+  a59df6e1 (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/deconvolutionj/PublicObservable2.class
+  74ab8e4a (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/deconvolutionj/SinglePrecComplNum2.class
+  95be0fb6 (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/deconvolutionj/SinglePrecFFT3D2.class
+  d72571d6 (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/fftj/ComplexNum.class
+  c113924c (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/fftj/ComplexNumPrecision.class
+  ce250058 (LOCAL_ONLY) 20130424131341 plugins/Bricabrac/FFTJ/fftj/ComplexValueType.class
+  01bca5df (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/DisclaimerWindow.class
+  ec758438 (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/DoublePrecComplNum.class
+  8597091b (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/DoublePrecFFT3D.class
+  bfce1a92 (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/FFT3D$1.class
+  06450a2c (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/FFT3D$Direction.class
+  dd3cc121 (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/FFT3D.class
+  4f648e02 (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/FourierDomainOrigin.class
+  a348d300 (LOCAL_ONLY) 20130424131342 plugins/Bricabrac/FFTJ/fftj/MyMathLib.class
+  9b3079a9 (LOCAL_ONLY) 20130424131343 plugins/Bricabrac/FFTJ/fftj/OutputFrame$1.class
+  551026cd (LOCAL_ONLY) 20130424131343 plugins/Bricabrac/FFTJ/fftj/OutputFrame$MyActionL.class
+  73c5b39b (LOCAL_ONLY) 20130424131343 plugins/Bricabrac/FFTJ/fftj/OutputFrame$MyItemL.class
+  76869fb7 (LOCAL_ONLY) 20130424131343 plugins/Bricabrac/FFTJ/fftj/OutputFrame.class
+  c5079216 (LOCAL_ONLY) 20130424131343 plugins/Bricabrac/FFTJ/fftj/PublicObservable.class
+  9eaedd5b (LOCAL_ONLY) 20130424131343 plugins/Bricabrac/FFTJ/fftj/SinglePrecComplNum.class
+  882394c2 (LOCAL_ONLY) 20130424131343 plugins/Bricabrac/FFTJ/fftj/SinglePrecFFT3D.class
+  e719ed9f (LOCAL_ONLY) 20130424131113 plugins/Bricabrac/Lut_Lister.class
+  d2356b0c (LOCAL_ONLY) 20130424131114 plugins/Bricabrac/MultiTracker_.class
+  ddf89489 (LOCAL_ONLY) 20130424131114 plugins/Bricabrac/Sketch_segmenter$1.class
+  6cbfd3a2 (LOCAL_ONLY) 20130424131114 plugins/Bricabrac/Sketch_segmenter$Task.class
+  262792b2 (LOCAL_ONLY) 20130424131114 plugins/Bricabrac/Sketch_segmenter.class
+  9ed468d4 (LOCAL_ONLY) 20130424131117 plugins/Bricabrac/printLibPath_PlugIn.class
+  bcc104b4 (LOCAL_ONLY) 20130424131120 plugins/Exemples plugins/Background_Task.class
+  d79c935f (LOCAL_ONLY) 20130424131121 plugins/Exemples plugins/Circle_Test.class
+  923a0c57 (LOCAL_ONLY) 20130424131121 plugins/Exemples plugins/CustomCanvas.class
+  410aaa63 (LOCAL_ONLY) 20130424131121 plugins/Exemples plugins/CustomWindow.class
+  a48cc31a (LOCAL_ONLY) 20130424131121 plugins/Exemples plugins/Fit_arche_test.class
+  b5e14d8c (LOCAL_ONLY) 20130424131121 plugins/Exemples plugins/Generic_Dialog_subclass_example.class
+  702fd064 (LOCAL_ONLY) 20130424131122 plugins/Exemples plugins/IP_Demo.class
+  81067279 (LOCAL_ONLY) 20130424131122 plugins/Exemples plugins/Image_Inverter.class
+  df7f0a08 (LOCAL_ONLY) 20130424131122 plugins/Exemples plugins/Key_Listener.class
+  e6239390 (LOCAL_ONLY) 20130424131122 plugins/Exemples plugins/Message_Test.class
+  0742109a (LOCAL_ONLY) 20130424131123 plugins/Exemples plugins/Mouse_Listener.class
+  ee060659 (LOCAL_ONLY) 20130424131123 plugins/Exemples plugins/Panel_Window.class
+  7ebceeab (LOCAL_ONLY) 20130424131123 plugins/Exemples plugins/Red_And_Blue.class
+  e681238a (LOCAL_ONLY) 20130424131124 plugins/Exemples plugins/RoughnessDialog.class
+  687c3a2a (LOCAL_ONLY) 20130424131124 plugins/Exemples plugins/Step_Maker.class
+  6393b611 (LOCAL_ONLY) 20130424131124 plugins/Exemples plugins/Text_Demo.class
+  873e8342 (LOCAL_ONLY) 20130424131334 plugins/Exemples plugins/rab/Demo_IJ.class
+  a9a93845 (LOCAL_ONLY) 20130424131334 plugins/Exemples plugins/rab/Info_Meandre.class
+  7841dd8e (LOCAL_ONLY) 20130424131335 plugins/Exemples plugins/rab/PluginFilter_Test.class
+  773ef14e (LOCAL_ONLY) 20130424131335 plugins/Exemples plugins/rab/Reopen_XYTrace.class
+  e9023d04 (LOCAL_ONLY) 20130425175556 plugins/Fast_Filters.class
+  a2cb9010 (LOCAL_ONLY) 20130424131125 plugins/Input-Output/AnimatedPNGWriter_.jar
+  0d12cd66 (LOCAL_ONLY) 20130424131125 plugins/Input-Output/BZip2Constants.class
+  b5e6474f (LOCAL_ONLY) 20130424131125 plugins/Input-Output/CBZip2InputStream.class
+  67c0c4b0 (LOCAL_ONLY) 20130424131125 plugins/Input-Output/CBZip2OutputStream$1.class
+  5aabcee4 (LOCAL_ONLY) 20130424131126 plugins/Input-Output/CBZip2OutputStream$StackElem.class
+  f8475f39 (LOCAL_ONLY) 20130424131126 plugins/Input-Output/CBZip2OutputStream.class
+  2cce003c (LOCAL_ONLY) 20130424131126 plugins/Input-Output/CRC.class
+  727eb7a1 (LOCAL_ONLY) 20130424131126 plugins/Input-Output/Grid_.class
+  857a4c82 (LOCAL_ONLY) 20130424131126 plugins/Input-Output/List_Opener.class
+  eeb4d0b6 (LOCAL_ONLY) 20130424131126 plugins/Input-Output/Open_TIFF_BZip2.class
+  dce980c1 (LOCAL_ONLY) 20130424131127 plugins/Input-Output/Save_Stack_as_multiple_PNG.class
+  76483666 (LOCAL_ONLY) 20130424131127 plugins/Input-Output/Save_TIFF_BZip2.class
+  715dd0dd (LOCAL_ONLY) 20130424131127 plugins/Input-Output/Surface_Plotter.class
+  c1e11bd4 (LOCAL_ONLY) 20130424131127 plugins/Input-Output/ZVI_Reader$ZVIBlock.class
+  c3342f24 (LOCAL_ONLY) 20130424131128 plugins/Input-Output/ZVI_Reader.class
+  ae681c35 (LOCAL_ONLY) 20130424131128 plugins/Input-Output/ZiStream_Postprocess.class
+  6afc511b (LOCAL_ONLY) 20130429184906 plugins/Meandres/Derive_spatio.class
+  e6dc7629 (LOCAL_ONLY) 20130501142946 plugins/Meandres/Linear_decomposition.class
+  f6848ccd (LOCAL_ONLY) 20130424131239 plugins/Scion/Capture_Grayscale.class
+  ffd4b8af (LOCAL_ONLY) 20130424131239 plugins/Scion/Capture_Grayscale_HR.class
+  f11b48a4 (LOCAL_ONLY) 20130424131239 plugins/Scion/Capture_RGB.class
+  2bab8223 (LOCAL_ONLY) 20130424131240 plugins/Scion/Capture_RGB_HR.class
+  2cf101d3 (LOCAL_ONLY) 20130424131240 plugins/Scion/Live_Capture.class
+  6d88799a (OBSOLETE_UNINSTALLED) 20131127185136 plugins/Script_Editor-2.0.0-SNAPSHOT.jar
+  7b60c4a6 (LOCAL_ONLY) 20140404152012 plugins/Stacks/Label_Stamper.class
+  f238a34e (LOCAL_ONLY) 20130424131241 plugins/Stacks/Label_Stamper_CorianderTime.class
+  f5298314 (LOCAL_ONLY) 20130424131242 plugins/Stacks/StackHistogramWindow.class
+  3f4e6c01 (LOCAL_ONLY) 20130424131242 plugins/Stacks/Stack_Average.class
+  928561d4 (LOCAL_ONLY) 20130424131242 plugins/Stacks/Stack_Concatenator.class
+  8cf77dca (LOCAL_ONLY) 20130424131243 plugins/Stacks/Stack_Differentiator.class
+  91d683f3 (LOCAL_ONLY) 20130424131243 plugins/Stacks/Stack_Histogram.class
+  824d33ee (LOCAL_ONLY) 20130424131243 plugins/Stacks/Stack_Median.class
+  598ed967 (LOCAL_ONLY) 20130424131244 plugins/Stacks/Stack_MinMaxMean.class
+  57fd68f7 (LOCAL_ONLY) 20130424131244 plugins/Stacks/Stack_Minimum.class
+  44fd431f (LOCAL_ONLY) 20130424131244 plugins/Stacks/Stack_Particle_Analyzer.class
+  7cf7b93e (LOCAL_ONLY) 20130424131244 plugins/Stacks/Time_Stamper_CorianderTime.class
+  48ab061c (LOCAL_ONLY) 20130424131245 plugins/Stacks/Tracker_.class
+  c977271e (LOCAL_ONLY) 20130424131245 plugins/Straighten/AutRefNodeDialog.class
+  468e585a (LOCAL_ONLY) 20130424131245 plugins/Straighten/AutRefOptionDialog.class
+  da927443 (LOCAL_ONLY) 20130424131245 plugins/Straighten/AutRefPanel.class
+  4cd417f0 (LOCAL_ONLY) 20130424131245 plugins/Straighten/ButtonPanel.class
+  f60cdb89 (LOCAL_ONLY) 20130424131246 plugins/Straighten/CubicCurveMaker.class
+  78967ba7 (LOCAL_ONLY) 20130424131246 plugins/Straighten/DialPanel.class
+  5e50810b (LOCAL_ONLY) 20130424131246 plugins/Straighten/DoubleVector.class
+  7dfe9fad (LOCAL_ONLY) 20130424131246 plugins/Straighten/Fourier.class
+  dff569ec (LOCAL_ONLY) 20130424131246 plugins/Straighten/Function.class
+  cdab71c4 (LOCAL_ONLY) 20130424131246 plugins/Straighten/GeneralDialog.class
+  162715aa (LOCAL_ONLY) 20130424131246 plugins/Straighten/Integration.class
+  14e69c44 (LOCAL_ONLY) 20130424131247 plugins/Straighten/Interpolation.class
+  f0420b90 (LOCAL_ONLY) 20130424131247 plugins/Straighten/JCkBoxPanel.class
+  f5b59502 (LOCAL_ONLY) 20130424131247 plugins/Straighten/Nodes.class
+  bd43eb6d (LOCAL_ONLY) 20130424131247 plugins/Straighten/Point2DVector.class
+  3263b710 (LOCAL_ONLY) 20130424131247 plugins/Straighten/SplineImageCanvas.class
+  6b6fcaaf (LOCAL_ONLY) 20130424131247 plugins/Straighten/SplineWindow.class
+  b28d3d9b (LOCAL_ONLY) 20130424131248 plugins/Straighten/StraightArray.class
+  e75397f1 (LOCAL_ONLY) 20130424131248 plugins/Straighten/Straighten_.class
+  91dfab3f (LOCAL_ONLY) 20130424131249 plugins/Straighten/StringVector.class
+  cea846cf (LOCAL_ONLY) 20130424131250 plugins/Straighten/curvDialog.class
+  7ced5ac4 (LOCAL_ONLY) 20130424131250 plugins/Straighten/diffPattWindow.class
+  f433ad06 (LOCAL_ONLY) 20130424131250 plugins/Straighten/graphicsDialog$1.class
+  4c19adc0 (LOCAL_ONLY) 20130424131250 plugins/Straighten/graphicsDialog.class
+  91f0b776 (LOCAL_ONLY) 20130424131250 plugins/Straighten/messageDialog.class
+  6d4e7210 (LOCAL_ONLY) 20130424131250 plugins/Straighten/nodesDialog.class
+  35c1d28b (LOCAL_ONLY) 20130424131250 plugins/Straighten/paddingDialog.class
+  15cc9e47 (LOCAL_ONLY) 20130424131251 plugins/Straighten/radioButtonDialog.class
+  58695529 (LOCAL_ONLY) 20130424131251 plugins/Straighten/strOptDialog.class
+  543a36e5 (LOCAL_ONLY) 20130424131251 plugins/Traitement/Coordonnees_trait.class
+  44642937 (LOCAL_ONLY) 20130424131251 plugins/Traitement/Detection_Grille.class
+  0242e720 (LOCAL_ONLY) 20130424131251 plugins/Traitement/Detection_Grille_suite$1.class
+  88979ce3 (LOCAL_ONLY) 20130424131251 plugins/Traitement/Detection_Grille_suite$InfoPixel.class
+  1c4dc038 (LOCAL_ONLY) 20130424131252 plugins/Traitement/Detection_Grille_suite.class
+  034c5593 (LOCAL_ONLY) 20130424131252 plugins/Traitement/Detection_Meandre.class
+  c1d4b8ad (LOCAL_ONLY) 20130424131252 plugins/Traitement/DeuxCercles.class
+  14e64178 (LOCAL_ONLY) 20130424131253 plugins/Traitement/Deux_Cercles.class
+  88e26a7a (LOCAL_ONLY) 20130424131253 plugins/Traitement/Find_Lakes.class
+  bae3ad25 (LOCAL_ONLY) 20130424131253 plugins/Traitement/Gradient_Killer.class
+  09e9edc0 (LOCAL_ONLY) 20130424131253 plugins/Traitement/Line_Analyzer.class
+  e4aba29b (LOCAL_ONLY) 20130424131253 plugins/Traitement/Meandre_Amplitude.class
+  92ff4e92 (LOCAL_ONLY) 20130424131254 plugins/Traitement/Mesure_Aire_Goutte.class
+  35ba5fd2 (LOCAL_ONLY) 20130424131254 plugins/Traitement/Moyenne_verticale.class
+  96ff6ca6 (LOCAL_ONLY) 20130424131254 plugins/Traitement/Pente_configinverse.class
+  2d781fb9 (LOCAL_ONLY) 20130424131254 plugins/Traitement/Resize_Canvas.class
+  271c5ba3 (LOCAL_ONLY) 20130424131255 plugins/Traitement/ScanningTipDialog.class
+  c84d7434 (LOCAL_ONLY) 20130424131255 plugins/Traitement/Scanning_Tip_BG_Subtractor.class
+  bd099716 (LOCAL_ONLY) 20131001170106 plugins/Traitement/Spatio_Circulaire.class
+  251656ef (LOCAL_ONLY) 20130424131255 plugins/Traitement/Straighten_Perspective.class
+  71a6f2f6 (LOCAL_ONLY) 20130424131255 plugins/Traitement/Volume_goutte.class
+  1ae0f1d0 (LOCAL_ONLY) 20130424131256 plugins/Traitement/Volume_goutte_pretraitement.class
+  d08c897b (LOCAL_ONLY) 20130424131257 plugins/drop_analysis/drop_analysis.jar
+  1be0d288 (LOCAL_ONLY) 20130424131301 plugins/drop_analysis/history.txt
+  795a5d17 (LOCAL_ONLY) 20130424131302 plugins/drop_analysis/prefsLBADSA.txt
+  87f1c411 (LOCAL_ONLY) 20130424131302 plugins/drop_analysis/prefsSnake.txt
+  cd86a9e4 (LOCAL_ONLY) 20130424131302 plugins/drop_analysis/prefsliquids.txt
+  9b51138d (LOCAL_ONLY) 20130424131312 plugins/vieux plugins Maison/Aire_Goutte.class
+  4f702d11 (LOCAL_ONLY) 20130424131312 plugins/vieux plugins Maison/Aire_Goutte_2.class
+  4e99ee3c (LOCAL_ONLY) 20130424131313 plugins/vieux plugins Maison/Bal_des_Masques.class
+  11e3c576 (LOCAL_ONLY) 20130424131313 plugins/vieux plugins Maison/Courbure_o_metre.class
+  7f110f61 (LOCAL_ONLY) 20130424131313 plugins/vieux plugins Maison/Extract_curve.class
+  e41cc8e0 (LOCAL_ONLY) 20130424131313 plugins/vieux plugins Maison/Max_Laze_Ki_Tue.class
+  21bc97bf (LOCAL_ONLY) 20130424131314 plugins/vieux plugins Maison/PIV_.class
+  79a563c1 (LOCAL_ONLY) 20130424131314 plugins/vieux plugins Maison/Remove_horizontal_Zebra.class
+  5b6d5e01 (LOCAL_ONLY) 20130424131314 plugins/vieux plugins Maison/Zap_Endpoints.class
+  3d1d7d50 (LOCAL_ONLY) 20140508174402 scripts/Smooth_mask.py</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

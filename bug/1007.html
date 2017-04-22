@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1007 &ndash; plugin register virtual stack slices</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_Plugins bz_bug_1007 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1007</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">plugin register virtual stack slices</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2015-02-18 10:14:42 CST</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2015-02-18 10:14:42">
+  <input type="hidden" name="longdesclength" value="3">
+  <input type="hidden" name="id" value="1007">
+  <input type="hidden" name="token" value="1492731882-jj9nRvDiv0pIKjyZsHxvporNF8CPfAcg8HJ5gWY2CLo">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="1007.html"><b>Bug&nbsp;1007</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">plugin register virtual stack slices</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>plugin register virtual stack slices
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2015-02-18 10:09 CST by <span class="vcard"><span class="fn">unni</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-02-18 10:14 CST 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="unnitsu">unnitsu</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_jpeg">
+        <td valign="top">
+            <a href="../attach/236/Files in output directory in saved sequence.JPG"
+               title="View the content of the attachment">
+          <b>Files of output directory in saved sequence</b></a>
+
+          <span class="bz_attach_extra_info">
+              (121.45 KB,
+                image/jpeg)
+
+            <br>
+            <a href="#attach_236"
+               title="Go to the comment associated with the attachment">2015-02-18 10:13 CST</a>,
+
+            <span class="vcard"><span class="fn">unni</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_image_jpeg">
+        <td valign="top">
+            <a href="../attach/237/45 images combined 1.jpg"
+               title="View the content of the attachment">
+          <b>45 images aligned with FIJI and focus stacked in combine ZP</b></a>
+
+          <span class="bz_attach_extra_info">
+              (362.06 KB,
+                image/jpeg)
+
+            <br>
+            <a href="#attach_237"
+               title="Go to the comment associated with the attachment">2015-02-18 10:14 CST</a>,
+
+            <span class="vcard"><span class="fn">unni</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+
+  </table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">unni</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-18 10:09:02 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I have 3325MB of RAM and a core 2 duo 64 bit windows system running windows 7 ultimate OS.
+When I use the plugin &quot;plugin register virtual stack slices&quot;, I observe that the registered slices are
+saved one by one in my selected output directory but the saving order is not numerically sequential.
+It saved files NEF1, NEF2,NEF3,NEF4 and suddenly becomes NEF10,NEF11,etc. The screen shot
+of the directory , I will try to upload. It shows the sequence of saving. There were 60 files in the input directory
+each of 23MB Tiff format. When the 59th file was saved, I saw a log window as below:
+<span class="quote">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span >
+&lt;Out of memory&gt;
+&lt;All available memory (2995MB) has been&gt;
+&lt;used. To make more available, use the&gt;
+&lt;Edit&gt;Options&gt;Memory &amp; Threads command.&gt;
+<span class="quote">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span >
+My queries :
+
+1. Being virtual stack, I hoped that there is no memory limit and I could process 100 or 200 such files. Am I right ?
+2. Why the files are not saved in the numerical order ? If so, file NEF5 would not have got distorted.
+3. I feel that as the processing of about 40 files were over, memory trouble began and subsequent files were 
+    wrongly processed before giving out the memory shortage error in log window.
+4. I tried the virtual stack in some of the other menus but the effect is the same.
+5. My requirement is to process 100 or 200 such files for use in focus stacking. Since I did not find a method to  
+    combine the stack , I use the aligned images from FIJI as input in a program COMBINE ZP and the results are 
+    excellent. 
+6. So I processed only 45 files using virtual stack method instead of my available 70 files. There was no error.
+    Using the normal method of stacking into RAM, I can process only 24 files maximum, in my system. (Linear stack 
+   alignment with SIFT)
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: UPDATEABLE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: E:\Fiji64/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; E:\Fiji64
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20141015224008)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20141023202357)
+
+Files not up-to-date:
+  4c694223 (MODIFIED) 20150217210320 jars/imagej-common-0.12.1.jar
+  28763c96 (MODIFIED) 20141025210702 jars/imagej-common-0.9.0.jar
+  56ab750a (MODIFIED) 20140920133924 jars/imagej-ops-0.5.0.jar
+  771f88d5 (MODIFIED) 20150217210326 jars/imagej-ops-0.9.0.jar
+  c8af6461 (MODIFIED) 20141025210705 jars/imagej-updater-0.6.2.jar
+  a6077b46 (MODIFIED) 20150217210328 jars/imagej-updater-0.7.0.jar
+  6e22d9dd (MODIFIED) 20140920133924 jars/imglib2-2.0.0-beta-26.jar
+  225b3943 (MODIFIED) 20150217210314 jars/imglib2-2.2.0.jar
+  fd37b4cc (LOCAL_ONLY) 20150217210331 jars/imglib2-algorithm-0.2.0.jar
+  ba955d64 (MODIFIED) 20140920133924 jars/imglib2-realtransform-2.0.0-beta-26.jar
+  c0b8f2de (MODIFIED) 20150217210329 jars/imglib2-realtransform-2.0.0-beta-28.jar
+  5be1fcae (LOCAL_ONLY) 20150217210329 jars/imglib2-roi-0.2.0.jar
+  68d72328 (MODIFIED) 20140920133928 jars/scijava-common-2.33.0.jar
+  cde753a7 (MODIFIED) 20150217210317 jars/scijava-common-2.38.0.jar
+  a15062e7 (LOCAL_ONLY) 20140920225015 plugins/ExtendedDepthField.txt
+  a5908c2b (LOCAL_ONLY) 20140921071831 plugins/edf_3D.jar
+  a66e53c8 (LOCAL_ONLY) 20140921071839 plugins/ijtools.jar</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">unni</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-18 10:13:06 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/236/Files in output directory in saved sequence.JPG" name="attach_236" title="Files of output directory in saved sequence">attachment 236</a></span>
+Files of output directory in saved sequence</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">unni</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-02-18 10:14:42 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/237/45 images combined 1.jpg" name="attach_237" title="45 images aligned with FIJI and focus stacked in combine ZP">attachment 237</a></span>
+45 images aligned with FIJI and focus stacked in combine ZP</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

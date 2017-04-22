@@ -1,0 +1,10 @@
+global FIJI_path master_folder
+FIJI_path = strcat(master_folder, '\Fiji.app\scripts');
+addpath(FIJI_path);
+master_folder
+Miji(false);
+master_folder
+path = strcat(master_folder, '\Batch-Bleb-Counter-60X-MTC4-V4.ijm');
+MIJ.run('Run...', strcat('path=', path));
+MIJ.exit;
+

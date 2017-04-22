@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 893 &ndash; Small compiler issue within the Fiji script editor</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_NEW bz_product_Fiji bz_component_Plugins bz_bug_893 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;893</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Small compiler issue within the Fiji script editor</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-08-26 03:03:42 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-08-26 03:03:42">
+  <input type="hidden" name="longdesclength" value="2">
+  <input type="hidden" name="id" value="893">
+  <input type="hidden" name="token" value="1492731835-gmyP8JJik2_JrMh02X1TTvjYXktpiXnW0iSoTP-csfM">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="893.html"><b>Bug&nbsp;893</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Small compiler issue within the Fiji script editor</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Small compiler issue within the Fiji script editor
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">NEW
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-08-11 02:25 CDT by <span class="vcard"><span class="fn">CARL</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-08-26 03:03 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="philippe.carl">philippe.carl</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">CARL</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-11 02:25:02 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Dear all/Johannes,
+I just figured out that the Fiji Script editor is not anymore compiling a java file when it is calling a library that is linked to the plugin.
+In order to try to make myself a little bit clearer, let me try to describe the problem with an example.
+in the case you download the Radial Profile Extended plugin (<a href="http://rsb.info.nih.gov/ij/plugins/radial-profile-ext.html">http://rsb.info.nih.gov/ij/plugins/radial-profile-ext.html</a>) and then explode the jar file (<a href="http://rsb.info.nih.gov/ij/plugins/download/jars/Radial_Profile_Angle_Ext.jar">http://rsb.info.nih.gov/ij/plugins/download/jars/Radial_Profile_Angle_Ext.jar</a>) in a folder, you end up with a multi_plot folder (containing an extension of the Plot classes) and the Radial_Profile_Angle_Ext .java and .class (as well as the plugins.config) files.
+And if you then try to Run the Radial_Profile_Angle_Ext .java file from a Fiji Script editor window you get the following error:
+Radial_Profile_Angle_Ext.java:18: package multi_plot does not exist
+import multi_plot.*;
+As the same file compiled through the Plugins-&gt;Compile_and_Run… feature is compiling right.
+Am I doing something wrong?
+Should I change something within the code so this is still working (as I was still developing code in the same way with success some weeks ago).
+I thank you very much in advance for your help and/or suggestions.
+My best regards,
+Philippe
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\Work\SOFTWA~1\Fiji/java/win64/jdk1.6.0_24//jre
+  imagej.dir =&gt; C:\Work\SOFTWA~1\Fiji
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140810142118)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140808200226)
+
+Files not up-to-date:
+  1c354c8b (LOCAL_ONLY) 20000413165800 luts/S_Pet.lut
+  07c05d23 (LOCAL_ONLY) 20121217160354 luts/multitxt.lut
+  bf66597a (LOCAL_ONLY) 20121218140114 luts/physicsmodtxt.lut
+  6e6ad239 (LOCAL_ONLY) 20121217155828 luts/physicstxt.lut
+  12fce5aa (LOCAL_ONLY) 20140718101359 plugins/ExtendedDepthField.txt
+  7433440a (LOCAL_ONLY) 20130204161151 plugins/Image Stabilizer/Image_Stabilizer.class
+  03be9b84 (LOCAL_ONLY) 20130204161218 plugins/Image Stabilizer/Image_Stabilizer_Log_Applier.class
+  24c44d4d (LOCAL_ONLY) 20140506160726 plugins/Scripts/Ph_CARL/Close_All....ijm
+  f12146b9 (LOCAL_ONLY) 20130206163024 plugins/Scripts/Ph_CARL/Close_All2.ijm
+  9b4b29d2 (LOCAL_ONLY) 20140218154016 plugins/Scripts/Ph_CARL/Create_folder.ijm
+  85c6344e (LOCAL_ONLY) 20131108164053 plugins/Scripts/Ph_CARL/Extract_coordinates.ijm
+  ab3013fb (LOCAL_ONLY) 20131127144746 plugins/Scripts/Ph_CARL/Extract_coordinates2.ijm
+  4d456e4f (LOCAL_ONLY) 20131119161132 plugins/Scripts/Ph_CARL/Fast/Reduce_Dimensionality2.ijm
+  5110a5ad (LOCAL_ONLY) 20131119152640 plugins/Scripts/Ph_CARL/Fast/Set_slice_and_contrast.ijm
+  7588f796 (LOCAL_ONLY) 20140718093041 plugins/Scripts/Ph_CARL/Fiji_always_on_top.js
+  afaf85ed (LOCAL_ONLY) 20140718093035 plugins/Scripts/Ph_CARL/Fiji_always_on_top_end.js
+  72733ef5 (LOCAL_ONLY) 20140220161413 plugins/Scripts/Ph_CARL/Filter_Images.ijm
+  bb04c482 (LOCAL_ONLY) 20140704110222 plugins/Scripts/Ph_CARL/Maximum_Finder_Mod_Ext.class
+  cb190657 (LOCAL_ONLY) 20130424162624 plugins/Scripts/Ph_CARL/Measure_ROI_values.ijm
+  134592f3 (LOCAL_ONLY) 20121213101213 plugins/Scripts/Ph_CARL/Microscope_Scale_iMIC.class
+  cbe8f8c1 (LOCAL_ONLY) 20121218094342 plugins/Scripts/Ph_CARL/Open_Recent_File_0.class
+  8ba195e6 (LOCAL_ONLY) 20121218094751 plugins/Scripts/Ph_CARL/Open_Recent_File_1.class
+  76008cf7 (LOCAL_ONLY) 20121218094721 plugins/Scripts/Ph_CARL/Open_Recent_File_2.class
+  4f38fb08 (LOCAL_ONLY) 20140414135258 plugins/Scripts/Ph_CARL/Particle_Tracker_PIV_Inputs.jar
+  b143d1c5 (LOCAL_ONLY) 20131004145906 plugins/Scripts/Ph_CARL/Reduce_Dimensionality.ijm
+  8ab755b8 (LOCAL_ONLY) 20130528171542 plugins/Scripts/Ph_CARL/Resize_and_Save_as_TIFF_and_Close.ijm
+  48262963 (LOCAL_ONLY) 20140218154016 plugins/Scripts/Ph_CARL/Save_FTTC_Pictures_Full_Experiment.ijm
+  5c369cb4 (LOCAL_ONLY) 20130924104247 plugins/Scripts/Ph_CARL/Save_JPG_Traction.ijm
+  fb4a4385 (LOCAL_ONLY) 20140218154016 plugins/Scripts/Ph_CARL/Save_JPG_Traction_Full_Experiment.ijm
+  d11f8fb2 (LOCAL_ONLY) 20140218154016 plugins/Scripts/Ph_CARL/Save_PIV_FTTC_JPG_Full_Experiment.ijm
+  4c3c67b6 (LOCAL_ONLY) 20140217095124 plugins/Scripts/Ph_CARL/Save_PIV_Pictures.ijm
+  8bd3841b (LOCAL_ONLY) 20140217092614 plugins/Scripts/Ph_CARL/Save_PIV_Pictures_Full_Experiment.ijm
+  f99cafae (LOCAL_ONLY) 20121108104349 plugins/Scripts/Ph_CARL/Save_SCFS_Data.ijm
+  4da1c631 (LOCAL_ONLY) 20140207144548 plugins/Scripts/Ph_CARL/Save_SCFS_Data_new.ijm
+  01611468 (LOCAL_ONLY) 20130118143346 plugins/Scripts/Ph_CARL/Save_as_TIFF_and_Close.ijm
+  f7ff1d43 (LOCAL_ONLY) 20140610102635 plugins/Scripts/Ph_CARL/SegFA_PseudoTIRF.ijm
+  3b022ee2 (LOCAL_ONLY) 20121212114323 plugins/Scripts/Ph_CARL/Shift_latéral.ijm
+  70e6a55b (LOCAL_ONLY) 20130311151957 plugins/Scripts/Ph_CARL/Stack_to_Hyperstack.ijm
+  ff04c0b0 (LOCAL_ONLY) 20140425094242 plugins/Scripts/Ph_CARL/Translation_Alignment.class
+  96df2830 (LOCAL_ONLY) 20131007085502 plugins/Scripts/Ph_CARL/test/NumberParticles8_.ijm
+  d34b5256 (LOCAL_ONLY) 20140730164535 plugins/Scripts/Ph_CARL/test/Versatile_Wand.class
+  83cb8345 (LOCAL_ONLY) 20140723154636 plugins/Scripts/Ph_CARL/test/morphology_collection.jar
+  99308836 (LOCAL_ONLY) 20131217165922 plugins/Traction Force 2/FTTC_.jar
+  ec703275 (LOCAL_ONLY) 20140416161333 plugins/Traction Force 2/PIV_.jar
+  7d5b3965 (LOCAL_ONLY) 20120711154540 plugins/Traction Force 2/javacv.jar
+  90915f54 (LOCAL_ONLY) 20120711154548 plugins/Traction Force 2/jna.jar
+  9e276f37 (LOCAL_ONLY) 20140610135439 plugins/Traction Force/Traction_Force_Calculation_with_FRAP.class
+  1a4c5bdf (LOCAL_ONLY) 20121129112014 plugins/X Shifter/X_Shifter.class
+  d198e2f0 (LOCAL_ONLY) 20140702170514 plugins/arf/SegFA_PseudoTIRF_Dialog.ijm</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">CARL</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-26 03:03:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Dear Curtis,
+I will try to adress all your comments and hope not to forget some of your points.
+So first I still have the same problem and I get the following error message:
+
+Started Radial_Profile_Angle_Ext.java at Mon Aug 25 14:12:15 CEST 2014 Compiling 1 file in C:\Users\Ph-K\AppData\Local\Temp\java8197273006779848693
+C:\Users\Ph-K\AppData\Local\Temp\java8197273006779848693\src\main\java\Radial_Profile_Angle_Ext.java:59: cannot access MultyPlotExt bad class file: RegularFileObject[C:\Work\SOFTWA~1\Fiji\plugins\Radial2\multi_plot\MultyPlotExt.class]
+class file contains wrong class: multi_plot.MultyPlotExt Please remove or make sure it appears in the correct subdirectory of the classpath.
+	MultyPlotExt plot;
+	^
+org.scijava.minimaven.JavaCompiler$CompileError: Compile error: 1
+	at org.scijava.minimaven.JavaCompiler.call(JavaCompiler.java:80)
+	at org.scijava.minimaven.MavenProject.build(MavenProject.java:477)
+	at org.scijava.minimaven.MavenProject.build(MavenProject.java:406)
+	at org.scijava.minimaven.MavenProject.build(MavenProject.java:391)
+	at org.scijava.plugins.scripting.java.JavaEngine.eval(JavaEngine.java:154)
+	at org.scijava.script.ScriptModule.run(ScriptModule.java:175)
+	at org.scijava.module.ModuleRunner.run(ModuleRunner.java:167)
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:126)
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:65)
+	at org.scijava.thread.DefaultThreadService$2.call(DefaultThreadService.java:164)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+Then following the advice of Wayne (it was through a private E-mailing) I had filed in a bug report about this issue one or two days after my first mail.
+
+And by following your description of using the following BeanShell Script in the Editor:
+import multi_plot.*;
+print(MultyPlotExt.class.getName());
+It works perfectly and I get actually the following output:
+Started New_.bsh at Mon Aug 25 14:15:50 CEST 2014 multi_plot.MultyPlotExt
+
+<span class="quote">&gt; Another possibility is that you made changes to the multi_plot code and then they were not reflected when executing code from the Script Editor until after ImageJ was restarted?</span >
+
+No, I didn't make any changes within the multi_plot code and started Fiji just before trying to compile the code.
+
+<span class="quote">&gt; If you could isolate a minimal, complete, verifiable example (MCVE), it would be much appreciated!</span >
+
+I replayed from scratch the action I described in my first mail and it is still not working (and I have an up to date Fiji version).
+I may have a hint why there is this problem (just an idea) which is the fact that the compiled files are generated within the following folder:
+&quot;C:\Users\Ph-K\AppData\Local\Temp\java8197273006779848693&quot;
+and not within the &quot;Fiji\plugins&quot; folder one.
+This change came with an update I made (either of Fiji or Java) and is probably the issue, since it is maybe looking for a &quot;C:\Users\Ph-K\AppData\Local\Temp\java8197273006779848693\multi_plot&quot; folder and not a &quot;Fiji\plugins\Radial\multi_plot&quot; one.
+
+I will look into your suggested IDE developing options.
+
+My best regards,
+
+Philippe
+
+-----Message d'origine-----
+De : ImageJ Interest Group [<a href="mailto:IMAGEJ&#64;list.nih.gov">mailto:IMAGEJ&#64;list.nih.gov</a>] De la part de Curtis Rueden Envoyé : vendredi 22 août 2014 21:18 À : <a href="mailto:IMAGEJ&#64;list.nih.gov">IMAGEJ&#64;list.nih.gov</a> Objet : Re: Small compiler issue within the Fiji script editor
+
+Hi Philippe,
+
+<span class="quote">&gt; Radial_Profile_Angle_Ext.java:18: package multi_plot does not exist</span >
+
+I cannot reproduce the problem you describe. After unpacking the JAR file into my ImageJ's plugins folder, the following BeanShell works in my Script
+Editor:
+
+import multi_plot.*;
+print(MultyPlotExt.class.getName());
+
+Possibly, this issue was addressed since you wrote the mail. Or else there is something different in the steps we followed. If you still have this problem, please file a bug report using Help &gt; Report a Bug -- it will report exact details of your ImageJ installation including OS, plugin versions, etc.
+
+Another possibility is that you made changes to the multi_plot code and then they were not reflected when executing code from the Script Editor until after ImageJ was restarted? If so, that is an issue I have seen
+recently: there are some class loading quirks right now with classes present in the jars or plugins folder which getting repeatedly recompiled without restarting ImageJ. If you could isolate a minimal, complete, verifiable example (MCVE), it would be much appreciated!
+
+<span class="quote">&gt; I was still developing code in the same way with success some weeks 
+&gt; ago</span >
+
+I would encourage you to try developing plugins in an IDE, since there are many advantages. Once you become proficient with the software it is much faster, with many powerful debugging tools. See:
+
+<a href="https://github.com/imagej/minimal-ij1-plugin">https://github.com/imagej/minimal-ij1-plugin</a>
+<a href="https://www.youtube.com/watch?v=Ac-6gJ2eRb0">https://www.youtube.com/watch?v=Ac-6gJ2eRb0</a>
+<a href="http://imagej.net/Debugging#Attaching_to_ImageJ_instances">http://imagej.net/Debugging#Attaching_to_ImageJ_instances</a>
+<a href="http://imagej.net/Maven">http://imagej.net/Maven</a>
+
+These resources are far from perfect, but hopefully they help get you started.
+
+Regards,
+Curtis</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

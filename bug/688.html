@@ -1,0 +1,1758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 688 &ndash; interaction between bigdataviewer and bioformats</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_688 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;688</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">interaction between bigdataviewer and bioformats</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-01-10 19:47:04 CST</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-01-10 19:47:04">
+  <input type="hidden" name="longdesclength" value="5">
+  <input type="hidden" name="id" value="688">
+  <input type="hidden" name="token" value="1492731747-SpZYWRz5u8lODEBs_YSHEz-ArLShX7948yP3MIa3M9w">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="688.html"><b>Bug&nbsp;688</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">interaction between bigdataviewer and bioformats</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>interaction between bigdataviewer and bioformats
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">Tobias Pietzsch</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2013-12-22 08:02 CST by <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-01-10 19:47 CST 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="aryeh">aryeh</option>
+                <option value="ctrueden">ctrueden</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-12-22 08:02:30 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >When bigdataviewwer is fully installed, teh follwoing error occured while trying to read an nd2 file with loci:
+There was a problem with the class ome.scifio.xml.XMLTools which can be found here:
+/home/hila/Desktop/Fiji.app/jars/scifio-devel-4.5-SNAPSHOT.jar
+/home/hila/Desktop/Fiji.app/jars/loci-common.jar
+
+WARNING: multiple locations found!
+java.lang.NoSuchMethodError: ome.scifio.xml.XMLTools.createBuilder()Ljavax/xml/parsers/DocumentBuilder;
+	at loci.formats.ome.AbstractOMEXMLMetadata.createNewDocument(AbstractOMEXMLMetadata.java:125)
+	at loci.formats.ome.AbstractOMEXMLMetadata.dumpXML(AbstractOMEXMLMetadata.java:114)
+	at loci.formats.ome.OMEXMLMetadataImpl.dumpXML(OMEXMLMetadataImpl.java:109)
+	at loci.formats.services.OMEXMLServiceImpl.getOMEXML(OMEXMLServiceImpl.java:419)
+	at loci.plugins.in.ImagePlusReader.createFileInfo(ImagePlusReader.java:518)
+	at loci.plugins.in.ImagePlusReader.readImage(ImagePlusReader.java:306)
+	at loci.plugins.in.ImagePlusReader.readImages(ImagePlusReader.java:238)
+	at loci.plugins.in.ImagePlusReader.readImages(ImagePlusReader.java:216)
+	at loci.plugins.in.ImagePlusReader.openImagePlus(ImagePlusReader.java:114)
+	at loci.plugins.in.Importer.readPixels(Importer.java:150)
+	at loci.plugins.in.Importer.run(Importer.java:89)
+	at loci.plugins.LociImporter.run(LociImporter.java:81)
+	at ij.IJ.runUserPlugIn(IJ.java:196)
+	at ij.IJ.runPlugIn(IJ.java:160)
+	at ij.IJ.runPlugIn(IJ.java:149)
+	at HandleExtraFileTypes.openImage(HandleExtraFileTypes.java:421)
+	at HandleExtraFileTypes.run(HandleExtraFileTypes.java:57)
+	at ij.IJ.runUserPlugIn(IJ.java:196)
+	at ij.IJ.runPlugIn(IJ.java:160)
+	at ij.IJ.runPlugIn(IJ.java:149)
+	at ij.io.Opener.openWithHandleExtraFileTypes(Opener.java:454)
+	at ij.io.Opener.openImage(Opener.java:311)
+	at ij.io.Opener.openImage(Opener.java:334)
+	at ij.io.Opener.open(Opener.java:144)
+	at ij.RecentOpener.run(RecentOpener.java:19)
+	at java.lang.Thread.run(Thread.java:662)
+Could not find method ome.scifio.xml.XMLTools.createBuilder()Ljavax/xml/parsers/DocumentBuilder;
+(See Log for details)
+
+Removal of  scifio-devel.jar enabled LOCI bioformats to properly load the nd2 file.
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.1.10-1.29-desktop
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /home/hila/Desktop/Fiji.app/java/linux-amd64/jdk1.6.0_24//jre
+  ij.dir =&gt; /home/hila/Desktop/Fiji.app
+
+Information about the version of each plugin:
+
+  22eaabd0:5f255e22:58293ca8 20131222174715 :000018f
+  2c93d9a6:2d9d2593:be71a9c0 20131120153219 :00efaa6
+  9770ed7e:40cf929f:0606b3ee 20130517164839 :011890f
+  9a5cfcce:a693cf9d:66ae9aef 20131127121341 :01859c9
+  bdf6dc82:91b262e7:09001cd1 20130623153440 :019970f
+  c6e0e322:3a43d25c:7e36e21e 20131127121603 :01dd3ac
+  13ce586a:be23db6b:315fb93c 20131120153218 :02ea642
+  426d64f4:be49972e:be49972e 20131120153236 :0307564
+  8c8f6d33:ac4c137b:ac4c137b 20130623153455 :0326851
+  6cfb774f:b8f734bb:b8f734bb 20131204120733 :04478f7
+  58ca5c05:3f4f326a:3f4f326a 20131204120739 :0449e3e
+  24590873:d3ccdd03:d3ccdd03 20130517164839 :044f3fe
+  6738a701:d6932866:d6932866 20130623153453 :04a4a5c
+  e8f2c736:013da83a:f76888cb 20131127121448 :04f8e59
+  b242d482:35f16281:6def1a95 20131127121602 :051e8d4
+  909e494a:9fc4d27b:939ed1f9 20131211122458 :053db76
+  30420365:5a23ed73:5a23ed73 20130517164839 :069ebf3
+  3f876cb1:205f633a:205f633a 20130517164839 :07e9a49
+  b3592dcb:40e6d3c3:c8f59281 20131222174708 :0914031
+  769c3941:0fcd7a30:4f286cf0 20131127121343 :095ff64
+  3ea9130d:cb5e7658:cb5e7658 20131127121344 :096abf5
+  09868b51:09868b51:09868b51 20130517164839 :09868b5
+  4e531dc7:ade8ce47:ade8ce47 20130623153518 :0a56476
+  0a93f0be:0a93f0be:0a93f0be 20130517164839 :0a93f0b
+  4969a538:2392f667:d37abecb 20131127121601 :0acf0b2
+  36dc63f9:4e799731:4e799731 20131127121438 :0b477c6
+  cd9eda33:239d2a49:f25c125a 20130517164839 :0b76869
+  61ab84fd:2a4992aa:2a4992aa 20130623153457 :0bd5f17
+  283a7027:9263e996:9263e996 20130517164839 :0c2a5e1
+  72ea2fc2:73af3a23:73af3a23 20130517164839 :0d4057e
+  50b86a0f:f852b84c:f852b84c 20131222174712 :0d41552
+  6478da40:1d98f525:1d98f525 20130517164839 :0dccf16
+  58e12d38:0756c7da:0756c7da 20130517164839 :0e15c07
+  69e33649:d2b46052:d2b46052 20130517164839 :0e17d4e
+  9ff319c0:5975923b:5975923b 20130919181546 :0e8ddb6
+  1dd37acb:dcf3e354:dcf3e354 20131120153236 :0eec001
+  0f44924c:0f44924c:0f44924c 20130517164839 :0f44924
+  30fe4811:431e6ee1:0117adfc 20130517164839 :0ff27f6
+  10ab7036:10ab7036:b7e560e5 20130517164839 :10ab703
+  9c65dc22:528ce9f7:43458c1d 20130623153433 :12ab1b9
+  1398b098:1398b098:1398b098 20130517164839 :1398b09
+  2bd28388:f2516a22:f2516a22 20130517164839 :139ef92
+  6ab4feea:c5955cf4:c5955cf4 20131127121447 :14eaf67
+  0de19f82:a4621a87:a4621a87 20130517164839 :1506fc3
+  64d30616:13d82a9a:ecc81996 20131120153216 :15260b1
+  e9c6b155:014024f1:2e801b15 20131120153104 :152b09a
+  1d0de35d:c4f0ee26:c4f0ee26 20131209152130 :1583848
+  7222de21:aaed1bde:40e5c3d0 20130517164839 :15f3494
+  975368e0:213d521b:213d521b 20130623153503 :16012d5
+  166036ab:166036ab:166036ab 20130517164839 :166036a
+  b2275d1c:f7a5eb30:4918803a 20130517164839 :16bbe0c
+  68b5039b:0dc5c1a8:4a8bf900 20131120153209 :1728149
+  174a4b19:174a4b19:174a4b19 20130517164839 :174a4b1
+  97576758:7caa08fd:2f3fb8f8 20131127121339 :179685f
+  97d046c8:9467908f:9467908f 20130623153501 :186e052
+  f0dde207:5b731066:5b731066 20130623153448 :1902ce8
+  2750162f:ee9e5ec5:ee9e5ec5 20130623153454 :19181db
+  2e8d45d3:8a624dbe:8a624dbe 20130919181546 :1a08e20
+  1a6345a2:1a6345a2:1a6345a2 20130517164839 :1a6345a
+  5a40b171:9017d436:63e90571 20130517164839 :1ad3be0
+  e094b1c1:44ab48c3:5633cb6f 20130517164839 :1b71cda
+  19335ace:fc1a3d5e:28e1ad96 20130517164839 :1c88458
+  1cee26bc:1cee26bc:1cee26bc 20130517164839 :1cee26b
+  401dd13c:3b11d2fc:036ce2ca 20131127121340 :1da3d52
+  cd63c0bf:92f964a3:92f964a3 20130517164839 :1daf580
+  981f35fd:f48d5b7d:a7d5f82c 20130517164839 :1dedefe
+  1eb5c9ef:1eb5c9ef:1eb5c9ef 20130517164839 :1eb5c9e
+  c2f213f2:0abfb748:95082cfe 20131120153217 :1eb9422
+  748e0dec:fac9aaf3:52b8f2ca 20130623153439 :1ee97bd
+  ee97218b:f3679f41:f3679f41 20130517164839 :1f35cae
+  106c63d5:97a86bf6:97a86bf6 20130517164839 :1f4f9e5
+  09d3a31a:34a7400a:34a7400a 20130517164839 :1f65630
+  202a7fb9:202a7fb9:202a7fb9 20130517164839 :202a7fb
+  48a4132f:ebf1fa4f:ebf1fa4f 20130623153500 :2079ca3
+  9a887b68:0124bf88:5c04449b 20131127121602 :20d6567
+  2104ef52:2104ef52:2104ef52 20130517164839 :2104ef5
+  1ce69ba9:7b523160:91d2b679 20131211122455 :21232b7
+  bac30d9e:3515d95e:633579fc 20130517164839 :216b590
+  22fd045b:22fd045b:22fd045b 20130517164839 :22fd045
+  232cc1e4:232cc1e4:232cc1e4 20130517164839 :232cc1e
+  23cae80c:23cae80c:23cae80c 20130517164839 :23cae80
+  cedb6d82:f7cc7817:2362f25c 20130517164839 :242749d
+  204ad6d9:7f6eef1b:7f6eef1b 20130517164839 :248a32e
+  357b1056:8156e009:8156e009 20130517164839 :24d47d7
+  d7c670b5:f555145a:f555145a 20131120153239 :253c6df
+  4f7cc6e1:eca16868:eca16868 20130919181546 :2580251
+  726af6cb:5ad6878a:5ad6878a 20130517164839 :263158a
+  5a4eccee:a24c4994:d437c436 20131127121558 :2635707
+  265850b3:265850b3:265850b3 20130517164839 :265850b
+  def4038f:787984b3:d558718f 20130517164839 :265cb26
+  2e827d72:712c77b4:712c77b4 20131127121511 :269cc20
+  73f94ffa:ceafcbcc:ceafcbcc 20131127120639 :274e73e
+  0f832edd:81589f14:1651ecce 20131120153242 :27c6f58
+  97baa7b5:de42e047:de42e047 20130623153448 :27de591
+  36ef62a5:476a9d0f:773006c0 20131127121341 :2875666
+  eff3a295:639027a3:639027a3 20130623153500 :295ba57
+  c716cfad:c357e934:69c529de 20130517164839 :2a26b5e
+  7caabb2a:c5a9c9bf:c5a9c9bf 20131120153234 :2a72259
+  2aa34b7c:2aa34b7c:2aa34b7c 20131127121517 :2aa34b7
+  d9e0bf3a:1d693ab8:60903c8f 20130517164839 :2b318f7
+  c812b7f5:bb405395:bb405395 20131209152137 :2b5861c
+  c92bc1d4:2928de88:ba375fb6 20130519145821 :2bd4340
+  6cb70056:c1c6fcd4:e43dfba7 20130623153441 :2bd9a85
+  84c6ebeb:1dc1193a:1dc1193a 20130623153457 :2bda1f6
+  0e158e32:8cdb360f:8cdb360f 20131120153237 :2bde09b
+  5c14a520:d1d3073e:45a3b5e7 20130517164839 :2ce2c00
+  516ababa:a275e857:a275e857 20130623153446 :2cee6c3
+  d3dc14cc:bc3ea362:bc3ea362 20130517164839 :2d33401
+  496bde1e:1a10cf85:7e2eec62 20131127121444 :2d8f3e6
+  f31b9812:ca52ad89:2f40baca 20130517164839 :2daf8bd
+  9f6c0ffc:3a4feb15:3a4feb15 20131127121439 :2dbeb38
+  2dc5d027:2dc5d027:2dc5d027 20130517164839 :2dc5d02
+  27d2690c:8627f7ec:c5261e10 20130517164839 :2dcaf5b
+  55a173bf:799c302a:799c302a 20130623153449 :2dd01db
+  faf3590e:b3a6dfc8:b3a6dfc8 20130623153456 :2fc7f2b
+  907bd39d:8f13b98c:8f13b98c 20130623153446 :30100de
+  839b37bc:80e1da52:653d576f 20131120153219 :310cdb6
+  95af1ff3:dca3038a:e752ccac 20130517164839 :31333d7
+  4c6e9c10:b32fe26e:2d196b9f 20130623153442 :31f9aa9
+  6759f7b5:c8cc463f:72027754 20130517164839 :320b761
+  d075e4ea:356f0418:ad5eb5f1 20131127121339 :328418a
+  32aabe78:32aabe78:32aabe78 20130517164839 :32aabe7
+  32d24a27:32d24a27:32d24a27 20130517164839 :32d24a2
+  0b6a9aff:fd6990df:dbc12f34 20131127120624 :33b6af8
+  1dc17104:92a24909:92a24909 20130919181546 :33f69ff
+  ff79458d:984820cd:464a2e8a 20130623153436 :347fb7e
+  ade5d7d9:e6e0879f:e6e0879f 20130517164839 :34b7341
+  34dfe8f4:34dfe8f4:34dfe8f4 20130517164839 :34dfe8f
+  1910f7d0:35de4ecb:d9674003 20131120153207 :35c256a
+  a440dffb:89216caf:89216caf 20131211122542 :3686bf3
+  55f79ce5:c3ab5cd0:c3ab5cd0 20130517164839 :36b6b0d
+  91d6774f:81ee7dda:831d5b93 20130517164839 :36cdef5
+  49a38892:86901120:86901120 20131222174718 :3814d5a
+  b851408d:46e4714e:46e4714e 20131120153230 :38b2c2b
+  d3aa0468:2dbaef27:eb94a247 20131120153211 :398ab19
+  39d4aaaf:39d4aaaf:39d4aaaf 20130517164839 :39d4aaa
+  33878eba:021d9803:0c3560ce 20131127121342 :3b44623
+  4b051b74:2a0a96ae:2a0a96ae 20130623153502 :3bac3fb
+  0faa30a4:3c6fa8e6:28ed099c 20131222174713 :3ce97c7
+  e2db44e4:2f244135:58f7040d 20131127121443 :3da48f0
+  7a2916d6:39f45f23:f23b1754 20131120153222 :3da60e9
+  032b5ee0:a7f44d64:897b14f6 20130623153439 :3e21f65
+  581a3b53:c57906e2:c57906e2 20130623153447 :3e4163b
+  3ea0d59d:3ea0d59d:3ea0d59d 20130517164839 :3ea0d59
+  19c93860:accf2661:d258c6ee 20130623153438 :407ca02
+  1c41e9ff:4199e180:4199e180 20130517164839 :4124ed0
+  3555a799:a55ff98c:5a760fac 20131127121450 :41cae16
+  41d82921:41d82921:41d82921 20130517164839 :41d8292
+  6ff3b71c:66eb19e0:fbcca133 20131120153229 :4250a4f
+  42556198:42556198:42556198 20130517164839 :4255619
+  fc615298:505a9692:70a63a6e 20130517164839 :44f1985
+  5a9c725e:20c1fca1:20c1fca1 20130623153454 :460995d
+  8c33e42d:d4b801ab:d81d2e53 20131120153224 :4630427
+  4e5f9362:27fae44c:1b412fbf 20130623153436 :465d5f7
+  0a803f0f:0033e911:0033e911 20131209152135 :4686cb6
+  72879ca4:1022e9ea:79160dfc 20130517164839 :46b2ddd
+  5f759490:1d43ab47:b3c4d158 20131209152132 :4792fc4
+  24f31221:e9f08f3c:72586779 20130623153434 :480eba0
+  b084f173:f2aa5b6f:5e158006 20130517164839 :48b11a3
+  48b8264d:48b8264d:48b8264d 20130517164839 :48b8264
+  82470171:71558705:8f68b42c 20130517164839 :48d65ab
+  1cb0f570:531ace18:32378753 20130517164839 :491e89c
+  49378a9e:49378a9e:49378a9e 20130517164839 :49378a9
+  05fe9a2a:b91f10f5:ecb8f9b5 20131127121404 :4a5a2c9
+  3d3036a6:dc5d617c:8c8eb84b 20131120153221 :4a6a7fb
+  149624c4:43bb3a7b:43bb3a7b 20130517164839 :4b60e05
+  27332108:bcdce037:a9bbed7e 20131127121407 :4c09d41
+  a24ce274:37fb74fb:b76d671a 20130517164839 :4c95b69
+  b0363640:88d2d3c3:88d2d3c3 20130623153501 :4cf5921
+  ee400c8c:e314f19c:6361ec26 20130623153433 :4d0182b
+  b7a44134:037852cf:0246b1cb 20131120153239 :4d3cf93
+  4347a907:0a7f6fd2:0a7f6fd2 20130623153503 :4d6319b
+  b79e25b3:50e7fc48:50e7fc48 20131209152136 :4d7b048
+  4d7eaf23:4d7eaf23:4d7eaf23 20130517164839 :4d7eaf2
+  4ddf620c:4ddf620c:4ddf620c 20130517164839 :4ddf620
+  8eecd63b:45f47f5c:45f47f5c 20130623153459 :4ea625b
+  a6d53c20:331e7f15:96a733f5 20130623153441 :4eaf8cf
+  43153ccf:6ac4536b:6ac4536b 20131204120808 :50c9f2e
+  50ee8cf2:50ee8cf2:50ee8cf2 20130517164839 :50ee8cf
+  34eaa0db:ae8bde53:1998bbee 20130623153442 :5125ef4
+  51468378:51468378:51468378 20130517164839 :5146837
+  58d9d1ca:23f14213:c045e9ba 20130517164839 :522ccde
+  41a6335c:57fd23f6:57fd23f6 20131127121353 :527312b
+  bb93c8fe:89a57b82:89a57b82 20130623153502 :52fecf0
+  40e2143d:4e295a3b:4e295a3b 20130623153455 :542806e
+  542ef100:542ef100:542ef100 20130517164839 :542ef10
+  54cd4a10:54cd4a10:54cd4a10 20130517164839 :54cd4a1
+  556aa2ba:556aa2ba:556aa2ba 20130517164839 :556aa2b
+  bdd5fdbb:abfa06b1:8dc70545 20130517164839 :55d8499
+  80dad2c5:816207ee:816207ee 20130623153453 :55f5b6a
+  f3380a70:01713b50:01713b50 20130623153453 :5660096
+  e2e23261:608d64f8:608d64f8 20131127121439 :56d4601
+  274e67b3:05f25502:c995958e 20131120153215 :572a727
+  2fd341c0:023cc717:4c7a9c85 20131127121447 :574cdfc
+  4fff982e:44f6539b:44f6539b 20130623153456 :5830f8e
+  b63cd7bc:324b6442:324b6442 20130623153504 :584cb5b
+  8f169079:524ee70e:524ee70e 20130623153454 :587c9f4
+  d968bfa1:f7196bf5:f7196bf5 20131120153241 :5912498
+  59229ecf:59229ecf:59229ecf 20131127121517 :59229ec
+  0c487538:9963461c:9963461c 20130517164839 :5967b4d
+  c3cdfa73:da9726b8:da9726b8 20130623153500 :59f3629
+  dead0306:87f2e802:dbab80ab 20130517164839 :5a0c796
+  ba51e520:cfb31b56:40b8050c 20130517164839 :5a50a9e
+  8e36ff4d:08337e72:08337e72 20131120153246 :5a6f6f2
+  80dd7c7b:05441be1:65145dfe 20131120153229 :5b03a32
+  024477fb:38a320fe:f04f945c 20131120153215 :5b86e1d
+  dbe04762:dec2cbc4:dec2cbc4 20131120153227 :5bd64fb
+  93f3a920:9318a836:9318a836 20130623153447 :5c7f396
+  0eb05f4b:a21f73a7:a21f73a7 20130517164839 :5ce5840
+  6f638a3a:537a3653:537a3653 20131127121448 :5cf0711
+  7f225384:a9f2cced:544df635 20131209152131 :5da6834
+  fcdf8254:1ca2d42b:1ca2d42b 20130517164839 :5dc26c8
+  6d1985d2:0293654c:6ae239fc 20131127121346 :5dc7255
+  bd608d78:7f84137c:02348ce5 20130623153434 :5e0e489
+  5e32d936:5e32d936:5e32d936 20130517164839 :5e32d93
+  8daf0587:7bef6652:7bef6652 20131127121406 :5e5f1e4
+  8a2d5aa5:0f8eafea:9c8df86d 20131120153221 :5eff582
+  54caa7fb:7107ee0e:82e6448b 20131120153206 :5f8e427
+  99264b19:c8d9d7ff:1d20bec4 20131120153215 :608a731
+  bee83f9b:d57ecf30:6714cc42 20130517164839 :61e27aa
+  ebc3c78e:1a7e98cb:bffb53e3 20131127121449 :6227c67
+  d980e5a3:71ab927c:d87da87f 20131127121402 :636e4dd
+  681f7890:4b109329:4b109329 20130517164839 :6424120
+  fdbf083b:10f52e9f:10f52e9f 20130623153452 :645ccb4
+  5d90f9c6:2c16cce4:2c16cce4 20130623153456 :64ccfd0
+  650f1976:650f1976:650f1976 20130517164839 :650f197
+  32230b3e:de0f4b67:de0f4b67 20130517164839 :6566ced
+  707f4c73:869935af:0050e982 20131120153211 :656e49e
+  659ad6a3:659ad6a3:659ad6a3 20130517164839 :659ad6a
+  6fac47cc:54031bf9:54031bf9 20130623153445 :65b4203
+  97b8883a:254d00c1:10841226 20130517164839 :65f8637
+  fdd86160:df483e43:df483e43 20131127121350 :669b001
+  ef47c43c:5cb5e756:5cb5e756 20130623153500 :66d3435
+  e4f8347e:eca37cfd:eca37cfd 20131127121506 :6733556
+  68175df5:68175df5:68175df5 20130517164839 :68175df
+  a5602567:c162a02a:c162a02a 20131209152136 :68237a1
+  b5fb8bce:64140130:64140130 20131127121404 :683bf45
+  ed533a8e:1101099d:1101099d 20130623153458 :685ca9d
+  faad5889:01574846:7b83b909 20131120153225 :68c26a7
+  6333d290:39ce1cd1:bb325d95 20131211122456 :6929dff
+  ed17e80b:c0774b9c:c0774b9c 20131120153242 :6997294
+  b19cdcd7:6c7527dc:5ac4a6dd 20131120153213 :6b4a1f9
+  d7be2f80:071b3807:b1bdf4b6 20130517164839 :6b50684
+  d11c12e7:72d84464:df550760 20130517164839 :6b55b87
+  9b16e063:b9aafb39:fad95494 20131127121349 :6b674a8
+  caa02ee1:07a1ea88:07a1ea88 20131127121512 :6ba3fcd
+  892c3ef0:ed048816:d0202967 20131211122455 :6bd8ef4
+  e54e1474:8e6e86fe:8e6e86fe 20131120153238 :6c0972f
+  130fa4f7:11f738cb:11f738cb 20131120153209 :6c445dd
+  d7c80963:ba7f3566:ba7f3566 20131127121442 :6cd7cd7
+  6d537b58:6d537b58:6d537b58 20130517164839 :6d537b5
+  f98cee58:a92d0b73:a92d0b73 20131204120734 :6d88799
+  18bec84a:c729958a:c729958a 20130517164839 :6e19687
+  6e539e37:d21bc3c1:d21bc3c1 20130517164839 :6e31282
+  5b27c084:bff7e2f7:0d754f3a 20131120153217 :6e6d86d
+  5826778a:ec86b155:ec86b155 20131127121351 :6ec610a
+  437e4c7a:8ff06ebf:a0571e03 20131120153226 :6eeb7cb
+  80e5bb7b:b34dba2d:b34dba2d 20131127121512 :6f3fdc0
+  6f562f44:6f562f44:6f562f44 20130517164839 :6f562f4
+  911e14f6:1dee3f2a:1dee3f2a 20131127121506 :6fa2427
+  a2da0db0:68abb9c5:03124305 20130517164839 :7010d5c
+  6e3022e9:6200cd00:b1492f77 20130517164839 :70c12cd
+  90f22843:9a394351:9a394351 20131120153226 :70e6870
+  a653e14c:2a328b6b:2a328b6b 20130517164839 :717dd8e
+  4d4d4078:b2708b83:3876582d 20130517164839 :71ed897
+  b381c157:61f99c77:61f99c77 20131120153220 :7218443
+  8c3b9fba:108d1789:108d1789 20131209152213 :73069e6
+  714c2455:6b417d33:6b417d33 20130623153457 :73396ee
+  7c722c86:e6643b1f:e6643b1f 20130623153454 :736bb19
+  bc656a8e:577ded16:349d8177 20130517164839 :736bdcd
+  74b442ad:74b442ad:74b442ad 20130517164839 :74b442a
+  03d27e8b:20945491:20945491 20130623153458 :7552924
+  780fae40:780fae40:780fae40 20130517164839 :780fae4
+  5051dab8:7c024bc6:7c024bc6 20131127121511 :7872d78
+  83af7041:d6f47e53:10742bc6 20131127121603 :78925b5
+  dd2590fd:e78fcac8:ffa96a89 20131120153223 :78a6628
+  3146cea1:66357ee8:d71e6f1b 20130517164839 :7af6dde
+  7c039e95:7c039e95:7c039e95 20130517164839 :7c039e9
+  aed43ce7:7c95033d:7c95033d 20130517164839 :7c5dc20
+  c0f4dd03:aaee9249:aaee9249 20130623153503 :7c62b5c
+  7cc7d8db:7cc7d8db:7cc7d8db 20130517164839 :7cc7d8d
+  7d1ad162:7d1ad162:7d1ad162 20130517164839 :7d1ad16
+  f090ac0b:26d78d5b:26d78d5b 20130623153452 :7d22f08
+  7d5ba6c5:7d5ba6c5:7d5ba6c5 20130517164839 :7d5ba6c
+  7dcbc083:7dcbc083:7dcbc083 20130517164839 :7dcbc08
+  6f9870cd:6b04c5cc:6b04c5cc 20130623153504 :7e27d80
+  423c8006:6bb1874c:f45e1469 20130517164839 :7e422c9
+  9e7a562b:1eb24586:be673342 20130517164839 :7e69372
+  c5988ee2:7e31c954:7e31c954 20130517164839 :7ee1b64
+  2a6fe63f:87820c83:4d3f42ff 20130517164839 :7ee5c00
+  0a62595f:1fdf8806:1fdf8806 20130517164839 :7f0caa5
+  e4f73639:31db241b:9f38e6b0 20131120153210 :7f72243
+  58681df5:ff8192ec:ff8192ec 20130623153450 :81279d2
+  9b27de3d:37b7af07:f50b78ff 20131120153222 :815af39
+  01366e2a:28a2610e:ab384eb7 20130517164839 :8257770
+  23fdd832:931183ee:931183ee 20130623153501 :82f900a
+  d2793ada:f63db31e:f63db31e 20131127120623 :82fd182
+  c8a7e8c2:36d02ae2:36d02ae2 20130623153444 :8401da2
+  c0fbed5b:5b309998:ebecda54 20131222174711 :8440667
+  f38ce080:df45163d:df45163d 20130623153455 :84bdce3
+  f6866c55:25f7db8f:b104caf8 20130623153351 :84c3ab4
+  3b9b9083:6a26e002:6a26e002 20131127121449 :8523861
+  85cde342:85cde342:85cde342 20130517164839 :85cde34
+  85b4e50f:801d19a0:801d19a0 20131127121439 :85f658a
+  562ba8b8:6032f012:72efd006 20130623153438 :8654be5
+  1668ed4f:a1b95520:c8a5aee3 20131127121342 :868a59d
+  d667afbd:635e8763:635e8763 20130517164839 :871c759
+  67942886:13c3e369:9d552931 20130623153436 :875624c
+  8026d149:ddba73b0:ddba73b0 20130517164839 :8759ba2
+  aea0cdf0:8e98d6c3:d2c8749b 20130623153440 :87eda42
+  4aa408fb:2dfe9778:2dfe9778 20130919181546 :87fc836
+  0f28e4cf:55e32293:55e32293 20131127121511 :882cd6f
+  8d58a4df:711b68a7:711b68a7 20130517164839 :89866b3
+  6bce77df:8728b63e:8728b63e 20130919181546 :89cb582
+  d704fa53:f3eec06f:f3eec06f 20131209152136 :8a993e3
+  ae5adc57:a838d16d:a838d16d 20130517164839 :8b4b4a3
+  8b85c6b0:8b85c6b0:8b85c6b0 20130517164839 :8b85c6b
+  65ed2317:87683a89:87683a89 20130623153447 :8c102cb
+  cf53c300:25331672:25331672 20130517164839 :8c636e5
+  d87149a9:9bc52c1f:a9fbe943 20131120153206 :8c7b4a1
+  74c9cb8c:5b134353:b068803a 20130517164839 :8ccb7b4
+  80c3666a:d2067c8f:5e234a46 20130517164839 :8d54f2c
+  0cce8957:5dd77788:f74602e3 20130623153435 :8d62762
+  a12e491f:ed7f3658:42475afd 20131120153209 :8d65fae
+  2dc915e0:59898bf6:59898bf6 20090703152912 :8d9bdfa
+  4064f82d:68a9e41d:68a9e41d 20130517164839 :8e16095
+  ec1d12e9:8c2f56d4:f324478c 20131120153212 :8e753b4
+  01cb6b02:fa377ebc:fa377ebc 20130623153447 :8e7f3b7
+  c3f6a80b:ca476f61:453ebb6f 20130517164839 :8eb3709
+  8f8265d7:8f8265d7:8f8265d7 20130517164839 :8f8265d
+  ce28c0c3:dae36ed3:dae36ed3 20130623153446 :8fbab9f
+  8340b113:925d6501:925d6501 20130517164839 :90915f5
+  d47414e2:f30b67f4:f30b67f4 20130623153502 :90db644
+  9103f2a4:9103f2a4:9103f2a4 20130517164839 :9103f2a
+  a49b04b5:57346447:bfb2c608 20130623153351 :918cdbd
+  919ab06b:919ab06b:919ab06b 20130517164839 :919ab06
+  3f0204c1:b5324fa1:b5324fa1 20131127121408 :91ece67
+  9246febb:9246febb:9246febb 20130517164839 :9246feb
+  924b8d62:924b8d62:924b8d62 20130919181546 :924b8d6
+  083d3eb9:7749c147:7749c147 20131222174752 :9381978
+  15078cc1:d7524d6f:d7524d6f 20130517164839 :93ef183
+  994bc907:a1872664:c2ad46eb 20130517164839 :94270cd
+  ae3a8b1d:2373c955:f4d58338 20131127121500 :94ff912
+  9558400d:9558400d:9558400d 20130517164839 :9558400
+  a0e79757:62c3e57a:96d894ca 20130517164839 :959a882
+  45b9c0e7:11af45d4:11af45d4 20131204120735 :95dc5b1
+  be81c6e7:0f0a6c26:0d5f1496 20130623153433 :9613c82
+  80292676:ec20bd35:ec20bd35 20131120153235 :964d054
+  68812903:ad218639:ad218639 20130623153455 :96b64b9
+  f76d2d07:fa59929e:35bbfa9f 20131120153221 :97b16f4
+  fc688a6e:ce8bb782:ce8bb782 20130623153504 :980c0ed
+  048f7ada:ec1664e0:31781d51 20131120153224 :98ed9a8
+  217fda71:e6c7b2db:e6c7b2db 20130623153457 :9a5d689
+  016c9606:7ece3654:b65e3b3d 20130517164839 :9a71e19
+  70067154:15a9c10a:5ca25a3f 20130623153440 :9ac3768
+  cdd5e19d:3ba074a7:2614ee59 20131120153214 :9ae3dd1
+  0ec8a021:692b3a3f:360d56b5 20130623153433 :9b8a1d3
+  401e7abc:167f4ba9:387d457e 20130517164839 :9ba4194
+  a51faffe:3822a196:71b626fc 20130623153350 :9bd6317
+  6d84ad6d:fdd1462d:fdd1462d 20130623153450 :9c541ad
+  6f133d5e:4511cc76:f14614a2 20130623153434 :9c69647
+  58890d12:88a007cc:88a007cc 20131204120735 :9cd00a0
+  57e232cc:7da8867a:dfa0eaa7 20131127121346 :9da80c9
+  ad45758d:59dd0e02:59dd0e02 20130517164839 :9e5ef6a
+  414abeff:2bbd5351:2bbd5351 20130623153446 :9fb0312
+  7e7293fe:d74ae2cf:d74ae2cf 20130517164839 :9fc8fc3
+  548d19b5:063a675b:8e9edd3c 20131120153236 :9fe6a5f
+  d50d714a:c0231edb:c863800f 20130623153442 :a043e69
+  d1d75be0:fb4ba457:c8f83d46 20130517164839 :a0e0bd4
+  64d68b19:9dea7514:c10b83cc 20131120153222 :a117677
+  fd327bf1:3ea619e3:3ea619e3 20130623153444 :a11cfc7
+  cb52c615:62186bc8:fb4d472b 20130517164839 :a141d03
+  3ffb6d19:d7c0cb43:9f7a2da9 20131120153219 :a1dbb28
+  8f355cb4:080e27d3:beadad0b 20131120153224 :a2d4ac6
+  45c8ac0d:89ccfea6:7daf8f62 20130517164839 :a57f477
+  7f1a4f6e:ce08c7b7:ce08c7b7 20131127121348 :a5be098
+  0aaa5640:5d465b3a:9c7aae9b 20131211122458 :a5c54ec
+  fd68f57b:f2fac92c:f2fac92c 20130517164839 :a60f59b
+  9e4ffe7b:317393db:317393db 20130517164839 :a6d5a3b
+  c7f3c599:7aff7262:5eb1a6dd 20130623153441 :a704e50
+  e4677b47:17a812c1:17a812c1 20130517164839 :a7768a2
+  989d4761:bc6269f4:bc6269f4 20131120153235 :a7edca6
+  9df39d88:1872181b:d2a69d35 20131127121603 :a8cadac
+  df936b71:deb5ae92:deb5ae92 20130623153453 :a99306b
+  bb9278e0:af216006:af216006 20131120153233 :aa018ff
+  8dc3557e:aa0fa91d:aa0fa91d 20130517164839 :aa0fa91
+  aaeffc0c:aaeffc0c:aaeffc0c 20131127121410 :aaeffc0
+  2d7e4e50:1bb3b28d:d563e7e1 20130517164839 :ab11828
+  b7e55ad6:88652d8f:88652d8f 20130517164839 :ab3a993
+  660dde82:bb96e1d5:bb96e1d5 20131120153235 :ab5a81b
+  8ddf1e5d:e1021743:b0343fad 20130517164839 :ab79445
+  abe815e8:abe815e8:abe815e8 20130517164839 :abe815e
+  866e3bf0:6b08fb16:03a2cd33 20131120153220 :abe84d4
+  6284e9b5:8d9132bf:8d9132bf 20131222174714 :ac77c0f
+  a78f9ac0:ac353949:5e846fdd 20130517164839 :ad02773
+  311f7a37:15e8c0ef:15e8c0ef 20130517164839 :ad44ab7
+  cc03f7ad:6bb6ba90:6bb6ba90 20131127121348 :ad9dcb2
+  92ea2ff2:7a476262:3956df8a 20130517164839 :ae19308
+  aaa7e0fb:b82036e6:b82036e6 20130517164839 :ae69016
+  f3a2d2f4:942157f0:fdcb77c7 20131209152130 :af5808f
+  1e1b7b53:49ac4ada:49ac4ada 20131211122457 :b02840d
+  5d03f0d1:6cce2783:6cce2783 20130623153501 :b082070
+  fb0598f8:49fd8bd2:49fd8bd2 20130623153458 :b0ac923
+  d9d6a0fd:92b2335d:92b2335d 20130517164839 :b18659f
+  b1a406f6:b1a406f6:b1a406f6 20130517164839 :b1a406f
+  193e70da:456930d4:456930d4 20130517164839 :b23885d
+  9b4adc60:568b527d:fd7e334c 20130623153441 :b2b7cf5
+  007dfe7c:89629c41:89629c41 20130623153459 :b332808
+  5360793a:f0fa2146:b25a8543 20131127121600 :b4823a9
+  809174b5:65e217b9:65e217b9 20130623153458 :b483961
+  b5a0eabc:b5a0eabc:b5a0eabc 20130517164839 :b5a0eab
+  b60eef5d:b60eef5d:b60eef5d 20130517164839 :b60eef5
+  62fca2f8:368901ce:368901ce 20130517164839 :b6bf381
+  b73a1618:b73a1618:b73a1618 20130517164839 :b73a161
+  cd15ba68:425d8fe6:425d8fe6 20130526131704 :b78158a
+  ea6a2691:3d55214e:3d55214e 20130623153451 :b844971
+  544101a7:08774629:08774629 20131120153245 :b8d5d24
+  f59759ea:ec8de82a:ec8de82a 20130623153448 :b9076c0
+  eecf82a5:c58afe4b:c58afe4b 20131120153238 :b974229
+  80b5b769:a1cf3cce:a1cf3cce 20131120153231 :baa7890
+  ae83d808:bef97666:34fb4dab 20130517164839 :baa9a22
+  0a77048d:7fa128b9:7fa128b9 20131209152136 :bad3272
+  92596b63:3c320fa5:2b79b7e0 20130517164839 :bbfdddb
+  81c3b2a5:e6d941a1:e6d941a1 20130517164839 :bc18d5f
+  bcb926fe:bcb926fe:bcb926fe 20130517164839 :bcb926f
+  bd573380:bd573380:bd573380 20130517164839 :bd57338
+  69aaaa2c:707b5fbe:707b5fbe 20130517164839 :be2287e
+  f6103c89:62053d51:62053d51 20131120153314 :be2e69a
+  31b7eb85:67763be0:67763be0 20131222174714 :be3fbeb
+  67a91cab:2cbe05b9:2cbe05b9 20130623153448 :bf03208
+  b0a03893:2ce719f4:2ce719f4 20131127121338 :bf940ca
+  e5ba1f51:2063bc70:8c54242b 20130517164839 :c035a34
+  6316bf8d:359a3972:2c689e3c 20130623153438 :c050374
+  c0e6e54f:c0e6e54f:c0e6e54f 20130517164839 :c0e6e54
+  f7f91764:695b469f:695b469f 20130623153450 :c10ee50
+  83d74e82:c2e47fe6:c2e47fe6 20130517164839 :c295a4c
+  0f70869a:0951e40c:88525b08 20131127121344 :c335989
+  e4aea296:19e62098:19e62098 20131127121512 :c3cdf2d
+  c3f8675e:c3f8675e:c3f8675e 20130517164839 :c3f8675
+  db461901:006aa4e7:9768d24a 20130517164839 :c425867
+  0f366913:a7c7a264:a7c7a264 20131127121448 :c480d49
+  ae21993c:669373d3:669373d3 20131209152134 :c49e184
+  625e0317:4100807a:4100807a 20130623153459 :c4e87a7
+  b901bad7:5cc5e4e5:5cc5e4e5 20130517164839 :c586a35
+  b2bb6e05:c496da00:5c20f01b 20130517164839 :c613d6f
+  d59b38f9:5138fb59:0eb46801 20130517164839 :c62a917
+  f5f70b7c:4654643e:8c34e510 20130623153438 :c6ec673
+  9f013a62:6de8cc00:4200d471 20130517164839 :c7d3e3f
+  c8a61322:c8a61322:c8a61322 20131127121438 :c8a6132
+  9bd78e9d:7c2ed1cc:98993956 20130517164839 :cab7ae7
+  cacbad88:cacbad88:cacbad88 20130517164839 :cacbad8
+  bb2afb27:cb4b4823:560dd238 20131127121340 :cb61215
+  83ab060d:8305ceaa:0b9cf34d 20131120153215 :cc46659
+  269e073f:b387b742:b387b742 20131127121503 :cce2a9a
+  bf2d6b26:8e23dae3:7b8b4177 20130517164839 :ccf6c90
+  02e7b337:164500d2:164500d2 20131127121405 :cd23934
+  eecdd834:2bcbbd7f:09dc0751 20131120153105 :cdcad0b
+  a00b9b5b:1fdfc46b:f4c39219 20130623153435 :cdcd9f9
+  edab1ad2:6715aed4:7da590a0 20131127121440 :ce5335a
+  15ab1073:7bbb93b3:d97f4eb7 20131127121350 :ce6656d
+  690d714b:e632d4a7:e632d4a7 20130623153503 :ce69e79
+  286e2f41:bca15671:bca15671 20131127121354 :cef74c4
+  2703d19e:c6cc40cb:c6cc40cb 20130623153500 :cf4ad6a
+  d0560c65:d0560c65:d0560c65 20130517164839 :d0560c6
+  83f60979:beda251f:beda251f 20130517164839 :d111b77
+  30c0a912:d5a93f33:bd1dc487 20131127121604 :d174ef3
+  8ff85796:fbdb0be9:0eb04290 20131222174708 :d19daf3
+  d282429b:d282429b:d282429b 20130517164839 :d282429
+  3a6e09f6:2718e284:7c0f5d7a 20131127121342 :d2af3ac
+  d9427651:2ca5c070:7c92e2ed 20130517164839 :d2b5289
+  8865b316:55b512c9:55b512c9 20130517164839 :d35c72c
+  d53247c8:d53247c8:d53247c8 20130517164839 :d53247c
+  e8d91f40:2f8f522e:2f8f522e 20131120153228 :d5a7667
+  94c067ff:14803e1c:14803e1c 20130623153456 :d5c84be
+  d6cf9638:d6cf9638:d6cf9638 20130517164839 :d6cf963
+  63a99055:6982bed6:69a12160 20131222174716 :d78906c
+  8b8d974c:c4e1a2c5:c4e1a2c5 20130517164839 :d822b12
+  d888370a:d888370a:d888370a 20130517164839 :d888370
+  8fb80871:c1b4eb1d:c1b4eb1d 20130517164839 :d8ac47b
+  d8cf629d:d8cf629d:d8cf629d 20130517164839 :d8cf629
+  d8d97abe:d8d97abe:502a6c61 20131127121346 :d8d97ab
+  a3098b4b:3924352d:3924352d 20131127121505 :d92587f
+  0d006fe0:60c66564:fccab0df 20130517164839 :d99735d
+  bde71c0b:7253ace0:b9040757 20130517164839 :da499a7
+  25996644:3beedaf6:3beedaf6 20130517164839 :da8b05d
+  1b2d023e:a26105d7:44afe10f 20130517164839 :db0842d
+  e52d5f71:f7e70599:f7e70599 20131120153243 :db27922
+  2ade4bd1:158392b5:158392b5 20130517164839 :dbea732
+  1667c1c2:c2ed8e1d:c2ed8e1d 20130623153449 :dc5df09
+  a9b88b85:bb12ff79:bb12ff79 20130623153452 :dc5e469
+  be05754f:a8538d0e:ba4ba362 20131209152105 :dc6eed8
+  95e6a7d6:a2c3e4f0:a2c3e4f0 20130623153444 :dce49cb
+  f65b46be:3ff3dab9:b7489b95 20130517164839 :dd59e0a
+  4994f970:4ad29b6c:10fb8896 20131120153232 :dd83010
+  de3a020b:de3a020b:de3a020b 20130517164839 :de3a020
+  69c08cac:1d27a17a:1d27a17a 20131120153233 :df2af81
+  1b4c3f8f:4bd7c668:a8398f2c 20131120153105 :df46e7a
+  df64e953:df64e953:df64e953 20130517164839 :df64e95
+  716bb2bc:e3ad6944:ee960a6e 20131120153224 :dfa081d
+  e0088259:e0088259:e0088259 20130517164839 :e008825
+  a1f0daa1:ae0f40de:00f5ce77 20131127121343 :e16c8f1
+  caf5d5c9:497b6793:497b6793 20130623153445 :e223557
+  826c5121:692b19a4:d9e1ca04 20131120153224 :e316077
+  35beadf8:773a1334:773a1334 20131127121505 :e3a840f
+  e48eee8c:e48eee8c:e48eee8c 20130517164839 :e48eee8
+  6ca73722:fef40c9e:fef40c9e 20130517164839 :e4ac596
+  ddefdb85:a7604c17:643c359f 20131120153205 :e5852db
+  88d5634a:4a07b171:4a07b171 20130519145858 :e59d4cd
+  ede733b4:935940d7:2cc94820 20131120153104 :e63d2f9
+  e71b5942:e71b5942:e71b5942 20130517164839 :e71b594
+  e732729e:e732729e:e732729e 20130517164839 :e732729
+  e7c1c98c:e7c1c98c:e7c1c98c 20130517164839 :e7c1c98
+  0c93202a:7c2d3c26:7c2d3c26 20131120153231 :e8d453e
+  e8f24a89:e8f24a89:e8f24a89 20130517164839 :e8f24a8
+  7869b6e9:9496d271:9496d271 20130517164839 :e972e45
+  5aa8315e:469bd4b2:469bd4b2 20130517164839 :e9748ae
+  e984a5e3:e984a5e3:e984a5e3 20130517164839 :e984a5e
+  c1009723:f06511ff:f06511ff 20131222174719 :e9f8f39
+  34694b3c:a3837bd1:a3837bd1 20130623153452 :eb283f4
+  c5e2cc36:5f55ee19:5f55ee19 20131120153234 :eb581ab
+  4ab0a770:cd3eef84:7368f357 20130623153442 :eb9e7b0
+  939bad25:631efef9:58e8b636 20130517164839 :ed07caf
+  8aa96718:ed5ed804:ed5ed804 20130623153445 :ed30264
+  9d264e83:37c59001:9cd7545b 20130526131352 :eda967e
+  0475d090:c0f4b2f6:23fcefee 20130517164839 :eedc0cd
+  d9de5013:c319aabf:0e01c444 20131120153221 :ef3a24a
+  1acc9fb0:5fb91fe1:5fb91fe1 20130623153445 :efcc8eb
+  34c551af:fb40431f:897a965d 20131120153225 :efe2e90
+  5a87840c:d5b9b3bf:d5b9b3bf 20131120153234 :f1ceae4
+  f2f8c5c3:f2f8c5c3:f2f8c5c3 20130517164839 :f2f8c5c
+  247a853c:1d692293:1d692293 20131127121354 :f3074e3
+  27aabb22:7266b167:c61b4687 20130517164839 :f41603b
+  f42bdae5:f42bdae5:f42bdae5 20130517164839 :f42bdae
+  efce1ac1:fd198faa:fd198faa 20130623153450 :f48de7a
+  f45317e5:312ba90d:d6edc3bb 20130517164839 :f5968a7
+  f658bff4:f658bff4:f658bff4 20130517164839 :f658bff
+  58a65376:03f75f6c:03f75f6c 20130623153453 :f6a6a49
+  7752319c:bdba1e96:93731353 20130623153351 :f6f703f
+  6eb665f9:55076d71:ee809f16 20131127121404 :f784560
+  f9c3ecfc:5a556f94:5a556f94 20131222174710 :f870ca0
+  093f047e:779fcb17:f74b5fe5 20130526131352 :f8a7119
+  49ea8681:68c0ee8d:68c0ee8d 20130623153454 :f942a88
+  49367f9d:8f4cb648:649e0cce 20131204120737 :f9509b4
+  5df046b2:f90b4342:f90b4342 20130517164839 :f9f1333
+  fa47c405:fa47c405:fa47c405 20130517164839 :fa47c40
+  85644e81:81d264b0:81d264b0 20130623153452 :fa6063d
+  a1929071:1a1be0ba:5271a802 20130517164839 :fb25609
+  34fbda4c:77ba7ec0:77ba7ec0 20130517164839 :fba3694
+  fc474c55:fc474c55:fc474c55 20130517164839 :fc474c5
+  fc48b04a:fc48b04a:fc48b04a 20130517164839 :fc48b04
+  fc6c0417:fc6c0417:fc6c0417 20130517164839 :fc6c041
+  e39a6824:1e2967fd:59fc158f 20131120153208 :fc9dc6d
+  1bb3b56e:18e07bc7:18e07bc7 20130919181546 :fca468e
+  889b108a:91cf7904:d2d3fa13 20130623153457 :fcc28a5
+  a45fae8b:e398f567:b12c2407 20131127121507 :fd10103
+  01c74ba1:65e68950:8e461112 20130623153459 :fd9b13d
+  fe3c8871:fe3c8871:fe3c8871 20130517164839 :fe3c887
+  4ba3c76b:a2e8cdd8:a2e8cdd8 20130623153445 :ff0e448
+  5fb422d7:5bab7768:5bab7768 20130517164839 :ff131d4
+  a15791e0:723fa207:2510e060 20131120153226 :ffff0cc
+  7c30c48a 20130517164839 Contents/Info.plist
+  6b82c620 20130517164839 Contents/Resources/Fiji.icns
+  992807f6 20130517164839 Contents/Resources/ImageJ.icns
+  8c8bc05c 20131120153218 ImageJ-linux64
+  1faaeed6 20130517164839 images/icon-flat.png
+  a02d5340 20130517164839 images/icon.png
+  6733556d 20131127121506 jars/AbsoluteLayout.jar
+  91ece67d 20131127121408 jars/JWlz.jar
+  c3f8675e 20130517164839 jars/Jama.jar
+  ad44ab73 20130517164839 jars/VIB-lib-2.0.0-SNAPSHOT.jar
+  bd573380 20130517164839 jars/VectorString.jar
+  5cf0711e 20131127121448 jars/akutan-1.0.jar
+  8e160955 20130517164839 jars/ant-junit.jar
+  4124ed0d 20130517164839 jars/ant-launcher.jar
+  b18659ff 20130517164839 jars/ant-nodeps.jar
+  70c12cd3 20130517164839 jars/ant.jar
+  ff131d48 20130517164839 jars/autocomplete.jar
+  2daf8bdd 20130517164839 jars/base64-2.3.8.jar
+  5a0c7964 20130517164839 jars/batik.jar
+  ab79445e 20130517164839 jars/bcmail-jdk14-138.jar
+  d2b52892 20130517164839 jars/bcprov-jdk14-138.jar
+  3814d5a6 20131222174718 jars/bij.jar
+  f870ca0c 20131222174710 jars/bio-formats.jar
+  b8d5d243 20131120153245 jars/bio-formats/jai_imageio-4.4.9.jar
+  be3fbebc 20131222174714 jars/bio-formats/scifio.jar
+  cd239341 20131127121405 jars/bio-formats/specification.jar
+  5e5f1e48 20131127121406 jars/bio-formats/turbojpeg.jar
+  6e312829 20130623153441 jars/bsh-2.0b4.jar
+  5967b4df 20130517164839 jars/clojure.jar
+  0449e3ec 20131204120739 jars/colt-1.2.0.jar
+  265cb26d 20130517164839 jars/commons-lang3-3.1.jar
+  8eb3709e 20130517164839 jars/commons-logging-1.1.1.jar
+  d8d97abe 20131127121346 jars/commons-math-3.0-SNAPSHOT.jar
+  f9509b47 20131204120737 jars/commons-math3-3.2.jar
+  6cd7cd7d 20131127121442 jars/concurrent-1.3.4.jar
+  6227c67b 20131127121449 jars/curve-fitter-1.0.0-SNAPSHOT-with-libs.jar
+  b6bf3817 20130517164839 jars/edu_mines_jtk.jar
+  bbfdddb0 20130517164839 jars/eventbus-1.4.jar
+  efcc8eb3 20130623153445 jars/fake-2.0.0-SNAPSHOT.jar
+  ffff0cc3 20131120153226 jars/fiji-compat-2.0.0-SNAPSHOT.jar
+  dce49cbd 20130623153444 jars/fiji-lib-2.0.0-SNAPSHOT.jar
+  7c5dc207 20130517164839 jars/fiji-scripting-2.0.0-SNAPSHOT.jar
+  491e89c0 20130517164839 jars/forms-1.2.1.jar
+  b4823a94 20131127121600 jars/freehep-export-2.1.1.jar
+  0acf0b2f 20131127121601 jars/freehep-graphics2d-2.1.1.jar
+  051e8d4f 20131127121602 jars/freehep-graphicsio-2.1.1.jar
+  20d6567b 20131127121602 jars/freehep-graphicsio-emf-2.1.1.jar
+  78925b53 20131127121603 jars/freehep-graphicsio-ps-2.1.1.jar
+  a8cadac8 20131127121603 jars/freehep-io-2.0.2.jar
+  01dd3ac0 20131127121603 jars/freehep-swing-2.0.3.jar
+  d174ef37 20131127121604 jars/freehep-util-2.0.2.jar
+  93819785 20131222174752 jars/ij-1.47q.jar
+  5b86e1d0 20131120153215 jars/ij-app-2.0.0-beta-7.5.jar
+  a117677d 20131120153222 jars/ij-commands-2.0.0-beta-7.5.jar
+  cdcad0b8 20131120153105 jars/ij-core-2.0.0-beta-7.5.jar
+  8e753b47 20131120153212 jars/ij-data-2.0.0-beta-7.5.jar
+  00efaa63 20131120153219 jars/ij-launcher-2.0.2.jar
+  656e49ee 20131120153211 jars/ij-legacy-2.0.0-beta-7.5.jar
+  ef3a24a9 20131120153221 jars/ij-minimaven-2.0.0-beta-7.5.jar
+  608a731a 20131120153215 jars/ij-options-2.0.0-beta-7.5.jar
+  310cdb6f 20131120153219 jars/ij-platforms-2.0.0-beta-7.5.jar
+  97b16f4a 20131120153221 jars/ij-scripting-beanshell-2.0.0-beta-7.5.jar
+  dfa081d3 20131120153224 jars/ij-scripting-clojure-2.0.0-beta-7.5.jar
+  5eff5823 20131120153221 jars/ij-scripting-java-2.0.0-beta-7.5.jar
+  98ed9a8c 20131120153224 jars/ij-scripting-jruby-2.0.0-beta-7.5.jar
+  a2d4ac66 20131120153224 jars/ij-scripting-jython-2.0.0-beta-7.5.jar
+  3da60e9b 20131120153222 jars/ij-text-2.0.0-beta-7.5.jar
+  17281493 20131120153209 jars/ij-tools-2.0.0-beta-7.5.jar
+  7f72243e 20131120153210 jars/ij-ui-2.0.0-beta-7.5.jar
+  fc9dc6d4 20131120153208 jars/ij-ui-common-awt-2.0.0-beta-7.5.jar
+  a1dbb285 20131120153219 jars/ij-ui-swing-2.0.0-beta-7.5.jar
+  4a6a7fb5 20131120153221 jars/ij-ui-swing-commands-2.0.0-beta-7.5.jar
+  abe84d46 20131120153220 jars/ij-ui-swing-script-editor-2.0.0-beta-7.5.jar
+  8c7b4a11 20131120153206 jars/ij-ui-swing-tools-2.0.0-beta-7.5.jar
+  dc6eed8d 20131209152105 jars/ij-ui-swing-updater-2.0.0-SNAPSHOT.jar
+  e63d2f9e 20131120153104 jars/ij-updater-core-2.0.0-beta-7.5.jar
+  5f8e4274 20131120153206 jars/ij-updater-ssh-2.0.0-beta-7.5.jar
+  815af393 20131120153222 jars/ij-updater-webdav-2.0.0-beta-7.5.jar
+  8d65fae1 20131120153209 jars/ij-util-awt-2.0.0-beta-7.5.jar
+  15260b17 20131120153216 jars/ij-util-swing-2.0.0-beta-7.5.jar
+  be2287e8 20130517164839 jars/imagescience-2.4.1.jar
+  780fae40 20130517164839 jars/imageware.jar
+  01859c99 20131127121341 jars/imglib2-2.0.0-SNAPSHOT.jar
+  cb612156 20131127121340 jars/imglib2-algorithms-2.0.0-SNAPSHOT.jar
+  9da80c9f 20131127121346 jars/imglib2-algorithms-gpl-2.0.0-SNAPSHOT.jar
+  5dc72557 20131127121346 jars/imglib2-algorithms-legacy-2.0.0-SNAPSHOT.jar
+  3b446235 20131127121342 jars/imglib2-ij-2.0.0-SNAPSHOT.jar
+  09140312 20131222174708 jars/imglib2-io-2.0.0-SNAPSHOT.jar
+  095ff643 20131127121343 jars/imglib2-meta-2.0.0-SNAPSHOT.jar
+  398ab193 20131222174707 jars/imglib2-ops-2.0.0-beta-20.jar
+  e16c8f1e 20131127121343 jars/imglib2-realtransform-2.0.0-SNAPSHOT.jar
+  3ce97c72 20131222174713 jars/imglib2-ui-2.0.0-SNAPSHOT.jar
+  f9f1333a 20130517164839 jars/itext-2.1.5.jar
+  c4258671 20130517164839 jars/itextpdf.jar
+  0dccf163 20130517164839 jars/jacl.jar
+  8c636e50 20130517164839 jars/jai_codec.jar
+  717dd8e0 20130517164839 jars/jai_core.jar
+  e5852db5 20131120153205 jars/jai_imageio-1.0.1.jar
+  ac77c0f5 20131222174714 jars/jama-1.0.3.jar
+  e4ac596e 20130517164839 jars/java-cup-0.11a.jar
+  15f34947 20130517164839 jars/javac.jar
+  fb25609e 20130517164839 jars/javassist-3.16.1-GA.jar
+  ccf6c908 20130517164839 jars/jcommon-1.0.17.jar
+  efe2e903 20131120153225 jars/jdatepicker-1.3.2.jar
+  c295a4c5 20130517164839 jars/jdom-2.0.2.jar
+  64241209 20130517164839 jars/jdom-contrib.jar
+  f3074e37 20131127121354 jars/jdom2-2.0.5.jar
+  166036ab 20130517164839 jars/jep.jar
+  55d8499c 20130517164839 jars/jfreechart-1.0.14.jar
+  0e15c072 20130517164839 jars/jgrapht-0.8.3.jar
+  0b768690 20130517164839 jars/jgraphx-1.10.4.1.jar
+  636e4dd7 20131127121402 jars/jhdf5-12.02.3.jar
+  242749dc 20130517164839 jars/jhotdraw-7.6.0.jar
+  90915f54 20130517164839 jars/jna.jar
+  4c09d41c 20131127121407 jars/joda-time-2.2.jar
+  1ad3be0d 20130517164839 jars/jpedalSTD.jar
+  da499a7d 20130517164839 jars/jruby.jar
+  65f86378 20130517164839 jars/js.jar
+  2ce2c00a 20130517164839 jars/jsch-0.1.49.jar
+  24d47d70 20130517164839 jars/junit-4.8.1.jar
+  c480d491 20131127121448 jars/jxlayer.jar
+  f5968a72 20130517164839 jars/jython.jar
+  c335989b 20131127121344 jars/jzlib-1.0.7.jar
+  d2af3ac9 20131127121342 jars/kryo-2.21-shaded.jar
+  5a6f6f25 20131120153246 jars/legacy-imglib1-2.0.0-SNAPSHOT.jar
+  8523861f 20131127121449 jars/lma-1.3.jar
+  d19daf36 20131222174708 jars/loci-common.jar
+  35c256ae 20131120153207 jars/log4j-1.2.17.jar
+  46304274 20131120153224 jars/mapdb-0.9.3.jar
+  1daf5806 20130517164839 jars/markdownj-0.3.0-1.0.2b4.jar
+  e8d453ec 20131120153231 jars/mdbtools-java-4.4.9.jar
+  70e68706 20131120153226 jars/metakit-4.4.9.jar
+  7f0caa5d 20130517164839 jars/miglayout-3.7.3.1-swing.jar
+  a11cfc71 20130623153444 jars/mij-1.3.6-fiji2-SNAPSHOT.jar
+  b6bf3817 20131222174717 jars/mines-jtk-20100113.jar
+  5bd64fbe 20131120153227 jars/mpicbg-0.6.1-SNAPSHOT.jar
+  868a59d4 20131127121342 jars/native-lib-loader-2.0-SNAPSHOT.jar
+  04f8e59b 20131127121448 jars/native-library-util-2.0-SNAPSHOT.jar
+  8b4b4a32 20131120153249 jars/netcdf-4.0.03.jar
+  f41603bf 20130517164839 jars/object-inspector-0.1.jar
+  5da6834c 20131209152131 jars/ome-formats-0.3.0.jar
+  bf940ca5 20131127121338 jars/ome-xml.jar
+  e0088259 20130517164839 jars/pal-optimization.jar
+  82577709 20130517164839 jars/pentaho-package-manager-1.0.0.jar
+  096abf51 20131127121344 jars/poi-loci.jar
+  c586a356 20130517164839 jars/postgresql.jar
+  72184439 20131120153220 jars/rsyntaxtextarea-2.0.4.1.jar
+  6b4a1f9e 20131120153213 jars/scifio-0.7.1.jar
+  4792fc4e 20131209152132 jars/scifio-bf-compat-1.3.2.jar
+  28756665 20131222175351 jars/scifio-devel-4.5-SNAPSHOT.jar
+  af5808fb 20131209152130 jars/scifio-lifesci-0.2.2.jar
+  df46e7a9 20131120153105 jars/scijava-common-2.2.2.jar
+  eedc0cd9 20130517164839 jars/serializer-2.7.1.jar
+  a57f477f 20130517164839 jars/sezpoz-1.9-imagej.jar
+  572a727b 20131120153215 jars/slf4j-api-1.7.2.jar
+  9ae3dd1b 20131120153214 jars/slf4j-log4j12-1.7.2.jar
+  6fa24273 20131127121506 jars/swing-layout-1.0.4.jar
+  fd10103a 20131127121507 jars/swingx-0.9.5.jar
+  1dedefe8 20130517164839 jars/tools-1.4.2.jar
+  68c26a79 20131120153225 jars/udunits-4.3.18.jar
+  7d5ba6c5 20130517164839 jars/wavelets.jar
+  fc6c0417 20130517164839 jars/weave_jy2java.jar
+  9a71e194 20130517164839 jars/weka-dev-3.7.6.jar
+  36cdef55 20130517164839 jars/xalan-2.7.1.jar
+  da8b05de 20130517164839 jars/xml-apis-1.3.04.jar
+  26357074 20131127121558 jars/xuggle-xuggler-5.4.jar
+  5a8f1c3d 20131127121437 lib/linux64/libffmpeg.so
+  c432f64b 20130517164839 luts/16_colors.lut
+  89419f99 20130517164839 luts/5_ramps.lut
+  dc3a1bdd 20130517164839 luts/6_shades.lut
+  0b3bbb6c 20130517164839 luts/Cyan Hot.lut
+  655b55e6 20130517164839 luts/Green Fire Blue.lut
+  2918f6d3 20130517164839 luts/HiLo.lut
+  a3312d3f 20130517164839 luts/ICA.lut
+  db5bf8a4 20130517164839 luts/ICA2.lut
+  9f7dd167 20130517164839 luts/ICA3.lut
+  697dd3a4 20130517164839 luts/Magenta Hot.lut
+  524604de 20130517164839 luts/Orange Hot.lut
+  9c9a56c2 20130517164839 luts/Rainbow RGB.lut
+  4e686ec6 20130517164839 luts/Red Hot.lut
+  2fdb7c96 20130517164839 luts/Thermal.lut
+  32157491 20130517164839 luts/Yellow Hot.lut
+  a4cec22b 20130517164839 luts/blue_orange_icb.lut
+  c9e396a3 20130517164839 luts/brgbcmyw.lut
+  60f85e63 20130517164839 luts/cool.lut
+  ba88e5f3 20130517164839 luts/edges.lut
+  0a4dce83 20130517164839 luts/gem.lut
+  c616e765 20130517164839 luts/glasbey.lut
+  325c01f3 20130517164839 luts/glow.lut
+  f2b7e781 20131127121444 luts/lifetime.lut
+  1f99f07e 20130517164839 luts/phase.lut
+  52a3c399 20130517164839 luts/physics.lut
+  49f5e48a 20130517164839 luts/royal.lut
+  898954dd 20130517164839 luts/sepia.lut
+  ebd4ed6b 20130517164839 luts/smart.lut
+  36e7ca9e 20130517164839 luts/thal.lut
+  940b38f9 20130517164839 luts/thallium.lut
+  17243681 20130517164839 luts/unionjack.lut
+  e5b59c01 20131204120739 macros/AutoRun/Register_Jay_Reader.ijm
+  25abcd0c 20130517164839 macros/StartupMacros.fiji.ijm
+  a97e1da9 20130517164839 macros/listManagement.txt
+  589b3dd9 20131127121408 macros/toolsets/BioVoxxel_Toolbox.ijm
+  1785bbbf 20130517164839 macros/toolsets/Clear Custom Tools.txt
+  54200f47 20130517164839 macros/toolsets/Drawing Tools.txt
+  febb9d05 20131127121439 macros/toolsets/LineAndProfileTool.txt
+  9bd39ac4 20130517164839 macros/toolsets/Lookup Tables.txt
+  545b95ef 20131127121408 macros/toolsets/Nearest_Neighbor_Indicator.ijm
+  4d7b0482 20131209152136 mmautofocus/MMAutofocus.jar
+  8a993e35 20131209152136 mmautofocus/MMAutofocusDuo.jar
+  68237a16 20131209152136 mmautofocus/MMAutofocusTB.jar
+  2b5861c2 20131209152137 mmautofocus/MMOughtaFocus.jar
+  4686cb6a 20131209152135 mmplugins/SPIMAcquisition.jar
+  8fbab9f6 20130623153446 plugins/3D_Blob_Segmentation-2.0.0-SNAPSHOT.jar
+  d5c84beb 20130623153456 plugins/3D_Objects_Counter-2.0.0-SNAPSHOT.jar
+  f42bdae5 20130517164839 plugins/3D_Viewer.jar
+  02a52ea2 20131127121408 plugins/ActionBar/BioVoxxel_bar.txt
+  7e3eb812 20131222174718 plugins/ActionBar/Shared Bars/BIOP_VSI_Reader.ijm
+  f32e9b4d 20131211122459 plugins/ActionBar/Shared Bars/Common_Tools.ijm
+  68175df5 20130517164839 plugins/Algorithm_Launcher.jar
+  9274f337 20130517164839 plugins/Analyze/Dynamic_ROI_Profiler.clj
+  7acae667 20130517164839 plugins/Analyze/Measure_RGB.txt
+  4d3cf935 20131120153239 plugins/AnalyzeSkeleton_-2.0.0-SNAPSHOT.jar
+  263158a7 20130517164839 plugins/Analyze_Reader_Writer-2.0.0-SNAPSHOT.jar
+  645ccb4c 20130623153452 plugins/Anisotropic_Diffusion_2D-2.0.0-SNAPSHOT.jar
+  295ba57e 20130623153500 plugins/Arrow_-2.0.0-SNAPSHOT.jar
+  04478f7a 20131204120733 plugins/Auto_Threshold-1.16-SNAPSHOT.jar
+  fd9b13d9 20130623153459 plugins/BalloonSegmentation_-2.0.0-SNAPSHOT.jar
+  75529242 20130623153458 plugins/BeanShell_Interpreter-2.0.0-SNAPSHOT.jar
+  b0ac9234 20130623153458 plugins/Bug_Submitter-2.0.0-SNAPSHOT.jar
+  69972944 20131120153242 plugins/CLI_-2.0.0-SNAPSHOT.jar
+  3e4163b4 20130623153447 plugins/CPU_Meter-2.0.0-SNAPSHOT.jar
+  8c102cb9 20130623153447 plugins/Calculator_Plus-2.0.0-SNAPSHOT.jar
+  e2235578 20130623153445 plugins/Clojure_Interpreter-2.0.0-SNAPSHOT.jar
+  0f44924c 20130517164839 plugins/Colocalisation_Analysis.jar
+  a99306b3 20130623153453 plugins/Color_Histogram-2.0.6-SNAPSHOT.jar
+  3bac3fbe 20130623153502 plugins/Color_Inspector_3D-2.3-SNAPSHOT.jar
+  1902ce83 20130623153448 plugins/Colour_Deconvolution-2.0.0-SNAPSHOT.jar
+  fa6063d9 20130623153452 plugins/CorrectBleach_-2.0.0-SNAPSHOT.jar
+  8d9bdfa0 20090703152912 plugins/DeconvolutionLab/DeconvolutionLab_.jar
+  2a722593 20131120153234 plugins/Descriptor_based_registration-2.0.0-SNAPSHOT.jar
+  4d6319b8 20130623153503 plugins/Dichromacy_-2.0.0-SNAPSHOT.jar
+  96b64b9e 20130623153455 plugins/Differentials_-2.0.0-SNAPSHOT.jar
+  eb283f44 20130623153452 plugins/Directionality_-2.0.1-SNAPSHOT.jar
+  c8a61322 20131127121438 plugins/Droplet_.jar
+  83caa3df 20130517164839 plugins/Examples/Add_Popup_Split_Channels.bsh
+  f6fcfac7 20130517164839 plugins/Examples/Anaglyph_for_Red_Cyan_glasses.rb
+  5dcd79ab 20130517164839 plugins/Examples/Blobs_Demo_in_Ruby.rb
+  73eff736 20130517164839 plugins/Examples/Command_Launchers/Command_Launcher_BeanShell.bsh
+  95549b2f 20130517164839 plugins/Examples/Command_Launchers/Command_Launcher_Clojure.clj
+  dceba709 20130517164839 plugins/Examples/Command_Launchers/Command_Launcher_Javascript.js
+  e4954eac 20130517164839 plugins/Examples/Command_Launchers/Command_Launcher_Python.py
+  f5111212 20130517164839 plugins/Examples/Command_Launchers/Command_Launcher_Ruby.rb
+  6076ad74 20130623153447 plugins/Examples/CoverMaker/Cover_Maker.py
+  eabbed47 20130623153446 plugins/Examples/CoverMaker/Prepare_Cover_Maker_Database.py
+  77c7bef5 20130517164839 plugins/Examples/Delayed_Snapshot.py
+  5536e038 20130517164839 plugins/Examples/Delayed_Snapshot_Window.bsh
+  4164c08c 20130517164839 plugins/Examples/Edit_LUT_As_Text.py
+  780e948e 20130517164839 plugins/Examples/Extended_Profile_Plot.bsh
+  b8881af2 20130517164839 plugins/Examples/Fiji_Cube.ijm
+  3687a018 20130517164839 plugins/Examples/Fiji_Logo_3D.js
+  998cb717 20130517164839 plugins/Examples/Find_Dimension_of_Raw_Image.py
+  66cf50fd 20130517164839 plugins/Examples/Image_To_Tool_Icon.bsh
+  ccccc81e 20130517164839 plugins/Examples/Multithreaded_Image_Processing.clj
+  720c237b 20130517164839 plugins/Examples/Multithreaded_Image_Processing_in_Javascript.js
+  92ce736d 20130517164839 plugins/Examples/Plasma_Cloud.rb
+  9efb2292 20130517164839 plugins/Examples/Same_Slice_in_Multiple_Images.rb
+  206a0bbd 20130517164839 plugins/Examples/The_Hue_Game.bsh
+  1b6eee3a 20130517164839 plugins/Examples/TrakEM2_Example_Scripts/Homogenize_Ball_Radius.py
+  940f6500 20130517164839 plugins/Examples/TrakEM2_Example_Scripts/Measure_AreaLists.py
+  3f4bba61 20130517164839 plugins/Examples/TrakEM2_Example_Scripts/T2_Select_All.py
+  72f00949 20130517164839 plugins/Examples/TrakEM2_Example_Scripts/T2_set_all_transforms_to_identity.py
+  89ef0307 20130517164839 plugins/Examples/TrakEM2_Example_Scripts/extract_stack_under_arealist.py
+  f8479f84 20130517164839 plugins/Examples/blend_two_images.clj
+  0989cf74 20130517164839 plugins/Examples/celsius_to_fahrenheit.clj
+  ff3b9902 20130517164839 plugins/Examples/chess_.py
+  69838e21 20130517164839 plugins/Examples/compose_rgb-stacks.bsh
+  4193ae7c 20130517164839 plugins/Examples/downsample_.js
+  66a204d6 20130517164839 plugins/Examples/list_all_threads.py
+  ff4099b9 20130517164839 plugins/Examples/random_noise_example.clj
+  56600961 20130623153453 plugins/Extended_Depth_Field-2.0.0-SNAPSHOT.jar
+  aaeffc0c 20131127121410 plugins/FFMPEG_IO.jar
+  ff0e4481 20130623153445 plugins/FeatureJ_-1.6.1-SNAPSHOT.jar
+  4ea625bc 20130623153459 plugins/Feature_Detection-2.0.0-SNAPSHOT.jar
+  56d4601b 20131127121439 plugins/FigureJ_.jar
+  0326851a 20130623153455 plugins/Fiji_Developer-2.0.0-SNAPSHOT.jar
+  460995d2 20130623153454 plugins/Fiji_Package_Maker-2.0.0-SNAPSHOT.jar
+  6c0972fc 20131120153238 plugins/Fiji_Plugins-2.0.0-SNAPSHOT.jar
+  aa0fa91d 20130517164839 plugins/Fiji_Updater.jar
+  9688e682 20131127121408 plugins/Filters/Gaussian_Weighted_Median.class
+  ce69e79a 20130623153503 plugins/FlowJ_-1.29.1-SNAPSHOT.jar
+  f942a886 20130623153454 plugins/Graph_Cut-0.1.1-SNAPSHOT.jar
+  bf032087 20130623153448 plugins/Gray_Morphology-2.3.2-SNAPSHOT.jar
+  f48de7ae 20130623153450 plugins/Helmholtz_Analysis-2.0.1-SNAPSHOT.jar
+  85f658a2 20131127121439 plugins/IJ_Ed2.jar
+  dc5df090 20130623153449 plugins/IJ_Robot-2.0.0-SNAPSHOT.jar
+  eb581ab4 20131120153234 plugins/IO_-2.0.0-SNAPSHOT.jar
+  ce5335ac 20131127121440 plugins/ImageJ_Latex-1.0.0.jar
+  8b85c6b0 20130517164839 plugins/Image_5D.jar
+  dc5e4695 20130623153452 plugins/Image_Expression_Parser-2.0.0-SNAPSHOT.jar
+  65b42030 20130623153445 plugins/Interactive_3D_Surface_Plot-2.31.1-SNAPSHOT.jar
+  b483961e 20130623153458 plugins/IsoData_Classifier-2.0.0-SNAPSHOT.jar
+  28582f55 20130517164839 plugins/JRuby/imagej.rb
+  9a5d6894 20130623153457 plugins/JRuby_Interpreter-2.0.0-SNAPSHOT.jar
+  7d22f08d 20130623153452 plugins/Javascript_-2.0.0-SNAPSHOT.jar
+  59229ecf 20131127121517 plugins/Jay_Plugins.jar
+  2aa34b7c 20131127121517 plugins/Jay_Plugins2.jar
+  a7edca68 20131120153235 plugins/Jython_Interpreter-2.0.0-SNAPSHOT.jar
+  2d8f3e60 20131127121444 plugins/LOCI/misc_plugins-1.0.0-SNAPSHOT.jar
+  ad9dcb27 20131127121348 plugins/LSM_Reader.jar
+  6566ced8 20130517164839 plugins/LSM_Toolbox.jar
+  5830f8ee 20130623153456 plugins/Lasso_and_Blow_Tool-2.0.0-SNAPSHOT.jar
+  c10ee505 20130623153450 plugins/Linear_Kuwahara-2.0.0-SNAPSHOT.jar
+  cf4ad6ab 20130623153500 plugins/LocalThickness_-3.1.1-SNAPSHOT.jar
+  3da48f0b 20131127121443 plugins/Low_Light_Tracking_Tool-0.1.jar
+  bad32721 20131209152136 plugins/MMAcqEngine.jar
+  cce2a9a2 20131127121503 plugins/MMCoreJ.jar
+  c49e184d 20131209152134 plugins/MMJ_.jar
+  587c9f4b 20130623153454 plugins/MTrack2_-2.0.0-SNAPSHOT.jar
+  f6a6a497 20130623153453 plugins/MTrackJ_-1.5.1-SNAPSHOT.jar
+  64ccfd05 20130623153456 plugins/M_I_P-2.0.0-SNAPSHOT.jar
+  000018fb 20131222174715 plugins/MaMuT_-0.9.0-SNAPSHOT.jar
+  65a2dd78 20130517164839 plugins/Macros/About_Plugin_Macros.txt
+  dff5642d 20130517164839 plugins/Macros/Bulls_Eye.txt
+  e7ffe8ba 20130517164839 plugins/Macros/Polygon_.txt
+  39f7ffcd 20130517164839 plugins/Macros/RGB_Histogram.txt
+  3ee0edfa 20130517164839 plugins/Macros/batch_convert_any_to_tif.txt
+  55f5b6a0 20130623153453 plugins/Manual_Tracking-2.0.0-SNAPSHOT.jar
+  d84cc2bb 20100922224634 plugins/Morphology/Add_Borders.class
+  5cccefae 20100913105427 plugins/Morphology/AnnularClosing.txt
+  763870ef 20100913105434 plugins/Morphology/AnnularDilation.txt
+  5d777e5e 20100928180029 plugins/Morphology/BinaryConditionalDilate_.class
+  6cfae168 20060525212651 plugins/Morphology/BinaryConditionalErode_.class
+  877be8e6 20060525212957 plugins/Morphology/BinaryConnectivity_.class
+  ebe4d9b0 20111110115448 plugins/Morphology/BinaryDilateNoMerge4_.class
+  65b35fcd 20111109185612 plugins/Morphology/BinaryDilateNoMerge8_.class
+  da5dc033 20081019162449 plugins/Morphology/BinaryDilateTest.txt
+  fe9208a2 20060525213011 plugins/Morphology/BinaryDilate_.class
+  9f2b4ef9 20081019162917 plugins/Morphology/BinaryErodeTest.txt
+  b38e2aa0 20060525213102 plugins/Morphology/BinaryErode_.class
+  3f39caaf 20060525121716 plugins/Morphology/BinaryFilterReconstruct.txt
+  76eb6799 20090525213222 plugins/Morphology/BinaryFilterReconstruct_.class
+  6a2c8b7a 20111109184430 plugins/Morphology/BinaryGeodesicDilateNoMerge8_.class
+  14c67860 20080602111843 plugins/Morphology/BinaryHitOrMiss_.class
+  33b507c2 20100418172848 plugins/Morphology/BinaryKillBorders_.class
+  4204c1c6 20101206112939 plugins/Morphology/BinaryLabel8_.class
+  d3c84f8c 20070712132239 plugins/Morphology/BinaryLabelMacro.txt
+  59e1afe9 20100508105308 plugins/Morphology/BinaryLabel_.class
+  36e4a042 20060525121717 plugins/Morphology/BinaryPrune.txt
+  c8c66f92 20090526185400 plugins/Morphology/BinaryReconstruct_.class
+  3ff298c7 20060525213501 plugins/Morphology/BinaryThick2_.class
+  b73f68f4 20060525213450 plugins/Morphology/BinaryThick_.class
+  2c4c813e 20060525213520 plugins/Morphology/BinaryThin2_.class
+  d8a5d664 20060525213512 plugins/Morphology/BinaryThin_.class
+  3e83cc61 20060525121717 plugins/Morphology/Boundary4.txt
+  9d64440e 20060525121717 plugins/Morphology/Boundary8_.txt
+  e9fc745d 20090602173322 plugins/Morphology/Catalogue_Particles.txt
+  4d0095a2 20070607110847 plugins/Morphology/Classify_Particles.class
+  f53a898e 20090511103446 plugins/Morphology/CloseByReconstructionTopHat.txt
+  2c7f38f5 20101005113839 plugins/Morphology/CloseByReconstruction_.txt
+  1c33105a 20060525121717 plugins/Morphology/ConvexHull1.txt
+  7cb69fdf 20060525121717 plugins/Morphology/ConvexHull2.txt
+  b19cb415 20060525121717 plugins/Morphology/ConvexHull3.txt
+  bd22187f 20060525121717 plugins/Morphology/Corners.txt
+  55c709bf 20061116122256 plugins/Morphology/Correlate_Results.class
+  d463ee86 20081019173010 plugins/Morphology/Delete_ZeroArea.txt
+  8df2eb76 20060525121717 plugins/Morphology/Diagonal8to4.txt
+  61193e21 20100929135932 plugins/Morphology/Domes_.class
+  e428a0f5 20060525121717 plugins/Morphology/Domes_stack.txt
+  1be944ae 20090506102436 plugins/Morphology/DoubleWaterfall.txt
+  925d3d8c 20111208121209 plugins/Morphology/DrawBoundingBox.txt
+  63c4cd27 20111208121157 plugins/Morphology/DrawBoundingCircle.txt
+  b97f945a 20111208121141 plugins/Morphology/DrawConvexHulls.txt
+  2adcfe94 20111208121226 plugins/Morphology/DrawFeret&amp;Breadth.txt
+  b60f4365 20111208121235 plugins/Morphology/DrawMinR&amp;MaxR.txt
+  288ace7a 20100805144115 plugins/Morphology/EDM_16bits.txt
+  71d10273 20081019180232 plugins/Morphology/Euler.txt
+  63757672 20090511103446 plugins/Morphology/Extended_Maxima.txt
+  285e4c16 20090511103446 plugins/Morphology/Extended_Minima.txt
+  2b80b381 20100418195425 plugins/Morphology/FillHolesReconstruct.txt
+  205b6052 20060525150101 plugins/Morphology/Fill_Border_Holes.txt
+  54d7ef21 20090506102436 plugins/Morphology/Fill_Greyscale_Holes.txt
+  75041650 20101001153722 plugins/Morphology/GreyBlackTopHatByReconstruction_.txt
+  6f716dcc 20101001153322 plugins/Morphology/GreyWhiteTopHatByReconstruction_.txt
+  579b5383 20090504162458 plugins/Morphology/GreyscaleCentreFilter.txt
+  c4267b67 20060525213602 plugins/Morphology/GreyscaleDilate_.class
+  965f297a 20060525213612 plugins/Morphology/GreyscaleErode_.class
+  0a50379d 20100920142950 plugins/Morphology/GreyscaleKillBorders.txt
+  d3047959 20090503202435 plugins/Morphology/GreyscaleProperAutomedian.txt
+  b4d94111 20090504142819 plugins/Morphology/GreyscaleProperClose.txt
+  44d81a95 20090504142959 plugins/Morphology/GreyscaleProperOpen.txt
+  9aadbae0 20090526185731 plugins/Morphology/GreyscaleReconstruct_.class
+  4d7e6035 20100908164402 plugins/Morphology/GreyscaleTopHat.txt
+  cb2dc22a 20100908164825 plugins/Morphology/GreyscaleWell.txt
+  282495a6 20060525121717 plugins/Morphology/H-break.txt
+  a73d2279 20090511150552 plugins/Morphology/HMaxima_Transform.txt
+  f1c1b630 20090527112132 plugins/Morphology/HMinima_Transform.txt
+  af3183b2 20080605142624 plugins/Morphology/Hole_Counter.txt
+  930ee9e1 20090527191615 plugins/Morphology/HomotopicMarking.txt
+  3429c4f3 20060525121717 plugins/Morphology/Hysteresis.txt
+  2511df4c 20090513123655 plugins/Morphology/Impose_Minimum.txt
+  6be72748 20060525121717 plugins/Morphology/Influence_Zones.txt
+  5859277c 20060525121717 plugins/Morphology/KeepLargestParticle.txt
+  559e475f 20080522002500 plugins/Morphology/KeepLargestParticlePixels_.txt
+  4605ad0a 20080605164601 plugins/Morphology/KeepParticlesInRange.txt
+  b46b2695 20110415171003 plugins/Morphology/Lines8_.class
+  43259a0b 20090519141519 plugins/Morphology/LocalMaxima.txt
+  c0207001 20090519142405 plugins/Morphology/LocalMinMax.txt
+  b2139bd8 20090519141443 plugins/Morphology/LocalMinima.txt
+  05f0502d 20060525121717 plugins/Morphology/MCentroids.txt
+  b3ea5e05 20101007155910 plugins/Morphology/MinimaDynamic.txt
+  57e4bbaa 20060525121717 plugins/Morphology/Morphological2Derivative1.txt
+  35b51e7e 20060525121717 plugins/Morphology/Morphological2Derivative2.txt
+  ef809632 20060525121717 plugins/Morphology/Morphological2Derivative3.txt
+  73902be6 20100908164213 plugins/Morphology/MorphologicalContrastTopHat.txt
+  86d43a13 20100906152436 plugins/Morphology/MorphologicalExternalGradient.txt
+  66d657f2 20100908193708 plugins/Morphology/MorphologicalGradient3.txt
+  2cd67873 20100906152436 plugins/Morphology/MorphologicalGradientBeucher.txt
+  b141cc35 20100906152436 plugins/Morphology/MorphologicalInternalGradient.txt
+  babf8d91 20060525121717 plugins/Morphology/MorphologicalSharpGradient.txt
+  7e05ec43 20060525121717 plugins/Morphology/MorphologicalSmoothing1.txt
+  df30c851 20060525121717 plugins/Morphology/MorphologicalSmoothing2.txt
+  b4232d82 20100913105525 plugins/Morphology/Morphological_Clustering.txt
+  c4024220 20100923004422 plugins/Morphology/Morphological_PCA.txt
+  44b58573 20101005111848 plugins/Morphology/Morphological_SelfDualCentre.txt
+  d20caeeb 20101005173722 plugins/Morphology/Morphological_contrast.txt
+  c40dcb5d 20100908164252 plugins/Morphology/MultiscaleGradient.txt
+  7fa60ae6 20110425191913 plugins/Morphology/NumberParticles8_.txt
+  cd6cf4de 20090511103446 plugins/Morphology/OpenByReconstructionTopHat.txt
+  5f844fa9 20101005113855 plugins/Morphology/OpenByReconstruction_.txt
+  8fdf1b15 20080522001817 plugins/Morphology/Parameter_Matrix.txt
+  65c22a1e 20080530004339 plugins/Morphology/ParticleHoleArea.txt
+  9a713d79 20080530004456 plugins/Morphology/ParticleHoleNumber.txt
+  9c0a7763 20080530004151 plugins/Morphology/Particle_Data_Map.txt
+  85b99ff0 20100914160815 plugins/Morphology/Particles4_.class
+  583118b2 20100914160807 plugins/Morphology/Particles8_.class
+  ac25812c 20080521235826 plugins/Morphology/Plot_BivariateGraphs.txt
+  e8ea53cb 20080606134751 plugins/Morphology/Plot_Histograms.txt
+  ce077644 20060525121717 plugins/Morphology/Prune1.txt
+  c4126534 20060525121717 plugins/Morphology/PruneAll.txt
+  916ac5a4 20090511103446 plugins/Morphology/RegionalMinMax.txt
+  3dcf6fa2 20090511103446 plugins/Morphology/Regional_Maxima.txt
+  bc61499e 20101001123926 plugins/Morphology/Regional_Minima.txt
+  358d5270 20100923005811 plugins/Morphology/SelfComplementaryTopHat.txt
+  36e7e0b4 20101005104120 plugins/Morphology/SelfDualReconstruction_.txt
+  64886ac9 20060525121717 plugins/Morphology/Skeleton1.txt
+  64fa451e 20060525121717 plugins/Morphology/Skeleton2.txt
+  809a6770 20060525121717 plugins/Morphology/Skeleton3.txt
+  16447730 20090511141301 plugins/Morphology/Skeleton4.txt
+  b2242712 20100922222400 plugins/Morphology/SkeletonFiltering.txt
+  5d0400a0 20080521235352 plugins/Morphology/Summarize_Results.txt
+  ab0b29c3 20080603131017 plugins/Morphology/Thin_Results_Table.txt
+  090f96c1 20100621110217 plugins/Morphology/UnbiasedCounting.txt
+  fecf6a46 20080605141015 plugins/Morphology/UnbiasedParticleArea.txt
+  19a9433c 20090330100641 plugins/Morphology/Viscous_Geodesic_Reconstruction.txt
+  9c541ad9 20130623153450 plugins/MosaicJ_-2.0.0-SNAPSHOT.jar
+  94ff9125 20131127121500 plugins/Mosaic_ToolSuite/Mosaic_ToolSuite.jar
+  592feda9 20130519151657 plugins/Nonuniform_Background_Removal.class
+  2dbeb38d 20131127121439 plugins/PDF_MacroExt.jar
+  04a4a5c1 20130623153453 plugins/PIV_analyser-1.1.1-SNAPSHOT.jar
+  0e8ddb6d 20130919181546 plugins/ParallelIterativeDeconvolution/arpack-combo.jar
+  1a08e201 20130919181546 plugins/ParallelIterativeDeconvolution/csparsej.jar
+  924b8d62 20130919181546 plugins/ParallelIterativeDeconvolution/jplasma.jar
+  fca468e8 20130919181546 plugins/ParallelIterativeDeconvolution/jtransforms.jar
+  dd8c3801 20130919181546 plugins/ParallelIterativeDeconvolution/licenses/parallelcolt.LICENSE.txt
+  de89ab4e 20130919181546 plugins/ParallelIterativeDeconvolution/licenses/paralleliterativedeconvolution.LICENSE.txt
+  60508fb7 20130919181546 plugins/ParallelIterativeDeconvolution/macros/ParallelIterativeDeconvolution2D.txt
+  20e21511 20130919181546 plugins/ParallelIterativeDeconvolution/macros/ParallelIterativeDeconvolution3D.txt
+  89cb5823 20130919181546 plugins/ParallelIterativeDeconvolution/netlib-java.jar
+  25802519 20130919181546 plugins/ParallelIterativeDeconvolution/optimization.jar
+  33f69ff8 20130919181546 plugins/ParallelIterativeDeconvolution/parallel_iterative_deconvolution-1.12.jar
+  87fc836e 20130919181546 plugins/ParallelIterativeDeconvolution/parallelcolt-0.9.4.jar
+  19181db3 20130623153454 plugins/PointPicker_-2.0.0-SNAPSHOT.jar
+  964d054a 20131120153235 plugins/QuickPALM_-1.1.1-SNAPSHOT.jar
+  9fb03125 20130623153446 plugins/RATS_-2.0.0-SNAPSHOT.jar
+  5c7f3968 20130623153447 plugins/RandomJ_-1.5.1-SNAPSHOT.jar
+  7d1ad162 20130517164839 plugins/Reconstruct_Reader.jar
+  0eec0013 20131120153236 plugins/Refresh_Javas-2.0.0-SNAPSHOT.jar
+  4ddf620c 20130517164839 plugins/SPIM_Opener.jar
+  82fd1820 20131127120623 plugins/SPIM_Registration-2.0.0-SNAPSHOT.jar
+  b9076c0a 20130623153448 plugins/Samples_-2.0.0-SNAPSHOT.jar
+  0a02a4b5 20131127121508 plugins/ScientiFig/GraphThemes/BasicTheme.txt
+  b96aa8df 20131127121513 plugins/ScientiFig/JournalStyles/Cell.txt
+  40135485 20131127121513 plugins/ScientiFig/JournalStyles/Development.txt
+  ef7335e0 20131127121514 plugins/ScientiFig/JournalStyles/NATUREMETHODS.txt
+  67b8012e 20131127121513 plugins/ScientiFig/JournalStyles/Nature.txt
+  3201f7a4 20131127121514 plugins/ScientiFig/JournalStyles/PLOSONE.txt
+  e7c1dbab 20131127121514 plugins/ScientiFig/JournalStyles/PowerPoint2010.txt
+  882cd6fb 20131127121511 plugins/ScientiFig/ScientiFig_.jar
+  88acf1b1 20131127121509 plugins/ScientiFig/changes.txt
+  7872d78f 20131127121511 plugins/ScientiFig/lib/AbsoluteLayout.jar
+  6f3fdc0d 20131127121512 plugins/ScientiFig/lib/Icons.jar
+  c3cdf2d0 20131127121512 plugins/ScientiFig/lib/REngine.jar
+  6ba3fcd5 20131127121512 plugins/ScientiFig/lib/Rserve.jar
+  269cc20e 20131127121511 plugins/ScientiFig/lib/Rsession.jar
+  65d30c78 20131127121513 plugins/ScientiFig/license.txt
+  6d88799a 20131204120734 plugins/Script_Editor-2.0.0-SNAPSHOT.jar
+  03903c30 20131127121503 plugins/Scripts/File/Batch_Convert_Movies.bsh
+  578994ca 20131120153237 plugins/Scripts/File/Make_Screencast.bsh
+  c70b2e6f 20130517164839 plugins/Scripts/File/Open_Samples/Adelsons_Squares.ijm
+  60df5674 20130517164839 plugins/Scripts/File/Open_Samples/Spirals_.ijm
+  c77c66dc 20131127121503 plugins/Scripts/File/Rename_Blubs.ijm
+  a3edd6db 20130517164839 plugins/Scripts/Image/Adjust/Scale_to_DPI.js
+  209aed52 20130517164839 plugins/Scripts/Image/Color/Set_Color_By_Wavelength.ijm
+  1de6c712 20131120153237 plugins/Scripts/Image/Hyperstacks/Temporal-Color_Code.ijm
+  af064f17 20131120153238 plugins/Scripts/Plugins/Registration/Correct_3D_drift.py
+  a6e496fc 20130517164839 plugins/Scripts/Plugins/Utilities/Create_Desktop_Icon.bsh
+  b5ee58a2 20130517164839 plugins/Scripts/Plugins/Utilities/Find_Jar_For_Class.bsh
+  fc46bd40 20130517164839 plugins/Scripts/Plugins/Utilities/Record_Desktop.py
+  9d4d012a 20130517164839 plugins/Scripts/Plugins/Utilities/Record_Window.py
+  186e052c 20130623153501 plugins/Series_Labeler-2.0.0-SNAPSHOT.jar
+  7c62b5c5 20130623153503 plugins/SheppLogan_-2.0.0-SNAPSHOT.jar
+  069ebf34 20130517164839 plugins/Sholl_Analysis-3.0.0-SNAPSHOT.jar
+  95dc5b19 20131204120735 plugins/Simple_Neurite_Tracer-2.0.2-SNAPSHOT.jar
+  0bd5f179 20130623153457 plugins/Siox_Segmentation-1.0.1-SNAPSHOT.jar
+  52fecf09 20130623153502 plugins/Skeletonize3D_-1.0.1-SNAPSHOT.jar
+  b0820703 20130623153501 plugins/Snakuscule_-2.0.0-SNAPSHOT.jar
+  33b6af85 20131127120624 plugins/SplineDeformationGenerator_-2.0.0-SNAPSHOT.jar
+  27de591e 20130623153448 plugins/StackReg_-2.0.0-SNAPSHOT.jar
+  736bb192 20130623153454 plugins/Stack_Manipulation-2.0.0-SNAPSHOT.jar
+  59f36299 20130623153500 plugins/Statistical_Region_Merging-2.0.0-SNAPSHOT.jar
+  8440667e 20131222174711 plugins/Stitching_-2.0.0-SNAPSHOT.jar
+  30100de7 20130623153446 plugins/Sync_Win-1.7-fiji2-SNAPSHOT.jar
+  685ca9dc 20130623153458 plugins/Thread_Killer-2.0.0-SNAPSHOT.jar
+  2cee6c37 20130623153446 plugins/Threshold_Colour-2.0.1-SNAPSHOT.jar
+  d822b123 20130517164839 plugins/Time_Stamper-2.0.0-SNAPSHOT.jar
+  584cb5b9 20130623153504 plugins/ToAST_-25.0.1-SNAPSHOT.jar
+  4cf59217 20130623153501 plugins/TopoJ_-2.0.0-SNAPSHOT.jar
+  6b674a86 20131127121349 plugins/TrackMate_-2.1.1-SNAPSHOT.jar
+  9cd00a0c 20131204120735 plugins/Trainable_Segmentation-2.0.0-SNAPSHOT.jar
+  59124982 20131120153241 plugins/TrakEM2_-1.0b-SNAPSHOT.jar
+  8e7f3b79 20130623153447 plugins/TransformJ_-2.8.1-SNAPSHOT.jar
+  c4e87a76 20130623153459 plugins/TurboReg_-2.0.0-SNAPSHOT.jar
+  9558400d 20130517164839 plugins/UnwarpJ_.jar
+  a32dfe46 20130517164839 plugins/Utilities/Close_All_Without_Saving.txt
+  253c6df4 20131120153239 plugins/VIB_-2.0.0-SNAPSHOT.jar
+  baa78901 20131120153231 plugins/Vaa3d_Reader-2.0.0-SNAPSHOT.jar
+  81279d21 20130623153450 plugins/Video_Editing-2.0.0-SNAPSHOT.jar
+  73396eef 20130623153457 plugins/View5D_-1.3.1-SNAPSHOT.jar
+  980c0ed9 20130623153504 plugins/Volume_Calculator-1.0.1-SNAPSHOT.jar
+  b9742297 20131120153238 plugins/Volume_Viewer-2.01.1-SNAPSHOT.jar
+  0b477c63 20131127121438 plugins/action_bar.jar
+  2079ca32 20130623153500 plugins/bUnwarpJ_-2.6.1-SNAPSHOT.jar
+  0307564a 20131120153236 plugins/blockmatching_-2.0.0-SNAPSHOT.jar
+  c3fbfd11 20070412102742 plugins/convexhullplus/Convex_Hull_Plus.class
+  e9f8f392 20131222174719 plugins/cookbook_.jar
+  659ad6a3 20130517164839 plugins/ij-ImageIO_.jar
+  82f900ac 20130623153501 plugins/level_sets-1.0.1-SNAPSHOT.jar
+  0d41552c 20131222174712 plugins/loci_plugins.jar
+  527312b2 20131127121353 plugins/mcib3d-suite/mcib3d-core.jar
+  cef74c40 20131127121354 plugins/mcib3d-suite/mcib3d_plugins.jar
+  7f0caa5d 20131127121445 plugins/miglayout-3.7.3.1-swing.jar
+  df2af815 20131120153233 plugins/mpicbg_-0.6.1-SNAPSHOT.jar
+  5e32d936 20130517164839 plugins/panorama_.jar
+  96b34801 20130517164839 plugins/readme.txt
+  27c6f58b 20131120153242 plugins/register_virtual_stack_slices-2.0.0-SNAPSHOT.jar
+  16012d5a 20130623153503 plugins/registration_3d-2.0.0-SNAPSHOT.jar
+  41cae167 20131127121450 plugins/slim_plugin-1.0.0-SNAPSHOT.jar
+  d78906c6 20131222174716 plugins/spim_viewer-1.0.0-SNAPSHOT.jar
+  14eaf670 20131127121447 plugins/visad-lite-2.0.20070828.jar
+  574cdfce 20131127121447 plugins/visbio_plugins-1.0-SNAPSHOT.jar
+  34b7341d 20130517164839 retro/backport-util-concurrent-3.1.jar
+  8759ba20 20130517164839 retro/retrotranslator-runtime-1.2.9.jar
+  a6d5a3b2 20130517164839 retro/retrotranslator-transformer-1.2.9.jar
+  d7160d38 20130517164839 scripts/InstallJava3D.m
+  05a92a3c 20130517164839 scripts/IsJava3DInstalled.m
+  ff34d026 20130517164839 scripts/Matlab3DViewerDemo_1.m
+  25be149f 20130517164839 scripts/Matlab3DViewerDemo_2.m
+  cb529b6c 20130517164839 scripts/Matlab3DViewerDemo_3.m
+  53d2da73 20130517164839 scripts/Matlab3DViewerIntroduction.m
+  4bb342fa 20130517164839 scripts/Miji.m
+  868cd434 20130517164839 scripts/Miji_Test.m
+  dc94c3a3 20130517164839 scripts/bfopen.m
+  a77cab39 20131120153243 scripts/importTrackMateTracks.m
+  41af04e2 20131127121507 scripts/very_basic_camera_test.bsh</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-01-06 15:13:53 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Did you get this problem resolved? If not, what happens if you delete scifio-devel-4.5-SNAPSHOT.jar, then restart Fiji?
+
+In any case, this is a problem with BigDataViewer's dependencies. It shadows a bunch of libraries, and apparently depends on a development version of Bio-Formats 4.5.x too. Tobias, please let me know if I can be of assistance in untangling the mess.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-01-07 02:11:49 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >
+At the time, I noted that removal of  scifio-devel.jar enabled LOCI bioformats to properly load the nd2 file.
+I can also add that the problem does not occur on my OSX 9 system. 
+I will check the Linux box when I next get to that lab.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tobias Pietzsch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-01-07 02:55:31 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I plan to update the BigDataViewer later this week and I will try to resolve the dependency issue then. Thanks for offering assistance, Curtis! If I cannot manage to solve this on my own, I will get back to you.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tobias Pietzsch</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-01-10 19:47:04 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This should be solved now. The BigDataViewer update site no longer updates scifio.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

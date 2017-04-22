@@ -1,0 +1,1141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 792 &ndash; Jython os.path.isdir not working anymore</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_ImageJ2 bz_bug_792 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;792</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Jython os.path.isdir not working anymore</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-07-14 14:59:04 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-07-14 14:59:04">
+  <input type="hidden" name="longdesclength" value="12">
+  <input type="hidden" name="id" value="792">
+  <input type="hidden" name="token" value="1492731792-lpOfA9oTq_3sD6HSL_UrDH0t83LsXuef9nFQWFkeZ-Y">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="792.html"><b>Bug&nbsp;792</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Jython os.path.isdir not working anymore</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Jython os.path.isdir not working anymore
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >ImageJ2</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       major
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-06-16 09:19 CDT by <span class="vcard"><span class="fn">Falk Lucas</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-07-14 14:59 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="aryeh">aryeh</option>
+                <option value="ctrueden">ctrueden</option>
+                <option value="falk.lucas">falk.lucas</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Falk Lucas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-16 09:19:45 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >here is the error output:
+Traceback (most recent call last):
+  File &quot;Untitled.py&quot;, line 9, in &lt;module&gt;
+  File &quot;D:\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py&quot;, line 270, in isdir
+  File &quot;D:\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py&quot;, line 270, in isdir
+java.lang.IncompatibleClassChangeError: Found class com.kenai.jffi.InvocationBuffer, but interface was expected
+
+	at com.kenai.jaffl.provider.jffi.AsmRuntime.marshal(AsmRuntime.java:167)
+
+	at org.python.posix.WindowsLibC$jaffl$0.stat$raw(Unknown Source)
+
+	at org.python.posix.WindowsLibC$jaffl$0.stat(Unknown Source)
+
+	at org.python.posix.BaseNativePOSIX.stat(BaseNativePOSIX.java:200)
+
+	at org.python.posix.LazyPOSIX.stat(LazyPOSIX.java:207)
+
+	at org.python.modules.posix.PosixModule$StatFunction.__call__(PosixModule.java:966)
+
+	at ntpath$py.isdir$17(D:\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py:273)
+
+	at ntpath$py.call_function(D:\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py)
+
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:134)
+
+	at org.python.core.PyFunction.__call__(PyFunction.java:317)
+
+	at org.python.pycode._pyx3.f$0(Untitled.py:17)
+
+	at org.python.pycode._pyx3.call_function(Untitled.py)
+
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+
+	at org.python.core.PyCode.call(PyCode.java:18)
+
+	at org.python.core.Py.runCode(Py.java:1261)
+
+	at org.scijava.plugins.scripting.jython.JythonScriptEngine.eval(JythonScriptEngine.java:76)
+
+	at org.scijava.script.ScriptModule.run(ScriptModule.java:172)
+
+	at org.scijava.module.ModuleRunner.run(ModuleRunner.java:167)
+
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:126)
+
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:65)
+
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+
+	at java.lang.Thread.run(Thread.java:619)
+
+
+java.lang.IncompatibleClassChangeError: java.lang.IncompatibleClassChangeError: Found class com.kenai.jffi.InvocationBuffer, but interface was expected
+
+	at org.python.core.PyException.fillInStackTrace(PyException.java:70)
+	at java.lang.Throwable.&lt;init&gt;(Throwable.java:181)
+	at java.lang.Exception.&lt;init&gt;(Exception.java:29)
+	at java.lang.RuntimeException.&lt;init&gt;(RuntimeException.java:32)
+	at org.python.core.PyException.&lt;init&gt;(PyException.java:46)
+	at org.python.core.PyException.&lt;init&gt;(PyException.java:43)
+	at org.python.core.Py.JavaError(Py.java:481)
+	at org.python.core.Py.setException(Py.java:1204)
+	at ntpath$py.isdir$17(D:\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py:273)
+	at ntpath$py.call_function(D:\Fiji.app\jars\jython-2.5.2.jar\Lib\ntpath.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:134)
+	at org.python.core.PyFunction.__call__(PyFunction.java:317)
+	at org.python.pycode._pyx3.f$0(Untitled.py:17)
+	at org.python.pycode._pyx3.call_function(Untitled.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyCode.call(PyCode.java:18)
+	at org.python.core.Py.runCode(Py.java:1261)
+	at org.scijava.plugins.scripting.jython.JythonScriptEngine.eval(JythonScriptEngine.java:76)
+	at org.scijava.script.ScriptModule.run(ScriptModule.java:172)
+	at org.scijava.module.ModuleRunner.run(ModuleRunner.java:167)
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:126)
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:65)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: java.lang.IncompatibleClassChangeError: Found class com.kenai.jffi.InvocationBuffer, but interface was expected
+	at com.kenai.jaffl.provider.jffi.AsmRuntime.marshal(AsmRuntime.java:167)
+	at org.python.posix.WindowsLibC$jaffl$0.stat$raw(Unknown Source)
+	at org.python.posix.WindowsLibC$jaffl$0.stat(Unknown Source)
+	at org.python.posix.BaseNativePOSIX.stat(BaseNativePOSIX.java:200)
+	at org.python.posix.LazyPOSIX.stat(LazyPOSIX.java:207)
+	at org.python.modules.posix.PosixModule$StatFunction.__call__(PosixModule.java:966)
+	... 20 more
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.6.0_20
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_20-b02
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 16.3-b01
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: D:\Fiji.app/java/win64/jdk1.6.0_20//jre
+  imagej.dir =&gt; D:\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140616153006)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140612230314)
+
+Files not up-to-date:
+  9cf5f8c5 (LOCAL_ONLY) 20101122152004 macros/AddZeros.ijm
+  924708a7 (LOCAL_ONLY) 20101122151547 macros/Batch_FindMag.ijm
+  510dc392 (LOCAL_ONLY) 20120130151227 macros/CreateFileListHelios2_.ijm
+  a6a918d7 (LOCAL_ONLY) 20110127110544 macros/CreateFileListTXT.ijm
+  a9f2c8d8 (LOCAL_ONLY) 20101123103018 macros/FindMag_New.ijm
+  59a9dfb8 (LOCAL_ONLY) 20100602102203 macros/KeenView_PixelSize.txt
+  6ebedb20 (LOCAL_ONLY) 20101122115945 macros/MacroExt.ijm
+  140d0957 (LOCAL_ONLY) 20100602095206 macros/MegaView_PixelSize.txt
+  9c9e4176 (LOCAL_ONLY) 20101123114420 macros/MosaicMorghani.ijm
+  feffea10 (LOCAL_ONLY) 20101118104325 macros/PixelSize_KeenView.txt
+  6756bf17 (LOCAL_ONLY) 20101118101953 macros/PixelSize_MegaView.txt
+  c4649978 (LOCAL_ONLY) 20101122151951 macros/RenameMia.ijm
+  dd974de2 (LOCAL_ONLY) 20101119093122 macros/RenameMia.txt
+  667a30b0 (LOCAL_ONLY) 20101118162051 macros/TestArgument_.ijm
+  cd933dc2 (LOCAL_ONLY) 20140318144817 macros/falk_.ijm
+  0b412ee7 (LOCAL_ONLY) 20101123114304 macros/myTool.txt
+  f07ea19d (LOCAL_ONLY) 20130507122737 macros/test.txt
+  1455d44a (LOCAL_ONLY) 20111104141853 macros/toolsets/EMEZ Tools.ijm
+  d60d1942 (LOCAL_ONLY) 20111104141934 macros/toolsets/EMEZ Tools2.ijm
+  33c6c457 (LOCAL_ONLY) 20130604133657 macros/toolsets/Falk's Toolset.txt
+  bb3b18aa (LOCAL_ONLY) 20130604133640 macros/toolsets/IJ.txt
+  b8355a05 (LOCAL_ONLY) 20100601103313 macros/toolsets/IconTools.ijm
+  ddcaf60f (LOCAL_ONLY) 20130604133930 macros/toolsets/MacroDev.txt
+  e9cb6eb7 (LOCAL_ONLY) 20121210155405 plugins/Image_CorrelationJ_1o.class
+  8e243042 (LOCAL_ONLY) 20140117093038 plugins/SCS_Semiautomated_Segmentation.jar
+  6e155e63 (NOT_INSTALLED) 20101208111418 plugins/Samples_.jar
+  36f3e680 (LOCAL_ONLY) 20140318150746 scripts/New_.py
+  d3260180 (LOCAL_ONLY) 20100909153741 scripts/Record_Desktop.py
+  0ea7f8fc (LOCAL_ONLY) 20100909153741 scripts/Record_Window.py</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-16 11:20:23 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I appreciate that you tried to categorize the problem, but I fear that it is not quite correct.
+
+We tried to address this problem both in the launcher and in the ij1-patcher which makes me wonder whether you would be able to give a detailed description how you call this Python script? There are about five ways I can think of, but only one of them that might be able to produce such a trace. I am unfortunately too scarce on time (also because I write clarifying comments to the bug tracker, such as this one, between fixing all those bugs) to go on a wild goose hunt to figure out whether I can guess the correct way to start a Python script to reproduce your error, and even if I could, my fix would not necessarily fix your problem.
+
+So I really have to ask you for your assistance to make your problem easier to reproduce.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Falk Lucas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-16 12:59:51 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+I'm using the built in script editor to run my scripts. 
+os.path.isdir - I just tried today I have to say.
+just downloaded the &quot;old&quot; version from before ij2, which returns the same error at least on a MAC OSX
+what I wanted to do is looping thru one directory and find all sub directories.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-16 15:41:22 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I can confirm that I see the same error in a fully updated Fiji when running the following script in the Script Editor:
+
+ import os
+ print os.path.isdir(&quot;/&quot;)</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-17 17:20:19 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Falk, you might want to follow Curtis' example in the future: he gave me a very easy and quick way to reproduce the problem. That allowed me to fix the bug quickly, by switching JRuby from the &quot;complete&quot; package to finer-grained, more up-to-date components that no longer conflict with Jython.
+
+Committed, deployed and uploaded.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-25 05:19:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >This bug reappeared today on our latest Fiji install.
+We found that trackmate-dev installs ruby files.
+Therefore we again deselected the trackmate update site.
+
+This remark should probably be cross-referenced to the thread about
+add on site interactions. Is there a simple way to do that?</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-25 11:30:41 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; We found that trackmate-dev installs ruby files.</span >
+
+Thank you for reporting this bug! It is technically another bug because it affected the TrackMate-dev site and therefore required a different fix... ;-)
+
+But I marked jruby-complete.jar as obsolete on the TrackMate-dev site and everything should be groovy again.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Aryeh Weiss</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-06-25 13:08:37 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thank you. I will test it when I am next in that lab (should be Sunday or Monday).</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 11:14:09 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Aaargh. I know that we should set up <a href="mailto:bugzilla&#64;fiji.sc">bugzilla&#64;fiji.sc</a> to attach new comments to this Bugzilla, but who donates me the time I need to do that?
+
+This is what even I sent to the mailing list:
+
+On Thu, 10 Jul 2014, fcollman wrote:
+
+<span class="quote">&gt; To add to Michael's report, I get the same behavior, but on an
+&gt; up-to-date version of FIJI freshly downloaded and updated today,
+&gt; deleting the jruby-complete.jar no longer restores this functionality as
+&gt; it had for me in the past.</span >
+
+Please provide the console output. To see how to produce it, please look
+at <a href="http://fiji.sc/Command-Line_Debugging">http://fiji.sc/Command-Line_Debugging</a></pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-10 11:14:58 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I should also note that it would be better to open *another* bug report because the original bug actually has been squashed, it just looks as if the symptom of the new bug is similar to the fixed bug's.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-11 14:15:15 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please note that replying by mail does *not* update the issue on Bugzilla. Please refrain from the temptation to reply to the mail sent to the Fiji mailing list and post your comments on <a href="http://fiji.sc/bugzilla/﷒0">http://fiji.sc/bugzilla/﷒0</a>﷓ instead.
+
+On Fri, 11 Jul 2014, Michael Majurski wrote:
+
+<span class="quote">&gt; I am not including the console output from starting up Fiji, because I am 
+&gt; unsure if it is relevant, as well as the fact that it generates a great 
+&gt; deal of content that would just obfuscate the post.</span >
+
+The answer is yes, the output is relevant.
+
+<span class="quote">&gt; Script run: 
+&gt; saved on the desktop as &quot;temp.py&quot;, run by opening it in the script editor 
+&gt; within Fiji and pressing the run button.
+&gt; &quot;import os
+&gt; print os.path.isdir('/')&quot;
+&gt;  
+&gt; 
+&gt; &gt; Console output:
+&gt; &gt;
+&gt; &quot;
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         progress = -1
+&gt;         maximum = -1
+&gt;         status = Running command: script:C:\Users\mmajursk\Desktop\temp.py
+&gt;         warning = false,null,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461,null,null), called 
+&gt; from
+&gt;  non-EDT Thread:null
+&gt; [DEBUG] Executing module: org.scijava.script.ScriptModule&#64;a530461
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.DebugPreprocessor&#64;1073f623,null,n
+&gt; ull), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.ValidityPreprocessor&#64;7b1ebc46,nul
+&gt; l,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = org.scijava.ui.UIPreprocessor&#64;1edad6d0,null,null), 
+&gt; called fr
+&gt; om non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.display.ActiveDisplayPreprocessor&#64;314d0183,null,
+&gt; null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.GatewayPreprocessor&#64;55d43df5,null
+&gt; ,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.ServicePreprocessor&#64;612fcbd8,null
+&gt; ,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; net.imagej.display.ActiveImagePreprocessor&#64;8f003c1,null,null
+&gt; ), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; net.imagej.legacy.plugin.ActiveImagePlusPreprocessor&#64;4586787
+&gt; c,null,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.InitPreprocessor&#64;7f50388c,null,nu
+&gt; ll), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.LoadInputsPreprocessor&#64;6bb0b0a0,n
+&gt; ull,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = org.scijava.ui.FilePreprocessor&#64;1d1c0f9c,null,null), 
+&gt; called
+&gt; from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.ui.awt.widget.AWTInputHarvester&#64;1d44d9b2,null,nu
+&gt; ll), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.ui.swing.widget.SwingInputHarvester&#64;45c8dc5e,nul
+&gt; l,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.ui.swing.widget.SwingMdiInputHarvester&#64;5fbc31d,n
+&gt; ull,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; net.imagej.legacy.ui.LegacyInputHarvester&#64;53c6a7fc,null,null
+&gt; ), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.CheckInputsPreprocessor&#64;173ebc5c,
+&gt; null,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.SaveInputsPreprocessor&#64;17c047f0,n
+&gt; ull,null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461,null,null), called 
+&gt; from
+&gt;  non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461,null,null), called 
+&gt; from
+&gt;  non-EDT Thread:null
+&gt; [DEBUG] INPUTS:
+&gt; [DEBUG] OUTPUTS:
+&gt; [DEBUG]         result = null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.module.process.DebugPostprocessor&#64;7fa3eaa8,null,
+&gt; null), called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461
+&gt;         processor = 
+&gt; org.scijava.display.DisplayPostprocessor&#64;6282fd0f,null,null)
+&gt; , called from non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         module = org.scijava.script.ScriptModule&#64;a530461,null,null), called 
+&gt; from
+&gt;  non-EDT Thread:null
+&gt; [DEBUG] publish(
+&gt;         context = org.scijava.Context&#64;1b845568
+&gt;         consumed = false
+&gt;         progress = -1
+&gt;         maximum = -1
+&gt;         status = Command finished: script:C:\Users\mmajursk\Desktop\temp.py
+&gt;         warning = false,null,null), called from non-EDT Thread:null
+&gt; &quot;
+&gt;  
+&gt; Hope that helps</span >
+
+Unfortunately, this does not help because the exception that is undoubtedly thrown is not shown in the console.
+
+You should see an exception in the error window of the script editor, though.
+
+I should point out, though, that I was *not* joking when I humbly requested opening a new bug report. It is hard enough to keep up with the pace of bug fixes we are performing these days, any little help you can provide to make it easier on us is appreciated.</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-14 14:59:04 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >For those who have similar problems and find this bug report: see also <a href="http://fiji.sc/bugzilla/﷒0">http://fiji.sc/bugzilla/﷒0</a>﷓ and <a href="https://github.com/fiji/fiji/issues/83">https://github.com/fiji/fiji/issues/83</a>.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

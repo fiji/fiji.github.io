@@ -1,0 +1,128 @@
+[INFO] Created service: org.scijava.log.StderrLogService
+[INFO] Created service: org.scijava.thread.DefaultThreadService
+[INFO] Created service: org.scijava.event.DefaultEventService
+[INFO] Found 548 plugins.
+[WARNING] 1 exceptions occurred during plugin discovery.
+[INFO] Created service: org.scijava.plugin.DefaultPluginService
+log4j:WARN No appenders could be found for logger (org.bushe.swing.event.EventService).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[INFO] Created service: org.scijava.object.DefaultObjectService
+[INFO] Created service: imagej.module.DefaultModuleService
+[INFO] Created service: imagej.command.DefaultCommandService
+[INFO] Created service: imagej.script.DefaultScriptService
+[INFO] Created service: io.scif.services.DefaultFormatService
+[INFO] Found 11 DataType plugins.
+[INFO] Created service: imagej.data.types.DefaultDataTypeService
+[INFO] Created service: imagej.data.DefaultDatasetService
+[INFO] Created service: imagej.display.DefaultDisplayService
+[INFO] Created service: imagej.data.display.DefaultImageDisplayService
+[INFO] Created service: imagej.data.lut.DefaultLUTService
+[INFO] Created service: net.imglib2.meta.units.DefaultUnitService
+[INFO] Found 3 applications.
+[INFO] Created service: org.scijava.app.DefaultAppService
+[INFO] Created service: org.scijava.app.DefaultStatusService
+[INFO] Created service: org.scijava.event.DefaultEventHistory
+[INFO] Created service: imagej.updater.core.DefaultUploaderService
+[INFO] Created service: imagej.console.DefaultConsoleService
+[INFO] Created service: imagej.io.DefaultIOService
+[INFO] Created service: imagej.io.DefaultRecentFileService
+[INFO] Created service: imagej.menu.DefaultMenuService
+[INFO] Created service: imagej.options.DefaultOptionsService
+[INFO] Created service: imagej.plugins.commands.app.CoreAppEventService
+[INFO] Found 1 Platform plugins.
+[INFO] Configuring platform: imagej.platform.DefaultPlatform
+[INFO] Created service: imagej.platform.DefaultPlatformService
+[INFO] Created service: imagej.text.DefaultTextService
+[INFO] Created service: imagej.tool.DefaultToolService
+[INFO] Found 13 InputWidget plugins.
+[INFO] Created service: imagej.widget.DefaultWidgetService
+[INFO] Created service: imagej.data.animation.DefaultAnimationService
+[INFO] Created service: imagej.data.autoscale.DefaultAutoscaleService
+[INFO] Created service: imagej.data.DefaultImgPlusService
+[INFO] Created service: imagej.data.display.DefaultInputService
+[INFO] Created service: imagej.ui.common.awt.AWTRenderingService
+[INFO] Created service: imagej.data.display.DefaultOverlayService
+[INFO] Created service: imagej.data.display.DefaultWindowService
+[INFO] Created service: imagej.data.display.DefaultZoomService
+[INFO] Created service: imagej.data.measure.DefaultMeasurementService
+[INFO] Created service: imagej.data.measure.DefaultStatisticsService
+[INFO] Created service: imagej.data.operator.DefaultCalculatorService
+[INFO] Created service: imagej.data.sampler.DefaultSamplerService
+[INFO] Created service: imagej.data.threshold.DefaultThresholdService
+[INFO] Created service: imagej.ui.dnd.DefaultDragAndDropService
+[INFO] Created service: imagej.ui.DefaultUIService
+[INFO] Created service: imagej.plugins.commands.restructure.SplitChannelsContextMonitor
+[INFO] Created service: imagej.plugins.uis.swing.SwingIconService
+[INFO] Created service: imagej.plugins.uis.swing.overlay.JHotDrawService
+[INFO] Created service: imagej.ui.common.awt.AWTScreenCaptureService
+[INFO] Found 0 scripts
+[INFO] Found 787 legacy plugins (plus 54 ignored).
+[INFO] Created service: imagej.legacy.DefaultLegacyService
+[INFO] Created service: io.scif.codec.DefaultCodecService
+[INFO] Created service: io.scif.DefaultMetadataService
+[INFO] Created service: io.scif.formats.qt.DefaultQTJavaService
+[INFO] Created service: io.scif.formats.tiff.DefaultTiffService
+[INFO] Created service: io.scif.gui.DefaultGUIService
+[INFO] Created service: io.scif.refs.DefaultRefManagerService
+[INFO] Created service: io.scif.img.cell.cache.MapDBCache
+[INFO] Created service: io.scif.img.converters.DefaultPlaneConverterService
+[INFO] Created service: io.scif.img.DefaultImgUtilityService
+[INFO] Created service: io.scif.io.DefaultNIOService
+[INFO] Created service: io.scif.services.DefaultFilePatternService
+[INFO] Created service: io.scif.services.DefaultLocationService
+[INFO] Created service: io.scif.services.DefaultTranslatorService
+[INFO] Created service: io.scif.services.JAIIIOServiceImpl
+[INFO] Created service: io.scif.xml.DefaultXMLService
+[INFO] Created service: io.scif.ome.services.DefaultOMEXMLService
+[INFO] Created service: io.scif.ome.services.DefaultOMEMetadataService
+[INFO] Created service: imagej.render.DummyRenderingService
+[INFO] Created service: imagej.data.display.DummyScreenCaptureService
+[INFO] Created service: io.scif.services.DefaultInitializeService
+java.lang.IllegalArgumentException: Width (-62) and height (-245) must be > 0
+	at java.awt.image.SampleModel.<init>(SampleModel.java:108)
+	at java.awt.image.ComponentSampleModel.<init>(ComponentSampleModel.java:128)
+	at java.awt.image.PixelInterleavedSampleModel.<init>(PixelInterleavedSampleModel.java:69)
+	at java.awt.image.Raster.createInterleavedRaster(Raster.java:638)
+	at java.awt.image.Raster.createInterleavedRaster(Raster.java:265)
+	at java.awt.image.Raster.createInterleavedRaster(Raster.java:194)
+	at java.awt.image.ComponentColorModel.createCompatibleWritableRaster(ComponentColorModel.java:2808)
+	at java.awt.image.BufferedImage.<init>(BufferedImage.java:409)
+	at ij.plugin.JpegWriter.saveAsJpeg(JpegWriter.java:40)
+	at ij.plugin.JpegWriter.save(JpegWriter.java:28)
+	at ij.io.FileSaver.saveAsJpeg(FileSaver.java:355)
+	at ij.io.FileSaver.saveAsJpeg(FileSaver.java:347)
+	at ij.plugin.filter.Writer.run(Writer.java:24)
+	at ij.plugin.filter.PlugInFilterRunner.processOneImage(PlugInFilterRunner.java:262)
+	at ij.plugin.filter.PlugInFilterRunner.<init>(PlugInFilterRunner.java:111)
+	at ij.IJ.runPlugIn(IJ.java:171)
+	at ij.Executer.runCommand(Executer.java:131)
+	at ij.Executer.run(Executer.java:64)
+	at ij.IJ.run(IJ.java:269)
+	at ij.IJ.run(IJ.java:323)
+	at ij.IJ.saveAs(IJ.java:1722)
+	at ij.IJ.saveAs(IJ.java:1654)
+	at ij.macro.Functions.saveAs(Functions.java:2846)
+	at ij.macro.Functions.doFunction(Functions.java:155)
+	at ij.macro.Interpreter.doStatement(Interpreter.java:226)
+	at ij.macro.Interpreter.doStatements(Interpreter.java:214)
+	at ij.macro.Interpreter.run(Interpreter.java:111)
+	at ij.macro.Interpreter.run(Interpreter.java:81)
+	at ij.macro.Interpreter.run(Interpreter.java:92)
+	at ij.plugin.Macro_Runner.runMacro(Macro_Runner.java:153)
+	at ij.plugin.Macro_Runner.runMacroFile(Macro_Runner.java:137)
+	at ij.IJ.runMacroFile(IJ.java:130)
+	at ij.ImageJ.main(ImageJ.java:678)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at imagej.patcher.LegacyEnvironment.main(LegacyEnvironment.java:374)
+	at fiji.Main.main(Main.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at imagej.ClassLauncher.launch(ClassLauncher.java:222)
+	at imagej.ClassLauncher.run(ClassLauncher.java:159)
+	at imagej.ClassLauncher.main(ClassLauncher.java:72)

@@ -1,0 +1,58 @@
+import ij.IJ;
+import ij.ImagePlus;
+
+import ij.gui.DialogListener;
+import ij.gui.GenericDialog;
+
+import ij.plugin.Duplicator;
+import ij.plugin.filter.ExtendedPlugInFilter;
+import ij.plugin.filter.PlugInFilterRunner;
+
+import ij.process.ImageProcessor;
+
+import java.awt.AWTEvent;
+
+/**
+ * This is a simple plugin to illustrate a bug.
+ */
+public class Bug_Report implements ExtendedPlugInFilter, DialogListener {
+	private ImagePlus imp;
+	private int nPasses = 0;
+	private double number;
+	private int flags = DOES_8G | DOES_16 | DOES_32 | NO_CHANGES;
+
+	@Override
+	public int setup(String arg, ImagePlus imp) {
+		this.imp = imp;
+		return flags;
+	}
+
+	@Override
+	public void setNPasses (int nPasses) {
+		this.nPasses = nPasses;
+	}
+
+	@Override
+	public int showDialog (ImagePlus imp, String cmd, PlugInFilterRunner pfr) {
+		GenericDialog gd = new GenericDialog("Please enter any number");
+		gd.addNumericField("Number", 1, 5);
+		gd.addPreviewCheckbox(pfr);
+		gd.addDialogListener(this);
+		gd.showDialog();
+		if (gd.wasCanceled())
+			return DONE;
+		return flags;
+	}
+
+	@Override
+	public boolean dialogItemChanged(GenericDialog gd, AWTEvent e) {
+		number = gd.getNextNumber();
+		return (!gd.invalidNumber());
+	}
+
+	@Override
+	public void run(ImageProcessor ip) {
+		IJ.log("Run, Forrest, run!");
+		IJ.run(imp, "Smooth", "");
+	}
+}

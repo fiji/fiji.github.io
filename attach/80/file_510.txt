@@ -1,0 +1,687 @@
+Process:         fiji-macosx [13380]
+Path:            /Applications/Fiji.app/Contents/MacOS/fiji-macosx
+Identifier:      org.fiji
+Version:         ??? (1.0)
+Code Type:       X86-64 (Native)
+Parent Process:  launchd [200]
+
+Date/Time:       2012-10-10 15:16:55.203 +0200
+OS Version:      Mac OS X 10.6.8 (10K549)
+Report Version:  6
+
+Interval Since Last Report:          73933 sec
+Crashes Since Last Report:           1
+Per-App Interval Since Last Report:  -347757 sec
+Per-App Crashes Since Last Report:   1
+Anonymous UUID:                      9A316211-7414-4DF5-87B7-6E9834A8274A
+
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: KERN_INVALID_ADDRESS at 0x0000000000000017
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+
+Application Specific Information:
+objc_msgSend() selector name: model
+
+Java information:
+ Exception type: Bus Error (0xa) at pc=7fff84a21f0c
+ 
+ Java VM: Java HotSpot(TM) 64-Bit Server VM (20.10-b01-428 mixed mode macosx-amd64)
+ 
+Current thread (1141db000):  JavaThread "AWT-AppKit" daemon [_thread_in_native, id=1897794752, stack(7fff5f400000,7fff5fc00000)]
+Stack: [7fff5f400000,7fff5fc00000]
+ 
+Java Threads: ( => current thread )
+  1132a2800 JavaThread "zSelector" [_thread_blocked, id=570589184, stack(121f28000,122028000)]
+  114647800 JavaThread "zSelector" [_thread_blocked, id=565878784, stack(121aaa000,121baa000)]
+  113467000 JavaThread "Timer-0" daemon [_thread_blocked, id=566968320, stack(121bb4000,121cb4000)]
+  113001000 JavaThread "DestroyJavaVM" [_thread_blocked, id=8163328, stack(100749000,1007c9000)]
+  114063000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=546111488, stack(1207d0000,1208d0000)]
+  114062800 JavaThread "AWT-Shutdown" [_thread_blocked, id=545050624, stack(1206cd000,1207cd000)]
+  1141da000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=543989760, stack(1205ca000,1206ca000)]
+  113266800 JavaThread "GC Daemon" daemon [_thread_blocked, id=539607040, stack(12019c000,12029c000)]
+  113265800 JavaThread "RMI Reaper" [_thread_blocked, id=538546176, stack(120099000,120199000)]
+  1131ca000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=537190400, stack(11ff4e000,12004e000)]
+  1141dc800 JavaThread "Poller SunPKCS11-Darwin" daemon [_thread_blocked, id=536129536, stack(11fe4b000,11ff4b000)]
+=>1141db000 JavaThread "AWT-AppKit" daemon [_thread_in_native, id=1897794752, stack(7fff5f400000,7fff5fc00000)]
+  1130ba800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=496828416, stack(11d8d0000,11d9d0000)]
+  1130b9800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=495767552, stack(11d7cd000,11d8cd000)]
+  1130b9000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=494706688, stack(11d6ca000,11d7ca000)]
+  1130b8000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=493645824, stack(11d5c7000,11d6c7000)]
+  1130b7000 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=492584960, stack(11d4c4000,11d5c4000)]
+  1130a6800 JavaThread "Finalizer" daemon [_thread_blocked, id=491524096, stack(11d3c1000,11d4c1000)]
+  1130a5800 JavaThread "Reference Handler" daemon [_thread_blocked, id=490463232, stack(11d2be000,11d3be000)]
+Other Threads:
+  1130a1000 VMThread [stack: 11d1bb000,11d2bb000] [id=489402368]
+  1130cc000 WatcherThread [stack: 11d9d3000,11dad3000] [id=497889280]
+ 
+VM state:not at safepoint (normal execution)
+VM Mutex/Monitor currently owned by a thread: None
+ 
+Heap
+ par new generation   total 19136K, used 14272K [76da00000, 76eec0000, 770390000)
+  eden space 17024K,  83% used [76da00000, 76e7e8fa0, 76eaa0000)
+  from space 2112K,   1% used [76eaa0000, 76eaa7290, 76ecb0000)
+  to   space 2112K,   0% used [76ecb0000, 76ecb0000, 76eec0000)
+ concurrent mark-sweep generation total 560852K, used 293900K [770390000, 792745000, 7f8000000)
+ concurrent-mark-sweep perm gen total 131072K, used 20769K [7f8000000, 800000000, 800000000)
+ 
+Code Cache  [114801000, 114a72000, 117801000)
+ total_blobs=764 nmethods=274 adapters=452 free_code_cache=48978432 largest_free_block=67904
+ 
+Virtual Machine Arguments:
+JVM Args: -Djava.ext.dirs=/Applications/Fiji.app/java/macosx-java3d//Home/lib/ext:/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Frameworks/JavaVM.framework/Home/lib/ext -Dpython.cachedir.skip=true -Dplugins.dir=/Applications/Fiji.app -Xmx2214m -Xincgc -XX:PermSize=128m 
+Java Command: ImageJ
+Launcher Type: generic
+Physical Memory: Page Size = 4k, Total = 3840M, Free = 601M
+ 
+
+Thread 0 Crashed:  Dispatch queue: com.apple.main-thread
+0   libobjc.A.dylib               	0x00007fff84a21f0c objc_msgSend + 40
+1   libawt.jnilib                 	0x000000011dd64f34 -[AWTCombinedTextView model] + 35
+2   libawt.jnilib                 	0x000000011dd1b275 +[CWindow mouseUpdateNotification:] + 1209
+3   com.apple.AppKit              	0x00007fff814db0c7 -[NSWindow sendEvent:] + 8769
+4   libawt.jnilib                 	0x000000011dd173d0 -[CocoaAppWindow sendEvent:] + 185
+5   com.apple.AppKit              	0x00007fff8140f8f1 -[NSApplication sendEvent:] + 4198
+6   com.apple.AppKit              	0x00007fff813a66de -[NSApplication run] + 474
+7   libawt.jnilib                 	0x000000011dcf2158 +[AWTStarter startAWT:] + 1495
+8   libawt.jnilib                 	0x000000011dcf1ad2 -[CPerformer perform] + 93
+9   com.apple.Foundation          	0x00007fff84b3245f __NSThreadPerformPerform + 219
+10  com.apple.CoreFoundation      	0x00007fff834e43d1 __CFRunLoopDoSources0 + 1361
+11  com.apple.CoreFoundation      	0x00007fff834e25c9 __CFRunLoopRun + 873
+12  com.apple.CoreFoundation      	0x00007fff834e1d8f CFRunLoopRunSpecific + 575
+13  com.apple.CoreFoundation      	0x00007fff834e1b16 CFRunLoopRun + 70
+14  fiji-macosx                   	0x000000010000a706 start_ij_macosx + 336
+15  fiji-macosx                   	0x000000010000b125 main + 233
+16  fiji-macosx                   	0x00000001000016e2 _start + 224
+17  fiji-macosx                   	0x0000000100001601 start + 33
+
+Thread 1:  Dispatch queue: com.apple.libdispatch-manager
+0   libSystem.B.dylib             	0x00007fff8a287c0a kevent + 10
+1   libSystem.B.dylib             	0x00007fff8a289add _dispatch_mgr_invoke + 154
+2   libSystem.B.dylib             	0x00007fff8a2897b4 _dispatch_queue_invoke + 185
+3   libSystem.B.dylib             	0x00007fff8a2892de _dispatch_worker_thread2 + 252
+4   libSystem.B.dylib             	0x00007fff8a288c08 _pthread_wqthread + 353
+5   libSystem.B.dylib             	0x00007fff8a288aa5 start_wqthread + 13
+
+Thread 2:
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x000000011276803e jio_snprintf + 34608
+7   libclient64.dylib             	0x000000011280f4c4 JVM_Write + 1501
+8   libclient64.dylib             	0x000000011280f026 JVM_Write + 319
+9   fiji-macosx                   	0x000000010000995f start_ij + 855
+10  fiji-macosx                   	0x000000010000a5af start_ij_aux + 17
+11  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+12  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 3:  Java: Exception Handler Thread
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libSystem.B.dylib             	0x00007fff8a2eba17 mach_msg_server + 468
+3   libclient64.dylib             	0x0000000112768df7 jio_snprintf + 38121
+4   libclient64.dylib             	0x0000000112768dbb jio_snprintf + 38061
+5   libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+6   libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+7   libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 4:  Java: Gang worker#0 (Parallel GC Threads)
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x00000001127680bf jio_snprintf + 34737
+7   libclient64.dylib             	0x0000000112bcbf7e JVM_RaiseSignal + 936174
+8   libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+9   libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+10  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 5:  Java: Gang worker#1 (Parallel GC Threads)
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x00000001127680bf jio_snprintf + 34737
+7   libclient64.dylib             	0x0000000112bcbf7e JVM_RaiseSignal + 936174
+8   libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+9   libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+10  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 6:  Java: Concurrent Mark-Sweep GC Thread
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x00000001127680bf jio_snprintf + 34737
+7   libclient64.dylib             	0x0000000112a5698b JVM_GetStackTraceElement + 951430
+8   libclient64.dylib             	0x0000000112a568b1 JVM_GetStackTraceElement + 951212
+9   libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+10  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+11  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 7:  Java: VM Thread
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x00000001128147e5 JVM_Write + 22782
+3   libclient64.dylib             	0x000000011282a03e JVM_Write + 110935
+4   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+5   libclient64.dylib             	0x00000001127680bf jio_snprintf + 34737
+6   libclient64.dylib             	0x00000001127ea7f4 JVM_Lseek + 145383
+7   libclient64.dylib             	0x00000001127ea533 JVM_Lseek + 144678
+8   libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+9   libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+10  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 8:  Java: Reference Handler
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114955448 0 + 4640298056
+9   ???                           	0x0000000114951d14 0 + 4640283924
+10  ???                           	0x0000000114801438 0 + 4638905400
+11  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+12  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+13  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+14  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+15  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+16  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+17  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+18  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+19  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 9:  Java: Finalizer
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114955448 0 + 4640298056
+9   ???                           	0x000000011480685a 0 + 4638926938
+10  ???                           	0x00000001148069b3 0 + 4638927283
+11  ???                           	0x00000001148069b3 0 + 4638927283
+12  ???                           	0x0000000114801438 0 + 4638905400
+13  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+14  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+15  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+16  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+17  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+18  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+19  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+20  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+21  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 10:  Java: Surrogate Locker Thread (Concurrent GC)
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x0000000112768026 jio_snprintf + 34584
+7   libclient64.dylib             	0x0000000112a3e87d JVM_GetStackTraceElement + 852856
+8   libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+9   libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+10  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+11  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+12  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 11:  Java: Signal Dispatcher
+0   libSystem.B.dylib             	0x00007fff8a26edb6 semaphore_wait_trap + 10
+1   libclient64.dylib             	0x00000001128086ff JVM_IsPrimitiveClass + 7627
+2   libclient64.dylib             	0x00000001128081ce JVM_IsPrimitiveClass + 6298
+3   libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+4   libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+5   libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+6   libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+7   libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 12:  Java: C2 CompilerThread0
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x0000000112768026 jio_snprintf + 34584
+7   libclient64.dylib             	0x000000011280e6ed JVM_FindLoadedClass + 973
+8   libclient64.dylib             	0x000000011280954b JVM_IsPrimitiveClass + 11287
+9   libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+10  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+11  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+12  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+13  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 13:  Java: C2 CompilerThread1
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x0000000112768026 jio_snprintf + 34584
+7   libclient64.dylib             	0x000000011280e6ed JVM_FindLoadedClass + 973
+8   libclient64.dylib             	0x000000011280954b JVM_IsPrimitiveClass + 11287
+9   libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+10  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+11  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+12  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+13  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 14:  Java: Low Memory Detector
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x00000001128146fe JVM_Write + 22551
+5   libclient64.dylib             	0x000000011281460d JVM_Write + 22310
+6   libclient64.dylib             	0x00000001127680bf jio_snprintf + 34737
+7   libclient64.dylib             	0x000000011280bee2 JVM_IsPrimitiveClass + 21934
+8   libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+9   libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+10  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+11  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+12  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 15:  Java: VM Periodic Task Thread
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x00000001128147e5 JVM_Write + 22782
+3   libclient64.dylib             	0x000000011295ddc0 JVM_Halt + 49539
+4   libclient64.dylib             	0x000000011280da13 JVM_IsPrimitiveClass + 28895
+5   libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+6   libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+7   libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 16:  Java: Poller SunPKCS11-Darwin
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x00000001128147e5 JVM_Write + 22782
+3   libclient64.dylib             	0x000000011295dd22 JVM_Halt + 49381
+4   libclient64.dylib             	0x000000011290bed6 JVM_Sleep + 191
+5   libjvmlinkage.dylib           	0x00000001002db6ee JVM_Sleep + 62
+6   ???                           	0x0000000114811eee 0 + 4638973678
+7   ???                           	0x000000011480685a 0 + 4638926938
+8   ???                           	0x0000000114806d34 0 + 4638928180
+9   ???                           	0x0000000114801438 0 + 4638905400
+10  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+11  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+12  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+13  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+14  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+15  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+16  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+17  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+18  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 17:  Java: RMI TCP Accept-0
+0   libSystem.B.dylib             	0x00007fff8a2eca2e accept + 10
+1   libjvmlinkage.dylib           	0x00000001002de58b JVM_Accept + 59
+2   libnet.jnilib                 	0x000000011e4889c9 Java_java_net_PlainSocketImpl_socketAccept + 288
+3   ???                           	0x0000000114811eee 0 + 4638973678
+4   ???                           	0x000000011480685a 0 + 4638926938
+5   ???                           	0x000000011480685a 0 + 4638926938
+6   ???                           	0x000000011480685a 0 + 4638926938
+7   ???                           	0x00000001148069b3 0 + 4638927283
+8   ???                           	0x000000011480685a 0 + 4638926938
+9   ???                           	0x0000000114806d34 0 + 4638928180
+10  ???                           	0x0000000114801438 0 + 4638905400
+11  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+12  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+13  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+14  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+15  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+16  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+17  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+18  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+19  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 18:  Java: RMI Reaper
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114811eee 0 + 4638973678
+9   ???                           	0x000000011480685a 0 + 4638926938
+10  ???                           	0x00000001148069b3 0 + 4638927283
+11  ???                           	0x00000001148069b3 0 + 4638927283
+12  ???                           	0x0000000114806d34 0 + 4638928180
+13  ???                           	0x0000000114801438 0 + 4638905400
+14  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+15  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+16  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+17  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+18  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+19  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+20  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+21  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+22  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 19:  Java: GC Daemon
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x00000001128147e5 JVM_Write + 22782
+3   libclient64.dylib             	0x000000011282a03e JVM_Write + 110935
+4   libclient64.dylib             	0x000000011282a435 JVM_Write + 111950
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114811eee 0 + 4638973678
+9   ???                           	0x000000011480685a 0 + 4638926938
+10  ???                           	0x0000000114801438 0 + 4638905400
+11  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+12  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+13  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+14  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+15  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+16  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+17  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+18  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+19  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 20:  Java: Java2D Disposer
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114955448 0 + 4640298056
+9   ???                           	0x000000011480685a 0 + 4638926938
+10  ???                           	0x00000001148069b3 0 + 4638927283
+11  ???                           	0x00000001148069b3 0 + 4638927283
+12  ???                           	0x0000000114806d34 0 + 4638928180
+13  ???                           	0x0000000114801438 0 + 4638905400
+14  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+15  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+16  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+17  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+18  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+19  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+20  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+21  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+22  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 21:  Java: AWT-Shutdown
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114955448 0 + 4640298056
+9   ???                           	0x0000000114951d14 0 + 4640283924
+10  ???                           	0x0000000114806d34 0 + 4638928180
+11  ???                           	0x0000000114801438 0 + 4638905400
+12  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+13  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+14  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+15  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+16  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+17  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+18  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+19  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+20  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 22:  Java: AWT-EventQueue-0
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114955448 0 + 4640298056
+9   ???                           	0x00000001148f2bb4 0 + 4639894452
+
+Thread 23:  Java: Timer-0
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114811eee 0 + 4638973678
+9   ???                           	0x000000011480685a 0 + 4638926938
+10  ???                           	0x000000011480685a 0 + 4638926938
+11  ???                           	0x000000011480685a 0 + 4638926938
+12  ???                           	0x0000000114801438 0 + 4638905400
+13  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+14  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+15  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+16  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+17  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+18  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+19  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+20  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+21  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 24:  Java: zSelector
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114811eee 0 + 4638973678
+9   ???                           	0x000000011480685a 0 + 4638926938
+10  ???                           	0x000000011480685a 0 + 4638926938
+11  ???                           	0x0000000114806d34 0 + 4638928180
+12  ???                           	0x0000000114801438 0 + 4638905400
+13  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+14  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+15  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+16  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+17  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+18  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+19  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+20  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+21  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 25:  Java: zSelector
+0   libSystem.B.dylib             	0x00007fff8a26ed7a mach_msg_trap + 10
+1   libSystem.B.dylib             	0x00007fff8a26f3ed mach_msg + 59
+2   libclient64.dylib             	0x0000000112814753 JVM_Write + 22636
+3   libclient64.dylib             	0x00000001127684b0 jio_snprintf + 35746
+4   libclient64.dylib             	0x000000011282a42b JVM_Write + 111940
+5   libclient64.dylib             	0x000000011282a17c JVM_Write + 111253
+6   libclient64.dylib             	0x00000001127f7eac JVM_MonitorWait + 154
+7   libjvmlinkage.dylib           	0x00000001002dab9b JVM_MonitorWait + 59
+8   ???                           	0x0000000114811eee 0 + 4638973678
+9   ???                           	0x000000011480685a 0 + 4638926938
+10  ???                           	0x000000011480685a 0 + 4638926938
+11  ???                           	0x0000000114806d34 0 + 4638928180
+12  ???                           	0x0000000114801438 0 + 4638905400
+13  libclient64.dylib             	0x00000001127eb9b6 JVM_Lseek + 149929
+14  libclient64.dylib             	0x00000001127f7a3c JVM_StartThread + 2565
+15  libclient64.dylib             	0x00000001127f7932 JVM_StartThread + 2299
+16  libclient64.dylib             	0x00000001127f78d2 JVM_StartThread + 2203
+17  libclient64.dylib             	0x00000001127f7774 JVM_StartThread + 1853
+18  libclient64.dylib             	0x00000001127f7589 JVM_StartThread + 1362
+19  libclient64.dylib             	0x0000000112767f2a jio_snprintf + 34332
+20  libSystem.B.dylib             	0x00007fff8a2a7fd6 _pthread_start + 331
+21  libSystem.B.dylib             	0x00007fff8a2a7e89 thread_start + 13
+
+Thread 0 crashed with X86 Thread State (64-bit):
+  rax: 0x00000001213a0e00  rbx: 0x00000001209bf450  rcx: 0x0000000100300000  rdx: 0x00007fff711d4650
+  rdi: 0x00000001213a0ed0  rsi: 0x00007fff82832db6  rbp: 0x00007fff5fbfe790  rsp: 0x00007fff5fbfe788
+   r8: 0x0000000100034400   r9: 0x0000000000000003  r10: 0x00000000100304e5  r11: 0x0000000000000007
+  r12: 0x0000000000000005  r13: 0x00000001209a55e0  r14: 0x00000001209becd0  r15: 0x0000000000000008
+  rip: 0x00007fff84a21f0c  rfl: 0x0000000000010202  cr2: 0x0000000000000017
+
+Binary Images:
+       0x100000000 -        0x10000fff7 +fiji-macosx ??? (???) <6F7A8E1F-9F1A-5CD5-3557-A904851CA437> /Applications/Fiji.app/Contents/MacOS/fiji-macosx
+       0x100015000 -        0x10001aff7  com.apple.JavaVM 13.8.3 (13.8.3) <74597EB5-2F4E-D095-6664-0AFCB11195B7> /System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM
+       0x100022000 -        0x100028ff7  JavaLaunching ??? (???) <4F19AD96-F89D-B54B-C7B4-D584F774456C> /System/Library/PrivateFrameworks/JavaLaunching.framework/Versions/A/JavaLaunching
+       0x100061000 -        0x100097ff7  libsplashscreen.jnilib ??? (???) <081B2C74-E206-1A5F-6126-BC650665725C> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libsplashscreen.jnilib
+       0x1002da000 -        0x1002e1fff  libjvmlinkage.dylib ??? (???) <137953BD-D15F-B466-A4AC-D426365B7A47> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libjvmlinkage.dylib
+       0x1007e2000 -        0x1007eaff7  libverify.dylib 1.0 (1.0) <E0A6B899-2DB9-A64C-FF14-9FFA296F8C27> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libverify.dylib
+       0x11275b000 -        0x112d8bfff  libclient64.dylib ??? (???) <5302722F-AA22-25E4-2F4C-CE098964EF47> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bundle/Libraries/libclient64.dylib
+       0x112e54000 -        0x112e5ffff  JavaNativeFoundation ??? (???) <814132FB-C529-55D4-53E2-F863FDEBE70E> /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaNativeFoundation.framework/Versions/A/JavaNativeFoundation
+       0x112e6a000 -        0x112e8afff  libjava.jnilib ??? (???) <1F059627-75B3-50DE-ED73-D17C1B3D289D> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libjava.jnilib
+       0x112e9e000 -        0x112ea9fef  com.apple.java.JavaRuntimeSupport 13.8.3 (13.8.3) <EFEE4413-32F5-C7B5-57F8-606056692AD4> /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaRuntimeSupport.framework/Versions/A/JavaRuntimeSupport
+       0x112eba000 -        0x112ec7fff  libzip.jnilib ??? (???) <ACC415F8-1951-3AA6-0E2A-3A561A68C899> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libzip.jnilib
+       0x11dcf0000 -        0x11dec6ff7  libawt.jnilib ??? (???) <E55F83A0-AF38-1D4E-506C-95F1DEBC8E65> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libawt.jnilib
+       0x11e02d000 -        0x11e031fff  libnio.jnilib ??? (???) <49F86407-DF03-41F1-768A-A4592A3F771A> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libnio.jnilib
+       0x11e039000 -        0x11e05dfff  libdcpr.jnilib ??? (???) <A735BE26-C9A1-833D-E83E-1A69F21E96A5> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libdcpr.jnilib
+       0x11e437000 -        0x11e444fff  libj2pkcs11.jnilib ??? (???) <DCA02341-7663-43E1-DF8F-61231029EC14> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libj2pkcs11.jnilib
+       0x11e44a000 -        0x11e470ff7  tokendPKCS11.so ??? (???) <B0ED1432-9F3C-9850-1C72-764165909573> /usr/libexec/SmartCardServices/pkcs11/tokendPKCS11.so
+       0x11e480000 -        0x11e48cff7  libnet.jnilib ??? (???) <16142BC1-8C95-8702-D74D-D3368BF0A249> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libnet.jnilib
+       0x120548000 -        0x1205afff7  libfontmanager.jnilib ??? (???) <30AFCDFC-B65B-A882-32D5-DC45BDE1AB3E> /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libfontmanager.jnilib
+    0x7fff5fc00000 -     0x7fff5fc3be0f  dyld 132.1 (???) <29DECB19-0193-2575-D838-CF743F0400B2> /usr/lib/dyld
+    0x7fff80092000 -     0x7fff801acfff  libGLProgrammability.dylib ??? (???) <D1650AED-02EF-EFB3-100E-064C7F018745> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib
+    0x7fff801ad000 -     0x7fff80202ff7  com.apple.framework.familycontrols 2.0.2 (2020) <8807EB96-D12D-8601-2E74-25784A0DE4FF> /System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls
+    0x7fff80203000 -     0x7fff8024ffff  libauto.dylib ??? (???) <F7221B46-DC4F-3153-CE61-7F52C8C293CF> /usr/lib/libauto.dylib
+    0x7fff8025e000 -     0x7fff80286fff  com.apple.DictionaryServices 1.1.2 (1.1.2) <E9269069-93FA-2B71-F9BA-FDDD23C4A65E> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+    0x7fff80287000 -     0x7fff80288fff  liblangid.dylib ??? (???) <EA4D1607-2BD5-2EE2-2A3B-632EEE5A444D> /usr/lib/liblangid.dylib
+    0x7fff80289000 -     0x7fff802bcff7  libTrueTypeScaler.dylib ??? (???) <B7BA8104-FA18-39A2-56E1-922EE7A660AC> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libTrueTypeScaler.dylib
+    0x7fff80373000 -     0x7fff80430fff  com.apple.CoreServices.OSServices 359.2 (359.2) <BBB8888E-18DE-5D09-3C3A-F4C029EC7886> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+    0x7fff80431000 -     0x7fff80474fef  libtidy.A.dylib ??? (???) <2F4273D3-418B-668C-F488-7E659D3A8C23> /usr/lib/libtidy.A.dylib
+    0x7fff80475000 -     0x7fff8050ffff  com.apple.ApplicationServices.ATS 275.19 (???) <2DE8987F-4563-4D8E-45C3-2F6F786E120D> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+    0x7fff80510000 -     0x7fff805e4fe7  com.apple.CFNetwork 454.12.4 (454.12.4) <C83E2BA1-1818-B3E8-5334-860AD21D1C80> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+    0x7fff805e5000 -     0x7fff806fbff7  libxml2.2.dylib 10.3.0 (compatibility 10.0.0) <3814FCF9-92B9-A6AB-E76A-F7021894AA3F> /usr/lib/libxml2.2.dylib
+    0x7fff806fc000 -     0x7fff80779fef  libstdc++.6.dylib 7.9.0 (compatibility 7.0.0) <35ECA411-2C08-FD7D-11B1-1B7A04921A5C> /usr/lib/libstdc++.6.dylib
+    0x7fff8077a000 -     0x7fff8079afff  com.apple.DirectoryService.Framework 3.6 (621.15) <9AD2A133-4275-5666-CE69-98FDF9A38B7A> /System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+    0x7fff809a1000 -     0x7fff811abfe7  libBLAS.dylib 219.0.0 (compatibility 1.0.0) <FC941ECB-71D0-FAE3-DCBF-C5A619E594B8> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+    0x7fff811ac000 -     0x7fff81261fe7  com.apple.ink.framework 1.3.3 (107) <8C36373C-5473-3A6A-4972-BC29D504250F> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+    0x7fff81262000 -     0x7fff81265ff7  com.apple.securityhi 4.0 (36638) <AEF55AF1-54D3-DB8D-27A7-E16192E0045A> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+    0x7fff81266000 -     0x7fff812a4fe7  libFontRegistry.dylib ??? (???) <395D7C0D-36B5-B353-0DC8-51ABC0B1C030> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+    0x7fff812a5000 -     0x7fff8130ffe7  libvMisc.dylib 268.0.1 (compatibility 1.0.0) <AF0EA96D-000F-8C12-B952-CB7E00566E08> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+    0x7fff81340000 -     0x7fff8138fff7  com.apple.DirectoryService.PasswordServerFramework 6.1 (6.1) <0731C40D-71EF-B417-C83B-54C3527A36EA> /System/Library/PrivateFrameworks/PasswordServer.framework/Versions/A/PasswordServer
+    0x7fff81390000 -     0x7fff81392fff  com.apple.print.framework.Print 6.1 (237.1) <CA8564FB-B366-7413-B12E-9892DA3C6157> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+    0x7fff8139d000 -     0x7fff81d97ff7  com.apple.AppKit 6.6.8 (1038.36) <4CFBE04C-8FB3-B0EA-8DDB-7E7D10E9D251> /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+    0x7fff81d98000 -     0x7fff81f56fff  libicucore.A.dylib 40.0.0 (compatibility 1.0.0) <0B4ABA92-C1F0-4548-A157-0CFD65561DA5> /usr/lib/libicucore.A.dylib
+    0x7fff81f57000 -     0x7fff81f6bfff  libGL.dylib ??? (???) <2ECE3B0F-39E1-3938-BF27-7205C6D0358B> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+    0x7fff82724000 -     0x7fff82862fff  com.apple.CoreData 102.1 (251) <9DFE798D-AA52-6A9A-924A-DA73CB94D81A> /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+    0x7fff82863000 -     0x7fff82878ff7  com.apple.LangAnalysis 1.6.6 (1.6.6) <1AE1FE8F-2204-4410-C94E-0E93B003BEDA> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+    0x7fff82879000 -     0x7fff82919fff  com.apple.LaunchServices 362.3 (362.3) <B90B7C31-FEF8-3C26-BFB3-D8A48BD2C0DA> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+    0x7fff82aad000 -     0x7fff82aeefff  com.apple.SystemConfiguration 1.10.8 (1.10.2) <78D48D27-A9C4-62CA-2803-D0BBED82855A> /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+    0x7fff82aef000 -     0x7fff82aefff7  com.apple.Carbon 150 (152) <FA427C37-CF97-6773-775D-4F752ED68581> /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+    0x7fff82af0000 -     0x7fff82af6ff7  IOSurface ??? (???) <8E302BB2-0704-C6AB-BD2F-C2A6C6A2E2C3> /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+    0x7fff82b43000 -     0x7fff82b52fef  com.apple.opengl 1.6.14 (1.6.14) <ECAE2D12-5BE3-46E7-6EE5-563B80B32A3E> /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+    0x7fff82b53000 -     0x7fff82e51fff  com.apple.HIToolbox 1.6.5 (???) <AD1C18F6-51CB-7E39-35DD-F16B1EB978A8> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+    0x7fff82e5a000 -     0x7fff830e3ff7  com.apple.security 6.1.2 (55002) <772E1B13-8271-02F8-B1FE-023592A7AED7> /System/Library/Frameworks/Security.framework/Versions/A/Security
+    0x7fff8315d000 -     0x7fff831a4ff7  com.apple.coreui 2 (114) <923E33CC-83FC-7D35-5603-FB8F348EE34B> /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+    0x7fff831a5000 -     0x7fff831b4fff  com.apple.NetFS 3.2.2 (3.2.2) <7CCBD70E-BF31-A7A7-DB98-230687773145> /System/Library/Frameworks/NetFS.framework/Versions/A/NetFS
+    0x7fff831b5000 -     0x7fff83215fe7  com.apple.framework.IOKit 2.0 (???) <4F071EF0-8260-01E9-C641-830E582FA416> /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+    0x7fff83216000 -     0x7fff8322ffff  com.apple.CFOpenDirectory 10.6 (10.6) <401557B1-C6D1-7E1A-0D7E-941715C37BFA> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+    0x7fff83230000 -     0x7fff832f1fef  com.apple.ColorSync 4.6.8 (4.6.8) <7DF1D175-6451-51A2-DBBF-40FCA78C0D2C> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+    0x7fff832f2000 -     0x7fff8331dff7  libxslt.1.dylib 3.24.0 (compatibility 3.0.0) <3630A97F-55C1-3F34-CA63-3847653C9645> /usr/lib/libxslt.1.dylib
+    0x7fff833d3000 -     0x7fff833d6fff  com.apple.help 1.3.2 (41.1) <BD1B0A22-1CB8-263E-FF85-5BBFDE3660B9> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+    0x7fff83407000 -     0x7fff8341efff  com.apple.ImageCapture 6.1 (6.1) <79AB2131-2A6C-F351-38A9-ED58B25534FD> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+    0x7fff83496000 -     0x7fff8360dfe7  com.apple.CoreFoundation 6.6.6 (550.44) <BB4E5158-E47A-39D3-2561-96CB49FA82D4> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+    0x7fff8360e000 -     0x7fff83a55fef  com.apple.RawCamera.bundle 3.7.1 (570) <5AFA87CA-DC3D-F84E-7EA1-6EABA8807766> /System/Library/CoreServices/RawCamera.bundle/Contents/MacOS/RawCamera
+    0x7fff83b22000 -     0x7fff83e56fef  com.apple.CoreServices.CarbonCore 861.39 (861.39) <1386A24D-DD15-5903-057E-4A224FAF580B> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+    0x7fff83e57000 -     0x7fff83e65ff7  libkxld.dylib ??? (???) <8145A534-95CC-9F3C-B78B-AC9898F38C6F> /usr/lib/system/libkxld.dylib
+    0x7fff84160000 -     0x7fff84245fef  com.apple.DesktopServices 1.5.11 (1.5.11) <39FAA3D2-6863-B5AB-AED9-92D878EA2438> /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+    0x7fff84262000 -     0x7fff84262ff7  com.apple.vecLib 3.6 (vecLib 3.6) <96FB6BAD-5568-C4E0-6FA7-02791A58B584> /System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
+    0x7fff84263000 -     0x7fff84286fff  com.apple.opencl 12.3.6 (12.3.6) <42FA5783-EB80-1168-4015-B8C68F55842F> /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
+    0x7fff84297000 -     0x7fff842d5fef  com.apple.DebugSymbols 1.1 (70) <C3D11461-E118-09DB-D9D7-8972B3FD160F> /System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+    0x7fff842d6000 -     0x7fff8440bfff  com.apple.audio.toolbox.AudioToolbox 1.6.7 (1.6.7) <F4814A13-E557-59AF-30FF-E62929367933> /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+    0x7fff8440c000 -     0x7fff8452bfe7  libcrypto.0.9.8.dylib 0.9.8 (compatibility 0.9.8) <14115D29-432B-CF02-6B24-A60CC533A09E> /usr/lib/libcrypto.0.9.8.dylib
+    0x7fff8452c000 -     0x7fff84531ff7  com.apple.CommonPanels 1.2.4 (91) <4D84803B-BD06-D80E-15AE-EFBE43F93605> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+    0x7fff84532000 -     0x7fff846f1fff  com.apple.ImageIO.framework 3.0.6 (3.0.6) <2C39859A-043D-0EB0-D412-EC2B5714B869> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+    0x7fff84a1d000 -     0x7fff84ad3ff7  libobjc.A.dylib 227.0.0 (compatibility 1.0.0) <03140531-3B2D-1EBA-DA7F-E12CC8F63969> /usr/lib/libobjc.A.dylib
+    0x7fff84adb000 -     0x7fff84adcff7  com.apple.TrustEvaluationAgent 1.1 (1) <5952A9FA-BC2B-16EF-91A7-43902A5C07B6> /System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
+    0x7fff84add000 -     0x7fff84afefe7  libPng.dylib ??? (???) <14F055F9-D7B2-27B2-E2CF-F0A222BFF14D> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+    0x7fff84aff000 -     0x7fff84b02ff7  libCoreVMClient.dylib ??? (???) <75819794-3B7A-8944-D004-7EA6DD7CE836> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+    0x7fff84b03000 -     0x7fff84b09ff7  com.apple.CommerceCore 1.0 (9.1) <3691E9BA-BCF4-98C7-EFEC-78DA6825004E> /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore
+    0x7fff84b0a000 -     0x7fff84d8cfff  com.apple.Foundation 6.6.8 (751.63) <E10E4DB4-9D5E-54A8-3FB6-2A82426066E4> /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+    0x7fff84fcc000 -     0x7fff84fccff7  com.apple.Accelerate.vecLib 3.6 (vecLib 3.6) <4CCE5D69-F1B3-8FD3-1483-E0271DB2CCF3> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+    0x7fff85094000 -     0x7fff85156fe7  libFontParser.dylib ??? (???) <EF06F16C-0CC9-B4CA-7BD9-0A97FA967340> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontParser.dylib
+    0x7fff85157000 -     0x7fff8515cfff  libGIF.dylib ??? (???) <5B2AF093-1E28-F0CF-2C13-BA9AB4E2E177> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+    0x7fff8515d000 -     0x7fff85161ff7  libmathCommon.A.dylib 315.0.0 (compatibility 1.0.0) <95718673-FEEE-B6ED-B127-BCDBDB60D4E5> /usr/lib/system/libmathCommon.A.dylib
+    0x7fff85162000 -     0x7fff8517dff7  com.apple.openscripting 1.3.1 (???) <9D50701D-54AC-405B-CC65-026FCB28258B> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+    0x7fff8517e000 -     0x7fff8520efff  com.apple.SearchKit 1.3.0 (1.3.0) <4175DC31-1506-228A-08FD-C704AC9DF642> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+    0x7fff8523f000 -     0x7fff8531cfff  com.apple.vImage 4.1 (4.1) <C3F44AA9-6F71-0684-2686-D3BBC903F020> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+    0x7fff8587c000 -     0x7fff8588dff7  libz.1.dylib 1.2.3 (compatibility 1.0.0) <97019C74-161A-3488-41EC-A6CA8738418C> /usr/lib/libz.1.dylib
+    0x7fff8588e000 -     0x7fff858d7fef  libGLU.dylib ??? (???) <B0F4CA55-445F-E901-0FCF-47B3B4BAE6E2> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+    0x7fff858d8000 -     0x7fff858f9fff  libresolv.9.dylib 41.1.0 (compatibility 1.0.0) <9410EC7F-4D24-6740-AFEE-90405750FAD7> /usr/lib/libresolv.9.dylib
+    0x7fff85966000 -     0x7fff85966ff7  com.apple.Cocoa 6.6 (???) <68B0BE46-6E24-C96F-B341-054CF9E8F3B6> /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+    0x7fff85967000 -     0x7fff8596bff7  libCGXType.A.dylib 545.0.0 (compatibility 64.0.0) <DB710299-B4D9-3714-66F7-5D2964DE585B> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGXType.A.dylib
+    0x7fff85acd000 -     0x7fff85acdff7  com.apple.CoreServices 44 (44) <DC7400FB-851E-7B8A-5BF6-6F50094302FB> /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+    0x7fff85ace000 -     0x7fff85aceff7  com.apple.Accelerate 1.6 (Accelerate 1.6) <15DF8B4A-96B2-CB4E-368D-DEC7DF6B62BB> /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+    0x7fff86500000 -     0x7fff8653bfff  com.apple.AE 496.5 (496.5) <208DF391-4DE6-81ED-C697-14A2930D1BC6> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+    0x7fff8653c000 -     0x7fff86541fff  libGFXShared.dylib ??? (???) <6BBC351E-40B3-F4EB-2F35-05BDE52AF87E> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+    0x7fff8760e000 -     0x7fff8763ffff  libGLImage.dylib ??? (???) <562565E1-AA65-FE96-13FF-437410C886D0> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+    0x7fff877a8000 -     0x7fff877a9ff7  com.apple.audio.units.AudioUnit 1.6.7 (1.6.7) <49B723D1-85F8-F86C-2331-F586C56D68AF> /System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+    0x7fff877aa000 -     0x7fff877beff7  com.apple.speech.synthesis.framework 3.10.35 (3.10.35) <621B7415-A0B9-07A7-F313-36BEEDD7B132> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+    0x7fff877bf000 -     0x7fff8783efe7  com.apple.audio.CoreAudio 3.2.6 (3.2.6) <79E256EB-43F1-C7AA-6436-124A4FFB02D0> /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+    0x7fff878b4000 -     0x7fff87932ff7  com.apple.CoreText 151.13 (???) <5C6214AD-D683-80A8-86EB-328C99B75322> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+    0x7fff8794b000 -     0x7fff87ce8fe7  com.apple.QuartzCore 1.6.3 (227.37) <16DFF6CD-EA58-CE62-A1D7-5F6CE3D066DD> /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+    0x7fff87df4000 -     0x7fff87e3eff7  com.apple.Metadata 10.6.3 (507.15) <DE238BE4-5E22-C4D5-CF5C-3D50FDEE4701> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+    0x7fff87e3f000 -     0x7fff87ecbfef  SecurityFoundation ??? (???) <3F1F2727-C508-3630-E2C1-38361841FCE4> /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+    0x7fff87ecc000 -     0x7fff87f51ff7  com.apple.print.framework.PrintCore 6.3 (312.7) <CDFE82DD-D811-A091-179F-6E76069B432D> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+    0x7fff87f52000 -     0x7fff87f95ff7  libRIP.A.dylib 545.0.0 (compatibility 64.0.0) <5FF3D7FD-84D8-C5FA-D640-90BB82EC651D> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+    0x7fff87f96000 -     0x7fff87fa3fe7  libCSync.A.dylib 545.0.0 (compatibility 64.0.0) <1C35FA50-9C70-48DC-9E8D-2054F7A266B1> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+    0x7fff8803c000 -     0x7fff88076fff  libcups.2.dylib 2.8.0 (compatibility 2.0.0) <4F2A4397-89BD-DEAC-4971-EE838FFA0964> /usr/lib/libcups.2.dylib
+    0x7fff8807d000 -     0x7fff8812dfff  edu.mit.Kerberos 6.5.11 (6.5.11) <085D80F5-C9DC-E252-C21B-03295E660C91> /System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+    0x7fff88bb4000 -     0x7fff88cacff7  libiconv.2.dylib 7.0.0 (compatibility 7.0.0) <44AADE50-15BC-BC6B-BEF0-5029A30766AC> /usr/lib/libiconv.2.dylib
+    0x7fff88cad000 -     0x7fff88cb3ff7  com.apple.DiskArbitration 2.3 (2.3) <857F6E43-1EF4-7D53-351B-10DE0A8F992A> /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+    0x7fff88cb4000 -     0x7fff88ce4fef  com.apple.shortcut 1.1 (1.1) <A99C9D8E-290B-B1E4-FEA5-CC5F2FB9C18D> /System/Library/PrivateFrameworks/Shortcut.framework/Versions/A/Shortcut
+    0x7fff88ce5000 -     0x7fff88cfbfef  libbsm.0.dylib ??? (???) <42D3023A-A1F7-4121-6417-FCC6B51B3E90> /usr/lib/libbsm.0.dylib
+    0x7fff88ed3000 -     0x7fff88edeff7  com.apple.speech.recognition.framework 3.11.1 (3.11.1) <3D65E89B-FFC6-4AAF-D5CC-104F967C8131> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+    0x7fff89151000 -     0x7fff89199ff7  libvDSP.dylib 268.0.1 (compatibility 1.0.0) <98FC4457-F405-0262-00F7-56119CA107B6> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+    0x7fff89270000 -     0x7fff89270ff7  com.apple.ApplicationServices 38 (38) <10A0B9E9-4988-03D4-FC56-DDE231A02C63> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+    0x7fff892ab000 -     0x7fff89364fff  libsqlite3.dylib 9.6.0 (compatibility 9.0.0) <2C5ED312-E646-9ADE-73A9-6199A2A43150> /usr/lib/libsqlite3.dylib
+    0x7fff89365000 -     0x7fff893bbfe7  libTIFF.dylib ??? (???) <9BC0CAD5-47F2-9B4F-0C10-D50A7A27F461> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+    0x7fff893bc000 -     0x7fff893c7ff7  com.apple.HelpData 2.0.5 (34.1.1) <24DC6CD3-02B7-9332-FF6D-F0C545857B55> /System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData
+    0x7fff89405000 -     0x7fff89458ff7  com.apple.HIServices 1.8.3 (???) <F6E0C7A7-C11D-0096-4DDA-2C77793AA6CD> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+    0x7fff894a3000 -     0x7fff894caff7  libJPEG.dylib ??? (???) <472D4A31-C1F3-57FD-6453-6621C48B95BF> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+    0x7fff894d3000 -     0x7fff89916fef  libLAPACK.dylib 219.0.0 (compatibility 1.0.0) <0CC61C98-FF51-67B3-F3D8-C5E430C201A9> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+    0x7fff89917000 -     0x7fff8a013ff7  com.apple.CoreGraphics 1.545.0 (???) <58D597B1-EB3B-710E-0B8C-EC114D54E11B> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+    0x7fff8a014000 -     0x7fff8a016fff  libRadiance.dylib ??? (???) <61631C08-60CC-D122-4832-EA59824E0025> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+    0x7fff8a017000 -     0x7fff8a058fef  com.apple.QD 3.36 (???) <5DC41E81-32C9-65B2-5528-B33E934D5BB4> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+    0x7fff8a059000 -     0x7fff8a0cbfef  com.apple.CoreSymbolication 2.0 (23) <06F8561E-4B36-7BF6-31BA-64091B3D8058> /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+    0x7fff8a1fe000 -     0x7fff8a210fe7  libsasl2.2.dylib 3.15.0 (compatibility 3.0.0) <76B83C8D-8EFE-4467-0F75-275648AFED97> /usr/lib/libsasl2.2.dylib
+    0x7fff8a257000 -     0x7fff8a26dfe7  com.apple.MultitouchSupport.framework 207.11 (207.11) <8233CE71-6F8D-8B3C-A0E1-E123F6406163> /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+    0x7fff8a26e000 -     0x7fff8a42ffef  libSystem.B.dylib 125.2.11 (compatibility 1.0.0) <9AB4F1D1-89DC-0E8A-DC8E-A4FE4D69DB69> /usr/lib/libSystem.B.dylib
+    0x7fff8a458000 -     0x7fff8a47dff7  com.apple.CoreVideo 1.6.2 (45.6) <E138C8E7-3CB6-55A9-0A2C-B73FE63EA288> /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+    0x7fff8a7a5000 -     0x7fff8a7acfff  com.apple.OpenDirectory 10.6 (10.6) <4FF6AD25-0916-B21C-9E88-2CC42D90EAC7> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+    0x7fffffe00000 -     0x7fffffe01fff  libSystem.B.dylib ??? (???) <9AB4F1D1-89DC-0E8A-DC8E-A4FE4D69DB69> /usr/lib/libSystem.B.dylib
+
+Unable to gather system configuration information.Model: MacBookPro5,3, BootROM MBP53.00AC.B03, 2 processors, Intel Core 2 Duo, 2.66 GHz, 4 GB, SMC 1.48f2
+Graphics: NVIDIA GeForce 9600M GT, NVIDIA GeForce 9600M GT, PCIe, 256 MB
+Graphics: NVIDIA GeForce 9400M, NVIDIA GeForce 9400M, PCI, 256 MB
+Memory Module: global_name
+AirPort: spairport_wireless_card_type_airport_extreme (0x14E4, 0x8D), Broadcom BCM43xx 1.0 (5.10.131.42.4)
+Bluetooth: Version 2.4.5f3, 2 service, 13 devices, 1 incoming serial ports
+Network Service: AirPort, AirPort, en1
+Serial ATA Device: Hitachi HTS545050B9SA02, 465.76 GB
+Serial ATA Device: MATSHITADVD-R   UJ-868
+USB Device: Built-in iSight, 0x05ac  (Apple Inc.), 0x8507, 0x24400000 / 2
+USB Device: Internal Memory Card Reader, 0x05ac  (Apple Inc.), 0x8403, 0x26500000 / 2
+USB Device: Apple Internal Keyboard / Trackpad, 0x05ac  (Apple Inc.), 0x0237, 0x04600000 / 3
+USB Device: IR Receiver, 0x05ac  (Apple Inc.), 0x8242, 0x04500000 / 2
+USB Device: Microsoft® Nano Transceiver v1.0, 0x045e  (Microsoft Corporation), 0x0745, 0x06200000 / 3
+USB Device: BRCM2046 Hub, 0x0a5c  (Broadcom Corp.), 0x4500, 0x06100000 / 2
+USB Device: Bluetooth USB Host Controller, 0x05ac  (Apple Inc.), 0x8217, 0x06110000 / 6

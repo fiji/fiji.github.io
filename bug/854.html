@@ -1,0 +1,1676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 854 &ndash; Multithreading problem in javascript macro</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Other bz_bug_854 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;854</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Multithreading problem in javascript macro</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2014-08-28 12:04:34 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2014-08-28 12:04:34">
+  <input type="hidden" name="longdesclength" value="15">
+  <input type="hidden" name="id" value="854">
+  <input type="hidden" name="token" value="1492731818-Kyyw3q5mpc-MhLFVg9fgCzvauyDjRIB1dbNEZUIm0jQ">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="854.html"><b>Bug&nbsp;854</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Multithreading problem in javascript macro</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Multithreading problem in javascript macro
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Other</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2014-07-15 07:44 CDT by <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-08-28 12:04 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="johannes.schindelin">johannes.schindelin</option>
+                <option value="thomas.siegmund">thomas.siegmund</option>
+                <option value="wsr">wsr</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain">
+        <td valign="top">
+            <a href="../attach/204/multithreading-bug_ij.js"
+               title="View the content of the attachment">
+          <b>test script</b></a>
+
+          <span class="bz_attach_extra_info">
+              (12.63 KB,
+                text/plain)
+
+            <br>
+            <a href="#attach_204"
+               title="Go to the comment associated with the attachment">2014-08-20 05:47 CDT</a>,
+
+            <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_application_javascript">
+        <td valign="top">
+            <a href="../attach/211/multithreading-bug_ij.js"
+               title="View the content of the attachment">
+          <b>second version of the test script</b></a>
+
+          <span class="bz_attach_extra_info">
+              (10.34 KB,
+                application/javascript)
+
+            <br>
+            <a href="#attach_211"
+               title="Go to the comment associated with the attachment">2014-08-28 10:40 CDT</a>,
+
+            <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+
+  </table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-15 07:44:29 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+I've a a javascript macro running multithreaded as described in 
+
+<a href="http://fiji.sc/Multithreaded_Image_Processing_in_Javascript">http://fiji.sc/Multithreaded_Image_Processing_in_Javascript</a>.
+
+The script analyzes several images in parallel. For each image it loops over a few hundered cell clusters and analyzes the nuclei within using the ParticleAnalyzer. Most of the code seems to work fine, but within these few lines there is a problem:
+
+// now count and measure nuclei within
+var nucleiMeasurements = Measurements.AREA + Measurements.CIRCULARITY;
+var rt_nuclei = new ResultsTable();
+var nucleiPA = new ParticleAnalyzer(ParticleAnalyzer.SHOW_RESULTS + ParticleAnalyzer.ADD_TO_MANAGER + ParticleAnalyzer.CLEAR_WORKSHEET, nucleiMeasurements, rt_nuclei, nucleusMinSize, nucleusMaxSize, nucleusMinRoundness, 1);
+var nuclei_manager = new RoiManager(true); 
+nucleiPA.setRoiManager(nuclei_manager);
+nucleiPA.analyze(dapiImg);
+IJ.log(&quot;rt: &quot;+ rt_nuclei.getCounter() + &quot; rm: &quot; +  nuclei_manager.getCount());
+var nNuclei = rt_nuclei.getCounter();
+if(nNuclei != nuclei_manager.getCount()) {
+     // this happens only if the script runs multithreaded. ???
+     IJ.log(&quot;number of nuclei != number of ROIS !!!!: &quot;+image+&quot; &quot;+i+&quot;, nNuclei &quot;+nNuclei+&quot;, nucleiRoisLength &quot;+nuclei_manager.getCount());
+}
+
+Maybe I'm doing something stupid here, but it seems to work perfectly if running single threaded. The number of ROIs in the manager is the same as the number of entries in the results table. But whenever I run this multithreaded it fails in one out of a few hundered cell clusters.
+
+Tested with current Fiji on Linux and Windows as well as with older versions of Fiji.
+
+Thanks
+
+Thomas
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Linux
+  os.version =&gt; 3.4.63-2.44-desktop
+  java.version =&gt; 1.6.0_24
+  java.vendor =&gt; Sun Microsystems Inc.
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.6.0_24-b07
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 19.1-b02
+  java.vm.vendor =&gt; Sun Microsystems Inc.
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.X11GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.6
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; null
+  file.separator =&gt; /
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: /usr/local/src/Fiji.app/java/linux-amd64/jdk1.6.0_24//jre
+  imagej.dir =&gt; /usr/local/src/Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20140712000647)
+Fiji: <a href="http://fiji.sc/update/">http://fiji.sc/update/</a> (last check:20140715020940)
+
+Files not up-to-date:
+  9dda14a8 (LOCAL_ONLY) 20100729201826 macros/js/AA_README.txt
+  20e2cec7 (LOCAL_ONLY) 20140207105410 plugins/ICTN_1_6_.jar
+  d3260180 (LOCAL_ONLY) 20110303204101 scripts/Record_Desktop.py
+  0ea7f8fc (LOCAL_ONLY) 20110303204101 scripts/Record_Window.py</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-22 15:18:50 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Have you looked at the console output? <a href="http://imagej.net/Command-Line_Debugging">http://imagej.net/Command-Line_Debugging</a> should help identify issues when there are critical errors logged only to the console.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-23 02:59:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Johannes,
+
+thanks for looking into this. I don't see anything interesting in debug output, but this may only reflect my ignorance. Please find the logs below.
+
+Please let me know if there is something else I can do. I could share the script and example images privately.
+
+All the best
+
+Thomas
+
+
+
+
+Debug output in log window:
+
+
+
+opening: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s3.ome.tiff
+saving: /scratch/plate15/plate15_SMAD_out/NCMC_plate15_SMAD_Result_s3
+threads: 2
+opening: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s1.ome.tiff
+opening: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s2.ome.tiff
+number of nuclei != number of ROIS !!!!: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s2.ome.tiff 59, nNuclei 10, nucleiRoisLength 1
+number of nuclei != number of ROIS !!!!: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s1.ome.tiff 92, nNuclei 0, nucleiRoisLength 2
+number of nuclei != number of ROIS !!!!: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s2.ome.tiff 113, nNuclei 4, nucleiRoisLength 1
+number of nuclei != number of ROIS !!!!: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s1.ome.tiff 146, nNuclei 2, nucleiRoisLength 1
+number of nuclei != number of ROIS !!!!: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s1.ome.tiff 201, nNuclei 1, nucleiRoisLength 6
+number of nuclei != number of ROIS !!!!: /scratch/plate15/plate15_SMAD/NCMC_plate15_SMAD_Result_s2.ome.tiff 171, nNuclei 2, nucleiRoisLength 1
+saving: /scratch/plate15/plate15_SMAD_out/NCMC_plate15_SMAD_Result_s2
+saving: /scratch/plate15/plate15_SMAD_out/NCMC_plate15_SMAD_Result_s1
+time: 803.601 seconds
+
+Debug output in console:
+
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        progress = -1
+        maximum = -1
+        status = Running command: script:/shared/Science/Scripts/cardiomyocytes/cardiomyocytes_ij.js
+        warning = false,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae,null,null), called from non-EDT Thread:null
+[DEBUG] Executing module: org.scijava.script.ScriptModule&#64;77e72cae
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.DebugPreprocessor&#64;6a269101,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.ValidityPreprocessor&#64;9fa0f19,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.ui.UIPreprocessor&#64;7ff5376c,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.display.ActiveDisplayPreprocessor&#64;3c09d515,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.GatewayPreprocessor&#64;2984747e,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.ServicePreprocessor&#64;36fc117d,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = net.imagej.display.ActiveImagePreprocessor&#64;5ee041be,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = net.imagej.legacy.plugin.ActiveImagePlusPreprocessor&#64;54fc519b,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.InitPreprocessor&#64;151c2b4,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.LoadInputsPreprocessor&#64;1ec5b819,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.ui.FilePreprocessor&#64;46b98117,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.ui.awt.widget.AWTInputHarvester&#64;3cca3147,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.ui.swing.widget.SwingInputHarvester&#64;7e694b7e,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.ui.swing.widget.SwingMdiInputHarvester&#64;32db7e08,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = net.imagej.legacy.ui.LegacyInputHarvester&#64;682f594d,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.CheckInputsPreprocessor&#64;7c9003aa,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.SaveInputsPreprocessor&#64;52e0cdc9,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae,null,null), called from non-EDT Thread:null
+09:47:14.731 [Run$_SciJava-3852eef4-Thread-5] INFO  loci.formats.in.MinimalTiffReader - Reading IFDs
+09:47:14.763 [Run$_SciJava-3852eef4-Thread-5] INFO  loci.formats.in.MinimalTiffReader - Populating metadata
+09:47:39.973 [Run$_Thread-9] INFO  loci.formats.in.MinimalTiffReader - Reading IFDs
+09:47:39.996 [Run$_Thread-9] INFO  loci.formats.in.MinimalTiffReader - Populating metadata
+09:47:40.134 [Run$_Thread-10] INFO  loci.formats.in.MinimalTiffReader - Reading IFDs
+09:47:40.157 [Run$_Thread-10] INFO  loci.formats.in.MinimalTiffReader - Populating metadata
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae,null,null), called from non-EDT Thread:null
+[DEBUG] INPUTS:
+[DEBUG] OUTPUTS:
+[DEBUG]         result = null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.module.process.DebugPostprocessor&#64;164b3e4f,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae
+        processor = org.scijava.display.DisplayPostprocessor&#64;25e7bff8,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        module = org.scijava.script.ScriptModule&#64;77e72cae,null,null), called from non-EDT Thread:null
+[DEBUG] publish(
+        context = org.scijava.Context&#64;3852eef4
+        consumed = false
+        progress = -1
+        maximum = -1
+        status = Command finished: script:/shared/Science/Scripts/cardiomyocytes/cardiomyocytes_ij.js
+        warning = false,null,null), called from non-EDT Thread:null
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7
+[DEBUG] Waiting for 3 threads to die
+[DEBUG] THREAD: Script Editor Run :: Wed Jul 23 09:34:55 CEST 2014
+[DEBUG] THREAD: Run$_SciJava-3852eef4-Thread-5
+[DEBUG] THREAD: SciJava-3852eef4-Thread-7</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-07-23 09:28:49 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Indeed, that log does not contain much in the way of helpful information.
+
+Maybe it is a dead lock? Please find information how to debug this here: <a href="http://imagej.net/Command-Line_Debugging#Debugging_JVM_hangs">http://imagej.net/Command-Line_Debugging#Debugging_JVM_hangs</a></pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-20 05:47:55 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/204/multithreading-bug_ij.js" name="attach_204" title="test script">attachment 204</a></span>
+test script
+
+Not what I would call a minimal test case, but I have at least tried to trim  it down to something reasonable.
+
+To reproduce the problem, please download a test image from Dropbox (60Mb tiff, too big to attach here):
+
+<a href="https://www.dropbox.com/s/8nvb42a0hum8rjg/test_image.tiff">https://www.dropbox.com/s/8nvb42a0hum8rjg/test_image.tiff</a> 
+
+Put the image in an otherwise empty directory, run &quot;multithreading-bug_ij.js&quot;.
+
+The script will ask for the image directory and open results and log windows. it will then analyze the image once single threaded and then twice multithreaded. On my systems in multithreaded mode it will log the error from line 296 usually several times:
+
+ ERROR: number of nuclei != number of ROIS !!!!: test_image.tiff 109, nNuclei 0, nucleiRoisLength 1
+
+The number and details of the errors will vary from run to run.
+
+Multithreading can be switched off completely in line 66. In this mode I have never seen a problem with the analysis.
+
+Best
+
+Thomas</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-21 15:03:56 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I downloaded your script and your TIFF, and was able to reproduce the problem on my OS X machine. Impressive script, Thomas!
+
+Unfortunately, debugging concurrency issues is one of the more difficult and time consuming programming tasks. And ImageJ 1.x is rife with concurrency problems lurking under the hood, which most people rarely encounter, but which advanced script writers such as yourself sometimes bump into.
+
+I really appreciate that you would love some help debugging your code, but given the complexity of the script, in this case I think there is no option but for you, or someone else in your group, to dig in more deeply and identify the root cause of the issue. Ultimately, you have a large function being called by many threads at once into IJ1 data structures which are probably not thread-safe, so some synchronized blocks may be in order (and I'm not sure how you do that in JavaScript).
+
+Two parting suggestions:
+
+1) You could recast your code as a Java plugin and use an IDE with a dedicated debugger, memory profiler, and many other goodies. Debugging concurrency issues from Eclipse (by attaching to a running Fiji as a remote debugger; see <a href="http://fiji.sc/Debugging_intro#Attaching_to_ImageJ_instances">http://fiji.sc/Debugging_intro#Attaching_to_ImageJ_instances</a>) will be easier than debugging things from the ImageJ Script Editor in JavaScript with no such tools.
+
+2) You could post a Minimal, Complete and Verifiable example on StackOverflow (<a href="http://stackoverflow.com/help/mcve">http://stackoverflow.com/help/mcve</a>) and hope that someone from the larger community of developers there has additional suggestions or insight.
+
+I wish you the best of luck with it.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-22 02:18:08 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks a lot for your comments, Curtis.
+
+<span class="quote">&gt; Curtis wrote:
+&gt; I think there is no option but for you, or someone else in your group, to dig in more deeply and identify the root cause of the issue.</span >
+
+Fair enough, but I don't know if we will find time to dig as deep into ImageJ as you propose - maybe I'd rather look into alternatives. ImageJ has served us well for many years, but with more and more data from automated microscope systems there is definitely need for a high performance (and this means thread save) platform.
+
+<span class="quote">&gt; Curtis wrote:
+&gt; ImageJ 1.x is rife with concurrency problems lurking under the hood, which most people rarely encounter, but which advanced script writers such as yourself sometimes bump into.</span >
+
+Maybe there should be a warning somewhere on the pages advertising multithreaded scripting. I noticed these problems only due to a bug in an earlier version of my script. If I had done I better job I would not have noticed these deeper problems.
+
+Thanks again
+
+Thomas</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-22 03:33:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; Maybe there should be a warning somewhere on the pages advertising multithreaded scripting.</span >
+
+Thomas, feel free to contribute to the project by making this happen. The Fiji wiki is a community resource, and lives and thrives on contributions by a collaborative, active community.
+
+<span class="quote">&gt; with more and more data from automated microscope systems there is definitely need for a high performance (and this means thread save) platform.</span >
+
+You might want to give KNIME a try; it is thread-safe and is backed by a company you can always hire if you have trouble. KNIME's image processing support is developed parallel to the ImageJ2 project, sharing a lot of code and insights, a very friendly, collegial and exciting collaboration!</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-22 12:10:37 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Great idea Johannes; KNIME could be a perfect fit for this kind of use case. It's really industrial strength, multithreaded, great for automation and mass processing! And it is increasingly integrated with ImageJ2 so as time goes on you will be able to get the best of both worlds there.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-27 09:33:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt;&gt; Maybe there should be a warning somewhere on the pages advertising &gt;multithreaded scripting.</span >
+
+<span class="quote">&gt;Thomas, feel free to contribute to the project by making this happen. The Fiji &gt;wiki is a community resource, and lives and thrives on contributions by a &gt;collaborative, active community.</span >
+
+Usually I would have done, in this case I thought the core developers will have a better and more balanced view. Based Curtis statements I would only recommend everybody to steer away from multithreaded scripts in ImageJ.
+
+<span class="quote">&gt; You might want to give KNIME a try; </span >
+
+Thanks Johannes and Curtis, very good idea. I have not looked into Knime image processing for quite a while. Seems to be a perfect time to re-evaluate it.
+
+Thanks again, best regards
+
+Thomas</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-27 13:27:16 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; in this case I thought the core developers will have a better and more balanced view.</span >
+
+Fair enough. But keep in mind that a community run by three core developers (especially when they are expected to take care of all community resources, not just some core source code) is not a community.
+
+In other words, if you want to be part of a thriving community, you might want to consider contributing your share to the &quot;thriving&quot; part of it.</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Siegmund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-28 10:40:13 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/211/multithreading-bug_ij.js" name="attach_211" title="second version of the test script">attachment 211</a></span>
+second version of the test script
+
+Hi,
+
+we have further simplified the script and identified a single line which seems to trigger the bug.
+
+In line 234 the script fetches rois from a roi manager for further measurements in another channel (not included here). If we remove this line the error seems to be gone.
+
+Best
+
+Thomas</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-28 11:04:12 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >You might be able to synchronize access to the ROI Manager, then; see:
+<a href="https://blogs.oracle.com/sundararajan/entry/synchronized_methods_in_javascript">https://blogs.oracle.com/sundararajan/entry/synchronized_methods_in_javascript</a></pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-28 11:38:39 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >You can probably work around this problem by using Overlays instead of ROIManagers. An Overlay is basically an ROIManager without a GUI.</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wayne Rasband</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-28 12:04:34 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The RoiManager#ggetRoisAsArray() method is synchronized in the latest ImageJ daily build (1.49h2).</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

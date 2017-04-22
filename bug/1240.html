@@ -1,0 +1,1180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1240 &ndash; 3D viewer Java Exception  in RenderingErrorListener:</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_1240 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1240</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">3D viewer Java Exception  in RenderingErrorListener:</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2016-04-19 17:04:41 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2016-04-19 17:04:41">
+  <input type="hidden" name="longdesclength" value="5">
+  <input type="hidden" name="id" value="1240">
+  <input type="hidden" name="token" value="1492731981-Qa3WTs01KeOH31jqWB4oJvGsrmAMF5TG1NceXB_mBzg">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="1240.html"><b>Bug&nbsp;1240</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">3D viewer Java Exception  in RenderingErrorListener:</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>3D viewer Java Exception  in RenderingErrorListener:
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          DUPLICATE
+            of <a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - 3D viewer doesn't work"
+   href="1233.html">bug 1233</a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P1
+       blocker
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2016-03-08 07:39 CST by <span class="vcard">massimi.lore
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2016-04-19 17:04 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="massimi.lore">massimi.lore</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">massimi.lore
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-03-08 07:39:17 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >There is no way to run 3D viewer, does no matter of which dataset is used. 
+Java 3D libraries have been installed succesfully in automatic way from the plugin.
+I am using Fiji with no jre, Java is installed in my system and uploaded to latest version.
+The graphic card driver (tesla K20m) has been upgraded to recent version.
+The computer is a Asus server with two Xeon processors and 130 GB RAM, the memory for fiji is 100 GB
+
+version = 1.5
+Exception occurred in RenderingErrorListener:
+java.lang.RuntimeException
+	at ij3d.ImageWindow3D$ErrorListener.errorOccurred(ImageWindow3D.java:310)
+	at javax.media.j3d.VirtualUniverse.notifyRenderingErrorListeners(VirtualUniverse.java:1329)
+	at javax.media.j3d.NotificationThread.processNotifications(NotificationThread.java:90)
+	at javax.media.j3d.NotificationThread.run(NotificationThread.java:107)
+nFrames = 1
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.8.0_73
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.8.0_73-b02
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 25.73-b02
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.8
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: UP_TO_DATE
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: null
+  imagej.dir =&gt; C:\Users\Fiji\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20160217160804)
+Fiji: <a href="http://update.fiji.sc/">http://update.fiji.sc/</a> (last check:20160218145537)
+Java-8: <a href="http://sites.imagej.net/Java-8/">http://sites.imagej.net/Java-8/</a> (last check:20160307222028)
+3D ImageJ Suite: <a href="http://sites.imagej.net/Tboudier/">http://sites.imagej.net/Tboudier/</a> (last check:20160302052848)
+
+Files not up-to-date:
+  c69d27e4 (LOCAL_ONLY) 20120626222722 plugins/3D/Interactive_3D_Surface_Plot.jar
+  d911ee52 (LOCAL_ONLY) 20120626222722 plugins/3D/Stack 3D Surface Plot.ijm
+  dc57752b (NOT_INSTALLED) 20160307225716 plugins/3D_Viewer-4.0.1.jar
+  bc9102ba (LOCAL_ONLY) 20130507174942 plugins/ANKAphase/ANKAphase_2_0.jar
+  1f7dc641 (LOCAL_ONLY) 20130507174942 plugins/ANKAphase/parameter.txt
+  fd8db941 (LOCAL_ONLY) 20050928181758 plugins/Backprojector_.class
+  5d44d0ab (LOCAL_ONLY) 20140718145526 plugins/Batch_Statistics.class
+  34e56692 (LOCAL_ONLY) 20150410095712 plugins/BoneJ_.jar
+  07d17c68 (LOCAL_ONLY) 20120523124224 plugins/Contact_Angle.jar
+  92cb98a0 (LOCAL_ONLY) 20150115162126 plugins/Contour_Plotter.jar
+  2649a1d6 (LOCAL_ONLY) 20050928181802 plugins/Depth_Coded_Stack_.class
+  a511ea3e (LOCAL_ONLY) 20140718150136 plugins/Diameter_.class
+  d7597597 (LOCAL_ONLY) 20050928181802 plugins/Diffusion_.class
+  03999f43 (LOCAL_ONLY) 20120920143520 plugins/EDF/Demo.class
+  2b08ff32 (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF-demo.txt
+  df409258 (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF_Easy_.class
+  97036c5b (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF_Expert_.class
+  26eaeb16 (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF_Viewer3D_.class
+  3f5cc128 (LOCAL_ONLY) 20120920143512 plugins/EDF/edf/AbstractEdfAlgorithm.class
+  94cb75b0 (LOCAL_ONLY) 20120920143512 plugins/EDF/edf/Color2BW.class
+  8e6be0b2 (LOCAL_ONLY) 20120920143512 plugins/EDF/edf/EdfComplexWavelets.class
+  fb218014 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfRealWavelets.class
+  a7ef1a84 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfSobel.class
+  92c9b291 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfVariance.class
+  6916bcdd (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfWaveletMaximumModulus.class
+  9fbcfcd1 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/LogSingleton.class
+  267fe2fc (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/MorphologicalOperators.class
+  ed732583 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/PostProcessing.class
+  ed51b555 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/ProcessTopology.class
+  2321c8d8 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/Sobel.class
+  bb9ae47e (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/Tools.class
+  2b8ba320 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/Variance.class
+  1aedfb3f (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AboutDialog.class
+  0c639c6c (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AbstractDialog$TimerListener.class
+  f2c07124 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AbstractDialog.class
+  7ed319d6 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AdvancedDialog$MyVerifier.class
+  d488e269 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AdvancedDialog.class
+  7be3ea66 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/BasicDialog.class
+  e88712ba (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/ExtendedDepthOfField.class
+  5ca9e395 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/LogPane.class
+  f0f56b51 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/MySlider.class
+  442538e1 (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/MyTableRenderer.class
+  265b3bea (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/Parameters.class
+  6ec6b0e1 (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/SimpleTableModel.class
+  a404eb8e (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/ThreadEdf.class
+  db8163fa (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/ThreadTopoProc.class
+  b77b5da8 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Access.class
+  895118eb (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Buffer.class
+  8f404b54 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Builder.class
+  0caa808d (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteAccess.class
+  f773aa9e (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteBuffer.class
+  d31572ce (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/BytePointwise.class
+  a1c28f6c (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteProcess.class
+  f91ef099 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteSet.class
+  10ade4a4 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Convolver.class
+  79469ee7 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Display.class
+  c1576be6 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoubleAccess.class
+  3bb456d7 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoubleBuffer.class
+  eed062ce (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoublePointwise.class
+  e3f707cd (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoubleProcess.class
+  f7d47d5d (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/DoubleSet.class
+  3c98dbe0 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FMath.class
+  e72c54a9 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatAccess.class
+  752ca783 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatBuffer.class
+  13d2c8ed (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatPointwise.class
+  f92fc306 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatProcess.class
+  cbb54e2a (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatSet.class
+  a4b3f20a (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ImageAccess.class
+  a3cb9815 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ImageWare.class
+  3b5db209 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/Pointwise.class
+  bab794cb (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/Process.class
+  2475b92b (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortAccess.class
+  589b6994 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortBuffer.class
+  808d9fc0 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortPointwise.class
+  7a16250c (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortProcess.class
+  9edb2a7c (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortSet.class
+  2cecb7c4 (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$1.class
+  d701e2d7 (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$2.class
+  aa71cdde (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$Cube.class
+  75f963eb (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow$1.class
+  9f71ceeb (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow.class
+  be688c54 (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$ImageRegion.class
+  3370662a (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Lines.class
+  8ae02fcd (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Lut.class
+  c1648126 (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Misc.class
+  9919bf14 (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Picture.class
+  16ac3c3a (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$PlotVal.class
+  d717fe7c (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$TextField.class
+  f954757f (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Transform.class
+  fb38ada4 (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D.class
+  6d6af260 (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/ComplexWaveFilter.class
+  62046e79 (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/ComplexWavelet.class
+  b3f1dbba (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/ImageAccess.class
+  68788aa5 (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/WaveSpline.class
+  f469ca9f (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/WaveSplineFilter.class
+  bbeacf72 (LOCAL_ONLY) 20120522222818 plugins/EdfRead_.class
+  d46312f0 (LOCAL_ONLY) 20120626222758 plugins/Filters/Fast_Filters.class
+  d972a314 (LOCAL_ONLY) 20120626222800 plugins/Filters/Fit_Polynomial.class
+  36765ad6 (LOCAL_ONLY) 20120626222802 plugins/Filters/Floyd_Steinberg_Dithering.class
+  0a24b499 (LOCAL_ONLY) 20050928181802 plugins/FlowJ_.class
+  ba28c800 (LOCAL_ONLY) 20120626222802 plugins/Graphics/Averaging_Reducer.class
+  6e2d972f (LOCAL_ONLY) 20120626222804 plugins/Graphics/Example_Plot.class
+  4442d3db (LOCAL_ONLY) 20120626222806 plugins/Graphics/RGB_Profile_Plot.txt
+  404c9259 (LOCAL_ONLY) 20140718150018 plugins/ICTN_.jar
+  45947387 (LOCAL_ONLY) 20160307230408 plugins/ImageJ_3D_Viewer.jar
+  e9cb6eb7 (LOCAL_ONLY) 20150423162414 plugins/Image_CorrelationJ_1o.class
+  c33d5648 (LOCAL_ONLY) 20050928181804 plugins/MI_.class
+  f07dd15c (LOCAL_ONLY) 20150410103700 plugins/NeuronJ_.jar
+  a2eab881 (LOCAL_ONLY) 20050928181804 plugins/PCA_.class
+  8465f28c (LOCAL_ONLY) 20150423152030 plugins/PSC_Colocalization_.class
+  5d27f18d (LOCAL_ONLY) 20160202092306 plugins/Polar transform/Polar_Transformer.class
+  be8d7405 (LOCAL_ONLY) 20160202091714 plugins/Polar transform/Polar_Transformer.jar
+  68fa4608 (LOCAL_ONLY) 20150825120228 plugins/Radial_Profile.class
+  8e2e865e (LOCAL_ONLY) 20050928181804 plugins/Register_ROI.class
+  38965c33 (LOCAL_ONLY) 20050928181804 plugins/Register_ROI_MI.class
+  6970afac (LOCAL_ONLY) 20050927183506 plugins/Register_ROI_MI_Edges.class
+  8f00268a (LOCAL_ONLY) 20120626222822 plugins/Stacks/Measure_Hyperstack.txt
+  1e96e4cd (LOCAL_ONLY) 20120626222824 plugins/Stacks/Measure_Stack.txt
+  11c6a0f1 (LOCAL_ONLY) 20140718144720 plugins/Straighten_.jar
+  100e7398 (LOCAL_ONLY) 20050928181804 plugins/SurfaceJ_.class
+  0f404c6c (LOCAL_ONLY) 20120626222824 plugins/Tools/Common_Commands_Menu.txt
+  f799fdbf (LOCAL_ONLY) 20120626222826 plugins/Tools/ImageJ_Updater_.class
+  404f7828 (LOCAL_ONLY) 20120626222826 plugins/Tools/Signed_16-bit_to_Unsigned.js
+  b08882ba (LOCAL_ONLY) 20120626222824 plugins/Tools/bezier_tool.jar
+  5183e8b9 (LOCAL_ONLY) 20141011220400 plugins/VNT/Basic_Segment.class
+  1c97500a (LOCAL_ONLY) 20141011220400 plugins/VNT/BatchHelper$1.class
+  0e9c8b79 (LOCAL_ONLY) 20141011220402 plugins/VNT/BatchHelper$2.class
+  4e94f2da (LOCAL_ONLY) 20141011220402 plugins/VNT/BatchHelper.class
+  0b32a270 (LOCAL_ONLY) 20141011220404 plugins/VNT/Batch_File.class
+  66e8d103 (LOCAL_ONLY) 20141011220406 plugins/VNT/Batch_Folder$1.class
+  cc5d01cb (LOCAL_ONLY) 20141011220406 plugins/VNT/Batch_Folder.class
+  d963f943 (LOCAL_ONLY) 20141011220408 plugins/VNT/Batch_Folder_Recursively.class
+  0cd78a54 (LOCAL_ONLY) 20141011220410 plugins/VNT/Compile_All.class
+  4be732ee (LOCAL_ONLY) 20141011220416 plugins/VNT/Coordinate.class
+  cb13baf1 (LOCAL_ONLY) 20141011220512 plugins/VNT/Create_Settings.class
+  3be87faf (LOCAL_ONLY) 20141011220520 plugins/VNT/Debug_tool.class
+  e29045ca (LOCAL_ONLY) 20141011220636 plugins/VNT/Delaunay/DelaunayTriangulation.class
+  f28b0acb (LOCAL_ONLY) 20141011220640 plugins/VNT/Delaunay/Pnt.class
+  000d07b5 (LOCAL_ONLY) 20141011220642 plugins/VNT/Delaunay/Simplex.class
+  31c5f2bc (LOCAL_ONLY) 20141011220646 plugins/VNT/Delaunay/Triangulation.class
+  1fabdfa7 (LOCAL_ONLY) 20141011220522 plugins/VNT/DistanceMap_Filled.class
+  f0eaa4fe (LOCAL_ONLY) 20141011220528 plugins/VNT/DistanceMap_Outline.class
+  4cc2dd10 (LOCAL_ONLY) 20141011220534 plugins/VNT/DistanceMap_Skeleton.class
+  f3306750 (LOCAL_ONLY) 20141011220536 plugins/VNT/Endpoint_Prune.class
+  93a30c66 (LOCAL_ONLY) 20141011220542 plugins/VNT/Eye_Candy.class
+  375b644a (LOCAL_ONLY) 20141011220544 plugins/VNT/FindEdges_Segment.class
+  30566372 (LOCAL_ONLY) 20141011220550 plugins/VNT/GrayLevelClass.class
+  822c888e (LOCAL_ONLY) 20141011220650 plugins/VNT/Jama/CholeskyDecomposition.class
+  088582fb (LOCAL_ONLY) 20141011220652 plugins/VNT/Jama/EigenvalueDecomposition.class
+  ab6a484c (LOCAL_ONLY) 20141011220652 plugins/VNT/Jama/LUDecomposition.class
+  178ea7ed (LOCAL_ONLY) 20141011220654 plugins/VNT/Jama/Matrix.class
+  446e8816 (LOCAL_ONLY) 20141011220658 plugins/VNT/Jama/QRDecomposition.class
+  d2f02c17 (LOCAL_ONLY) 20141011220704 plugins/VNT/Jama/SingularValueDecomposition.class
+  2c528299 (LOCAL_ONLY) 20141011220556 plugins/VNT/Lighting_Correction.class
+  dcdc3b0c (LOCAL_ONLY) 20141011220602 plugins/VNT/Mesh_Analysis.class
+  7c7796c9 (LOCAL_ONLY) 20141011220612 plugins/VNT/Node.class
+  0ab636cd (LOCAL_ONLY) 20141011220618 plugins/VNT/Node_Analysis.class
+  3d3c3bf8 (LOCAL_ONLY) 20141011220624 plugins/VNT/Node_LinkedList.class
+  24ff3d5b (LOCAL_ONLY) 20141011220628 plugins/VNT/SetSettingsDialog.class
+  affae17c (LOCAL_ONLY) 20141011220634 plugins/VNT/VascularNetworkToolkit.class
+  fdf3a89b (LOCAL_ONLY) 20141011220624 plugins/VNT/readme.txt
+  276637c9 (LOCAL_ONLY) 20050928181804 plugins/VolumeJ_.class
+  f7e74f3d (LOCAL_ONLY) 20050928181804 plugins/Volume_Reconstructor_.class
+  3814d5a6 (LOCAL_ONLY) 20050928181902 plugins/bij.jar
+  0dfa5070 (LOCAL_ONLY) 20150410103820 plugins/imagescience.jar
+  dd562d0d (LOCAL_ONLY) 20120626222818 plugins/jars/Jama-1.0.2.jar
+  b3369ad7 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Basic_Segment.class
+  76ea1fc0 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/BatchHelper$1.class
+  0e21cdb0 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/BatchHelper$2.class
+  a52a1438 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/BatchHelper.class
+  825bc704 (LOCAL_ONLY) 20141011214958 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_File.class
+  f5507ced (LOCAL_ONLY) 20141011214958 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_Folder$1.class
+  556a319e (LOCAL_ONLY) 20141011214958 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_Folder.class
+  aee28cf4 (LOCAL_ONLY) 20141011215000 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_Folder_Recursively.class
+  3b8f713d (LOCAL_ONLY) 20141011215000 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Compile_All.class
+  4d481bcf (LOCAL_ONLY) 20141011215000 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Coordinate.class
+  0d0b9db9 (LOCAL_ONLY) 20141011215002 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Create_Settings.class
+  acd89e33 (LOCAL_ONLY) 20141011215002 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Debug_tool.class
+  c39c4133 (LOCAL_ONLY) 20141011215018 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/DelaunayTriangulation.class
+  3acaf6ff (LOCAL_ONLY) 20141011215018 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/Pnt.class
+  2d050645 (LOCAL_ONLY) 20141011215020 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/Simplex.class
+  aff180f2 (LOCAL_ONLY) 20141011215020 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/Triangulation.class
+  d1303c72 (LOCAL_ONLY) 20141011215004 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Filled.class
+  1585c9ba (LOCAL_ONLY) 20141011215004 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Outline.class
+  23e91c91 (LOCAL_ONLY) 20141011215006 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Skeleton.class
+  ffbb36da (LOCAL_ONLY) 20141011215006 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Endpoint_Prune.class
+  373996e0 (LOCAL_ONLY) 20141011215008 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Eye_Candy.class
+  d01a5b2f (LOCAL_ONLY) 20141011215008 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/FindEdges_Segment.class
+  0b14c4dc (LOCAL_ONLY) 20141011215010 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/GrayLevelClass.class
+  d3213464 (LOCAL_ONLY) 20141011215020 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/CholeskyDecomposition.class
+  a6dcd96a (LOCAL_ONLY) 20141011215022 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/EigenvalueDecomposition.class
+  f2f3001b (LOCAL_ONLY) 20141011215022 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/LUDecomposition.class
+  5ed8a60f (LOCAL_ONLY) 20141011215024 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/Matrix.class
+  7d3d609f (LOCAL_ONLY) 20141011215024 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/QRDecomposition.class
+  359f395b (LOCAL_ONLY) 20141011215024 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/SingularValueDecomposition.class
+  47f6ec15 (LOCAL_ONLY) 20141011215046 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/examples/MagicSquareExample.class
+  6412261d (LOCAL_ONLY) 20141011215048 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/test/TestMatrix.class
+  62604693 (LOCAL_ONLY) 20141011215050 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/util/Maths.class
+  f572f694 (LOCAL_ONLY) 20141011215010 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Lighting_Correction.class
+  6a1cc0ea (LOCAL_ONLY) 20141011215012 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Mesh_Analysis.class
+  7a3dbbf2 (LOCAL_ONLY) 20141011215012 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Node.class
+  b7306e4d (LOCAL_ONLY) 20141011215012 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Node_Analysis.class
+  1684e525 (LOCAL_ONLY) 20141011215014 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Node_LinkedList.class
+  a573d308 (LOCAL_ONLY) 20141011215014 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/SetSettingsDialog.class
+  567e4141 (LOCAL_ONLY) 20141011215016 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/VascularNetworkToolkit.class
+  e137097c (LOCAL_ONLY) 20141011215014 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/readme.txt
+  dc1e188b (LOCAL_ONLY) 20141011215050 plugins/vascularization/vnt_plugins_binaries_v1.0/gpl.txt
+  e1598984 (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/Basic_Segment.class
+  d72b5595 (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/BatchHelper$1.class
+  9dff7c81 (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/BatchHelper$2.class
+  e728c67f (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/BatchHelper.class
+  0eec8c72 (LOCAL_ONLY) 20141011214958 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_File.class
+  68b599dd (LOCAL_ONLY) 20141011214958 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_Folder$1.class
+  3e80e245 (LOCAL_ONLY) 20141011214958 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_Folder.class
+  3f52f7e6 (LOCAL_ONLY) 20141011215000 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_Folder_Recursively.class
+  ac04c705 (LOCAL_ONLY) 20141011215000 plugins/vnt_plugins_binaries_v1.0/VNT/Compile_All.class
+  05f8f6fa (LOCAL_ONLY) 20141011215000 plugins/vnt_plugins_binaries_v1.0/VNT/Coordinate.class
+  e8100b32 (LOCAL_ONLY) 20141011215002 plugins/vnt_plugins_binaries_v1.0/VNT/Create_Settings.class
+  53c68687 (LOCAL_ONLY) 20141011215002 plugins/vnt_plugins_binaries_v1.0/VNT/Debug_tool.class
+  6a0f6816 (LOCAL_ONLY) 20141011215018 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/DelaunayTriangulation.class
+  60b66af3 (LOCAL_ONLY) 20141011215018 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/Pnt.class
+  1df0711d (LOCAL_ONLY) 20141011215020 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/Simplex.class
+  bcf07bec (LOCAL_ONLY) 20141011215020 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/Triangulation.class
+  60af04aa (LOCAL_ONLY) 20141011215004 plugins/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Filled.class
+  a1f8358b (LOCAL_ONLY) 20141011215004 plugins/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Outline.class
+  0f02cfcd (LOCAL_ONLY) 20141011215006 plugins/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Skeleton.class
+  b73dd6f0 (LOCAL_ONLY) 20141011215006 plugins/vnt_plugins_binaries_v1.0/VNT/Endpoint_Prune.class
+  35b0b3ad (LOCAL_ONLY) 20141011215008 plugins/vnt_plugins_binaries_v1.0/VNT/Eye_Candy.class
+  618e56d1 (LOCAL_ONLY) 20141011215008 plugins/vnt_plugins_binaries_v1.0/VNT/FindEdges_Segment.class
+  daa079c4 (LOCAL_ONLY) 20141011215010 plugins/vnt_plugins_binaries_v1.0/VNT/GrayLevelClass.class
+  15f74df5 (LOCAL_ONLY) 20141011215020 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/CholeskyDecomposition.class
+  0d2f72b4 (LOCAL_ONLY) 20141011215022 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/EigenvalueDecomposition.class
+  92fcc7f6 (LOCAL_ONLY) 20141011215022 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/LUDecomposition.class
+  1880a6b8 (LOCAL_ONLY) 20141011215024 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/Matrix.class
+  d6ddb539 (LOCAL_ONLY) 20141011215024 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/QRDecomposition.class
+  fa2a11bf (LOCAL_ONLY) 20141011215024 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/SingularValueDecomposition.class
+  e450ef97 (LOCAL_ONLY) 20141011215046 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/examples/MagicSquareExample.class
+  fc3ba489 (LOCAL_ONLY) 20141011215048 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/test/TestMatrix.class
+  07e11011 (LOCAL_ONLY) 20141011215050 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/util/Maths.class
+  bbdac2c0 (LOCAL_ONLY) 20141011215010 plugins/vnt_plugins_binaries_v1.0/VNT/Lighting_Correction.class
+  ba796fca (LOCAL_ONLY) 20141011215012 plugins/vnt_plugins_binaries_v1.0/VNT/Mesh_Analysis.class
+  af107723 (LOCAL_ONLY) 20141011215012 plugins/vnt_plugins_binaries_v1.0/VNT/Node.class
+  af5a406c (LOCAL_ONLY) 20141011215012 plugins/vnt_plugins_binaries_v1.0/VNT/Node_Analysis.class
+  f23fb57e (LOCAL_ONLY) 20141011215014 plugins/vnt_plugins_binaries_v1.0/VNT/Node_LinkedList.class
+  a67aba55 (LOCAL_ONLY) 20141011215014 plugins/vnt_plugins_binaries_v1.0/VNT/SetSettingsDialog.class
+  1aabe426 (LOCAL_ONLY) 20141011215016 plugins/vnt_plugins_binaries_v1.0/VNT/VascularNetworkToolkit.class
+  09a74cad (LOCAL_ONLY) 20141011215014 plugins/vnt_plugins_binaries_v1.0/VNT/readme.txt
+  7dbf9991 (LOCAL_ONLY) 20141011215050 plugins/vnt_plugins_binaries_v1.0/gpl.txt</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-03-08 13:22:39 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >To use the 3D Viewer with Java 8, you need to enable the Java-8 update site, or download a new copy of Fiji from <a href="http://imagej.net/Downloads">http://imagej.net/Downloads</a> (which now comes with the Java-8 update site on by default).</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-03-08 13:25:08 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Actually, looking at the technical details of your bug report, I see that you do already have the Java-8 site enabled, but there is another problem:
+
+  dc57752b (NOT_INSTALLED) 20160307225716 plugins/3D_Viewer-4.0.1.jar
+
+And you instead have a different version of the 3D Viewer installed:
+
+  45947387 (LOCAL_ONLY) 20160307230408 plugins/ImageJ_3D_Viewer.jar
+
+This old version is not compatible with the new Java 3D shipped with Fiji.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">massimi.lore
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-03-09 04:16:06 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thank you Curtis for your answer.
+I followed your advice, and updated to version 4.0.1, now I get one more error.
+I do not know if it is relevant, but we are using a server (Win7) with five different users usually connected together, Java is installed in C driver, while Fiji folder is located in each user desktop, please note that I am administrator.
+
+3D [dev] 1.6.0-scijava-2-pre11-daily-experimental daily
+
+org.scijava.java3d.IllegalRenderingStateException: Java 3D ERROR : OpenGL 1.2 or better is required (GL_VERSION=1.1)
+	at org.scijava.java3d.JoglPipeline.setupCanvasProperties(JoglPipeline.java:8083)
+	at org.scijava.java3d.JoglPipeline.createNewContext(JoglPipeline.java:6440)
+	at org.scijava.java3d.Canvas3D.createNewContext(Canvas3D.java:4602)
+	at org.scijava.java3d.Canvas3D.createNewContext(Canvas3D.java:2376)
+	at org.scijava.java3d.Renderer.doWork(Renderer.java:881)
+	at org.scijava.java3d.J3dThread.run(J3dThread.java:271)
+
+Exception occurred in RenderingErrorListener:
+java.lang.RuntimeException
+	at ij3d.ImageWindow3D$ErrorListener.errorOccurred(ImageWindow3D.java:330)
+	at org.scijava.java3d.VirtualUniverse.notifyRenderingErrorListeners(VirtualUniverse.java:1198)
+	at org.scijava.java3d.NotificationThread.processNotifications(NotificationThread.java:86)
+	at org.scijava.java3d.NotificationThread.run(NotificationThread.java:104)
+nFrames = 1
+
+
+
+
+
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.8.0_73
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.8.0_73-b02
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 25.73-b02
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.8
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: null
+  imagej.dir =&gt; C:\Users\LORENZO\Desktop\Fiji\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20160217160804)
+Fiji: <a href="http://update.fiji.sc/">http://update.fiji.sc/</a> (last check:20160218145537)
+Java-8: <a href="http://sites.imagej.net/Java-8/">http://sites.imagej.net/Java-8/</a> (last check:20160307222028)
+3D ImageJ Suite: <a href="http://sites.imagej.net/Tboudier/">http://sites.imagej.net/Tboudier/</a> (last check:20160302052848)
+
+Files not up-to-date:
+  c69d27e4 (LOCAL_ONLY) 20120626222722 plugins/3D/Interactive_3D_Surface_Plot.jar
+  d911ee52 (LOCAL_ONLY) 20120626222722 plugins/3D/Stack 3D Surface Plot.ijm
+  bc9102ba (LOCAL_ONLY) 20130507174942 plugins/ANKAphase/ANKAphase_2_0.jar
+  1f7dc641 (LOCAL_ONLY) 20130507174942 plugins/ANKAphase/parameter.txt
+  fd8db941 (LOCAL_ONLY) 20050928181758 plugins/Backprojector_.class
+  5d44d0ab (LOCAL_ONLY) 20140718145526 plugins/Batch_Statistics.class
+  34e56692 (LOCAL_ONLY) 20150410095712 plugins/BoneJ_.jar
+  07d17c68 (LOCAL_ONLY) 20120523124224 plugins/Contact_Angle.jar
+  92cb98a0 (LOCAL_ONLY) 20150115162126 plugins/Contour_Plotter.jar
+  2649a1d6 (LOCAL_ONLY) 20050928181802 plugins/Depth_Coded_Stack_.class
+  a511ea3e (LOCAL_ONLY) 20140718150136 plugins/Diameter_.class
+  d7597597 (LOCAL_ONLY) 20050928181802 plugins/Diffusion_.class
+  03999f43 (LOCAL_ONLY) 20120920143520 plugins/EDF/Demo.class
+  2b08ff32 (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF-demo.txt
+  df409258 (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF_Easy_.class
+  97036c5b (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF_Expert_.class
+  26eaeb16 (LOCAL_ONLY) 20120920143520 plugins/EDF/EDF_Viewer3D_.class
+  3f5cc128 (LOCAL_ONLY) 20120920143512 plugins/EDF/edf/AbstractEdfAlgorithm.class
+  94cb75b0 (LOCAL_ONLY) 20120920143512 plugins/EDF/edf/Color2BW.class
+  8e6be0b2 (LOCAL_ONLY) 20120920143512 plugins/EDF/edf/EdfComplexWavelets.class
+  fb218014 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfRealWavelets.class
+  a7ef1a84 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfSobel.class
+  92c9b291 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfVariance.class
+  6916bcdd (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/EdfWaveletMaximumModulus.class
+  9fbcfcd1 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/LogSingleton.class
+  267fe2fc (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/MorphologicalOperators.class
+  ed732583 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/PostProcessing.class
+  ed51b555 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/ProcessTopology.class
+  2321c8d8 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/Sobel.class
+  bb9ae47e (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/Tools.class
+  2b8ba320 (LOCAL_ONLY) 20120920143514 plugins/EDF/edf/Variance.class
+  1aedfb3f (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AboutDialog.class
+  0c639c6c (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AbstractDialog$TimerListener.class
+  f2c07124 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AbstractDialog.class
+  7ed319d6 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AdvancedDialog$MyVerifier.class
+  d488e269 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/AdvancedDialog.class
+  7be3ea66 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/BasicDialog.class
+  e88712ba (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/ExtendedDepthOfField.class
+  5ca9e395 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/LogPane.class
+  f0f56b51 (LOCAL_ONLY) 20120920143514 plugins/EDF/edfgui/MySlider.class
+  442538e1 (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/MyTableRenderer.class
+  265b3bea (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/Parameters.class
+  6ec6b0e1 (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/SimpleTableModel.class
+  a404eb8e (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/ThreadEdf.class
+  db8163fa (LOCAL_ONLY) 20120920143516 plugins/EDF/edfgui/ThreadTopoProc.class
+  b77b5da8 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Access.class
+  895118eb (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Buffer.class
+  8f404b54 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Builder.class
+  0caa808d (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteAccess.class
+  f773aa9e (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteBuffer.class
+  d31572ce (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/BytePointwise.class
+  a1c28f6c (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteProcess.class
+  f91ef099 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/ByteSet.class
+  10ade4a4 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Convolver.class
+  79469ee7 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/Display.class
+  c1576be6 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoubleAccess.class
+  3bb456d7 (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoubleBuffer.class
+  eed062ce (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoublePointwise.class
+  e3f707cd (LOCAL_ONLY) 20120920143516 plugins/EDF/imageware/DoubleProcess.class
+  f7d47d5d (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/DoubleSet.class
+  3c98dbe0 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FMath.class
+  e72c54a9 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatAccess.class
+  752ca783 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatBuffer.class
+  13d2c8ed (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatPointwise.class
+  f92fc306 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatProcess.class
+  cbb54e2a (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/FloatSet.class
+  a4b3f20a (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ImageAccess.class
+  a3cb9815 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ImageWare.class
+  3b5db209 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/Pointwise.class
+  bab794cb (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/Process.class
+  2475b92b (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortAccess.class
+  589b6994 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortBuffer.class
+  808d9fc0 (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortPointwise.class
+  7a16250c (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortProcess.class
+  9edb2a7c (LOCAL_ONLY) 20120920143518 plugins/EDF/imageware/ShortSet.class
+  2cecb7c4 (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$1.class
+  d701e2d7 (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$2.class
+  aa71cdde (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$Cube.class
+  75f963eb (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow$1.class
+  9f71ceeb (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$CustomWindow.class
+  be688c54 (LOCAL_ONLY) 20120920143518 plugins/EDF/surfacemap/SurfaceMap3D$ImageRegion.class
+  3370662a (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Lines.class
+  8ae02fcd (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Lut.class
+  c1648126 (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Misc.class
+  9919bf14 (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Picture.class
+  16ac3c3a (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$PlotVal.class
+  d717fe7c (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$TextField.class
+  f954757f (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D$Transform.class
+  fb38ada4 (LOCAL_ONLY) 20120920143520 plugins/EDF/surfacemap/SurfaceMap3D.class
+  6d6af260 (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/ComplexWaveFilter.class
+  62046e79 (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/ComplexWavelet.class
+  b3f1dbba (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/ImageAccess.class
+  68788aa5 (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/WaveSpline.class
+  f469ca9f (LOCAL_ONLY) 20120920143520 plugins/EDF/wavelets/WaveSplineFilter.class
+  bbeacf72 (LOCAL_ONLY) 20120522222818 plugins/EdfRead_.class
+  d46312f0 (LOCAL_ONLY) 20120626222758 plugins/Filters/Fast_Filters.class
+  d972a314 (LOCAL_ONLY) 20120626222800 plugins/Filters/Fit_Polynomial.class
+  36765ad6 (LOCAL_ONLY) 20120626222802 plugins/Filters/Floyd_Steinberg_Dithering.class
+  0a24b499 (LOCAL_ONLY) 20050928181802 plugins/FlowJ_.class
+  ba28c800 (LOCAL_ONLY) 20120626222802 plugins/Graphics/Averaging_Reducer.class
+  6e2d972f (LOCAL_ONLY) 20120626222804 plugins/Graphics/Example_Plot.class
+  4442d3db (LOCAL_ONLY) 20120626222806 plugins/Graphics/RGB_Profile_Plot.txt
+  404c9259 (LOCAL_ONLY) 20140718150018 plugins/ICTN_.jar
+  e9cb6eb7 (LOCAL_ONLY) 20150423162414 plugins/Image_CorrelationJ_1o.class
+  c33d5648 (LOCAL_ONLY) 20050928181804 plugins/MI_.class
+  f07dd15c (LOCAL_ONLY) 20150410103700 plugins/NeuronJ_.jar
+  a2eab881 (LOCAL_ONLY) 20050928181804 plugins/PCA_.class
+  8465f28c (LOCAL_ONLY) 20150423152030 plugins/PSC_Colocalization_.class
+  5d27f18d (LOCAL_ONLY) 20160202092306 plugins/Polar transform/Polar_Transformer.class
+  be8d7405 (LOCAL_ONLY) 20160202091714 plugins/Polar transform/Polar_Transformer.jar
+  68fa4608 (LOCAL_ONLY) 20150825120228 plugins/Radial_Profile.class
+  8e2e865e (LOCAL_ONLY) 20050928181804 plugins/Register_ROI.class
+  38965c33 (LOCAL_ONLY) 20050928181804 plugins/Register_ROI_MI.class
+  6970afac (LOCAL_ONLY) 20050927183506 plugins/Register_ROI_MI_Edges.class
+  8f00268a (LOCAL_ONLY) 20120626222822 plugins/Stacks/Measure_Hyperstack.txt
+  1e96e4cd (LOCAL_ONLY) 20120626222824 plugins/Stacks/Measure_Stack.txt
+  11c6a0f1 (LOCAL_ONLY) 20140718144720 plugins/Straighten_.jar
+  100e7398 (LOCAL_ONLY) 20050928181804 plugins/SurfaceJ_.class
+  0f404c6c (LOCAL_ONLY) 20120626222824 plugins/Tools/Common_Commands_Menu.txt
+  f799fdbf (LOCAL_ONLY) 20120626222826 plugins/Tools/ImageJ_Updater_.class
+  404f7828 (LOCAL_ONLY) 20120626222826 plugins/Tools/Signed_16-bit_to_Unsigned.js
+  b08882ba (LOCAL_ONLY) 20120626222824 plugins/Tools/bezier_tool.jar
+  5183e8b9 (LOCAL_ONLY) 20141011220400 plugins/VNT/Basic_Segment.class
+  1c97500a (LOCAL_ONLY) 20141011220400 plugins/VNT/BatchHelper$1.class
+  0e9c8b79 (LOCAL_ONLY) 20141011220402 plugins/VNT/BatchHelper$2.class
+  4e94f2da (LOCAL_ONLY) 20141011220402 plugins/VNT/BatchHelper.class
+  0b32a270 (LOCAL_ONLY) 20141011220404 plugins/VNT/Batch_File.class
+  66e8d103 (LOCAL_ONLY) 20141011220406 plugins/VNT/Batch_Folder$1.class
+  cc5d01cb (LOCAL_ONLY) 20141011220406 plugins/VNT/Batch_Folder.class
+  d963f943 (LOCAL_ONLY) 20141011220408 plugins/VNT/Batch_Folder_Recursively.class
+  0cd78a54 (LOCAL_ONLY) 20141011220410 plugins/VNT/Compile_All.class
+  4be732ee (LOCAL_ONLY) 20141011220416 plugins/VNT/Coordinate.class
+  cb13baf1 (LOCAL_ONLY) 20141011220512 plugins/VNT/Create_Settings.class
+  3be87faf (LOCAL_ONLY) 20141011220520 plugins/VNT/Debug_tool.class
+  e29045ca (LOCAL_ONLY) 20141011220636 plugins/VNT/Delaunay/DelaunayTriangulation.class
+  f28b0acb (LOCAL_ONLY) 20141011220640 plugins/VNT/Delaunay/Pnt.class
+  000d07b5 (LOCAL_ONLY) 20141011220642 plugins/VNT/Delaunay/Simplex.class
+  31c5f2bc (LOCAL_ONLY) 20141011220646 plugins/VNT/Delaunay/Triangulation.class
+  1fabdfa7 (LOCAL_ONLY) 20141011220522 plugins/VNT/DistanceMap_Filled.class
+  f0eaa4fe (LOCAL_ONLY) 20141011220528 plugins/VNT/DistanceMap_Outline.class
+  4cc2dd10 (LOCAL_ONLY) 20141011220534 plugins/VNT/DistanceMap_Skeleton.class
+  f3306750 (LOCAL_ONLY) 20141011220536 plugins/VNT/Endpoint_Prune.class
+  93a30c66 (LOCAL_ONLY) 20141011220542 plugins/VNT/Eye_Candy.class
+  375b644a (LOCAL_ONLY) 20141011220544 plugins/VNT/FindEdges_Segment.class
+  30566372 (LOCAL_ONLY) 20141011220550 plugins/VNT/GrayLevelClass.class
+  822c888e (LOCAL_ONLY) 20141011220650 plugins/VNT/Jama/CholeskyDecomposition.class
+  088582fb (LOCAL_ONLY) 20141011220652 plugins/VNT/Jama/EigenvalueDecomposition.class
+  ab6a484c (LOCAL_ONLY) 20141011220652 plugins/VNT/Jama/LUDecomposition.class
+  178ea7ed (LOCAL_ONLY) 20141011220654 plugins/VNT/Jama/Matrix.class
+  446e8816 (LOCAL_ONLY) 20141011220658 plugins/VNT/Jama/QRDecomposition.class
+  d2f02c17 (LOCAL_ONLY) 20141011220704 plugins/VNT/Jama/SingularValueDecomposition.class
+  2c528299 (LOCAL_ONLY) 20141011220556 plugins/VNT/Lighting_Correction.class
+  dcdc3b0c (LOCAL_ONLY) 20141011220602 plugins/VNT/Mesh_Analysis.class
+  7c7796c9 (LOCAL_ONLY) 20141011220612 plugins/VNT/Node.class
+  0ab636cd (LOCAL_ONLY) 20141011220618 plugins/VNT/Node_Analysis.class
+  3d3c3bf8 (LOCAL_ONLY) 20141011220624 plugins/VNT/Node_LinkedList.class
+  24ff3d5b (LOCAL_ONLY) 20141011220628 plugins/VNT/SetSettingsDialog.class
+  affae17c (LOCAL_ONLY) 20141011220634 plugins/VNT/VascularNetworkToolkit.class
+  fdf3a89b (LOCAL_ONLY) 20141011220624 plugins/VNT/readme.txt
+  276637c9 (LOCAL_ONLY) 20050928181804 plugins/VolumeJ_.class
+  f7e74f3d (LOCAL_ONLY) 20050928181804 plugins/Volume_Reconstructor_.class
+  3814d5a6 (LOCAL_ONLY) 20050928181902 plugins/bij.jar
+  0dfa5070 (LOCAL_ONLY) 20150410103820 plugins/imagescience.jar
+  dd562d0d (LOCAL_ONLY) 20120626222818 plugins/jars/Jama-1.0.2.jar
+  b3369ad7 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Basic_Segment.class
+  76ea1fc0 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/BatchHelper$1.class
+  0e21cdb0 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/BatchHelper$2.class
+  a52a1438 (LOCAL_ONLY) 20141011214956 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/BatchHelper.class
+  825bc704 (LOCAL_ONLY) 20141011214958 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_File.class
+  f5507ced (LOCAL_ONLY) 20141011214958 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_Folder$1.class
+  556a319e (LOCAL_ONLY) 20141011214958 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_Folder.class
+  aee28cf4 (LOCAL_ONLY) 20141011215000 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Batch_Folder_Recursively.class
+  3b8f713d (LOCAL_ONLY) 20141011215000 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Compile_All.class
+  4d481bcf (LOCAL_ONLY) 20141011215000 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Coordinate.class
+  0d0b9db9 (LOCAL_ONLY) 20141011215002 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Create_Settings.class
+  acd89e33 (LOCAL_ONLY) 20141011215002 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Debug_tool.class
+  c39c4133 (LOCAL_ONLY) 20141011215018 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/DelaunayTriangulation.class
+  3acaf6ff (LOCAL_ONLY) 20141011215018 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/Pnt.class
+  2d050645 (LOCAL_ONLY) 20141011215020 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/Simplex.class
+  aff180f2 (LOCAL_ONLY) 20141011215020 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Delaunay/Triangulation.class
+  d1303c72 (LOCAL_ONLY) 20141011215004 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Filled.class
+  1585c9ba (LOCAL_ONLY) 20141011215004 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Outline.class
+  23e91c91 (LOCAL_ONLY) 20141011215006 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Skeleton.class
+  ffbb36da (LOCAL_ONLY) 20141011215006 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Endpoint_Prune.class
+  373996e0 (LOCAL_ONLY) 20141011215008 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Eye_Candy.class
+  d01a5b2f (LOCAL_ONLY) 20141011215008 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/FindEdges_Segment.class
+  0b14c4dc (LOCAL_ONLY) 20141011215010 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/GrayLevelClass.class
+  d3213464 (LOCAL_ONLY) 20141011215020 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/CholeskyDecomposition.class
+  a6dcd96a (LOCAL_ONLY) 20141011215022 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/EigenvalueDecomposition.class
+  f2f3001b (LOCAL_ONLY) 20141011215022 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/LUDecomposition.class
+  5ed8a60f (LOCAL_ONLY) 20141011215024 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/Matrix.class
+  7d3d609f (LOCAL_ONLY) 20141011215024 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/QRDecomposition.class
+  359f395b (LOCAL_ONLY) 20141011215024 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/SingularValueDecomposition.class
+  47f6ec15 (LOCAL_ONLY) 20141011215046 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/examples/MagicSquareExample.class
+  6412261d (LOCAL_ONLY) 20141011215048 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/test/TestMatrix.class
+  62604693 (LOCAL_ONLY) 20141011215050 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Jama/util/Maths.class
+  f572f694 (LOCAL_ONLY) 20141011215010 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Lighting_Correction.class
+  6a1cc0ea (LOCAL_ONLY) 20141011215012 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Mesh_Analysis.class
+  7a3dbbf2 (LOCAL_ONLY) 20141011215012 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Node.class
+  b7306e4d (LOCAL_ONLY) 20141011215012 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Node_Analysis.class
+  1684e525 (LOCAL_ONLY) 20141011215014 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/Node_LinkedList.class
+  a573d308 (LOCAL_ONLY) 20141011215014 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/SetSettingsDialog.class
+  567e4141 (LOCAL_ONLY) 20141011215016 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/VascularNetworkToolkit.class
+  e137097c (LOCAL_ONLY) 20141011215014 plugins/vascularization/vnt_plugins_binaries_v1.0/VNT/readme.txt
+  dc1e188b (LOCAL_ONLY) 20141011215050 plugins/vascularization/vnt_plugins_binaries_v1.0/gpl.txt
+  e1598984 (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/Basic_Segment.class
+  d72b5595 (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/BatchHelper$1.class
+  9dff7c81 (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/BatchHelper$2.class
+  e728c67f (LOCAL_ONLY) 20141011214956 plugins/vnt_plugins_binaries_v1.0/VNT/BatchHelper.class
+  0eec8c72 (LOCAL_ONLY) 20141011214958 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_File.class
+  68b599dd (LOCAL_ONLY) 20141011214958 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_Folder$1.class
+  3e80e245 (LOCAL_ONLY) 20141011214958 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_Folder.class
+  3f52f7e6 (LOCAL_ONLY) 20141011215000 plugins/vnt_plugins_binaries_v1.0/VNT/Batch_Folder_Recursively.class
+  ac04c705 (LOCAL_ONLY) 20141011215000 plugins/vnt_plugins_binaries_v1.0/VNT/Compile_All.class
+  05f8f6fa (LOCAL_ONLY) 20141011215000 plugins/vnt_plugins_binaries_v1.0/VNT/Coordinate.class
+  e8100b32 (LOCAL_ONLY) 20141011215002 plugins/vnt_plugins_binaries_v1.0/VNT/Create_Settings.class
+  53c68687 (LOCAL_ONLY) 20141011215002 plugins/vnt_plugins_binaries_v1.0/VNT/Debug_tool.class
+  6a0f6816 (LOCAL_ONLY) 20141011215018 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/DelaunayTriangulation.class
+  60b66af3 (LOCAL_ONLY) 20141011215018 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/Pnt.class
+  1df0711d (LOCAL_ONLY) 20141011215020 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/Simplex.class
+  bcf07bec (LOCAL_ONLY) 20141011215020 plugins/vnt_plugins_binaries_v1.0/VNT/Delaunay/Triangulation.class
+  60af04aa (LOCAL_ONLY) 20141011215004 plugins/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Filled.class
+  a1f8358b (LOCAL_ONLY) 20141011215004 plugins/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Outline.class
+  0f02cfcd (LOCAL_ONLY) 20141011215006 plugins/vnt_plugins_binaries_v1.0/VNT/DistanceMap_Skeleton.class
+  b73dd6f0 (LOCAL_ONLY) 20141011215006 plugins/vnt_plugins_binaries_v1.0/VNT/Endpoint_Prune.class
+  35b0b3ad (LOCAL_ONLY) 20141011215008 plugins/vnt_plugins_binaries_v1.0/VNT/Eye_Candy.class
+  618e56d1 (LOCAL_ONLY) 20141011215008 plugins/vnt_plugins_binaries_v1.0/VNT/FindEdges_Segment.class
+  daa079c4 (LOCAL_ONLY) 20141011215010 plugins/vnt_plugins_binaries_v1.0/VNT/GrayLevelClass.class
+  15f74df5 (LOCAL_ONLY) 20141011215020 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/CholeskyDecomposition.class
+  0d2f72b4 (LOCAL_ONLY) 20141011215022 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/EigenvalueDecomposition.class
+  92fcc7f6 (LOCAL_ONLY) 20141011215022 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/LUDecomposition.class
+  1880a6b8 (LOCAL_ONLY) 20141011215024 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/Matrix.class
+  d6ddb539 (LOCAL_ONLY) 20141011215024 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/QRDecomposition.class
+  fa2a11bf (LOCAL_ONLY) 20141011215024 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/SingularValueDecomposition.class
+  e450ef97 (LOCAL_ONLY) 20141011215046 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/examples/MagicSquareExample.class
+  fc3ba489 (LOCAL_ONLY) 20141011215048 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/test/TestMatrix.class
+  07e11011 (LOCAL_ONLY) 20141011215050 plugins/vnt_plugins_binaries_v1.0/VNT/Jama/util/Maths.class
+  bbdac2c0 (LOCAL_ONLY) 20141011215010 plugins/vnt_plugins_binaries_v1.0/VNT/Lighting_Correction.class
+  ba796fca (LOCAL_ONLY) 20141011215012 plugins/vnt_plugins_binaries_v1.0/VNT/Mesh_Analysis.class
+  af107723 (LOCAL_ONLY) 20141011215012 plugins/vnt_plugins_binaries_v1.0/VNT/Node.class
+  af5a406c (LOCAL_ONLY) 20141011215012 plugins/vnt_plugins_binaries_v1.0/VNT/Node_Analysis.class
+  f23fb57e (LOCAL_ONLY) 20141011215014 plugins/vnt_plugins_binaries_v1.0/VNT/Node_LinkedList.class
+  a67aba55 (LOCAL_ONLY) 20141011215014 plugins/vnt_plugins_binaries_v1.0/VNT/SetSettingsDialog.class
+  1aabe426 (LOCAL_ONLY) 20141011215016 plugins/vnt_plugins_binaries_v1.0/VNT/VascularNetworkToolkit.class
+  09a74cad (LOCAL_ONLY) 20141011215014 plugins/vnt_plugins_binaries_v1.0/VNT/readme.txt
+  7dbf9991 (LOCAL_ONLY) 20141011215050 plugins/vnt_plugins_binaries_v1.0/gpl.txt</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-04-19 17:04:41 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Several people have now reported the &quot;OpenGL 1.2 or better is required (GL_VERSION=1.1)&quot; bug with certain configurations.
+
+I filed an issue in the 3D Viewer repository to track it:
+<a href="https://github.com/fiji/3D_Viewer/issues/18">https://github.com/fiji/3D_Viewer/issues/18</a>
+
+More investigation required.
+
+*** This bug has been marked as a duplicate of <a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - 3D viewer doesn't work"
+   href="1233.html">bug 1233</a> ***</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

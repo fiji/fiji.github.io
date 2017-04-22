@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 52 &ndash; ImageJA doesn't build under openjdk</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_ImageJ1 bz_bug_52 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;52</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">ImageJA doesn't build under openjdk</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2009-07-09 18:40:27 CDT</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2009-07-09 18:40:27">
+  <input type="hidden" name="longdesclength" value="10">
+  <input type="hidden" name="id" value="52">
+  <input type="hidden" name="token" value="1492731473-0f072F2OSWWj_-87ewhspOP69uUQVa10sIHo64GMURU">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="52.html"><b>Bug&nbsp;52</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">ImageJA doesn't build under openjdk</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>ImageJA doesn't build under openjdk
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >ImageJ1</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Linux
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2009-05-01 09:26 CDT by <span class="vcard"><span class="fn">Mark Longair</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-07-09 18:40 CDT 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="johannes.schindelin">johannes.schindelin</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain bz_patch">
+        <td valign="top">
+            <a href="../attach/2/write-gray8-jpegs.patch"
+               title="View the content of the attachment">
+          <b>A patch so that 8 bit grayscale images are written as grayscale JPEGs</b></a>
+
+          <span class="bz_attach_extra_info">
+              (767 bytes,
+                patch)
+
+            <br>
+            <a href="#attach_2"
+               title="Go to the comment associated with the attachment">2009-05-17 19:13 CDT</a>,
+
+            <span class="vcard"><span class="fn">Mark Longair</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+        </td>
+      </tr>
+
+  </table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Longair</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-01 09:26:42 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >At the moment, ImageJ (e.g. the &quot;current&quot; branch) builds under openjdk but
+ImageJA (e.g. the &quot;fiji&quot; branch) fails to build with the errors below in
+JPEGWriter.  There was a fix introduced in ImageJ 1.41n 52eb5b6f0f9886ed5
+- was there a reason for not merging that in?
+
+  ./ImageJA/ij/plugin/filter/AVI_Writer.java:54: warning: com.sun.image.codec.jpeg.JPEGImageEncoder is Sun proprietary API and may be removed in a future release
+      private JPEGImageEncoder jpegEncoder;
+            ^
+  ./ImageJA/ij/io/ImageReader.java:431: warning: com.sun.image.codec.jpeg.JPEGCodec is Sun proprietary API and may be removed in a future release
+  		BufferedImage bi = JPEGCodec.createJPEGDecoder(in).decodeAsBufferedImage();
+  		                   ^
+  ./ImageJA/ij/plugin/AVI_Reader.java:732: warning: com.sun.image.codec.jpeg.JPEGCodec is Sun proprietary API and may be removed in a future release
+              bi = JPEGCodec.createJPEGDecoder(inputStream).decodeAsBufferedImage();
+                   ^
+  ./ImageJA/ij/plugin/JpegWriter.java:46: warning: com.sun.image.codec.jpeg.JPEGImageEncoder is Sun proprietary API and may be removed in a future release
+              JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(f);
+              ^
+  ./ImageJA/ij/plugin/JpegWriter.java:46: warning: com.sun.image.codec.jpeg.JPEGCodec is Sun proprietary API and may be removed in a future release
+              JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(f);
+                                         ^
+  ./ImageJA/ij/plugin/JpegWriter.java:47: warning: com.sun.image.codec.jpeg.JPEGEncodeParam is Sun proprietary API and may be removed in a future release
+              JPEGEncodeParam param = encoder.getDefaultJPEGEncodeParam(bi);
+              ^
+  ./ImageJA/ij/plugin/JpegWriter.java:50: cannot find symbol
+symbol  : method setHorizontalSubsampling(int,int)
+location: class com.sun.image.codec.jpeg.JPEGEncodeParam
+  				param.setHorizontalSubsampling(1, 1);
+  				     ^
+  ./ImageJA/ij/plugin/JpegWriter.java:51: cannot find symbol
+symbol  : method setHorizontalSubsampling(int,int)
+location: class com.sun.image.codec.jpeg.JPEGEncodeParam
+  				param.setHorizontalSubsampling(2, 1);
+  				     ^
+  ./ImageJA/ij/plugin/JpegWriter.java:52: cannot find symbol
+symbol  : method setVerticalSubsampling(int,int)
+location: class com.sun.image.codec.jpeg.JPEGEncodeParam
+  				param.setVerticalSubsampling(1, 1);
+  				     ^
+  ./ImageJA/ij/plugin/JpegWriter.java:53: cannot find symbol
+symbol  : method setVerticalSubsampling(int,int)
+location: class com.sun.image.codec.jpeg.JPEGEncodeParam
+				param.setVerticalSubsampling(2, 1);
+  				     ^
+  ./ImageJA/ij/plugin/JpegWriter.java:61: warning: com.sun.image.codec.jpeg.JPEGEncodeParam is Sun proprietary API and may be removed in a future release
+					param.setDensityUnit(JPEGEncodeParam.DENSITY_UNIT_DOTS_INCH);
+					                     ^
+  ./ImageJA/ij/plugin/JpegWriter.java:61: cannot find symbol
+symbol  : variable DENSITY_UNIT_DOTS_INCH
+location: class com.sun.image.codec.jpeg.JPEGEncodeParam
+  					param.setDensityUnit(JPEGEncodeParam.DENSITY_UNIT_DOTS_INCH);
+  					                                    ^
+  ./ImageJA/ij/plugin/filter/AVI_Writer.java:372: warning: com.sun.image.codec.jpeg.JPEGCodec is Sun proprietary API and may be removed in a future release
+            jpegEncoder = JPEGCodec.createJPEGEncoder(raOutputStream);
+                          ^</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-14 10:51:59 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Could you please test the 'imageio' branch of ImageJA?
+
+In particular, that the subsampling is correct when quality is 100, and that the resolution is set correctly when the unit of the resolution is &quot;inch&quot; or &quot;in&quot;?
+
+Thank you so much.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Longair</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-17 19:13:28 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="../attach/2/write-gray8-jpegs.patch" name="attach_2" title="A patch so that 8 bit grayscale images are written as grayscale JPEGs">attachment 2</a></span>
+A patch so that 8 bit grayscale images are written as grayscale JPEGs</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Longair</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-17 19:13:43 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >The version in that branch seems to save JPEGs OK and builds fine with
+OpenJDK.  It might be worth adding the attached patch so that only one
+channels is saved for GRAY8 images.  I'm not sure what you mean about the
+subsampling?  The output looks fine, though.
+
+I've tried setting units in the calibration to &quot;in&quot; or &quot;inches&quot; and changing
+the voxel size, but those don't seem to be saved in the EXIF resolution fields -
+it just ends up with the following in each case (output from exiftool):
+
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+
+Many thanks,
+Mark</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-18 10:32:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Update: setting the density (resolution) does not work properly.  It will fall back to writing a .jpg ignoring all ImageJ settings such as quality or resolution.  The reason is that the methods using IIOMetadata do not work as I expected, as writer.getDefaultStreamMetadata(param) returns an instance of the _streamed_ .jpg metadata, which does not allow to set the resolution.
+
+Will investigate further.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-25 11:10:43 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Okay, I have to give up for the moment, as I have no clue how to fix the resolution thing.  As far as I can tell, the code in the 'imageio' branch should work, but it just ignores the resolution.  Any help welcome.</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Longair</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-25 19:42:39 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I've pushed a small change to the imageio branch that seems to fix
+the writing of resolution information for me.
+
+Unfortunately we're not quite there yet, since ImageJ doesn't seem
+to get the resolution right when loading the file back in, but
+jpeginfo -i, exiftool and gimp get the resolution right, so that's
+some progress at least.  I'll work on that next.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mark Longair</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 10:55:40 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I haven't had time to add code to read the resolution information
+from JPEGs yet, but it looks as if this is the right way to do
+it with ImageIO:
+
+  <a href="http://johnbokma.com/java/obtaining-image-metadata.html">http://johnbokma.com/java/obtaining-image-metadata.html</a></pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-06-16 11:36:53 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Seems Wayne decided to scrap the dpi stuff that held us up for so long.  One one hand, good to see this included in ImageJ, on the other hand, a pity to see yet another piece of backwards-compatibility float down the river.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Johannes Schindelin</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-07-09 18:40:27 CDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Since the merge with 1.43b, we have a fix for this issue in Fiji's version of ImageJA.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>

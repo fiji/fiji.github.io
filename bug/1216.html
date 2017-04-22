@@ -1,0 +1,621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1216 &ndash; Jython script crashes</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="">
+
+  
+
+
+  
+    
+      
+
+      
+      
+
+
+
+    
+    <link href="../css/global.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="../css/global.css" rel="stylesheet"
+        type="text/css" ><link href="../css/bug.css" rel="stylesheet"
+        type="text/css" >
+
+    <link href="../css/dusk.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+    
+    
+  </head>
+
+
+
+  <body onload=""
+        class=" bz_bug bz_status_RESOLVED bz_product_Fiji bz_component_Plugins bz_bug_1216 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1216</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Jython script crashes</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2016-01-26 11:43:56 CST</p>
+    </td>
+</tr>
+</table>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<form name="changeform" id="changeform" method="post" action="">
+
+  <input type="hidden" name="delta_ts" value="2016-01-26 11:43:56">
+  <input type="hidden" name="longdesclength" value="4">
+  <input type="hidden" name="id" value="1216">
+  <input type="hidden" name="token" value="1492731971-z4BaBtLVYtYwVu1BU7wYqORDyjrFAfZyPW9WdrqGK-Y">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="1216.html"><b>Bug&nbsp;1216</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Jython script crashes</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+  >Summary:</a>
+</label>
+</th>
+          <td>Jython script crashes
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a>Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components."
+      class="field_help_link"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Fiji</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Unclassified</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Plugins</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+  >Version:</a>
+</label>
+</th>
+        <td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">PC
+       Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a><u>I</u>mportance</a></label>:
+      </th>
+      <td>P4
+       normal
+      </td>
+    </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a>Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">ImageJ Bugs Mailing List</span>
+</span>
+      </td>
+    </tr>
+
+    
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2016-01-14 05:05 CST by <span class="vcard"><span class="fn">Felix</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2016-01-26 11:43 CST 
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="ctrueden">ctrueden</option>
+                <option value="felix.meyenhofer">felix.meyenhofer</option>
+                <option value="jan.eglinger">jan.eglinger</option>
+            </select>
+        </div>
+          
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+
+
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments">
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Felix</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-01-14 05:05:07 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >When I try to run Plugins&gt;Registration&gt;Correct 3D drift
+the following error occurs:
+
+org.python.core.PyException: null
+	at org.python.core.Py.ImportError(Py.java:304) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.imp.import_logic(imp.java:790) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.imp.import_module_level(imp.java:842) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.imp.importName(imp.java:917) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.PyObject.__call__(PyObject.java:357) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.imp.importFromAs(imp.java:1011) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.imp.importFrom(imp.java:987) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.pycode._pyx0.f$0(C:\Users\Public\Fiji.app\plugins\Scripts\Plugins\Registration\Correct_3D_drift.py:298) ~[na:na]
+	at org.python.pycode._pyx0.call_function(C:\Users\Public\Fiji.app\plugins\Scripts\Plugins\Registration\Correct_3D_drift.py) ~[na:na]
+	at org.python.core.PyTableCode.call(PyTableCode.java:165) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.PyCode.call(PyCode.java:18) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.python.core.Py.runCode(Py.java:1275) ~[jython-shaded-2.5.3.jar:2.5.3]
+	at org.scijava.plugins.scripting.jython.JythonScriptEngine.eval(JythonScriptEngine.java:76) ~[scripting-jython-0.2.4.jar:0.2.4]
+	at org.scijava.script.ScriptModule.run(ScriptModule.java:173) ~[scijava-common-2.50.1.jar:2.50.1]
+	at org.scijava.module.ModuleRunner.run(ModuleRunner.java:167) [scijava-common-2.50.1.jar:2.50.1]
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:126) [scijava-common-2.50.1.jar:2.50.1]
+	at org.scijava.module.ModuleRunner.call(ModuleRunner.java:65) [scijava-common-2.50.1.jar:2.50.1]
+	at org.scijava.thread.DefaultThreadService$2.call(DefaultThreadService.java:191) [scijava-common-2.50.1.jar:2.50.1]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_66]
+
+Information about your version of Java:
+
+  os.arch =&gt; amd64
+  os.name =&gt; Windows 7
+  os.version =&gt; 6.1
+  java.version =&gt; 1.8.0_66
+  java.vendor =&gt; Oracle Corporation
+  java.runtime.name =&gt; Java(TM) SE Runtime Environment
+  java.runtime.version =&gt; 1.8.0_66-b18
+  java.vm.name =&gt; Java HotSpot(TM) 64-Bit Server VM
+  java.vm.version =&gt; 25.66-b18
+  java.vm.vendor =&gt; Oracle Corporation
+  java.vm.info =&gt; mixed mode
+  java.awt.graphicsenv =&gt; sun.awt.Win32GraphicsEnvironment
+  java.specification.name =&gt; Java Platform API Specification
+  java.specification.version =&gt; 1.8
+  sun.cpu.endian =&gt; little
+  sun.desktop =&gt; windows
+  file.separator =&gt; \
+
+The up-to-date check says: REMIND_LATER
+
+Information relevant to JAVA_HOME related problems:
+
+  JAVA_HOME is set to: C:\Program Files\Java\jdk1.8.0_66/jre
+  imagej.dir =&gt; C:\Users\Public\Fiji.app
+
+Information about the version of each plugin:
+
+Activated update sites:
+ImageJ: <a href="http://update.imagej.net/">http://update.imagej.net/</a> (last check:20151222031554)
+Fiji: <a href="http://update.fiji.sc/">http://update.fiji.sc/</a> (last check:20151222052403)
+Java-8: <a href="http://sites.imagej.net/Java-8/">http://sites.imagej.net/Java-8/</a> (last check:20160107181822)
+
+Files not up-to-date:
+  d290c110 (LOCAL_ONLY) 20151218154910 jars/commons-io-2.4.jar
+  c6325009 (LOCAL_ONLY) 20151218154940 jars/omero/imagej-omero-0.3.2.jar
+  1445b008 (LOCAL_ONLY) 20151218154949 jars/omero/omero-client-5.1.2-ice35.jar
+  2f2a824f (LOCAL_ONLY) 20151218154950 jars/omero/scijava-log-slf4j-1.0.0.jar
+  928ffe97 (LOCAL_ONLY) 20151218154912 plugins/Adapt__v1.146.jar
+  8808d802 (LOCAL_ONLY) 20151218154909 plugins/BioVoxxel_Plugins.jar
+  bae2315e (LOCAL_ONLY) 20151218154910 plugins/Data_Analysis.jar
+  4c4c0e80 (LOCAL_ONLY) 20151218154912 plugins/IA_Class_Library_v1.123.jar
+  1edfbfde (LOCAL_ONLY) 20151215213624 plugins/Imaris/ImarisBridgeUtils.jar
+  eb679ca0 (LOCAL_ONLY) 20151215213624 plugins/Imaris/Imaris_Bridge.jar
+  1c348610 (LOCAL_ONLY) 20151218154911 plugins/Particle_Tracker_Library_v1.125.jar
+  fe58c8cc (LOCAL_ONLY) 20151218154643 plugins/jars/nanozoomer-1.0.0.jar
+  8e8db316 20151218154907 plugins/mcib3d-suite/mcib3d-core.jar
+  a4ccc1f2 20151218154907 plugins/mcib3d-suite/mcib3d_plugins.jar</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Felix</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-01-14 05:15:44 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I tried with a fresh installation. in java 6 it works. However if I remove the java folder, do an update, enable the java8 update site and apply the update it won't run either. 
+
+the error message is a bit different though:
+
+Traceback (most recent call last):
+  File &quot;C:\Users\meyenhof\DOWNLO~1\Fiji.app\plugins\Scripts\Plugins\Registration\Correct_3D_drift.py&quot;, line 16, in &lt;module&gt;
+    from javax.vecmath import Point3i
+ImportError: No module named vecmath</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jan Eglinger</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-01-14 06:01:00 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to Felix from <a href="#c1">comment #1</a>)
+<span class="quote">&gt;     from javax.vecmath import Point3i
+&gt; ImportError: No module named vecmath</span >
+
+This was fixed by Curtis Rueden in the source already:
+<a href="https://github.com/fiji/fiji/commit/d0d02ce8d9bce59c4b2db03cfaaf4ca597701d23#diff-45e7679c76ad4b96797e8409766cf6d9">https://github.com/fiji/fiji/commit/d0d02ce8d9bce59c4b2db03cfaaf4ca597701d23#diff-45e7679c76ad4b96797e8409766cf6d9</a>
+
+But it doesn't seem to be available from the Java-8 update site yet.</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Curtis Rueden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2016-01-26 11:43:56 CST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I uploaded the latest version of Correct 3D Drift to the Java-8 update site, which should work with the new Java-8-compatible version of Java 3D.
+
+This version of the script also has some new features contributed by Christian Tischer; see <a href="https://github.com/fiji/fiji/pull/137">https://github.com/fiji/fiji/pull/137</a>
+
+Give it a try and let us know how it works for you.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+
+</div>
+
+</body>
+</html>
