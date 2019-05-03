@@ -158,6 +158,32 @@
     </div>
     <hr />
     <div class="row">
+      <div class="col-md-4">
+        <h2>Plugins</h2>
+        <p>
+          Fiji features thousands of plugins that aid in scientific image processing and analysis. Here are a few featured plugins hand-picked by the Fiji community.
+        </p>
+        <p>
+          <a class="btn btn-outline-primary" href="https://imagej.net/Category:Plugins">List of All Plugins</a>
+        </p>
+      </div>
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="plugin-tabs" role="tablist">
+              <!-- dynamically generated from plugins.json -->
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="plugin-tab-content">
+              <!-- dynamically generated from plugins.json -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
       <div class="col-md-6">
         <h2>Contributors</h2>
         <p>
@@ -262,7 +288,7 @@
   <!-- Bootstrap core JavaScript
       ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="site/js/jquery-3.4.0.slim.min.js"></script>
+  <script src="site/js/jquery-3.4.1.min.js"></script>
   <script src="site/js/popper.min.js"></script>
   <script src="site/js/bootstrap.min.js"></script>
   <script>
@@ -298,6 +324,61 @@
     else if (navigator.appVersion.indexOf("Linux")!=-1){
       setDownload("linux");
     }
+
+    function slugify(text){
+      return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
+    }
+
+    let first = true;
+
+    $.getJSON("./plugins.json", function(json) {
+      json.plugins.map(function(val){
+        console.log(val)
+        /*
+          <li class="nav-item">
+            <a class="nav-link active" id="trakem2-tab" data-toggle="tab" href="#trakem2" role="tab" aria-controls="trakem2" aria-selected="true">TrakEM2</a>
+          </li>
+        */
+        let nameSlug = slugify(val.name);
+        let tabString = `
+          <li class="nav-item">
+            <a class="nav-link ${first ? 'active' : ''}" id="${nameSlug}-tab-header" data-toggle="tab" href="#${nameSlug}-tab" role="tab" aria-controls="${nameSlug}" aria-selected="true">${val.name}</a>
+          </li>
+        `
+
+        /*
+          <div class="tab-pane fade show active" id="trakem2" role="tabpanel" aria-labelledby="trakem2-tab">
+            <h5 class="card-title">TrakEM2</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">More information</a>
+          </div>
+        */
+
+        let paneString = `
+        <div class="tab-pane fade ${first ? 'show active' : ''}" id="${nameSlug}-tab" role="tabpanel" aria-labelledby="${nameSlug}-tab-header">
+          ${val.imgUrl ? 
+            '<img class="img-fluid img-plugin" alt="image showing ' + val.name + ' in action" src = "site/img/plugins/' + val.imgUrl + '" /> <hr />' 
+            : ''
+          }
+          <h5 class="card-title">${val.name}</h5>
+          <p class="card-text">${val.description}</p>
+          <a href="#" class="btn btn-primary">More information</a>
+        </div>
+        `
+        $("#plugin-tabs").append(tabString);
+        $("#plugin-tab-content").append(paneString);
+        
+
+        if (first){
+          first = false;
+        }
+      })
+    });
   </script>
 </body>
 
