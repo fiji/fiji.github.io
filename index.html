@@ -341,7 +341,7 @@
     let first = true;
     const MAX_PLUGIN_COUNT = 6; // controls max number of tabs shown
 
-    $.getJSON("./plugins.json", function(json) {
+    $.getJSON("site/plugins.json", function(json) {
       let plugins = json.plugins.sort(() => .5 - Math.random());
       if (plugins.length > MAX_PLUGIN_COUNT){
         plugins = plugins.slice(0,MAX_PLUGIN_COUNT);
