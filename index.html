@@ -342,7 +342,12 @@
     const MAX_PLUGIN_COUNT = 6; // controls max number of tabs shown
 
     $.getJSON("site/plugins.json", function(json) {
-      let plugins = json.plugins.sort(() => .5 - Math.random());
+      let plugins = json.plugins;
+      // Fisher-Yates shuffle; see: https://javascript.info/task/shuffle
+      for (let i = plugins.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+        [plugins[i], plugins[j]] = [plugins[j], plugins[i]]; // swap elements
+      }
       if (plugins.length > MAX_PLUGIN_COUNT){
         plugins = plugins.slice(0,MAX_PLUGIN_COUNT);
       }
