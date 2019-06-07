@@ -353,7 +353,7 @@
       }
       plugins.map(function(val){
         // generating the tab header
-        let nameSlug = slugify(val.name);
+        let nameSlug = 'plugin-' + slugify(val.name);
         let tabString = `
           <li class="nav-item">
             <a class="nav-link ${first ? 'active' : ''}" id="${nameSlug}-tab-header" data-toggle="tab" href="#${nameSlug}-tab" role="tab" aria-controls="${nameSlug}" aria-selected="true">${val.name}</a>
