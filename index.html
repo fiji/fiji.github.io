@@ -316,13 +316,13 @@
       $("#auto-download").attr("href", osLinks[currentOS]["link"]);
       $("#auto-download").html('<span class="fab fa-' + osLinks[currentOS]["icon"] + '"></span>&nbsp;' + osLinks[currentOS]["text"]);
     }
-    if (navigator.appVersion.indexOf("Win")!=-1){
+    if (navigator.userAgent.indexOf("Win")!=-1){
       setDownload("windows");
     }
-    else if (navigator.appVersion.indexOf("Mac")!=-1){
+    else if (navigator.userAgent.indexOf("Mac")!=-1){
       setDownload("osx");
     }
-    else if (navigator.appVersion.indexOf("Linux")!=-1){
+    else if (navigator.userAgent.indexOf("Linux")!=-1){
       setDownload("linux");
     }
 
