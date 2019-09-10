@@ -316,7 +316,7 @@
       $("#auto-download").attr("href", osLinks[currentOS]["link"]);
       $("#auto-download").html('<span class="fab fa-' + osLinks[currentOS]["icon"] + '"></span>&nbsp;' + osLinks[currentOS]["text"]);
     }
-    if (navigator.userAgent.indexOf("Win")!=-1){
+    if (navigator.platform.indexOf("Win")!=-1){
       setDownload("windows");
     }
     else if (navigator.userAgent.indexOf("Mac")!=-1){
