@@ -1,4 +1,4 @@
-# The [Fiji Website](https://fiji.sc)
+# FIJI:WHERE HAPPINESS FINDS YOU(https://fiji.sc)
 
 This is the repository for the [Fiji website](https://fiji.sc). It's a simple front-facing website that lists basic information about Fiji, and directs users to more information if they need it. In addition, it has an archive of older bug information, kept for posterity. It is built with [Bootstrap 4](https://getbootstrap.com), [jQuery](http://jquery.com/), [Font Awesome](https://fontawesome.com), and a few other open-source web libraries.
 
