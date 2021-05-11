@@ -1,6 +1,6 @@
 # The [Fiji Website](https://fiji.sc)
 
-This is the repository for the [Fiji website](https://fiji.sc). It's a simple front-facing website that lists basic information about Fiji, and directs users to more information if they need it. In addition, it has an archive of older bug information, kept for posterity. It is built with [Bootstrap 4](https://getbootstrap.com), [jQuery](http://jquery.com/), [Font Awesome](https://fontawesome.com), and a few other open-source web libraries.
+This is the repository for the [Fiji website](https://fiji.sc). It's a simple front-facing website that lists basic information about Fiji, and directs users to more information if they need it. In addition, it has an archive of older bug information, kept for posterity. It is built with [Bootstrap 5](https://getbootstrap.com), [Font Awesome](https://fontawesome.com), and a few other open-source web libraries.
 
 Like Fiji itself, this website is built by the Fiji community, and is continuously improved by contributors all around the world. With that in mind, all forks and PRs are welcome!
 
@@ -22,11 +22,11 @@ $ python -m SimpleHTTPServer
 Serving HTTP on 0.0.0.0 port 8000 ...
 ```
 
-And voila, everything should be done! Visit whatever port the HTTP server is opened on (this tends to be `http://localhost:8000/` by default). 
+And voila, everything should be done! Visit whatever port the HTTP server is opened on (this tends to be `http://localhost:8000/` by default).
 
 ## Adding A Plugin
 
-Want to feature a plugin on the Fiji website? Great! All you need to do is submit a PR editing the `plugins.json` file, and optionally uploading a picture. 
+Want to feature a plugin on the Fiji website? Great! All you need to do is submit a PR editing the `plugins.json` file, and optionally uploading a picture.
 
 In `plugins.json`, there is one JSON object titled `plugins`, which is an array of (anonymous) plugin objects. To properly create a plugin object, it needs three mandatory (and one optional) parameters:
 

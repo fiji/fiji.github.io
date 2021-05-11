@@ -12,7 +12,7 @@
   <title>Fiji: ImageJ, with "Batteries Included"</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="site/css/bootstrap.min.css?v4.3.1" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
   <!-- Custom site styling -->
   <link href="site/css/style.css?v1.0.0" rel="stylesheet">
@@ -37,19 +37,18 @@
 
 <body role="document">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" role="navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
     <div class="container">
       <a class="navbar-brand" href="/">
         <img width="30" height="30" class="d-inline-block align-top" src="site/logo.png" alt="Fiji logo" /> Fiji</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://imagej.net/Fiji">Wiki</a>
@@ -61,16 +60,14 @@
             <a class="nav-link" href="https://forum.image.sc/tags/fiji">Forum</a>
           </li>
         </ul>
-        <form id="tfnewsearch" class="form-inline my-2 my-lg-0" method="get"
-          action="https://search.imagej.net/search.php">
-          <div id="searchBar">
-            <input type="text" class="form-control mr-sm-2" id="tftextinput" name="q" placeholder="Search" required>
-            <input type="hidden" name="website" value="website">
-            <button id="searchButton" class="btn btn-primary my-2 my-sm-0" type="submit" name="button"
-              title="Search ImageJ resources for this text">
-              <span class="fas fa-search"></span>
-            </button>
-          </div>
+        <form id="tfnewsearch" class="d-flex" method="get"
+          action="https://search.imagej.net/search.php" aria-label="Search">
+          <input type="search" class="form-control me-2" id="tftextinput" name="q" placeholder="Search" required>
+          <input type="hidden" name="website" value="website">
+          <button id="searchButton" class="btn btn-primary" type="submit" name="button"
+            title="Search ImageJ resources for this text">
+            <span class="fas fa-search"></span>
+          </button>
         </form>
       </div>
     </div>
@@ -78,7 +75,8 @@
   <div class="container" role="main">
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <!-- See: https://getbootstrap.com/docs/5.0/examples/jumbotron/ -->
+    <div class="p-5 mb-4 bg-light rounded-3">
       <div class="row">
         <div class="col-12 col-md-4 col-lg-3">
           <img class="img-fluid img-logo" src="site/logo.png" alt="Fiji logo" />
@@ -93,35 +91,53 @@
               <a href="#" class="btn btn-lg btn-success" id="auto-download">
                 Choose a download &#8594;
               </a>
-              <button type="button" class="btn btn-lg btn-success dropdown-toggle dropdown-toggle-split" id="download-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                <span class="sr-only">Toggle Dropdown</span>
+              <button type="button" class="btn btn-lg btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
               </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win64.zip">
-                  <span class="fab fa-fw fa-windows"></span> Download for Windows (64-bit)
-                </a>
-                <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win32.zip">
-                  <span class="fab fa-fw fa-windows"></span> Download for Windows (32-bit)
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-macosx.zip">
-                  <span class="fab fa-fw fa-apple"></span> Download for macOS
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-linux64.zip">
-                  <span class="fab fa-fw fa-linux"></span> Download for Linux (64-bit)
-                </a>
-                <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-linux32.zip">
-                  <span class="fab fa-fw fa-linux"></span> Download for Linux (32-bit)
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-nojre.zip">
-                  <span class="fa-layers">
-                    <span class="fab fa-java"></span>
-                    <span class="fas fa-times"  data-fa-transform="shrink-7 up-4.2 right-5"></span>
-                  </span> Download the no-JRE Version 
-                </a>
-              </div>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win64.zip">
+                    <span class="fab fa-fw fa-windows"></span> Download for Windows (64-bit)
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win32.zip">
+                    <span class="fab fa-fw fa-windows"></span> Download for Windows (32-bit)
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-macosx.zip">
+                    <span class="fab fa-fw fa-apple"></span> Download for macOS
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-linux64.zip">
+                    <span class="fab fa-fw fa-linux"></span> Download for Linux (64-bit)
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-linux32.zip">
+                    <span class="fab fa-fw fa-linux"></span> Download for Linux (32-bit)
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-nojre.zip">
+                    <span class="fa-layers">
+                      <span class="fab fa-java"></span>
+                      <span class="fas fa-times"  data-fa-transform="shrink-7 up-4.2 right-5"></span>
+                    </span> Download the no-JRE Version
+                  </a>
+                </li>
+              </ul>
             </div>
           <hr />
           <p>
@@ -289,11 +305,9 @@
   <!-- Bootstrap core JavaScript
       ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="site/js/jquery-3.4.1.min.js"></script>
-  <script src="site/js/popper.min.js"></script>
-  <script src="site/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
   <script>
-    var osLinks = {
+    const osLinks = {
       windows: {
         link: "https://downloads.imagej.net/fiji/latest/fiji-win64.zip",
         icon: "windows",
@@ -310,12 +324,17 @@
         text: "Download for Linux (64-bit)"
       }
     }
+
     function setDownload(currentOS){
-      $("#auto-download").removeClass("btn-danger");
-      $("#auto-download").addClass("btn-success");
-      $("#auto-download").attr("href", osLinks[currentOS]["link"]);
-      $("#auto-download").html('<span class="fab fa-' + osLinks[currentOS]["icon"] + '"></span>&nbsp;' + osLinks[currentOS]["text"]);
+      const autoDownload = document.getElementById("auto-download");
+      autoDownload.classList.remove('btn-danger');
+      autoDownload.classList.add('btn-success');
+      autoDownload.href = osLinks[currentOS]["link"];
+      autoDownload.innerHTML =
+        `<span class="fab fa-${osLinks[currentOS]["icon"]}"></span>&nbsp;
+        ${osLinks[currentOS]["text"]}`
     }
+
     if (navigator.platform.indexOf("Win")!=-1){
       setDownload("windows");
     }
@@ -337,47 +356,50 @@
 
     let first = true;
     const MAX_PLUGIN_COUNT = 6; // controls max number of tabs shown
-
-    $.getJSON("site/plugins.json", function(json) {
-      let plugins = json.plugins;
-      // Fisher-Yates shuffle; see: https://javascript.info/task/shuffle
-      for (let i = plugins.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
-        [plugins[i], plugins[j]] = [plugins[j], plugins[i]]; // swap elements
-      }
-      if (plugins.length > MAX_PLUGIN_COUNT){
-        plugins = plugins.slice(0,MAX_PLUGIN_COUNT);
-      }
-      plugins.map(function(val){
-        // generating the tab header
-        let nameSlug = 'plugin-' + slugify(val.name);
-        let tabString = `
-          <li class="nav-item">
-            <a class="nav-link ${first ? 'active' : ''}" id="${nameSlug}-tab-header" data-toggle="tab" href="#${nameSlug}-tab" role="tab" aria-controls="${nameSlug}" aria-selected="true">${val.name}</a>
-          </li>
-        ` 
-        
-        // generating the tab panel
-        let paneString = `
-        <div class="tab-pane fade ${first ? 'show active' : ''}" id="${nameSlug}-tab" role="tabpanel" aria-labelledby="${nameSlug}-tab-header">
-          ${val.imgUrl ? 
-            '<img class="img-fluid img-plugin" alt="image showing ' + val.name + ' in action" src = "' + val.imgUrl + '" /> <hr />' 
-            : ''
-          }
-          <h5 class="card-title">${val.name}</h5>
-          <p class="card-text">${val.description}</p>
-          <a href="${val.link}" class="btn btn-primary">More information</a>
-        </div>
-        `
-        $("#plugin-tabs").append(tabString);
-        $("#plugin-tab-content").append(paneString);
-        
-
-        if (first){
-          first = false;
+    fetch('site/plugins.json')
+      .then(response => response.json())
+      .then((json) => {
+        let plugins = json.plugins;
+        // Fisher-Yates shuffle; see: https://javascript.info/task/shuffle
+        for (let i = plugins.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+          [plugins[i], plugins[j]] = [plugins[j], plugins[i]]; // swap elements
         }
-      })
-    });
+        if (plugins.length > MAX_PLUGIN_COUNT){
+          plugins = plugins.slice(0,MAX_PLUGIN_COUNT);
+        }
+
+        // TODO(mattxwang): we should probably properly sanitize inputs before injecting them
+        plugins.map((val) => {
+          // generating the tab header
+          let nameSlug = 'plugin-' + slugify(val.name);
+          let tabString = `
+            <li class="nav-item" role="presentation">
+              <button class="nav-link ${first ? 'active' : ''}" id="${nameSlug}-tab-header" data-bs-toggle="tab" data-bs-target="#${nameSlug}-tab" role="tab" aria-controls="${nameSlug}" aria-selected="true">${val.name}</button>
+            </li>
+          `
+
+          // generating the tab panel
+          let paneString = `
+          <div class="tab-pane fade ${first ? 'show active' : ''}" id="${nameSlug}-tab" role="tabpanel" aria-labelledby="${nameSlug}-tab-header">
+            ${val.imgUrl ?
+              '<img class="img-fluid img-plugin" alt="image showing ' + val.name + ' in action" src = "' + val.imgUrl + '" /> <hr />'
+              : ''
+            }
+            <h5 class="card-title">${val.name}</h5>
+            <p class="card-text">${val.description}</p>
+            <a href="${val.link}" class="btn btn-primary">More information</a>
+          </div>
+          `
+
+          document.getElementById("plugin-tabs").innerHTML += tabString;
+          document.getElementById("plugin-tab-content").innerHTML += paneString;
+
+          if (first){
+            first = false;
+          }
+        })
+      });
   </script>
 </body>
 
