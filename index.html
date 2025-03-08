@@ -17,6 +17,9 @@
   <!-- Custom site styling -->
   <link href="site/css/style.css?v1.0.0" rel="stylesheet">
 
+  <!-- UAParser.js - https://docs.uaparser.dev/ -->
+  <script src="js/ua-parser.min.js"></script>
+
   <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/solid.js"
     integrity="sha384-IA6YnujJIO+z1m4NKyAGvZ9Wmxrd4Px8WFqhFcgRmwLaJaiwijYgApVpo1MV8p77" crossorigin="anonymous">
@@ -87,6 +90,27 @@
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-linux64.zip">
+                    <span class="fab fa-fw fa-linux"></span> Download for Linux (64-bit)
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/future/fiji-macos-arm64.zip">
+                    <span class="fab fa-fw fa-apple"></span> Download for macOS (Apple silicon)
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-macosx.zip">
+                    <span class="fab fa-fw fa-apple"></span> Download for macOS (Intel)
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
                   <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win64.zip">
                     <span class="fab fa-fw fa-windows"></span> Download for Windows (64-bit)
                   </a>
@@ -94,22 +118,6 @@
                 <li>
                   <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win32.zip">
                     <span class="fab fa-fw fa-windows"></span> Download for Windows (32-bit)
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-macosx.zip">
-                    <span class="fab fa-fw fa-apple"></span> Download for macOS
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-linux64.zip">
-                    <span class="fab fa-fw fa-linux"></span> Download for Linux (64-bit)
                   </a>
                 </li>
                 <li>
@@ -291,20 +299,25 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
   <script>
     const osLinks = {
-      windows: {
-        link: "https://downloads.imagej.net/fiji/latest/fiji-win64.zip",
-        icon: "windows",
-        text: "Download for Windows (64-bit)"
-      },
-      osx: {
-        link: "https://downloads.imagej.net/fiji/latest/fiji-macosx.zip",
-        icon: "apple",
-        text: "Download for macOS"
-      },
-      linux:{
+      linux_x64: {
         link: "https://downloads.imagej.net/fiji/latest/fiji-linux64.zip",
         icon: "linux",
         text: "Download for Linux (64-bit)"
+      },
+      macos_arm64: {
+        link: "https://downloads.imagej.net/fiji/future/fiji-future-macos-arm64.zip",
+        icon: "apple",
+        text: "Download for macOS (Apple silicon)"
+      },
+      macos_x64: {
+        link: "https://downloads.imagej.net/fiji/latest/fiji-macosx.zip",
+        icon: "apple",
+        text: "Download for macOS (Intel)"
+      },
+      windows_x64: {
+        link: "https://downloads.imagej.net/fiji/latest/fiji-win64.zip",
+        icon: "windows",
+        text: "Download for Windows (64-bit)"
       }
     }
 
@@ -318,14 +331,17 @@
         ${osLinks[currentOS]["text"]}`
     }
 
-    if (navigator.platform.indexOf("Win")!=-1){
-      setDownload("windows");
+    if (navigator.platform.indexOf("Linux")!=-1){
+      setDownload("linux_x64");
+    }
+    else if (navigator.platform.indexOf("Win")!=-1){
+      setDownload("windows_x64");
     }
     else if (navigator.platform.indexOf("Mac")!=-1){
-      setDownload("osx");
-    }
-    else if (navigator.platform.indexOf("Linux")!=-1){
-      setDownload("linux");
+      const uap = new UAParser();
+      const cpu = uap.getCPU();
+      const arch = cpu['architecture'];
+      setDownload(arch == 'arm64' ? "macos_arm64" : "macos_x64");
     }
 
     function slugify(text){
