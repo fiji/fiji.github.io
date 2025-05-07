@@ -72,70 +72,87 @@
         <div class="col-12 col-md-8 col-lg-9">
           <h1 class="display-3">Fiji</h1>
           <p>
-            Fiji is an image processing package &mdash; a "batteries-included" distribution of <a
-              href="https://imagej.net/">ImageJ</a>, bundling many plugins which facilitate scientific image analysis.
+            Fiji is an image processing package &mdash;
+            a "batteries-included" distribution of
+            <a href="https://imagej.net/">ImageJ</a>,
+            bundling many plugins which facilitate scientific image analysis.
           </p>
-          <div class="btn-group">
-              <a href="#" class="btn btn-lg btn-success" id="auto-download">
-                Choose a download &#8594;
-              </a>
-              <button type="button" class="btn btn-lg btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropdown</span>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-linux64.zip">
-                    <span class="fab fa-fw fa-linux"></span> Download for Linux (64-bit)
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/future/fiji-future-macos-arm64.zip">
-                    <span class="fab fa-fw fa-apple"></span> Download for macOS (Apple silicon)
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-macosx.zip">
-                    <span class="fab fa-fw fa-apple"></span> Download for macOS (Intel)
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win64.zip">
-                    <span class="fab fa-fw fa-windows"></span> Download for Windows (64-bit)
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-win32.zip">
-                    <span class="fab fa-fw fa-windows"></span> Download for Windows (32-bit)
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="https://downloads.imagej.net/fiji/latest/fiji-nojre.zip">
-                    <span class="fa-layers">
-                      <span class="fab fa-java"></span>
-                      <span class="fas fa-times"  data-fa-transform="shrink-7 up-4.2 right-5"></span>
-                    </span> Download the no-JRE Version
-                  </a>
-                </li>
-              </ul>
+
+          <!-- Download section -->
+          <div class="download-section d-flex flex-column flex-lg-row">
+
+            <!-- Download button -->
+            <div class="download-button-container mb-3 mb-lg-0 col-lg-6 pe-lg-3">
+              <div class="btn-group w-100">
+                <a href="#" class="btn btn-lg btn-success w-100" id="auto-download">
+                  Choose a download &#8594;
+                </a>
+                <button type="button" class="btn btn-lg btn-success dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false" id="download-dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" id="download-options">
+                  <!-- Options will be dynamically populated -->
+                </ul>
+              </div>
             </div>
+
+            <!-- Download option toggles -->
+            <div class="toggles-container col-lg-6 ps-lg-4 ps-xl-3">
+
+              <!-- Distribution toggle -->
+              <div class="download-toggle row mb-2">
+                <label class="col-5 col-xs-4 col-xxl-3 col-form-label">Distribution</label>
+                <div class="col-7 col-xs-8 ps-3">
+                  <div class="btn-group w-100" role="group">
+                    <input type="radio" class="btn-check" name="distribution" id="dist-latest" value="latest" checked>
+                    <label class="btn btn-outline-secondary" for="dist-latest">Latest</label>
+                    <input type="radio" class="btn-check" name="distribution" id="dist-stable" value="stable">
+                    <label class="btn btn-outline-secondary" for="dist-stable">Stable</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Java toggle -->
+              <div class="download-toggle row mb-2">
+                <label class="col-5 col-xs-4 col-xxl-3 col-form-label">Bundled&nbsp;Java</label>
+                <div class="col-7 col-xs-8 ps-3">
+                  <div class="btn-group w-100" role="group">
+                    <input type="radio" class="btn-check" name="java" id="java-jdk" value="jdk" checked>
+                    <label class="btn btn-outline-secondary" for="java-jdk">JDK</label>
+                    <input type="radio" class="btn-check" name="java" id="java-jre" value="jre">
+                    <label class="btn btn-outline-secondary" for="java-jre">JRE</label>
+                    <input type="radio" class="btn-check" name="java" id="java-none" value="none">
+                    <label class="btn btn-outline-secondary" for="java-none">None</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mirror toggle -->
+              <div class="download-toggle row">
+                <label class="col-5 col-xs-4 col-xxl-3 col-form-label">Mirror</label>
+                <div class="col-7 col-xs-8 ps-3">
+                  <div class="btn-group w-100" role="group">
+                    <input type="radio" class="btn-check" name="mirror" id="mirror-us" value="US" checked>
+                    <label class="btn btn-outline-secondary" for="mirror-us">US</label>
+                    <input type="radio" class="btn-check" name="mirror" id="mirror-uk" value="UK">
+                    <label class="btn btn-outline-secondary" for="mirror-uk">UK</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <hr />
           <p>
-            <a href="https://imagej.net/software/fiji/downloads" class="btn btn-success"><span class="fas fa-download"></span> More Downloads</a>
-            <a class="btn btn-primary" href="#cite"><span class="fas fa-quote-left"></span> Cite</a>
-            <a class="btn btn-dark" href="https://github.com/fiji"><span class="fab fa-github"></span> Contribute</a>
+            <a href="https://imagej.net/software/fiji/downloads" class="btn btn-success mb-1"><span class="fas fa-download"></span> More Downloads</a>
+            <a class="btn btn-primary mb-1" href="#cite"><span class="fas fa-quote-left"></span> Cite</a>
+            <a class="btn btn-dark mb-1" href="https://github.com/fiji"><span class="fab fa-github"></span> Contribute</a>
           </p>
         </div>
       </div>
     </div>
+
     <h1 class="text-center">Why Fiji?</h1>
     <div class="row text-center">
       <div class="col-12 col-md-4">
@@ -222,7 +239,6 @@
         <p>
           The Fiji project is driven by a strong desire to improve the tools available for life sciences to process and analyze data. To this end, Fiji collaborates closely with the following projects:
         </p>
-        <style>.partner-icon { max-width: 128px; }</style>
         <div class="row text-center d-flex align-items-end">
           <div class="col-4">
             <a href="https://imagej.net/software/imagej">
@@ -292,53 +308,204 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
   <script>
-    const osLinks = {
-      linux_x64: {
-        link: "https://downloads.imagej.net/fiji/latest/fiji-linux64.zip",
-        icon: "linux",
-        text: "Download for Linux (64-bit)"
+    // -- Download selector --
+
+    const mirrors = {
+      US: 'https://downloads.imagej.net/fiji/',
+      UK: 'https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-'
+    };
+
+    const downloadLinks = {
+      latest: {
+        linux_arm64: {
+          prefix: 'fiji-linux-arm64',
+          icon: 'fab fa-linux',
+          text: 'for Linux &nbsp;|&nbsp; arm64'
+        },
+        linux_x64: {
+          prefix: 'fiji-linux-x64',
+          icon: 'fab fa-linux',
+          text: 'for Linux &nbsp;|&nbsp; x86-64',
+          divider: true
+        },
+        macos_arm64: {
+          prefix: 'fiji-macos-arm64',
+          icon: 'fab fa-apple',
+          text: 'for macOS &nbsp;|&nbsp; Apple silicon'
+        },
+        macos_x64: {
+          prefix: 'fiji-macos-x64',
+          icon: 'fab fa-apple',
+          text: 'for macOS &nbsp;|&nbsp; Intel',
+          divider: true
+        },
+        /*
+        windows_arm64: {
+          prefix: 'fiji-windows-arm64',
+          icon: 'fab fa-windows',
+          text: 'for Windows &nbsp;|&nbsp; arm64'
+        },
+        */
+        windows_x64: {
+          prefix: 'fiji-windows-x64',
+          icon: 'fab fa-windows',
+          text: 'for Windows &nbsp;|&nbsp; x86-64',
+          divider: true
+        },
+        other: {
+          prefix: 'fiji-portable',
+          icon: 'fa fa-rocket',
+          text: 'portable &nbsp;|&nbsp; no bundled Java'
+        }
       },
-      macos_arm64: {
-        link: "https://downloads.imagej.net/fiji/future/fiji-future-macos-arm64.zip",
-        icon: "apple",
-        text: "Download for macOS (Apple silicon)"
-      },
-      macos_x64: {
-        link: "https://downloads.imagej.net/fiji/latest/fiji-macosx.zip",
-        icon: "apple",
-        text: "Download for macOS (Intel)"
-      },
-      windows_x64: {
-        link: "https://downloads.imagej.net/fiji/latest/fiji-win64.zip",
-        icon: "windows",
-        text: "Download for Windows (64-bit)"
+      stable: {
+        linux_x64: {
+          prefix: 'fiji-stable-linux64',
+          icon: 'fab fa-linux',
+          text: 'for Linux &nbsp;|&nbsp; x86-64',
+          divider: true
+        },
+        macosx: {
+          prefix: 'fiji-stable-macosx',
+          icon: 'fab fa-apple',
+          text: 'for macOS &nbsp;|&nbsp; Intel',
+          divider: true
+        },
+        windows_x32: {
+          prefix: 'fiji-stable-win32',
+          icon: 'fab fa-windows',
+          text: 'for Windows &nbsp;|&nbsp; x86-32'
+        },
+        windows_x64: {
+          prefix: 'fiji-stable-win64',
+          icon: 'fab fa-windows',
+          text: 'for Windows &nbsp;|&nbsp; x86-64',
+          divider: true
+        },
+        other: {
+          prefix: 'fiji-stable-portable',
+          icon: 'fa fa-rocket',
+          text: 'portable &nbsp;|&nbsp; no bundled Java'
+        }
+      }
+    };
+
+    function selectedDistribution() {
+      return document.querySelector('input[name="distribution"]:checked').value;
+    }
+
+    function selectedJava() {
+      return document.querySelector('input[name="java"]:checked').value;
+    }
+
+    function selectedMirror() {
+      return document.querySelector('input[name="mirror"]:checked').value;
+    }
+
+    function urlForDownload(option, distro, java, mirror) {
+      if (option === undefined) return undefined;
+      const prefix = option['prefix'];
+      if (prefix.endsWith('-portable')) {
+        // Portable bundle never includes Java.
+        suffix = 'nojava';
+      }
+      else if (java == 'none') {
+        // Platform-specific bundle always includes Java.
+        suffix = 'jdk';
+      }
+      else suffix = java;
+      return `${mirrors[mirror]}${distro}/${prefix}-${suffix}.zip`;
+    }
+
+    function updateDownloadOptions() {
+      const distro = selectedDistribution();
+      const java = selectedJava();
+      const mirror = selectedMirror();
+      currentPlatform = java == 'none' ? 'other' : autoDetectPlatform();
+      setDownload(currentPlatform, distro, java, mirror);
+      updateDropdownOptions(distro, java, mirror);
+    }
+
+    function setDownload(platform, distro, java, mirror) {
+      const autoDownload = document.getElementById('auto-download');
+      autoDownload.classList.remove('btn-danger');
+      autoDownload.classList.add('btn-success');
+      const option = downloadLinks[distro][platform];
+      const url = urlForDownload(option, distro, java, mirror);
+      if (url === undefined) return;
+      autoDownload.href = url;
+      const javaLabel = java == 'none' ? '' : ` &nbsp;|&nbsp; ${java}`;
+      const downloadText = '<span class="big-text">Download</span><br>' +
+        `<span class="scaled-text">${distro} ` +
+        `&nbsp;|&nbsp; ${option['text'].replace('for ', '')}${javaLabel} ` +
+        `&nbsp;|&nbsp; ${mirror}</span>`;
+      autoDownload.innerHTML =
+        `<span class="big-text ${option['icon']}"></span>&nbsp;
+        ${downloadText}`;
+    }
+
+    function updateDropdownOptions(distro, java, mirror) {
+      const dropdownMenu = document.getElementById('download-options');
+      // Clear existing options
+      dropdownMenu.innerHTML = '';
+
+      // Add all available options for the selected distribution
+      for (const platform in downloadLinks[distro]) {
+        const option = downloadLinks[distro][platform];
+        const url = urlForDownload(option, distro, java, mirror);
+        if (url === undefined) continue;
+
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.className = 'dropdown-item';
+        link.href = url;
+        link.innerHTML = `<span class="fa-fw ${option.icon}"></span> Download ${option.text}`;
+
+        listItem.appendChild(link);
+        dropdownMenu.appendChild(listItem);
+
+        if (option.divider) {
+          const divider = document.createElement('li');
+          divider.innerHTML = '<div class="dropdown-divider"></div>';
+          dropdownMenu.appendChild(divider);
+        }
       }
     }
 
-    function setDownload(currentOS){
-      const autoDownload = document.getElementById("auto-download");
-      autoDownload.classList.remove('btn-danger');
-      autoDownload.classList.add('btn-success');
-      autoDownload.href = osLinks[currentOS]["link"];
-      autoDownload.innerHTML =
-        `<span class="fab fa-${osLinks[currentOS]["icon"]}"></span>&nbsp;
-        ${osLinks[currentOS]["text"]}`
-    }
+    function autoDetectPlatform() {
+      // Discern operating system.
+      if (navigator.platform.indexOf('Linux') != -1) os = 'linux';
+      else if (navigator.platform.indexOf('Mac') != -1) os = 'macos';
+      else if (navigator.platform.indexOf('Win') != -1) os = 'windows';
+      else return 'other';
 
-    if (navigator.platform.indexOf("Linux")!=-1){
-      setDownload("linux_x64");
-    }
-    else if (navigator.platform.indexOf("Win")!=-1){
-      setDownload("windows_x64");
-    }
-    else if (navigator.platform.indexOf("Mac")!=-1){
+      // Discern architecture.
+      // https://docs.uaparser.dev/info/cpu/arch.html
       const uap = new UAParser();
       const cpu = uap.getCPU();
-      const arch = cpu['architecture'];
-      setDownload(arch == 'arm64' ? "macos_arm64" : "macos_x64");
+      switch (cpu['architecture']) {
+        case 'amd64': arch = 'x64'; break;
+        case 'arm64': arch = 'arm64'; break;
+        case 'ia32': arch = 'x32'; break;
+        default: return 'other';
+      }
+
+      return `${os}_${arch}`;
     }
 
-    function slugify(text){
+    updateDownloadOptions();
+    const toggleIDs = [
+      'dist-latest', 'dist-stable',
+      'java-jdk', 'java-jre', 'java-none',
+      'mirror-us', 'mirror-uk'
+    ];
+    toggleIDs.forEach(id => {
+      document.getElementById(id).addEventListener('change', updateDownloadOptions);
+    });
+
+    // -- Plugin highlights --
+
+    function slugify(text) {
       return text.toString().toLowerCase()
         .replace(/\s+/g, '-')           // Replace spaces with -
         .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
@@ -362,7 +529,6 @@
           plugins = plugins.slice(0,MAX_PLUGIN_COUNT);
         }
 
-        // TODO(mattxwang): we should probably properly sanitize inputs before injecting them
         plugins.map((val) => {
           // generating the tab header
           let nameSlug = 'plugin-' + slugify(val.name);
@@ -385,10 +551,10 @@
           </div>
           `
 
-          document.getElementById("plugin-tabs").innerHTML += tabString;
-          document.getElementById("plugin-tab-content").innerHTML += paneString;
+          document.getElementById('plugin-tabs').innerHTML += tabString;
+          document.getElementById('plugin-tab-content').innerHTML += paneString;
 
-          if (first){
+          if (first) {
             first = false;
           }
         })

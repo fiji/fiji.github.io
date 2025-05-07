@@ -3,14 +3,174 @@ body {
   padding-bottom: 30px;
 }
 
-/* creates the left-border on the download dropdown */
+.download-section {
+  margin-bottom: 1rem;
+}
+
+.download-toggle > label {
+  text-align: right;
+}
+
 #auto-download {
   border-radius: .3rem 0 0 .3rem;
 }
 
-#download-dropdown {
-  border-left: 1px solid rgba(1, 1, 1, 0.1);
-  border-radius: 0 .3rem .3rem 0;
+/* Responsive font sizes for download button */
+.big-text {
+  font-size: 1em;
+}
+.scaled-text {
+  font-size: 0.5rem;
+}
+@media (min-width: 320px) {
+  .big-text {
+    font-size: 1em;
+  }
+  .scaled-text {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 330px) {
+  .big-text {
+    font-size: 1.05em;
+  }
+  .scaled-text {
+    font-size: 0.55rem;
+  }
+}
+@media (min-width: 340px) {
+  .big-text {
+    font-size: 1.1em;
+  }
+  .scaled-text {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 350px) {
+  .big-text {
+    font-size: 1.15em;
+  }
+  .scaled-text {
+    font-size: 0.65rem;
+  }
+}
+@media (min-width: 360px) {
+  .big-text {
+    font-size: 1.2em;
+  }
+  .scaled-text {
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 370px) {
+  .big-text {
+    font-size: 1.25em;
+  }
+  .scaled-text {
+    font-size: 0.72rem;
+  }
+}
+@media (min-width: 380px) {
+  .big-text {
+    font-size: 1.3em;
+  }
+  .scaled-text {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 390px) {
+  .big-text {
+    font-size: 1.35em;
+  }
+  .scaled-text {
+    font-size: 0.80rem;
+  }
+}
+@media (min-width: 400px) {
+  .big-text {
+    font-size: 1.4em;
+  }
+  .scaled-text {
+    font-size: 0.82rem;
+  }
+}
+@media (min-width: 410px) {
+  .big-text {
+    font-size: 1.45em;
+  }
+  .scaled-text {
+    font-size: 0.83rem;
+  }
+}
+@media (min-width: 420px) {
+  .big-text {
+    font-size: 1.5em;
+  }
+  .scaled-text {
+    font-size: 0.84rem;
+  }
+}
+@media (min-width: 430px) {
+  .big-text {
+    font-size: 1.6em;
+  }
+  .scaled-text {
+    font-size: 0.85rem;
+  }
+}
+@media (min-width: 440px) {
+  .big-text {
+    font-size: 1.7em;
+  }
+  .scaled-text {
+    font-size: 0.87rem;
+  }
+}
+@media (min-width: 450px) {
+  .big-text {
+    font-size: 1.8em;
+  }
+  .scaled-text {
+    font-size: 0.9rem;
+  }
+}
+
+.form-label {
+  font-weight: 500;
+  margin-top: 5px; /* HACK: center labels vertically */
+}
+
+/* Make toggles take full width of their container */
+.distribution-toggle .btn-group,
+.java-toggle .btn-group {
+}
+
+/* Make toggle buttons equal width */
+.distribution-toggle .btn,
+.java-toggle .btn {
+  flex: 1;
+}
+
+.partner-icon { max-width: 128px; }
+
+/* Fixes for very small screen widths */
+@media (max-width: 475px) {
+  .partner-icon {
+    max-width: 96px;
+  }
+}
+@media (max-width: 425px) {
+  .partner-icon {
+    max-width: 80px;
+  }
+}
+@media (max-width: 375px) {
+  .download-toggle label {
+    font-size: 0.75em !important;
+  }
+  .partner-icon {
+    max-width: 64px;
+  }
 }
 
 @media only screen and (max-width: 50rem) {
