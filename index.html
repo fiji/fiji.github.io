@@ -402,18 +402,22 @@
       return document.querySelector('input[name="mirror"]:checked').value;
     }
 
+    function javaSlug(prefix, java, force) {
+      if (prefix.endsWith('-portable')) {
+        // Portable bundle never includes Java.
+        return force ? 'nojava' : '';
+      }
+      if (java === 'none') {
+        // Platform-specific bundle always includes Java.
+        return 'jdk';
+      }
+      return java;
+    }
+
     function urlForDownload(option, distro, java, mirror) {
       if (option === undefined) return undefined;
       const prefix = option['prefix'];
-      if (prefix.endsWith('-portable')) {
-        // Portable bundle never includes Java.
-        suffix = 'nojava';
-      }
-      else if (java == 'none') {
-        // Platform-specific bundle always includes Java.
-        suffix = 'jdk';
-      }
-      else suffix = java;
+      const suffix = javaSlug(prefix, java, true)
       return `${mirrors[mirror]}${distro}/${prefix}-${suffix}.zip`;
     }
 
@@ -421,7 +425,7 @@
       const distro = selectedDistribution();
       const java = selectedJava();
       const mirror = selectedMirror();
-      currentPlatform = java == 'none' ? 'other' : autoDetectPlatform();
+      currentPlatform = java === 'none' ? 'other' : autoDetectPlatform();
       setDownload(currentPlatform, distro, java, mirror);
       updateDropdownOptions(distro, java, mirror);
     }
@@ -434,7 +438,7 @@
       const url = urlForDownload(option, distro, java, mirror);
       if (url === undefined) return;
       autoDownload.href = url;
-      const javaLabel = java == 'none' ? '' : ` &nbsp;|&nbsp; ${java}`;
+      const javaLabel = java === 'none' ? '' : ` &nbsp;|&nbsp; ${java}`;
       const downloadText = '<span class="big-text">Download</span><br>' +
         `<span class="scaled-text">${distro} ` +
         `&nbsp;|&nbsp; ${option['text'].replace('for ', '')}${javaLabel} ` +
@@ -454,12 +458,15 @@
         const option = downloadLinks[distro][platform];
         const url = urlForDownload(option, distro, java, mirror);
         if (url === undefined) continue;
+        const slug = javaSlug(option.prefix, java, false);
+        const javaSuffix = slug === '' ? '' : ` &nbsp;|&nbsp; ${slug}`;
+        const downloadText = `Download ${option.text}${javaSuffix}`;
 
         const listItem = document.createElement('li');
         const link = document.createElement('a');
         link.className = 'dropdown-item';
         link.href = url;
-        link.innerHTML = `<span class="fa-fw ${option.icon}"></span> Download ${option.text}`;
+        link.innerHTML = `<span class="fa-fw ${option.icon}"></span> ${downloadText}`;
 
         listItem.appendChild(link);
         dropdownMenu.appendChild(listItem);
