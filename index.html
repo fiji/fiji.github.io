@@ -20,6 +20,9 @@
   <!-- UAParser.js - https://docs.uaparser.dev/ -->
   <script src="site/js/ua-parser.min.js"></script>
 
+  <!-- Geolib - https://github.com/manuelbieh/geolib -->
+  <script src="https://cdn.jsdelivr.net/npm/geolib@3.3.4/lib/index.min.js" integrity="sha384-NjoyEEeJoKbSiXKYLjyH72gT5ZK+3myZB3zLyxf8i6k94c/dGoe66u+SRGuPqMgT" crossorigin="anonymous"></script>
+
   <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js"
     integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous">
@@ -311,8 +314,14 @@
     // -- Download selector --
 
     const mirrors = {
-      US: 'https://downloads.imagej.net/fiji/',
-      UK: 'https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-'
+      US: {
+        prefix: 'https://downloads.imagej.net/fiji/',
+        coords: {latitude: 43.076, longitude: -89.415}
+      },
+      UK: {
+        prefix: 'https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-',
+        coords: {latitude: 51.757, longitude: -1.255}
+      }
     };
 
     const downloadLinks = {
@@ -500,7 +509,33 @@
       return `${os}_${arch}`;
     }
 
-    updateDownloadOptions();
+    function selectClosestMirror() {
+      // Note: we avoid using navigator.geolocation because the
+      // popup requesting permission to share location is annoying.
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          const userCoords = {
+            latitude: data.latitude,
+            longitude: data.longitude
+          };
+          var closestMirror = null;
+          var closestDist = null;
+          for (const mirror in mirrors) {
+            const mirrorCoords = mirrors[mirror].coords;
+            const dist = geolib.getDistance(userCoords, mirrorCoords);
+            if (closestMirror == null || dist < closestDist) {
+              closestMirror = mirror.toLowerCase();
+              closestDist = dist;
+            }
+          }
+          const mirror = document.getElementById(`mirror-${closestMirror}`);
+          mirror.checked = true;
+          updateDownloadOptions();
+        });
+    }
+
+    selectClosestMirror();
     const toggleIDs = [
       'dist-latest', 'dist-stable',
       'java-jdk', 'java-jre', 'java-none',
