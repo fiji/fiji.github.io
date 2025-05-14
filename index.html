@@ -429,7 +429,7 @@
       if (option === undefined) return undefined;
       const prefix = option['prefix'];
       const suffix = javaSlug(prefix, java, true)
-      return `${mirrors[mirror]}${distro}/${prefix}-${suffix}.zip`;
+      return `${mirrors[mirror].prefix}${distro}/${prefix}-${suffix}.zip`;
     }
 
     function updateDownloadOptions() {
