@@ -506,7 +506,22 @@
         case 'amd64': arch = 'x64'; break;
         case 'arm64': arch = 'arm64'; break;
         case 'ia32': arch = 'x32'; break;
-        default: return 'other';
+        default:
+          if (os === 'macos') {
+            // Best-effort Apple Silicon detection, lifted from:
+            // https://github.com/faisalman/ua-parser-js/blob/72c59b53/src/helpers/ua-parser-helpers.js#L21-L42
+            try {
+              const canvas = document.createElement('canvas');
+              const webgl = canvas.getContext('webgl2') || canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+              const debug = webgl.getExtension('WEBGL_debug_renderer_info');
+              const renderer = webgl.getParameter(debug.UNMASKED_RENDERER_WEBGL);
+              if (renderer.match(/apple m\d/i)) {
+                return 'macos_arm64';
+              }
+            } catch { }
+            return 'macos_x64';
+          }
+          arch = 'x64';
       }
 
       return `${os}_${arch}`;
