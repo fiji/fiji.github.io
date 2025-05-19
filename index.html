@@ -449,7 +449,8 @@
       const url = urlForDownload(option, distro, java, mirror);
       if (url === undefined) return;
       autoDownload.href = url;
-      const javaLabel = java === 'none' ? '' : ` &nbsp;|&nbsp; ${java}`;
+      const javaLabel = platform === 'other' || java === 'none' ?
+        '' : ` &nbsp;|&nbsp; ${java}`;
       const downloadText = '<span class="big-text">Download</span><br>' +
         `<span class="scaled-text">${distro} ` +
         `&nbsp;|&nbsp; ${option['text'].replace('for ', '')}${javaLabel} ` +
