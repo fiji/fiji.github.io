@@ -545,7 +545,8 @@
       'mirror-us', 'mirror-uk'
     ];
     toggleIDs.forEach(id => {
-      document.getElementById(id).addEventListener('change', updateDownloadOptions);
+      el = document.getElementById(id);
+      if (el != null) el.addEventListener('change', updateDownloadOptions);
     });
 
     // -- Plugin highlights --
