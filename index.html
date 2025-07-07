@@ -116,21 +116,6 @@
                 </div>
               </div>
 
-              <!-- Java toggle -->
-              <div class="download-toggle row mb-2">
-                <label class="col-5 col-xs-4 col-xxl-3 col-form-label">Bundled&nbsp;Java</label>
-                <div class="col-7 col-xs-8 ps-3">
-                  <div class="btn-group w-100" role="group">
-                    <input type="radio" class="btn-check" name="java" id="java-jdk" value="jdk" checked>
-                    <label class="btn btn-outline-secondary" for="java-jdk" title="Include a full copy of Java, so that all Fiji features work directly.">JDK</label>
-                    <input type="radio" class="btn-check" name="java" id="java-jre" value="jre" title="Hello">
-                    <label class="btn btn-outline-secondary" for="java-jre" title="Include a slim copy of Java. Smaller download size than the JDK version, but on-the-fly compilation of Java source code and certain JavaFX features will not work.">JRE</label>
-                    <input type="radio" class="btn-check" name="java" id="java-none" value="none">
-                    <label class="btn btn-outline-secondary" for="java-none" title="Do not include a copy of Java. You will need to install Java yourself.">None</label>
-                  </div>
-                </div>
-              </div>
-
               <!-- Mirror toggle -->
               <div class="download-toggle row">
                 <label class="col-5 col-xs-4 col-xxl-3 col-form-label">Mirror</label>
@@ -348,13 +333,11 @@
           text: 'for macOS &nbsp;|&nbsp; Intel',
           divider: true
         },
-        /*
         windows_arm64: {
           prefix: 'fiji-latest-win-arm64',
           icon: 'fab fa-windows',
           text: 'for Windows &nbsp;|&nbsp; arm64'
         },
-        */
         windows_x64: {
           prefix: 'fiji-latest-win64',
           icon: 'fab fa-windows',
@@ -374,21 +357,21 @@
           text: 'for Linux &nbsp;|&nbsp; x86-64',
           divider: true
         },
-        macosx: {
+        macos_x64: {
           prefix: 'fiji-stable-macosx',
           icon: 'fab fa-apple',
           text: 'for macOS &nbsp;|&nbsp; Intel',
           divider: true
         },
-        windows_x32: {
-          prefix: 'fiji-stable-win32',
-          icon: 'fab fa-windows',
-          text: 'for Windows &nbsp;|&nbsp; x86-32'
-        },
         windows_x64: {
           prefix: 'fiji-stable-win64',
           icon: 'fab fa-windows',
-          text: 'for Windows &nbsp;|&nbsp; x86-64',
+          text: 'for Windows &nbsp;|&nbsp; x86-64'
+        },
+        windows_x32: {
+          prefix: 'fiji-stable-win32',
+          icon: 'fab fa-windows',
+          text: 'for Windows &nbsp;|&nbsp; x86-32',
           divider: true
         },
         other: {
@@ -403,62 +386,64 @@
       return document.querySelector('input[name="distribution"]:checked').value;
     }
 
-    function selectedJava() {
-      return document.querySelector('input[name="java"]:checked').value;
-    }
-
     function selectedMirror() {
       return document.querySelector('input[name="mirror"]:checked').value;
     }
 
-    function javaSlug(prefix, java, force) {
+    function javaSlug(prefix, force) {
       if (prefix.endsWith('-portable')) {
         // Portable bundle never includes Java.
         return force ? 'nojava' : '';
       }
-      if (java === 'none') {
-        // Platform-specific bundle always includes Java.
-        return 'jdk';
-      }
-      return java;
+      return 'jdk';
     }
 
-    function urlForDownload(option, distro, java, mirror) {
+    function urlForDownload(option, distro, mirror) {
       if (option === undefined) return undefined;
       const prefix = option['prefix'];
-      const suffix = javaSlug(prefix, java, true)
+      const suffix = javaSlug(prefix, true)
       return `${mirrors[mirror].prefix}${distro}/${prefix}-${suffix}.zip`;
     }
 
     function updateDownloadOptions() {
       const distro = selectedDistribution();
-      const java = selectedJava();
       const mirror = selectedMirror();
-      currentPlatform = java === 'none' ? 'other' : autoDetectPlatform();
-      setDownload(currentPlatform, distro, java, mirror);
-      updateDropdownOptions(distro, java, mirror);
+      currentPlatform = autoDetectPlatform();
+      setDownload(currentPlatform, distro, mirror);
+      updateDropdownOptions(distro, mirror);
     }
 
-    function setDownload(platform, distro, java, mirror) {
+    function setDownload(platform, distro, mirror) {
       const autoDownload = document.getElementById('auto-download');
       autoDownload.classList.remove('btn-danger');
       autoDownload.classList.add('btn-success');
-      const option = downloadLinks[distro][platform];
-      const url = urlForDownload(option, distro, java, mirror);
+
+      // Handle platform-specific fallbacks.
+      console.log(`setDownload: platform=${platform} distro=${distro}`);
+      if (platform === 'macos_arm64' && distro === 'stable') {
+        // Note: No stable macOS ARM64; fall back to x64.
+        platform = 'macos_x64';
+      }
+      if (platform === 'windows_arm64' && distro === 'stable') {
+        // Note: No stable Windows ARM64; fall back to x64.
+        platform = 'windows_x64';
+      }
+      console.log(`final answer: platform=${platform} distro=${distro}`);
+
+      const option = downloadLinks[distro][platform] || downloadLinks[distro]['other'];
+      const url = urlForDownload(option, distro, mirror);
       if (url === undefined) return;
       autoDownload.href = url;
-      const javaLabel = platform === 'other' || java === 'none' ?
-        '' : ` &nbsp;|&nbsp; ${java}`;
       const downloadText = '<span class="big-text">Download</span><br>' +
         `<span class="scaled-text">${distro} ` +
-        `&nbsp;|&nbsp; ${option['text'].replace('for ', '')}${javaLabel} ` +
+        `&nbsp;|&nbsp; ${option['text'].replace('for ', '')} ` +
         `&nbsp;|&nbsp; ${mirror}</span>`;
       autoDownload.innerHTML =
         `<span class="big-text ${option['icon']}"></span>&nbsp;
         ${downloadText}`;
     }
 
-    function updateDropdownOptions(distro, java, mirror) {
+    function updateDropdownOptions(distro, mirror) {
       const dropdownMenu = document.getElementById('download-options');
       // Clear existing options
       dropdownMenu.innerHTML = '';
@@ -466,11 +451,10 @@
       // Add all available options for the selected distribution
       for (const platform in downloadLinks[distro]) {
         const option = downloadLinks[distro][platform];
-        const url = urlForDownload(option, distro, java, mirror);
+        const url = urlForDownload(option, distro, mirror);
         if (url === undefined) continue;
-        const slug = javaSlug(option.prefix, java, false);
-        const javaSuffix = slug === '' ? '' : ` &nbsp;|&nbsp; ${slug}`;
-        const downloadText = `Download ${option.text}${javaSuffix}`;
+        const slug = javaSlug(option.prefix, false);
+        const downloadText = `Download ${option.text}`;
 
         const listItem = document.createElement('li');
         const link = document.createElement('a');
@@ -554,7 +538,6 @@
     selectClosestMirror();
     const toggleIDs = [
       'dist-latest', 'dist-stable',
-      'java-jdk', 'java-jre', 'java-none',
       'mirror-us', 'mirror-uk'
     ];
     toggleIDs.forEach(id => {
