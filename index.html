@@ -419,7 +419,6 @@
       autoDownload.classList.add('btn-success');
 
       // Handle platform-specific fallbacks.
-      console.log(`setDownload: platform=${platform} distro=${distro}`);
       if (platform === 'macos_arm64' && distro === 'stable') {
         // Note: No stable macOS ARM64; fall back to x64.
         platform = 'macos_x64';
@@ -428,7 +427,6 @@
         // Note: No stable Windows ARM64; fall back to x64.
         platform = 'windows_x64';
       }
-      console.log(`final answer: platform=${platform} distro=${distro}`);
 
       const option = downloadLinks[distro][platform] || downloadLinks[distro]['other'];
       const url = urlForDownload(option, distro, mirror);
