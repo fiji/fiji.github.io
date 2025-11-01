@@ -125,6 +125,8 @@
                     <label class="btn btn-outline-secondary" for="mirror-us" title="Download Fiji from UW-Madison in Wisconsin, USA.">US</label>
                     <input type="radio" class="btn-check" name="mirror" id="mirror-uk" value="UK">
                     <label class="btn btn-outline-secondary" for="mirror-uk" title="Download Fiji from Oxford in England.">UK</label>
+                    <input type="radio" class="btn-check" name="mirror" id="mirror-fr" value="FR">
+                    <label class="btn btn-outline-secondary" for="mirror-fr" title="Download Fiji from Institut Pasteur in France.">FR</label>
                   </div>
                 </div>
               </div>
@@ -306,6 +308,10 @@
       UK: {
         prefix: 'https://downloads.micron.ox.ac.uk/fiji_update/mirrors/fiji-',
         coords: {latitude: 51.757, longitude: -1.255}
+      }
+      FR: {
+        prefix: 'https://mirrors.pasteur.fr/fiji/downloads/',
+        coords: {latitude: 49.729, longitude: 1.371}
       }
     };
 
@@ -536,7 +542,7 @@
     selectClosestMirror();
     const toggleIDs = [
       'dist-latest', 'dist-stable',
-      'mirror-us', 'mirror-uk'
+      'mirror-us', 'mirror-uk', 'mirror-fr'
     ];
     toggleIDs.forEach(id => {
       el = document.getElementById(id);
