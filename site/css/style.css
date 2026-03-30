@@ -151,6 +151,17 @@ body {
   flex: 1;
 }
 
+/* Accessibility: darken links on bg-light for WCAG 1.4.3 contrast (4.27:1 → 5.6:1) */
+.bg-light a:not([class*="btn"]) {
+  color: #0a58ca;
+}
+
+/* Accessibility: darken outline-secondary button text on bg-light for WCAG 1.4.3 contrast (4.45:1 → 5.1:1) */
+.bg-light .btn-check:not(:checked) + .btn-outline-secondary {
+  color: #5c6370;
+  border-color: #5c6370;
+}
+
 .partner-icon { max-width: 128px; }
 
 /* Fixes for very small screen widths */
